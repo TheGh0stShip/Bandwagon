@@ -41,6 +41,11 @@ Two original XEX files, `BadUpdatePayload/bootanim.xex` and
 `Flash/bootanim.xex`, are byte-identical and therefore produce identical base
 files. They are retained under both names to preserve provenance.
 
+`xex/BootAnim-9199-provenance.md` classifies the bundled themed boot animation
+as a 2010 Xbox dashboard 9199 component rather than Peer-authored code. Its hash
+and internal version evidence are retained, but proprietary Microsoft code is
+not republished as a source-form disassembly.
+
 `xex/Updater.md` records the first full XEX function-boundary pass. The pinned
 decompilation pipeline recovers 376 Updater code symbols, including 48 named
 kernel import thunks, and emits a machine-readable address inventory. The
@@ -64,6 +69,10 @@ The pure branch encoder also has a portable C++ reconstruction and host test.
 trusted-root path, GitHub latest-release endpoint, HTTP status gate, JSON
 `tag_name` lookup, and three-component release version parser. All initialized
 sections have exact assembly source and reproducible static-analysis maps.
+
+`xex/BootEdit.md` covers the ImGui boot-theme editor: exact initialized
+sections, function/call/string inventories, and semantic names for theme
+enumeration, editing, save/load feedback, settings application, and selection.
 
 ## BadUpdate baseline and modified stages
 
