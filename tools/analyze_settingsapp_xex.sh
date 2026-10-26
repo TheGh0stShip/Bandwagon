@@ -24,5 +24,7 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" "$image" "$functions" \
     --text-address 0x82020000 --text-size 0x9975c \
     --string-start 0x82000400 --string-end 0x8201a24c \
     --output "$root/analysis/xex/SettingsApp-string-xrefs.json"
+python3 -B "$root/tools/analyze_settingsapp_provenance.py"
+python3 -B "$root/tools/recover_settingsapp_thirdparty_symbols.py"
 
 echo "SettingsApp exact sections and static analysis regenerated"

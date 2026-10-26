@@ -43,6 +43,12 @@ and update surface:
 - display Peer Pressure, kernel, and SMC versions.
 
 Fifteen orchestration/UI functions are semantically named with local evidence
-in `SettingsApp-symbols.json`. The image also contains ImGui/rendering,
-HTTP/networking, JsonCpp, and MSVC support. Those regions are preserved exactly
-but still need upstream-revision and function-level attribution.
+in `SettingsApp-symbols.json`.
+
+`SettingsApp-provenance.json` independently verifies component-local binary
+signatures for the author's declared Dear ImGui 1.86, BearSSL 0.6, and JsonCpp
+`00.11.0` dependencies. `SettingsApp-thirdparty-symbols.json` recovers 24
+JsonCpp and three BearSSL routines from exact function-local diagnostics, TLS
+labels, and one verified parser-wrapper call chain. ImGui/rendering, HTTP, and
+remaining diagnostic-free library functions are preserved exactly but still
+need function-level attribution.

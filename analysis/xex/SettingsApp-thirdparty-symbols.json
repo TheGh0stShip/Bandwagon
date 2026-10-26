@@ -1,0 +1,280 @@
+{
+  "schema": "bandwagon-settingsapp-thirdparty-symbols-v1",
+  "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a",
+  "counts": {
+    "jsoncpp": 24,
+    "bearssl": 3
+  },
+  "symbols": [
+    {
+      "address": "0x820609c8",
+      "recovered_name": "fn_820609C8",
+      "semantic_name": "br_ssl_engine_compute_master",
+      "confidence": "high",
+      "ownership": "BearSSL 0.6",
+      "evidence": [
+        "function-local exact upstream signature: master secret"
+      ]
+    },
+    {
+      "address": "0x82060a48",
+      "recovered_name": "fn_82060A48",
+      "semantic_name": "compute_key_block",
+      "confidence": "high",
+      "ownership": "BearSSL 0.6",
+      "evidence": [
+        "function-local exact upstream signature: key expansion"
+      ]
+    },
+    {
+      "address": "0x82065cc0",
+      "recovered_name": "fn_82065CC0",
+      "semantic_name": "br_ssl_hs_client_run",
+      "confidence": "high",
+      "ownership": "BearSSL 0.6",
+      "evidence": [
+        "function-local exact upstream signature: server finished"
+      ]
+    },
+    {
+      "address": "0x82073430",
+      "recovered_name": "fn_82073430",
+      "semantic_name": "Json::duplicateStringValue",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::duplicateStringValue(): Failed to allocate string value buffer"
+      ]
+    },
+    {
+      "address": "0x820739b8",
+      "recovered_name": "fn_820739B8",
+      "semantic_name": "Json::duplicateAndPrefixStringValue",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::duplicateAndPrefixStringValue(): length too big for prefixing"
+      ]
+    },
+    {
+      "address": "0x82073e90",
+      "recovered_name": "fn_82073E90",
+      "semantic_name": "Json::Value::asCString",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::asCString(): requires stringValue"
+      ]
+    },
+    {
+      "address": "0x82073f28",
+      "recovered_name": "fn_82073F28",
+      "semantic_name": "Json::Value::asString",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Type is not convertible to string"
+      ]
+    },
+    {
+      "address": "0x82074090",
+      "recovered_name": "fn_82074090",
+      "semantic_name": "Json::Value::asInt",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Value is not convertible to Int."
+      ]
+    },
+    {
+      "address": "0x82074290",
+      "recovered_name": "fn_82074290",
+      "semantic_name": "Json::Value::asUInt",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Value is not convertible to UInt."
+      ]
+    },
+    {
+      "address": "0x82074480",
+      "recovered_name": "fn_82074480",
+      "semantic_name": "Json::Value::asInt64",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Value is not convertible to Int64."
+      ]
+    },
+    {
+      "address": "0x82074630",
+      "recovered_name": "fn_82074630",
+      "semantic_name": "Json::Value::asBool",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Value is not convertible to bool."
+      ]
+    },
+    {
+      "address": "0x82074830",
+      "recovered_name": "fn_82074830",
+      "semantic_name": "Json::Value::find",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::find(begin, end): requires objectValue or nullValue"
+      ]
+    },
+    {
+      "address": "0x82075358",
+      "recovered_name": "fn_82075358",
+      "semantic_name": "Json::Value::operator[](ArrayIndex)",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::operator[](ArrayIndex): requires arrayValue"
+      ]
+    },
+    {
+      "address": "0x82075498",
+      "recovered_name": "fn_82075498",
+      "semantic_name": "Json::Value::operator[](int)",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::operator[](int index): index cannot be negative"
+      ]
+    },
+    {
+      "address": "0x82075508",
+      "recovered_name": "fn_82075508",
+      "semantic_name": "Json::Value::resolveReference",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: in Json::Value::resolveReference(key, end): requires objectValue"
+      ]
+    },
+    {
+      "address": "0x820759c8",
+      "recovered_name": "fn_820759C8",
+      "semantic_name": "Json::CharReaderBuilder::setDefaults",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: allowTrailingCommas"
+      ]
+    },
+    {
+      "address": "0x820771d8",
+      "recovered_name": "fn_820771D8",
+      "semantic_name": "Json::OurReader::getLocationLineAndColumn",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Line %d, Column %d"
+      ]
+    },
+    {
+      "address": "0x82078790",
+      "recovered_name": "fn_82078790",
+      "semantic_name": "Json::OurReader::getFormattedErrorMessages",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: See "
+      ]
+    },
+    {
+      "address": "0x8207aae8",
+      "recovered_name": "fn_8207AAE8",
+      "semantic_name": "Json::OurReader::decodeUnicodeEscapeSequence",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Bad unicode escape sequence in string: four digits expected."
+      ]
+    },
+    {
+      "address": "0x8207b010",
+      "recovered_name": "fn_8207B010",
+      "semantic_name": "Json::OurReader::decodeUnicodeCodePoint",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: additional six characters expected to parse unicode surrogate pair."
+      ]
+    },
+    {
+      "address": "0x8207b430",
+      "recovered_name": "fn_8207B430",
+      "semantic_name": "Json::OurReader::decodeString",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Empty escape sequence in string"
+      ]
+    },
+    {
+      "address": "0x8207b708",
+      "recovered_name": "fn_8207B708",
+      "semantic_name": "Json::OurReader::readObject",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Missing '}' or object member name"
+      ]
+    },
+    {
+      "address": "0x8207bb40",
+      "recovered_name": "fn_8207BB40",
+      "semantic_name": "Json::OurReader::readArray",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Missing ',' or ']' in array declaration"
+      ]
+    },
+    {
+      "address": "0x8207be68",
+      "recovered_name": "fn_8207BE68",
+      "semantic_name": "Json::CharReaderBuilder::newCharReader",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: collectComments"
+      ]
+    },
+    {
+      "address": "0x8207c010",
+      "recovered_name": "fn_8207C010",
+      "semantic_name": "Json::OurReader::readValue",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Exceeded stackLimit in readValue()."
+      ]
+    },
+    {
+      "address": "0x8207c308",
+      "recovered_name": "fn_8207C308",
+      "semantic_name": "Json::OurReader::parse",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "function-local exact upstream signature: Extra non-whitespace after JSON value."
+      ]
+    },
+    {
+      "address": "0x8207c4e8",
+      "recovered_name": "fn_8207C4E8",
+      "semantic_name": "Json::OurCharReader::parse",
+      "confidence": "high",
+      "ownership": "JsonCpp 00.11.0",
+      "evidence": [
+        "calls recovered OurReader::parse and OurReader::getFormattedErrorMessages"
+      ]
+    }
+  ]
+}

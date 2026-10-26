@@ -1,0 +1,54 @@
+{
+  "schema": "bandwagon-settingsapp-provenance-v1",
+  "image": "analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe",
+  "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a",
+  "author_attribution": {
+    "repository": "https://github.com/grimdoomer/Xbox360PeerPressure",
+    "commit": "df524f050db795d6212128e3a4b0c5904ac764e1",
+    "file": "ATTRIBUTION.md"
+  },
+  "libraries": [
+    {
+      "name": "Dear ImGui",
+      "version": "1.86",
+      "license": "MIT",
+      "upstream": "https://github.com/ocornut/imgui/tree/v1.86",
+      "binary_signatures": [
+        "1.86",
+        "imgui.ini",
+        "imgui_impl_xbox360",
+        "imgui_impl_dx9"
+      ],
+      "all_binary_signatures_present": true
+    },
+    {
+      "name": "BearSSL",
+      "version": "0.6",
+      "license": "MIT",
+      "upstream": "https://bearssl.org/",
+      "tag_commit": "8ef7680081c61b486622f2d983c0d3d21e83caad",
+      "binary_signatures": [
+        "master secret",
+        "key expansion",
+        "server finished",
+        "client finished"
+      ],
+      "all_binary_signatures_present": true
+    },
+    {
+      "name": "JsonCpp",
+      "version": "00.11.0",
+      "license": "MIT",
+      "upstream": "https://github.com/open-source-parsers/jsoncpp/tree/00.11.0",
+      "tag_commit": "7c186e549fba358ac0541ed75f5a524b393954b3",
+      "binary_signatures": [
+        "allowTrailingCommas",
+        "rejectDupKeys",
+        "skipBom",
+        "additional six characters expected to parse unicode surrogate pair."
+      ],
+      "all_binary_signatures_present": true
+    }
+  ],
+  "scope": "component-local binary evidence plus author-declared project versions"
+}
