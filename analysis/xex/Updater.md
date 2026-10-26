@@ -30,6 +30,24 @@ Assembling it reproduces SHA-256
 `3a2f4088b82f70165888a152480c3bb0d4543fa0e3503cea03ac476194aa5022`
 exactly. All 376 recovered function boundaries are represented by labels.
 
+[`Updater.nontext.reconstructed.S`](../reconstruction/Updater.nontext.reconstructed.S)
+is the corresponding buildable reconstruction of every initialized non-code
+application section present in the extracted in-memory image:
+
+| Section | Virtual address | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `.rdata` | `0x98000400` | 16,268 | `fe5608061c679e1fc88197515ba6e331c590d06eab9a047a582b63cd50cc76b7` |
+| `.pdata` | `0x98004400` | 2,000 | `81ef6b4dc5d6ad9cf7ae1572fd6139bef247cc01aeb1180ff6221080ccb52406` |
+| `.data` | `0x9801b000` | 7,576 | `b66413e91afc0719c718c42e2910fce11db16d8d7ab7f7999405b468da631b0a` |
+
+`tools/reconstruct_xex_nontext.py` derives these ranges from the PE section
+table, regenerates the assembly, and can assemble and compare all three ranges
+with `--check --verify-bytes`. This covers constants, exception metadata, and
+initialized writable state. It does not claim the later `.edata`, `.idata`,
+`.XBLD`, or `.reloc` virtual sections: the extracted image ends at `0x1d000`,
+where those section ranges begin, so they require evidence from the XEX loader
+metadata or another extraction route rather than invented bytes.
+
 The final `.text` function falls through exactly at the section boundary.
 Upstream jeff currently rejects that valid terminal case. The narrowly scoped
 patch in `patches/jeff-terminal-section-fallthrough.patch` permits only an
@@ -91,5 +109,5 @@ should preserve unintentionally.
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
 expand semantic names and types across the remaining application functions,
-recover `.rdata` and `.data`, and separate bundled runtime/library code from
-Peer-authored code.
+decode the reconstructed data structures, recover the loader-only metadata,
+and separate bundled runtime/library code from Peer-authored code.

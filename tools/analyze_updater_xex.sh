@@ -64,5 +64,8 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" \
     --string-start 0x98000400 \
     --string-end 0x98004400 \
     --output "$root/analysis/xex/Updater-string-xrefs.json"
+python3 -B "$root/tools/reconstruct_xex_nontext.py" \
+    "$root/analysis/xex/basefiles/Updater.pe" \
+    "$root/analysis/reconstruction/Updater.nontext.reconstructed.S"
 
-echo "Updater function map, string xrefs, and exact text reconstruction regenerated"
+echo "Updater function map, string xrefs, and exact section reconstructions regenerated"
