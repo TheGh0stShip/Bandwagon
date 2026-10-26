@@ -253,6 +253,14 @@ headers and exact payload bytes, requires the `0xffffffff` sentinel to be the
 final word, and reproduces the address expansion
 `raw | ((raw & 0x00030000) << 17)` used by the Stage4 instructions.
 
+`reconstruction/stage4/maintenance_helpers.cpp` reconstructs the two remaining
+resident maintenance algorithms without calling privileged addresses. Its
+pair-table parser emits the exact mapped-word value, derived halfword-table
+byte offset, and flush address for every entry. Its range planner preserves
+the low-word signed comparison and post-tested loop: counts zero and one, and
+all values interpreted as negative, execute once; positive counts above one
+execute exactly that many iterations from `0x80040000` in `0x10000` steps.
+
 ## Entry and exit summary
 
 The resident entry is a mode-controlled HV maintenance/patch routine. Mode
