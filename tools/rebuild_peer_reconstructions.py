@@ -21,6 +21,8 @@ STAGE2_SOURCE = ROOT / "analysis/reconstruction/PeerPressureExploit-Stage2.recon
 STAGE2_REFERENCE = ROOT / "Hdd/PeerPressureExploit-Stage2.bin"
 HDD_SECURITY_SOURCE = ROOT / "analysis/reconstruction/HddSecuritySectorPayload.reconstructed.S"
 HDD_SECURITY_REFERENCE = ROOT / "Hdd/HddSecuritySectorPayload.bin"
+FLASH_DMA_SOURCE = ROOT / "analysis/reconstruction/FlashDmaPayload.reconstructed.S"
+FLASH_DMA_REFERENCE = ROOT / "Flash/FlashDmaPayload.bin"
 
 STAGE3_RANGES = (
     (0x000, 0x0F8, "Peer Stage3 entry point and alignment"),
@@ -83,10 +85,17 @@ def main() -> None:
         stage3_output = temporary_path / "stage3-regions.bin"
         stage2_output = temporary_path / "stage2.bin"
         hdd_security_output = temporary_path / "hdd-security.bin"
+        flash_dma_output = temporary_path / "flash-dma.bin"
         assemble(STAGE4_SOURCE, stage4_output, llvm_mc, llvm_objcopy)
         assemble(STAGE3_SOURCE, stage3_output, llvm_mc, llvm_objcopy)
         assemble(STAGE2_SOURCE, stage2_output, llvm_mc, llvm_objcopy)
         assemble(HDD_SECURITY_SOURCE, hdd_security_output, llvm_mc, llvm_objcopy)
+        assemble(FLASH_DMA_SOURCE, flash_dma_output, llvm_mc, llvm_objcopy)
+
+        flash_dma_built = flash_dma_output.read_bytes()
+        flash_dma_reference = FLASH_DMA_REFERENCE.read_bytes()
+        if flash_dma_built != flash_dma_reference:
+            raise SystemExit("Flash DMA payload reconstruction mismatch")
 
         hdd_security_built = hdd_security_output.read_bytes()
         hdd_security_reference = HDD_SECURITY_REFERENCE.read_bytes()
@@ -161,6 +170,13 @@ def main() -> None:
 
         result = {
             "assembler_target": "powerpc64-unknown-linux-gnu (big-endian)",
+            "flash_dma": {
+                "source": str(FLASH_DMA_SOURCE.relative_to(ROOT)),
+                "reference": str(FLASH_DMA_REFERENCE.relative_to(ROOT)),
+                "size": len(flash_dma_built),
+                "sha256": sha256(flash_dma_built),
+                "whole_file_byte_identical": True,
+            },
             "hdd_security_sector": {
                 "source": str(HDD_SECURITY_SOURCE.relative_to(ROOT)),
                 "reference": str(HDD_SECURITY_REFERENCE.relative_to(ROOT)),
@@ -196,6 +212,10 @@ def main() -> None:
     if args.json:
         print(json.dumps(result, indent=2))
     else:
+        print(
+            "Flash DMA payload: exact whole-file rebuild, "
+            f"{result['flash_dma']['size']} bytes, SHA-256 {result['flash_dma']['sha256']}"
+        )
         print(
             "HDD security sector payload: exact whole-file rebuild, "
             f"{result['hdd_security_sector']['size']} bytes, "

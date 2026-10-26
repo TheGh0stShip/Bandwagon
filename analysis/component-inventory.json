@@ -5,17 +5,16 @@
   "status_counts": {
     "binary_asset": 1,
     "exact_initialized_source": 6,
-    "exact_whole_file_source": 3,
+    "exact_whole_file_source": 4,
     "human_readable_data": 1,
     "human_readable_source": 3,
     "lossless_structured_source": 7,
     "provenance_only": 1,
     "public_baseline_identical": 3,
     "reference_binary_only": 6,
-    "unresolved": 2
+    "unresolved": 1
   },
   "unresolved_peer_payloads": [
-    "Flash\\FlashDmaPayload.bin",
     "PeerPressure\\System\\KernelExpansion.bin"
   ],
   "entries": [
@@ -78,9 +77,9 @@
       "size": 16384,
       "sha1": "fe3edae1bd416c66bdc04871616fe7bcf9b4285b",
       "sha256": "d3c73c043eb6e679b9b598caaf5b39c108bedaabbc48fe5ac2211ac7d50cac2d",
-      "category": "peer_raw_payload",
-      "status": "unresolved",
-      "evidence": null
+      "category": "peer_rop_and_data",
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/flash-dma/FlashDmaPayload.md"
     },
     {
       "path": "Flash\\Jasper_SmcCode.bin",

@@ -1,0 +1,21 @@
+{
+  "schema": "bandwagon-flash-dma-map-v1",
+  "input": "Flash/FlashDmaPayload.bin",
+  "load_address": "0x801ca000",
+  "size": 16384,
+  "sha256": "d3c73c043eb6e679b9b598caaf5b39c108bedaabbc48fe5ac2211ac7d50cac2d",
+  "architecture": "PowerPC64 big-endian ROP/data image",
+  "contains_sequential_code": false,
+  "regions": [
+    {"start": "0x0000", "end": "0x01f0", "kind": "zero_fill"},
+    {"start": "0x01f0", "end": "0x01fc", "kind": "stack_switch_record"},
+    {"start": "0x0250", "end": "0x0dfc", "kind": "sparse_rop_frames"},
+    {"start": "0x0e00", "end": "0x0e70", "kind": "smc_dma_control_data"},
+    {"start": "0x1400", "end": "0x1418", "kind": "dma_descriptor_words"},
+    {"start": "0x1600", "end": "0x1800", "kind": "scratch_sector_0x41"}
+  ],
+  "unresolved_kernel_globals": ["0x801c7f80", "0x801a614c"],
+  "reconstruction": "analysis/reconstruction/FlashDmaPayload.reconstructed.S",
+  "generator": "tools/reconstruct_flash_dma_payload.py",
+  "whole_file_byte_identical": true
+}
