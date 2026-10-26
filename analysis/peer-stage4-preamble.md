@@ -261,6 +261,12 @@ the low-word signed comparison and post-tested loop: counts zero and one, and
 all values interpreted as negative, execute once; positive counts above one
 execute exactly that many iterations from `0x80040000` in `0x10000` steps.
 
+`reconstruction/stage4/entry_flow.cpp` joins those helpers into a portable
+model of the top-level mode dispatch. It records mode 0's SMC prefix, clean-HV
+source/destination/count, and patch-stream offset; mode 1's initial `0x20` bit
+clear and pair-table call; mode 2's range plan; the no-op default; and the
+common `0x41414141` return marker. It performs none of the privileged calls.
+
 ## Entry and exit summary
 
 The resident entry is a mode-controlled HV maintenance/patch routine. Mode
