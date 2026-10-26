@@ -1,0 +1,67 @@
+{
+  "schema": "bandwagon-updater-source-attribution-v1",
+  "image_sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+  "ranges": [
+    {
+      "start": "0x98005000",
+      "end_exclusive": "0x98008010",
+      "classification": "Peer-authored application and compiler-emitted C++ template instantiations",
+      "confidence": "high",
+      "evidence": [
+        "contains all SoftmodData, manifest, extraction, phase-two, HDD bootstrap, and update-orchestration diagnostics",
+        "directly calls miniz API functions and Xbox kernel imports",
+        "ends immediately before the standalone C++ support block"
+      ],
+      "caveat": "Individual std::string/std::vector template bodies in this range were emitted on behalf of Peer translation units and are not original algorithmic code."
+    },
+    {
+      "start": "0x98008010",
+      "end_exclusive": "0x98008d68",
+      "classification": "MSVC C++ standard-library and exception support",
+      "confidence": "high",
+      "evidence": [
+        "bad allocation, unknown exception, string, and vector failure paths",
+        "allocation/deallocation and exception helper call patterns",
+        "no Peer-specific data references"
+      ]
+    },
+    {
+      "start": "0x98008d68",
+      "end_exclusive": "0x9800d130",
+      "classification": "miniz compression and ZIP library",
+      "confidence": "high",
+      "evidence": [
+        "the first function has the size and state-machine shape of tinfl_decompress",
+        "contains the full miniz ZIP reader call chain",
+        "mz_zip_get_error_string at 0x9800c270 exactly contains the miniz 3.x ordered error table",
+        "application functions call this range only through miniz-compatible APIs"
+      ],
+      "version_evidence": {
+        "proven_family": "miniz 3.x",
+        "oldest_matching_release": "3.0.0",
+        "latest_release preceding Updater timestamp": "3.1.2",
+        "exact_revision": null,
+        "note": "The TOTAL_ERRORS and corrected WRITE_CALLBACK_FAILED strings rule out 2.x. No observed literal uniquely distinguishes miniz 3.0.0 through 3.1.2, so an exact revision is not asserted."
+      }
+    },
+    {
+      "start": "0x9800d130",
+      "end_exclusive": "0x9801a740",
+      "classification": "Xbox/MSVC startup, CRT, unwind, math, and compiler support",
+      "confidence": "medium",
+      "evidence": [
+        "begins at the PE entry point",
+        "contains __savegprlr/__restgprlr and compiler floating-point diagnostics",
+        "terminates at the first named Xbox import thunk"
+      ],
+      "caveat": "This broad block still needs function-level attribution; startup can reference Peer globals even when supplied by the platform toolchain."
+    },
+    {
+      "start": "0x9801a740",
+      "end_exclusive": "0x9801aa40",
+      "classification": "Xbox kernel and XAM import thunks plus terminal padding",
+      "confidence": "high",
+      "evidence": ["48 thunks are named from XEX import metadata", "fixed indirect-branch thunk pattern"]
+    }
+  ]
+}

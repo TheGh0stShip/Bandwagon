@@ -3,6 +3,27 @@
   "image_sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
   "symbols": [
     {
+      "address": "0x98005140",
+      "recovered_name": "fn_98005140",
+      "semantic_name": "ZipArchive_ExtractToBuffer",
+      "confidence": "high",
+      "evidence": ["calls mz_zip_reader_locate_file and mz_zip_reader_extract_to_mem", "accepts caller buffer, capacity, and optional extracted-size output"]
+    },
+    {
+      "address": "0x98005280",
+      "recovered_name": "fn_98005280",
+      "semantic_name": "ZipArchive_ExtractToHeap",
+      "confidence": "high",
+      "evidence": ["locates an archive member, allocates its uncompressed size, then calls mz_zip_reader_extract_to_mem", "returns allocated pointer and size through output parameters"]
+    },
+    {
+      "address": "0x98005eb0",
+      "recovered_name": "fn_98005EB0",
+      "semantic_name": "SoftmodData_LoadManifest",
+      "confidence": "high",
+      "evidence": ["extracts softmod.manifest through ZipArchive_ExtractToHeap", "parses and validates the manifest records used by later file lookup"]
+    },
+    {
       "address": "0x980062c8",
       "recovered_name": "fn_980062C8",
       "semantic_name": "SoftmodData_LoadArchive",
@@ -12,16 +33,16 @@
     {
       "address": "0x980064b8",
       "recovered_name": "fn_980064B8",
-      "semantic_name": "SoftmodData_ReadArchivedFile",
+      "semantic_name": "SoftmodData_FindFile",
       "confidence": "high",
-      "evidence": ["archive-member lookup diagnostic at 0x980005f8", "called with the Stage2 archive path, output buffer, size, and bytes-read pointer"]
+      "evidence": ["searches parsed manifest records and compares the requested path", "returns the matching record containing the Stage2 size and integrity metadata"]
     },
     {
       "address": "0x98006ce0",
       "recovered_name": "fn_98006CE0",
       "semantic_name": "GetSoftmodDataContext",
       "confidence": "medium",
-      "evidence": ["returns the object subsequently passed to SoftmodData_ReadArchivedFile", "the object field at +0x80 becomes the Stage2 manifest header field at +4"]
+      "evidence": ["returns the object subsequently passed to SoftmodData_FindFile", "the object field at +0x80 becomes the Stage2 manifest header field at +4"]
     },
     {
       "address": "0x98006d40",
@@ -43,6 +64,41 @@
       "semantic_name": "RunUpdate",
       "confidence": "high",
       "evidence": ["owns the Loading update data, Updating HDD payload, Extracting, and Finalizing progress states", "coordinates PeerPressure/ extraction and the HDD bootstrap install"]
+    },
+    {
+      "address": "0x9800b560",
+      "recovered_name": "fn_9800B560",
+      "semantic_name": "mz_zip_reader_init_mem",
+      "confidence": "high",
+      "evidence": ["called by SoftmodData_LoadArchive with archive pointer and length", "return and state use match the upstream miniz memory-reader initializer"]
+    },
+    {
+      "address": "0x9800bee0",
+      "recovered_name": "fn_9800BEE0",
+      "semantic_name": "mz_zip_reader_locate_file",
+      "confidence": "high",
+      "evidence": ["called by SoftmodData_ReadArchivedFile with archive state and member path", "negative return selects the archive-member-not-found diagnostic"]
+    },
+    {
+      "address": "0x9800c248",
+      "recovered_name": "fn_9800C248",
+      "semantic_name": "mz_zip_get_last_error",
+      "confidence": "high",
+      "evidence": ["40-byte accessor called immediately before mz_zip_get_error_string", "field access and null behavior match upstream miniz"]
+    },
+    {
+      "address": "0x9800c270",
+      "recovered_name": "fn_9800C270",
+      "semantic_name": "mz_zip_get_error_string",
+      "confidence": "high",
+      "evidence": ["contains the complete ordered miniz 3.x ZIP error string table", "switch behavior and fallback string match upstream miniz"]
+    },
+    {
+      "address": "0x9800c450",
+      "recovered_name": "fn_9800C450",
+      "semantic_name": "mz_zip_reader_extract_to_mem",
+      "confidence": "high",
+      "evidence": ["called with archive state, located file index, destination, and destination size", "80-byte forwarding wrapper matches the upstream miniz API shape"]
     }
   ]
 }

@@ -45,7 +45,10 @@ files. They are retained under both names to preserve provenance.
 decompilation pipeline recovers 376 Updater code symbols, including 48 named
 kernel import thunks, and emits a machine-readable address inventory. The
 entire 88,640-byte Updater `.text` section now has a buildable, byte-identical
-assembly reconstruction.
+assembly reconstruction. Its initialized `.rdata`, `.pdata`, and `.data`
+sections are also exactly reconstructable. Reproducible call/string graphs,
+source attribution, semantic symbols, and a portable tested reconstruction of
+the Stage2 bootstrap-record builder are tracked alongside it.
 
 ## BadUpdate baseline and modified stages
 

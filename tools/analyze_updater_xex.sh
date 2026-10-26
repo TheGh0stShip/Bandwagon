@@ -74,5 +74,10 @@ python3 -B "$root/tools/analyze_ppc_calls.py" \
 python3 -B "$root/tools/reconstruct_xex_nontext.py" \
     "$root/analysis/xex/basefiles/Updater.pe" \
     "$root/analysis/reconstruction/Updater.nontext.reconstructed.S"
+python3 -B "$root/tools/validate_updater_analysis.py" \
+    "$root/analysis/xex" \
+    "$root/analysis/xex/basefiles/Updater.pe" \
+    --text-address 0x98005000 \
+    --text-size 0x15a40
 
 echo "Updater function map, string xrefs, and exact section reconstructions regenerated"

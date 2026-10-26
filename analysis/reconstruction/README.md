@@ -40,4 +40,12 @@ or reconstructed payload.
 `.text` section exactly. It carries labels for the 376 boundaries recovered by
 the pinned jeff analysis. `tools/reconstruct_xex_text.py --check` independently
 regenerates the assembly and enforces byte identity against the extracted PE
-image. Semantic naming and non-code sections remain in progress.
+image. `Updater.nontext.reconstructed.S` additionally rebuilds the initialized
+`.rdata`, `.pdata`, and `.data` virtual ranges byte-for-byte; verify those with
+`tools/reconstruct_xex_nontext.py --check --verify-bytes`.
+
+The portable C++ in `reconstruction/updater/bootstrap_record.*` is the first
+reviewable high-level replacement extracted from the Updater. It reconstructs
+the record-building half of `InstallHddBootstrap` without exposing host raw-disk
+I/O. The original binary writes uninitialized final-sector padding; the open
+replacement intentionally zeroes that padding and tests the deviation.

@@ -27,6 +27,12 @@ symbols, is in [`Updater-symbols.json`](Updater-symbols.json).
 branch-and-link call sites, 967 of which resolve exactly to a recovered function
 entry. Indirect virtual calls and `bctrl` import patterns are intentionally not
 guessed; each edge retains its instruction and target address for review.
+[`Updater-source-attribution.json`](Updater-source-attribution.json) partitions
+the entire `.text` range into contiguous application, standard-library, miniz,
+CRT, and import regions, with evidence and confidence recorded per range.
+`tools/validate_updater_analysis.py` checks these artifacts against the same PE
+digest and rejects unmapped symbols, invalid callers, duplicate addresses, or
+any attribution gap/overlap.
 
 [`Updater.text.reconstructed.S`](../reconstruction/Updater.text.reconstructed.S)
 is a complete buildable reconstruction of the 88,640-byte `.text` section.
@@ -73,6 +79,24 @@ Static strings and call targets establish these major responsibilities:
 - report and preserve explicit failure states for archive, allocation, file,
   and raw-disk operations.
 
+## Source attribution
+
+The range `0x98008d68`–`0x9800d130` is embedded miniz. Five externally used
+functions are now named at high confidence: `mz_zip_reader_init_mem`,
+`mz_zip_reader_locate_file`, `mz_zip_get_last_error`,
+`mz_zip_get_error_string`, and `mz_zip_reader_extract_to_mem`. The complete
+ordered error table in `mz_zip_get_error_string` includes `TOTAL_ERRORS` and
+the corrected `WRITE_CALLBACK_FAILED` text. That proves a miniz 3.x family
+version and rules out the 2.x releases checked. The literals do not distinguish
+3.0.0 through 3.1.2, so the exact upstream revision remains deliberately
+unclaimed.
+
+The Peer application and its compiler-emitted `std::string`/`std::vector`
+instantiations occupy `0x98005000`–`0x98008010`. MSVC library/exception support
+follows through `0x98008d68`; platform startup and CRT code begins at the PE
+entry point `0x9800d130`; named import thunks begin at `0x9801a740`. The broad
+CRT range remains medium-confidence pending function-level attribution.
+
 ### Stage2 HDD bootstrap record
 
 `fn_98006D40` is identified at high confidence as `InstallHddBootstrap`. Its
@@ -109,6 +133,12 @@ the rounded write length. Unless the allocator itself returns cleared memory,
 the final partial sector therefore contains stale allocation data. This is a
 faithful description of the closed binary, not behavior an open reimplementation
 should preserve unintentionally.
+
+`reconstruction/updater/bootstrap_record.cpp` is a portable, tested high-level
+reconstruction of this record builder. It preserves the header, checksum
+ordering, bounds, alignment, and byte order while deliberately zeroing the
+closed binary's uninitialized sector tail. Physical-disk opening and writing
+remain isolated to the Xbox-specific layer and are not exercised by host tests.
 
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
