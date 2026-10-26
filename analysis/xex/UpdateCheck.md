@@ -55,3 +55,9 @@ the modern `OurReader` parse core, `CharReaderBuilder` construction, and core
 signature to remain attached to the expected function, preventing silent name
 drift when the inventories are regenerated. Broader byte-level matching of
 diagnostic-free JsonCpp functions remains pending.
+
+Three BearSSL functions are also recovered directly from unique TLS labels:
+`br_ssl_engine_compute_master`, its static `compute_key_block` helper, and the
+large T0-generated `br_ssl_hs_client_run` interpreter. Their labels and
+function shapes match the BearSSL 0.6 source at tag commit
+`8ef7680081c61b486622f2d983c0d3d21e83caad`.

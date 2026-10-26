@@ -43,6 +43,12 @@ DERIVED = {
     ),
 }
 
+BEARSSL = {
+    0x91A11200: ("br_ssl_engine_compute_master", "master secret"),
+    0x91A11280: ("compute_key_block", "key expansion"),
+    0x91A164F8: ("br_ssl_hs_client_run", "server finished"),
+}
+
 APPLICATION = [
     {
         "address": "0x91a0c3e8", "recovered_name": "fn_91A0C3E8",
@@ -88,14 +94,24 @@ def main() -> None:
             "evidence": [evidence, "control flow agrees with the upstream virtual parse wrapper"],
         })
 
+    bearssl = []
+    for address, (name, signature) in BEARSSL.items():
+        if signature not in by_function.get(address, set()):
+            raise SystemExit(f"{address:#x}: missing expected BearSSL signature {signature!r}")
+        bearssl.append({
+            "address": f"0x{address:08x}", "recovered_name": original[address],
+            "semantic_name": name, "confidence": "high", "ownership": "BearSSL 0.6",
+            "evidence": [f"references exact upstream TLS label: {signature}", "function size and role agree with BearSSL 0.6 source"],
+        })
+
     result = {
         "schema": "bandwagon-updatecheck-semantic-symbols-v2",
         "image_sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece",
-        "symbols": APPLICATION + recovered,
-        "counts": {"peer_application": len(APPLICATION), "jsoncpp": len(recovered)},
+        "symbols": APPLICATION + recovered + bearssl,
+        "counts": {"peer_application": len(APPLICATION), "jsoncpp": len(recovered), "bearssl": len(bearssl)},
     }
     OUTPUT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    print(f"UpdateCheck symbols: {len(APPLICATION)} Peer and {len(recovered)} JsonCpp routines")
+    print(f"UpdateCheck symbols: {len(APPLICATION)} Peer, {len(recovered)} JsonCpp, and {len(bearssl)} BearSSL routines")
 
 
 if __name__ == "__main__":

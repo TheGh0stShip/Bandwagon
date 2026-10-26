@@ -266,10 +266,44 @@
         "calls recovered OurReader::parse and OurReader::getFormattedErrorMessages",
         "control flow agrees with the upstream virtual parse wrapper"
       ]
+    },
+    {
+      "address": "0x91a11200",
+      "recovered_name": "fn_91A11200",
+      "semantic_name": "br_ssl_engine_compute_master",
+      "confidence": "high",
+      "ownership": "BearSSL 0.6",
+      "evidence": [
+        "references exact upstream TLS label: master secret",
+        "function size and role agree with BearSSL 0.6 source"
+      ]
+    },
+    {
+      "address": "0x91a11280",
+      "recovered_name": "fn_91A11280",
+      "semantic_name": "compute_key_block",
+      "confidence": "high",
+      "ownership": "BearSSL 0.6",
+      "evidence": [
+        "references exact upstream TLS label: key expansion",
+        "function size and role agree with BearSSL 0.6 source"
+      ]
+    },
+    {
+      "address": "0x91a164f8",
+      "recovered_name": "fn_91A164F8",
+      "semantic_name": "br_ssl_hs_client_run",
+      "confidence": "high",
+      "ownership": "BearSSL 0.6",
+      "evidence": [
+        "references exact upstream TLS label: server finished",
+        "function size and role agree with BearSSL 0.6 source"
+      ]
     }
   ],
   "counts": {
     "peer_application": 2,
-    "jsoncpp": 22
+    "jsoncpp": 22,
+    "bearssl": 3
   }
 }
