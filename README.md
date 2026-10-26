@@ -22,6 +22,8 @@ The public BadUpdate source baseline is pinned as the
 - Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
 - Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
   reconstructions.
+- Updater's complete 88,640-byte PowerPC `.text` section has a labeled,
+  byte-identical assembly reconstruction.
 
 Exact reconstruction of the remaining executable functions, imports, types,
 globals, control flow, raw stage payloads, and SMC firmware is still in

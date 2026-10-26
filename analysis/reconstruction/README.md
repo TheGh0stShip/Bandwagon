@@ -33,3 +33,11 @@ python3 -B tools/rebuild_peer_reconstructions.py
 The verifier assembles for `powerpc64-unknown-linux-gnu`, extracts `.text`, and
 compares the entire Stage3 and Stage4 outputs. It never executes an Xbox binary
 or reconstructed payload.
+
+## Updater
+
+`Updater.text.reconstructed.S` rebuilds all 88,640 bytes of Updater's PowerPC
+`.text` section exactly. It carries labels for the 376 boundaries recovered by
+the pinned jeff analysis. `tools/reconstruct_xex_text.py --check` independently
+regenerates the assembly and enforces byte identity against the extracted PE
+image. Semantic naming and non-code sections remain in progress.

@@ -43,7 +43,9 @@ files. They are retained under both names to preserve provenance.
 
 `xex/Updater.md` records the first full XEX function-boundary pass. The pinned
 decompilation pipeline recovers 376 Updater code symbols, including 48 named
-kernel import thunks, and emits a machine-readable address inventory.
+kernel import thunks, and emits a machine-readable address inventory. The
+entire 88,640-byte Updater `.text` section now has a buildable, byte-identical
+assembly reconstruction.
 
 ## BadUpdate baseline and modified stages
 

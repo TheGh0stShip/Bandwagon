@@ -47,5 +47,12 @@ python3 -B "$root/tools/parse_xbox_coff_symbols.py" \
     --section-end 0x15a40 \
     --source-label third_party/artifacts/updater-dtk/auto_02_98005000_text.obj \
     --output "$root/analysis/xex/Updater-functions.json"
+python3 -B "$root/tools/reconstruct_xex_text.py" \
+    "$root/analysis/xex/basefiles/Updater.pe" \
+    "$root/analysis/xex/Updater-functions.json" \
+    "$root/analysis/reconstruction/Updater.text.reconstructed.S" \
+    --raw-offset 0x5000 \
+    --size 0x15a40 \
+    --source-label Updater.xex:.text
 
-echo "Updater function map regenerated"
+echo "Updater function map and exact text reconstruction regenerated"

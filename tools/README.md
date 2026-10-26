@@ -65,9 +65,15 @@ python3 -B tools/regenerate_stage3_generated.py --check
 ```
 
 `analyze_updater_xex.sh` builds the pinned jeff submodule with a temporary,
-documented terminal-section fix, recovers the Updater XEX function map, and
-restores the submodule before exiting:
+documented terminal-section fix, recovers the Updater XEX function map,
+regenerates its exact `.text` assembly, and restores the submodule before
+exiting:
 
 ```sh
 bash tools/analyze_updater_xex.sh
 ```
+
+`reconstruct_xex_text.py` can also regenerate or check a mapped XEX text
+section directly. It batch-decodes big-endian PowerPC instructions, preserves
+invalid/data words losslessly, emits recovered function labels, assembles the
+result, and requires byte identity with the selected PE section.

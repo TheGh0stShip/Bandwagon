@@ -19,6 +19,12 @@ expands them to 376 code symbols through control-flow analysis. It also names
 48 kernel import thunks. The complete address inventory is in
 [`Updater-functions.json`](Updater-functions.json).
 
+[`Updater.text.reconstructed.S`](../reconstruction/Updater.text.reconstructed.S)
+is a complete buildable reconstruction of the 88,640-byte `.text` section.
+Assembling it reproduces SHA-256
+`3a2f4088b82f70165888a152480c3bb0d4543fa0e3503cea03ac476194aa5022`
+exactly. All 376 recovered function boundaries are represented by labels.
+
 The final `.text` function falls through exactly at the section boundary.
 Upstream jeff currently rejects that valid terminal case. The narrowly scoped
 patch in `patches/jeff-terminal-section-fallthrough.patch` permits only an
@@ -40,7 +46,8 @@ Static strings and call targets establish these major responsibilities:
 - report and preserve explicit failure states for archive, allocation, file,
   and raw-disk operations.
 
-This is an address-level recovery milestone, not yet a source-complete claim.
-The next Updater phase is to assign semantic names and types to its application
-functions, reconstruct the Stage2 mutation algorithm, and produce matching
-source for the non-library code.
+The executable code section is now exactly reconstructable, but this is not
+yet a source-complete claim for the application. The next Updater phase is to
+assign semantic names and types to its application functions, reconstruct the
+Stage2 mutation algorithm, recover `.rdata` and `.data`, and separate bundled
+runtime/library code from Peer-authored code.
