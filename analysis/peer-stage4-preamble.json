@@ -13,7 +13,7 @@
       "sha256": "25a75b533b110973ea1b94967bf0dff1bbb82e621fa145f12b7862f1e13d3cc9"
     },
     "clean_hv": {
-      "path": "/tmp/peerpressure-badupdate-source/Stage4/Stage4_CleanHvData_Retail_17559.bin",
+      "path": "third_party/Xbox360BadUpdate/Stage4/Stage4_CleanHvData_Retail_17559.bin",
       "size": 65536,
       "sha256": "3764ec2a48529924b1422b4e19eaada348cb5a2f9fde310a94b75d332c601b47"
     }
@@ -421,8 +421,12 @@
     {
       "file_range": "0x62c-0x73c",
       "effective_va_range": "0x6000320b8-0x6000321c8",
-      "kind": "hypothesized RSA public-key structure; not source-identified",
-      "sha256": "b58029bc56b33f13712f24577791410aaefc4656d6308fec82232af856c172c2"
+      "kind": "XECRYPT_RSAPUB_2048 structure; key identity not source-identified",
+      "sha256": "b58029bc56b33f13712f24577791410aaefc4656d6308fec82232af856c172c2",
+      "qword_count": 32,
+      "public_exponent": 3,
+      "reserved_qword": "0x0000000000000000",
+      "modulus_sha256": "056cf89e3a2fae21e6f7ab4b1898e296dabc65cc41f25dde558ecb81a68c7a86"
     },
     {
       "file_range": "0x73c-0x74c",

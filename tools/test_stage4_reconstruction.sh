@@ -38,4 +38,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/copied_continuation_test"
 "$work/copied_continuation_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/stage4/rsa_public_key.cpp" \
+    "$root/reconstruction/stage4/rsa_public_key_test.cpp" \
+    -o "$work/rsa_public_key_test"
+"$work/rsa_public_key_test"
+
 echo "Stage4 portable reconstruction tests passed"

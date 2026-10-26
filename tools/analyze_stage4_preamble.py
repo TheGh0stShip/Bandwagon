@@ -289,6 +289,11 @@ def main() -> None:
         raise ValueError("Peer reserved data 0x308-0x380 is not all zero")
     if any(peer[0x750:0x780]):
         raise ValueError("Peer preamble padding 0x750-0x780 is not all zero")
+    rsa_public = peer[0x62C:0x73C]
+    if u32be(rsa_public, 0) != 0x20:
+        raise ValueError("copied RSA public key does not declare 0x20 qwords")
+    if int.from_bytes(rsa_public[8:16], "big") != 0:
+        raise ValueError("copied RSA public key reserved qword is not zero")
 
     patch_records = parse_patch_stream(peer)
     nodes, edges = build_cfg(peer)
@@ -394,8 +399,12 @@ def main() -> None:
             {
                 "file_range": "0x62c-0x73c",
                 "effective_va_range": "0x6000320b8-0x6000321c8",
-                "kind": "hypothesized RSA public-key structure; not source-identified",
+                "kind": "XECRYPT_RSAPUB_2048 structure; key identity not source-identified",
                 "sha256": sha256(peer[0x62C:0x73C]),
+                "qword_count": u32be(rsa_public, 0),
+                "public_exponent": u32be(rsa_public, 4),
+                "reserved_qword": f"0x{int.from_bytes(rsa_public[8:16], 'big'):016x}",
+                "modulus_sha256": sha256(rsa_public[0x10:0x110]),
             },
             {
                 "file_range": "0x73c-0x74c",

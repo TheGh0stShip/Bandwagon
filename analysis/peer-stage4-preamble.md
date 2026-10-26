@@ -235,8 +235,9 @@ The `0x220`-byte record separates further:
 - VA `0x6000320b8`–`0x6000321c7` (file `0x62c-0x73b`) begins with big-endian
   words `0x20, 0x03, 0, 0`, followed by an opaque 256-byte field whose
   SHA-256 is `056cf89e3a2fae21e6f7ab4b1898e296dabc65cc41f25dde558ecb81a68c7a86`.
-  An RSA-2048 public-key structure is a strong layout hypothesis, but no
-  source identity has been demonstrated.
+  The `0x20` qword count, exponent `3`, reserved qword, 256-byte modulus, and
+  total `0x110`-byte size establish the `XECRYPT_RSAPUB_2048` layout. No source
+  identity or owner has been demonstrated for this particular modulus.
 - VA `0x6000321c8`–`0x6000321d7` (file `0x73c-0x74b`) is 16 zero bytes.
 
 `reconstruction/stage4/rbtr_dispatcher.cpp` is the portable decision model for
@@ -273,6 +274,10 @@ TOC, `r28`-`r30`, and first-call-result decisions; identifies the embedded
 structured-data address `0x6000320b8`, adjacent zero area `0x6000321c8`, and
 final branch `0x400029b3c`; and leaves the unresolved absolute callees named by
 address. The model performs no external calls or control transfers.
+
+`reconstruction/stage4/rsa_public_key.cpp` provides the corresponding strict,
+big-endian `XECRYPT_RSAPUB_2048` decoder. It exposes the exact header and
+256-byte modulus while deliberately making no ownership or trust claim.
 
 ## Entry and exit summary
 
