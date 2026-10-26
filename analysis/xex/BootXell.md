@@ -45,9 +45,9 @@ All handles and allocations are released on the observed exit paths.
 
 `BootXellMain` at `0x91a06658` loads
 `PPROOT:\\OtherOS\\boot.ini`, selects the requested named option from the parsed
-records, and passes it to `LaunchBootOption`. The exact platform import ordinals
-are named only when supported by exact cross-XEX fingerprints; 40 such safe
-aliases are recorded in `BootXell-provenance.json`.
+records, and passes it to `LaunchBootOption`. Platform import ordinals are named
+only when supported by exact cross-XEX fingerprints. The provenance record
+contains 39 such import aliases plus the shared `__savegprlr` runtime helper.
 
 The same provenance record pins the bundled INI parser to the author's declared
 inih r62, upstream commit `26254ee9de7681f8825433415443e7116ff24b98`.

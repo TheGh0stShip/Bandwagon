@@ -29,6 +29,13 @@
       "semantic_name": "BootXellMain",
       "confidence": "high",
       "evidence": ["loads PPROOT:\\OtherOS\\boot.ini", "selects a named option and calls LaunchBootOption"]
+    },
+    {
+      "address": "0x91a07550",
+      "recovered_name": "fn_91A07550",
+      "semantic_name": "ReadFileToBuffer",
+      "confidence": "high",
+      "evidence": ["accepts a path plus output buffer and size pointers", "opens the file, queries its size, allocates physical memory, reads the contents, and closes the handle", "called by LoadBootIni before ini_parse_string"]
     }
   ]
 }
