@@ -10,6 +10,15 @@
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "functions": [
     {
+      "address": "0x801f09c0",
+      "size": 16,
+      "sha256": "4292106e9d4a5e7ecb01420a96312dbdd837ec466641c7dfbb83e0fccf1a00c4",
+      "semantic_name": "GetPeerPressureConfig",
+      "source": "reconstruction/kernel_expansion/config.cpp",
+      "header": "reconstruction/kernel_expansion/config.hpp",
+      "symbols": ["ConfigurationState", "GetPeerPressureConfig"]
+    },
+    {
       "address": "0x801f09d0",
       "size": 128,
       "sha256": "e2ccda27603a0b318a1fee2874bbb3a5fbe6fce2d294ad94a3f3548f7b12cbef",
@@ -24,6 +33,15 @@
       "semantic_name": "ReadFileToAllocatedBuffer",
       "source": "reconstruction/kernel_expansion/runtime.cpp",
       "symbols": ["FileServices", "ReadFileToAllocatedBuffer", "kStatusPending"]
+    },
+    {
+      "address": "0x801f16a8",
+      "size": 88,
+      "sha256": "3c0f307a4da409bc4f25c0362dacdf799ed5840b4f357b5f5297d3b2c15f1a0d",
+      "semantic_name": "InitializeDefaultConfig",
+      "source": "reconstruction/kernel_expansion/config.cpp",
+      "header": "reconstruction/kernel_expansion/config.hpp",
+      "symbols": ["PeerPressureConfig", "ConfigServices", "InitializeDefaultConfig", "kDefaultEnabledFlagOffset"]
     },
     {
       "address": "0x801f1700",
@@ -69,6 +87,7 @@
     }
   ],
   "tests": [
+    "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",

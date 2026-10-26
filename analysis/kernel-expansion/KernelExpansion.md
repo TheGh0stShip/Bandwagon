@@ -55,6 +55,11 @@ lift. The first exact-byte-bound routines are:
 - `LaunchBootXell` (`0x801f09d0`, 128 bytes), represented as a typed service
   workflow that loads `PPROOT:\OtherOS\BootXell.xex`, resolves ordinal one,
   invokes it on success, and unloads every non-null returned module handle.
+- `GetPeerPressureConfig` and `InitializeDefaultConfig` (104 bytes together),
+  represented with an explicit 0x170-byte config type. Only the recovered
+  byte-0x129 default flag is named; unclassified fields remain indexed storage.
+  Tests preserve the initializer's unusual always-false return after it zeros
+  the singleton, enables that flag, and enters the locked config path.
 - `ReadFileToAllocatedBuffer` (`0x801f14d0`, 472 bytes), represented as a typed
   file-service workflow. It preserves pending-I/O waiting, allocation of the
   file size plus one, NUL placement, failure cleanup order, and the rule that
@@ -89,4 +94,6 @@ exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former
 `ParsePeerPressureConfig` label was also corrected to
 `InitializeDefaultConfig`: the routine is reached on a config-read failure and
-establishes the default singleton before entering the locked config path.
+establishes the default singleton before entering the locked config path; that
+bounded behavior now has a typed lift while the deeper common config path is
+still being classified.

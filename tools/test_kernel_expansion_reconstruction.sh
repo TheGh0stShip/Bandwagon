@@ -24,3 +24,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/storage_test.cpp" \
     -o "$work/storage_test"
 "$work/storage_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/config.cpp" \
+    "$root/reconstruction/kernel_expansion/config_test.cpp" \
+    -o "$work/config_test"
+"$work/config_test"
