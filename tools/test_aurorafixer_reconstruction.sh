@@ -26,4 +26,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/dll_main_test"
 "$work/dll_main_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/aurora_fixer/import_descriptor.cpp" \
+    "$root/reconstruction/aurora_fixer/import_descriptor_test.cpp" \
+    -o "$work/import_descriptor_test"
+"$work/import_descriptor_test"
+
 echo "AuroraFixer portable reconstruction tests passed"

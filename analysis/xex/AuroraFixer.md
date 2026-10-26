@@ -62,3 +62,11 @@ attach logs and requests a patch; the request always names `xboxkrnl.exe`
 ordinal 1 and the local return stub. The closed routine ignores lookup/patch
 failure and returns success for every reason, a behavior covered explicitly by
 the host test.
+
+`reconstruction/aurora_fixer/import_descriptor.cpp` reconstructs the XEX
+import-library traversal used before stub mutation. It decodes the big-endian
+descriptor header, NUL-separated module-name table, size-prefixed 40-byte
+library headers, and stub-address arrays, then performs the original
+case-insensitive module match. It preserves the binary's notable use of only
+the low byte of the nominal 16-bit name index while adding bounds checks for
+offline use.
