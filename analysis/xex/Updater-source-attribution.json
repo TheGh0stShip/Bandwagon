@@ -38,10 +38,9 @@
       ],
       "version_evidence": {
         "proven_family": "miniz 3.x",
-        "oldest_matching_release": "3.0.0",
-        "latest_release preceding Updater timestamp": "3.1.2",
-        "exact_revision": null,
-        "note": "The TOTAL_ERRORS and corrected WRITE_CALLBACK_FAILED strings rule out 2.x. No observed literal uniquely distinguishes miniz 3.0.0 through 3.1.2, so an exact revision is not asserted."
+        "author_declared_release": "3.1.1",
+        "exact_revision": "d10b03cc73475af673df40f06e5cefd1d5f940d9",
+        "note": "The TOTAL_ERRORS and corrected WRITE_CALLBACK_FAILED strings independently rule out 2.x; the author's public attribution fixes the exact project version at 3.1.1."
       }
     },
     {

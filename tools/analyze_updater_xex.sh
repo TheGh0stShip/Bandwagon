@@ -74,6 +74,7 @@ python3 -B "$root/tools/analyze_ppc_calls.py" \
 python3 -B "$root/tools/reconstruct_xex_nontext.py" \
     "$root/analysis/xex/basefiles/Updater.pe" \
     "$root/analysis/reconstruction/Updater.nontext.reconstructed.S"
+python3 -B "$root/tools/analyze_updater_provenance.py"
 python3 -B "$root/tools/validate_updater_analysis.py" \
     "$root/analysis/xex" \
     "$root/analysis/xex/basefiles/Updater.pe" \

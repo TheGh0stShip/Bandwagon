@@ -87,9 +87,11 @@ functions are now named at high confidence: `mz_zip_reader_init_mem`,
 `mz_zip_get_error_string`, and `mz_zip_reader_extract_to_mem`. The complete
 ordered error table in `mz_zip_get_error_string` includes `TOTAL_ERRORS` and
 the corrected `WRITE_CALLBACK_FAILED` text. That proves a miniz 3.x family
-version and rules out the 2.x releases checked. The literals do not distinguish
-3.0.0 through 3.1.2, so the exact upstream revision remains deliberately
-unclaimed.
+version and rules out the 2.x releases checked. The author's public
+`ATTRIBUTION.md` declares Miniz 3.1.1, whose tag resolves to upstream commit
+`d10b03cc73475af673df40f06e5cefd1d5f940d9`. The generated
+`Updater-provenance.json` records both independent evidence paths and rejects
+regeneration if the component-local error-table signatures disappear.
 
 The Peer application and its compiler-emitted `std::string`/`std::vector`
 instantiations occupy `0x98005000`–`0x98008010`. MSVC library/exception support

@@ -1,0 +1,26 @@
+{
+  "schema": "bandwagon-updater-provenance-v1",
+  "image_sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+  "author_attribution": {
+    "repository": "https://github.com/grimdoomer/Xbox360PeerPressure",
+    "commit": "df524f050db795d6212128e3a4b0c5904ac764e1",
+    "file": "ATTRIBUTION.md"
+  },
+  "library": {
+    "name": "Miniz",
+    "version": "3.1.1",
+    "license": "MIT",
+    "upstream": "https://github.com/richgel999/miniz/tree/3.1.1",
+    "tag_commit": "d10b03cc73475af673df40f06e5cefd1d5f940d9",
+    "binary_family_evidence": [
+      "CRC-32 check failed",
+      "archive is too large",
+      "decompression failed or archive is corrupted",
+      "invalid header or archive is corrupted",
+      "not a ZIP archive",
+      "unsupported multidisk archive"
+    ],
+    "binary_family_verified": "3.x",
+    "exact_version_basis": "author declaration combined with component-local Miniz 3.x evidence"
+  }
+}
