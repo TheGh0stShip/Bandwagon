@@ -4,7 +4,7 @@ namespace bandwagon::kernel_expansion {
 
 bool ProcessPeerPressureConfigFile(std::uint32_t mode,
                                    PeerPressureConfig* config,
-                                   const void* schema_entries,
+                                   const StructuredConfigEntry* schema_entries,
                                    ConfigFileWorkflow* workflow) {
   if (!config || !workflow) return false;
   return workflow->Process(kPeerPressureConfigPath, mode, config,
@@ -13,7 +13,7 @@ bool ProcessPeerPressureConfigFile(std::uint32_t mode,
 
 bool RunLockedPeerPressureConfigFile(std::uint32_t mode,
                                      PeerPressureConfig* config,
-                                     const void* schema_entries,
+                                     const StructuredConfigEntry* schema_entries,
                                      ConfigFileWorkflow* workflow,
                                      ConfigLockServices* locks) {
   if (!config || !workflow || !locks) return false;

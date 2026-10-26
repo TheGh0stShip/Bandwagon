@@ -1,6 +1,7 @@
 #pragma once
 
 #include "config.hpp"
+#include "config_value.hpp"
 
 #include <cstdint>
 #include <string_view>
@@ -11,12 +12,12 @@ class ConfigFileWorkflow {
  public:
   virtual ~ConfigFileWorkflow() = default;
 
-  // This is the still-generic engine at 0x801f3f00. Its mode-dependent file
-  // format is intentionally not guessed here; the two recovered callers pass
-  // mode zero while establishing defaults and mode one after a field update.
+  // The concrete source lift is StructuredConfigFileWorkflow. Low-byte mode
+  // zero regenerates from the schema; mode one preserves and updates an
+  // existing INI document.
   virtual std::uint8_t Process(std::string_view path, std::uint32_t mode,
                                PeerPressureConfig* config,
-                               const void* schema_entries,
+                               const StructuredConfigEntry* schema_entries,
                                std::uint32_t entry_count) = 0;
 };
 
@@ -24,7 +25,7 @@ class ConfigFileWorkflow {
 // generic engine's result participates in the returned Boolean value.
 bool ProcessPeerPressureConfigFile(std::uint32_t mode,
                                    PeerPressureConfig* config,
-                                   const void* schema_entries,
+                                   const StructuredConfigEntry* schema_entries,
                                    ConfigFileWorkflow* workflow);
 
 class ConfigLockServices {
@@ -41,7 +42,7 @@ class ConfigLockServices {
 // file workflow result and returns zero after releasing the lock.
 bool RunLockedPeerPressureConfigFile(std::uint32_t mode,
                                      PeerPressureConfig* config,
-                                     const void* schema_entries,
+                                     const StructuredConfigEntry* schema_entries,
                                      ConfigFileWorkflow* workflow,
                                      ConfigLockServices* locks);
 

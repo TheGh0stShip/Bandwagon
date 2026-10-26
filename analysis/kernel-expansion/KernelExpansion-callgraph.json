@@ -2162,8 +2162,8 @@
       "caller_address": "0x801f3000",
       "instruction_address": "0x801f302c",
       "target_address": "0x801f3f00",
-      "callee": "fn_801F3F00",
-      "target_containing_function": "fn_801F3F00"
+      "callee": "WriteStructuredConfigFile",
+      "target_containing_function": "WriteStructuredConfigFile"
     },
     {
       "caller": "RunLockedPeerPressureConfigFile",
@@ -2614,7 +2614,7 @@
       "target_containing_function": "fn_801F6B68"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f3f04",
       "target_address": "0x801feab8",
@@ -2622,7 +2622,7 @@
       "target_containing_function": "fn_801FEAB8"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f3f7c",
       "target_address": "0x801f14d0",
@@ -2630,7 +2630,7 @@
       "target_containing_function": "ReadFileToAllocatedBuffer"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f3f84",
       "target_address": "0x801fef28",
@@ -2638,7 +2638,7 @@
       "target_containing_function": "ExAllocatePool"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f3f9c",
       "target_address": "0x801fec18",
@@ -2646,7 +2646,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f3fb8",
       "target_address": "0x801febd8",
@@ -2654,7 +2654,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f3fc4",
       "target_address": "0x801fec88",
@@ -2662,7 +2662,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f4028",
       "target_address": "0x801fed28",
@@ -2670,15 +2670,15 @@
       "target_containing_function": "NtCreateFile"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f4068",
       "target_address": "0x801f73c8",
-      "callee": "fn_801F73C8",
-      "target_containing_function": "fn_801F73C8"
+      "callee": "RewriteIniFile",
+      "target_containing_function": "RewriteIniFile"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f407c",
       "target_address": "0x801fec18",
@@ -2686,23 +2686,23 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f40b8",
       "target_address": "0x801f7608",
-      "callee": "fn_801F7608",
-      "target_containing_function": "fn_801F7608"
+      "callee": "AppendFormattedConfigOutput",
+      "target_containing_function": "AppendFormattedConfigOutput"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f40cc",
       "target_address": "0x801f7730",
-      "callee": "fn_801F7730",
-      "target_containing_function": "fn_801F7730"
+      "callee": "SerializeConfigEntry",
+      "target_containing_function": "SerializeConfigEntry"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f410c",
       "target_address": "0x801fef58",
@@ -2710,15 +2710,15 @@
       "target_containing_function": "RtlCompareStringN"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f4120",
       "target_address": "0x801f7730",
-      "callee": "fn_801F7730",
-      "target_containing_function": "fn_801F7730"
+      "callee": "SerializeConfigEntry",
+      "target_containing_function": "SerializeConfigEntry"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f4178",
       "target_address": "0x801ff0a8",
@@ -2726,7 +2726,7 @@
       "target_containing_function": "NtWriteFile"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f4194",
       "target_address": "0x801fed58",
@@ -2734,7 +2734,7 @@
       "target_containing_function": "NtWaitForSingleObjectEx"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f41b4",
       "target_address": "0x801fec18",
@@ -2742,7 +2742,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f41c4",
       "target_address": "0x801fed18",
@@ -2750,7 +2750,7 @@
       "target_containing_function": "ExFreePool"
     },
     {
-      "caller": "fn_801F3F00",
+      "caller": "WriteStructuredConfigFile",
       "caller_address": "0x801f3f00",
       "instruction_address": "0x801f41d4",
       "target_address": "0x801fed68",
@@ -2834,8 +2834,8 @@
       "caller_address": "0x801f44e0",
       "instruction_address": "0x801f4524",
       "target_address": "0x801f7938",
-      "callee": "fn_801F7938",
-      "target_containing_function": "fn_801F7938"
+      "callee": "ParseIniLine",
+      "target_containing_function": "ParseIniLine"
     },
     {
       "caller": "fn_801F44E0",
@@ -4934,7 +4934,7 @@
       "target_containing_function": "fn_801FA4D8"
     },
     {
-      "caller": "fn_801F7228",
+      "caller": "RewriteKnownIniLine",
       "caller_address": "0x801f7228",
       "instruction_address": "0x801f722c",
       "target_address": "0x801fead0",
@@ -4942,7 +4942,7 @@
       "target_containing_function": "fn_801FEAD0"
     },
     {
-      "caller": "fn_801F7228",
+      "caller": "RewriteKnownIniLine",
       "caller_address": "0x801f7228",
       "instruction_address": "0x801f7280",
       "target_address": "0x801fef58",
@@ -4950,23 +4950,23 @@
       "target_containing_function": "RtlCompareStringN"
     },
     {
-      "caller": "fn_801F7228",
+      "caller": "RewriteKnownIniLine",
       "caller_address": "0x801f7228",
       "instruction_address": "0x801f72a8",
       "target_address": "0x801f7608",
-      "callee": "fn_801F7608",
-      "target_containing_function": "fn_801F7608"
+      "callee": "AppendFormattedConfigOutput",
+      "target_containing_function": "AppendFormattedConfigOutput"
     },
     {
-      "caller": "fn_801F7228",
+      "caller": "RewriteKnownIniLine",
       "caller_address": "0x801f7228",
       "instruction_address": "0x801f72c4",
       "target_address": "0x801f7730",
-      "callee": "fn_801F7730",
-      "target_containing_function": "fn_801F7730"
+      "callee": "SerializeConfigEntry",
+      "target_containing_function": "SerializeConfigEntry"
     },
     {
-      "caller": "fn_801F72F0",
+      "caller": "WriteMissingSectionEntries",
       "caller_address": "0x801f72f0",
       "instruction_address": "0x801f72f4",
       "target_address": "0x801fead0",
@@ -4974,7 +4974,7 @@
       "target_containing_function": "fn_801FEAD0"
     },
     {
-      "caller": "fn_801F72F0",
+      "caller": "WriteMissingSectionEntries",
       "caller_address": "0x801f72f0",
       "instruction_address": "0x801f7344",
       "target_address": "0x801fef58",
@@ -4982,23 +4982,23 @@
       "target_containing_function": "RtlCompareStringN"
     },
     {
-      "caller": "fn_801F72F0",
+      "caller": "WriteMissingSectionEntries",
       "caller_address": "0x801f72f0",
       "instruction_address": "0x801f735c",
       "target_address": "0x801f7730",
-      "callee": "fn_801F7730",
-      "target_containing_function": "fn_801F7730"
+      "callee": "SerializeConfigEntry",
+      "target_containing_function": "SerializeConfigEntry"
     },
     {
-      "caller": "fn_801F72F0",
+      "caller": "WriteMissingSectionEntries",
       "caller_address": "0x801f72f0",
       "instruction_address": "0x801f73a4",
       "target_address": "0x801f7608",
-      "callee": "fn_801F7608",
-      "target_containing_function": "fn_801F7608"
+      "callee": "AppendFormattedConfigOutput",
+      "target_containing_function": "AppendFormattedConfigOutput"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f73cc",
       "target_address": "0x801feab0",
@@ -5006,7 +5006,7 @@
       "target_containing_function": "fn_801FEAB0"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f73fc",
       "target_address": "0x801febd8",
@@ -5014,7 +5014,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f7410",
       "target_address": "0x801febd8",
@@ -5022,15 +5022,15 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f7474",
       "target_address": "0x801f7938",
-      "callee": "fn_801F7938",
-      "target_containing_function": "fn_801F7938"
+      "callee": "ParseIniLine",
+      "target_containing_function": "ParseIniLine"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f74c4",
       "target_address": "0x801fef08",
@@ -5038,7 +5038,7 @@
       "target_containing_function": "strncpy"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f74dc",
       "target_address": "0x801fefe8",
@@ -5046,7 +5046,7 @@
       "target_containing_function": "_snprintf"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f754c",
       "target_address": "0x801fefe8",
@@ -5054,7 +5054,7 @@
       "target_containing_function": "_snprintf"
     },
     {
-      "caller": "fn_801F73C8",
+      "caller": "RewriteIniFile",
       "caller_address": "0x801f73c8",
       "instruction_address": "0x801f75f8",
       "target_address": "0x801fec18",
@@ -5062,7 +5062,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F7608",
+      "caller": "AppendFormattedConfigOutput",
       "caller_address": "0x801f7608",
       "instruction_address": "0x801f760c",
       "target_address": "0x801fead8",
@@ -5070,7 +5070,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801F7608",
+      "caller": "AppendFormattedConfigOutput",
       "caller_address": "0x801f7608",
       "instruction_address": "0x801f7688",
       "target_address": "0x801ff0a8",
@@ -5078,7 +5078,7 @@
       "target_containing_function": "NtWriteFile"
     },
     {
-      "caller": "fn_801F7608",
+      "caller": "AppendFormattedConfigOutput",
       "caller_address": "0x801f7608",
       "instruction_address": "0x801f76a4",
       "target_address": "0x801fed58",
@@ -5086,7 +5086,7 @@
       "target_containing_function": "NtWaitForSingleObjectEx"
     },
     {
-      "caller": "fn_801F7608",
+      "caller": "AppendFormattedConfigOutput",
       "caller_address": "0x801f7608",
       "instruction_address": "0x801f76e8",
       "target_address": "0x801ff218",
@@ -5094,7 +5094,7 @@
       "target_containing_function": "_vsnprintf"
     },
     {
-      "caller": "fn_801F7608",
+      "caller": "AppendFormattedConfigOutput",
       "caller_address": "0x801f7608",
       "instruction_address": "0x801f7714",
       "target_address": "0x801fec18",
@@ -5102,7 +5102,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F7608",
+      "caller": "AppendFormattedConfigOutput",
       "caller_address": "0x801f7608",
       "instruction_address": "0x801f7728",
       "target_address": "0x801fec18",
@@ -5110,23 +5110,23 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F7730",
+      "caller": "SerializeConfigEntry",
       "caller_address": "0x801f7730",
       "instruction_address": "0x801f7764",
       "target_address": "0x801f7608",
-      "callee": "fn_801F7608",
-      "target_containing_function": "fn_801F7608"
+      "callee": "AppendFormattedConfigOutput",
+      "target_containing_function": "AppendFormattedConfigOutput"
     },
     {
-      "caller": "fn_801F7730",
+      "caller": "SerializeConfigEntry",
       "caller_address": "0x801f7730",
       "instruction_address": "0x801f7854",
       "target_address": "0x801f7608",
-      "callee": "fn_801F7608",
-      "target_containing_function": "fn_801F7608"
+      "callee": "AppendFormattedConfigOutput",
+      "target_containing_function": "AppendFormattedConfigOutput"
     },
     {
-      "caller": "fn_801F7938",
+      "caller": "ParseIniLine",
       "caller_address": "0x801f7938",
       "instruction_address": "0x801f7a04",
       "target_address": "0x801fa640",

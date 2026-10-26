@@ -4,7 +4,7 @@
   "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
   "image_base": "0x801f0000",
   "text_end": "0xf4b0",
-  "function_count": 362,
+  "function_count": 363,
   "kernel_thunk_count": 141,
   "resolved_kernel_thunk_count": 127,
   "functions": [
@@ -582,9 +582,9 @@
       "address": "0x801f3f00",
       "section_offset": "0x3f00",
       "size_to_next_symbol": 744,
-      "name": "fn_801F3F00",
+      "name": "WriteStructuredConfigFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -862,19 +862,29 @@
       "address": "0x801f7228",
       "section_offset": "0x7228",
       "size_to_next_symbol": 200,
-      "name": "fn_801F7228",
+      "name": "RewriteKnownIniLine",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
     {
       "address": "0x801f72f0",
       "section_offset": "0x72f0",
-      "size_to_next_symbol": 216,
-      "name": "fn_801F72F0",
+      "size_to_next_symbol": 208,
+      "name": "WriteMissingSectionEntries",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f73c0",
+      "section_offset": "0x73c0",
+      "size_to_next_symbol": 8,
+      "name": "AcceptIniSection",
+      "evidence": [
+        "indirect leaf callback boundary and decoded behavior"
       ],
       "kind": "local_code"
     },
@@ -882,9 +892,9 @@
       "address": "0x801f73c8",
       "section_offset": "0x73c8",
       "size_to_next_symbol": 576,
-      "name": "fn_801F73C8",
+      "name": "RewriteIniFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -892,9 +902,9 @@
       "address": "0x801f7608",
       "section_offset": "0x7608",
       "size_to_next_symbol": 296,
-      "name": "fn_801F7608",
+      "name": "AppendFormattedConfigOutput",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -902,9 +912,9 @@
       "address": "0x801f7730",
       "section_offset": "0x7730",
       "size_to_next_symbol": 328,
-      "name": "fn_801F7730",
+      "name": "SerializeConfigEntry",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -932,9 +942,9 @@
       "address": "0x801f7938",
       "section_offset": "0x7938",
       "size_to_next_symbol": 520,
-      "name": "fn_801F7938",
+      "name": "ParseIniLine",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

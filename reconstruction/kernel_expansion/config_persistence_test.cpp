@@ -15,14 +15,16 @@ class FakeWorkflow final
   std::uint8_t result = 1;
   std::uint32_t expected_mode = 0;
   bandwagon::kernel_expansion::PeerPressureConfig* expected_config = nullptr;
-  const void* expected_schema = nullptr;
+  const bandwagon::kernel_expansion::StructuredConfigEntry* expected_schema =
+      nullptr;
   std::vector<std::string>* events = nullptr;
   int calls = 0;
 
   std::uint8_t Process(
       std::string_view path, std::uint32_t mode,
       bandwagon::kernel_expansion::PeerPressureConfig* config,
-      const void* schema_entries, std::uint32_t entry_count) override {
+      const bandwagon::kernel_expansion::StructuredConfigEntry* schema_entries,
+      std::uint32_t entry_count) override {
     using namespace bandwagon::kernel_expansion;
     assert(path == kPeerPressureConfigPath);
     assert(mode == expected_mode);
@@ -52,7 +54,7 @@ int main() {
   using namespace bandwagon::kernel_expansion;
 
   PeerPressureConfig config{};
-  const std::uint32_t schema_marker = 0x87654321;
+  const StructuredConfigEntry schema_marker{};
 
   FakeWorkflow success;
   success.result = 0x80;

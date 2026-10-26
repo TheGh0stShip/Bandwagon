@@ -251,14 +251,14 @@
       "string": "FileName"
     },
     {
-      "function": "fn_801F7730",
+      "function": "SerializeConfigEntry",
       "function_address": "0x801f7730",
       "instruction_address": "0x801f77a8",
       "string_address": "0x80201e44",
       "string": "false"
     },
     {
-      "function": "fn_801F7730",
+      "function": "SerializeConfigEntry",
       "function_address": "0x801f7730",
       "instruction_address": "0x801f77b4",
       "string_address": "0x80201e4c",

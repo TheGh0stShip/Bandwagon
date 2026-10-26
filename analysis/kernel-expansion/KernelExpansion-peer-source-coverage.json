@@ -151,6 +151,15 @@
       "symbols": ["DrivePathBinding", "DrivePathBindingTable", "DrivePathProbeServices", "BindDrivePath", "kInvalidDrivePathStatus"]
     },
     {
+      "address": "0x801f3f00",
+      "size": 744,
+      "sha256": "61d705662e13f47a10e424e1c2e87bdb95fa53d11c312b622dcedeee641a830c",
+      "semantic_name": "WriteStructuredConfigFile",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["ConfigFileWriterServices", "StructuredConfigFileWorkflow", "WriteStructuredConfigFile", "kConfigOutputBufferSize"]
+    },
+    {
       "address": "0x801f41e8",
       "size": 760,
       "sha256": "4cc9e5bd18c35fa23c7379f545f4ba07a38ee0034a7b120ca9f06b28791e6b7c",
@@ -196,6 +205,60 @@
       "symbols": ["ParseDriveNumberPrefix"]
     },
     {
+      "address": "0x801f7228",
+      "size": 200,
+      "sha256": "c20bbddb5f2093a866adc83c0a3b204c9498716a345fcd90327b4bb837529f77",
+      "semantic_name": "RewriteKnownIniLine",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["RewriteKnownIniLine"]
+    },
+    {
+      "address": "0x801f72f0",
+      "size": 208,
+      "sha256": "e857d1d2bb84c166c105e87c15cc0fd127a49f3ea7f8a76e2c19b23e421c9eba",
+      "semantic_name": "WriteMissingSectionEntries",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["WriteMissingSectionEntries"]
+    },
+    {
+      "address": "0x801f73c0",
+      "size": 8,
+      "sha256": "2bf7a94759a252fd0d2af700ff876c19ab13998fb28ac5b0db3c70cdbc9ef8d6",
+      "semantic_name": "AcceptIniSection",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["AcceptIniSection"]
+    },
+    {
+      "address": "0x801f73c8",
+      "size": 576,
+      "sha256": "a04cd21964c2a89a74aa2a5024a50452dcbcace888369f996bffedfa7fd008a3",
+      "semantic_name": "RewriteIniFile",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["ParsedIniLine", "IniSectionCallback", "IniLineCallback", "RewriteIniFile", "kMaximumIniLineSize"]
+    },
+    {
+      "address": "0x801f7608",
+      "size": 296,
+      "sha256": "701dee95c69dfbf2a5957a9045bd51d1e710019d601417c66e81636b45aa133b",
+      "semantic_name": "AppendFormattedConfigOutput",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["ConfigWriteContext", "AppendFormattedConfigOutput", "AppendLiteralConfigOutput", "FlushConfigOutput"]
+    },
+    {
+      "address": "0x801f7730",
+      "size": 328,
+      "sha256": "c0b8dcbf77df7f38ab56efbb43b739a8f50a044b0c802d8e271cf74c99fbb8ec",
+      "semantic_name": "SerializeConfigEntry",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["SerializeConfigEntry"]
+    },
+    {
       "address": "0x801f7878",
       "size": 104,
       "sha256": "766c2722358bf26c31238ced31c15013e092dd55c20f365aaf2419226711b5ff",
@@ -212,6 +275,15 @@
       "source": "reconstruction/kernel_expansion/decimal.cpp",
       "header": "reconstruction/kernel_expansion/decimal.hpp",
       "symbols": ["ParseSignedDecimal"]
+    },
+    {
+      "address": "0x801f7938",
+      "size": 520,
+      "sha256": "bd9494bf49b04dd82d242fc70d4365091b32cbb55e8e39d9e400ec4a143b999e",
+      "semantic_name": "ParseIniLine",
+      "source": "reconstruction/kernel_expansion/config_writer.cpp",
+      "header": "reconstruction/kernel_expansion/config_writer.hpp",
+      "symbols": ["ParseIniLine"]
     },
     {
       "address": "0x801f8210",
@@ -389,6 +461,7 @@
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
     "reconstruction/kernel_expansion/config_hash_test.cpp",
     "reconstruction/kernel_expansion/config_value_test.cpp",
+    "reconstruction/kernel_expansion/config_writer_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/decimal_test.cpp",
     "reconstruction/kernel_expansion/drive_binding_test.cpp",

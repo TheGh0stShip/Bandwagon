@@ -4095,7 +4095,7 @@ BindDrivePath:
     .long 0x8181fff8 /* 0x03ef4 */
     .long 0x7d8803a6 /* 0x03ef8 */
     .long 0x4e800020 /* 0x03efc */
-fn_801F3F00:
+WriteStructuredConfigFile:
     .long 0x7d8802a6 /* 0x03f00 */
     .long 0x4800abb5 /* 0x03f04 */
     .long 0x9421fed0 /* 0x03f08 */
@@ -7397,7 +7397,7 @@ fn_801F6B68:
     .long 0xb17f0006 /* 0x0721c */
     .long 0x4bfffaf8 /* 0x07220 */
     .long 0x00000000 /* 0x07224 */
-fn_801F7228:
+RewriteKnownIniLine:
     .long 0x7d8802a6 /* 0x07228 */
     .long 0x480078a5 /* 0x0722c */
     .long 0x9421ff50 /* 0x07230 */
@@ -7448,7 +7448,7 @@ fn_801F7228:
     .long 0x7d4bf1ae /* 0x072e4 */
     .long 0x4bffffc4 /* 0x072e8 */
     .long 0x00000000 /* 0x072ec */
-fn_801F72F0:
+WriteMissingSectionEntries:
     .long 0x7d8802a6 /* 0x072f0 */
     .long 0x480077dd /* 0x072f4 */
     .long 0x9421ff70 /* 0x072f8 */
@@ -7501,9 +7501,10 @@ fn_801F72F0:
     .long 0x38600001 /* 0x073b4 */
     .long 0x38210090 /* 0x073b8 */
     .long 0x48007764 /* 0x073bc */
+AcceptIniSection:
     .long 0x38600001 /* 0x073c0 */
     .long 0x4e800020 /* 0x073c4 */
-fn_801F73C8:
+RewriteIniFile:
     .long 0x7d8802a6 /* 0x073c8 */
     .long 0x480076e5 /* 0x073cc */
     .long 0x9421fcb0 /* 0x073d0 */
@@ -7648,7 +7649,7 @@ fn_801F73C8:
     .long 0x38600000 /* 0x075fc */
     .long 0x38210350 /* 0x07600 */
     .long 0x480074fc /* 0x07604 */
-fn_801F7608:
+AppendFormattedConfigOutput:
     .long 0x7d8802a6 /* 0x07608 */
     .long 0x480074cd /* 0x0760c */
     .long 0xf8a10020 /* 0x07610 */
@@ -7723,7 +7724,7 @@ fn_801F7608:
     .long 0x386b1de0 /* 0x07724 */
     .long 0x480074f1 /* 0x07728 */
     .long 0x4bffffec /* 0x0772c */
-fn_801F7730:
+SerializeConfigEntry:
     .long 0x7d8802a6 /* 0x07730 */
     .long 0x9181fff8 /* 0x07734 */
     .long 0x9421ff50 /* 0x07738 */
@@ -7856,7 +7857,7 @@ ParseSignedDecimal:
     .long 0x7c6851d6 /* 0x0792c */
     .long 0x4e800020 /* 0x07930 */
     .long 0x00000000 /* 0x07934 */
-fn_801F7938:
+ParseIniLine:
     .long 0x7d8802a6 /* 0x07938 */
     .long 0x9181fff8 /* 0x0793c */
     .long 0x9421ffa0 /* 0x07940 */

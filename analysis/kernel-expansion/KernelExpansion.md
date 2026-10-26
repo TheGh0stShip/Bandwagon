@@ -13,13 +13,13 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 362 entry points from standard PPC prologues, direct `bl` targets, three
+- 363 entry points from standard PPC prologues, direct `bl` targets, four
   independently bounded indirect callbacks, and tail-only import thunks.
 - 1,085 direct call edges.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 53 high-confidence behavioral labels are emitted directly into the exact
+- 61 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -88,8 +88,20 @@ lift. The first exact-byte-bound routines are:
   together), represented as the fixed-path/config/schema adapter and its
   exclusive-lock wrapper. Tests bind the exact `Config.ini` path, six-entry
   schema count, critical-region and lock ordering, low-byte Boolean conversion,
-  and the locked wrapper's observed always-false return. The generic engine's
-  mode-dependent format remains explicitly abstract rather than guessed.
+  and the locked wrapper's observed always-false return.
+- `WriteStructuredConfigFile` and its seven INI writer helpers (`0x801f3f00`,
+  `0x801f7228-0x801f7b40`, 2,880 bytes together), represented as the complete
+  mode-dependent transaction behind that adapter. Mode one merges an existing
+  document; other low-byte modes regenerate it. The lift replaces known keys,
+  preserves unknown lines, inserts missing entries before leaving a section,
+  appends missing sections in schema order, serializes all four recovered value
+  types, normalizes CRLF, and models the 1 KiB buffered write path. Tests bind
+  the key-only case-insensitive replacement quirk, low-byte mode selection,
+  127-byte section and 511-byte line limits, ordered buffer flushes, partial
+  failure cleanup, and read-failure fallback. The closed binary's unsafe use of
+  preserved text as a printf format and its unterminated-comment pointer wrap
+  remain in the exact assembly oracle; the maintainable host lift makes both
+  paths safe and tests literal percent preservation.
 - `InstallKernelXexDataHandlers` (`0x801f1790`, 352 bytes), represented as a
   bounds-checked mapped-PE walker. It finds `.xedata`, installs both relocated
   handler words, updates the table count, and performs the recovered CPU and
@@ -204,10 +216,10 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-42 independently bounded routines totaling 5,848 original instruction bytes.
+50 independently bounded routines totaling 8,728 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 362 discovered entries are maintainable
+evidence oracle, not a claim that all 363 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former
@@ -215,7 +227,6 @@ exFAT and returns multiple classification values; its corrected
 `InitializeDefaultConfig`: the routine is reached on a config-read failure and
 establishes the default singleton before entering the locked config path. Its
 caller is now also lifted, including allocation, probing, six-entry schema
-dispatch, and both fallback paths. The common config adapter and its lock
-wrapper, key hash, and complete typed value dispatcher are also lifted; the
-generic mode-dependent config file transaction they invoke is still being
-classified.
+dispatch, and both fallback paths. The common config adapter, lock wrapper,
+mode-dependent INI rewrite transaction, key hash, typed value dispatcher,
+tokenizer, serializer, and buffered output helpers are all lifted.
