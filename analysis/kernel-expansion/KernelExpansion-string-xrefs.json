@@ -1,0 +1,331 @@
+{
+  "schema": "bandwagon-ppc-string-xrefs-v1",
+  "image": "PeerPressure\\System\\KernelExpansion.bin",
+  "image_sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
+  "reference_count": 46,
+  "functions_with_references": 24,
+  "references": [
+    {
+      "function": "KernelExpansionEntry",
+      "function_address": "0x801f0000",
+      "instruction_address": "0x801f0080",
+      "string_address": "0x801ff4b0",
+      "string": "\\System??\\PAYLOAD:"
+    },
+    {
+      "function": "KernelExpansionEntry",
+      "function_address": "0x801f0000",
+      "instruction_address": "0x801f008c",
+      "string_address": "0x801ff4c4",
+      "string": "\\??\\PAYLOAD:"
+    },
+    {
+      "function": "fn_801F0150",
+      "function_address": "0x801f0150",
+      "instruction_address": "0x801f01d0",
+      "string_address": "0x801ff538",
+      "string": "read"
+    },
+    {
+      "function": "fn_801F0150",
+      "function_address": "0x801f0150",
+      "instruction_address": "0x801f01dc",
+      "string_address": "0x801ff540",
+      "string": "write"
+    },
+    {
+      "function": "fn_801F0150",
+      "function_address": "0x801f0150",
+      "instruction_address": "0x801f0358",
+      "string_address": "0x801ff650",
+      "string": "%02x "
+    },
+    {
+      "function": "fn_801F0150",
+      "function_address": "0x801f0150",
+      "instruction_address": "0x801f035c",
+      "string_address": "0x801ff658",
+      "string": "0x%08x: "
+    },
+    {
+      "function": "fn_801F0648",
+      "function_address": "0x801f0648",
+      "instruction_address": "0x801f06bc",
+      "string_address": "0x801ff6fc",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\Config.ini"
+    },
+    {
+      "function": "fn_801F0748",
+      "function_address": "0x801f0748",
+      "instruction_address": "0x801f079c",
+      "string_address": "0x801ff7b0",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\kernel_patches.bin"
+    },
+    {
+      "function": "fn_801F09D0",
+      "function_address": "0x801f09d0",
+      "instruction_address": "0x801f09f0",
+      "string_address": "0x801ff7f4",
+      "string": "PPROOT:\\OtherOS\\BootXell.xex"
+    },
+    {
+      "function": "fn_801F0A50",
+      "function_address": "0x801f0a50",
+      "instruction_address": "0x801f0bdc",
+      "string_address": "0x801ff81c",
+      "string": "\\Device\\Flash\\bootanim.xex_"
+    },
+    {
+      "function": "fn_801F0A50",
+      "function_address": "0x801f0a50",
+      "instruction_address": "0x801f0bf0",
+      "string_address": "0x801ff838",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\Themes\\BootAnim\\9199\\bootanim.xex"
+    },
+    {
+      "function": "fn_801F0A50",
+      "function_address": "0x801f0a50",
+      "instruction_address": "0x801f0bfc",
+      "string_address": "0x801ff888",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\customboot.xex"
+    },
+    {
+      "function": "fn_801F1000",
+      "function_address": "0x801f1000",
+      "instruction_address": "0x801f1080",
+      "string_address": "0x801ffaf4",
+      "string": "\\Device\\Flash"
+    },
+    {
+      "function": "fn_801F1790",
+      "function_address": "0x801f1790",
+      "instruction_address": "0x801f17d8",
+      "string_address": "0x801ffd14",
+      "string": ".xedata"
+    },
+    {
+      "function": "fn_801F1A60",
+      "function_address": "0x801f1a60",
+      "instruction_address": "0x801f1ad0",
+      "string_address": "0x801ffd1c",
+      "string": "dash.exe"
+    },
+    {
+      "function": "fn_801F1A60",
+      "function_address": "0x801f1a60",
+      "instruction_address": "0x801f1afc",
+      "string_address": "0x801ffd28",
+      "string": "Aurora.exe"
+    },
+    {
+      "function": "fn_801F1A60",
+      "function_address": "0x801f1a60",
+      "instruction_address": "0x801f1b34",
+      "string_address": "0x801ffd38",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\SideLoading\\AuroraFixer.xex"
+    },
+    {
+      "function": "fn_801F1CF0",
+      "function_address": "0x801f1cf0",
+      "instruction_address": "0x801f1d48",
+      "string_address": "0x801fff4c",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\boot_image.bmp"
+    },
+    {
+      "function": "fn_801F1FC0",
+      "function_address": "0x801f1fc0",
+      "instruction_address": "0x801f1fe8",
+      "string_address": "0x801fff88",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\Themes\\BootAnim\\9199\\%.*s.xbat"
+    },
+    {
+      "function": "fn_801F3000",
+      "function_address": "0x801f3000",
+      "instruction_address": "0x801f3020",
+      "string_address": "0x801ff6fc",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\Config.ini"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f3408",
+      "string_address": "0x80201550",
+      "string": "\\Device\\Package_"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f3478",
+      "string_address": "0x80201564",
+      "string": "%.*s"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f34c4",
+      "string_address": "0x80201580",
+      "string": "%s\\%s"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f34c8",
+      "string_address": "0x80201588",
+      "string": "%s\\SideLoading\\%s"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f34cc",
+      "string_address": "0x8020159c",
+      "string": "%s\\SideLoading\\%08x.ini"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f34d0",
+      "string_address": "0x802015b4",
+      "string": "%s\\%08x.ini"
+    },
+    {
+      "function": "fn_801F3378",
+      "function_address": "0x801f3378",
+      "instruction_address": "0x801f34d4",
+      "string_address": "0x802015c0",
+      "string": "%s\\sideload.ini"
+    },
+    {
+      "function": "fn_801F3690",
+      "function_address": "0x801f3690",
+      "instruction_address": "0x801f3710",
+      "string_address": "0x802015d0",
+      "string": "xam.xex"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4a80",
+      "string_address": "0x8020198c",
+      "string": "DllConfig"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4aa0",
+      "string_address": "0x80201998",
+      "string": "TitleID"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4b18",
+      "string_address": "0x802019a0",
+      "string": "MediaID"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4b90",
+      "string_address": "0x802019a8",
+      "string": "ModuleVersion"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4bbc",
+      "string_address": "0x802019b8",
+      "string": "MinVersion"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4be8",
+      "string_address": "0x802019c4",
+      "string": "MaxVersion"
+    },
+    {
+      "function": "fn_801F4938",
+      "function_address": "0x801f4938",
+      "instruction_address": "0x801f4c2c",
+      "string_address": "0x802019d0",
+      "string": "FileName"
+    },
+    {
+      "function": "fn_801F7730",
+      "function_address": "0x801f7730",
+      "instruction_address": "0x801f77a8",
+      "string_address": "0x80201e44",
+      "string": "false"
+    },
+    {
+      "function": "fn_801F7730",
+      "function_address": "0x801f7730",
+      "instruction_address": "0x801f77b4",
+      "string_address": "0x80201e4c",
+      "string": "true"
+    },
+    {
+      "function": "fn_801F7E68",
+      "function_address": "0x801f7e68",
+      "instruction_address": "0x801f7f08",
+      "string_address": "0x80202270",
+      "string": "\\Device\\Mass%d\\$SoftmodUpdate\\UpdateData.zip"
+    },
+    {
+      "function": "fn_801F8080",
+      "function_address": "0x801f8080",
+      "instruction_address": "0x801f8184",
+      "string_address": "0x802022a0",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\SettingsApp.xex"
+    },
+    {
+      "function": "fn_801F8080",
+      "function_address": "0x801f8080",
+      "instruction_address": "0x801f8188",
+      "string_address": "0x802022e4",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System"
+    },
+    {
+      "function": "fn_801F8710",
+      "function_address": "0x801f8710",
+      "instruction_address": "0x801f87dc",
+      "string_address": "0x802022a0",
+      "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\SettingsApp.xex"
+    },
+    {
+      "function": "fn_801FA320",
+      "function_address": "0x801fa320",
+      "instruction_address": "0x801fa3d4",
+      "string_address": "0x802024c4",
+      "string": "FAT32   "
+    },
+    {
+      "function": "fn_801FA540",
+      "function_address": "0x801fa540",
+      "instruction_address": "0x801fa548",
+      "string_address": "0x802024d0",
+      "string": "EFI PART"
+    },
+    {
+      "function": "fn_801FA688",
+      "function_address": "0x801fa688",
+      "instruction_address": "0x801fa6bc",
+      "string_address": "0x802024dc",
+      "string": "PPROOT:\\update.phase2"
+    },
+    {
+      "function": "fn_801FA798",
+      "function_address": "0x801fa798",
+      "instruction_address": "0x801fa814",
+      "string_address": "0x802024f8",
+      "string": "PPROOT:\\System\\UpdateCheck.xex"
+    },
+    {
+      "function": "fn_801FD588",
+      "function_address": "0x801fd588",
+      "instruction_address": "0x801fd7c8",
+      "string_address": "0x802028d0",
+      "string": "+,;=[]"
+    }
+  ]
+}

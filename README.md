@@ -45,7 +45,8 @@ The public BadUpdate source baseline is pinned as the
 
 `analysis/component-inventory.json` is the generated manifest-wide completion
 matrix. Of 33 installed components, only two Peer raw payloads remain without
-source-form reconstruction: `FlashDmaPayload.bin` and `KernelExpansion.bin`.
+source-form reconstruction. Both `FlashDmaPayload.bin` and
+`KernelExpansion.bin` now have byte-identical assembly reconstructions.
 
 Semantic recovery of remaining functions, types, globals, indirect control
 flow, raw stage payloads, and SMC firmware is still in progress.

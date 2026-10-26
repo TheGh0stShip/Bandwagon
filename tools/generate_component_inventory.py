@@ -35,7 +35,7 @@ CLASSIFICATIONS = {
     "PeerPressure\\System\\Config.ini": ("peer_configuration", "human_readable_source", None),
     "PeerPressure\\System\\HudResources.xzp": ("ui_asset", "binary_asset", None),
     "PeerPressure\\System\\IncludedRootsPEM.txt": ("trust_store_data", "human_readable_data", None),
-    "PeerPressure\\System\\KernelExpansion.bin": ("peer_raw_payload", "unresolved", None),
+    "PeerPressure\\System\\KernelExpansion.bin": ("peer_code_and_data", "exact_whole_file_source", "analysis/kernel-expansion/KernelExpansion.md"),
     "PeerPressure\\System\\kernel_patches.bin": ("peer_patch_stream", "lossless_structured_source", "analysis/patch-records/PeerPressure_System_kernel_patches.json"),
     "PeerPressure\\System\\PeerPressureExploit-4thStage.bin": ("peer_code_and_data", "exact_whole_file_source", "analysis/reconstruction/PeerPressureExploit-4thStage.reconstructed.S"),
     "PeerPressure\\System\\SettingsApp.xex": ("peer_executable", "exact_initialized_source", "analysis/xex/SettingsApp.md"),

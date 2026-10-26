@@ -1,0 +1,3788 @@
+{
+  "schema": "bandwagon-kernel-expansion-functions-v1",
+  "input": "PeerPressure/System/KernelExpansion.bin",
+  "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
+  "image_base": "0x801f0000",
+  "text_end": "0xf4b0",
+  "function_count": 351,
+  "kernel_thunk_count": 133,
+  "resolved_kernel_thunk_count": 91,
+  "functions": [
+    {
+      "address": "0x801f0000",
+      "section_offset": "0x0",
+      "size_to_next_symbol": 336,
+      "name": "KernelExpansionEntry",
+      "evidence": [
+        "entry point"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0150",
+      "section_offset": "0x150",
+      "size_to_next_symbol": 624,
+      "name": "fn_801F0150",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f03c0",
+      "section_offset": "0x3c0",
+      "size_to_next_symbol": 192,
+      "name": "fn_801F03C0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0480",
+      "section_offset": "0x480",
+      "size_to_next_symbol": 56,
+      "name": "fn_801F0480",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f04b8",
+      "section_offset": "0x4b8",
+      "size_to_next_symbol": 176,
+      "name": "fn_801F04B8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0568",
+      "section_offset": "0x568",
+      "size_to_next_symbol": 136,
+      "name": "fn_801F0568",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f05f0",
+      "section_offset": "0x5f0",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F05F0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0648",
+      "section_offset": "0x648",
+      "size_to_next_symbol": 256,
+      "name": "fn_801F0648",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0748",
+      "section_offset": "0x748",
+      "size_to_next_symbol": 632,
+      "name": "fn_801F0748",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f09c0",
+      "section_offset": "0x9c0",
+      "size_to_next_symbol": 16,
+      "name": "fn_801F09C0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f09d0",
+      "section_offset": "0x9d0",
+      "size_to_next_symbol": 128,
+      "name": "fn_801F09D0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0a50",
+      "section_offset": "0xa50",
+      "size_to_next_symbol": 920,
+      "name": "fn_801F0A50",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0de8",
+      "section_offset": "0xde8",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F0DE8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f0e38",
+      "section_offset": "0xe38",
+      "size_to_next_symbol": 456,
+      "name": "fn_801F0E38",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1000",
+      "section_offset": "0x1000",
+      "size_to_next_symbol": 376,
+      "name": "fn_801F1000",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1178",
+      "section_offset": "0x1178",
+      "size_to_next_symbol": 432,
+      "name": "fn_801F1178",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1328",
+      "section_offset": "0x1328",
+      "size_to_next_symbol": 424,
+      "name": "fn_801F1328",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f14d0",
+      "section_offset": "0x14d0",
+      "size_to_next_symbol": 472,
+      "name": "fn_801F14D0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f16a8",
+      "section_offset": "0x16a8",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F16A8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1700",
+      "section_offset": "0x1700",
+      "size_to_next_symbol": 144,
+      "name": "fn_801F1700",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1790",
+      "section_offset": "0x1790",
+      "size_to_next_symbol": 352,
+      "name": "fn_801F1790",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f18f0",
+      "section_offset": "0x18f0",
+      "size_to_next_symbol": 216,
+      "name": "fn_801F18F0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f19c8",
+      "section_offset": "0x19c8",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F19C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1a20",
+      "section_offset": "0x1a20",
+      "size_to_next_symbol": 64,
+      "name": "fn_801F1A20",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1a60",
+      "section_offset": "0x1a60",
+      "size_to_next_symbol": 512,
+      "name": "fn_801F1A60",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1c60",
+      "section_offset": "0x1c60",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F1C60",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1cb0",
+      "section_offset": "0x1cb0",
+      "size_to_next_symbol": 64,
+      "name": "fn_801F1CB0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1cf0",
+      "section_offset": "0x1cf0",
+      "size_to_next_symbol": 720,
+      "name": "fn_801F1CF0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f1fc0",
+      "section_offset": "0x1fc0",
+      "size_to_next_symbol": 152,
+      "name": "fn_801F1FC0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2058",
+      "section_offset": "0x2058",
+      "size_to_next_symbol": 1592,
+      "name": "fn_801F2058",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2690",
+      "section_offset": "0x2690",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F2690",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f26e8",
+      "section_offset": "0x26e8",
+      "size_to_next_symbol": 48,
+      "name": "fn_801F26E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2718",
+      "section_offset": "0x2718",
+      "size_to_next_symbol": 352,
+      "name": "fn_801F2718",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2878",
+      "section_offset": "0x2878",
+      "size_to_next_symbol": 680,
+      "name": "fn_801F2878",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2b20",
+      "section_offset": "0x2b20",
+      "size_to_next_symbol": 592,
+      "name": "fn_801F2B20",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2d70",
+      "section_offset": "0x2d70",
+      "size_to_next_symbol": 72,
+      "name": "fn_801F2D70",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2db8",
+      "section_offset": "0x2db8",
+      "size_to_next_symbol": 32,
+      "name": "fn_801F2DB8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2dd8",
+      "section_offset": "0x2dd8",
+      "size_to_next_symbol": 448,
+      "name": "fn_801F2DD8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f2f98",
+      "section_offset": "0x2f98",
+      "size_to_next_symbol": 104,
+      "name": "fn_801F2F98",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3000",
+      "section_offset": "0x3000",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F3000",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3050",
+      "section_offset": "0x3050",
+      "size_to_next_symbol": 96,
+      "name": "fn_801F3050",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f30b0",
+      "section_offset": "0x30b0",
+      "size_to_next_symbol": 360,
+      "name": "fn_801F30B0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3218",
+      "section_offset": "0x3218",
+      "size_to_next_symbol": 192,
+      "name": "fn_801F3218",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f32d8",
+      "section_offset": "0x32d8",
+      "size_to_next_symbol": 24,
+      "name": "fn_801F32D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f32f0",
+      "section_offset": "0x32f0",
+      "size_to_next_symbol": 136,
+      "name": "fn_801F32F0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3378",
+      "section_offset": "0x3378",
+      "size_to_next_symbol": 792,
+      "name": "fn_801F3378",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3690",
+      "section_offset": "0x3690",
+      "size_to_next_symbol": 200,
+      "name": "fn_801F3690",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3758",
+      "section_offset": "0x3758",
+      "size_to_next_symbol": 416,
+      "name": "fn_801F3758",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f38f8",
+      "section_offset": "0x38f8",
+      "size_to_next_symbol": 240,
+      "name": "fn_801F38F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f39e8",
+      "section_offset": "0x39e8",
+      "size_to_next_symbol": 56,
+      "name": "fn_801F39E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3a20",
+      "section_offset": "0x3a20",
+      "size_to_next_symbol": 616,
+      "name": "fn_801F3A20",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3c88",
+      "section_offset": "0x3c88",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F3C88",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3ce0",
+      "section_offset": "0x3ce0",
+      "size_to_next_symbol": 104,
+      "name": "fn_801F3CE0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3d48",
+      "section_offset": "0x3d48",
+      "size_to_next_symbol": 72,
+      "name": "fn_801F3D48",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3d90",
+      "section_offset": "0x3d90",
+      "size_to_next_symbol": 120,
+      "name": "fn_801F3D90",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3e08",
+      "section_offset": "0x3e08",
+      "size_to_next_symbol": 96,
+      "name": "fn_801F3E08",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3e68",
+      "section_offset": "0x3e68",
+      "size_to_next_symbol": 152,
+      "name": "fn_801F3E68",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3f00",
+      "section_offset": "0x3f00",
+      "size_to_next_symbol": 744,
+      "name": "fn_801F3F00",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f41e8",
+      "section_offset": "0x41e8",
+      "size_to_next_symbol": 760,
+      "name": "fn_801F41E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f44e0",
+      "section_offset": "0x44e0",
+      "size_to_next_symbol": 288,
+      "name": "fn_801F44E0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4600",
+      "section_offset": "0x4600",
+      "size_to_next_symbol": 680,
+      "name": "fn_801F4600",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f48a8",
+      "section_offset": "0x48a8",
+      "size_to_next_symbol": 128,
+      "name": "fn_801F48A8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4928",
+      "section_offset": "0x4928",
+      "size_to_next_symbol": 16,
+      "name": "fn_801F4928",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4938",
+      "section_offset": "0x4938",
+      "size_to_next_symbol": 872,
+      "name": "fn_801F4938",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4ca0",
+      "section_offset": "0x4ca0",
+      "size_to_next_symbol": 104,
+      "name": "fn_801F4CA0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4d08",
+      "section_offset": "0x4d08",
+      "size_to_next_symbol": 48,
+      "name": "fn_801F4D08",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4d38",
+      "section_offset": "0x4d38",
+      "size_to_next_symbol": 416,
+      "name": "fn_801F4D38",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4ed8",
+      "section_offset": "0x4ed8",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F4ED8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4f28",
+      "section_offset": "0x4f28",
+      "size_to_next_symbol": 112,
+      "name": "fn_801F4F28",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f4f98",
+      "section_offset": "0x4f98",
+      "size_to_next_symbol": 192,
+      "name": "fn_801F4F98",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f5058",
+      "section_offset": "0x5058",
+      "size_to_next_symbol": 184,
+      "name": "fn_801F5058",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f5110",
+      "section_offset": "0x5110",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F5110",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f5160",
+      "section_offset": "0x5160",
+      "size_to_next_symbol": 328,
+      "name": "fn_801F5160",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f52a8",
+      "section_offset": "0x52a8",
+      "size_to_next_symbol": 2272,
+      "name": "fn_801F52A8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f5b88",
+      "section_offset": "0x5b88",
+      "size_to_next_symbol": 128,
+      "name": "fn_801F5B88",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f5c08",
+      "section_offset": "0x5c08",
+      "size_to_next_symbol": 848,
+      "name": "fn_801F5C08",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f5f58",
+      "section_offset": "0x5f58",
+      "size_to_next_symbol": 376,
+      "name": "fn_801F5F58",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f60d0",
+      "section_offset": "0x60d0",
+      "size_to_next_symbol": 496,
+      "name": "fn_801F60D0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f62c0",
+      "section_offset": "0x62c0",
+      "size_to_next_symbol": 40,
+      "name": "fn_801F62C0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f62e8",
+      "section_offset": "0x62e8",
+      "size_to_next_symbol": 456,
+      "name": "fn_801F62E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f64b0",
+      "section_offset": "0x64b0",
+      "size_to_next_symbol": 840,
+      "name": "fn_801F64B0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f67f8",
+      "section_offset": "0x67f8",
+      "size_to_next_symbol": 184,
+      "name": "fn_801F67F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f68b0",
+      "section_offset": "0x68b0",
+      "size_to_next_symbol": 576,
+      "name": "fn_801F68B0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f6af0",
+      "section_offset": "0x6af0",
+      "size_to_next_symbol": 120,
+      "name": "fn_801F6AF0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f6b68",
+      "section_offset": "0x6b68",
+      "size_to_next_symbol": 1728,
+      "name": "fn_801F6B68",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7228",
+      "section_offset": "0x7228",
+      "size_to_next_symbol": 200,
+      "name": "fn_801F7228",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f72f0",
+      "section_offset": "0x72f0",
+      "size_to_next_symbol": 216,
+      "name": "fn_801F72F0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f73c8",
+      "section_offset": "0x73c8",
+      "size_to_next_symbol": 576,
+      "name": "fn_801F73C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7608",
+      "section_offset": "0x7608",
+      "size_to_next_symbol": 296,
+      "name": "fn_801F7608",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7730",
+      "section_offset": "0x7730",
+      "size_to_next_symbol": 328,
+      "name": "fn_801F7730",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7878",
+      "section_offset": "0x7878",
+      "size_to_next_symbol": 104,
+      "name": "fn_801F7878",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f78e0",
+      "section_offset": "0x78e0",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F78E0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7938",
+      "section_offset": "0x7938",
+      "size_to_next_symbol": 520,
+      "name": "fn_801F7938",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7b40",
+      "section_offset": "0x7b40",
+      "size_to_next_symbol": 272,
+      "name": "fn_801F7B40",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7c50",
+      "section_offset": "0x7c50",
+      "size_to_next_symbol": 312,
+      "name": "fn_801F7C50",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7d88",
+      "section_offset": "0x7d88",
+      "size_to_next_symbol": 224,
+      "name": "fn_801F7D88",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f7e68",
+      "section_offset": "0x7e68",
+      "size_to_next_symbol": 536,
+      "name": "fn_801F7E68",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8080",
+      "section_offset": "0x8080",
+      "size_to_next_symbol": 600,
+      "name": "fn_801F8080",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f82d8",
+      "section_offset": "0x82d8",
+      "size_to_next_symbol": 224,
+      "name": "fn_801F82D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f83b8",
+      "section_offset": "0x83b8",
+      "size_to_next_symbol": 232,
+      "name": "fn_801F83B8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f84a0",
+      "section_offset": "0x84a0",
+      "size_to_next_symbol": 208,
+      "name": "fn_801F84A0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8570",
+      "section_offset": "0x8570",
+      "size_to_next_symbol": 152,
+      "name": "fn_801F8570",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8608",
+      "section_offset": "0x8608",
+      "size_to_next_symbol": 264,
+      "name": "fn_801F8608",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8710",
+      "section_offset": "0x8710",
+      "size_to_next_symbol": 232,
+      "name": "fn_801F8710",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f87f8",
+      "section_offset": "0x87f8",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F87F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8848",
+      "section_offset": "0x8848",
+      "size_to_next_symbol": 448,
+      "name": "fn_801F8848",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8a08",
+      "section_offset": "0x8a08",
+      "size_to_next_symbol": 216,
+      "name": "fn_801F8A08",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8ae0",
+      "section_offset": "0x8ae0",
+      "size_to_next_symbol": 320,
+      "name": "fn_801F8AE0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8c20",
+      "section_offset": "0x8c20",
+      "size_to_next_symbol": 208,
+      "name": "fn_801F8C20",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8cf0",
+      "section_offset": "0x8cf0",
+      "size_to_next_symbol": 176,
+      "name": "fn_801F8CF0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8da0",
+      "section_offset": "0x8da0",
+      "size_to_next_symbol": 184,
+      "name": "fn_801F8DA0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8e58",
+      "section_offset": "0x8e58",
+      "size_to_next_symbol": 192,
+      "name": "fn_801F8E58",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8f18",
+      "section_offset": "0x8f18",
+      "size_to_next_symbol": 208,
+      "name": "fn_801F8F18",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f8fe8",
+      "section_offset": "0x8fe8",
+      "size_to_next_symbol": 304,
+      "name": "fn_801F8FE8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9118",
+      "section_offset": "0x9118",
+      "size_to_next_symbol": 184,
+      "name": "fn_801F9118",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f91d0",
+      "section_offset": "0x91d0",
+      "size_to_next_symbol": 296,
+      "name": "fn_801F91D0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f92f8",
+      "section_offset": "0x92f8",
+      "size_to_next_symbol": 96,
+      "name": "fn_801F92F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9358",
+      "section_offset": "0x9358",
+      "size_to_next_symbol": 1040,
+      "name": "fn_801F9358",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9768",
+      "section_offset": "0x9768",
+      "size_to_next_symbol": 168,
+      "name": "fn_801F9768",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9810",
+      "section_offset": "0x9810",
+      "size_to_next_symbol": 160,
+      "name": "fn_801F9810",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f98b0",
+      "section_offset": "0x98b0",
+      "size_to_next_symbol": 640,
+      "name": "fn_801F98B0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9b30",
+      "section_offset": "0x9b30",
+      "size_to_next_symbol": 560,
+      "name": "fn_801F9B30",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9d60",
+      "section_offset": "0x9d60",
+      "size_to_next_symbol": 352,
+      "name": "fn_801F9D60",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9ec0",
+      "section_offset": "0x9ec0",
+      "size_to_next_symbol": 80,
+      "name": "fn_801F9EC0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9f10",
+      "section_offset": "0x9f10",
+      "size_to_next_symbol": 216,
+      "name": "fn_801F9F10",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f9fe8",
+      "section_offset": "0x9fe8",
+      "size_to_next_symbol": 256,
+      "name": "fn_801F9FE8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa0e8",
+      "section_offset": "0xa0e8",
+      "size_to_next_symbol": 232,
+      "name": "fn_801FA0E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa1d0",
+      "section_offset": "0xa1d0",
+      "size_to_next_symbol": 128,
+      "name": "fn_801FA1D0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa250",
+      "section_offset": "0xa250",
+      "size_to_next_symbol": 64,
+      "name": "fn_801FA250",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa290",
+      "section_offset": "0xa290",
+      "size_to_next_symbol": 80,
+      "name": "fn_801FA290",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa2e0",
+      "section_offset": "0xa2e0",
+      "size_to_next_symbol": 32,
+      "name": "fn_801FA2E0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa300",
+      "section_offset": "0xa300",
+      "size_to_next_symbol": 32,
+      "name": "fn_801FA300",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa320",
+      "section_offset": "0xa320",
+      "size_to_next_symbol": 440,
+      "name": "fn_801FA320",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa4d8",
+      "section_offset": "0xa4d8",
+      "size_to_next_symbol": 104,
+      "name": "fn_801FA4D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa540",
+      "section_offset": "0xa540",
+      "size_to_next_symbol": 256,
+      "name": "fn_801FA540",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa640",
+      "section_offset": "0xa640",
+      "size_to_next_symbol": 72,
+      "name": "fn_801FA640",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa688",
+      "section_offset": "0xa688",
+      "size_to_next_symbol": 272,
+      "name": "fn_801FA688",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa798",
+      "section_offset": "0xa798",
+      "size_to_next_symbol": 320,
+      "name": "fn_801FA798",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa8d8",
+      "section_offset": "0xa8d8",
+      "size_to_next_symbol": 104,
+      "name": "fn_801FA8D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa940",
+      "section_offset": "0xa940",
+      "size_to_next_symbol": 24,
+      "name": "fn_801FA940",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fa958",
+      "section_offset": "0xa958",
+      "size_to_next_symbol": 176,
+      "name": "fn_801FA958",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801faa08",
+      "section_offset": "0xaa08",
+      "size_to_next_symbol": 184,
+      "name": "fn_801FAA08",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801faac0",
+      "section_offset": "0xaac0",
+      "size_to_next_symbol": 144,
+      "name": "fn_801FAAC0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fab50",
+      "section_offset": "0xab50",
+      "size_to_next_symbol": 24,
+      "name": "fn_801FAB50",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fab68",
+      "section_offset": "0xab68",
+      "size_to_next_symbol": 168,
+      "name": "fn_801FAB68",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fac10",
+      "section_offset": "0xac10",
+      "size_to_next_symbol": 24,
+      "name": "fn_801FAC10",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fac28",
+      "section_offset": "0xac28",
+      "size_to_next_symbol": 24,
+      "name": "fn_801FAC28",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fac40",
+      "section_offset": "0xac40",
+      "size_to_next_symbol": 224,
+      "name": "fn_801FAC40",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fad20",
+      "section_offset": "0xad20",
+      "size_to_next_symbol": 72,
+      "name": "fn_801FAD20",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fad68",
+      "section_offset": "0xad68",
+      "size_to_next_symbol": 88,
+      "name": "fn_801FAD68",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fadc0",
+      "section_offset": "0xadc0",
+      "size_to_next_symbol": 368,
+      "name": "fn_801FADC0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801faf30",
+      "section_offset": "0xaf30",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FAF30",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801faf40",
+      "section_offset": "0xaf40",
+      "size_to_next_symbol": 32,
+      "name": "fn_801FAF40",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801faf60",
+      "section_offset": "0xaf60",
+      "size_to_next_symbol": 128,
+      "name": "fn_801FAF60",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fafe0",
+      "section_offset": "0xafe0",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FAFE0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801faff0",
+      "section_offset": "0xaff0",
+      "size_to_next_symbol": 280,
+      "name": "fn_801FAFF0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb108",
+      "section_offset": "0xb108",
+      "size_to_next_symbol": 992,
+      "name": "fn_801FB108",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb4e8",
+      "section_offset": "0xb4e8",
+      "size_to_next_symbol": 8,
+      "name": "fn_801FB4E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb4f0",
+      "section_offset": "0xb4f0",
+      "size_to_next_symbol": 176,
+      "name": "fn_801FB4F0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb5a0",
+      "section_offset": "0xb5a0",
+      "size_to_next_symbol": 632,
+      "name": "fn_801FB5A0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb818",
+      "section_offset": "0xb818",
+      "size_to_next_symbol": 112,
+      "name": "fn_801FB818",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb888",
+      "section_offset": "0xb888",
+      "size_to_next_symbol": 320,
+      "name": "fn_801FB888",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fb9c8",
+      "section_offset": "0xb9c8",
+      "size_to_next_symbol": 1048,
+      "name": "fn_801FB9C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fbde0",
+      "section_offset": "0xbde0",
+      "size_to_next_symbol": 128,
+      "name": "fn_801FBDE0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fbe60",
+      "section_offset": "0xbe60",
+      "size_to_next_symbol": 232,
+      "name": "fn_801FBE60",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fbf48",
+      "section_offset": "0xbf48",
+      "size_to_next_symbol": 504,
+      "name": "fn_801FBF48",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc140",
+      "section_offset": "0xc140",
+      "size_to_next_symbol": 528,
+      "name": "fn_801FC140",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc350",
+      "section_offset": "0xc350",
+      "size_to_next_symbol": 120,
+      "name": "fn_801FC350",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc3c8",
+      "section_offset": "0xc3c8",
+      "size_to_next_symbol": 120,
+      "name": "fn_801FC3C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc440",
+      "section_offset": "0xc440",
+      "size_to_next_symbol": 720,
+      "name": "fn_801FC440",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc710",
+      "section_offset": "0xc710",
+      "size_to_next_symbol": 240,
+      "name": "fn_801FC710",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc800",
+      "section_offset": "0xc800",
+      "size_to_next_symbol": 368,
+      "name": "fn_801FC800",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fc970",
+      "section_offset": "0xc970",
+      "size_to_next_symbol": 464,
+      "name": "fn_801FC970",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fcb40",
+      "section_offset": "0xcb40",
+      "size_to_next_symbol": 392,
+      "name": "fn_801FCB40",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fccc8",
+      "section_offset": "0xccc8",
+      "size_to_next_symbol": 640,
+      "name": "fn_801FCCC8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fcf48",
+      "section_offset": "0xcf48",
+      "size_to_next_symbol": 144,
+      "name": "fn_801FCF48",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fcfd8",
+      "section_offset": "0xcfd8",
+      "size_to_next_symbol": 56,
+      "name": "fn_801FCFD8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd010",
+      "section_offset": "0xd010",
+      "size_to_next_symbol": 392,
+      "name": "fn_801FD010",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd198",
+      "section_offset": "0xd198",
+      "size_to_next_symbol": 80,
+      "name": "fn_801FD198",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd1e8",
+      "section_offset": "0xd1e8",
+      "size_to_next_symbol": 80,
+      "name": "fn_801FD1E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd238",
+      "section_offset": "0xd238",
+      "size_to_next_symbol": 144,
+      "name": "fn_801FD238",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd2c8",
+      "section_offset": "0xd2c8",
+      "size_to_next_symbol": 704,
+      "name": "fn_801FD2C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd588",
+      "section_offset": "0xd588",
+      "size_to_next_symbol": 1080,
+      "name": "fn_801FD588",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fd9c0",
+      "section_offset": "0xd9c0",
+      "size_to_next_symbol": 120,
+      "name": "fn_801FD9C0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fda38",
+      "section_offset": "0xda38",
+      "size_to_next_symbol": 72,
+      "name": "fn_801FDA38",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fda80",
+      "section_offset": "0xda80",
+      "size_to_next_symbol": 368,
+      "name": "fn_801FDA80",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fdbf0",
+      "section_offset": "0xdbf0",
+      "size_to_next_symbol": 336,
+      "name": "fn_801FDBF0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fdd40",
+      "section_offset": "0xdd40",
+      "size_to_next_symbol": 184,
+      "name": "fn_801FDD40",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fddf8",
+      "section_offset": "0xddf8",
+      "size_to_next_symbol": 400,
+      "name": "fn_801FDDF8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fdf88",
+      "section_offset": "0xdf88",
+      "size_to_next_symbol": 432,
+      "name": "fn_801FDF88",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe138",
+      "section_offset": "0xe138",
+      "size_to_next_symbol": 272,
+      "name": "fn_801FE138",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe248",
+      "section_offset": "0xe248",
+      "size_to_next_symbol": 304,
+      "name": "fn_801FE248",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe378",
+      "section_offset": "0xe378",
+      "size_to_next_symbol": 216,
+      "name": "fn_801FE378",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe450",
+      "section_offset": "0xe450",
+      "size_to_next_symbol": 272,
+      "name": "fn_801FE450",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe560",
+      "section_offset": "0xe560",
+      "size_to_next_symbol": 184,
+      "name": "fn_801FE560",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe618",
+      "section_offset": "0xe618",
+      "size_to_next_symbol": 240,
+      "name": "fn_801FE618",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe708",
+      "section_offset": "0xe708",
+      "size_to_next_symbol": 40,
+      "name": "fn_801FE708",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe730",
+      "section_offset": "0xe730",
+      "size_to_next_symbol": 80,
+      "name": "fn_801FE730",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe780",
+      "section_offset": "0xe780",
+      "size_to_next_symbol": 296,
+      "name": "fn_801FE780",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe8a8",
+      "section_offset": "0xe8a8",
+      "size_to_next_symbol": 232,
+      "name": "fn_801FE8A8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe990",
+      "section_offset": "0xe990",
+      "size_to_next_symbol": 104,
+      "name": "fn_801FE990",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fe9f8",
+      "section_offset": "0xe9f8",
+      "size_to_next_symbol": 164,
+      "name": "fn_801FE9F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fea9c",
+      "section_offset": "0xea9c",
+      "size_to_next_symbol": 20,
+      "name": "fn_801FEA9C",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feab0",
+      "section_offset": "0xeab0",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAB0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feab4",
+      "section_offset": "0xeab4",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAB4",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feab8",
+      "section_offset": "0xeab8",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAB8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feabc",
+      "section_offset": "0xeabc",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEABC",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feac0",
+      "section_offset": "0xeac0",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAC0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feac4",
+      "section_offset": "0xeac4",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAC4",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feac8",
+      "section_offset": "0xeac8",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAC8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feacc",
+      "section_offset": "0xeacc",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEACC",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fead0",
+      "section_offset": "0xead0",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAD0",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fead4",
+      "section_offset": "0xead4",
+      "size_to_next_symbol": 4,
+      "name": "fn_801FEAD4",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801fead8",
+      "section_offset": "0xead8",
+      "size_to_next_symbol": 132,
+      "name": "fn_801FEAD8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feb5c",
+      "section_offset": "0xeb5c",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEB5C",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feb6c",
+      "section_offset": "0xeb6c",
+      "size_to_next_symbol": 60,
+      "name": "fn_801FEB6C",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801feba8",
+      "section_offset": "0xeba8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEBA8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801febb8",
+      "section_offset": "0xebb8",
+      "size_to_next_symbol": 32,
+      "name": "fn_801FEBB8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801febd8",
+      "section_offset": "0xebd8",
+      "size_to_next_symbol": 16,
+      "name": "memset",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010d110",
+      "target_name": "memset"
+    },
+    {
+      "address": "0x801febe8",
+      "section_offset": "0xebe8",
+      "size_to_next_symbol": 16,
+      "name": "XexUnloadImage",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007d0e8",
+      "target_name": "XexUnloadImage"
+    },
+    {
+      "address": "0x801febf8",
+      "section_offset": "0xebf8",
+      "size_to_next_symbol": 16,
+      "name": "FscInvalidateDevice",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006eb20",
+      "target_name": "FscInvalidateDevice"
+    },
+    {
+      "address": "0x801fec08",
+      "section_offset": "0xec08",
+      "size_to_next_symbol": 16,
+      "name": "HalSendSMCMessage",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80067f48",
+      "target_name": "HalSendSMCMessage"
+    },
+    {
+      "address": "0x801fec18",
+      "section_offset": "0xec18",
+      "size_to_next_symbol": 16,
+      "name": "DbgPrint",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80085ee8",
+      "target_name": "DbgPrint"
+    },
+    {
+      "address": "0x801fec28",
+      "section_offset": "0xec28",
+      "size_to_next_symbol": 16,
+      "name": "RtlGetStackLimits",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800893b0",
+      "target_name": "RtlGetStackLimits"
+    },
+    {
+      "address": "0x801fec38",
+      "section_offset": "0xec38",
+      "size_to_next_symbol": 16,
+      "name": "KeStallExecutionProcessor",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80073484",
+      "target_name": "KeStallExecutionProcessor"
+    },
+    {
+      "address": "0x801fec48",
+      "section_offset": "0xec48",
+      "size_to_next_symbol": 16,
+      "name": "KeFlushCacheRange",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80073850",
+      "target_name": "KeFlushCacheRange"
+    },
+    {
+      "address": "0x801fec58",
+      "section_offset": "0xec58",
+      "size_to_next_symbol": 16,
+      "name": "MmGetPhysicalAddress",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80080048",
+      "target_name": "MmGetPhysicalAddress"
+    },
+    {
+      "address": "0x801fec68",
+      "section_offset": "0xec68",
+      "size_to_next_symbol": 16,
+      "name": "HvxFlushDCacheRange",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007f968",
+      "target_name": "HvxFlushDCacheRange"
+    },
+    {
+      "address": "0x801fec78",
+      "section_offset": "0xec78",
+      "size_to_next_symbol": 16,
+      "name": "DbgBreakPoint",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80085ea0",
+      "target_name": "DbgBreakPoint"
+    },
+    {
+      "address": "0x801fec88",
+      "section_offset": "0xec88",
+      "size_to_next_symbol": 16,
+      "name": "RtlInitAnsiString",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80086110",
+      "target_name": "RtlInitAnsiString"
+    },
+    {
+      "address": "0x801fec98",
+      "section_offset": "0xec98",
+      "size_to_next_symbol": 16,
+      "name": "ObDeleteSymbolicLink",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008af50",
+      "target_name": "ObDeleteSymbolicLink"
+    },
+    {
+      "address": "0x801feca8",
+      "section_offset": "0xeca8",
+      "size_to_next_symbol": 16,
+      "name": "SataChannelIdentifyDevice",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8015e218",
+      "target_name": "SataChannelIdentifyDevice"
+    },
+    {
+      "address": "0x801fecb8",
+      "section_offset": "0xecb8",
+      "size_to_next_symbol": 16,
+      "name": "SataChannelSetTransferMode",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8015e2b8",
+      "target_name": "SataChannelSetTransferMode"
+    },
+    {
+      "address": "0x801fecc8",
+      "section_offset": "0xecc8",
+      "size_to_next_symbol": 16,
+      "name": "MmFreePhysicalMemory",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800807b8",
+      "target_name": "MmFreePhysicalMemory"
+    },
+    {
+      "address": "0x801fecd8",
+      "section_offset": "0xecd8",
+      "size_to_next_symbol": 16,
+      "name": "ObCreateSymbolicLink",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008aef0",
+      "target_name": "ObCreateSymbolicLink"
+    },
+    {
+      "address": "0x801fece8",
+      "section_offset": "0xece8",
+      "size_to_next_symbol": 16,
+      "name": "ExInitializeReadWriteLock",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80064498",
+      "target_name": "ExInitializeReadWriteLock"
+    },
+    {
+      "address": "0x801fecf8",
+      "section_offset": "0xecf8",
+      "size_to_next_symbol": 16,
+      "name": "NtAllocateVirtualMemory",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80083aa8",
+      "target_name": "NtAllocateVirtualMemory"
+    },
+    {
+      "address": "0x801fed08",
+      "section_offset": "0xed08",
+      "size_to_next_symbol": 16,
+      "name": "VdDisplayFatalError",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800bdd40",
+      "target_name": "VdDisplayFatalError"
+    },
+    {
+      "address": "0x801fed18",
+      "section_offset": "0xed18",
+      "size_to_next_symbol": 16,
+      "name": "ExFreePool",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80064768",
+      "target_name": "ExFreePool"
+    },
+    {
+      "address": "0x801fed28",
+      "section_offset": "0xed28",
+      "size_to_next_symbol": 16,
+      "name": "NtCreateFile",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006caa8",
+      "target_name": "NtCreateFile"
+    },
+    {
+      "address": "0x801fed38",
+      "section_offset": "0xed38",
+      "size_to_next_symbol": 16,
+      "name": "NtQueryInformationFile",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006d630",
+      "target_name": "NtQueryInformationFile"
+    },
+    {
+      "address": "0x801fed48",
+      "section_offset": "0xed48",
+      "size_to_next_symbol": 16,
+      "name": "NtReadFile",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006cec8",
+      "target_name": "NtReadFile"
+    },
+    {
+      "address": "0x801fed58",
+      "section_offset": "0xed58",
+      "size_to_next_symbol": 16,
+      "name": "NtWaitForSingleObjectEx",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008b188",
+      "target_name": "NtWaitForSingleObjectEx"
+    },
+    {
+      "address": "0x801fed68",
+      "section_offset": "0xed68",
+      "size_to_next_symbol": 16,
+      "name": "NtClose",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80089eb0",
+      "target_name": "NtClose"
+    },
+    {
+      "address": "0x801fed78",
+      "section_offset": "0xed78",
+      "size_to_next_symbol": 16,
+      "name": "memcpy",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010cc40",
+      "target_name": "memcpy"
+    },
+    {
+      "address": "0x801fed88",
+      "section_offset": "0xed88",
+      "size_to_next_symbol": 16,
+      "name": "NtFreeVirtualMemory",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80083190",
+      "target_name": "NtFreeVirtualMemory"
+    },
+    {
+      "address": "0x801fed98",
+      "section_offset": "0xed98",
+      "size_to_next_symbol": 16,
+      "name": "XexLoadImage",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007d7c0",
+      "target_name": "XexLoadImage"
+    },
+    {
+      "address": "0x801feda8",
+      "section_offset": "0xeda8",
+      "size_to_next_symbol": 16,
+      "name": "XexGetProcedureAddress",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007d1b0",
+      "target_name": "XexGetProcedureAddress"
+    },
+    {
+      "address": "0x801fedb8",
+      "section_offset": "0xedb8",
+      "size_to_next_symbol": 16,
+      "name": "AnipCheckFlags",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80061498",
+      "target_name": "AnipCheckFlags"
+    },
+    {
+      "address": "0x801fedc8",
+      "section_offset": "0xedc8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEDC8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800c6918",
+      "target_name": null
+    },
+    {
+      "address": "0x801fedd8",
+      "section_offset": "0xedd8",
+      "size_to_next_symbol": 16,
+      "name": "VdSetDisplayModeOverride",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800c6b58",
+      "target_name": "VdSetDisplayModeOverride"
+    },
+    {
+      "address": "0x801fede8",
+      "section_offset": "0xede8",
+      "size_to_next_symbol": 16,
+      "name": "VdSetDisplayMode",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800c7650",
+      "target_name": "VdSetDisplayMode"
+    },
+    {
+      "address": "0x801fedf8",
+      "section_offset": "0xedf8",
+      "size_to_next_symbol": 16,
+      "name": "VdSetWSSOption",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800bede8",
+      "target_name": "VdSetWSSOption"
+    },
+    {
+      "address": "0x801fee08",
+      "section_offset": "0xee08",
+      "size_to_next_symbol": 16,
+      "name": "VdInitializeScaler",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800cf670",
+      "target_name": "VdInitializeScaler"
+    },
+    {
+      "address": "0x801fee18",
+      "section_offset": "0xee18",
+      "size_to_next_symbol": 32,
+      "name": "VdTurnDisplayOn",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800c6010",
+      "target_name": "VdTurnDisplayOn"
+    },
+    {
+      "address": "0x801fee38",
+      "section_offset": "0xee38",
+      "size_to_next_symbol": 16,
+      "name": "ExCreateThread",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80065f40",
+      "target_name": "ExCreateThread"
+    },
+    {
+      "address": "0x801fee48",
+      "section_offset": "0xee48",
+      "size_to_next_symbol": 16,
+      "name": "RtlInitUnicodeString",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80086150",
+      "target_name": "RtlInitUnicodeString"
+    },
+    {
+      "address": "0x801fee58",
+      "section_offset": "0xee58",
+      "size_to_next_symbol": 16,
+      "name": "RtlCompareUnicodeStringN",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800864b0",
+      "target_name": "RtlCompareUnicodeStringN"
+    },
+    {
+      "address": "0x801fee68",
+      "section_offset": "0xee68",
+      "size_to_next_symbol": 16,
+      "name": "KfAcquireSpinLock",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80070138",
+      "target_name": "KfAcquireSpinLock"
+    },
+    {
+      "address": "0x801fee78",
+      "section_offset": "0xee78",
+      "size_to_next_symbol": 16,
+      "name": "ObDissectName",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008c148",
+      "target_name": "ObDissectName"
+    },
+    {
+      "address": "0x801fee88",
+      "section_offset": "0xee88",
+      "size_to_next_symbol": 16,
+      "name": "ObpLookupElementNameInDirectory",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008a348",
+      "target_name": "ObpLookupElementNameInDirectory"
+    },
+    {
+      "address": "0x801fee98",
+      "section_offset": "0xee98",
+      "size_to_next_symbol": 16,
+      "name": "ObReferenceObject",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008b8e0",
+      "target_name": "ObReferenceObject"
+    },
+    {
+      "address": "0x801feea8",
+      "section_offset": "0xeea8",
+      "size_to_next_symbol": 16,
+      "name": "KfReleaseSpinLock",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007018c",
+      "target_name": "KfReleaseSpinLock"
+    },
+    {
+      "address": "0x801feeb8",
+      "section_offset": "0xeeb8",
+      "size_to_next_symbol": 16,
+      "name": "ObDereferenceObject",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008b928",
+      "target_name": "ObDereferenceObject"
+    },
+    {
+      "address": "0x801feec8",
+      "section_offset": "0xeec8",
+      "size_to_next_symbol": 16,
+      "name": "KeEnterCriticalRegion",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800718e0",
+      "target_name": "KeEnterCriticalRegion"
+    },
+    {
+      "address": "0x801feed8",
+      "section_offset": "0xeed8",
+      "size_to_next_symbol": 16,
+      "name": "ExAcquireReadWriteLockShared",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800642b8",
+      "target_name": "ExAcquireReadWriteLockShared"
+    },
+    {
+      "address": "0x801feee8",
+      "section_offset": "0xeee8",
+      "size_to_next_symbol": 16,
+      "name": "ExReleaseReadWriteLock",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800643d8",
+      "target_name": "ExReleaseReadWriteLock"
+    },
+    {
+      "address": "0x801feef8",
+      "section_offset": "0xeef8",
+      "size_to_next_symbol": 16,
+      "name": "KeLeaveCriticalRegion",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800718f8",
+      "target_name": "KeLeaveCriticalRegion"
+    },
+    {
+      "address": "0x801fef08",
+      "section_offset": "0xef08",
+      "size_to_next_symbol": 16,
+      "name": "strncpy",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010d1b0",
+      "target_name": "strncpy"
+    },
+    {
+      "address": "0x801fef18",
+      "section_offset": "0xef18",
+      "size_to_next_symbol": 16,
+      "name": "ExAcquireReadWriteLockExclusive",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800641d8",
+      "target_name": "ExAcquireReadWriteLockExclusive"
+    },
+    {
+      "address": "0x801fef28",
+      "section_offset": "0xef28",
+      "size_to_next_symbol": 16,
+      "name": "ExAllocatePool",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80064a68",
+      "target_name": "ExAllocatePool"
+    },
+    {
+      "address": "0x801fef38",
+      "section_offset": "0xef38",
+      "size_to_next_symbol": 16,
+      "name": "RtlImageNtHeader",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800893e8",
+      "target_name": "RtlImageNtHeader"
+    },
+    {
+      "address": "0x801fef48",
+      "section_offset": "0xef48",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEF48",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80089678",
+      "target_name": null
+    },
+    {
+      "address": "0x801fef58",
+      "section_offset": "0xef58",
+      "size_to_next_symbol": 16,
+      "name": "RtlCompareStringN",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80086390",
+      "target_name": "RtlCompareStringN"
+    },
+    {
+      "address": "0x801fef68",
+      "section_offset": "0xef68",
+      "size_to_next_symbol": 16,
+      "name": "RtlImageXexHeaderField",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80089590",
+      "target_name": "RtlImageXexHeaderField"
+    },
+    {
+      "address": "0x801fef78",
+      "section_offset": "0xef78",
+      "size_to_next_symbol": 16,
+      "name": "NtCreateEvent",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80066368",
+      "target_name": "NtCreateEvent"
+    },
+    {
+      "address": "0x801fef88",
+      "section_offset": "0xef88",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEF88",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e0bf0",
+      "target_name": null
+    },
+    {
+      "address": "0x801fef98",
+      "section_offset": "0xef98",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEF98",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816c5508",
+      "target_name": null
+    },
+    {
+      "address": "0x801fefa8",
+      "section_offset": "0xefa8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEFA8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816a2898",
+      "target_name": null
+    },
+    {
+      "address": "0x801fefb8",
+      "section_offset": "0xefb8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEFB8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816a1458",
+      "target_name": null
+    },
+    {
+      "address": "0x801fefc8",
+      "section_offset": "0xefc8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FEFC8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800655a0",
+      "target_name": null
+    },
+    {
+      "address": "0x801fefd8",
+      "section_offset": "0xefd8",
+      "size_to_next_symbol": 16,
+      "name": "MmAllocatePhysicalMemoryEx",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800801d8",
+      "target_name": "MmAllocatePhysicalMemoryEx"
+    },
+    {
+      "address": "0x801fefe8",
+      "section_offset": "0xefe8",
+      "size_to_next_symbol": 32,
+      "name": "_snprintf",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010c7f8",
+      "target_name": "_snprintf"
+    },
+    {
+      "address": "0x801ff008",
+      "section_offset": "0xf008",
+      "size_to_next_symbol": 16,
+      "name": "IoCreateDevice",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006aea0",
+      "target_name": "IoCreateDevice"
+    },
+    {
+      "address": "0x801ff018",
+      "section_offset": "0xf018",
+      "size_to_next_symbol": 16,
+      "name": "RtlInitializeCriticalSection",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80089760",
+      "target_name": "RtlInitializeCriticalSection"
+    },
+    {
+      "address": "0x801ff028",
+      "section_offset": "0xf028",
+      "size_to_next_symbol": 32,
+      "name": "IoDeleteDevice",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006b150",
+      "target_name": "IoDeleteDevice"
+    },
+    {
+      "address": "0x801ff048",
+      "section_offset": "0xf048",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF048",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8167c0e0",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff058",
+      "section_offset": "0xf058",
+      "size_to_next_symbol": 16,
+      "name": "_snwprintf",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010c880",
+      "target_name": "_snwprintf"
+    },
+    {
+      "address": "0x801ff068",
+      "section_offset": "0xf068",
+      "size_to_next_symbol": 64,
+      "name": "fn_801FF068",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80092458",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff0a8",
+      "section_offset": "0xf0a8",
+      "size_to_next_symbol": 16,
+      "name": "NtWriteFile",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006cf00",
+      "target_name": "NtWriteFile"
+    },
+    {
+      "address": "0x801ff0b8",
+      "section_offset": "0xf0b8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF0B8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010f438",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff0c8",
+      "section_offset": "0xf0c8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF0C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816a9de8",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff0d8",
+      "section_offset": "0xf0d8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF0D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816dd118",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff0e8",
+      "section_offset": "0xf0e8",
+      "size_to_next_symbol": 16,
+      "name": "XexGetModuleHandle",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007d320",
+      "target_name": "XexGetModuleHandle"
+    },
+    {
+      "address": "0x801ff0f8",
+      "section_offset": "0xf0f8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF0F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816ddb20",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff108",
+      "section_offset": "0xf108",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF108",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80092028",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff118",
+      "section_offset": "0xf118",
+      "size_to_next_symbol": 16,
+      "name": "IoAcquireDeviceObjectLock",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006ab28",
+      "target_name": "IoAcquireDeviceObjectLock"
+    },
+    {
+      "address": "0x801ff128",
+      "section_offset": "0xf128",
+      "size_to_next_symbol": 16,
+      "name": "IoReleaseDeviceObjectLock",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006ab38",
+      "target_name": "IoReleaseDeviceObjectLock"
+    },
+    {
+      "address": "0x801ff138",
+      "section_offset": "0xf138",
+      "size_to_next_symbol": 16,
+      "name": "RtlEnterCriticalSection",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80088fa0",
+      "target_name": "RtlEnterCriticalSection"
+    },
+    {
+      "address": "0x801ff148",
+      "section_offset": "0xf148",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF148",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x801495d0",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff158",
+      "section_offset": "0xf158",
+      "size_to_next_symbol": 16,
+      "name": "RtlLeaveCriticalSection",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800890f8",
+      "target_name": "RtlLeaveCriticalSection"
+    },
+    {
+      "address": "0x801ff168",
+      "section_offset": "0xf168",
+      "size_to_next_symbol": 16,
+      "name": "ObIsTitleObject",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008b9b0",
+      "target_name": "ObIsTitleObject"
+    },
+    {
+      "address": "0x801ff178",
+      "section_offset": "0xf178",
+      "size_to_next_symbol": 16,
+      "name": "RtlMultiByteToUnicodeN",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800868a8",
+      "target_name": "RtlMultiByteToUnicodeN"
+    },
+    {
+      "address": "0x801ff188",
+      "section_offset": "0xf188",
+      "size_to_next_symbol": 16,
+      "name": "IoCompleteRequest",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006ac20",
+      "target_name": "IoCompleteRequest"
+    },
+    {
+      "address": "0x801ff198",
+      "section_offset": "0xf198",
+      "size_to_next_symbol": 16,
+      "name": "IoSetShareAccess",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006bbd0",
+      "target_name": "IoSetShareAccess"
+    },
+    {
+      "address": "0x801ff1a8",
+      "section_offset": "0xf1a8",
+      "size_to_next_symbol": 16,
+      "name": "IoRemoveShareAccess",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006bb38",
+      "target_name": "IoRemoveShareAccess"
+    },
+    {
+      "address": "0x801ff1b8",
+      "section_offset": "0xf1b8",
+      "size_to_next_symbol": 16,
+      "name": "IoCheckShareAccess",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006b9d0",
+      "target_name": "IoCheckShareAccess"
+    },
+    {
+      "address": "0x801ff1c8",
+      "section_offset": "0xf1c8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF1C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006b440",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff1d8",
+      "section_offset": "0xf1d8",
+      "size_to_next_symbol": 16,
+      "name": "IoCallDriver",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006ab48",
+      "target_name": "IoCallDriver"
+    },
+    {
+      "address": "0x801ff1e8",
+      "section_offset": "0xf1e8",
+      "size_to_next_symbol": 16,
+      "name": "IoIsNameInExpression",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8015bac8",
+      "target_name": "IoIsNameInExpression"
+    },
+    {
+      "address": "0x801ff1f8",
+      "section_offset": "0xf1f8",
+      "size_to_next_symbol": 16,
+      "name": "RtlUnicodeToUtf8Size",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80086a98",
+      "target_name": "RtlUnicodeToUtf8Size"
+    },
+    {
+      "address": "0x801ff208",
+      "section_offset": "0xf208",
+      "size_to_next_symbol": 16,
+      "name": "RtlUnicodeToUtf8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80086af0",
+      "target_name": "RtlUnicodeToUtf8"
+    },
+    {
+      "address": "0x801ff218",
+      "section_offset": "0xf218",
+      "size_to_next_symbol": 16,
+      "name": "_vsnprintf",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8010caa0",
+      "target_name": "_vsnprintf"
+    },
+    {
+      "address": "0x801ff228",
+      "section_offset": "0xf228",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF228",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816968a8",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff238",
+      "section_offset": "0xf238",
+      "size_to_next_symbol": 16,
+      "name": "ObReferenceObjectByHandle",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8008ba50",
+      "target_name": "ObReferenceObjectByHandle"
+    },
+    {
+      "address": "0x801ff248",
+      "section_offset": "0xf248",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF248",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816ba440",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff258",
+      "section_offset": "0xf258",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF258",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816b7b80",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff268",
+      "section_offset": "0xf268",
+      "size_to_next_symbol": 16,
+      "name": "NicAttach",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800d2160",
+      "target_name": "NicAttach"
+    },
+    {
+      "address": "0x801ff278",
+      "section_offset": "0xf278",
+      "size_to_next_symbol": 48,
+      "name": "fn_801FF278",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e3510",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff2a8",
+      "section_offset": "0xf2a8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF2A8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816ba660",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff2b8",
+      "section_offset": "0xf2b8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF2B8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816b7c10",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff2c8",
+      "section_offset": "0xf2c8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF2C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e0c68",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff2d8",
+      "section_offset": "0xf2d8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF2D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e0ca0",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff2e8",
+      "section_offset": "0xf2e8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF2E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e0298",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff2f8",
+      "section_offset": "0xf2f8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF2F8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816a2588",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff308",
+      "section_offset": "0xf308",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF308",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x817c4a58",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff318",
+      "section_offset": "0xf318",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF318",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x817bd708",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff328",
+      "section_offset": "0xf328",
+      "size_to_next_symbol": 16,
+      "name": "ExAllocatePoolTypeWithTag",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800644e8",
+      "target_name": "ExAllocatePoolTypeWithTag"
+    },
+    {
+      "address": "0x801ff338",
+      "section_offset": "0xf338",
+      "size_to_next_symbol": 16,
+      "name": "IopCopyTemplateFileName",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8015b8b0",
+      "target_name": "IopCopyTemplateFileName"
+    },
+    {
+      "address": "0x801ff348",
+      "section_offset": "0xf348",
+      "size_to_next_symbol": 16,
+      "name": "RtlTimeFieldsToTime",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80089a58",
+      "target_name": "RtlTimeFieldsToTime"
+    },
+    {
+      "address": "0x801ff358",
+      "section_offset": "0xf358",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF358",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e24b8",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff368",
+      "section_offset": "0xf368",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF368",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816e2200",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff378",
+      "section_offset": "0xf378",
+      "size_to_next_symbol": 16,
+      "name": "NicDetach",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800d21e8",
+      "target_name": "NicDetach"
+    },
+    {
+      "address": "0x801ff388",
+      "section_offset": "0xf388",
+      "size_to_next_symbol": 16,
+      "name": "NicGetLinkState",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800d27c0",
+      "target_name": "NicGetLinkState"
+    },
+    {
+      "address": "0x801ff398",
+      "section_offset": "0xf398",
+      "size_to_next_symbol": 16,
+      "name": "KeSetEvent",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800741d8",
+      "target_name": "KeSetEvent"
+    },
+    {
+      "address": "0x801ff3a8",
+      "section_offset": "0xf3a8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF3A8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x81722ed0",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff3b8",
+      "section_offset": "0xf3b8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF3B8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x81722ef8",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff3c8",
+      "section_offset": "0xf3c8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF3C8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x81722fa8",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff3d8",
+      "section_offset": "0xf3d8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF3D8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x817b3d10",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff3e8",
+      "section_offset": "0xf3e8",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF3E8",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x817af168",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff3f8",
+      "section_offset": "0xf3f8",
+      "size_to_next_symbol": 16,
+      "name": "RtlUpperChar",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800861f0",
+      "target_name": "RtlUpperChar"
+    },
+    {
+      "address": "0x801ff408",
+      "section_offset": "0xf408",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF408",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x81722e30",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff418",
+      "section_offset": "0xf418",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF418",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816cb168",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff428",
+      "section_offset": "0xf428",
+      "size_to_next_symbol": 16,
+      "name": "KeQuerySystemTime",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80071948",
+      "target_name": "KeQuerySystemTime"
+    },
+    {
+      "address": "0x801ff438",
+      "section_offset": "0xf438",
+      "size_to_next_symbol": 16,
+      "name": "RtlTimeToTimeFields",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800898e8",
+      "target_name": "RtlTimeToTimeFields"
+    },
+    {
+      "address": "0x801ff448",
+      "section_offset": "0xf448",
+      "size_to_next_symbol": 16,
+      "name": "IoSynchronousFsdRequest",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8006b928",
+      "target_name": "IoSynchronousFsdRequest"
+    },
+    {
+      "address": "0x801ff458",
+      "section_offset": "0xf458",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF458",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816cac20",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff468",
+      "section_offset": "0xf468",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF468",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816caf08",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff478",
+      "section_offset": "0xf478",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF478",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x81721b90",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff488",
+      "section_offset": "0xf488",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF488",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816c7d78",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff498",
+      "section_offset": "0xf498",
+      "size_to_next_symbol": 24,
+      "name": "fn_801FF498",
+      "evidence": [
+        "direct BL target or standard PPC prologue"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x816a0d70",
+      "target_name": null
+    }
+  ]
+}

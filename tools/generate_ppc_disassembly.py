@@ -51,10 +51,10 @@ TARGETS = (
     Target(
         "PeerPressure/System/KernelExpansion.bin",
         "KernelExpansion.ppc.asm",
-        0,
+        0x801F0000,
         0,
         None,
-        "Runtime base is not yet established; output includes embedded data as linear decode.",
+        "Base proven by absolute references into the image; output includes embedded data as linear decode.",
     ),
     Target(
         "Hdd/PeerPressureExploit-Stage2.bin",

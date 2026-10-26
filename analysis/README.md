@@ -143,9 +143,9 @@ complete byte-identical assembly reconstructions. Higher-level recovery
 remains in progress: executable functions, imports, types, globals, and control
 flow have not yet been completely named across all components. The focused
 Stage4 preamble CFG does not imply that the clean-HV data tail is executable.
-The persistent HDD Stage2 and sparse Flash DMA ROP/data image are now exactly
-reconstructed; the manifest inventory identifies `KernelExpansion.bin` as the
-remaining unresolved Peer raw payload. `HddSecuritySectorPayload.bin` is now a lossless
+The persistent HDD Stage2, sparse Flash DMA ROP/data image, and kernel expansion
+are now exactly reconstructed, leaving no manifest-listed Peer raw payload
+without lossless source form. `HddSecuritySectorPayload.bin` is now a lossless
 six-word reconstruction with its retail-17559 stack-pivot gadget identified.
 The six
 platform SMC firmware images remain reference binaries requiring

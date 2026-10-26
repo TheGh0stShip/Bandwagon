@@ -1,0 +1,20 @@
+{
+  "schema": "bandwagon-kernel-expansion-semantic-symbols-v1",
+  "image_base": "0x801f0000",
+  "symbols": [
+    {"address":"0x801f0000","recovered_name":"KernelExpansionEntry","semantic_name":"KernelExpansionInitialize","confidence":"high","evidence":["entry point","initializes PAYLOAD namespace and global state"]},
+    {"address":"0x801f0150","recovered_name":"fn_801F0150","semantic_name":"ReportExceptionContext","confidence":"high","evidence":["second-chance exception strings","register and memory dump formatting"]},
+    {"address":"0x801f0648","recovered_name":"fn_801F0648","semantic_name":"LoadPeerPressureConfig","confidence":"high","evidence":["direct Config.ini path reference"]},
+    {"address":"0x801f0748","recovered_name":"fn_801F0748","semantic_name":"LoadKernelPatchStream","confidence":"high","evidence":["direct kernel_patches.bin path reference"]},
+    {"address":"0x801f09d0","recovered_name":"fn_801F09D0","semantic_name":"LaunchBootXell","confidence":"high","evidence":["direct BootXell.xex path reference"]},
+    {"address":"0x801f0a50","recovered_name":"fn_801F0A50","semantic_name":"ConfigureBootAnimation","confidence":"high","evidence":["flash, themed 9199, and custom boot-animation paths"]},
+    {"address":"0x801f1a60","recovered_name":"fn_801F1A60","semantic_name":"ConfigureAuroraSideLoad","confidence":"high","evidence":["dash.exe, Aurora.exe, and AuroraFixer.xex references"]},
+    {"address":"0x801f4938","recovered_name":"fn_801F4938","semantic_name":"ParseDllConfigEntry","confidence":"high","evidence":["DllConfig, TitleID, MediaID, version, and FileName keys"]},
+    {"address":"0x801f7e68","recovered_name":"fn_801F7E68","semantic_name":"FindSoftmodUpdateArchive","confidence":"high","evidence":["mass-storage UpdateData.zip format path"]},
+    {"address":"0x801f8080","recovered_name":"fn_801F8080","semantic_name":"LaunchSettingsApp","confidence":"high","evidence":["direct SettingsApp.xex path reference"]},
+    {"address":"0x801fa320","recovered_name":"fn_801FA320","semantic_name":"RecognizeFat32Volume","confidence":"high","evidence":["FAT32 filesystem signature"]},
+    {"address":"0x801fa540","recovered_name":"fn_801FA540","semantic_name":"RecognizeGptDisk","confidence":"high","evidence":["EFI PART signature"]},
+    {"address":"0x801fa688","recovered_name":"fn_801FA688","semantic_name":"CheckPhaseTwoMarker","confidence":"high","evidence":["PPROOT update.phase2 path"]},
+    {"address":"0x801fa798","recovered_name":"fn_801FA798","semantic_name":"LaunchUpdateCheck","confidence":"high","evidence":["direct UpdateCheck.xex path reference"]}
+  ]
+}

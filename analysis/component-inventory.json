@@ -5,18 +5,15 @@
   "status_counts": {
     "binary_asset": 1,
     "exact_initialized_source": 6,
-    "exact_whole_file_source": 4,
+    "exact_whole_file_source": 5,
     "human_readable_data": 1,
     "human_readable_source": 3,
     "lossless_structured_source": 7,
     "provenance_only": 1,
     "public_baseline_identical": 3,
-    "reference_binary_only": 6,
-    "unresolved": 1
+    "reference_binary_only": 6
   },
-  "unresolved_peer_payloads": [
-    "PeerPressure\\System\\KernelExpansion.bin"
-  ],
+  "unresolved_peer_payloads": [],
   "entries": [
     {
       "path": "Updater.xex",
@@ -248,9 +245,9 @@
       "size": 83792,
       "sha1": "1899b198f3c745a499e0994c3d9f51b19a093271",
       "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
-      "category": "peer_raw_payload",
-      "status": "unresolved",
-      "evidence": null
+      "category": "peer_code_and_data",
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/kernel-expansion/KernelExpansion.md"
     },
     {
       "path": "PeerPressure\\System\\kernel_patches.bin",

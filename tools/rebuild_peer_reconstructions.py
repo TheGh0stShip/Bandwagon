@@ -23,6 +23,8 @@ HDD_SECURITY_SOURCE = ROOT / "analysis/reconstruction/HddSecuritySectorPayload.r
 HDD_SECURITY_REFERENCE = ROOT / "Hdd/HddSecuritySectorPayload.bin"
 FLASH_DMA_SOURCE = ROOT / "analysis/reconstruction/FlashDmaPayload.reconstructed.S"
 FLASH_DMA_REFERENCE = ROOT / "Flash/FlashDmaPayload.bin"
+KERNEL_EXPANSION_SOURCE = ROOT / "analysis/reconstruction/KernelExpansion.reconstructed.S"
+KERNEL_EXPANSION_REFERENCE = ROOT / "PeerPressure/System/KernelExpansion.bin"
 
 STAGE3_RANGES = (
     (0x000, 0x0F8, "Peer Stage3 entry point and alignment"),
@@ -86,11 +88,18 @@ def main() -> None:
         stage2_output = temporary_path / "stage2.bin"
         hdd_security_output = temporary_path / "hdd-security.bin"
         flash_dma_output = temporary_path / "flash-dma.bin"
+        kernel_expansion_output = temporary_path / "kernel-expansion.bin"
         assemble(STAGE4_SOURCE, stage4_output, llvm_mc, llvm_objcopy)
         assemble(STAGE3_SOURCE, stage3_output, llvm_mc, llvm_objcopy)
         assemble(STAGE2_SOURCE, stage2_output, llvm_mc, llvm_objcopy)
         assemble(HDD_SECURITY_SOURCE, hdd_security_output, llvm_mc, llvm_objcopy)
         assemble(FLASH_DMA_SOURCE, flash_dma_output, llvm_mc, llvm_objcopy)
+        assemble(KERNEL_EXPANSION_SOURCE, kernel_expansion_output, llvm_mc, llvm_objcopy)
+
+        kernel_expansion_built = kernel_expansion_output.read_bytes()
+        kernel_expansion_reference = KERNEL_EXPANSION_REFERENCE.read_bytes()
+        if kernel_expansion_built != kernel_expansion_reference:
+            raise SystemExit("Kernel expansion reconstruction mismatch")
 
         flash_dma_built = flash_dma_output.read_bytes()
         flash_dma_reference = FLASH_DMA_REFERENCE.read_bytes()
@@ -177,6 +186,13 @@ def main() -> None:
                 "sha256": sha256(flash_dma_built),
                 "whole_file_byte_identical": True,
             },
+            "kernel_expansion": {
+                "source": str(KERNEL_EXPANSION_SOURCE.relative_to(ROOT)),
+                "reference": str(KERNEL_EXPANSION_REFERENCE.relative_to(ROOT)),
+                "size": len(kernel_expansion_built),
+                "sha256": sha256(kernel_expansion_built),
+                "whole_file_byte_identical": True,
+            },
             "hdd_security_sector": {
                 "source": str(HDD_SECURITY_SOURCE.relative_to(ROOT)),
                 "reference": str(HDD_SECURITY_REFERENCE.relative_to(ROOT)),
@@ -212,6 +228,11 @@ def main() -> None:
     if args.json:
         print(json.dumps(result, indent=2))
     else:
+        print(
+            "Kernel expansion: exact whole-file rebuild, "
+            f"{result['kernel_expansion']['size']} bytes, "
+            f"SHA-256 {result['kernel_expansion']['sha256']}"
+        )
         print(
             "Flash DMA payload: exact whole-file rebuild, "
             f"{result['flash_dma']['size']} bytes, SHA-256 {result['flash_dma']['sha256']}"
