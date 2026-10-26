@@ -1,0 +1,1092 @@
+{
+  "schema": "bandwagon-aurorafixer-completeness-v1",
+  "image": "analysis/xex/basefiles/PeerPressure_SideLoading_AuroraFixer.pe",
+  "image_sha256": "eca239f0f17b4c8c4b9e1e24bb29fad324ed6b698081bf8e2fa379707b2de168",
+  "pdata_and_idc_entry_count": 103,
+  "non_pdata_code_islands": [
+    {
+      "address": "0x880102f8",
+      "size": 4,
+      "recovered_name": "ReturnImmediately",
+      "category": "peer_authored",
+      "evidence": [
+        "single blr",
+        "installed over Aurora's DbgBreakPoint import"
+      ]
+    }
+  ],
+  "category_counts": {
+    "peer_authored": 4,
+    "compiler_runtime": 60,
+    "import_thunk": 39
+  },
+  "all_entries_classified": true,
+  "entries": [
+    {
+      "address": "0x88010000",
+      "size": 24,
+      "original_name": "fn_88010000",
+      "recovered_name": "FlushInstructionCacheSyscall",
+      "category": "peer_authored",
+      "evidence": [
+        "application-specific control flow before CRT boundary"
+      ]
+    },
+    {
+      "address": "0x88010018",
+      "size": 216,
+      "original_name": "fn_88010018",
+      "recovered_name": "PatchAbsoluteBranch",
+      "category": "peer_authored",
+      "evidence": [
+        "application-specific control flow before CRT boundary"
+      ]
+    },
+    {
+      "address": "0x880100f0",
+      "size": 528,
+      "original_name": "fn_880100F0",
+      "recovered_name": "PatchModuleImportByOrdinal",
+      "category": "peer_authored",
+      "evidence": [
+        "application-specific control flow before CRT boundary"
+      ]
+    },
+    {
+      "address": "0x88010300",
+      "size": 112,
+      "original_name": "fn_88010300",
+      "recovered_name": "AuroraFixerDllMain",
+      "category": "peer_authored",
+      "evidence": [
+        "application-specific control flow before CRT boundary"
+      ]
+    },
+    {
+      "address": "0x88010370",
+      "size": 300,
+      "original_name": "fn_88010370",
+      "recovered_name": "CrtDllInitDispatch",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x8801049c",
+      "size": 116,
+      "original_name": "fn_8801049C",
+      "recovered_name": "CrtDllInitUnwindHelper",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010510",
+      "size": 296,
+      "original_name": "fn_88010510",
+      "recovered_name": "DllMainCrtStartup",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010638",
+      "size": 48,
+      "original_name": "fn_88010638",
+      "recovered_name": "CrtObjectCleanupThunk",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010668",
+      "size": 1336,
+      "original_name": "_start",
+      "recovered_name": "DllEntryPoint",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010ba0",
+      "size": 80,
+      "original_name": "fn_88010BA0",
+      "recovered_name": "__savegprlr",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup",
+        "byte-identical shared implementation",
+        "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+      ]
+    },
+    {
+      "address": "0x88010bf0",
+      "size": 96,
+      "original_name": "fn_88010BF0",
+      "recovered_name": "fn_88010BF0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010c50",
+      "size": 72,
+      "original_name": "fn_88010C50",
+      "recovered_name": "fn_88010C50",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010c98",
+      "size": 216,
+      "original_name": "fn_88010C98",
+      "recovered_name": "fn_88010C98",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010d70",
+      "size": 64,
+      "original_name": "fn_88010D70",
+      "recovered_name": "fn_88010D70",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010db0",
+      "size": 192,
+      "original_name": "fn_88010DB0",
+      "recovered_name": "fn_88010DB0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010e70",
+      "size": 112,
+      "original_name": "fn_88010E70",
+      "recovered_name": "fn_88010E70",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010ee0",
+      "size": 224,
+      "original_name": "fn_88010EE0",
+      "recovered_name": "fn_88010EE0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88010fc0",
+      "size": 64,
+      "original_name": "fn_88010FC0",
+      "recovered_name": "fn_88010FC0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011000",
+      "size": 96,
+      "original_name": "fn_88011000",
+      "recovered_name": "fn_88011000",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011060",
+      "size": 356,
+      "original_name": "fn_88011060",
+      "recovered_name": "fn_88011060",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880111c4",
+      "size": 116,
+      "original_name": "fn_880111C4",
+      "recovered_name": "fn_880111C4",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011238",
+      "size": 48,
+      "original_name": "fn_88011238",
+      "recovered_name": "fn_88011238",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011268",
+      "size": 520,
+      "original_name": "fn_88011268",
+      "recovered_name": "fn_88011268",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011470",
+      "size": 144,
+      "original_name": "fn_88011470",
+      "recovered_name": "fn_88011470",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011500",
+      "size": 112,
+      "original_name": "fn_88011500",
+      "recovered_name": "fn_88011500",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011570",
+      "size": 40,
+      "original_name": "fn_88011570",
+      "recovered_name": "fn_88011570",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011598",
+      "size": 136,
+      "original_name": "fn_88011598",
+      "recovered_name": "fn_88011598",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011620",
+      "size": 244,
+      "original_name": "fn_88011620",
+      "recovered_name": "fn_88011620",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011714",
+      "size": 76,
+      "original_name": "fn_88011714",
+      "recovered_name": "fn_88011714",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011760",
+      "size": 96,
+      "original_name": "fn_88011760",
+      "recovered_name": "fn_88011760",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880117c0",
+      "size": 96,
+      "original_name": "fn_880117C0",
+      "recovered_name": "fn_880117C0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011820",
+      "size": 128,
+      "original_name": "fn_88011820",
+      "recovered_name": "fn_88011820",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880118a0",
+      "size": 76,
+      "original_name": "fn_880118A0",
+      "recovered_name": "fn_880118A0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880118ec",
+      "size": 84,
+      "original_name": "fn_880118EC",
+      "recovered_name": "fn_880118EC",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011940",
+      "size": 144,
+      "original_name": "fn_88011940",
+      "recovered_name": "fn_88011940",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880119d0",
+      "size": 48,
+      "original_name": "fn_880119D0",
+      "recovered_name": "fn_880119D0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011a00",
+      "size": 184,
+      "original_name": "fn_88011A00",
+      "recovered_name": "fn_88011A00",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011ab8",
+      "size": 56,
+      "original_name": "fn_88011AB8",
+      "recovered_name": "fn_88011AB8",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011af0",
+      "size": 200,
+      "original_name": "fn_88011AF0",
+      "recovered_name": "fn_88011AF0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011bb8",
+      "size": 360,
+      "original_name": "fn_88011BB8",
+      "recovered_name": "fn_88011BB8",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011d20",
+      "size": 224,
+      "original_name": "fn_88011D20",
+      "recovered_name": "fn_88011D20",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011e00",
+      "size": 120,
+      "original_name": "fn_88011E00",
+      "recovered_name": "fn_88011E00",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011e78",
+      "size": 96,
+      "original_name": "fn_88011E78",
+      "recovered_name": "fn_88011E78",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011ed8",
+      "size": 248,
+      "original_name": "fn_88011ED8",
+      "recovered_name": "fn_88011ED8",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88011fd0",
+      "size": 112,
+      "original_name": "fn_88011FD0",
+      "recovered_name": "fn_88011FD0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012040",
+      "size": 80,
+      "original_name": "fn_88012040",
+      "recovered_name": "fn_88012040",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012090",
+      "size": 472,
+      "original_name": "fn_88012090",
+      "recovered_name": "fn_88012090",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012268",
+      "size": 288,
+      "original_name": "fn_88012268",
+      "recovered_name": "fn_88012268",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012388",
+      "size": 656,
+      "original_name": "fn_88012388",
+      "recovered_name": "fn_88012388",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012618",
+      "size": 88,
+      "original_name": "fn_88012618",
+      "recovered_name": "fn_88012618",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012670",
+      "size": 1032,
+      "original_name": "fn_88012670",
+      "recovered_name": "fn_88012670",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012a78",
+      "size": 312,
+      "original_name": "fn_88012A78",
+      "recovered_name": "fn_88012A78",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012bb0",
+      "size": 280,
+      "original_name": "fn_88012BB0",
+      "recovered_name": "fn_88012BB0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012cc8",
+      "size": 360,
+      "original_name": "fn_88012CC8",
+      "recovered_name": "fn_88012CC8",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88012e30",
+      "size": 576,
+      "original_name": "fn_88012E30",
+      "recovered_name": "fn_88012E30",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88013070",
+      "size": 872,
+      "original_name": "fn_88013070",
+      "recovered_name": "fn_88013070",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880133d8",
+      "size": 1468,
+      "original_name": "fn_880133D8",
+      "recovered_name": "fn_880133D8",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88013994",
+      "size": 20,
+      "original_name": "fn_88013994",
+      "recovered_name": "fn_88013994",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880139a8",
+      "size": 2176,
+      "original_name": "fn_880139A8",
+      "recovered_name": "fn_880139A8",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88014228",
+      "size": 120,
+      "original_name": "fn_88014228",
+      "recovered_name": "fn_88014228",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880142a0",
+      "size": 636,
+      "original_name": "fn_880142A0",
+      "recovered_name": "fn_880142A0",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x8801451c",
+      "size": 116,
+      "original_name": "fn_8801451C",
+      "recovered_name": "fn_8801451C",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88014590",
+      "size": 112,
+      "original_name": "fn_88014590",
+      "recovered_name": "fn_88014590",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x88014600",
+      "size": 444,
+      "original_name": "fn_88014600",
+      "recovered_name": "fn_88014600",
+      "category": "compiler_runtime",
+      "evidence": [
+        "MSVC/XDK CRT region reached through DllMainCrtStartup"
+      ]
+    },
+    {
+      "address": "0x880147bc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_0",
+      "recovered_name": "xboxkrnl_exe_0",
+      "category": "import_thunk",
+      "evidence": [
+        "IDC import-thunk range"
+      ]
+    },
+    {
+      "address": "0x880147cc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_1",
+      "recovered_name": "xboxkrnl_exe_1",
+      "category": "import_thunk",
+      "evidence": [
+        "IDC import-thunk range"
+      ]
+    },
+    {
+      "address": "0x880147dc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_2",
+      "recovered_name": "RtlCompareStringN",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "041a1d3a8996594176dc64a316bc084ab4c25f890e42129a537bf01f53e111d5"
+      ]
+    },
+    {
+      "address": "0x880147ec",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_3",
+      "recovered_name": "RtlImageXexHeaderField",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "6f8fc1ca701f037b808f9f23857125995bfaefb6bead767c1c8b863067684ed2"
+      ]
+    },
+    {
+      "address": "0x880147fc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_4",
+      "recovered_name": "xboxkrnl_exe_4",
+      "category": "import_thunk",
+      "evidence": [
+        "IDC import-thunk range"
+      ]
+    },
+    {
+      "address": "0x8801480c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_5",
+      "recovered_name": "xboxkrnl_exe_5",
+      "category": "import_thunk",
+      "evidence": [
+        "IDC import-thunk range"
+      ]
+    },
+    {
+      "address": "0x8801481c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_6",
+      "recovered_name": "xboxkrnl_exe_6",
+      "category": "import_thunk",
+      "evidence": [
+        "IDC import-thunk range"
+      ]
+    },
+    {
+      "address": "0x8801482c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_7",
+      "recovered_name": "__C_specific_handler",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "31cba2921de1360d02fd9c5b496fb7b6436417a67eb30b14483833871d7c09bf"
+      ]
+    },
+    {
+      "address": "0x8801483c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_8",
+      "recovered_name": "KeTlsGetValue",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "9afbc7a2d724b7ace9522be9585f43f242528337b4dd7f51c99e0fbb07022fd2"
+      ]
+    },
+    {
+      "address": "0x8801484c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_9",
+      "recovered_name": "KeTlsSetValue",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "24306d9b6369d7158fd12094b48e2d4c12205440054fa1d173640c1b981d947e"
+      ]
+    },
+    {
+      "address": "0x8801485c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_10",
+      "recovered_name": "KeTlsFree",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "82aa1b1dc80ea045d090824ed9c982317b58a7c35984268b56819b24ca4afc10"
+      ]
+    },
+    {
+      "address": "0x8801486c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_11",
+      "recovered_name": "KeTlsAlloc",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "1318b45cdb97d7da949ce9bf5a686f162a330d21fc849259b9be9c4bad593e4b"
+      ]
+    },
+    {
+      "address": "0x8801487c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_12",
+      "recovered_name": "KeBugCheck",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "0a61d972e0d60739118fb0bb5fc50b80af0a9eb5e41ab6098302791b8ac35a99"
+      ]
+    },
+    {
+      "address": "0x8801488c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_13",
+      "recovered_name": "RtlLeaveCriticalSection",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "015fc30296c7176b001088c78c0a217619157384af038bad343853d2bf8c843d"
+      ]
+    },
+    {
+      "address": "0x8801489c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_14",
+      "recovered_name": "RtlInitializeCriticalSectionAndSpinCount",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "553d2f8f89366c2dbd68bf000fa1dae6c2780375aebeb1daa1ba806731c82af6"
+      ]
+    },
+    {
+      "address": "0x880148ac",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_15",
+      "recovered_name": "RtlEnterCriticalSection",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "145da3232188596777696c65e6481fa5b8df68ebd34ac2188036884f8dc3e891"
+      ]
+    },
+    {
+      "address": "0x880148bc",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_17",
+      "recovered_name": "RtlInitAnsiString",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "9b23720027671f6112e07b394706658c632185baf6ce36697f2d997f278ab77b"
+      ]
+    },
+    {
+      "address": "0x880148cc",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_18",
+      "recovered_name": "NtAllocateVirtualMemory",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "06362550d15c61b446e4021afa0e7935bc4a7a6706c2378dcd156441258b5691"
+      ]
+    },
+    {
+      "address": "0x880148dc",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_19",
+      "recovered_name": "KeBugCheckEx",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "bc4b6bf6ade61144f18447545086f5cb1dd56c3bfcf61be5813205b2efce488e"
+      ]
+    },
+    {
+      "address": "0x880148ec",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_20",
+      "recovered_name": "KeGetCurrentProcessType",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "eec128320e9d9b9b93f1f4de4f4ef9502617918cc9c0b0981a314dc1252e71b2"
+      ]
+    },
+    {
+      "address": "0x880148fc",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_21",
+      "recovered_name": "NtFreeVirtualMemory",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c"
+      ]
+    },
+    {
+      "address": "0x8801490c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_22",
+      "recovered_name": "RtlCompareMemoryUlong",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "ceef78e5109c647515c9c48f906182df8bc7184615fd15a01df3ae812acd27ab"
+      ]
+    },
+    {
+      "address": "0x8801491c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_23",
+      "recovered_name": "RtlInitializeCriticalSection",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "2e91a8d56bcdd6b0f0efe8816785b5fda591105af3ca6ff828e8b9917674a190"
+      ]
+    },
+    {
+      "address": "0x8801492c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_24",
+      "recovered_name": "NtQueryVirtualMemory",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "5b5f010cda5376813b77fd31463388a5b7e4b11210faf1d9aa2b486b0dd9a61b"
+      ]
+    },
+    {
+      "address": "0x8801493c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_25",
+      "recovered_name": "RtlRaiseException",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "43dbdd3ba06c9fac0a0d469a63569033df91a319aa919356583bae10b27359fc"
+      ]
+    },
+    {
+      "address": "0x8801494c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_26",
+      "recovered_name": "RtlFreeAnsiString",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "7c047696c0383c5aca6dd7b268d6875aa7a6d1dc9e4b99a77a22f54b19e9a0f9"
+      ]
+    },
+    {
+      "address": "0x8801495c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_27",
+      "recovered_name": "RtlUnicodeStringToAnsiString",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "ac72da5e159a0e36e5938f317255b5ff8fb92d761d050ff04f2cb170aefa8438"
+      ]
+    },
+    {
+      "address": "0x8801496c",
+      "size": 16,
+      "original_name": "__imp_xboxkrnl_exe_28",
+      "recovered_name": "RtlInitUnicodeString",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "53892601a0beba80c061faf9331a62fbdbab775fd10a73ebfd8eea3a917e6af8"
+      ]
+    },
+    {
+      "address": "0x8801497c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_29",
+      "recovered_name": "NtQueryFullAttributesFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "3a2e909b2aadfd7eedd1b5273700918854b39ec5bdd55ea2f56f070ca92c2aa2"
+      ]
+    },
+    {
+      "address": "0x8801498c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_30",
+      "recovered_name": "NtOpenFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "6889e42ef79cddb3d2331c2a7ff73fe997ea9f03b4c6610dc8a230739528f828"
+      ]
+    },
+    {
+      "address": "0x8801499c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_31",
+      "recovered_name": "NtSetInformationFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "7e04c7b4caa441e23719b5f1712caece6c6d23cd7e600fb5ededd027e40641f8"
+      ]
+    },
+    {
+      "address": "0x880149ac",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_32",
+      "recovered_name": "NtQueryInformationFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "e241c7d0022d498124b343951135d754cb6af7ce43e1ea4db0549fbc669d2d99"
+      ]
+    },
+    {
+      "address": "0x880149bc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_33",
+      "recovered_name": "NtQueryVolumeInformationFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "c7490510fcaa2b594730c7a285c7e6d57058cf0af1b5465b97b91e013535d7e0"
+      ]
+    },
+    {
+      "address": "0x880149cc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_34",
+      "recovered_name": "NtQueryDirectoryFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "93c9dfdfff31b080b8d68337cd5a0f18bd2b77940c963b2ef085de55156622e0"
+      ]
+    },
+    {
+      "address": "0x880149dc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_35",
+      "recovered_name": "NtReadFileScatter",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "f274fdfc4527e2a3d363b72902c18e59111688e1db6a1479808e43e21405d207"
+      ]
+    },
+    {
+      "address": "0x880149ec",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_36",
+      "recovered_name": "NtReadFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "fb4872da7643eab20a8bdc6d22fdcc329b4fc1e266afd454e06103dc8de5a276"
+      ]
+    },
+    {
+      "address": "0x880149fc",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_37",
+      "recovered_name": "NtCreateFile",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "93bfa5e8c5533d038200d21fc85cabe0c5ecfa8918979cf66f961cc19bdc9299"
+      ]
+    },
+    {
+      "address": "0x88014a0c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_38",
+      "recovered_name": "NtDuplicateObject",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "31fc28b2fc4e0377df716432f892db5977071e86784c1bef0e7558718b3c9da1"
+      ]
+    },
+    {
+      "address": "0x88014a1c",
+      "size": 16,
+      "original_name": "xboxkrnl_exe_39",
+      "recovered_name": "NtClose",
+      "category": "import_thunk",
+      "evidence": [
+        "byte-identical to named thunk",
+        "d73db1828adf01aff2af4dfc52ae99ae43f9ee61bc4cf590703f3b9f2d02e924"
+      ]
+    }
+  ]
+}

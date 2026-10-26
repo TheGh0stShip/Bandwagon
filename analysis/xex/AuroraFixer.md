@@ -23,6 +23,14 @@ IDC import names). The generated call graph contains 236 direct calls, 178
 resolving exactly. Regenerate everything with
 `tools/analyze_aurorafixer_xex.sh`.
 
+`AuroraFixer-completeness.json` classifies every one of those 103 entries: four
+are Peer-authored application functions, 60 are MSVC/XDK compiler-runtime
+entries, and 39 are import thunks. The non-`.pdata` four-byte
+`ReturnImmediately` island is recorded separately as the fifth Peer-authored
+routine. Exact cross-XEX fingerprints provide 35 safe runtime/import aliases.
+This closes the function-ownership inventory for AuroraFixer; it does not treat
+the linked CRT as original Peer logic.
+
 ## Recovered behavior
 
 `AuroraFixerDllMain` handles `DLL_PROCESS_ATTACH`, emits its attach diagnostic,
