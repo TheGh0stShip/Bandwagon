@@ -28,7 +28,7 @@ SEMANTIC_NAMES = {
     0x0A50: "ConfigureBootAnimation",
     0x14D0: "ReadFileToAllocatedBuffer",
     0x16A8: "ParsePeerPressureConfig",
-    0x1790: "FindXexSection",
+    0x1790: "InstallKernelXexDataHandlers",
     0x1A60: "ConfigureAuroraSideLoad",
     0x1CF0: "LoadBootImage",
     0x1FC0: "LoadBootAnimationTheme",

@@ -690,8 +690,8 @@
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f091c",
       "target_address": "0x801f1790",
-      "callee": "FindXexSection",
-      "target_containing_function": "FindXexSection"
+      "callee": "InstallKernelXexDataHandlers",
+      "target_containing_function": "InstallKernelXexDataHandlers"
     },
     {
       "caller": "LoadKernelPatchStream",
@@ -1398,7 +1398,7 @@
       "target_containing_function": "ExFreePool"
     },
     {
-      "caller": "FindXexSection",
+      "caller": "InstallKernelXexDataHandlers",
       "caller_address": "0x801f1790",
       "instruction_address": "0x801f17a8",
       "target_address": "0x801fef38",
@@ -1406,7 +1406,7 @@
       "target_containing_function": "RtlImageNtHeader"
     },
     {
-      "caller": "FindXexSection",
+      "caller": "InstallKernelXexDataHandlers",
       "caller_address": "0x801f1790",
       "instruction_address": "0x801f18c8",
       "target_address": "0x801fec48",
@@ -1414,7 +1414,7 @@
       "target_containing_function": "KeFlushCacheRange"
     },
     {
-      "caller": "FindXexSection",
+      "caller": "InstallKernelXexDataHandlers",
       "caller_address": "0x801f1790",
       "instruction_address": "0x801f18d0",
       "target_address": "0x801fec58",
@@ -1422,7 +1422,7 @@
       "target_containing_function": "MmGetPhysicalAddress"
     },
     {
-      "caller": "FindXexSection",
+      "caller": "InstallKernelXexDataHandlers",
       "caller_address": "0x801f1790",
       "instruction_address": "0x801f18d8",
       "target_address": "0x801fec68",

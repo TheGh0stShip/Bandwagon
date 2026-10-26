@@ -212,7 +212,7 @@
       "address": "0x801f1790",
       "section_offset": "0x1790",
       "size_to_next_symbol": 352,
-      "name": "FindXexSection",
+      "name": "InstallKernelXexDataHandlers",
       "evidence": [
         "behavioral name corroborated by strings and call role"
       ],

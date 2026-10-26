@@ -1534,7 +1534,7 @@ fn_801F1700:
     .long 0x38210090 /* 0x01784 */
     .long 0x4800d398 /* 0x01788 */
     .long 0x00000000 /* 0x0178c */
-FindXexSection:
+InstallKernelXexDataHandlers:
     .long 0x7d8802a6 /* 0x01790 */
     .long 0x9181fff8 /* 0x01794 */
     .long 0xfbc1ffe8 /* 0x01798 */

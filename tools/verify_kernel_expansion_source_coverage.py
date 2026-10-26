@@ -46,7 +46,10 @@ def main() -> None:
             raise SystemExit(f"Kernel Expansion function changed at {address:#x}")
         source = (ROOT / function["source"]).read_text(encoding="utf-8")
         header = (
-            ROOT / "reconstruction/kernel_expansion/runtime.hpp"
+            ROOT
+            / function.get(
+                "header", "reconstruction/kernel_expansion/runtime.hpp"
+            )
         ).read_text(encoding="utf-8")
         for symbol in function["symbols"]:
             if symbol not in source and symbol not in header:

@@ -97,7 +97,7 @@
       "string": "\\Device\\Flash"
     },
     {
-      "function": "FindXexSection",
+      "function": "InstallKernelXexDataHandlers",
       "function_address": "0x801f1790",
       "instruction_address": "0x801f17d8",
       "string_address": "0x801ffd14",

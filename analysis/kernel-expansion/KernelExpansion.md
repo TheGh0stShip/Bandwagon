@@ -59,6 +59,11 @@ lift. The first exact-byte-bound routines are:
   file-service workflow. It preserves pending-I/O waiting, allocation of the
   file size plus one, NUL placement, failure cleanup order, and the rule that
   caller outputs change only after a successful read.
+- `InstallKernelXexDataHandlers` (`0x801f1790`, 352 bytes), represented as a
+  bounds-checked mapped-PE walker. It finds `.xedata`, installs both relocated
+  handler words, updates the table count, and performs the recovered CPU and
+  hypervisor cache-maintenance sequence. The earlier `FindXexSection` label
+  described only the first part of the routine and has been corrected.
 - `RecognizeGptDisk` (`0x801fa540`, 256 bytes), represented as a bounds-safe
   GPT-header recognizer and the exact recovered reflected CRC-32 loop. The
   binary includes the stored checksum field in its checksum input; the lift

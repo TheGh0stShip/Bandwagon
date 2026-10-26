@@ -26,6 +26,15 @@
       "symbols": ["FileServices", "ReadFileToAllocatedBuffer", "kStatusPending"]
     },
     {
+      "address": "0x801f1790",
+      "size": 352,
+      "sha256": "10dfab716ac933c790d92260d6aef8df8f484ff2f35c0f3d3045f1bda8f4eb26",
+      "semantic_name": "InstallKernelXexDataHandlers",
+      "source": "reconstruction/kernel_expansion/xex_hooks.cpp",
+      "header": "reconstruction/kernel_expansion/xex_hooks.hpp",
+      "symbols": ["XexHookServices", "InstallKernelXexDataHandlers", "kFirstXexDataHandler", "kSecondXexDataHandler"]
+    },
+    {
       "address": "0x801fa540",
       "size": 256,
       "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
@@ -44,6 +53,7 @@
   ],
   "tests": [
     "reconstruction/kernel_expansion/runtime_test.cpp",
+    "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]
 }
