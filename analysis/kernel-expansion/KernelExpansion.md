@@ -13,13 +13,13 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 368 entry points from standard PPC prologues, direct `bl` targets, nine
+- 371 entry points from standard PPC prologues, direct `bl` targets, twelve
   independently bounded local entries, and tail-only import thunks.
 - 1,085 direct call edges.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 65 high-confidence behavioral labels are emitted directly into the exact
+- 68 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -63,6 +63,18 @@ lift. The first exact-byte-bound routines are:
   together), represented as typed wrappers around the resolved kernel object
   manager calls. Tests bind the `PAYLOAD:` link and target ordering and both
   zero/nonzero status conversions.
+- `CreatePeerPressureRootSymbolicLink` (`0x801f1490`, 24 bytes), the
+  table-exposed fixed adapter that binds `\??\PPROOT:` to
+  `\Device\Harddisk0\Partition1\PeerPressure` through the recovered object
+  manager wrapper.
+- `GetNandWriteProtectionEnabled` and
+  `SetNandWriteProtectionDisabled` (`0x801f14a8` and `0x801f14b8`, 40
+  bytes together), represented as typed access to the byte that gates four
+  installed NAND write-protection hooks. SettingsApp independently describes
+  the policy as preventing applications from writing to console NAND. The
+  setter uses only the caller's low byte and stores its Boolean inverse; tests
+  bind initial enablement, both
+  states, low-byte truncation, raw-byte reads, and safe host null handling.
 - `GetPeerPressureConfig` and `InitializeDefaultConfig` (104 bytes together),
   represented with the fully recovered 0x170-byte `PeerPressureConfig` layout:
   boot-animation type and theme, dashboard path, startup-update flag, eject
@@ -71,8 +83,8 @@ lift. The first exact-byte-bound routines are:
   flag, and enters the locked config path.
 - `GetPeerPressureConfigValueByHash` and
   `SetPeerPressureConfigValueByHash` (`0x801f1178` and `0x801f1328`, 792
-  bytes together), represented as the table-exposed configuration
-  ABI. Both scan only the six cached hashes: reads take the shared lock and
+  bytes together), represented as the table-exposed configuration ABI. Both
+  scan only the six cached hashes: reads take the shared lock and
   return fixed string capacities or raw integer/Boolean values; writes take the
   exclusive lock, enforce the recovered input sizes, and persist in mode one
   before unlocking. Tests bind every reachable status and lock transition,
@@ -240,10 +252,10 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-54 independently bounded routines totaling 9,920 original instruction bytes.
+57 independently bounded routines totaling 9,984 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 368 discovered entries are maintainable
+evidence oracle, not a claim that all 371 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former

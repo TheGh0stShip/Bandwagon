@@ -1339,19 +1339,19 @@ SetPeerPressureConfigValueByHash:
     .long 0x3f20c000 /* 0x01484 */
     .long 0x63390002 /* 0x01488 */
     .long 0x4bffff24 /* 0x0148c */
-fn_801F1490:
+CreatePeerPressureRootSymbolicLink:
     .long 0x3d608020 /* 0x01490 */
     .long 0x3d408020 /* 0x01494 */
     .long 0x808b32a0 /* 0x01498 */
     .long 0x806a32a8 /* 0x0149c */
     .long 0x4bfff150 /* 0x014a0 */
     .long 0x00000000 /* 0x014a4 */
-fn_801F14A8:
+GetNandWriteProtectionEnabled:
     .long 0x3d608020 /* 0x014a8 */
     .long 0x886b37f4 /* 0x014ac */
     .long 0x4e800020 /* 0x014b0 */
     .long 0x00000000 /* 0x014b4 */
-fn_801F14B8:
+SetNandWriteProtectionDisabled:
     .long 0x546b063e /* 0x014b8 */
     .long 0x3d408020 /* 0x014bc */
     .long 0x7d6b0034 /* 0x014c0 */
@@ -3653,6 +3653,7 @@ fn_801F3758:
     .long 0xebe1fff0 /* 0x0381c */
     .long 0x4e800020 /* 0x03820 */
     .long 0x00000000 /* 0x03824 */
+fn_801F3828:
     .long 0x3d608020 /* 0x03828 */
     .long 0x896b37f4 /* 0x0382c */
     .long 0x280b0000 /* 0x03830 */
@@ -3675,6 +3676,7 @@ fn_801F3758:
     .long 0x60630022 /* 0x03874 */
     .long 0x4e800020 /* 0x03878 */
     .long 0x4800b7fc /* 0x0387c */
+fn_801F3880:
     .long 0x3d608020 /* 0x03880 */
     .long 0x896b37f4 /* 0x03884 */
     .long 0x280b0000 /* 0x03888 */
@@ -3689,6 +3691,7 @@ fn_801F3758:
     .long 0x60630022 /* 0x038ac */
     .long 0x4e800020 /* 0x038b0 */
     .long 0x4800b7d4 /* 0x038b4 */
+fn_801F38B8:
     .long 0x3d608020 /* 0x038b8 */
     .long 0x896b37f4 /* 0x038bc */
     .long 0x280b0000 /* 0x038c0 */

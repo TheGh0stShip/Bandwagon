@@ -4,7 +4,7 @@
   "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
   "image_base": "0x801f0000",
   "text_end": "0xf4b0",
-  "function_count": 368,
+  "function_count": 371,
   "kernel_thunk_count": 141,
   "resolved_kernel_thunk_count": 127,
   "functions": [
@@ -182,7 +182,7 @@
       "address": "0x801f1490",
       "section_offset": "0x1490",
       "size_to_next_symbol": 24,
-      "name": "fn_801F1490",
+      "name": "CreatePeerPressureRootSymbolicLink",
       "evidence": [
         "independently bounded local boundary and decoded behavior"
       ],
@@ -192,7 +192,7 @@
       "address": "0x801f14a8",
       "section_offset": "0x14a8",
       "size_to_next_symbol": 16,
-      "name": "fn_801F14A8",
+      "name": "GetNandWriteProtectionEnabled",
       "evidence": [
         "independently bounded local boundary and decoded behavior"
       ],
@@ -202,7 +202,7 @@
       "address": "0x801f14b8",
       "section_offset": "0x14b8",
       "size_to_next_symbol": 24,
-      "name": "fn_801F14B8",
+      "name": "SetNandWriteProtectionDisabled",
       "evidence": [
         "independently bounded local boundary and decoded behavior"
       ],
@@ -531,10 +531,40 @@
     {
       "address": "0x801f3758",
       "section_offset": "0x3758",
-      "size_to_next_symbol": 416,
+      "size_to_next_symbol": 208,
       "name": "fn_801F3758",
       "evidence": [
         "direct BL target or standard PPC prologue"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3828",
+      "section_offset": "0x3828",
+      "size_to_next_symbol": 88,
+      "name": "fn_801F3828",
+      "evidence": [
+        "independently bounded local boundary and decoded behavior"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3880",
+      "section_offset": "0x3880",
+      "size_to_next_symbol": 56,
+      "name": "fn_801F3880",
+      "evidence": [
+        "independently bounded local boundary and decoded behavior"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f38b8",
+      "section_offset": "0x38b8",
+      "size_to_next_symbol": 64,
+      "name": "fn_801F38B8",
+      "evidence": [
+        "independently bounded local boundary and decoded behavior"
       ],
       "kind": "local_code"
     },

@@ -38,6 +38,8 @@ and update surface:
 - launch `PPROOT:\\System\\BootEdit.xex` for theme editing;
 - configure the dashboard executable and parse OtherOS `BootOption` entries
   from `PPROOT:\\OtherOS\\boot.ini`;
+- display and toggle NAND write protection, warning that disabling it allows
+  applications to write console NAND;
 - enable automatic startup update checks, show the update log, and persist
   settings; and
 - display Peer Pressure, kernel, and SMC versions.

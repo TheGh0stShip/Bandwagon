@@ -72,6 +72,33 @@
       "symbols": ["SetPeerPressureConfigValueByHash", "ConfigFileWorkflow", "ConfigLockServices", "kConfigStatusUnsuccessful"]
     },
     {
+      "address": "0x801f1490",
+      "size": 24,
+      "sha256": "b9d1e347cc509687e9d1aa43bdf0adfd7d188f8c0c902e96b5558ea648a8f185",
+      "semantic_name": "CreatePeerPressureRootSymbolicLink",
+      "source": "reconstruction/kernel_expansion/namespace_links.cpp",
+      "header": "reconstruction/kernel_expansion/namespace_links.hpp",
+      "symbols": ["CreatePeerPressureRootSymbolicLink", "kPeerPressureRootLink", "kPeerPressureRootTarget"]
+    },
+    {
+      "address": "0x801f14a8",
+      "size": 16,
+      "sha256": "45c5ddfdc67b897d1f5b67dab0fe6c9dca24d2d571b6dd6e1a74a489e3f4c8be",
+      "semantic_name": "GetNandWriteProtectionEnabled",
+      "source": "reconstruction/kernel_expansion/nand_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/nand_write_protection.hpp",
+      "symbols": ["NandWriteProtectionState", "GetNandWriteProtectionEnabled"]
+    },
+    {
+      "address": "0x801f14b8",
+      "size": 24,
+      "sha256": "81c777f4f5621b42c2ebcac59b0e2ed462781c09290f3f1931c2f03fd045b4ec",
+      "semantic_name": "SetNandWriteProtectionDisabled",
+      "source": "reconstruction/kernel_expansion/nand_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/nand_write_protection.hpp",
+      "symbols": ["SetNandWriteProtectionDisabled"]
+    },
+    {
       "address": "0x801f14d0",
       "size": 472,
       "sha256": "f92933d46674beba0bafbee3a34f82b146b158e1784b13a1e0c5cd47cd1348e8",
@@ -508,6 +535,7 @@
     "reconstruction/kernel_expansion/drive_registry_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
+    "reconstruction/kernel_expansion/nand_write_protection_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",
     "reconstruction/kernel_expansion/oem437_test.cpp",

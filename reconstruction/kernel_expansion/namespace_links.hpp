@@ -4,6 +4,10 @@
 
 namespace bandwagon::kernel_expansion {
 
+inline constexpr std::string_view kPeerPressureRootLink = "\\??\\PPROOT:";
+inline constexpr std::string_view kPeerPressureRootTarget =
+    "\\Device\\Harddisk0\\Partition1\\PeerPressure";
+
 class SymbolicLinkServices {
  public:
   virtual ~SymbolicLinkServices() = default;
@@ -19,5 +23,8 @@ bool DeleteObjectManagerSymbolicLink(SymbolicLinkServices* services,
 bool CreateObjectManagerSymbolicLink(SymbolicLinkServices* services,
                                      std::string_view link_name,
                                      std::string_view target_name);
+
+// Fixed interface-table adapter at 0x801f1490.
+bool CreatePeerPressureRootSymbolicLink(SymbolicLinkServices* services);
 
 }  // namespace bandwagon::kernel_expansion

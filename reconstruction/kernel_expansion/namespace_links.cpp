@@ -13,4 +13,9 @@ bool CreateObjectManagerSymbolicLink(SymbolicLinkServices* services,
   return services && services->Create(link_name, target_name) == 0;
 }
 
+bool CreatePeerPressureRootSymbolicLink(SymbolicLinkServices* services) {
+  return CreateObjectManagerSymbolicLink(
+      services, kPeerPressureRootLink, kPeerPressureRootTarget);
+}
+
 }  // namespace bandwagon::kernel_expansion

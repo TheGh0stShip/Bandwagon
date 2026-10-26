@@ -49,9 +49,25 @@ int main() {
       &failure, "\\??\\PAYLOAD:", "\\System??\\PAYLOAD:"));
   assert(failure.deleted && failure.created);
 
+  class PeerRootLinks final : public SymbolicLinkServices {
+   public:
+    int status = 0;
+    int Delete(std::string_view) override { return -1; }
+    int Create(std::string_view link_name,
+               std::string_view target_name) override {
+      assert(link_name == kPeerPressureRootLink);
+      assert(target_name == kPeerPressureRootTarget);
+      return status;
+    }
+  } peer_root;
+  assert(CreatePeerPressureRootSymbolicLink(&peer_root));
+  peer_root.status = -1;
+  assert(!CreatePeerPressureRootSymbolicLink(&peer_root));
+
   assert(!DeleteObjectManagerSymbolicLink(nullptr, "\\??\\PAYLOAD:"));
   assert(!CreateObjectManagerSymbolicLink(
       nullptr, "\\??\\PAYLOAD:", "\\System??\\PAYLOAD:"));
+  assert(!CreatePeerPressureRootSymbolicLink(nullptr));
 
   std::cout << "Kernel Expansion namespace-link tests passed\n";
 }

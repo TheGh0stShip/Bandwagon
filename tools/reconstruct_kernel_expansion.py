@@ -27,6 +27,9 @@ EXPLICIT_STARTS = {
     0x14B8,
     0x3120,
     0x31A0,
+    0x3828,
+    0x3880,
+    0x38B8,
     0x73C0,
     0x8210,
     0x8238,
@@ -47,6 +50,9 @@ SEMANTIC_NAMES = {
     0x0A50: "ConfigureBootAnimation",
     0x1178: "GetPeerPressureConfigValueByHash",
     0x1328: "SetPeerPressureConfigValueByHash",
+    0x1490: "CreatePeerPressureRootSymbolicLink",
+    0x14A8: "GetNandWriteProtectionEnabled",
+    0x14B8: "SetNandWriteProtectionDisabled",
     0x14D0: "ReadFileToAllocatedBuffer",
     0x16A8: "InitializeDefaultConfig",
     0x1700: "LoadStructuredConfigFile",
@@ -109,6 +115,15 @@ SEMANTIC_EVIDENCE = {
     ],
     0x1328: [
         "behavioral name corroborated by decoded hash update and static interface-table role"
+    ],
+    0x1490: [
+        "behavioral name corroborated by fixed PPROOT link/target pointers and static interface-table role"
+    ],
+    0x14A8: [
+        "behavioral name corroborated by the shared NAND write-protection gate and static interface-table role"
+    ],
+    0x14B8: [
+        "behavioral name corroborated by the inverted NAND-protection store and static interface-table role"
     ],
 }
 
