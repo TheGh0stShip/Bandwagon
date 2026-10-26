@@ -1,0 +1,203 @@
+{
+  "schema": "bandwagon-legacy-smc-source-coverage-v1",
+  "source": "reconstruction/smc/legacy_runtime.cpp",
+  "tests": "reconstruction/smc/legacy_runtime_test.cpp",
+  "profile_fields": [
+    "counter_address",
+    "staging_address",
+    "mode_ram_address",
+    "inbound_copy_address",
+    "final_ram_address",
+    "passthrough_command",
+    "notification_leading_zero",
+    "boot_tail",
+    "state_gate_tail",
+    "notification_call",
+    "notification_finalize",
+    "passthrough_tail",
+    "command_setup_call",
+    "command_query_call",
+    "status_call",
+    "status_tail",
+    "reset_tail",
+    "tick_call",
+    "sender_call",
+    "tick_entry",
+    "sender_entry",
+    "ee_clear_tail"
+  ],
+  "boards": [
+    {
+      "board": "Falcon",
+      "artifact": {
+        "path": "Flash/Falcon_SmcExploit.bin",
+        "size": 587,
+        "sha256": "c60354879fe67fd2813e74466c167d8598ceda5314bf090261c8357fd8f25fcb"
+      },
+      "profile_values": [48, 49, 98, 82, 99, 159, true, 2958, 3055, 9263, 11948, 3382, 9224, 9229, 9638, 7965, 9682, 3748, 6702, 11910, 11865, 4433],
+      "integration_records": [
+        {"record_index": 0, "target": "0x0770", "size": 3, "role": "call reset hook"},
+        {"record_index": 1, "target": "0x07d4", "size": 6, "role": "call tick wrapper then sender wrapper"},
+        {"record_index": 2, "target": "0x0b6e", "size": 3, "role": "redirect to boot hook"},
+        {"record_index": 3, "target": "0x0ade", "size": 3, "role": "redirect to state gate"},
+        {"record_index": 4, "target": "0x08bd", "size": 3, "role": "redirect to notification hook"},
+        {"record_index": 5, "target": "0x0b29", "size": 3, "role": "redirect to command hook"},
+        {"record_index": 6, "target": "0x258e", "size": 3, "role": "redirect to XBPP receive hook"},
+        {"record_index": 7, "target": "0x1e84", "size": 3, "role": "redirect to status hook"},
+        {"record_index": 8, "target": "0x11a7", "size": 3, "role": "redirect to EE hook"},
+        {"record_index": 9, "target": "0x07c2", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 10, "target": "0x082b", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 11, "target": "0x0814", "size": 4, "role": "initialize counter pointer/register pair"}
+      ],
+      "executable_record": {
+        "record_index": 12,
+        "target": "0x2d03",
+        "size": 443,
+        "sha256": "df69867e37acc7a39d5bac26f610c1307340ad5204f09f226f98b03afb118539",
+        "coverage": [
+          {"start": "0x2d03", "end": "0x2d12", "symbols": ["RunLegacyBootHook"]},
+          {"start": "0x2d12", "end": "0x2d35", "symbols": ["RunLegacyStateGate"]},
+          {"start": "0x2d35", "end": "0x2d7f", "symbols": ["RunLegacyNotificationHook"]},
+          {"start": "0x2d7f", "end": "0x2de7", "symbols": ["RunLegacyCommandHook"]},
+          {"start": "0x2de7", "end": "0x2df5", "symbols": ["RunLegacyStatusHook"]},
+          {"start": "0x2df5", "end": "0x2dfb", "symbols": ["RunLegacyResetHook"]},
+          {"start": "0x2dfb", "end": "0x2e01", "symbols": ["PlanLegacyTickWrapper"]},
+          {"start": "0x2e01", "end": "0x2e07", "symbols": ["PlanLegacySenderWrapper"]},
+          {"start": "0x2e07", "end": "0x2e41", "symbols": ["RunLegacyXbppReceive"]},
+          {"start": "0x2e41", "end": "0x2e59", "symbols": ["RunLegacyEeRedirect"]},
+          {"start": "0x2e59", "end": "0x2e86", "symbols": ["RunLegacySender"]},
+          {"start": "0x2e86", "end": "0x2ebe", "symbols": ["RunLegacyTick"]}
+        ]
+      }
+    },
+    {
+      "board": "Jasper",
+      "artifact": {
+        "path": "Flash/Jasper_SmcExploit.bin",
+        "size": 582,
+        "sha256": "44e525b4609fe4eedc9a66d76a64efe20ca9a4b48e6b18fa2521dca624075e46"
+      },
+      "profile_values": [48, 49, 99, 83, 100, 159, false, 2963, 3060, 9324, 12056, 3387, 9285, 9290, 9720, 7992, 9764, 3753, 6714, 12018, 11973, 4438],
+      "integration_records": [
+        {"record_index": 0, "target": "0x0770", "size": 3, "role": "call reset hook"},
+        {"record_index": 1, "target": "0x07d4", "size": 6, "role": "call tick wrapper then sender wrapper"},
+        {"record_index": 2, "target": "0x0b73", "size": 3, "role": "redirect to boot hook"},
+        {"record_index": 3, "target": "0x0ae3", "size": 3, "role": "redirect to state gate"},
+        {"record_index": 4, "target": "0x08c2", "size": 3, "role": "redirect to notification hook"},
+        {"record_index": 5, "target": "0x0b2e", "size": 3, "role": "redirect to command hook"},
+        {"record_index": 6, "target": "0x25e0", "size": 3, "role": "redirect to XBPP receive hook"},
+        {"record_index": 7, "target": "0x1e9f", "size": 3, "role": "redirect to status hook"},
+        {"record_index": 8, "target": "0x11ac", "size": 3, "role": "redirect to EE hook"},
+        {"record_index": 9, "target": "0x07c2", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 10, "target": "0x082b", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 11, "target": "0x0814", "size": 4, "role": "initialize counter pointer/register pair"}
+      ],
+      "executable_record": {
+        "record_index": 12,
+        "target": "0x2d74",
+        "size": 438,
+        "sha256": "f93dc69163c1643901c35afa7c3b50b58157a8d25e392b7400c1234f73546cee",
+        "coverage": [
+          {"start": "0x2d74", "end": "0x2d83", "symbols": ["RunLegacyBootHook"]},
+          {"start": "0x2d83", "end": "0x2da6", "symbols": ["RunLegacyStateGate"]},
+          {"start": "0x2da6", "end": "0x2deb", "symbols": ["RunLegacyNotificationHook"]},
+          {"start": "0x2deb", "end": "0x2e53", "symbols": ["RunLegacyCommandHook"]},
+          {"start": "0x2e53", "end": "0x2e61", "symbols": ["RunLegacyStatusHook"]},
+          {"start": "0x2e61", "end": "0x2e67", "symbols": ["RunLegacyResetHook"]},
+          {"start": "0x2e67", "end": "0x2e6d", "symbols": ["PlanLegacyTickWrapper"]},
+          {"start": "0x2e6d", "end": "0x2e73", "symbols": ["PlanLegacySenderWrapper"]},
+          {"start": "0x2e73", "end": "0x2ead", "symbols": ["RunLegacyXbppReceive"]},
+          {"start": "0x2ead", "end": "0x2ec5", "symbols": ["RunLegacyEeRedirect"]},
+          {"start": "0x2ec5", "end": "0x2ef2", "symbols": ["RunLegacySender"]},
+          {"start": "0x2ef2", "end": "0x2f2a", "symbols": ["RunLegacyTick"]}
+        ]
+      }
+    },
+    {
+      "board": "Xenon",
+      "artifact": {
+        "path": "Flash/Xenon_SmcExploit.bin",
+        "size": 587,
+        "sha256": "2907897a8f4ac99699b55b6b559531fe4a214ea0b44ded5e72d6ed33240722d3"
+      },
+      "profile_values": [176, 177, 97, 82, 98, 156, true, 2735, 2832, 9102, 12115, 3128, 9070, 9075, 9464, 7725, 9504, 3476, 6454, 12077, 12032, 4130],
+      "integration_records": [
+        {"record_index": 0, "target": "0x0770", "size": 3, "role": "call reset hook"},
+        {"record_index": 1, "target": "0x07c8", "size": 6, "role": "call tick wrapper then sender wrapper"},
+        {"record_index": 2, "target": "0x0a8f", "size": 3, "role": "redirect to boot hook"},
+        {"record_index": 3, "target": "0x0a0b", "size": 3, "role": "redirect to state gate"},
+        {"record_index": 4, "target": "0x08a9", "size": 3, "role": "redirect to notification hook"},
+        {"record_index": 5, "target": "0x0a4a", "size": 3, "role": "redirect to command hook"},
+        {"record_index": 6, "target": "0x24e0", "size": 3, "role": "redirect to XBPP receive hook"},
+        {"record_index": 7, "target": "0x1d94", "size": 3, "role": "redirect to status hook"},
+        {"record_index": 8, "target": "0x1075", "size": 3, "role": "redirect to EE hook"},
+        {"record_index": 9, "target": "0x07b6", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 10, "target": "0x0825", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 11, "target": "0x07de", "size": 4, "role": "initialize counter pointer/register pair"}
+      ],
+      "executable_record": {
+        "record_index": 12,
+        "target": "0x2daa",
+        "size": 443,
+        "sha256": "9e74cd9ead0ee0bdf095e8515228621aec6b4d2a2e96543e4152731e7b02eeef",
+        "coverage": [
+          {"start": "0x2daa", "end": "0x2db9", "symbols": ["RunLegacyBootHook"]},
+          {"start": "0x2db9", "end": "0x2ddc", "symbols": ["RunLegacyStateGate"]},
+          {"start": "0x2ddc", "end": "0x2e26", "symbols": ["RunLegacyNotificationHook"]},
+          {"start": "0x2e26", "end": "0x2e8e", "symbols": ["RunLegacyCommandHook"]},
+          {"start": "0x2e8e", "end": "0x2e9c", "symbols": ["RunLegacyStatusHook"]},
+          {"start": "0x2e9c", "end": "0x2ea2", "symbols": ["RunLegacyResetHook"]},
+          {"start": "0x2ea2", "end": "0x2ea8", "symbols": ["PlanLegacyTickWrapper"]},
+          {"start": "0x2ea8", "end": "0x2eae", "symbols": ["PlanLegacySenderWrapper"]},
+          {"start": "0x2eae", "end": "0x2ee8", "symbols": ["RunLegacyXbppReceive"]},
+          {"start": "0x2ee8", "end": "0x2f00", "symbols": ["RunLegacyEeRedirect"]},
+          {"start": "0x2f00", "end": "0x2f2d", "symbols": ["RunLegacySender"]},
+          {"start": "0x2f2d", "end": "0x2f65", "symbols": ["RunLegacyTick"]}
+        ]
+      }
+    },
+    {
+      "board": "Zephyr",
+      "artifact": {
+        "path": "Flash/Zephyr_SmcExploit.bin",
+        "size": 587,
+        "sha256": "3f231e580734e0607a0719c42f23f7cdd6f4b410b6fa3cfce8fbf8c2c8eb7da4"
+      },
+      "profile_values": [48, 49, 98, 82, 99, 156, true, 2908, 3005, 9118, 11784, 3301, 9086, 9091, 9486, 7827, 9530, 3672, 6583, 11746, 11701, 4357],
+      "integration_records": [
+        {"record_index": 0, "target": "0x0770", "size": 3, "role": "call reset hook"},
+        {"record_index": 1, "target": "0x07d4", "size": 6, "role": "call tick wrapper then sender wrapper"},
+        {"record_index": 2, "target": "0x0b3c", "size": 3, "role": "redirect to boot hook"},
+        {"record_index": 3, "target": "0x0ab8", "size": 3, "role": "redirect to state gate"},
+        {"record_index": 4, "target": "0x08b1", "size": 3, "role": "redirect to notification hook"},
+        {"record_index": 5, "target": "0x0af7", "size": 3, "role": "redirect to command hook"},
+        {"record_index": 6, "target": "0x24f6", "size": 3, "role": "redirect to XBPP receive hook"},
+        {"record_index": 7, "target": "0x1dfa", "size": 3, "role": "redirect to status hook"},
+        {"record_index": 8, "target": "0x115b", "size": 3, "role": "redirect to EE hook"},
+        {"record_index": 9, "target": "0x07c2", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 10, "target": "0x082b", "size": 3, "role": "three-byte NOP replacement"},
+        {"record_index": 11, "target": "0x0814", "size": 4, "role": "initialize counter pointer/register pair"}
+      ],
+      "executable_record": {
+        "record_index": 12,
+        "target": "0x2c5f",
+        "size": 443,
+        "sha256": "6855b7787f703064006a8b00e3e3203933bfb8f61ebcb363b07e66cba1b2dff8",
+        "coverage": [
+          {"start": "0x2c5f", "end": "0x2c6e", "symbols": ["RunLegacyBootHook"]},
+          {"start": "0x2c6e", "end": "0x2c91", "symbols": ["RunLegacyStateGate"]},
+          {"start": "0x2c91", "end": "0x2cdb", "symbols": ["RunLegacyNotificationHook"]},
+          {"start": "0x2cdb", "end": "0x2d43", "symbols": ["RunLegacyCommandHook"]},
+          {"start": "0x2d43", "end": "0x2d51", "symbols": ["RunLegacyStatusHook"]},
+          {"start": "0x2d51", "end": "0x2d57", "symbols": ["RunLegacyResetHook"]},
+          {"start": "0x2d57", "end": "0x2d5d", "symbols": ["PlanLegacyTickWrapper"]},
+          {"start": "0x2d5d", "end": "0x2d63", "symbols": ["PlanLegacySenderWrapper"]},
+          {"start": "0x2d63", "end": "0x2d9d", "symbols": ["RunLegacyXbppReceive"]},
+          {"start": "0x2d9d", "end": "0x2db5", "symbols": ["RunLegacyEeRedirect"]},
+          {"start": "0x2db5", "end": "0x2de2", "symbols": ["RunLegacySender"]},
+          {"start": "0x2de2", "end": "0x2e1a", "symbols": ["RunLegacyTick"]}
+        ]
+      }
+    }
+  ]
+}

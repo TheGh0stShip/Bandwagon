@@ -8,6 +8,7 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/verify_trinity_smc_source_coverage.py"
+python3 "$root/tools/verify_legacy_smc_source_coverage.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/smc/xbpp_handshake.cpp" \
@@ -21,5 +22,12 @@ python3 "$root/tools/verify_trinity_smc_source_coverage.py"
     "$root/reconstruction/smc/trinity_runtime_test.cpp" \
     -o "$work/trinity_runtime_test"
 "$work/trinity_runtime_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/smc/xbpp_handshake.cpp" \
+    "$root/reconstruction/smc/legacy_runtime.cpp" \
+    "$root/reconstruction/smc/legacy_runtime_test.cpp" \
+    -o "$work/legacy_runtime_test"
+"$work/legacy_runtime_test"
 
 echo "SMC portable reconstruction tests passed"

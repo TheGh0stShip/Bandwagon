@@ -39,8 +39,8 @@ bytes to `EB/EC/ED`, followed by `EA=0`, `E3 |= 0xc0`,
 `EE.0` to clear before performing that transfer. Run it with
 `tools/test_smc_reconstruction.sh`.
 
-Trinity is the first board with complete source-level coverage of every
-executable replacement record. `reconstruction/smc/trinity_runtime.cpp` lifts
+Trinity has complete source-level coverage of every executable replacement
+record. `reconstruction/smc/trinity_runtime.cpp` lifts
 its boot, command, status, notification, state-gate, reset, XBPP receive,
 EE-redirect, sender, and timeout/finalization hooks. External firmware calls
 and tail jumps are explicit address plans rather than hidden callbacks. The
@@ -50,6 +50,18 @@ classified as declarative call injection, redirect, NOP, or register-setup
 integration records. `tools/verify_trinity_smc_source_coverage.py` checks the
 artifact hash, record boundaries, gap-free executable coverage, and source
 symbols before the host tests run.
+
+Falcon, Jasper, Xenon, and Zephyr also have complete source-level coverage of
+every executable replacement record. Their common algorithms and explicit
+board profiles live in `reconstruction/smc/legacy_runtime.cpp`. The profiles
+retain each board's internal-RAM locations, command byte, firmware call and
+tail-jump addresses, and Jasper's shorter notification sequence. The
+machine-readable partition in `Legacy-source-coverage.json` covers all 1,767
+embedded executable bytes and classifies all 48 small integration records.
+`tools/verify_legacy_smc_source_coverage.py` checks the four artifact and
+payload hashes, record ownership, gap-free routine coverage, required source
+symbols, and the complete ordered board-profile values before the host tests
+run.
 
 The strongest pairwise matches are Falcon/Jasper (`0.933031`) and
 Xenon/Zephyr (`0.907449`). Corona is the most divergent family member
