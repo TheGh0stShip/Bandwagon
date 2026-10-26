@@ -58,6 +58,32 @@ def analyze_xbpp_handshake(board: str, payload: bytes, base: int) -> dict[str, o
     corona_followup = payload[cursor : cursor + 9] == bytes.fromhex("75eb0175ea1c75f500")
     if state_set_address != state_clear[1]:
         raise SystemExit(f"{board}: XBPP state clear/set address mismatch")
+    sender_marker = bytes((0xE5, state_set_address, 0x30, 0xE1))
+    sender = payload.find(sender_marker, cursor)
+    if sender < 0 or payload.find(sender_marker, sender + 1) >= 0:
+        raise SystemExit(f"{board}: expected one XBPP staged sender")
+    sender_cursor = sender + 5  # Skip MOV A,state and JNB ACC.1,relative.
+    sets_p2_6 = payload[sender_cursor : sender_cursor + 2] == bytes.fromhex("d2a6")
+    if sets_p2_6:
+        sender_cursor += 2
+    if payload[sender_cursor : sender_cursor + 4] != bytes.fromhex("e5ee20e0"):
+        raise SystemExit(f"{board}: missing XBPP EE.0 sender gate")
+    sender_cursor += 5  # Also skip the relative branch byte.
+    sender_prefix = bytes.fromhex("e5eef5ee75ea00") + bytes((0x78, staging_ram))
+    sender_suffix = bytes.fromhex(
+        "86eb0886ec0886ede5e344c0f5e3e5e454fc4402f5e475f506"
+    )
+    if payload[sender_cursor : sender_cursor + len(sender_prefix)] != sender_prefix:
+        raise SystemExit(f"{board}: missing XBPP staged sender prefix")
+    sender_cursor += len(sender_prefix)
+    if payload[sender_cursor : sender_cursor + len(sender_suffix)] != sender_suffix:
+        raise SystemExit(f"{board}: missing XBPP staged sender body")
+    sender_cursor += len(sender_suffix)
+    if board == "Corona":
+        if not sets_p2_6:
+            raise SystemExit("Corona: XBPP sender does not assert P2.6")
+    elif sets_p2_6 or payload[sender_cursor] != 0x22:
+        raise SystemExit(f"{board}: unexpected XBPP sender tail")
     return {
         "comparison_address": f"0x{base + offset:04x}",
         "magic_ascii": "XBPP",
@@ -69,6 +95,18 @@ def analyze_xbpp_handshake(board: str, payload: bytes, base: int) -> dict[str, o
         "rewrites_eb_for_transfer": rewrites_eb,
         "transfer_ea": "0x18",
         "corona_followup_ea": "0x1c" if corona_followup else None,
+        "staged_sender": {
+            "address": f"0x{base + sender:04x}",
+            "gates": ["state_bit_1_set", "sfr_ee_bit_0_clear"],
+            "busy_behavior": "wait" if board == "Corona" else "return",
+            "sets_p2_bit_6": sets_p2_6,
+            "destination_sfrs": ["0xeb", "0xec", "0xed"],
+            "ea": "0x00",
+            "e3_or_mask": "0xc0",
+            "e4_and_mask": "0xfc",
+            "e4_or_mask": "0x02",
+            "f5": "0x06",
+        },
     }
 
 

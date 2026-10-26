@@ -8,7 +8,10 @@ The repository tracks analysis, reconstruction source, and deterministic
 tooling. Original Peer Pressure and Microsoft binaries are local research
 inputs and are intentionally excluded from version control. See
 [`ANALYSIS_SAFETY.md`](ANALYSIS_SAFETY.md) for the artifact-handling boundary
-and [`analysis/README.md`](analysis/README.md) for current findings and status.
+and [`analysis/README.md`](analysis/README.md) for current findings. See
+[`SOURCE_RECOVERY.md`](SOURCE_RECOVERY.md) for the distinction between
+binary-exact assembly evidence and maintainable source-level recovery; assembly
+equivalence alone is not treated as completion of the open-source goal.
 
 The public BadUpdate source baseline is pinned as the
 `third_party/Xbox360BadUpdate` submodule. Initialize it with

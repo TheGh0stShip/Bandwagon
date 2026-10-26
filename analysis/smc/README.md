@@ -31,7 +31,11 @@ byte is `0x3a` on Corona/Trinity and `0x3c` elsewhere; the staging base is
 `EB=1` write on the matched path.
 
 `reconstruction/smc/xbpp_handshake.cpp` is a portable, side-effect-free model
-of these exact comparisons and state transitions. Run it with
+of these exact comparisons and state transitions. It also models the adjacent
+sender: state bit 1 and, on five boards, a clear `EE.0` gate a transfer of the three staged
+bytes to `EB/EC/ED`, followed by `EA=0`, `E3 |= 0xc0`,
+`E4 = (E4 & 0xfc) | 2`, and `F5=6`. Corona instead sets `P2.6` and waits for
+`EE.0` to clear before performing that transfer. Run it with
 `tools/test_smc_reconstruction.sh`.
 
 The strongest pairwise matches are Falcon/Jasper (`0.933031`) and

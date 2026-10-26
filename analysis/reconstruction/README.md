@@ -1,9 +1,10 @@
-# Exact source reconstructions
+# Binary-exact assembly evidence
 
 These files are real GNU-style PowerPC assembly accepted by LLVM's assembler.
-They are reconstructed source equivalents, not the unpublished Peer Pressure
-original source. Names are derived from proved behavior; unresolved meanings
-remain labeled `unknown` or `hypothesis`.
+They are byte-preserving evidence reconstructions, not a substitute for the
+readable source-level recovery tracked in `SOURCE_RECOVERY.md`, and not the
+unpublished Peer Pressure original source. Names are derived from proved
+behavior; unresolved meanings remain labeled `unknown` or `hypothesis`.
 
 ## Stage4
 

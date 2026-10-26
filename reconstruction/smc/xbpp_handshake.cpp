@@ -26,4 +26,26 @@ XbppHandshakePlan PlanXbppHandshake(
   return plan;
 }
 
+XbppTransferPlan PlanXbppTransfer(
+    Motherboard board, std::uint8_t state, std::uint8_t ee, std::uint8_t e3,
+    std::uint8_t e4, const std::array<std::uint8_t, 3>& staged_bytes) {
+  XbppTransferPlan plan;
+  if ((state & 2u) == 0) return plan;
+  if (board == Motherboard::kCorona) {
+    plan.wait_for_ee_clear = (ee & 1u) != 0;
+    plan.set_p2_bit_6 = true;
+  } else if ((ee & 1u) != 0) {
+    return plan;
+  }
+  plan.transfer = true;
+  plan.ea = 0;
+  plan.eb = staged_bytes[0];
+  plan.ec = staged_bytes[1];
+  plan.ed = staged_bytes[2];
+  plan.e3 = e3 | 0xc0u;
+  plan.e4 = static_cast<std::uint8_t>((e4 & 0xfcu) | 2u);
+  plan.f5 = 6;
+  return plan;
+}
+
 }  // namespace bandwagon::smc

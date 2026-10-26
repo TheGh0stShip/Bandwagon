@@ -40,4 +40,23 @@ XbppHandshakePlan PlanXbppHandshake(
     Motherboard board, const std::array<std::uint8_t, 4>& inbound,
     std::uint8_t state_before);
 
+struct XbppTransferPlan {
+  bool transfer = false;
+  bool wait_for_ee_clear = false;
+  bool set_p2_bit_6 = false;
+  std::uint8_t ea = 0;
+  std::uint8_t eb = 0;
+  std::uint8_t ec = 0;
+  std::uint8_t ed = 0;
+  std::uint8_t e3 = 0;
+  std::uint8_t e4 = 0;
+  std::uint8_t f5 = 0;
+};
+
+// Models the adjacent sender. It transfers only when state bit 1 is set and
+// SFR EE bit 0 is clear.
+XbppTransferPlan PlanXbppTransfer(
+    Motherboard board, std::uint8_t state, std::uint8_t ee, std::uint8_t e3,
+    std::uint8_t e4, const std::array<std::uint8_t, 3>& staged_bytes);
+
 }  // namespace bandwagon::smc
