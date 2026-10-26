@@ -17,5 +17,8 @@
   "unresolved_kernel_globals": ["0x801c7f80", "0x801a614c"],
   "reconstruction": "analysis/reconstruction/FlashDmaPayload.reconstructed.S",
   "generator": "tools/reconstruct_flash_dma_payload.py",
-  "whole_file_byte_identical": true
+  "whole_file_byte_identical": true,
+  "typed_source": "reconstruction/flash_dma/payload_builder.hpp",
+  "typed_test": "tools/test_flash_dma_reconstruction.sh",
+  "semantic_status": "complete typed sparse builder and operation model; two private kernel globals remain conservatively unnamed"
 }

@@ -11,6 +11,14 @@ The lossless reconstruction is
 `python tools/rebuild_peer_reconstructions.py`. The rebuilt SHA-256 is
 `d3c73c043eb6e679b9b598caaf5b39c108bedaabbc48fe5ac2211ac7d50cac2d`.
 
+The maintainable source reconstruction is
+`reconstruction/flash_dma/payload_builder.{hpp,cpp}`. It represents the retail
+kernel exports and gadgets as a typed symbol set, divides the ROP image into
+named construction phases, and exposes a semantic operation inventory. It does
+not embed the original as a byte array. The host test rebuilds the complete
+16 KiB image and compares every byte with the immutable artifact; run it with
+`tools/test_flash_dma_reconstruction.sh`.
+
 ## Recovered layout
 
 | File range | Runtime range | Meaning |
@@ -32,6 +40,12 @@ behind a kernel pointer is not publicly named. In particular, `0x801c7f80` and
 `0x801a614c` are retained as unresolved retail-kernel globals rather than given
 speculative names.
 
+The C++ operation model records the image offset and relevant operands for
+each of those behaviors. The six-word DMA descriptor and 512-byte `0x41`
+scratch sector are likewise constructed as typed regions. Zero-filled save
+slots and unused ranges arise from value-initializing the output image, making
+the sparse layout explicit without concealing any bytes.
+
 ## Provenance boundary
 
 The gadget and export names are independently corroborated by
@@ -39,3 +53,10 @@ The gadget and export names are independently corroborated by
 `KernelExports_Retail_17559.asm`. The overall chain and its DMA descriptor
 values are Peer Pressure material; no matching source file exists in the pinned
 public BadUpdate tree.
+
+## Recovery status
+
+Source-level recovery is complete for this payload: the readable builder owns
+all non-zero words, all zero-filled gaps, and the full output extent, while its
+semantic model covers every identified action. The assembly file remains an
+independent binary-exact evidence oracle rather than the implementation layer.

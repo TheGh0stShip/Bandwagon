@@ -27,6 +27,9 @@ The public BadUpdate source baseline is pinned as the
   serializer reproduces all 372 bytes exactly.
 - The 24-byte HDD security trigger has a typed six-field representation and
   exact C++ serializer; unresolved kernel pointers remain conservatively named.
+- The sparse 16 KiB Flash DMA ROP/data image has a complete typed C++ builder
+  and semantic operation model that reproduce every byte; two private retail
+  kernel globals remain conservatively unnamed.
 - XEX base images have been extracted locally with recorded hashes.
 - Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
 - Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
@@ -62,9 +65,11 @@ The public BadUpdate source baseline is pinned as the
   reconstruction and an initial semantic map of its partition/update loader.
 
 `analysis/component-inventory.json` is the generated manifest-wide completion
-matrix. Of 33 installed components, only two Peer raw payloads remain without
-source-form reconstruction. Both `FlashDmaPayload.bin` and
-`KernelExpansion.bin` now have byte-identical assembly reconstructions.
+matrix. Of 33 installed components, no Peer raw payload remains without
+binary-exact source-form reconstruction. `FlashDmaPayload.bin` additionally
+has complete source-level C++ recovery; Stage2 and `KernelExpansion.bin` still
+require that maintainable-source lift beyond their byte-identical assembly
+evidence.
 
 Semantic recovery of remaining functions, types, globals, indirect control
 flow, raw stage payloads, and SMC firmware is still in progress.

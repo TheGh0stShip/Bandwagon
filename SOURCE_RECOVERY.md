@@ -22,6 +22,7 @@ not the final implementation.
 | Stage3 | Complete whole-file assembly | Complete: Peer entry/probe source plus function-by-function verified composition with pinned public BadUpdate C++ |
 | Kernel patch stream | Complete whole-file assembly | Complete: all 23 records have a typed effect table and byte-identical C++ serializer |
 | HDD security trigger | Complete whole-file assembly | Complete: typed six-field structure and byte-identical C++ serializer |
+| Flash DMA | Complete whole-file assembly | Complete: typed retail-symbol set, semantic operation model, and byte-identical 16 KiB C++ builder |
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Complete: all executable records for all six boards have verified C++ coverage; integration edits have machine-readable ownership |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
 | BootXell | Complete initialized sections | Partial: seven identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
@@ -29,7 +30,7 @@ not the final implementation.
 | UpdateCheck | Complete initialized sections | Partial: both identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
 | BootEdit | Complete initialized sections | Partial: theme navigation/edit decisions |
-| Stage2 / Flash DMA / KernelExpansion | Complete whole-file assembly | Initial semantic maps only |
+| Stage2 / KernelExpansion | Complete whole-file assembly | Initial semantic maps only |
 
 ## Completion rule
 
