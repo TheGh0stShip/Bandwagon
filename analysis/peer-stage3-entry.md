@@ -60,6 +60,22 @@ the unavoidable 0x38-byte PowerPC probe stub, syscalls, file loading, SMC I/O,
 fatal display, and title launch are isolated behind a `Platform` interface and
 verified with a host mock.
 
+## Whole-payload source composition
+
+The remaining exploit engine is not unpublished Peer code: all sixteen C++
+routines map to the pinned public BadUpdate v1.3 sources. The exact mapping is
+recorded in `analysis/stage3/source-coverage.json`, including normalized
+instruction comparisons, source hashes, target-only syscall wrappers, compiler
+helpers, import thunks, and literal data. `tools/verify_stage3_source_coverage.py`
+checks the artifact hash, pinned upstream commit, named source routines, and a
+gap-free partition of all 5,600 bytes.
+
+Consequently Stage3 now has complete source-level coverage: public BadUpdate
+C++ supplies the inherited race engine, while `reconstruction/stage3/` supplies
+the complete Peer replacement entry/probe behavior. The byte-exact assembly is
+retained as the evidence oracle and for unavoidable PowerPC ABI stubs, not used
+as a substitute for application source.
+
 ## Difference from public BadUpdate v1.3
 
 Public BadUpdate always prints a start message and runs its exploit before

@@ -19,7 +19,7 @@ not the final implementation.
 | Component | Binary-exact evidence | Source-level recovery |
 |---|---|---|
 | Stage4 | Complete whole-file assembly | Near-complete: executable entry/resident code through platform adapters; typed/generated Peer patch and RSA data; public clean-HV input remains external |
-| Stage3 | Complete whole-file assembly | Partial: executable entry/probe/Stage4 orchestration through a platform adapter |
+| Stage3 | Complete whole-file assembly | Complete: Peer entry/probe source plus function-by-function verified composition with pinned public BadUpdate C++ |
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Partial: shared `XBPP` handshake and staged transfer |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
 | BootXell | Complete initialized sections | Partial: boot-option parsing and launch decisions |

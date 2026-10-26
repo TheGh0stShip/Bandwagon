@@ -1,0 +1,85 @@
+{
+  "schema": "bandwagon-stage3-source-coverage-v1",
+  "artifact": {
+    "path": "BadUpdatePayload/BadUpdateExploit-3rdStage.bin",
+    "size": 5600,
+    "sha256": "2370dc4a9c66152bef173631e1db7fa2b2cba380f528b417b57364dfd99ac47a",
+    "load_address": "0x98030000"
+  },
+  "upstream": {
+    "repository": "third_party/Xbox360BadUpdate",
+    "commit": "94f9215a00382c218288ea230d5f81d73b7f2f9b",
+    "sources": [
+      {
+        "path": "third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp",
+        "sha256": "0057120094ea12819dd2eb461cba3284604f5d24096dbd789e4946678378aaac"
+      },
+      {
+        "path": "third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/ExploitData.h",
+        "sha256": "4f8ff022b917bb370456758bcf0585e5a29dd93fa49e0a582c41557d750b67e9"
+      },
+      {
+        "path": "third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp",
+        "sha256": "a74da9d016053001fa3e4637af9ae9a7c69bc9450ab996e8a6b1a90b76450ac0"
+      },
+      {
+        "path": "third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.h",
+        "sha256": "fe356ae188d3f41b38ab43cf63beaff4ea528e3adb8b8a839071396e33e5f2c9"
+      }
+    ]
+  },
+  "upstream_function_evidence": [
+    {"symbol": "RunBadUpdateExploit", "peer_range": "0x01e8-0x0490", "upstream_range": "0x0108-0x03e0", "normalized_instruction_similarity": 0.920455},
+    {"symbol": "ReadFileIntoPhysicalMemory", "peer_range": "0x0490-0x06a0", "upstream_range": "0x03e0-0x05d0", "normalized_instruction_similarity": 0.9375},
+    {"symbol": "SetLEDColor", "peer_range": "0x06a0-0x06f8", "upstream_range": "0x05d0-0x0628", "normalized_instruction_similarity": 1.0},
+    {"symbol": "ReadInputFiles", "peer_range": "0x06f8-0x0780", "upstream_range": "0x0628-0x06c8", "normalized_instruction_similarity": 0.864865},
+    {"symbol": "BuildCipherTextLookupTable", "peer_range": "0x0780-0x08e0", "upstream_range": "0x06c8-0x0870", "normalized_instruction_similarity": 0.597938},
+    {"symbol": "RunExploitThreadProc", "peer_range": "0x08e0-0x0928", "upstream_range": "0x0870-0x08c8", "normalized_instruction_similarity": 0.85},
+    {"symbol": "CreateWorkerThread", "peer_range": "0x0928-0x0a88", "upstream_range": "0x08c8-0x0a28", "normalized_instruction_similarity": 0.965909},
+    {"symbol": "RunExploitIteration", "peer_range": "0x0a88-0x0be8", "upstream_range": "0x0a28-0x0ba0", "normalized_instruction_similarity": 0.912088},
+    {"symbol": "CipherTextObservationThreadProc", "peer_range": "0x0be8-0x0ca8", "upstream_range": "0x0ba0-0x0c60", "normalized_instruction_similarity": 1.0},
+    {"symbol": "CacheThrashThreadProc", "peer_range": "0x0ca8-0x0d68", "upstream_range": "0x0c60-0x0d30", "normalized_instruction_similarity": 0.96},
+    {"symbol": "CiphertextOverwriteLoop", "peer_range": "0x0d68-0x0e30", "upstream_range": "0x0d30-0x0df8", "normalized_instruction_similarity": 1.0},
+    {"symbol": "RunUpdatePayloadThreadProc", "peer_range": "0x0e30-0x0f68", "upstream_range": "0x0df8-0x0f38", "normalized_instruction_similarity": 0.708861},
+    {"symbol": "LockAndThrashL2", "peer_range": "0x0f68-0x1038", "upstream_range": "0x0f38-0x1030", "normalized_instruction_similarity": 0.807018},
+    {"symbol": "UnlockL2", "peer_range": "0x1038-0x1090", "upstream_range": "0x1030-0x1088", "normalized_instruction_similarity": 1.0},
+    {"symbol": "HvWriteULONG", "peer_range": "0x1090-0x1128", "upstream_range": "0x1088-0x1120", "normalized_instruction_similarity": 1.0},
+    {"symbol": "XLockL2", "peer_range": "0x1128-0x15e0", "upstream_range": "0x1120-0x18d0", "normalized_instruction_similarity": 0.692695}
+  ],
+  "coverage": [
+    {"start": "0x0000", "end": "0x00f8", "kind": "peer_cpp", "binary_symbols": ["GameSaveExploitMain"], "symbols": ["RunStage3"], "sources": ["reconstruction/stage3/runtime.cpp", "reconstruction/stage3/entry_flow.cpp"]},
+    {"start": "0x00f8", "end": "0x01e8", "kind": "peer_cpp", "symbols": ["ProbeResidentPeerDispatcher"], "sources": ["reconstruction/stage3/runtime.cpp", "reconstruction/stage3/resident_probe.cpp"]},
+    {"start": "0x01e8", "end": "0x0490", "kind": "upstream_cpp", "symbols": ["RunBadUpdateExploit"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0490", "end": "0x0670", "kind": "upstream_cpp", "symbols": ["ReadFileIntoPhysicalMemory"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0670", "end": "0x0680", "kind": "upstream_target_assembly", "symbols": ["HvxPostOutputExploit"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0680", "end": "0x068c", "kind": "peer_target_assembly", "binary_symbols": ["syscall_0d_stub"], "symbols": ["hvx_post_output"], "sources": ["reconstruction/stage3/resident_probe.cpp", "analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]},
+    {"start": "0x068c", "end": "0x0690", "kind": "alignment", "symbols": [], "sources": ["analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]},
+    {"start": "0x0690", "end": "0x069c", "kind": "peer_target_assembly", "binary_symbols": ["syscall_00_stub"], "symbols": ["rbtr"], "sources": ["reconstruction/stage3/resident_probe.cpp", "analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]},
+    {"start": "0x069c", "end": "0x06a0", "kind": "alignment", "symbols": [], "sources": ["analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]},
+    {"start": "0x06a0", "end": "0x06f8", "kind": "upstream_cpp", "symbols": ["SetLEDColor"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x06f8", "end": "0x0780", "kind": "upstream_cpp", "symbols": ["ReadInputFiles"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0780", "end": "0x08e0", "kind": "upstream_cpp", "symbols": ["BuildCipherTextLookupTable"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x08e0", "end": "0x0928", "kind": "upstream_cpp", "symbols": ["RunExploitThreadProc"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0928", "end": "0x0a48", "kind": "upstream_cpp", "symbols": ["CreateWorkerThread"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0a48", "end": "0x0a58", "kind": "upstream_target_assembly", "symbols": ["HvxEncryptedReserveAllocation"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0a58", "end": "0x0a68", "kind": "upstream_target_assembly", "symbols": ["HvxEncryptedEncryptAllocation"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0a68", "end": "0x0a78", "kind": "upstream_target_assembly", "symbols": ["HvxFlushSingleTb"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0a78", "end": "0x0a88", "kind": "upstream_target_assembly", "symbols": ["HvxEncryptedReleaseAllocation"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x0a88", "end": "0x0be8", "kind": "upstream_cpp", "symbols": ["RunExploitIteration"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0be8", "end": "0x0ca8", "kind": "upstream_cpp", "symbols": ["CipherTextObservationThreadProc"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0ca8", "end": "0x0d68", "kind": "upstream_cpp", "symbols": ["CacheThrashThreadProc"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0d68", "end": "0x0e30", "kind": "upstream_cpp", "symbols": ["CiphertextOverwriteLoop"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0e30", "end": "0x0f68", "kind": "upstream_cpp", "symbols": ["RunUpdatePayloadThreadProc"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x0f68", "end": "0x1038", "kind": "upstream_cpp", "symbols": ["LockAndThrashL2"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x1038", "end": "0x1080", "kind": "upstream_cpp", "symbols": ["UnlockL2"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x1080", "end": "0x1090", "kind": "upstream_target_assembly", "symbols": ["HvxKeysExecute"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x1090", "end": "0x1128", "kind": "upstream_cpp", "symbols": ["HvWriteULONG"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp"]},
+    {"start": "0x1128", "end": "0x1190", "kind": "upstream_cpp", "symbols": ["XLockL2"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x1190", "end": "0x119c", "kind": "upstream_target_assembly", "symbols": ["HvxWriteByte"], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp"]},
+    {"start": "0x119c", "end": "0x1240", "kind": "compiler_support", "symbols": ["savegpr", "restoregpr"], "sources": ["analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]},
+    {"start": "0x1240", "end": "0x13f0", "kind": "platform_import_thunks", "symbols": [], "sources": ["analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]},
+    {"start": "0x13f0", "end": "0x15a0", "kind": "strings_and_constants", "symbols": [], "sources": ["third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/BadUpdateExploit.cpp", "third_party/Xbox360BadUpdate/Stage3/BadUpdateExploit/Utilities/Utilities.cpp", "reconstruction/stage3/entry_flow.hpp"]},
+    {"start": "0x15a0", "end": "0x15d8", "kind": "peer_target_assembly", "binary_symbols": ["peer_stage3_embedded_probe"], "symbols": ["kResidentProbePayload", "BuildProbeSampleAddresses"], "sources": ["reconstruction/stage3/probe_payload.hpp", "reconstruction/stage3/resident_probe.cpp"]},
+    {"start": "0x15d8", "end": "0x15e0", "kind": "alignment", "symbols": [], "sources": ["analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"]}
+  ]
+}

@@ -8,6 +8,7 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/generate_stage3_probe_data.py" --check
+python3 "$root/tools/verify_stage3_source_coverage.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/stage3/resident_probe.cpp" \

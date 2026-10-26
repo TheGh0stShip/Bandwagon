@@ -25,6 +25,9 @@ The public BadUpdate source baseline is pinned as the
 - Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
 - Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
   reconstructions.
+- Stage 3 also has complete source-level coverage: its Peer-only entry and
+  resident probe are reconstructed C++, and every inherited exploit routine is
+  mapped to the pinned public BadUpdate source.
 - Updater's complete 88,640-byte PowerPC `.text` section has a labeled,
   byte-identical assembly reconstruction.
 - Updater's initialized `.rdata`, `.pdata`, and `.data` sections have
