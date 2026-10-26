@@ -44,6 +44,7 @@ class FakeLocks final
   std::vector<std::string> events;
 
   void EnterCriticalRegion() override { events.emplace_back("enter"); }
+  void AcquireShared() override { events.emplace_back("shared"); }
   void AcquireExclusive() override { events.emplace_back("acquire"); }
   void Release() override { events.emplace_back("release"); }
   void LeaveCriticalRegion() override { events.emplace_back("leave"); }

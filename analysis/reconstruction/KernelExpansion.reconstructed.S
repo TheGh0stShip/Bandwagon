@@ -1139,7 +1139,7 @@ fn_801F1000:
     .long 0x382102b0 /* 0x0116c */
     .long 0x4800d9b8 /* 0x01170 */
     .long 0x00000000 /* 0x01174 */
-fn_801F1178:
+GetPeerPressureConfigValueByHash:
     .long 0x7d8802a6 /* 0x01178 */
     .long 0x4800d94d /* 0x0117c */
     .long 0x9421ff70 /* 0x01180 */
@@ -1248,7 +1248,7 @@ fn_801F1178:
     .long 0x635a0002 /* 0x0131c */
     .long 0x4bfffee8 /* 0x01320 */
     .long 0x00000000 /* 0x01324 */
-fn_801F1328:
+SetPeerPressureConfigValueByHash:
     .long 0x7d8802a6 /* 0x01328 */
     .long 0x4800d79d /* 0x0132c */
     .long 0x9421ff70 /* 0x01330 */
@@ -1339,16 +1339,19 @@ fn_801F1328:
     .long 0x3f20c000 /* 0x01484 */
     .long 0x63390002 /* 0x01488 */
     .long 0x4bffff24 /* 0x0148c */
+fn_801F1490:
     .long 0x3d608020 /* 0x01490 */
     .long 0x3d408020 /* 0x01494 */
     .long 0x808b32a0 /* 0x01498 */
     .long 0x806a32a8 /* 0x0149c */
     .long 0x4bfff150 /* 0x014a0 */
     .long 0x00000000 /* 0x014a4 */
+fn_801F14A8:
     .long 0x3d608020 /* 0x014a8 */
     .long 0x886b37f4 /* 0x014ac */
     .long 0x4e800020 /* 0x014b0 */
     .long 0x00000000 /* 0x014b4 */
+fn_801F14B8:
     .long 0x546b063e /* 0x014b8 */
     .long 0x3d408020 /* 0x014bc */
     .long 0x7d6b0034 /* 0x014c0 */

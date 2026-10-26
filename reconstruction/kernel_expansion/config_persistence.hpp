@@ -32,6 +32,7 @@ class ConfigLockServices {
   virtual ~ConfigLockServices() = default;
 
   virtual void EnterCriticalRegion() = 0;
+  virtual void AcquireShared() = 0;
   virtual void AcquireExclusive() = 0;
   virtual void Release() = 0;
   virtual void LeaveCriticalRegion() = 0;

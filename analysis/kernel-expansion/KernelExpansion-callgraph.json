@@ -1150,7 +1150,7 @@
       "target_containing_function": "NtClose"
     },
     {
-      "caller": "fn_801F1178",
+      "caller": "GetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1178",
       "instruction_address": "0x801f117c",
       "target_address": "0x801feac8",
@@ -1158,7 +1158,7 @@
       "target_containing_function": "fn_801FEAC8"
     },
     {
-      "caller": "fn_801F1178",
+      "caller": "GetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1178",
       "instruction_address": "0x801f11b8",
       "target_address": "0x801feec8",
@@ -1166,7 +1166,7 @@
       "target_containing_function": "KeEnterCriticalRegion"
     },
     {
-      "caller": "fn_801F1178",
+      "caller": "GetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1178",
       "instruction_address": "0x801f11c8",
       "target_address": "0x801feed8",
@@ -1174,7 +1174,7 @@
       "target_containing_function": "ExAcquireReadWriteLockShared"
     },
     {
-      "caller": "fn_801F1178",
+      "caller": "GetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1178",
       "instruction_address": "0x801f120c",
       "target_address": "0x801feee8",
@@ -1182,7 +1182,7 @@
       "target_containing_function": "ExReleaseReadWriteLock"
     },
     {
-      "caller": "fn_801F1178",
+      "caller": "GetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1178",
       "instruction_address": "0x801f1210",
       "target_address": "0x801feef8",
@@ -1190,7 +1190,7 @@
       "target_containing_function": "KeLeaveCriticalRegion"
     },
     {
-      "caller": "fn_801F1178",
+      "caller": "GetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1178",
       "instruction_address": "0x801f127c",
       "target_address": "0x801fef08",
@@ -1198,7 +1198,7 @@
       "target_containing_function": "strncpy"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f132c",
       "target_address": "0x801feac8",
@@ -1206,7 +1206,7 @@
       "target_containing_function": "fn_801FEAC8"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f1360",
       "target_address": "0x801feec8",
@@ -1214,7 +1214,7 @@
       "target_containing_function": "KeEnterCriticalRegion"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f1370",
       "target_address": "0x801fef18",
@@ -1222,7 +1222,7 @@
       "target_containing_function": "ExAcquireReadWriteLockExclusive"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f13b4",
       "target_address": "0x801feee8",
@@ -1230,7 +1230,7 @@
       "target_containing_function": "ExReleaseReadWriteLock"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f13b8",
       "target_address": "0x801feef8",
@@ -1238,7 +1238,7 @@
       "target_containing_function": "KeLeaveCriticalRegion"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f13fc",
       "target_address": "0x801fef08",
@@ -1246,7 +1246,7 @@
       "target_containing_function": "strncpy"
     },
     {
-      "caller": "fn_801F1328",
+      "caller": "SetPeerPressureConfigValueByHash",
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f146c",
       "target_address": "0x801f3000",

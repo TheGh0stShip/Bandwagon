@@ -17,11 +17,14 @@ BASE = 0x801F0000
 TEXT_END = 0xF4B0
 THUNK_TABLE_START = 0xEBD8
 
-# Leaf callbacks reached indirectly are not discoverable from direct BL targets
-# and do not use the standard non-leaf prologue.  Their boundaries are proved
-# by return instructions, local control flow, and the surrounding independently
-# discovered entry points.
+# Local entries reached indirectly are not discoverable from direct BL targets
+# and do not use the standard non-leaf prologue. Their boundaries are proved by
+# return instructions, local control flow, static function-pointer tables, and
+# the surrounding independently discovered entry points.
 EXPLICIT_STARTS = {
+    0x1490,
+    0x14A8,
+    0x14B8,
     0x3120,
     0x31A0,
     0x73C0,
@@ -42,6 +45,8 @@ SEMANTIC_NAMES = {
     0x09C0: "GetPeerPressureConfig",
     0x09D0: "LaunchBootXell",
     0x0A50: "ConfigureBootAnimation",
+    0x1178: "GetPeerPressureConfigValueByHash",
+    0x1328: "SetPeerPressureConfigValueByHash",
     0x14D0: "ReadFileToAllocatedBuffer",
     0x16A8: "InitializeDefaultConfig",
     0x1700: "LoadStructuredConfigFile",
@@ -96,6 +101,15 @@ SEMANTIC_NAMES = {
     0xB4E8: "FreeFileSystemPool",
     0xCFD8: "FindCharacterOnLine",
     0xDA38: "DecodeOem437Character",
+}
+
+SEMANTIC_EVIDENCE = {
+    0x1178: [
+        "behavioral name corroborated by decoded hash lookup and static interface-table role"
+    ],
+    0x1328: [
+        "behavioral name corroborated by decoded hash update and static interface-table role"
+    ],
 }
 
 
@@ -173,7 +187,9 @@ def main() -> None:
         elif offset in table_thunks:
             evidence = ["absolute thunk pattern in trailing import table"]
         elif offset in SEMANTIC_NAMES:
-            evidence = ["behavioral name corroborated by strings and call role"]
+            evidence = SEMANTIC_EVIDENCE.get(
+                offset, ["behavioral name corroborated by strings and call role"]
+            )
         else:
             evidence = ["direct BL target or standard PPC prologue"]
         item = {

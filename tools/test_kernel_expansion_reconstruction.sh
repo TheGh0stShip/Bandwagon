@@ -101,6 +101,15 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/config_persistence_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/config_hash.cpp" \
+    "$root/reconstruction/kernel_expansion/config_schema.cpp" \
+    "$root/reconstruction/kernel_expansion/config_persistence.cpp" \
+    "$root/reconstruction/kernel_expansion/config_access.cpp" \
+    "$root/reconstruction/kernel_expansion/config_access_test.cpp" \
+    -o "$work/config_access_test"
+"$work/config_access_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/decimal.cpp" \
     "$root/reconstruction/kernel_expansion/decimal_test.cpp" \
     -o "$work/decimal_test"

@@ -13,13 +13,13 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 365 entry points from standard PPC prologues, direct `bl` targets, six
+- 368 entry points from standard PPC prologues, direct `bl` targets, nine
   independently bounded local entries, and tail-only import thunks.
 - 1,085 direct call edges.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 63 high-confidence behavioral labels are emitted directly into the exact
+- 65 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -69,6 +69,16 @@ lift. The first exact-byte-bound routines are:
   action, and OtherOS name. Tests preserve the initializer's unusual
   always-false return after it zeros the singleton, enables the startup-update
   flag, and enters the locked config path.
+- `GetPeerPressureConfigValueByHash` and
+  `SetPeerPressureConfigValueByHash` (`0x801f1178` and `0x801f1328`, 792
+  bytes together), represented as the table-exposed configuration
+  ABI. Both scan only the six cached hashes: reads take the shared lock and
+  return fixed string capacities or raw integer/Boolean values; writes take the
+  exclusive lock, enforce the recovered input sizes, and persist in mode one
+  before unlocking. Tests bind every reachable status and lock transition,
+  retention after persistence failure, and the ABI-critical fact that the
+  legacy `EjectButtonBehavior` hash reaches `EjectButtonAction` while the
+  current-name hash does not.
 - `LoadPeerPressureConfig` (`0x801f0648`, 256 bytes), represented as the full
   configuration bootstrap: initialize the global lock, allocate the 0x170-byte
   singleton with the recovered virtual-memory parameters, probe the exact
@@ -230,10 +240,10 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-52 independently bounded routines totaling 9,128 original instruction bytes.
+54 independently bounded routines totaling 9,920 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 365 discovered entries are maintainable
+evidence oracle, not a claim that all 368 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former
