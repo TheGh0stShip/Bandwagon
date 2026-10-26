@@ -12,6 +12,9 @@ Peer Stage4 file byte-for-byte, including its resident functions, patch
 records, copied HV code, structured data, padding, and the exact public
 BadUpdate clean-HV tail. The clean tail is included from the already verified
 local public Stage4 artifact rather than duplicated.
+The portable `reconstruction/stage4/rbtr_dispatcher.*` layer models the
+resident dispatch table and argument transformations without performing live
+hypervisor operations.
 
 ## Stage3
 

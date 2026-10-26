@@ -239,6 +239,14 @@ The `0x220`-byte record separates further:
   source identity has been demonstrated.
 - VA `0x6000321c8`–`0x6000321d7` (file `0x73c-0x74b`) is 16 zero bytes.
 
+`reconstruction/stage4/rbtr_dispatcher.cpp` is the portable decision model for
+the resident dispatcher. It preserves the magic-mismatch branch to `0x1cc8`,
+operation 1-3 return value 1, unsupported return value 2, operation-4 source,
+destination, low-32-bit word count and execution target, and operation-5
+argument remap before the absolute branch to `0xa880`. It performs no live
+copy, cache maintenance, or control transfer. Run its host test with
+`tools/test_stage4_reconstruction.sh`.
+
 ## Entry and exit summary
 
 The resident entry is a mode-controlled HV maintenance/patch routine. Mode
