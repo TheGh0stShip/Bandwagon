@@ -329,6 +329,24 @@
       "symbols": ["PathFieldBlock", "CopyPathAndParentDirectory", "kPathFieldCapacity"]
     },
     {
+      "address": "0x801fafe0",
+      "size": 16,
+      "sha256": "8bb330d38c70762672e8e3c5761c5d423beca1693cca8419fce992ff0e6f1ede",
+      "semantic_name": "AllocateFileSystemPool",
+      "source": "reconstruction/kernel_expansion/filesystem_pool.cpp",
+      "header": "reconstruction/kernel_expansion/filesystem_pool.hpp",
+      "symbols": ["FileSystemPoolServices", "AllocateFileSystemPool", "kFileSystemPoolTag", "kFileSystemPoolType"]
+    },
+    {
+      "address": "0x801fb4e8",
+      "size": 8,
+      "sha256": "a56015c6890b172abdec573417445afadb56f902156ef9015fbf9933bd89212f",
+      "semantic_name": "FreeFileSystemPool",
+      "source": "reconstruction/kernel_expansion/filesystem_pool.cpp",
+      "header": "reconstruction/kernel_expansion/filesystem_pool.hpp",
+      "symbols": ["FreeFileSystemPool"]
+    },
+    {
       "address": "0x801fcfd8",
       "size": 56,
       "sha256": "1ba299098660623d939fbbc22e70a2b74dc0f3bd87d6c8e5e3ce0d6b3b377f5d",
@@ -357,6 +375,7 @@
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/drive_registry_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
+    "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",
     "reconstruction/kernel_expansion/oem437_test.cpp",

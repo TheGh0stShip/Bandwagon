@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 49 high-confidence behavioral labels are emitted directly into the exact
+- 51 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -186,11 +186,15 @@ lift. The first exact-byte-bound routines are:
   recovered 128-entry OEM-US-to-UTF-16 table. The table exactly matches code
   page 437; tests also preserve low-16-bit code-page selection, ASCII's unusual
   full-word passthrough, and zero for unsupported or wider extended values.
+- `AllocateFileSystemPool` and `FreeFileSystemPool` (`0x801fafe0` and
+  `0x801fb4e8`, 24 bytes together), represented as the shared kernel-pool
+  boundary used by the file-system routines. Tests bind allocation tag
+  `0x66467845`, pool type two, return forwarding, and the paired free call.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-38 independently bounded routines totaling 4,960 original instruction bytes.
+40 independently bounded routines totaling 4,984 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

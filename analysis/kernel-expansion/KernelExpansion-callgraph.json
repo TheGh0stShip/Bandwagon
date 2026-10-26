@@ -5842,8 +5842,8 @@
       "caller_address": "0x801f8e58",
       "instruction_address": "0x801f8e88",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801F8E58",
@@ -5866,8 +5866,8 @@
       "caller_address": "0x801f8e58",
       "instruction_address": "0x801f8eec",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "fn_801F8F18",
@@ -6034,8 +6034,8 @@
       "caller_address": "0x801f91d0",
       "instruction_address": "0x801f9218",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801F91D0",
@@ -6066,8 +6066,8 @@
       "caller_address": "0x801f91d0",
       "instruction_address": "0x801f9298",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "MapCreateDispositionToOpenFlags",
@@ -6098,8 +6098,8 @@
       "caller_address": "0x801f9358",
       "instruction_address": "0x801f93ac",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801F9358",
@@ -6194,8 +6194,8 @@
       "caller_address": "0x801f9358",
       "instruction_address": "0x801f9748",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "fn_801F9768",
@@ -6474,8 +6474,8 @@
       "caller_address": "0x801fa0e8",
       "instruction_address": "0x801fa130",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801FA0E8",
@@ -6506,8 +6506,8 @@
       "caller_address": "0x801fa0e8",
       "instruction_address": "0x801fa1a8",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "fn_801FA1D0",
@@ -7202,8 +7202,8 @@
       "caller_address": "0x801fb5a0",
       "instruction_address": "0x801fb5d4",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801FB5A0",
@@ -7282,8 +7282,8 @@
       "caller_address": "0x801fb5a0",
       "instruction_address": "0x801fb808",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "fn_801FB888",
@@ -7866,8 +7866,8 @@
       "caller_address": "0x801fccc8",
       "instruction_address": "0x801fcd78",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801FCCC8",
@@ -7914,8 +7914,8 @@
       "caller_address": "0x801fccc8",
       "instruction_address": "0x801fcea4",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "fn_801FCCC8",
@@ -8258,8 +8258,8 @@
       "caller_address": "0x801fda80",
       "instruction_address": "0x801fdb18",
       "target_address": "0x801fafe0",
-      "callee": "fn_801FAFE0",
-      "target_containing_function": "fn_801FAFE0"
+      "callee": "AllocateFileSystemPool",
+      "target_containing_function": "AllocateFileSystemPool"
     },
     {
       "caller": "fn_801FDA80",
@@ -8282,8 +8282,8 @@
       "caller_address": "0x801fda80",
       "instruction_address": "0x801fdb90",
       "target_address": "0x801fb4e8",
-      "callee": "fn_801FB4E8",
-      "target_containing_function": "fn_801FB4E8"
+      "callee": "FreeFileSystemPool",
+      "target_containing_function": "FreeFileSystemPool"
     },
     {
       "caller": "fn_801FDA80",

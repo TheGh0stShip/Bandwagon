@@ -11419,7 +11419,7 @@ fn_801FAF60:
     .long 0xebc1ffe8 /* 0x0afd4 */
     .long 0xebe1fff0 /* 0x0afd8 */
     .long 0x4e800020 /* 0x0afdc */
-fn_801FAFE0:
+AllocateFileSystemPool:
     .long 0x3c806646 /* 0x0afe0 */
     .long 0x38a00002 /* 0x0afe4 */
     .long 0x60847845 /* 0x0afe8 */
@@ -11744,7 +11744,7 @@ fn_801FB108:
     .long 0xb17d000c /* 0x0b4dc */
     .long 0x38210080 /* 0x0b4e0 */
     .long 0x4800363c /* 0x0b4e4 */
-fn_801FB4E8:
+FreeFileSystemPool:
     .long 0x48003830 /* 0x0b4e8 */
     .long 0x00000000 /* 0x0b4ec */
 fn_801FB4F0:

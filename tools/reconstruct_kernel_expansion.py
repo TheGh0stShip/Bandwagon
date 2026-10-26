@@ -77,6 +77,8 @@ SEMANTIC_NAMES = {
     0xA798: "LaunchUpdateCheck",
     0xAA08: "CanOpenExistingPath",
     0xAAC0: "CopyPathAndParentDirectory",
+    0xAFE0: "AllocateFileSystemPool",
+    0xB4E8: "FreeFileSystemPool",
     0xCFD8: "FindCharacterOnLine",
     0xDA38: "DecodeOem437Character",
 }

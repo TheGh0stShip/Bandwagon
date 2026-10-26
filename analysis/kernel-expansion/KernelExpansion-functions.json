@@ -1582,9 +1582,9 @@
       "address": "0x801fafe0",
       "section_offset": "0xafe0",
       "size_to_next_symbol": 16,
-      "name": "fn_801FAFE0",
+      "name": "AllocateFileSystemPool",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -1612,9 +1612,9 @@
       "address": "0x801fb4e8",
       "section_offset": "0xb4e8",
       "size_to_next_symbol": 8,
-      "name": "fn_801FB4E8",
+      "name": "FreeFileSystemPool",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

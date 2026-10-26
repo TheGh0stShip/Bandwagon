@@ -107,6 +107,12 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/file_disposition_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/filesystem_pool.cpp" \
+    "$root/reconstruction/kernel_expansion/filesystem_pool_test.cpp" \
+    -o "$work/filesystem_pool_test"
+"$work/filesystem_pool_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/path_fields.cpp" \
     "$root/reconstruction/kernel_expansion/path_fields_test.cpp" \
     -o "$work/path_fields_test"
