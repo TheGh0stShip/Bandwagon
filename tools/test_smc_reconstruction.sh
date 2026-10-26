@@ -7,10 +7,19 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
+python3 "$root/tools/verify_trinity_smc_source_coverage.py"
+
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/smc/xbpp_handshake.cpp" \
     "$root/reconstruction/smc/xbpp_handshake_test.cpp" \
     -o "$work/xbpp_handshake_test"
 "$work/xbpp_handshake_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/smc/xbpp_handshake.cpp" \
+    "$root/reconstruction/smc/trinity_runtime.cpp" \
+    "$root/reconstruction/smc/trinity_runtime_test.cpp" \
+    -o "$work/trinity_runtime_test"
+"$work/trinity_runtime_test"
 
 echo "SMC portable reconstruction tests passed"

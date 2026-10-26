@@ -1,0 +1,63 @@
+{
+  "schema": "bandwagon-trinity-smc-source-coverage-v1",
+  "artifact": {
+    "path": "Flash/Trinity_SmcExploit.bin",
+    "size": 550,
+    "sha256": "4475e4316f9d6d24406adac7d525e5c26e89a513c8dc6f61ded76395ea5cee64"
+  },
+  "integration_records": [
+    {"record_index": 0, "target": "0x07fd", "size": 3, "role": "call RunTrinityCommandHook result path at 0x2f0c"},
+    {"record_index": 1, "target": "0x0869", "size": 6, "role": "call tick wrapper 0x2f3b then sender 0x2f86"},
+    {"record_index": 2, "target": "0x0bf9", "size": 3, "role": "redirect to RunTrinityBootHook"},
+    {"record_index": 3, "target": "0x0b75", "size": 3, "role": "redirect to RunTrinityStateGate"},
+    {"record_index": 4, "target": "0x094f", "size": 3, "role": "redirect to RunTrinityNotificationHook"},
+    {"record_index": 5, "target": "0x0bb4", "size": 3, "role": "redirect to RunTrinityCommandHook"},
+    {"record_index": 6, "target": "0x2759", "size": 3, "role": "redirect to RunTrinityXbppReceive"},
+    {"record_index": 7, "target": "0x1fda", "size": 3, "role": "redirect to RunTrinityStatusHook"},
+    {"record_index": 8, "target": "0x12d9", "size": 3, "role": "redirect to RunTrinityEeRedirect"},
+    {"record_index": 9, "target": "0x0857", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 10, "target": "0x1fd7", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 11, "target": "0x1fe8", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 12, "target": "0x1ff0", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 13, "target": "0x2055", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 14, "target": "0x2114", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 15, "target": "0x2147", "size": 3, "role": "three-byte NOP replacement"},
+    {"record_index": 16, "target": "0x08a9", "size": 4, "role": "initialize r0=0x30 and r2=0x35"}
+  ],
+  "executable_records": [
+    {
+      "record_index": 17,
+      "target": "0x0108",
+      "size": 33,
+      "coverage": [
+        {"start": "0x0108", "end": "0x0129", "symbols": ["RunTrinityNotificationHook"]}
+      ]
+    },
+    {
+      "record_index": 18,
+      "target": "0x14bf",
+      "size": 41,
+      "coverage": [
+        {"start": "0x14bf", "end": "0x14e2", "symbols": ["RunTrinityStateGate"]},
+        {"start": "0x14e2", "end": "0x14e8", "symbols": ["RunTrinityResetHook"]}
+      ]
+    },
+    {
+      "record_index": 19,
+      "target": "0x2ee9",
+      "size": 261,
+      "coverage": [
+        {"start": "0x2ee9", "end": "0x2ef8", "symbols": ["RunTrinityBootHook"]},
+        {"start": "0x2ef8", "end": "0x2f2d", "symbols": ["RunTrinityCommandHook"]},
+        {"start": "0x2f2d", "end": "0x2f3b", "symbols": ["RunTrinityStatusHook"]},
+        {"start": "0x2f3b", "end": "0x2f41", "symbols": ["PlanTrinityTickWrapper"]},
+        {"start": "0x2f41", "end": "0x2f78", "symbols": ["RunTrinityXbppReceive"]},
+        {"start": "0x2f78", "end": "0x2f86", "symbols": ["RunTrinityEeRedirect"]},
+        {"start": "0x2f86", "end": "0x2fb6", "symbols": ["RunTrinitySender"]},
+        {"start": "0x2fb6", "end": "0x2fee", "symbols": ["RunTrinityTick"]}
+      ]
+    }
+  ],
+  "source": "reconstruction/smc/trinity_runtime.cpp",
+  "tests": "reconstruction/smc/trinity_runtime_test.cpp"
+}

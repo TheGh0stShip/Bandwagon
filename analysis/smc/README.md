@@ -2,8 +2,9 @@
 
 The six `Flash/*_SmcExploit.bin` files are patch streams for the Xbox 360's
 8051-compatible system-management controller firmware. Each record has a
-big-endian target address and byte count followed by replacement bytes; a final
-`0xffffffff` terminates the stream.
+big-endian target address and byte count followed by replacement bytes; these
+six streams end exactly after their final record rather than carrying the
+optional `0xffffffff` sentinel accepted by the generic decoder.
 
 Every board stream now has a self-contained assembly reconstruction under
 `analysis/reconstruction/` and a mapped 8051 disassembly of its single large
@@ -37,6 +38,18 @@ bytes to `EB/EC/ED`, followed by `EA=0`, `E3 |= 0xc0`,
 `E4 = (E4 & 0xfc) | 2`, and `F5=6`. Corona instead sets `P2.6` and waits for
 `EE.0` to clear before performing that transfer. Run it with
 `tools/test_smc_reconstruction.sh`.
+
+Trinity is the first board with complete source-level coverage of every
+executable replacement record. `reconstruction/smc/trinity_runtime.cpp` lifts
+its boot, command, status, notification, state-gate, reset, XBPP receive,
+EE-redirect, sender, and timeout/finalization hooks. External firmware calls
+and tail jumps are explicit address plans rather than hidden callbacks. The
+machine-readable partition in `Trinity-source-coverage.json` covers all 335
+replacement-code bytes across records 17 through 19; records 0 through 16 are
+classified as declarative call injection, redirect, NOP, or register-setup
+integration records. `tools/verify_trinity_smc_source_coverage.py` checks the
+artifact hash, record boundaries, gap-free executable coverage, and source
+symbols before the host tests run.
 
 The strongest pairwise matches are Falcon/Jasper (`0.933031`) and
 Xenon/Zephyr (`0.907449`). Corona is the most divergent family member
