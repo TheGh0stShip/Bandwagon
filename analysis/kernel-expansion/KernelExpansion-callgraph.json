@@ -1594,32 +1594,32 @@
       "caller_address": "0x801f1a60",
       "instruction_address": "0x801f1bc0",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "ConfigureAuroraSideLoad",
       "caller_address": "0x801f1a60",
       "instruction_address": "0x801f1bcc",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "ConfigureAuroraSideLoad",
       "caller_address": "0x801f1a60",
       "instruction_address": "0x801f1bfc",
       "target_address": "0x801fef98",
-      "callee": "fn_801FEF98",
-      "target_containing_function": "fn_801FEF98"
+      "callee": "XamShowMessageBoxUI",
+      "target_containing_function": "XamShowMessageBoxUI"
     },
     {
       "caller": "ConfigureAuroraSideLoad",
       "caller_address": "0x801f1a60",
       "instruction_address": "0x801f1c1c",
       "target_address": "0x801fefa8",
-      "callee": "fn_801FEFA8",
-      "target_containing_function": "fn_801FEFA8"
+      "callee": "XamGetOverlappedResult",
+      "target_containing_function": "XamGetOverlappedResult"
     },
     {
       "caller": "ConfigureAuroraSideLoad",
@@ -1634,8 +1634,8 @@
       "caller_address": "0x801f1a60",
       "instruction_address": "0x801f1c40",
       "target_address": "0x801fefb8",
-      "callee": "fn_801FEFB8",
-      "target_containing_function": "fn_801FEFB8"
+      "callee": "XamLoaderTerminateTitle",
+      "target_containing_function": "XamLoaderTerminateTitle"
     },
     {
       "caller": "fn_801F1C60",
@@ -3178,8 +3178,8 @@
       "caller_address": "0x801f4ca0",
       "instruction_address": "0x801f4ce0",
       "target_address": "0x801ff0c8",
-      "callee": "fn_801FF0C8",
-      "target_containing_function": "fn_801FF0C8"
+      "callee": "XNotifyQueueUIEx",
+      "target_containing_function": "XNotifyQueueUIEx"
     },
     {
       "caller": "fn_801F4CA0",
@@ -3194,8 +3194,8 @@
       "caller_address": "0x801f4d08",
       "instruction_address": "0x801f4d14",
       "target_address": "0x801ff0d8",
-      "callee": "fn_801FF0D8",
-      "target_containing_function": "fn_801FF0D8"
+      "callee": "XamUserGetSigninState",
+      "target_containing_function": "XamUserGetSigninState"
     },
     {
       "caller": "fn_801F4D38",
@@ -3274,8 +3274,8 @@
       "caller_address": "0x801f4ed8",
       "instruction_address": "0x801f4eec",
       "target_address": "0x801ff0f8",
-      "callee": "fn_801FF0F8",
-      "target_containing_function": "fn_801FF0F8"
+      "callee": "XamUserGetSigninInfo",
+      "target_containing_function": "XamUserGetSigninInfo"
     },
     {
       "caller": "fn_801F4F28",
@@ -5138,16 +5138,16 @@
       "caller_address": "0x801f7b40",
       "instruction_address": "0x801f7b54",
       "target_address": "0x801fa688",
-      "callee": "CheckPhaseTwoMarker",
-      "target_containing_function": "CheckPhaseTwoMarker"
+      "callee": "CompletePhaseTwoFileRestore",
+      "target_containing_function": "CompletePhaseTwoFileRestore"
     },
     {
       "caller": "fn_801F7B40",
       "caller_address": "0x801f7b40",
       "instruction_address": "0x801f7b58",
       "target_address": "0x801ff228",
-      "callee": "fn_801FF228",
-      "target_containing_function": "fn_801FF228"
+      "callee": "XampPhase1Initialization",
+      "target_containing_function": "XampPhase1Initialization"
     },
     {
       "caller": "fn_801F7B40",
@@ -5178,16 +5178,16 @@
       "caller_address": "0x801f7b40",
       "instruction_address": "0x801f7be8",
       "target_address": "0x801ff248",
-      "callee": "fn_801FF248",
-      "target_containing_function": "fn_801FF248"
+      "callee": "XamTaskSchedule",
+      "target_containing_function": "XamTaskSchedule"
     },
     {
       "caller": "fn_801F7B40",
       "caller_address": "0x801f7b40",
       "instruction_address": "0x801f7bf8",
       "target_address": "0x801ff258",
-      "callee": "fn_801FF258",
-      "target_containing_function": "fn_801FF258"
+      "callee": "XamTaskCloseHandle",
+      "target_containing_function": "XamTaskCloseHandle"
     },
     {
       "caller": "fn_801F7B40",
@@ -5402,32 +5402,32 @@
       "caller_address": "0x801f8080",
       "instruction_address": "0x801f80dc",
       "target_address": "0x801ff248",
-      "callee": "fn_801FF248",
-      "target_containing_function": "fn_801FF248"
+      "callee": "XamTaskSchedule",
+      "target_containing_function": "XamTaskSchedule"
     },
     {
       "caller": "LaunchSettingsApp",
       "caller_address": "0x801f8080",
       "instruction_address": "0x801f80ec",
       "target_address": "0x801ff2a8",
-      "callee": "fn_801FF2A8",
-      "target_containing_function": "fn_801FF2A8"
+      "callee": "XamTaskWaitOnCompletion",
+      "target_containing_function": "XamTaskWaitOnCompletion"
     },
     {
       "caller": "LaunchSettingsApp",
       "caller_address": "0x801f8080",
       "instruction_address": "0x801f80f4",
       "target_address": "0x801ff2b8",
-      "callee": "fn_801FF2B8",
-      "target_containing_function": "fn_801FF2B8"
+      "callee": "XamTaskGetCompletionStatus",
+      "target_containing_function": "XamTaskGetCompletionStatus"
     },
     {
       "caller": "LaunchSettingsApp",
       "caller_address": "0x801f8080",
       "instruction_address": "0x801f8100",
       "target_address": "0x801ff258",
-      "callee": "fn_801FF258",
-      "target_containing_function": "fn_801FF258"
+      "callee": "XamTaskCloseHandle",
+      "target_containing_function": "XamTaskCloseHandle"
     },
     {
       "caller": "LaunchSettingsApp",
@@ -5482,24 +5482,24 @@
       "caller_address": "0x801f82d8",
       "instruction_address": "0x801f82f4",
       "target_address": "0x801ff2c8",
-      "callee": "fn_801FF2C8",
-      "target_containing_function": "fn_801FF2C8"
+      "callee": "XamIsCurrentTitleDash",
+      "target_containing_function": "XamIsCurrentTitleDash"
     },
     {
       "caller": "fn_801F82D8",
       "caller_address": "0x801f82d8",
       "instruction_address": "0x801f8300",
       "target_address": "0x801ff2d8",
-      "callee": "fn_801FF2D8",
-      "target_containing_function": "fn_801FF2D8"
+      "callee": "XamIsCurrentTitleDatacenterDash",
+      "target_containing_function": "XamIsCurrentTitleDatacenterDash"
     },
     {
       "caller": "fn_801F82D8",
       "caller_address": "0x801f82d8",
       "instruction_address": "0x801f833c",
       "target_address": "0x801ff2e8",
-      "callee": "fn_801FF2E8",
-      "target_containing_function": "fn_801FF2E8"
+      "callee": "XamGetExecutionId",
+      "target_containing_function": "XamGetExecutionId"
     },
     {
       "caller": "fn_801F83B8",
@@ -5522,8 +5522,8 @@
       "caller_address": "0x801f83b8",
       "instruction_address": "0x801f83f8",
       "target_address": "0x801ff2f8",
-      "callee": "fn_801FF2F8",
-      "target_containing_function": "fn_801FF2F8"
+      "callee": "XMsgCompleteIORequest",
+      "target_containing_function": "XMsgCompleteIORequest"
     },
     {
       "caller": "fn_801F83B8",
@@ -5578,16 +5578,16 @@
       "caller_address": "0x801f8570",
       "instruction_address": "0x801f85d8",
       "target_address": "0x801ff308",
-      "callee": "fn_801FF308",
-      "target_containing_function": "fn_801FF308"
+      "callee": "XuiSceneCreate",
+      "target_containing_function": "XuiSceneCreate"
     },
     {
       "caller": "fn_801F8570",
       "caller_address": "0x801f8570",
       "instruction_address": "0x801f85f8",
       "target_address": "0x801ff308",
-      "callee": "fn_801FF308",
-      "target_containing_function": "fn_801FF308"
+      "callee": "XuiSceneCreate",
+      "target_containing_function": "XuiSceneCreate"
     },
     {
       "caller": "fn_801F8608",
@@ -5602,16 +5602,16 @@
       "caller_address": "0x801f8608",
       "instruction_address": "0x801f863c",
       "target_address": "0x801ff318",
-      "callee": "fn_801FF318",
-      "target_containing_function": "fn_801FF318"
+      "callee": "XuiElementGetChildById",
+      "target_containing_function": "XuiElementGetChildById"
     },
     {
       "caller": "fn_801F8608",
       "caller_address": "0x801f8608",
       "instruction_address": "0x801f8654",
       "target_address": "0x801ff318",
-      "callee": "fn_801FF318",
-      "target_containing_function": "fn_801FF318"
+      "callee": "XuiElementGetChildById",
+      "target_containing_function": "XuiElementGetChildById"
     },
     {
       "caller": "fn_801F8608",
@@ -5682,8 +5682,8 @@
       "caller_address": "0x801f8710",
       "instruction_address": "0x801f8770",
       "target_address": "0x801ff318",
-      "callee": "fn_801FF318",
-      "target_containing_function": "fn_801FF318"
+      "callee": "XuiElementGetChildById",
+      "target_containing_function": "XuiElementGetChildById"
     },
     {
       "caller": "fn_801F8710",
@@ -6590,7 +6590,7 @@
       "target_containing_function": "fn_801FC710"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa68c",
       "target_address": "0x801fead0",
@@ -6598,7 +6598,7 @@
       "target_containing_function": "fn_801FEAD0"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa6b0",
       "target_address": "0x801febd8",
@@ -6606,7 +6606,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa6c8",
       "target_address": "0x801f14d0",
@@ -6614,7 +6614,7 @@
       "target_containing_function": "ReadFileToAllocatedBuffer"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa714",
       "target_address": "0x801fcfd8",
@@ -6622,15 +6622,15 @@
       "target_containing_function": "fn_801FCFD8"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa728",
       "target_address": "0x801ff358",
-      "callee": "fn_801FF358",
-      "target_containing_function": "fn_801FF358"
+      "callee": "XamDeleteFile",
+      "target_containing_function": "XamDeleteFile"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa744",
       "target_address": "0x801fefe8",
@@ -6638,23 +6638,23 @@
       "target_containing_function": "_snprintf"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa750",
       "target_address": "0x801ff368",
-      "callee": "fn_801FF368",
-      "target_containing_function": "fn_801FF368"
+      "callee": "XamMoveFile",
+      "target_containing_function": "XamMoveFile"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa768",
       "target_address": "0x801ff358",
-      "callee": "fn_801FF358",
-      "target_containing_function": "fn_801FF358"
+      "callee": "XamDeleteFile",
+      "target_containing_function": "XamDeleteFile"
     },
     {
-      "caller": "CheckPhaseTwoMarker",
+      "caller": "CompletePhaseTwoFileRestore",
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa784",
       "target_address": "0x801fed18",
@@ -6914,24 +6914,24 @@
       "caller_address": "0x801fac40",
       "instruction_address": "0x801fac90",
       "target_address": "0x801ff3a8",
-      "callee": "fn_801FF3A8",
-      "target_containing_function": "fn_801FF3A8"
+      "callee": "lstrlenA",
+      "target_containing_function": "lstrlenA"
     },
     {
       "caller": "fn_801FAC40",
       "caller_address": "0x801fac40",
       "instruction_address": "0x801facdc",
       "target_address": "0x801ff3b8",
-      "callee": "fn_801FF3B8",
-      "target_containing_function": "fn_801FF3B8"
+      "callee": "lstrcpyW",
+      "target_containing_function": "lstrcpyW"
     },
     {
       "caller": "fn_801FAC40",
       "caller_address": "0x801fac40",
       "instruction_address": "0x801fad0c",
       "target_address": "0x801ff3c8",
-      "callee": "fn_801FF3C8",
-      "target_containing_function": "fn_801FF3C8"
+      "callee": "wsprintfW",
+      "target_containing_function": "wsprintfW"
     },
     {
       "caller": "fn_801FAD20",
@@ -6946,8 +6946,8 @@
       "caller_address": "0x801fad20",
       "instruction_address": "0x801fad4c",
       "target_address": "0x801ff3d8",
-      "callee": "fn_801FF3D8",
-      "target_containing_function": "fn_801FF3D8"
+      "callee": "XuiSendMessage",
+      "target_containing_function": "XuiSendMessage"
     },
     {
       "caller": "fn_801FAD68",
@@ -6962,16 +6962,16 @@
       "caller_address": "0x801fad68",
       "instruction_address": "0x801fad9c",
       "target_address": "0x801ff3e8",
-      "callee": "fn_801FF3E8",
-      "target_containing_function": "fn_801FF3E8"
+      "callee": "XuiGetOuter",
+      "target_containing_function": "XuiGetOuter"
     },
     {
       "caller": "fn_801FAD68",
       "caller_address": "0x801fad68",
       "instruction_address": "0x801fada4",
       "target_address": "0x801ff3d8",
-      "callee": "fn_801FF3D8",
-      "target_containing_function": "fn_801FF3D8"
+      "callee": "XuiSendMessage",
+      "target_containing_function": "XuiSendMessage"
     },
     {
       "caller": "fn_801FADC0",
@@ -7010,48 +7010,48 @@
       "caller_address": "0x801fadc0",
       "instruction_address": "0x801faea8",
       "target_address": "0x801ff408",
-      "callee": "fn_801FF408",
-      "target_containing_function": "fn_801FF408"
+      "callee": "lstrcpyA",
+      "target_containing_function": "lstrcpyA"
     },
     {
       "caller": "fn_801FADC0",
       "caller_address": "0x801fadc0",
       "instruction_address": "0x801faedc",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "fn_801FADC0",
       "caller_address": "0x801fadc0",
       "instruction_address": "0x801faee8",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "fn_801FADC0",
       "caller_address": "0x801fadc0",
       "instruction_address": "0x801faef4",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "fn_801FADC0",
       "caller_address": "0x801fadc0",
       "instruction_address": "0x801faf00",
       "target_address": "0x801ff3e8",
-      "callee": "fn_801FF3E8",
-      "target_containing_function": "fn_801FF3E8"
+      "callee": "XuiGetOuter",
+      "target_containing_function": "XuiGetOuter"
     },
     {
       "caller": "fn_801FADC0",
       "caller_address": "0x801fadc0",
       "instruction_address": "0x801faf24",
       "target_address": "0x801ff418",
-      "callee": "fn_801FF418",
-      "target_containing_function": "fn_801FF418"
+      "callee": "XamShowMessageBox",
+      "target_containing_function": "XamShowMessageBox"
     },
     {
       "caller": "fn_801FAF60",
@@ -8002,24 +8002,24 @@
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd06c",
       "target_address": "0x801ff468",
-      "callee": "fn_801FF468",
-      "target_containing_function": "fn_801FF468"
+      "callee": "XamAppUnloadStack",
+      "target_containing_function": "XamAppUnloadStack"
     },
     {
       "caller": "fn_801FD010",
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd080",
       "target_address": "0x801ff478",
-      "callee": "fn_801FF478",
-      "target_containing_function": "fn_801FF478"
+      "callee": "RtlSleep",
+      "target_containing_function": "RtlSleep"
     },
     {
       "caller": "fn_801FD010",
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd084",
       "target_address": "0x801ff488",
-      "callee": "fn_801FF488",
-      "target_containing_function": "fn_801FF488"
+      "callee": "XamIsUIActive",
+      "target_containing_function": "XamIsUIActive"
     },
     {
       "caller": "fn_801FD010",
@@ -8034,16 +8034,16 @@
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd0a8",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "fn_801FD010",
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd0b4",
       "target_address": "0x801fef88",
-      "callee": "fn_801FEF88",
-      "target_containing_function": "fn_801FEF88"
+      "callee": "XamLookupCommonStringByIndex",
+      "target_containing_function": "XamLookupCommonStringByIndex"
     },
     {
       "caller": "fn_801FD010",
@@ -8058,16 +8058,16 @@
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd128",
       "target_address": "0x801fef98",
-      "callee": "fn_801FEF98",
-      "target_containing_function": "fn_801FEF98"
+      "callee": "XamShowMessageBoxUI",
+      "target_containing_function": "XamShowMessageBoxUI"
     },
     {
       "caller": "fn_801FD010",
       "caller_address": "0x801fd010",
       "instruction_address": "0x801fd148",
       "target_address": "0x801fefa8",
-      "callee": "fn_801FEFA8",
-      "target_containing_function": "fn_801FEFA8"
+      "callee": "XamGetOverlappedResult",
+      "target_containing_function": "XamGetOverlappedResult"
     },
     {
       "caller": "fn_801FD010",
@@ -8130,8 +8130,8 @@
       "caller_address": "0x801fd238",
       "instruction_address": "0x801fd268",
       "target_address": "0x801ff498",
-      "callee": "fn_801FF498",
-      "target_containing_function": "fn_801FF498"
+      "callee": "XamLoaderLaunchTitleEx",
+      "target_containing_function": "XamLoaderLaunchTitleEx"
     },
     {
       "caller": "fn_801FD2C8",

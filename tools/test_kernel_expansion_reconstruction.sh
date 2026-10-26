@@ -78,3 +78,10 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/version_test.cpp" \
     -o "$work/version_test"
 "$work/version_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/runtime.cpp" \
+    "$root/reconstruction/kernel_expansion/phase_two_restore.cpp" \
+    "$root/reconstruction/kernel_expansion/phase_two_restore_test.cpp" \
+    -o "$work/phase_two_restore_test"
+"$work/phase_two_restore_test"

@@ -6,7 +6,7 @@
   "text_end": "0xf4b0",
   "function_count": 362,
   "kernel_thunk_count": 141,
-  "resolved_kernel_thunk_count": 96,
+  "resolved_kernel_thunk_count": 127,
   "functions": [
     {
       "address": "0x801f0000",
@@ -1402,7 +1402,7 @@
       "address": "0x801fa688",
       "section_offset": "0xa688",
       "size_to_next_symbol": 272,
-      "name": "CheckPhaseTwoMarker",
+      "name": "CompletePhaseTwoFileRestore",
       "evidence": [
         "behavioral name corroborated by strings and call role"
       ],
@@ -2930,49 +2930,49 @@
       "address": "0x801fef88",
       "section_offset": "0xef88",
       "size_to_next_symbol": 16,
-      "name": "fn_801FEF88",
+      "name": "XamLookupCommonStringByIndex",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0bf0",
-      "target_name": null
+      "target_name": "XamLookupCommonStringByIndex"
     },
     {
       "address": "0x801fef98",
       "section_offset": "0xef98",
       "size_to_next_symbol": 16,
-      "name": "fn_801FEF98",
+      "name": "XamShowMessageBoxUI",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816c5508",
-      "target_name": null
+      "target_name": "XamShowMessageBoxUI"
     },
     {
       "address": "0x801fefa8",
       "section_offset": "0xefa8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FEFA8",
+      "name": "XamGetOverlappedResult",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a2898",
-      "target_name": null
+      "target_name": "XamGetOverlappedResult"
     },
     {
       "address": "0x801fefb8",
       "section_offset": "0xefb8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FEFB8",
+      "name": "XamLoaderTerminateTitle",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a1458",
-      "target_name": null
+      "target_name": "XamLoaderTerminateTitle"
     },
     {
       "address": "0x801fefc8",
@@ -3170,25 +3170,25 @@
       "address": "0x801ff0c8",
       "section_offset": "0xf0c8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF0C8",
+      "name": "XNotifyQueueUIEx",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a9de8",
-      "target_name": null
+      "target_name": "XNotifyQueueUIEx"
     },
     {
       "address": "0x801ff0d8",
       "section_offset": "0xf0d8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF0D8",
+      "name": "XamUserGetSigninState",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816dd118",
-      "target_name": null
+      "target_name": "XamUserGetSigninState"
     },
     {
       "address": "0x801ff0e8",
@@ -3206,13 +3206,13 @@
       "address": "0x801ff0f8",
       "section_offset": "0xf0f8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF0F8",
+      "name": "XamUserGetSigninInfo",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816ddb20",
-      "target_name": null
+      "target_name": "XamUserGetSigninInfo"
     },
     {
       "address": "0x801ff108",
@@ -3434,13 +3434,13 @@
       "address": "0x801ff228",
       "section_offset": "0xf228",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF228",
+      "name": "XampPhase1Initialization",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816968a8",
-      "target_name": null
+      "target_name": "XampPhase1Initialization"
     },
     {
       "address": "0x801ff238",
@@ -3458,25 +3458,25 @@
       "address": "0x801ff248",
       "section_offset": "0xf248",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF248",
+      "name": "XamTaskSchedule",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816ba440",
-      "target_name": null
+      "target_name": "XamTaskSchedule"
     },
     {
       "address": "0x801ff258",
       "section_offset": "0xf258",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF258",
+      "name": "XamTaskCloseHandle",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816b7b80",
-      "target_name": null
+      "target_name": "XamTaskCloseHandle"
     },
     {
       "address": "0x801ff268",
@@ -3530,97 +3530,97 @@
       "address": "0x801ff2a8",
       "section_offset": "0xf2a8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF2A8",
+      "name": "XamTaskWaitOnCompletion",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816ba660",
-      "target_name": null
+      "target_name": "XamTaskWaitOnCompletion"
     },
     {
       "address": "0x801ff2b8",
       "section_offset": "0xf2b8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF2B8",
+      "name": "XamTaskGetCompletionStatus",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816b7c10",
-      "target_name": null
+      "target_name": "XamTaskGetCompletionStatus"
     },
     {
       "address": "0x801ff2c8",
       "section_offset": "0xf2c8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF2C8",
+      "name": "XamIsCurrentTitleDash",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0c68",
-      "target_name": null
+      "target_name": "XamIsCurrentTitleDash"
     },
     {
       "address": "0x801ff2d8",
       "section_offset": "0xf2d8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF2D8",
+      "name": "XamIsCurrentTitleDatacenterDash",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0ca0",
-      "target_name": null
+      "target_name": "XamIsCurrentTitleDatacenterDash"
     },
     {
       "address": "0x801ff2e8",
       "section_offset": "0xf2e8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF2E8",
+      "name": "XamGetExecutionId",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0298",
-      "target_name": null
+      "target_name": "XamGetExecutionId"
     },
     {
       "address": "0x801ff2f8",
       "section_offset": "0xf2f8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF2F8",
+      "name": "XMsgCompleteIORequest",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a2588",
-      "target_name": null
+      "target_name": "XMsgCompleteIORequest"
     },
     {
       "address": "0x801ff308",
       "section_offset": "0xf308",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF308",
+      "name": "XuiSceneCreate",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817c4a58",
-      "target_name": null
+      "target_name": "XuiSceneCreate"
     },
     {
       "address": "0x801ff318",
       "section_offset": "0xf318",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF318",
+      "name": "XuiElementGetChildById",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817bd708",
-      "target_name": null
+      "target_name": "XuiElementGetChildById"
     },
     {
       "address": "0x801ff328",
@@ -3662,25 +3662,25 @@
       "address": "0x801ff358",
       "section_offset": "0xf358",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF358",
+      "name": "XamDeleteFile",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e24b8",
-      "target_name": null
+      "target_name": "XamDeleteFile"
     },
     {
       "address": "0x801ff368",
       "section_offset": "0xf368",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF368",
+      "name": "XamMoveFile",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e2200",
-      "target_name": null
+      "target_name": "XamMoveFile"
     },
     {
       "address": "0x801ff378",
@@ -3722,61 +3722,61 @@
       "address": "0x801ff3a8",
       "section_offset": "0xf3a8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF3A8",
+      "name": "lstrlenA",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722ed0",
-      "target_name": null
+      "target_name": "lstrlenA"
     },
     {
       "address": "0x801ff3b8",
       "section_offset": "0xf3b8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF3B8",
+      "name": "lstrcpyW",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722ef8",
-      "target_name": null
+      "target_name": "lstrcpyW"
     },
     {
       "address": "0x801ff3c8",
       "section_offset": "0xf3c8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF3C8",
+      "name": "wsprintfW",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722fa8",
-      "target_name": null
+      "target_name": "wsprintfW"
     },
     {
       "address": "0x801ff3d8",
       "section_offset": "0xf3d8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF3D8",
+      "name": "XuiSendMessage",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817b3d10",
-      "target_name": null
+      "target_name": "XuiSendMessage"
     },
     {
       "address": "0x801ff3e8",
       "section_offset": "0xf3e8",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF3E8",
+      "name": "XuiGetOuter",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817af168",
-      "target_name": null
+      "target_name": "XuiGetOuter"
     },
     {
       "address": "0x801ff3f8",
@@ -3794,25 +3794,25 @@
       "address": "0x801ff408",
       "section_offset": "0xf408",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF408",
+      "name": "lstrcpyA",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722e30",
-      "target_name": null
+      "target_name": "lstrcpyA"
     },
     {
       "address": "0x801ff418",
       "section_offset": "0xf418",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF418",
+      "name": "XamShowMessageBox",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816cb168",
-      "target_name": null
+      "target_name": "XamShowMessageBox"
     },
     {
       "address": "0x801ff428",
@@ -3866,49 +3866,49 @@
       "address": "0x801ff468",
       "section_offset": "0xf468",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF468",
+      "name": "XamAppUnloadStack",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816caf08",
-      "target_name": null
+      "target_name": "XamAppUnloadStack"
     },
     {
       "address": "0x801ff478",
       "section_offset": "0xf478",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF478",
+      "name": "RtlSleep",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81721b90",
-      "target_name": null
+      "target_name": "RtlSleep"
     },
     {
       "address": "0x801ff488",
       "section_offset": "0xf488",
       "size_to_next_symbol": 16,
-      "name": "fn_801FF488",
+      "name": "XamIsUIActive",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816c7d78",
-      "target_name": null
+      "target_name": "XamIsUIActive"
     },
     {
       "address": "0x801ff498",
       "section_offset": "0xf498",
       "size_to_next_symbol": 24,
-      "name": "fn_801FF498",
+      "name": "XamLoaderLaunchTitleEx",
       "evidence": [
         "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a0d70",
-      "target_name": null
+      "target_name": "XamLoaderLaunchTitleEx"
     }
   ]
 }

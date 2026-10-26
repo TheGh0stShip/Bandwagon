@@ -167,6 +167,15 @@
       "symbols": ["IsAsciiAlphaNumeric"]
     },
     {
+      "address": "0x801fa688",
+      "size": 272,
+      "sha256": "51334cec1f463d9b49ada366ec7523168ad976507eb370e4fa5b125643faf8d9",
+      "semantic_name": "CompletePhaseTwoFileRestore",
+      "source": "reconstruction/kernel_expansion/phase_two_restore.cpp",
+      "header": "reconstruction/kernel_expansion/phase_two_restore.hpp",
+      "symbols": ["PhaseTwoFileServices", "CompletePhaseTwoFileRestore", "kPhaseTwoMarkerPath"]
+    },
+    {
       "address": "0x801fa798",
       "size": 320,
       "sha256": "685660c0d6ba6a2704ecc674a79f7b385902f33c8abbed35dad28b68b3b971f3",
@@ -202,6 +211,7 @@
     "reconstruction/kernel_expansion/namespace_links_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",
     "reconstruction/kernel_expansion/path_fields_test.cpp",
+    "reconstruction/kernel_expansion/phase_two_restore_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",

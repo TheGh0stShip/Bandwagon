@@ -60,7 +60,7 @@ SEMANTIC_NAMES = {
     0xA320: "ClassifyFatBootSector",
     0xA540: "RecognizeGptDisk",
     0xA640: "IsAsciiAlphaNumeric",
-    0xA688: "CheckPhaseTwoMarker",
+    0xA688: "CompletePhaseTwoFileRestore",
     0xA798: "LaunchUpdateCheck",
     0xAA08: "CanOpenExistingPath",
     0xAAC0: "CopyPathAndParentDirectory",
@@ -76,14 +76,21 @@ def direct_target(offset: int, word: int) -> int | None:
     return displacement if word & 2 else offset + displacement
 
 
-def kernel_symbols() -> dict[int, str]:
+def known_symbols() -> dict[int, str]:
     symbols: dict[int, str] = {}
-    for name in ("KernelExports_Retail_17559.asm", "KernelConfig_Retail_17559.asm"):
+    for name in (
+        "KernelExports_Retail_17559.asm",
+        "KernelConfig_Retail_17559.asm",
+        "Xam_Retail_17559.asm",
+    ):
         path = ROOT / "third_party/Xbox360BadUpdate/Common" / name
         for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
             match = re.match(r"\s*\.set\s+([A-Za-z0-9_]+)\s*,\s*(0x[0-9A-Fa-f]+)", line)
             if match:
                 symbols.setdefault(int(match.group(2), 0), match.group(1))
+    # BadUpdate's address map leaves XAM ordinal 0x500 generic. The pinned Jeff
+    # import table independently identifies ordinal 0x500 as XamMoveFile.
+    symbols[0x816E2200] = "XamMoveFile"
     return symbols
 
 
@@ -106,7 +113,7 @@ def main() -> None:
                 starts.add(byte_offset)
                 table_thunks.add(byte_offset)
 
-    known = kernel_symbols()
+    known = known_symbols()
     thunks: dict[int, tuple[int, str | None]] = {}
     for offset in sorted(starts):
         if offset + 16 > TEXT_END:

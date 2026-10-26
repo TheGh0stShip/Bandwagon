@@ -10803,7 +10803,7 @@ IsAsciiAlphaNumeric:
     .long 0x38600000 /* 0x0a67c */
     .long 0x4e800020 /* 0x0a680 */
     .long 0x00000000 /* 0x0a684 */
-CheckPhaseTwoMarker:
+CompletePhaseTwoFileRestore:
     .long 0x7d8802a6 /* 0x0a688 */
     .long 0x48004445 /* 0x0a68c */
     .long 0x9421fe60 /* 0x0a690 */
@@ -15616,22 +15616,22 @@ NtCreateEvent:
     .long 0x616b6368 /* 0x0ef7c */
     .long 0x7d6903a6 /* 0x0ef80 */
     .long 0x4e800420 /* 0x0ef84 */
-fn_801FEF88:
+XamLookupCommonStringByIndex:
     .long 0x3d60816e /* 0x0ef88 */
     .long 0x616b0bf0 /* 0x0ef8c */
     .long 0x7d6903a6 /* 0x0ef90 */
     .long 0x4e800420 /* 0x0ef94 */
-fn_801FEF98:
+XamShowMessageBoxUI:
     .long 0x3d60816c /* 0x0ef98 */
     .long 0x616b5508 /* 0x0ef9c */
     .long 0x7d6903a6 /* 0x0efa0 */
     .long 0x4e800420 /* 0x0efa4 */
-fn_801FEFA8:
+XamGetOverlappedResult:
     .long 0x3d60816a /* 0x0efa8 */
     .long 0x616b2898 /* 0x0efac */
     .long 0x7d6903a6 /* 0x0efb0 */
     .long 0x4e800420 /* 0x0efb4 */
-fn_801FEFB8:
+XamLoaderTerminateTitle:
     .long 0x3d60816a /* 0x0efb8 */
     .long 0x616b1458 /* 0x0efbc */
     .long 0x7d6903a6 /* 0x0efc0 */
@@ -15716,12 +15716,12 @@ fn_801FF0B8:
     .long 0x616bf438 /* 0x0f0bc */
     .long 0x7d6903a6 /* 0x0f0c0 */
     .long 0x4e800420 /* 0x0f0c4 */
-fn_801FF0C8:
+XNotifyQueueUIEx:
     .long 0x3d60816a /* 0x0f0c8 */
     .long 0x616b9de8 /* 0x0f0cc */
     .long 0x7d6903a6 /* 0x0f0d0 */
     .long 0x4e800420 /* 0x0f0d4 */
-fn_801FF0D8:
+XamUserGetSigninState:
     .long 0x3d60816d /* 0x0f0d8 */
     .long 0x616bd118 /* 0x0f0dc */
     .long 0x7d6903a6 /* 0x0f0e0 */
@@ -15731,7 +15731,7 @@ XexGetModuleHandle:
     .long 0x616bd320 /* 0x0f0ec */
     .long 0x7d6903a6 /* 0x0f0f0 */
     .long 0x4e800420 /* 0x0f0f4 */
-fn_801FF0F8:
+XamUserGetSigninInfo:
     .long 0x3d60816d /* 0x0f0f8 */
     .long 0x616bdb20 /* 0x0f0fc */
     .long 0x7d6903a6 /* 0x0f100 */
@@ -15826,7 +15826,7 @@ _vsnprintf:
     .long 0x616bcaa0 /* 0x0f21c */
     .long 0x7d6903a6 /* 0x0f220 */
     .long 0x4e800420 /* 0x0f224 */
-fn_801FF228:
+XampPhase1Initialization:
     .long 0x3d608169 /* 0x0f228 */
     .long 0x616b68a8 /* 0x0f22c */
     .long 0x7d6903a6 /* 0x0f230 */
@@ -15836,12 +15836,12 @@ ObReferenceObjectByHandle:
     .long 0x616bba50 /* 0x0f23c */
     .long 0x7d6903a6 /* 0x0f240 */
     .long 0x4e800420 /* 0x0f244 */
-fn_801FF248:
+XamTaskSchedule:
     .long 0x3d60816b /* 0x0f248 */
     .long 0x616ba440 /* 0x0f24c */
     .long 0x7d6903a6 /* 0x0f250 */
     .long 0x4e800420 /* 0x0f254 */
-fn_801FF258:
+XamTaskCloseHandle:
     .long 0x3d60816b /* 0x0f258 */
     .long 0x616b7b80 /* 0x0f25c */
     .long 0x7d6903a6 /* 0x0f260 */
@@ -15866,42 +15866,42 @@ XexStartExecutable:
     .long 0x616bb0c8 /* 0x0f29c */
     .long 0x7d6903a6 /* 0x0f2a0 */
     .long 0x4e800420 /* 0x0f2a4 */
-fn_801FF2A8:
+XamTaskWaitOnCompletion:
     .long 0x3d60816b /* 0x0f2a8 */
     .long 0x616ba660 /* 0x0f2ac */
     .long 0x7d6903a6 /* 0x0f2b0 */
     .long 0x4e800420 /* 0x0f2b4 */
-fn_801FF2B8:
+XamTaskGetCompletionStatus:
     .long 0x3d60816b /* 0x0f2b8 */
     .long 0x616b7c10 /* 0x0f2bc */
     .long 0x7d6903a6 /* 0x0f2c0 */
     .long 0x4e800420 /* 0x0f2c4 */
-fn_801FF2C8:
+XamIsCurrentTitleDash:
     .long 0x3d60816e /* 0x0f2c8 */
     .long 0x616b0c68 /* 0x0f2cc */
     .long 0x7d6903a6 /* 0x0f2d0 */
     .long 0x4e800420 /* 0x0f2d4 */
-fn_801FF2D8:
+XamIsCurrentTitleDatacenterDash:
     .long 0x3d60816e /* 0x0f2d8 */
     .long 0x616b0ca0 /* 0x0f2dc */
     .long 0x7d6903a6 /* 0x0f2e0 */
     .long 0x4e800420 /* 0x0f2e4 */
-fn_801FF2E8:
+XamGetExecutionId:
     .long 0x3d60816e /* 0x0f2e8 */
     .long 0x616b0298 /* 0x0f2ec */
     .long 0x7d6903a6 /* 0x0f2f0 */
     .long 0x4e800420 /* 0x0f2f4 */
-fn_801FF2F8:
+XMsgCompleteIORequest:
     .long 0x3d60816a /* 0x0f2f8 */
     .long 0x616b2588 /* 0x0f2fc */
     .long 0x7d6903a6 /* 0x0f300 */
     .long 0x4e800420 /* 0x0f304 */
-fn_801FF308:
+XuiSceneCreate:
     .long 0x3d60817c /* 0x0f308 */
     .long 0x616b4a58 /* 0x0f30c */
     .long 0x7d6903a6 /* 0x0f310 */
     .long 0x4e800420 /* 0x0f314 */
-fn_801FF318:
+XuiElementGetChildById:
     .long 0x3d60817b /* 0x0f318 */
     .long 0x616bd708 /* 0x0f31c */
     .long 0x7d6903a6 /* 0x0f320 */
@@ -15921,12 +15921,12 @@ RtlTimeFieldsToTime:
     .long 0x616b9a58 /* 0x0f34c */
     .long 0x7d6903a6 /* 0x0f350 */
     .long 0x4e800420 /* 0x0f354 */
-fn_801FF358:
+XamDeleteFile:
     .long 0x3d60816e /* 0x0f358 */
     .long 0x616b24b8 /* 0x0f35c */
     .long 0x7d6903a6 /* 0x0f360 */
     .long 0x4e800420 /* 0x0f364 */
-fn_801FF368:
+XamMoveFile:
     .long 0x3d60816e /* 0x0f368 */
     .long 0x616b2200 /* 0x0f36c */
     .long 0x7d6903a6 /* 0x0f370 */
@@ -15946,27 +15946,27 @@ KeSetEvent:
     .long 0x616b41d8 /* 0x0f39c */
     .long 0x7d6903a6 /* 0x0f3a0 */
     .long 0x4e800420 /* 0x0f3a4 */
-fn_801FF3A8:
+lstrlenA:
     .long 0x3d608172 /* 0x0f3a8 */
     .long 0x616b2ed0 /* 0x0f3ac */
     .long 0x7d6903a6 /* 0x0f3b0 */
     .long 0x4e800420 /* 0x0f3b4 */
-fn_801FF3B8:
+lstrcpyW:
     .long 0x3d608172 /* 0x0f3b8 */
     .long 0x616b2ef8 /* 0x0f3bc */
     .long 0x7d6903a6 /* 0x0f3c0 */
     .long 0x4e800420 /* 0x0f3c4 */
-fn_801FF3C8:
+wsprintfW:
     .long 0x3d608172 /* 0x0f3c8 */
     .long 0x616b2fa8 /* 0x0f3cc */
     .long 0x7d6903a6 /* 0x0f3d0 */
     .long 0x4e800420 /* 0x0f3d4 */
-fn_801FF3D8:
+XuiSendMessage:
     .long 0x3d60817b /* 0x0f3d8 */
     .long 0x616b3d10 /* 0x0f3dc */
     .long 0x7d6903a6 /* 0x0f3e0 */
     .long 0x4e800420 /* 0x0f3e4 */
-fn_801FF3E8:
+XuiGetOuter:
     .long 0x3d60817a /* 0x0f3e8 */
     .long 0x616bf168 /* 0x0f3ec */
     .long 0x7d6903a6 /* 0x0f3f0 */
@@ -15976,12 +15976,12 @@ RtlUpperChar:
     .long 0x616b61f0 /* 0x0f3fc */
     .long 0x7d6903a6 /* 0x0f400 */
     .long 0x4e800420 /* 0x0f404 */
-fn_801FF408:
+lstrcpyA:
     .long 0x3d608172 /* 0x0f408 */
     .long 0x616b2e30 /* 0x0f40c */
     .long 0x7d6903a6 /* 0x0f410 */
     .long 0x4e800420 /* 0x0f414 */
-fn_801FF418:
+XamShowMessageBox:
     .long 0x3d60816c /* 0x0f418 */
     .long 0x616bb168 /* 0x0f41c */
     .long 0x7d6903a6 /* 0x0f420 */
@@ -16006,22 +16006,22 @@ fn_801FF458:
     .long 0x616bac20 /* 0x0f45c */
     .long 0x7d6903a6 /* 0x0f460 */
     .long 0x4e800420 /* 0x0f464 */
-fn_801FF468:
+XamAppUnloadStack:
     .long 0x3d60816c /* 0x0f468 */
     .long 0x616baf08 /* 0x0f46c */
     .long 0x7d6903a6 /* 0x0f470 */
     .long 0x4e800420 /* 0x0f474 */
-fn_801FF478:
+RtlSleep:
     .long 0x3d608172 /* 0x0f478 */
     .long 0x616b1b90 /* 0x0f47c */
     .long 0x7d6903a6 /* 0x0f480 */
     .long 0x4e800420 /* 0x0f484 */
-fn_801FF488:
+XamIsUIActive:
     .long 0x3d60816c /* 0x0f488 */
     .long 0x616b7d78 /* 0x0f48c */
     .long 0x7d6903a6 /* 0x0f490 */
     .long 0x4e800420 /* 0x0f494 */
-fn_801FF498:
+XamLoaderLaunchTitleEx:
     .long 0x3d60816a /* 0x0f498 */
     .long 0x616b0d70 /* 0x0f49c */
     .long 0x7d6903a6 /* 0x0f4a0 */

@@ -307,7 +307,7 @@
       "string": "EFI PART"
     },
     {
-      "function": "CheckPhaseTwoMarker",
+      "function": "CompletePhaseTwoFileRestore",
       "function_address": "0x801fa688",
       "instruction_address": "0x801fa6bc",
       "string_address": "0x802024dc",
