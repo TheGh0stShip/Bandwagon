@@ -55,3 +55,11 @@ inih r62, upstream commit `26254ee9de7681f8825433415443e7116ff24b98`.
 `LoadBootIni`, its section/name/value parsing flow, and its indirect callback
 dispatch. This separates the upstream parser from Peer's `ParseBootIniOption`
 callback without attributing diagnostic-free runtime code by address alone.
+
+`reconstruction/bootxell/boot_options.cpp` is a portable source reconstruction
+of that Peer callback and the launch-image trailer guard. It preserves quoted
+value trimming, hexadecimal 64-bit base addresses, the exact bypass
+acknowledgement, record finalization, and the required sixteen-byte
+`xxxxxxxxxxxxxxxx` trailer. The host test exercises accepted and rejected
+images without invoking any Xbox file or launch API; run it with
+`tools/test_bootxell_reconstruction.sh`.
