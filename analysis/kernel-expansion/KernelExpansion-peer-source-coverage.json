@@ -151,6 +151,15 @@
       "symbols": ["ParseDriveNumberPrefix"]
     },
     {
+      "address": "0x801f78e0",
+      "size": 88,
+      "sha256": "7a0c6d5e51a3e08f152ae699677963b892f633024c0156d997e6d6a2ef76efca",
+      "semantic_name": "ParseSignedDecimal",
+      "source": "reconstruction/kernel_expansion/decimal.cpp",
+      "header": "reconstruction/kernel_expansion/decimal.hpp",
+      "symbols": ["ParseSignedDecimal"]
+    },
+    {
       "address": "0x801f8210",
       "size": 40,
       "sha256": "bef1c5f2c9886531ba4dfdea36adf5aeeb6c16788c6c2c41f62e41b03483a951",
@@ -262,6 +271,7 @@
     "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
+    "reconstruction/kernel_expansion/decimal_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",

@@ -52,6 +52,12 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/config_persistence_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/decimal.cpp" \
+    "$root/reconstruction/kernel_expansion/decimal_test.cpp" \
+    -o "$work/decimal_test"
+"$work/decimal_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/update_check_launch.cpp" \
     "$root/reconstruction/kernel_expansion/update_check_launch_test.cpp" \
     -o "$work/update_check_launch_test"

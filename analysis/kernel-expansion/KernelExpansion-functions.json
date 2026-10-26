@@ -922,9 +922,9 @@
       "address": "0x801f78e0",
       "section_offset": "0x78e0",
       "size_to_next_symbol": 88,
-      "name": "fn_801F78E0",
+      "name": "ParseSignedDecimal",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

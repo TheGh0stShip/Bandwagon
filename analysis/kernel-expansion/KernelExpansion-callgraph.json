@@ -2802,8 +2802,8 @@
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f4388",
       "target_address": "0x801f78e0",
-      "callee": "fn_801F78E0",
-      "target_containing_function": "fn_801F78E0"
+      "callee": "ParseSignedDecimal",
+      "target_containing_function": "ParseSignedDecimal"
     },
     {
       "caller": "fn_801F41E8",
@@ -5714,8 +5714,8 @@
       "caller_address": "0x801f8a08",
       "instruction_address": "0x801f8aac",
       "target_address": "0x801f78e0",
-      "callee": "fn_801F78E0",
-      "target_containing_function": "fn_801F78E0"
+      "callee": "ParseSignedDecimal",
+      "target_containing_function": "ParseSignedDecimal"
     },
     {
       "caller": "fn_801F8AE0",

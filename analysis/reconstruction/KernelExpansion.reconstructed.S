@@ -7833,7 +7833,7 @@ fn_801F7878:
     .long 0x7d2348f8 /* 0x078d4 */
     .long 0x4e800020 /* 0x078d8 */
     .long 0x00000000 /* 0x078dc */
-fn_801F78E0:
+ParseSignedDecimal:
     .long 0x89630000 /* 0x078e0 */
     .long 0x39400000 /* 0x078e4 */
     .long 0x39000001 /* 0x078e8 */
