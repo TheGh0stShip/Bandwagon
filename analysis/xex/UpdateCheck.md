@@ -35,6 +35,13 @@ discarded and exactly three decimal components must parse. Those components are
 packed into the caller's 32-bit version output. Every network, response, JSON,
 and TLS object observed in this path is destroyed before return.
 
+`reconstruction/update_check/release_version.cpp` is the portable, tested
+reconstruction of that scanner and its `rlwimi` packing sequence. It preserves
+the observed C `sscanf` behavior, including signed decimal components and
+trailing input, and truncates the three fields to 8, 8, and 16 bits. The
+surrounding JsonCpp `tag_name` lookup remains a separate ownership boundary.
+Run the host test with `tools/test_updatecheck_reconstruction.sh`.
+
 Large portions of this image are third-party HTTP/TLS and JSON code. The
 author's public `ATTRIBUTION.md` identifies BearSSL 0.6 and JsonCpp tag
 `00.11.0`; `UpdateCheck-provenance.json` records that declaration and verifies

@@ -1,0 +1,28 @@
+#include "release_version.hpp"
+
+#include <cassert>
+#include <cstdint>
+#include <iostream>
+
+int main() {
+  using bandwagon::update_check::ParseReleaseTag;
+
+  std::uint32_t version = 0;
+  assert(ParseReleaseTag("v1.0.477", &version));
+  assert(version == 0x010001ddu);
+
+  // sscanf permits signs, decimal whitespace, and trailing input. The PPC
+  // rlwimi sequence retains 8, 8, and 16 bits respectively.
+  assert(ParseReleaseTag("r257.258.65537-trailing", &version));
+  assert(version == 0x01020001u);
+  assert(ParseReleaseTag("x-1.-2.-3", &version));
+  assert(version == 0xfffefffdu);
+
+  version = 0x12345678u;
+  assert(!ParseReleaseTag("1.2.3", &version));
+  assert(version == 0x12345678u);
+  assert(!ParseReleaseTag("v1.2", &version));
+  assert(!ParseReleaseTag("v1.2.3", nullptr));
+
+  std::cout << "UpdateCheck release-version reconstruction tests passed\n";
+}
