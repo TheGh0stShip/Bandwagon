@@ -20,6 +20,12 @@ int main() {
   // rfind is used rather than a suffix check.
   assert(BuildSavedTheme("Odd.xbat.backup").display_name == "Odd");
 
+  for (std::uint32_t index = 0; index < 7; ++index) {
+    assert(bandwagon::boot_edit::NextMeshIndex(index) == (index + 1) % 7);
+    assert(bandwagon::boot_edit::PreviousMeshIndex(index) ==
+           (index == 0 ? 6u : index - 1));
+  }
+
   Color edited{1.0f, 0.5f, 0.25f, 1.0f};
   const Color undo{0.1f, 0.2f, 0.3f, 0.4f};
   const Color defaults{0.9f, 0.8f, 0.7f, 0.6f};

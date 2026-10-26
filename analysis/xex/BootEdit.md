@@ -62,4 +62,6 @@ clipboard and availability flag: Copy only updates the clipboard, while
 enabled Paste, Undo, and Reset replace the edited value and report a change.
 The companion four-component equality predicate reproduces the exact float
 comparisons used to enable Undo, including treating NaN components as unequal.
+The same portable module also recovers the editor's seven-item mesh navigation:
+Next wraps six to zero and Previous wraps zero to six.
 Run the host test with `tools/test_bootedit_reconstruction.sh`.

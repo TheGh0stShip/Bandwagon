@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <cstdint>
 #include <string>
 #include <string_view>
 
@@ -25,6 +26,9 @@ enum class ColorAction { kNone, kCopy, kPaste, kUndo, kReset };
 
 bool ColorsEqual(const Color& left, const Color& right);
 bool CanUndoColor(const Color& edited, const Color& undo_value);
+
+std::uint32_t NextMeshIndex(std::uint32_t index);
+std::uint32_t PreviousMeshIndex(std::uint32_t index);
 
 // Reconstructs the non-ImGui state changes in the color context menu. Returns
 // true exactly for actions that replace the edited color.

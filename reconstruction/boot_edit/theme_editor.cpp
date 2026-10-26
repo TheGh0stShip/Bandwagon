@@ -19,6 +19,14 @@ bool CanUndoColor(const Color& edited, const Color& undo_value) {
   return !ColorsEqual(edited, undo_value);
 }
 
+std::uint32_t NextMeshIndex(std::uint32_t index) {
+  return (index + 1u) % 7u;
+}
+
+std::uint32_t PreviousMeshIndex(std::uint32_t index) {
+  return index == 0 ? 6u : index - 1u;
+}
+
 bool ApplyColorAction(ColorAction action, Color* edited,
                       const Color& undo_value, const Color& default_value,
                       ColorClipboard* clipboard) {
