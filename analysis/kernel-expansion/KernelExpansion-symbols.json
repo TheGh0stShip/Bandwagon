@@ -29,6 +29,7 @@
     {"address":"0x801fa640","recovered_name":"IsAsciiAlphaNumeric","semantic_name":"IsAsciiAlphaNumeric","confidence":"high","evidence":["direct ASCII digit and upper/lowercase range comparisons"]},
     {"address":"0x801fa688","recovered_name":"CheckPhaseTwoMarker","semantic_name":"CheckPhaseTwoMarker","confidence":"high","evidence":["PPROOT update.phase2 path"]},
     {"address":"0x801fa798","recovered_name":"LaunchUpdateCheck","semantic_name":"LaunchUpdateCheck","confidence":"high","evidence":["direct UpdateCheck.xex path reference"]},
+    {"address":"0x801faa08","recovered_name":"CanOpenExistingPath","semantic_name":"CanOpenExistingPath","confidence":"high","evidence":["initializes an ANSI path","opens with NtCreateFile","closes the handle on success","returns a Boolean result"]},
     {"address":"0x801faac0","recovered_name":"CopyPathAndParentDirectory","semantic_name":"CopyPathAndParentDirectory","confidence":"high","evidence":["copies a bounded NUL-terminated path to object offset 0x10","optionally copies bytes before the final backslash to object offset 0x110"]}
   ]
 }

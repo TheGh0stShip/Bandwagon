@@ -1452,9 +1452,9 @@
       "address": "0x801faa08",
       "section_offset": "0xaa08",
       "size_to_next_symbol": 184,
-      "name": "fn_801FAA08",
+      "name": "CanOpenExistingPath",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

@@ -5258,8 +5258,8 @@
       "caller_address": "0x801f7c50",
       "instruction_address": "0x801f7d40",
       "target_address": "0x801faa08",
-      "callee": "fn_801FAA08",
-      "target_containing_function": "fn_801FAA08"
+      "callee": "CanOpenExistingPath",
+      "target_containing_function": "CanOpenExistingPath"
     },
     {
       "caller": "fn_801F7C50",
@@ -6838,7 +6838,7 @@
       "target_containing_function": "KeSetEvent"
     },
     {
-      "caller": "fn_801FAA08",
+      "caller": "CanOpenExistingPath",
       "caller_address": "0x801faa08",
       "instruction_address": "0x801faa48",
       "target_address": "0x801fec88",
@@ -6846,7 +6846,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "fn_801FAA08",
+      "caller": "CanOpenExistingPath",
       "caller_address": "0x801faa08",
       "instruction_address": "0x801faa8c",
       "target_address": "0x801fed28",
@@ -6854,7 +6854,7 @@
       "target_containing_function": "NtCreateFile"
     },
     {
-      "caller": "fn_801FAA08",
+      "caller": "CanOpenExistingPath",
       "caller_address": "0x801faa08",
       "instruction_address": "0x801faaa4",
       "target_address": "0x801fed68",

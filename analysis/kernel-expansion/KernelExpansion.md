@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 28 high-confidence behavioral labels are emitted directly into the exact
+- 29 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -102,11 +102,14 @@ lift. The first exact-byte-bound routines are:
   recovered object field offsets and 256-byte bound. It preserves the exact
   final-backslash split, leading-backslash behavior, low-byte flag comparison,
   and the contiguous terminator write at the full-capacity boundary.
+- `CanOpenExistingPath` (`0x801faa08`, 184 bytes), represented as the exact
+  `NtCreateFile` option set behind the path validator. Its typed service model
+  proves that only a successful open is closed and accepted.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-15 independently bounded routines totaling 2,752 original instruction bytes.
+16 independently bounded routines totaling 2,936 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 354 discovered entries are maintainable

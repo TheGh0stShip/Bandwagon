@@ -131,6 +131,15 @@
       "symbols": ["UpdateCheckState", "UpdateCheckServices", "LaunchUpdateCheck", "kUpdateCheckPath"]
     },
     {
+      "address": "0x801faa08",
+      "size": 184,
+      "sha256": "d619f725d4184e00cbe82a64cf5026ca52d29e6c959adb36c4b006486207bb45",
+      "semantic_name": "CanOpenExistingPath",
+      "source": "reconstruction/kernel_expansion/path_fields.cpp",
+      "header": "reconstruction/kernel_expansion/path_fields.hpp",
+      "symbols": ["ExistingPathOpenOptions", "PathProbeServices", "CanOpenExistingPath"]
+    },
+    {
       "address": "0x801faac0",
       "size": 144,
       "sha256": "7a9e8c334495c9786186e08ec868d8705d43f84a5906f046a416f10bb364b69c",

@@ -30,7 +30,7 @@ not the final implementation.
 | UpdateCheck | Complete initialized sections | Partial: both identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
 | BootEdit | Complete initialized sections | Partial: theme navigation/edit decisions |
-| KernelExpansion | Complete whole-file assembly | Partial: config/file workflows, BootXell and UpdateCheck launch, `.xedata` handlers, package callbacks, drive/path parsing, FAT/exFAT classification, GPT recognition/checksum, and ASCII predicate have 15 exact-byte-bound, tested C++ lifts |
+| KernelExpansion | Complete whole-file assembly | Partial: config/file workflows, BootXell and UpdateCheck launch, `.xedata` handlers, package callbacks, drive/path parsing and validation, FAT/exFAT classification, GPT recognition/checksum, and ASCII predicate have 16 exact-byte-bound, tested C++ lifts |
 | Stage2 | Complete whole-file assembly | Initial semantic map only |
 
 ## Completion rule

@@ -2,6 +2,17 @@
 
 namespace bandwagon::kernel_expansion {
 
+bool CanOpenExistingPath(PathProbeServices* services, std::string_view path) {
+  if (!services) return false;
+
+  FileHandle handle = 0;
+  const ExistingPathOpenOptions options;
+  if (services->OpenExisting(path, options, &handle) != 0) return false;
+
+  services->Close(handle);
+  return true;
+}
+
 void CopyPathAndParentDirectory(PathFieldBlock* output, const char* source,
                                 std::uint8_t capture_parent) {
   if (!output || !source) return;

@@ -6,8 +6,53 @@
 #include <string>
 #include <string_view>
 
+namespace {
+
+class FakePathProbe final
+    : public bandwagon::kernel_expansion::PathProbeServices {
+ public:
+  int open_result = 0;
+  bandwagon::kernel_expansion::FileHandle returned_handle = 0x1234;
+  bool opened = false;
+  bool closed = false;
+
+  int OpenExisting(
+      std::string_view path,
+      const bandwagon::kernel_expansion::ExistingPathOpenOptions& options,
+      bandwagon::kernel_expansion::FileHandle* handle) override {
+    assert(path == "PPROOT:\\System\\Config.ini");
+    assert(options.desired_access == 0x80100080);
+    assert(options.object_attributes == 0x40);
+    assert(options.file_attributes == 0x80);
+    assert(options.share_access == 1);
+    assert(options.disposition == 1);
+    assert(options.create_options == 0x60);
+    assert(handle);
+    opened = true;
+    *handle = returned_handle;
+    return open_result;
+  }
+
+  void Close(bandwagon::kernel_expansion::FileHandle handle) override {
+    assert(handle == returned_handle);
+    closed = true;
+  }
+};
+
+}  // namespace
+
 int main() {
   using namespace bandwagon::kernel_expansion;
+
+  FakePathProbe success;
+  assert(CanOpenExistingPath(&success, "PPROOT:\\System\\Config.ini"));
+  assert(success.opened && success.closed);
+
+  FakePathProbe failure;
+  failure.open_result = -1;
+  assert(!CanOpenExistingPath(&failure, "PPROOT:\\System\\Config.ini"));
+  assert(failure.opened && !failure.closed);
+  assert(!CanOpenExistingPath(nullptr, "PPROOT:\\System\\Config.ini"));
 
   PathFieldBlock fields;
   fields.opaque_prefix.fill(0xa5);

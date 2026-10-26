@@ -11032,7 +11032,7 @@ fn_801FA958:
     .long 0x7f83e378 /* 0x0a9fc */
     .long 0x38210090 /* 0x0aa00 */
     .long 0x48004114 /* 0x0aa04 */
-fn_801FAA08:
+CanOpenExistingPath:
     .long 0x7d8802a6 /* 0x0aa08 */
     .long 0x9181fff8 /* 0x0aa0c */
     .long 0xfbe1fff0 /* 0x0aa10 */
