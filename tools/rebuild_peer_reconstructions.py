@@ -25,6 +25,8 @@ FLASH_DMA_SOURCE = ROOT / "analysis/reconstruction/FlashDmaPayload.reconstructed
 FLASH_DMA_REFERENCE = ROOT / "Flash/FlashDmaPayload.bin"
 KERNEL_EXPANSION_SOURCE = ROOT / "analysis/reconstruction/KernelExpansion.reconstructed.S"
 KERNEL_EXPANSION_REFERENCE = ROOT / "PeerPressure/System/KernelExpansion.bin"
+KERNEL_PATCH_SOURCE = ROOT / "analysis/reconstruction/kernel_patches.reconstructed.S"
+KERNEL_PATCH_REFERENCE = ROOT / "PeerPressure/System/kernel_patches.bin"
 
 STAGE3_RANGES = (
     (0x000, 0x0F8, "Peer Stage3 entry point and alignment"),
@@ -89,12 +91,19 @@ def main() -> None:
         hdd_security_output = temporary_path / "hdd-security.bin"
         flash_dma_output = temporary_path / "flash-dma.bin"
         kernel_expansion_output = temporary_path / "kernel-expansion.bin"
+        kernel_patch_output = temporary_path / "kernel-patches.bin"
         assemble(STAGE4_SOURCE, stage4_output, llvm_mc, llvm_objcopy)
         assemble(STAGE3_SOURCE, stage3_output, llvm_mc, llvm_objcopy)
         assemble(STAGE2_SOURCE, stage2_output, llvm_mc, llvm_objcopy)
         assemble(HDD_SECURITY_SOURCE, hdd_security_output, llvm_mc, llvm_objcopy)
         assemble(FLASH_DMA_SOURCE, flash_dma_output, llvm_mc, llvm_objcopy)
         assemble(KERNEL_EXPANSION_SOURCE, kernel_expansion_output, llvm_mc, llvm_objcopy)
+        assemble(KERNEL_PATCH_SOURCE, kernel_patch_output, llvm_mc, llvm_objcopy)
+
+        kernel_patch_built = kernel_patch_output.read_bytes()
+        kernel_patch_reference = KERNEL_PATCH_REFERENCE.read_bytes()
+        if kernel_patch_built != kernel_patch_reference:
+            raise SystemExit("Kernel patch stream reconstruction mismatch")
 
         kernel_expansion_built = kernel_expansion_output.read_bytes()
         kernel_expansion_reference = KERNEL_EXPANSION_REFERENCE.read_bytes()
@@ -193,6 +202,13 @@ def main() -> None:
                 "sha256": sha256(kernel_expansion_built),
                 "whole_file_byte_identical": True,
             },
+            "kernel_patch_stream": {
+                "source": str(KERNEL_PATCH_SOURCE.relative_to(ROOT)),
+                "reference": str(KERNEL_PATCH_REFERENCE.relative_to(ROOT)),
+                "size": len(kernel_patch_built),
+                "sha256": sha256(kernel_patch_built),
+                "whole_file_byte_identical": True,
+            },
             "hdd_security_sector": {
                 "source": str(HDD_SECURITY_SOURCE.relative_to(ROOT)),
                 "reference": str(HDD_SECURITY_REFERENCE.relative_to(ROOT)),
@@ -228,6 +244,11 @@ def main() -> None:
     if args.json:
         print(json.dumps(result, indent=2))
     else:
+        print(
+            "Kernel patch stream: exact whole-file rebuild, "
+            f"{result['kernel_patch_stream']['size']} bytes, "
+            f"SHA-256 {result['kernel_patch_stream']['sha256']}"
+        )
         print(
             "Kernel expansion: exact whole-file rebuild, "
             f"{result['kernel_expansion']['size']} bytes, "

@@ -5,10 +5,10 @@
   "status_counts": {
     "binary_asset": 1,
     "exact_initialized_source": 6,
-    "exact_whole_file_source": 5,
+    "exact_whole_file_source": 6,
     "human_readable_data": 1,
     "human_readable_source": 3,
-    "lossless_structured_source": 7,
+    "lossless_structured_source": 6,
     "provenance_only": 1,
     "public_baseline_identical": 3,
     "reference_binary_only": 6
@@ -255,8 +255,8 @@
       "sha1": "e1253d592fce50fd7def99e99f443091edd9e334",
       "sha256": "c896d68941e3b2f9b73e0ea25497bd26d71beca1bfd9d2295b799a50d45452ff",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/PeerPressure_System_kernel_patches.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/kernel-patches.md"
     },
     {
       "path": "PeerPressure\\System\\PeerPressureExploit-4thStage.bin",
