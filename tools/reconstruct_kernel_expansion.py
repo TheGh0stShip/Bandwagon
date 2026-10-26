@@ -57,6 +57,7 @@ SEMANTIC_NAMES = {
     0x4938: "ParseDllConfigEntry",
     0x4D08: "PromoteLocalSigninState",
     0x4ED8: "PromoteLocalSigninInfo",
+    0x62C0: "UnsupportedDeviceOperation",
     0x6AF0: "ParseDriveNumberPrefix",
     0x78E0: "ParseSignedDecimal",
     0x7E68: "FindSoftmodUpdateArchive",

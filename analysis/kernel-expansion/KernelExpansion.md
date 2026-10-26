@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 48 high-confidence behavioral labels are emitted directly into the exact
+- 49 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -166,6 +166,9 @@ lift. The first exact-byte-bound routines are:
   the six-case standard file-create-disposition mapping used by both open
   workflows. Tests bind the exact `8, 0, 4, 16, 0, 8` results and the recovered
   debugger break followed by zero for invalid unsigned values.
+- `UnsupportedDeviceOperation` (`0x801f62c0`, 40 bytes), represented as the
+  device-operation vtable's explicit unsupported stub. It preserves both the
+  `DbgBreakPoint` side effect and returned `STATUS_NOT_IMPLEMENTED` value.
 - `PromoteLocalSigninState` (`0x801f4d08`, 48 bytes), represented as the small
   XAM sign-in policy hook that maps local state one to online state two and
   forwards every other returned state unchanged.
@@ -187,7 +190,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-37 independently bounded routines totaling 4,920 original instruction bytes.
+38 independently bounded routines totaling 4,960 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

@@ -70,6 +70,12 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/update_check_launch_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/unsupported_operation.cpp" \
+    "$root/reconstruction/kernel_expansion/unsupported_operation_test.cpp" \
+    -o "$work/unsupported_operation_test"
+"$work/unsupported_operation_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/package_callbacks.cpp" \
     "$root/reconstruction/kernel_expansion/package_callbacks_test.cpp" \
     -o "$work/package_callbacks_test"

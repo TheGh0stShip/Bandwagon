@@ -6404,7 +6404,7 @@ fn_801F60D0:
     .long 0x480034b5 /* 0x062b4 */
     .long 0x7c781b78 /* 0x062b8 */
     .long 0x4bffff20 /* 0x062bc */
-fn_801F62C0:
+UnsupportedDeviceOperation:
     .long 0x7d8802a6 /* 0x062c0 */
     .long 0x9181fff8 /* 0x062c4 */
     .long 0x9421ffa0 /* 0x062c8 */

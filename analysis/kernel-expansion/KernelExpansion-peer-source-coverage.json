@@ -169,6 +169,15 @@
       "symbols": ["SigninInfo", "SigninInfoServices", "PromoteLocalSigninInfo"]
     },
     {
+      "address": "0x801f62c0",
+      "size": 40,
+      "sha256": "5f58cd42f97d34a8911a3c8115746bdbe4357e3e28862091ed281183fc778ee1",
+      "semantic_name": "UnsupportedDeviceOperation",
+      "source": "reconstruction/kernel_expansion/unsupported_operation.cpp",
+      "header": "reconstruction/kernel_expansion/unsupported_operation.hpp",
+      "symbols": ["UnsupportedOperationDiagnostics", "UnsupportedDeviceOperation", "kStatusNotImplemented"]
+    },
+    {
       "address": "0x801f6af0",
       "size": 120,
       "sha256": "a8f598c960e062214fa71aea956ea83f7b12a9b39fb9d6b825eb721d2fe39c18",
@@ -358,6 +367,7 @@
     "reconstruction/kernel_expansion/signin_state_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",
+    "reconstruction/kernel_expansion/unsupported_operation_test.cpp",
     "reconstruction/kernel_expansion/version_test.cpp",
     "reconstruction/kernel_expansion/volume_capacity_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",

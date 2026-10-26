@@ -4286,7 +4286,7 @@
       "target_containing_function": "fn_801F9768"
     },
     {
-      "caller": "fn_801F62C0",
+      "caller": "UnsupportedDeviceOperation",
       "caller_address": "0x801f62c0",
       "instruction_address": "0x801f62cc",
       "target_address": "0x801fec78",
