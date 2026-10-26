@@ -1,0 +1,34 @@
+{
+  "schema": "bandwagon-bootxell-semantic-symbols-v1",
+  "image_sha256": "4ef810a55390105a0756d2dc48502f8d9fad50edc08d8617fe146bc3ae496ebc",
+  "symbols": [
+    {
+      "address": "0x91a06188",
+      "recovered_name": "fn_91A06188",
+      "semantic_name": "ParseBootIniOption",
+      "confidence": "high",
+      "evidence": ["dispatches the BootOption, Name, FileName, BaseAddress, and BypassXellScanning keys", "allocates a 72-byte option record and populates its fields"]
+    },
+    {
+      "address": "0x91a06450",
+      "recovered_name": "fn_91A06450",
+      "semantic_name": "LoadBootIni",
+      "confidence": "high",
+      "evidence": ["opens and parses the supplied path with ParseBootIniOption as callback", "returns success only when parsing succeeds"]
+    },
+    {
+      "address": "0x91a064d8",
+      "recovered_name": "fn_91A064D8",
+      "semantic_name": "LaunchBootOption",
+      "confidence": "high",
+      "evidence": ["combines PPROOT:\\OtherOS\\ with the option filename", "checks the final 16 bytes against the xxxxxxxxxxxxxxxx marker unless bypass is enabled", "constructs the rbtr launch descriptor using configured or detected base address"]
+    },
+    {
+      "address": "0x91a06658",
+      "recovered_name": "fn_91A06658",
+      "semantic_name": "BootXellMain",
+      "confidence": "high",
+      "evidence": ["loads PPROOT:\\OtherOS\\boot.ini", "selects a named option and calls LaunchBootOption"]
+    }
+  ]
+}

@@ -50,6 +50,11 @@ sections are also exactly reconstructable. Reproducible call/string graphs,
 source attribution, semantic symbols, and a portable tested reconstruction of
 the Stage2 bootstrap-record builder are tracked alongside it.
 
+`xex/BootXell.md` documents the OtherOS launcher. Its complete initialized
+`.text`, `.rdata`, `.pdata`, and `.data` ranges now have byte-identical assembly
+source, plus reproducible function, call, string-reference, and semantic-symbol
+inventories.
+
 ## BadUpdate baseline and modified stages
 
 `badupdate-v1.3-baseline.md` records the pinned public-source/release

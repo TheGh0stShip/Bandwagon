@@ -28,6 +28,8 @@ The public BadUpdate source baseline is pinned as the
   byte-identical, buildable assembly reconstructions.
 - Updater has reproducible function, direct-call, string-reference, and initial
   semantic-symbol inventories; its Stage2 HDD record algorithm is documented.
+- BootXell's initialized code and data sections have complete byte-identical
+  assembly reconstructions, with its INI option and launch flow documented.
 
 Semantic recovery of the remaining executable functions, types, globals,
 indirect control flow, raw stage payloads, and SMC firmware is still in progress.

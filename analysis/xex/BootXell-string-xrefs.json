@@ -1,0 +1,205 @@
+{
+  "schema": "bandwagon-ppc-string-xrefs-v1",
+  "image": "/mnt/c/temp/Bandwagon/analysis/xex/basefiles/PeerPressure_OtherOS_BootXell.pe",
+  "image_sha256": "4ef810a55390105a0756d2dc48502f8d9fad50edc08d8617fe146bc3ae496ebc",
+  "reference_count": 28,
+  "functions_with_references": 16,
+  "references": [
+    {
+      "function": "fn_91A05000",
+      "function_address": "0x91a05000",
+      "instruction_address": "0x91a05058",
+      "string_address": "0x91a00524",
+      "string": "unknown exception"
+    },
+    {
+      "function": "fn_91A05128",
+      "function_address": "0x91a05128",
+      "instruction_address": "0x91a05148",
+      "string_address": "0x91a00544",
+      "string": "xboxkrnl.exe"
+    },
+    {
+      "function": "fn_91A05698",
+      "function_address": "0x91a05698",
+      "instruction_address": "0x91a056c8",
+      "string_address": "0x91a00554",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A05898",
+      "function_address": "0x91a05898",
+      "instruction_address": "0x91a058c0",
+      "string_address": "0x91a0056c",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A05948",
+      "function_address": "0x91a05948",
+      "instruction_address": "0x91a0596c",
+      "string_address": "0x91a00580",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A05A78",
+      "function_address": "0x91a05a78",
+      "instruction_address": "0x91a05aa4",
+      "string_address": "0x91a00554",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A05A78",
+      "function_address": "0x91a05a78",
+      "instruction_address": "0x91a05ad0",
+      "string_address": "0x91a00580",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A05B70",
+      "function_address": "0x91a05b70",
+      "instruction_address": "0x91a05bd8",
+      "string_address": "0x91a00580",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A05B70",
+      "function_address": "0x91a05b70",
+      "instruction_address": "0x91a05c88",
+      "string_address": "0x91a0056c",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A05CD8",
+      "function_address": "0x91a05cd8",
+      "instruction_address": "0x91a05d00",
+      "string_address": "0x91a00554",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A060E8",
+      "function_address": "0x91a060e8",
+      "instruction_address": "0x91a06134",
+      "string_address": "0x91a00554",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a061c8",
+      "string_address": "0x91a005ec",
+      "string": "BootOption"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a06258",
+      "string_address": "0x91a005ec",
+      "string": "BootOption"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a06290",
+      "string_address": "0x91a005e4",
+      "string": "Name"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a062e8",
+      "string_address": "0x91a005d8",
+      "string": "FileName"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a06344",
+      "string_address": "0x91a005cc",
+      "string": "BaseAddress"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a06394",
+      "string_address": "0x91a005b8",
+      "string": "BypassXellScanning"
+    },
+    {
+      "function": "fn_91A06188",
+      "function_address": "0x91a06188",
+      "instruction_address": "0x91a063e8",
+      "string_address": "0x91a00590",
+      "string": "I Understand This Can Break My Console"
+    },
+    {
+      "function": "fn_91A064D8",
+      "function_address": "0x91a064d8",
+      "instruction_address": "0x91a064f8",
+      "string_address": "0x91a0060c",
+      "string": "PPROOT:\\OtherOS\\"
+    },
+    {
+      "function": "fn_91A064D8",
+      "function_address": "0x91a064d8",
+      "instruction_address": "0x91a0659c",
+      "string_address": "0x91a005f8",
+      "string": "xxxxxxxxxxxxxxxx"
+    },
+    {
+      "function": "fn_91A06658",
+      "function_address": "0x91a06658",
+      "instruction_address": "0x91a066c4",
+      "string_address": "0x91a00620",
+      "string": "PPROOT:\\OtherOS\\boot.ini"
+    },
+    {
+      "function": "fn_91A06D00",
+      "function_address": "0x91a06d00",
+      "instruction_address": "0x91a06d80",
+      "string_address": "0x91a00684",
+      "string": "Unknown exception"
+    },
+    {
+      "function": "fn_91A07128",
+      "function_address": "0x91a07128",
+      "instruction_address": "0x91a07194",
+      "string_address": "0x91a006a8",
+      "string": "bad allocation"
+    },
+    {
+      "function": "fn_91A0E468",
+      "function_address": "0x91a0e468",
+      "instruction_address": "0x91a0e5c0",
+      "string_address": "0x91a016a8",
+      "string": "e+000"
+    },
+    {
+      "function": "fn_91A125B8",
+      "function_address": "0x91a125b8",
+      "instruction_address": "0x91a126c4",
+      "string_address": "0x91a0339c",
+      "string": "1#SNAN"
+    },
+    {
+      "function": "fn_91A125B8",
+      "function_address": "0x91a125b8",
+      "instruction_address": "0x91a12714",
+      "string_address": "0x91a03394",
+      "string": "1#IND"
+    },
+    {
+      "function": "fn_91A125B8",
+      "function_address": "0x91a125b8",
+      "instruction_address": "0x91a12758",
+      "string_address": "0x91a0338c",
+      "string": "1#INF"
+    },
+    {
+      "function": "fn_91A125B8",
+      "function_address": "0x91a125b8",
+      "instruction_address": "0x91a12794",
+      "string_address": "0x91a03384",
+      "string": "1#QNAN"
+    }
+  ]
+}

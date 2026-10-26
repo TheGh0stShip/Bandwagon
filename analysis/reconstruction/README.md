@@ -49,3 +49,10 @@ reviewable high-level replacement extracted from the Updater. It reconstructs
 the record-building half of `InstallHddBootstrap` without exposing host raw-disk
 I/O. The original binary writes uninitialized final-sector padding; the open
 replacement intentionally zeroes that padding and tests the deviation.
+
+## BootXell
+
+`BootXell.text.reconstructed.S` rebuilds all 74,840 bytes of the OtherOS
+launcher's initialized code, while `BootXell.nontext.reconstructed.S` rebuilds
+its `.rdata`, `.pdata`, and `.data` ranges. `tools/analyze_bootxell_xex.sh`
+regenerates both sources and their function, call, and string-reference maps.
