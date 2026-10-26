@@ -106,6 +106,15 @@
       "symbols": ["UserSigninState", "SigninStateServices", "PromoteLocalSigninState"]
     },
     {
+      "address": "0x801f4ed8",
+      "size": 80,
+      "sha256": "dbe8b4d2be148d9a93a63569ad9a09837bd4a181fd3f7ed9542766660944899f",
+      "semantic_name": "PromoteLocalSigninInfo",
+      "source": "reconstruction/kernel_expansion/signin_state.cpp",
+      "header": "reconstruction/kernel_expansion/signin_state.hpp",
+      "symbols": ["SigninInfo", "SigninInfoServices", "PromoteLocalSigninInfo"]
+    },
+    {
       "address": "0x801f6af0",
       "size": 120,
       "sha256": "a8f598c960e062214fa71aea956ea83f7b12a9b39fb9d6b825eb721d2fe39c18",

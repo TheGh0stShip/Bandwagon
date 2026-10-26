@@ -51,6 +51,7 @@ SEMANTIC_NAMES = {
     0x3378: "ResolveSideLoadConfiguration",
     0x4938: "ParseDllConfigEntry",
     0x4D08: "PromoteLocalSigninState",
+    0x4ED8: "PromoteLocalSigninInfo",
     0x6AF0: "ParseDriveNumberPrefix",
     0x7E68: "FindSoftmodUpdateArchive",
     0x8080: "LaunchSettingsApp",

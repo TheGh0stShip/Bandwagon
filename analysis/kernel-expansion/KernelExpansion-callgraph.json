@@ -3270,7 +3270,7 @@
       "target_containing_function": "fn_801F18F0"
     },
     {
-      "caller": "fn_801F4ED8",
+      "caller": "PromoteLocalSigninInfo",
       "caller_address": "0x801f4ed8",
       "instruction_address": "0x801f4eec",
       "target_address": "0x801ff0f8",

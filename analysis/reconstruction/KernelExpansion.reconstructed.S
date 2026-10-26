@@ -5119,7 +5119,7 @@ fn_801F4D38:
     .long 0x38210090 /* 0x04ecc */
     .long 0x48009c4c /* 0x04ed0 */
     .long 0x00000000 /* 0x04ed4 */
-fn_801F4ED8:
+PromoteLocalSigninInfo:
     .long 0x7d8802a6 /* 0x04ed8 */
     .long 0x9181fff8 /* 0x04edc */
     .long 0xfbe1fff0 /* 0x04ee0 */

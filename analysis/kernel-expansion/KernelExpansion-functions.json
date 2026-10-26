@@ -682,9 +682,9 @@
       "address": "0x801f4ed8",
       "section_offset": "0x4ed8",
       "size_to_next_symbol": 80,
-      "name": "fn_801F4ED8",
+      "name": "PromoteLocalSigninInfo",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
