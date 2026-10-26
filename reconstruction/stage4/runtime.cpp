@@ -2,6 +2,7 @@
 
 #include <algorithm>
 
+#include "embedded_data.hpp"
 #include "entry_flow.hpp"
 #include "maintenance_helpers.hpp"
 #include "patch_stream.hpp"
@@ -32,9 +33,14 @@ RuntimeResult RunStage4(const RuntimeInputs& inputs, Platform* platform) {
 
   if (mode == 0) {
     if (!inputs.clean_hv || inputs.clean_hv_size != 0x10000) return {};
+    const std::uint8_t* patch_data = inputs.patch_stream;
+    std::size_t patch_size = inputs.patch_stream_size;
+    if (!patch_data && patch_size == 0) {
+      patch_data = kEmbeddedPatchStream.data();
+      patch_size = kEmbeddedPatchStream.size();
+    }
     std::vector<PatchRecord> patches;
-    if (!ParsePatchStream(inputs.patch_stream, inputs.patch_stream_size,
-                          &patches)) {
+    if (!ParsePatchStream(patch_data, patch_size, &patches)) {
       return {};
     }
 

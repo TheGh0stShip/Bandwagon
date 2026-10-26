@@ -94,6 +94,16 @@ int main() {
   assert(mode0_platform.byte_writes.size() == 1);
   assert(mode0_platform.byte_writes[0].first == 0x200015fd0ULL);
 
+  MockPlatform embedded_platform;
+  RuntimeInputs embedded;
+  embedded.clean_hv = clean.data();
+  embedded.clean_hv_size = clean.size();
+  assert(RunStage4(embedded, &embedded_platform).succeeded);
+  assert(embedded_platform.byte_writes.size() == 27);
+  assert(embedded_platform.byte_writes.front().first == 0x12d8);
+  assert(embedded_platform.byte_writes.back().first == 0x600031fb8ULL);
+  assert(embedded_platform.byte_writes.back().second.size() == 0x220);
+
   std::vector<std::uint8_t> table;
   Append32(&table, 0x80050000);
   Append32(&table, 0x12345678);

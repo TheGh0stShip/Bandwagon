@@ -273,6 +273,9 @@ composes the recovered entry, patch parser, pair-table helper, and range helper.
 Privileged reads, writes, cache relocation, flushes, and SMC I/O are isolated
 behind a `Platform` interface, allowing the full three-mode flow to execute in
 host tests against a mock while remaining usable by a target-specific backend.
+The runtime defaults to the typed, generated C++ patch data in
+`reconstruction/stage4/embedded_data.hpp`; regenerate and verify it with
+`tools/generate_stage4_embedded_data.py`.
 
 `reconstruction/stage4/copied_continuation.cpp` reconstructs the copied block
 at `0x600032048` as an explicit two-call plan. It preserves the incoming stack,
