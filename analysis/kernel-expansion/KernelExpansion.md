@@ -18,11 +18,18 @@ occupy `0x0f4b0-0x1474f`.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
+- 21 high-confidence behavioral labels are emitted directly into the exact
+  assembly, including the config parser, file loader, XEX-section lookup,
+  side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
   the original binary.
 
 The machine-readable evidence is in `KernelExpansion-functions.json`,
 `KernelExpansion-callgraph.json`, and `KernelExpansion-string-xrefs.json`.
+`KernelExpansion-strings.txt` is the deterministic address inventory for every
+four-byte-or-longer printable run in the data region; it is intentionally kept
+separate from confirmed xrefs so random printable table bytes are not promoted
+to strings without evidence.
 Regenerate the source and function inventory with
 `python tools/reconstruct_kernel_expansion.py`; the common reconstruction
 verifier proves whole-file identity.

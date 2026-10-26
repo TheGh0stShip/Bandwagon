@@ -1,0 +1,268 @@
+0f4b0 0x801ff4b0 \System??\PAYLOAD:
+0f4c4 0x801ff4c4 \??\PAYLOAD:
+0f4d5 0x801ff4d5 [91m
+0f4dc 0x801ff4dc *** SECOND CHANCE EXCEPTION ***
+0f500 0x801ff500 STATUS_ACCESS_VIOLATION
+0f51d 0x801ff51d Exception address: 0x%08x
+0f538 0x801ff538 read
+0f540 0x801ff540 write
+0f549 0x801ff549 Attempt to %s from address 0x%08x
+0f56c 0x801ff56c Exception code: 0x%08x
+0f585 0x801ff585 Exception address: 0x%08x
+0f5a4 0x801ff5a4 Parameters: %d
+0f5b5 0x801ff5b5 Parameter %d: 0x%08x
+0f5d0 0x801ff5d0 REGISTER DUMP
+0f5e1 0x801ff5e1 r%d=0x%08x%08x
+0f5f0 0x801ff5f0 r%d=0x%08x%08x
+0f602 0x801ff602 Msr=0x%08x
+0f611 0x801ff611 Iar=0x%08x
+0f621 0x801ff621 Lr =0x%08x
+0f631 0x801ff631 Ctr=0x%08x%08x
+0f644 0x801ff644 STACK DUMP
+0f650 0x801ff650 %02x 
+0f658 0x801ff658 0x%08x: 
+0f66c 0x801ff66c \Device\Harddisk0\Partition1\PeerPressure
+0f698 0x801ff698 \System??\PPROOT:
+0f6ac 0x801ff6ac \??\PPROOT:
+0f6b8 0x801ff6b8 Flash360.exe
+0f6c8 0x801ff6c8 NandFlasher_1.exe
+0f6dc 0x801ff6dc launch.xex
+0f6e8 0x801ff6e8 Plugins\Nova.xex
+0f6fc 0x801ff6fc \Device\Harddisk0\Partition1\PeerPressure\System\Config.ini
+0f7af 0x801ff7af 0\Device\Harddisk0\Partition1\PeerPressure\System\kernel_patches.bin
+0f7f4 0x801ff7f4 PPROOT:\OtherOS\BootXell.xex
+0f81a 0x801ff81a 33\Device\Flash\bootanim.xex_
+0f838 0x801ff838 \Device\Harddisk0\Partition1\PeerPressure\Themes\BootAnim\9199\bootanim.xex
+0f888 0x801ff888 \Device\Harddisk0\Partition1\PeerPressure\System\customboot.xex
+0f9d0 0x801ff9d0 \Device\Harddisk0\Partition1
+0f9f0 0x801ff9f0 \Device\Harddisk0\Cache0
+0fa0c 0x801ffa0c \Device\Harddisk0\Cache1
+0fa28 0x801ffa28 \Device\Harddisk0\SystemPartition
+0fa4c 0x801ffa4c \Device\Harddisk0\TitleURLCachePartition
+0fa78 0x801ffa78 \Device\Harddisk0\SystemURLCachePartition
+0faa4 0x801ffaa4 \Device\Harddisk0\SystemExtPartition
+0facc 0x801ffacc \Device\Harddisk0\SystemAuxPartition
+0faf4 0x801ffaf4 \Device\Flash
+0fb09 0x801ffb09 [91mConfigFileParser::ReadConfigFileContents: failed to get file size 0x%08x
+0fb61 0x801ffb61 [91mConfigFileParser::ReadConfigFileContents: failed to allocate %d bytes for ini file buffer
+0fbc9 0x801ffbc9 [91mConfigFileParser::ReadConfigFileContents: error reading config file 0x%08x
+0fc20 0x801ffc20 BootAnimation
+0fc30 0x801ffc30 BootAnimationType
+0fc44 0x801ffc44 BootAnimationThemeName
+0fc5c 0x801ffc5c Dashboard
+0fc68 0x801ffc68 DashboardPath
+0fc78 0x801ffc78 System
+0fc80 0x801ffc80 CheckForUpdatesOnStartup
+0fc9c 0x801ffc9c EjectButtonAction
+0fcb0 0x801ffcb0 OtherOSName
+0fcc1 0x801ffcc1 [91mConfigFileParser::ParseConfigFile: failed to parse config file
+0fd14 0x801ffd14 .xedata
+0fd1c 0x801ffd1c dash.exe
+0fd28 0x801ffd28 Aurora.exe
+0fd38 0x801ffd38 \Device\Harddisk0\Partition1\PeerPressure\SideLoading\AuroraFixer.xex
+0ff4c 0x801fff4c \Device\Harddisk0\Partition1\PeerPressure\boot_image.bmp
+0ff88 0x801fff88 \Device\Harddisk0\Partition1\PeerPressure\Themes\BootAnim\9199\%.*s.xbat
+10515 0x80200515 9fp?
+1059d 0x8020059d [}F?
+105da 0x802005da $6}A
+1060d 0x8020060d iG&?
+106b2 0x802006b2 /NQ4
+106cb 0x802006cb KftTq?
+10854 0x80200854 D#(}?
+1086b 0x8020086b vYE1h?
+10892 0x80200892 UD^!
+10acb 0x80200acb }Zd!p?
+10b05 0x80200b05 l f?
+10b5a 0x80200b5a )qO5
+10b95 0x80200b95 BH0?
+10ba2 0x80200ba2 gLi2
+10c9c 0x80200c9c gnt@?
+10e6a 0x80200e6a <F%:=v?
+10e8a 0x80200e8a pbqf
+10f3a 0x80200f3a @QoIw,?
+10f44 0x80200f44 kyAS?
+10fd5 0x80200fd5 ^DZ?
+10fdd 0x80200fdd @~*?
+1114b 0x8020114b @s5v{?
+113a0 0x802013a0 ?#33?8Q
+113e8 0x802013e8 ExFatCreateVolumeDevice: failed to create exfat device object 0x%08x
+11430 0x80201430 ExFatCreateVolumeDevice: failed to allocate exfat volume, volume list is full
+11480 0x80201480 ExFatCreateVolumeDevice: failed to mount volume %d: %d
+114b8 0x802014b8 extended.bin
+114c8 0x802014c8 Static.settings
+114d8 0x802014d8 Statistics.settings
+114f1 0x802014f1 [91mConfigFileParser::ParseConfigFileBuffer: failed to parse config file
+11550 0x80201550 \Device\Package_
+11564 0x80201564 %.*s
+11580 0x80201580 %s\%s
+11588 0x80201588 %s\SideLoading\%s
+1159c 0x8020159c %s\SideLoading\%08x.ini
+115b4 0x802015b4 %s\%08x.ini
+115c0 0x802015c0 %s\sideload.ini
+115d0 0x802015d0 xam.xex
+115d8 0x802015d8 Theme
+115e0 0x802015e0 Version
+115e8 0x802015e8 RenderFlags
+115f4 0x802015f4 SphereMaterial
+11604 0x80201604 Diffuse
+1160c 0x8020160c Specular
+11618 0x80201618 Ambient
+11620 0x80201620 ImpactedSphereMaterial
+11638 0x80201638 XLipMaterial
+11648 0x80201648 XWallMaterial
+11658 0x80201658 InnerSphereMaterial
+1166c 0x8020166c BulletShadowsMaterial
+11684 0x80201684 FinalRingsMaterial
+11698 0x80201698 XboxTextMaterial
+116ac 0x802016ac ThreeSixtyTextMaterial
+116c4 0x802016c4 ImpactRingsMaterial
+116d8 0x802016d8 SphereTrademarkTextMaterial
+116f4 0x802016f4 MiscColors
+11700 0x80201700 XInnerWallsTextureColor1
+1171c 0x8020171c XInnerWallsTextureColor2
+11738 0x80201738 XInnerWallsTextureColor3
+11754 0x80201754 InnerSphereTextureColor
+1176c 0x8020176c ImpactGlowColor
+1177c 0x8020177c BackgroundColor
+1179e 0x8020179e ff@FffA 
+117a8 0x802017a8 @s33@
+117c1 0x802017c1 [91mConfigFileParser::WriteConfigFile: failed to allocate scratch buffer for config file data
+11829 0x80201829 [91mConfigFileParser::WriteConfigFile: failed to open config file for writing 0x%08x
+11889 0x80201889 [91mConfigFileParser::WriteConfigFile: failed to write config options
+118d6 0x802018d6 [%s]
+118e1 0x802018e1 [91mConfigFileParser::WriteConfigFile: error writing config file 0x%08x
+11931 0x80201931 [33mConfigFileParser::ParseIniLine: failed to find config option '%s' with CRC 0x%08x
+1198c 0x8020198c DllConfig
+11998 0x80201998 TitleID
+119a0 0x802019a0 MediaID
+119a8 0x802019a8 ModuleVersion
+119b8 0x802019b8 MinVersion
+119c4 0x802019c4 MaxVersion
+119d0 0x802019d0 FileName
+11a04 0x80201a04 ExFatDismountVolume: failed to dismount volume %d: %d
+11a3c 0x80201a3c ExFatFsdCreate: provided file name is too long %d
+11a70 0x80201a70 ExFatFsdCreate: D=%d T=%d P=%.*s
+11a95 0x80201a95 FOUND P=%s
+11aa4 0x80201aa4 ExFatFsdCreate: f_stat '%S' returned %d
+11ad0 0x80201ad0 [EXFAT] created '%S'
+11ae8 0x80201ae8 ExFatFsdReadWrite: parent device type 0x%02X not supported
+11b28 0x80201b28 ExFatFsdDirectoryControl: failed to create directory enum context 0x%08x
+11b78 0x80201b78 ExFatFsdCleanup: f_closedir returned %d (0x%08x) for directory '%.*S'
+11bc0 0x80201bc0 ExFatFsdCleanup: f_close returned %d (0x%08x) for file '%.*S'
+11c28 0x80201c28 EEEIII
+11c35 0x80201c35 OUUY
+11c40 0x80201c40 AIOU
+11ca0 0x80201ca0 +.,;=[]/*:<>|\"?
+11cf8 0x80201cf8 %.*s
+11d00 0x80201d00 %s = %s
+11d0c 0x80201d0c [%s]
+11d19 0x80201d19 [91mIniParser::WriteIniFile: line %d exceeds maximum length, must be less than 512 characters!
+11d81 0x80201d81 [91mConfigFileParser::WriteIniLine: line is too long to fit in config file scratch buffer
+11de1 0x80201de1 [91mConfigFileParser::WriteIniLine: error writing config file 0x%08x
+11e2c 0x80201e2c %s = "%s"
+11e38 0x80201e38 %s = %d
+11e44 0x80201e44 false
+11e4c 0x80201e4c true
+11e54 0x80201e54 %s = 0x%02x%02x%02x%02x
+11efd 0x80201efd gqr<
+11f5f 0x80201f5f $/o|
+11f6d 0x80201f6d f-=v
+12099 0x80202099 mj>zjZ
+120c9 0x802020c9 l6qnk
+12208 0x80202208 IiGM>nw
+12270 0x80202270 \Device\Mass%d\$SoftmodUpdate\UpdateData.zip
+122a0 0x802022a0 \Device\Harddisk0\Partition1\PeerPressure\System\SettingsApp.xex
+122e4 0x802022e4 \Device\Harddisk0\Partition1\PeerPressure\System
+12434 0x80202434 [EXFAT] free'ing %.*S
+1244c 0x8020244c ExFatDereferenceFcb: lingering handle?
+12474 0x80202474 ExFatMapFFToNTStatus: received unsupported status value %d
+124b0 0x802024b0 EXFAT
+124bb 0x802024bb EXFAT   
+124c4 0x802024c4 FAT32   
+124d0 0x802024d0 EFI PART
+124dc 0x802024dc PPROOT:\update.phase2
+124f8 0x802024f8 PPROOT:\System\UpdateCheck.xex
+12518 0x80202518 BadUpdatePayload
+1252c 0x8020252c dash.xex
+12538 0x80202538 \SystemRoot\dash.xex
+12550 0x80202550 \Device\Flash\dash.xex
+12568 0x80202568 \Device\Harddisk0\SystemExtPartition\********\dash.xex
+12680 0x80202680 disk_read: invalid disk number specified %d
+126b0 0x802026b0 disk_read: failed to read data from disk 0x%08x
+126e4 0x802026e4 disk_read: parent device type 0x%02X not supported!
+128c4 0x802028c4 *:<>|"?
+128d0 0x802028d0 +,;=[]
+12940 0x80202940 %$%a%b%V%U%c%Q%W%]%\%[%
+1295a 0x8020295a %4%,%
+12962 0x80202962 %<%^%_%Z%T%i%f%`%P%l%g%h%d%e%Y%X%R%S%k%j%
+129b6 0x802029b6 ")"a
+129bc 0x802029bc "e"d# #!
+12c5e 0x80202c5e !2!p
+12c8c 0x80202c8c disk_write: invalid disk number specified %d
+12cbc 0x80202cbc disk_write: failed to write data to disk 0x%08x
+12cf0 0x80202cf0 disk_write: parent device type 0x%02X not supported!
+12d28 0x80202d28 disk_ioctl: cmd=%d
+132d4 0x802032d4 ?333?333?333?
+13304 0x80203304 ?333?333?333?
+13334 0x80203334 ?333?333?333?
+13394 0x80203394 ?333?333?333?
+133c4 0x802033c4 ?333?fff?
+133f8 0x802033f8 ?fff?
+13488 0x80203488 ?fff?
+13534 0x80203534 ?333?L
+13584 0x80203584 ?333?333?333?
+135b4 0x802035b4 ?333?333?333?
+135e4 0x802035e4 ?333?333?333?
+13644 0x80203644 ?333?333?333?
+13674 0x80203674 ?333?fff?
+136a8 0x802036a8 ?fff?
+13738 0x80203738 ?fff?
+137e4 0x802037e4 ?333?L
+13834 0x80203834 ?333?333?333?
+13864 0x80203864 ?333?333?333?
+13894 0x80203894 ?333?333?333?
+138f4 0x802038f4 ?333?333?333?
+13924 0x80203924 ?333?fff?
+13958 0x80203958 ?fff?
+139e8 0x802039e8 ?fff?
+13a94 0x80203a94 ?333?L
+13aa4 0x80203aa4 ?333?333?333?
+13ad4 0x80203ad4 ?333?333?333?
+13b04 0x80203b04 ?333?333?333?
+13b64 0x80203b64 ?333?333?333?
+13b94 0x80203b94 ?333?fff?
+13bc8 0x80203bc8 ?fff?
+13c58 0x80203c58 ?fff?
+13d04 0x80203d04 ?333?L
+13d58 0x80203d58 ?333?333?333?
+13d88 0x80203d88 ?333?333?333?
+13db8 0x80203db8 ?333?333?333?
+13e18 0x80203e18 ?333?333?333?
+13e48 0x80203e48 ?333?fff?
+13e7c 0x80203e7c ?fff?
+13f0c 0x80203f0c ?fff?
+13fb8 0x80203fb8 ?333?L
+13fcc 0x80203fcc ?333?333?333?
+13ffc 0x80203ffc ?333?333?333?
+1402c 0x8020402c ?333?333?333?
+1408c 0x8020408c ?333?333?333?
+140bc 0x802040bc ?333?fff?
+140f0 0x802040f0 ?fff?
+14180 0x80204180 ?fff?
+1422c 0x8020422c ?333?L
+14254 0x80204254 ?333?333?333?
+14284 0x80204284 ?333?333?333?
+142b4 0x802042b4 ?333?333?333?
+14314 0x80204314 ?333?333?333?
+14344 0x80204344 ?333?fff?
+14378 0x80204378 ?fff?
+14408 0x80204408 ?fff?
+144b4 0x802044b4 ?333?L
+144d5 0x802044d5  &$?333?333?333?
+14508 0x80204508 ?333?333?333?
+14538 0x80204538 ?333?333?333?
+14598 0x80204598 ?333?333?333?
+145c8 0x802045c8 ?333?fff?
+145fc 0x802045fc ?fff?
+1468c 0x8020468c ?fff?
+14738 0x80204738 ?333?L

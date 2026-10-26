@@ -12,9 +12,9 @@
       "address": "0x801f0000",
       "section_offset": "0x0",
       "size_to_next_symbol": 336,
-      "name": "KernelExpansionEntry",
+      "name": "KernelExpansionInitialize",
       "evidence": [
-        "entry point"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -22,9 +22,9 @@
       "address": "0x801f0150",
       "section_offset": "0x150",
       "size_to_next_symbol": 624,
-      "name": "fn_801F0150",
+      "name": "ReportExceptionContext",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -82,9 +82,9 @@
       "address": "0x801f0648",
       "section_offset": "0x648",
       "size_to_next_symbol": 256,
-      "name": "fn_801F0648",
+      "name": "LoadPeerPressureConfig",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -92,9 +92,9 @@
       "address": "0x801f0748",
       "section_offset": "0x748",
       "size_to_next_symbol": 632,
-      "name": "fn_801F0748",
+      "name": "LoadKernelPatchStream",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -102,9 +102,9 @@
       "address": "0x801f09c0",
       "section_offset": "0x9c0",
       "size_to_next_symbol": 16,
-      "name": "fn_801F09C0",
+      "name": "GetPeerPressureConfig",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -112,9 +112,9 @@
       "address": "0x801f09d0",
       "section_offset": "0x9d0",
       "size_to_next_symbol": 128,
-      "name": "fn_801F09D0",
+      "name": "LaunchBootXell",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -122,9 +122,9 @@
       "address": "0x801f0a50",
       "section_offset": "0xa50",
       "size_to_next_symbol": 920,
-      "name": "fn_801F0A50",
+      "name": "ConfigureBootAnimation",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -182,9 +182,9 @@
       "address": "0x801f14d0",
       "section_offset": "0x14d0",
       "size_to_next_symbol": 472,
-      "name": "fn_801F14D0",
+      "name": "ReadFileToAllocatedBuffer",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -192,9 +192,9 @@
       "address": "0x801f16a8",
       "section_offset": "0x16a8",
       "size_to_next_symbol": 88,
-      "name": "fn_801F16A8",
+      "name": "ParsePeerPressureConfig",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -212,9 +212,9 @@
       "address": "0x801f1790",
       "section_offset": "0x1790",
       "size_to_next_symbol": 352,
-      "name": "fn_801F1790",
+      "name": "FindXexSection",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -252,9 +252,9 @@
       "address": "0x801f1a60",
       "section_offset": "0x1a60",
       "size_to_next_symbol": 512,
-      "name": "fn_801F1A60",
+      "name": "ConfigureAuroraSideLoad",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -282,9 +282,9 @@
       "address": "0x801f1cf0",
       "section_offset": "0x1cf0",
       "size_to_next_symbol": 720,
-      "name": "fn_801F1CF0",
+      "name": "LoadBootImage",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -292,9 +292,9 @@
       "address": "0x801f1fc0",
       "section_offset": "0x1fc0",
       "size_to_next_symbol": 152,
-      "name": "fn_801F1FC0",
+      "name": "LoadBootAnimationTheme",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -462,9 +462,9 @@
       "address": "0x801f3378",
       "section_offset": "0x3378",
       "size_to_next_symbol": 792,
-      "name": "fn_801F3378",
+      "name": "ResolveSideLoadConfiguration",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -642,9 +642,9 @@
       "address": "0x801f4938",
       "section_offset": "0x4938",
       "size_to_next_symbol": 872,
-      "name": "fn_801F4938",
+      "name": "ParseDllConfigEntry",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -972,9 +972,9 @@
       "address": "0x801f7e68",
       "section_offset": "0x7e68",
       "size_to_next_symbol": 536,
-      "name": "fn_801F7E68",
+      "name": "FindSoftmodUpdateArchive",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -982,9 +982,9 @@
       "address": "0x801f8080",
       "section_offset": "0x8080",
       "size_to_next_symbol": 600,
-      "name": "fn_801F8080",
+      "name": "LaunchSettingsApp",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -1332,9 +1332,9 @@
       "address": "0x801fa320",
       "section_offset": "0xa320",
       "size_to_next_symbol": 440,
-      "name": "fn_801FA320",
+      "name": "RecognizeFat32Volume",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -1352,9 +1352,9 @@
       "address": "0x801fa540",
       "section_offset": "0xa540",
       "size_to_next_symbol": 256,
-      "name": "fn_801FA540",
+      "name": "RecognizeGptDisk",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -1372,9 +1372,9 @@
       "address": "0x801fa688",
       "section_offset": "0xa688",
       "size_to_next_symbol": 272,
-      "name": "fn_801FA688",
+      "name": "CheckPhaseTwoMarker",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -1382,9 +1382,9 @@
       "address": "0x801fa798",
       "section_offset": "0xa798",
       "size_to_next_symbol": 320,
-      "name": "fn_801FA798",
+      "name": "LaunchUpdateCheck",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

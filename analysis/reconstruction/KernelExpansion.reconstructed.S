@@ -4,9 +4,9 @@
  */
 .section .text
 .balign 4
-.global KernelExpansionEntry
+.global KernelExpansionInitialize
 
-KernelExpansionEntry:
+KernelExpansionInitialize:
     .long 0x7d8802a6 /* 0x00000 */
     .long 0x9181fff8 /* 0x00004 */
     .long 0xfbc1ffe8 /* 0x00008 */
@@ -91,7 +91,7 @@ KernelExpansionEntry:
     .long 0xebe1fff0 /* 0x00144 */
     .long 0x4e800020 /* 0x00148 */
     .long 0x00000000 /* 0x0014c */
-fn_801F0150:
+ReportExceptionContext:
     .long 0x7d8802a6 /* 0x00150 */
     .long 0x4800e975 /* 0x00154 */
     .long 0x9421ff60 /* 0x00158 */
@@ -415,7 +415,7 @@ fn_801F05F0:
     .long 0xebe1fff0 /* 0x0063c */
     .long 0x4e800020 /* 0x00640 */
     .long 0x00000000 /* 0x00644 */
-fn_801F0648:
+LoadPeerPressureConfig:
     .long 0x7d8802a6 /* 0x00648 */
     .long 0x4800e48d /* 0x0064c */
     .long 0x9421ff80 /* 0x00650 */
@@ -480,7 +480,7 @@ fn_801F0648:
     .long 0x817f0000 /* 0x0073c */
     .long 0x994b0129 /* 0x00740 */
     .long 0x4bffffa0 /* 0x00744 */
-fn_801F0748:
+LoadKernelPatchStream:
     .long 0x7d8802a6 /* 0x00748 */
     .long 0x4800e38d /* 0x0074c */
     .long 0x9421ff10 /* 0x00750 */
@@ -639,12 +639,12 @@ fn_801F0748:
     .long 0x382100f0 /* 0x009b4 */
     .long 0x4800e170 /* 0x009b8 */
     .long 0x00000000 /* 0x009bc */
-fn_801F09C0:
+GetPeerPressureConfig:
     .long 0x3d608020 /* 0x009c0 */
     .long 0x806b2d7c /* 0x009c4 */
     .long 0x4e800020 /* 0x009c8 */
     .long 0x00000000 /* 0x009cc */
-fn_801F09D0:
+LaunchBootXell:
     .long 0x7d8802a6 /* 0x009d0 */
     .long 0x9181fff8 /* 0x009d4 */
     .long 0x9421ffa0 /* 0x009d8 */
@@ -677,7 +677,7 @@ fn_801F09D0:
     .long 0x7d8803a6 /* 0x00a44 */
     .long 0x4e800020 /* 0x00a48 */
     .long 0x00000000 /* 0x00a4c */
-fn_801F0A50:
+ConfigureBootAnimation:
     .long 0x7d8802a6 /* 0x00a50 */
     .long 0x4800e081 /* 0x00a54 */
     .long 0xdbe1ffd0 /* 0x00a58 */
@@ -1355,7 +1355,7 @@ fn_801F1328:
     .long 0x556bdffe /* 0x014c4 */
     .long 0x996a37f4 /* 0x014c8 */
     .long 0x4e800020 /* 0x014cc */
-fn_801F14D0:
+ReadFileToAllocatedBuffer:
     .long 0x7d8802a6 /* 0x014d0 */
     .long 0x4800d5f5 /* 0x014d4 */
     .long 0x9421fef0 /* 0x014d8 */
@@ -1474,7 +1474,7 @@ fn_801F14D0:
     .long 0x7f23cb78 /* 0x0169c */
     .long 0x38210110 /* 0x016a0 */
     .long 0x4800d474 /* 0x016a4 */
-fn_801F16A8:
+ParsePeerPressureConfig:
     .long 0x7d8802a6 /* 0x016a8 */
     .long 0x9181fff8 /* 0x016ac */
     .long 0xfbe1fff0 /* 0x016b0 */
@@ -1534,7 +1534,7 @@ fn_801F1700:
     .long 0x38210090 /* 0x01784 */
     .long 0x4800d398 /* 0x01788 */
     .long 0x00000000 /* 0x0178c */
-fn_801F1790:
+FindXexSection:
     .long 0x7d8802a6 /* 0x01790 */
     .long 0x9181fff8 /* 0x01794 */
     .long 0xfbc1ffe8 /* 0x01798 */
@@ -1718,7 +1718,7 @@ fn_801F1A20:
     .long 0x7d6903a6 /* 0x01a54 */
     .long 0x4e800420 /* 0x01a58 */
     .long 0x00000000 /* 0x01a5c */
-fn_801F1A60:
+ConfigureAuroraSideLoad:
     .long 0x7d8802a6 /* 0x01a60 */
     .long 0x4800d065 /* 0x01a64 */
     .long 0x9421ff20 /* 0x01a68 */
@@ -1885,7 +1885,7 @@ fn_801F1CB0:
     .long 0x91670020 /* 0x01ce4 */
     .long 0x4e800020 /* 0x01ce8 */
     .long 0x00000000 /* 0x01cec */
-fn_801F1CF0:
+LoadBootImage:
     .long 0x7d8802a6 /* 0x01cf0 */
     .long 0x4800cdd5 /* 0x01cf4 */
     .long 0x9421fef0 /* 0x01cf8 */
@@ -2066,7 +2066,7 @@ fn_801F1CF0:
     .long 0x38210110 /* 0x01fb4 */
     .long 0x4800cb60 /* 0x01fb8 */
     .long 0x00000000 /* 0x01fbc */
-fn_801F1FC0:
+LoadBootAnimationTheme:
     .long 0x7d8802a6 /* 0x01fc0 */
     .long 0x9181fff8 /* 0x01fc4 */
     .long 0xfbe1fff0 /* 0x01fc8 */
@@ -3345,7 +3345,7 @@ fn_801F32F0:
     .long 0x38210070 /* 0x0336c */
     .long 0x4800b7b8 /* 0x03370 */
     .long 0x00000000 /* 0x03374 */
-fn_801F3378:
+ResolveSideLoadConfiguration:
     .long 0x7d8802a6 /* 0x03378 */
     .long 0x4800b73d /* 0x0337c */
     .long 0x9421fbe0 /* 0x03380 */
@@ -4755,7 +4755,7 @@ fn_801F4928:
     .long 0x816bf850 /* 0x0492c */
     .long 0x386b0350 /* 0x04930 */
     .long 0x4e800020 /* 0x04934 */
-fn_801F4938:
+ParseDllConfigEntry:
     .long 0x7d8802a6 /* 0x04938 */
     .long 0x4800a19d /* 0x0493c */
     .long 0x9421ff90 /* 0x04940 */
@@ -8192,7 +8192,7 @@ fn_801F7D88:
     .long 0xebc1ffe8 /* 0x07e5c */
     .long 0xebe1fff0 /* 0x07e60 */
     .long 0x4e800020 /* 0x07e64 */
-fn_801F7E68:
+FindSoftmodUpdateArchive:
     .long 0x7d8802a6 /* 0x07e68 */
     .long 0x48006c69 /* 0x07e6c */
     .long 0x9421fea0 /* 0x07e70 */
@@ -8327,7 +8327,7 @@ fn_801F7E68:
     .long 0x7f83e378 /* 0x08074 */
     .long 0x38210160 /* 0x08078 */
     .long 0x48006aa8 /* 0x0807c */
-fn_801F8080:
+LaunchSettingsApp:
     .long 0x7d8802a6 /* 0x08080 */
     .long 0x48006a35 /* 0x08084 */
     .long 0x9421ff20 /* 0x08088 */
@@ -10578,7 +10578,7 @@ fn_801FA300:
     .long 0x5563dffe /* 0x0a314 */
     .long 0x4e800020 /* 0x0a318 */
     .long 0x00000000 /* 0x0a31c */
-fn_801FA320:
+RecognizeFat32Volume:
     .long 0x7d8802a6 /* 0x0a320 */
     .long 0x9181fff8 /* 0x0a324 */
     .long 0xfbe1fff0 /* 0x0a328 */
@@ -10716,7 +10716,7 @@ fn_801FA4D8:
     .long 0x38210070 /* 0x0a534 */
     .long 0x480045f0 /* 0x0a538 */
     .long 0x00000000 /* 0x0a53c */
-fn_801FA540:
+RecognizeGptDisk:
     .long 0x3d408020 /* 0x0a540 */
     .long 0x7c6b1b78 /* 0x0a544 */
     .long 0x394a24d0 /* 0x0a548 */
@@ -10800,7 +10800,7 @@ fn_801FA640:
     .long 0x38600000 /* 0x0a67c */
     .long 0x4e800020 /* 0x0a680 */
     .long 0x00000000 /* 0x0a684 */
-fn_801FA688:
+CheckPhaseTwoMarker:
     .long 0x7d8802a6 /* 0x0a688 */
     .long 0x48004445 /* 0x0a68c */
     .long 0x9421fe60 /* 0x0a690 */
@@ -10869,7 +10869,7 @@ fn_801FA688:
     .long 0x382101a0 /* 0x0a78c */
     .long 0x48004390 /* 0x0a790 */
     .long 0x00000000 /* 0x0a794 */
-fn_801FA798:
+LaunchUpdateCheck:
     .long 0x7d8802a6 /* 0x0a798 */
     .long 0x48004339 /* 0x0a79c */
     .long 0x9421ff70 /* 0x0a7a0 */

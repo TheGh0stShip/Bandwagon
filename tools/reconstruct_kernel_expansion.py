@@ -16,6 +16,32 @@ SOURCE = ROOT / "analysis/reconstruction/KernelExpansion.reconstructed.S"
 BASE = 0x801F0000
 TEXT_END = 0xF4B0
 
+# Behavioral names are deliberately distinct from claims about original private
+# symbols.  Each is backed by direct paths, diagnostics, or a simple call role.
+SEMANTIC_NAMES = {
+    0x0000: "KernelExpansionInitialize",
+    0x0150: "ReportExceptionContext",
+    0x0648: "LoadPeerPressureConfig",
+    0x0748: "LoadKernelPatchStream",
+    0x09C0: "GetPeerPressureConfig",
+    0x09D0: "LaunchBootXell",
+    0x0A50: "ConfigureBootAnimation",
+    0x14D0: "ReadFileToAllocatedBuffer",
+    0x16A8: "ParsePeerPressureConfig",
+    0x1790: "FindXexSection",
+    0x1A60: "ConfigureAuroraSideLoad",
+    0x1CF0: "LoadBootImage",
+    0x1FC0: "LoadBootAnimationTheme",
+    0x3378: "ResolveSideLoadConfiguration",
+    0x4938: "ParseDllConfigEntry",
+    0x7E68: "FindSoftmodUpdateArchive",
+    0x8080: "LaunchSettingsApp",
+    0xA320: "RecognizeFat32Volume",
+    0xA540: "RecognizeGptDisk",
+    0xA688: "CheckPhaseTwoMarker",
+    0xA798: "LaunchUpdateCheck",
+}
+
 
 def direct_target(offset: int, word: int) -> int | None:
     if word >> 26 != 18 or not (word & 1):
@@ -64,8 +90,8 @@ def main() -> None:
     for offset in starts:
         if offset in thunks and thunks[offset][1]:
             names[offset] = thunks[offset][1]
-        elif offset == 0:
-            names[offset] = "KernelExpansionEntry"
+        elif offset in SEMANTIC_NAMES:
+            names[offset] = SEMANTIC_NAMES[offset]
         else:
             names[offset] = f"fn_{BASE + offset:08X}"
 
@@ -78,7 +104,7 @@ def main() -> None:
             "section_offset": f"0x{offset:x}",
             "size_to_next_symbol": end - offset,
             "name": names[offset],
-            "evidence": ["entry point"] if offset == 0 else ["direct BL target or standard PPC prologue"],
+            "evidence": (["behavioral name corroborated by strings and call role"] if offset in SEMANTIC_NAMES else ["direct BL target or standard PPC prologue"]),
         }
         if offset in thunks:
             address, symbol = thunks[offset]
@@ -103,11 +129,24 @@ def main() -> None:
     }
     (OUTDIR / "KernelExpansion-functions.json").write_text(json.dumps(function_map, indent=2) + "\n", encoding="utf-8")
 
+    string_lines = []
+    offset = TEXT_END
+    while offset < len(data):
+        end = offset
+        while end < len(data) and 0x20 <= data[end] < 0x7F:
+            end += 1
+        if end - offset >= 4:
+            string_lines.append(
+                f"{offset:05x} 0x{BASE + offset:08x} {data[offset:end].decode('ascii')}"
+            )
+        offset = max(end + 1, offset + 1)
+    (OUTDIR / "KernelExpansion-strings.txt").write_text("\n".join(string_lines) + "\n", encoding="utf-8")
+
     lines = [
         "/* Lossless clean-room reconstruction of KernelExpansion.bin.",
         f" * Runtime mapping: file offset 0 -> 0x{BASE:08x}; code/thunks end at 0x{TEXT_END:x}.",
         " * Instruction words remain literal so rebuilding does not depend on assembler aliases.",
-        " */", ".section .text", ".balign 4", ".global KernelExpansionEntry", "",
+        " */", ".section .text", ".balign 4", ".global KernelExpansionInitialize", "",
     ]
     for offset in range(0, TEXT_END, 4):
         if offset in names:
