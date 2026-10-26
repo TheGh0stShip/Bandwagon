@@ -13,4 +13,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/resident_probe_test"
 "$work/resident_probe_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/stage3/entry_flow.cpp" \
+    "$root/reconstruction/stage3/entry_flow_test.cpp" \
+    -o "$work/entry_flow_test"
+"$work/entry_flow_test"
+
 echo "Stage3 portable reconstruction tests passed"

@@ -47,6 +47,13 @@ The imported absolute targets are preserved exactly in the reconstruction.
 Names are assigned only where the target agrees with the pinned public 17559
 export map or the public BadUpdate source-level call site.
 
+`reconstruction/stage3/entry_flow.cpp` is the portable decision model for this
+entry path. It covers the resident fast path, exploit/Stage4 installation path,
+fatal codes `0x12414` and `0x12415`, successful Stage4 release, SMC command
+`0x99`, and final payload path. It assumes the fatal-display API does not
+return, matching the closed routine's platform contract, and performs no
+exploit, physical-memory, SMC, or title-launch operation in host tests.
+
 ## Difference from public BadUpdate v1.3
 
 Public BadUpdate always prints a start message and runs its exploit before
