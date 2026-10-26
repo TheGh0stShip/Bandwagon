@@ -13,4 +13,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/rbtr_dispatcher_test"
 "$work/rbtr_dispatcher_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/stage4/patch_stream.cpp" \
+    "$root/reconstruction/stage4/patch_stream_test.cpp" \
+    -o "$work/patch_stream_test"
+"$work/patch_stream_test"
+
 echo "Stage4 portable reconstruction tests passed"

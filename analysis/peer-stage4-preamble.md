@@ -247,6 +247,12 @@ argument remap before the absolute branch to `0xa880`. It performs no live
 copy, cache maintenance, or control transfer. Run its host test with
 `tools/test_stage4_reconstruction.sh`.
 
+`reconstruction/stage4/patch_stream.cpp` reconstructs the embedded patch-list
+decoder as a lossless portable parser. It consumes big-endian target/size
+headers and exact payload bytes, requires the `0xffffffff` sentinel to be the
+final word, and reproduces the address expansion
+`raw | ((raw & 0x00030000) << 17)` used by the Stage4 instructions.
+
 ## Entry and exit summary
 
 The resident entry is a mode-controlled HV maintenance/patch routine. Mode
