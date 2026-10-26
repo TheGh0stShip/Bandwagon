@@ -2602,8 +2602,8 @@
       "caller_address": "0x801f3e68",
       "instruction_address": "0x801f3e84",
       "target_address": "0x801f6af0",
-      "callee": "fn_801F6AF0",
-      "target_containing_function": "fn_801F6AF0"
+      "callee": "ParseDriveNumberPrefix",
+      "target_containing_function": "ParseDriveNumberPrefix"
     },
     {
       "caller": "fn_801F3E68",
@@ -4842,8 +4842,8 @@
       "caller_address": "0x801f6b68",
       "instruction_address": "0x801f6b7c",
       "target_address": "0x801f6af0",
-      "callee": "fn_801F6AF0",
-      "target_containing_function": "fn_801F6AF0"
+      "callee": "ParseDriveNumberPrefix",
+      "target_containing_function": "ParseDriveNumberPrefix"
     },
     {
       "caller": "fn_801F6B68",

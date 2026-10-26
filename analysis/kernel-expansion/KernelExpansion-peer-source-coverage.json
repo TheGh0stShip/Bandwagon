@@ -61,6 +61,15 @@
       "symbols": ["XexHookServices", "InstallKernelXexDataHandlers", "kFirstXexDataHandler", "kSecondXexDataHandler"]
     },
     {
+      "address": "0x801f6af0",
+      "size": 120,
+      "sha256": "a8f598c960e062214fa71aea956ea83f7b12a9b39fb9d6b825eb721d2fe39c18",
+      "semantic_name": "ParseDriveNumberPrefix",
+      "source": "reconstruction/kernel_expansion/drive_prefix.cpp",
+      "header": "reconstruction/kernel_expansion/drive_prefix.hpp",
+      "symbols": ["ParseDriveNumberPrefix"]
+    },
+    {
       "address": "0x801f8210",
       "size": 40,
       "sha256": "bef1c5f2c9886531ba4dfdea36adf5aeeb6c16788c6c2c41f62e41b03483a951",
@@ -124,6 +133,7 @@
   ],
   "tests": [
     "reconstruction/kernel_expansion/config_test.cpp",
+    "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",

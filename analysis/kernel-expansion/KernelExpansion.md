@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 26 high-confidence behavioral labels are emitted directly into the exact
+- 27 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -94,11 +94,15 @@ lift. The first exact-byte-bound routines are:
   `ClassifyStfsPackageMagic` (`0x801f8270`, 104 bytes). The classifier preserves
   the exact `CON `, `LIVE`, and `PIRS` mappings, its one-byte output, the
   unchanged-output failure path, and status `0x80070570`.
+- `ParseDriveNumberPrefix` (`0x801f6af0`, 120 bytes), represented as a bounded
+  UTF-16 cursor parser for the recovered one-decimal-digit drive syntax. Tests
+  cover valid zero and nine prefixes, absent prefixes, malformed prefixes,
+  control-character termination, cursor preservation, and null strings.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-13 independently bounded routines totaling 2,488 original instruction bytes.
+14 independently bounded routines totaling 2,608 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 354 discovered entries are maintainable

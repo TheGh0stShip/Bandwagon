@@ -45,6 +45,7 @@ SEMANTIC_NAMES = {
     0x1FC0: "LoadBootAnimationTheme",
     0x3378: "ResolveSideLoadConfiguration",
     0x4938: "ParseDllConfigEntry",
+    0x6AF0: "ParseDriveNumberPrefix",
     0x7E68: "FindSoftmodUpdateArchive",
     0x8080: "LaunchSettingsApp",
     0x8210: "InitializeCallbackOutputs",

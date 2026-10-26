@@ -42,3 +42,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/package_callbacks_test.cpp" \
     -o "$work/package_callbacks_test"
 "$work/package_callbacks_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/drive_prefix.cpp" \
+    "$root/reconstruction/kernel_expansion/drive_prefix_test.cpp" \
+    -o "$work/drive_prefix_test"
+"$work/drive_prefix_test"

@@ -6933,7 +6933,7 @@ fn_801F68B0:
     .long 0x382100a0 /* 0x06ae4 */
     .long 0x48008028 /* 0x06ae8 */
     .long 0x00000000 /* 0x06aec */
-fn_801F6AF0:
+ParseDriveNumberPrefix:
     .long 0x81630000 /* 0x06af0 */
     .long 0x7d6a5b78 /* 0x06af4 */
     .long 0x2b0b0000 /* 0x06af8 */

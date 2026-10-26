@@ -842,9 +842,9 @@
       "address": "0x801f6af0",
       "section_offset": "0x6af0",
       "size_to_next_symbol": 120,
-      "name": "fn_801F6AF0",
+      "name": "ParseDriveNumberPrefix",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
