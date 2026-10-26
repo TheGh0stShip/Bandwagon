@@ -13487,7 +13487,7 @@ fn_801FCF48:
     .long 0x7fa3eb78 /* 0x0cfcc */
     .long 0x38210070 /* 0x0cfd0 */
     .long 0x48001b54 /* 0x0cfd4 */
-fn_801FCFD8:
+FindCharacterOnLine:
     .long 0x89630000 /* 0x0cfd8 */
     .long 0x7c8a0774 /* 0x0cfdc */
     .long 0x48000018 /* 0x0cfe0 */

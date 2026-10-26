@@ -1802,9 +1802,9 @@
       "address": "0x801fcfd8",
       "section_offset": "0xcfd8",
       "size_to_next_symbol": 56,
-      "name": "fn_801FCFD8",
+      "name": "FindCharacterOnLine",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

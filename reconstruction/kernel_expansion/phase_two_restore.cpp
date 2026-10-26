@@ -5,6 +5,15 @@
 
 namespace bandwagon::kernel_expansion {
 
+char* FindCharacterOnLine(char* text, char target) {
+  if (!text) return nullptr;
+  for (;;) {
+    if (*text == target) return text;
+    if (*text == '\0' || *text == '\n') return nullptr;
+    ++text;
+  }
+}
+
 bool CompletePhaseTwoFileRestore(FileServices* files,
                                  PhaseTwoFileServices* phase_two) {
   if (!files || !phase_two) return false;
@@ -22,13 +31,7 @@ bool CompletePhaseTwoFileRestore(FileServices* files,
     char* const end = begin + allocation_size;
     char* cursor = begin;
     while (cursor < end) {
-      char* newline = nullptr;
-      for (char* scan = cursor; scan < end && *scan != '\0'; ++scan) {
-        if (*scan == '\n') {
-          newline = scan;
-          break;
-        }
-      }
+      char* newline = FindCharacterOnLine(cursor, '\n');
       if (!newline) break;
 
       *newline = '\0';

@@ -201,6 +201,15 @@
       "source": "reconstruction/kernel_expansion/path_fields.cpp",
       "header": "reconstruction/kernel_expansion/path_fields.hpp",
       "symbols": ["PathFieldBlock", "CopyPathAndParentDirectory", "kPathFieldCapacity"]
+    },
+    {
+      "address": "0x801fcfd8",
+      "size": 56,
+      "sha256": "1ba299098660623d939fbbc22e70a2b74dc0f3bd87d6c8e5e3ce0d6b3b377f5d",
+      "semantic_name": "FindCharacterOnLine",
+      "source": "reconstruction/kernel_expansion/phase_two_restore.cpp",
+      "header": "reconstruction/kernel_expansion/phase_two_restore.hpp",
+      "symbols": ["FindCharacterOnLine"]
     }
   ],
   "tests": [

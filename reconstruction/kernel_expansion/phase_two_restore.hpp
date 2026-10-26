@@ -17,6 +17,10 @@ class PhaseTwoFileServices {
                         std::string_view destination) = 0;
 };
 
+// Lift of the local scanner at 0x801fcfd8. It returns target when found before
+// NUL or LF. LF itself is returned when LF is the requested target.
+char* FindCharacterOnLine(char* text, char target);
+
 // Lift of 0x801fa688. Absence of the marker is already-complete success. When
 // present, every newline-terminated path is deleted and restored from a path
 // with '_' appended; the marker is deleted only after all entries succeed.

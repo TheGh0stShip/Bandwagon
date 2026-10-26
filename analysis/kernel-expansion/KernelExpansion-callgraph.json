@@ -6618,8 +6618,8 @@
       "caller_address": "0x801fa688",
       "instruction_address": "0x801fa714",
       "target_address": "0x801fcfd8",
-      "callee": "fn_801FCFD8",
-      "target_containing_function": "fn_801FCFD8"
+      "callee": "FindCharacterOnLine",
+      "target_containing_function": "FindCharacterOnLine"
     },
     {
       "caller": "CompletePhaseTwoFileRestore",

@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 34 high-confidence behavioral labels are emitted directly into the exact
+- 35 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -98,6 +98,9 @@ lift. The first exact-byte-bound routines are:
   move its underscore-suffixed backup into place, and delete the marker only
   after every entry succeeds. Tests also preserve the observed success result
   when the marker is absent and the ignored final line without a newline.
+- `FindCharacterOnLine` (`0x801fcfd8`, 56 bytes), the phase-two parser's local
+  scanner. Its typed lift preserves LF as both a searchable character and the
+  hard stop for searches targeting any other character.
 - `ClassifyFatBootSector` (`0x801fa320`, 440 bytes), represented as a typed
   five-result classifier. Tests cover its exact exFAT prefix, FAT32 label,
   structural FAT fallback, MBR signature, unknown-sector, and read-error paths.
@@ -131,7 +134,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-22 independently bounded routines totaling 3,536 original instruction bytes.
+23 independently bounded routines totaling 3,592 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

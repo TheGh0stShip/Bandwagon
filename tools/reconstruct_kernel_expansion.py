@@ -64,6 +64,7 @@ SEMANTIC_NAMES = {
     0xA798: "LaunchUpdateCheck",
     0xAA08: "CanOpenExistingPath",
     0xAAC0: "CopyPathAndParentDirectory",
+    0xCFD8: "FindCharacterOnLine",
 }
 
 

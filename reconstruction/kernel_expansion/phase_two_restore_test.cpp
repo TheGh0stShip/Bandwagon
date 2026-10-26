@@ -81,6 +81,13 @@ class FakePhaseTwo final
 int main() {
   using namespace bandwagon::kernel_expansion;
 
+  char scan_text[] = "alpha:beta\ngamma";
+  assert(FindCharacterOnLine(scan_text, ':') == scan_text + 5);
+  assert(FindCharacterOnLine(scan_text, '\n') == scan_text + 10);
+  assert(FindCharacterOnLine(scan_text, 'g') == nullptr);
+  assert(FindCharacterOnLine(scan_text + 11, 'g') == scan_text + 11);
+  assert(FindCharacterOnLine(nullptr, 'x') == nullptr);
+
   FakeFiles files;
   FakePhaseTwo phase;
   assert(CompletePhaseTwoFileRestore(&files, &phase));
