@@ -47,3 +47,11 @@ r11`, and `bctr`/`bctrl`, then performs the required data/instruction cache
 maintenance. `reconstruction/aurora_fixer/absolute_branch.*` is the portable,
 tested high-level reconstruction of that instruction encoder; it performs no
 live memory patching.
+
+`reconstruction/aurora_fixer/import_stub.cpp` reconstructs the remainder of
+the import-stub mutation logic offline. It recognizes a direct big-endian IAT
+word or decodes the `lis r11`/`addi r11` target (including sign extension of
+the low immediate), changes only the matching resolved export, and emits the
+non-linking replacement thunk. Live cache maintenance and XEX-loader access
+remain outside this portable layer. Run both source tests with
+`tools/test_aurorafixer_reconstruction.sh`.
