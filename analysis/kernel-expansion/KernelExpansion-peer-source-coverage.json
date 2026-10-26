@@ -26,6 +26,14 @@
       "symbols": ["FileServices", "ReadFileToAllocatedBuffer", "kStatusPending"]
     },
     {
+      "address": "0x801f1700",
+      "size": 144,
+      "sha256": "0aed4595d7b5d948e9e13ec5fd1207364a3daf7cf10d0342750b1be63492ede2",
+      "semantic_name": "LoadStructuredConfigFile",
+      "source": "reconstruction/kernel_expansion/runtime.cpp",
+      "symbols": ["StructuredConfigParser", "LoadStructuredConfigFile"]
+    },
+    {
       "address": "0x801f1790",
       "size": 352,
       "sha256": "10dfab716ac933c790d92260d6aef8df8f484ff2f35c0f3d3045f1bda8f4eb26",

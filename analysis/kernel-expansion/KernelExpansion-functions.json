@@ -192,7 +192,7 @@
       "address": "0x801f16a8",
       "section_offset": "0x16a8",
       "size_to_next_symbol": 88,
-      "name": "ParsePeerPressureConfig",
+      "name": "InitializeDefaultConfig",
       "evidence": [
         "behavioral name corroborated by strings and call role"
       ],
@@ -202,9 +202,9 @@
       "address": "0x801f1700",
       "section_offset": "0x1700",
       "size_to_next_symbol": 144,
-      "name": "fn_801F1700",
+      "name": "LoadStructuredConfigFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

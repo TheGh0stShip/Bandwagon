@@ -57,6 +57,23 @@ bool ReadFileToAllocatedBuffer(FileServices* services, std::string_view path,
                                std::uint8_t** data,
                                std::uint32_t* allocation_size);
 
+class StructuredConfigParser {
+ public:
+  virtual ~StructuredConfigParser() = default;
+  virtual bool Parse(const std::uint8_t* nul_terminated_text,
+                     void* destination, const void* schema_entries,
+                     std::uint32_t entry_count) = 0;
+};
+
+// Lift of the generic wrapper at 0x801f1700: read a file into a terminated
+// allocation, parse it against the supplied schema, and release it on every
+// post-load path.
+bool LoadStructuredConfigFile(FileServices* files,
+                              StructuredConfigParser* parser,
+                              std::string_view path, void* destination,
+                              const void* schema_entries,
+                              std::uint32_t entry_count);
+
 // Exact reflected CRC-32 loop recovered from 0x801fa540. Unlike a conventional
 // GPT validator, the recovered routine includes the stored checksum field in
 // the bytes it hashes; this API deliberately preserves that observed behavior.

@@ -69,6 +69,24 @@ bool ReadFileToAllocatedBuffer(FileServices* services, std::string_view path,
   return success;
 }
 
+bool LoadStructuredConfigFile(FileServices* files,
+                              StructuredConfigParser* parser,
+                              std::string_view path, void* destination,
+                              const void* schema_entries,
+                              std::uint32_t entry_count) {
+  if (!files || !parser) return false;
+  std::uint8_t* contents = nullptr;
+  std::uint32_t allocation_size = 0;
+  bool parsed = false;
+  if (ReadFileToAllocatedBuffer(
+          files, path, &contents, &allocation_size)) {
+    parsed = parser->Parse(
+        contents, destination, schema_entries, entry_count);
+  }
+  if (contents) files->Free(contents);
+  return parsed;
+}
+
 std::uint32_t ComputeRecoveredGptChecksum(const std::uint8_t* data,
                                           std::size_t size) {
   if (!data && size != 0) return 0;

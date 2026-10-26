@@ -530,8 +530,8 @@
       "caller_address": "0x801f0648",
       "instruction_address": "0x801f06d4",
       "target_address": "0x801f16a8",
-      "callee": "ParsePeerPressureConfig",
-      "target_containing_function": "ParsePeerPressureConfig"
+      "callee": "InitializeDefaultConfig",
+      "target_containing_function": "InitializeDefaultConfig"
     },
     {
       "caller": "LoadPeerPressureConfig",
@@ -546,8 +546,8 @@
       "caller_address": "0x801f0648",
       "instruction_address": "0x801f0714",
       "target_address": "0x801f1700",
-      "callee": "fn_801F1700",
-      "target_containing_function": "fn_801F1700"
+      "callee": "LoadStructuredConfigFile",
+      "target_containing_function": "LoadStructuredConfigFile"
     },
     {
       "caller": "LoadPeerPressureConfig",
@@ -1342,7 +1342,7 @@
       "target_containing_function": "NtClose"
     },
     {
-      "caller": "ParsePeerPressureConfig",
+      "caller": "InitializeDefaultConfig",
       "caller_address": "0x801f16a8",
       "instruction_address": "0x801f16c8",
       "target_address": "0x801febd8",
@@ -1350,7 +1350,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "ParsePeerPressureConfig",
+      "caller": "InitializeDefaultConfig",
       "caller_address": "0x801f16a8",
       "instruction_address": "0x801f16e8",
       "target_address": "0x801f3050",
@@ -1358,7 +1358,7 @@
       "target_containing_function": "fn_801F3050"
     },
     {
-      "caller": "fn_801F1700",
+      "caller": "LoadStructuredConfigFile",
       "caller_address": "0x801f1700",
       "instruction_address": "0x801f1704",
       "target_address": "0x801fead0",
@@ -1366,7 +1366,7 @@
       "target_containing_function": "fn_801FEAD0"
     },
     {
-      "caller": "fn_801F1700",
+      "caller": "LoadStructuredConfigFile",
       "caller_address": "0x801f1700",
       "instruction_address": "0x801f1730",
       "target_address": "0x801f14d0",
@@ -1374,7 +1374,7 @@
       "target_containing_function": "ReadFileToAllocatedBuffer"
     },
     {
-      "caller": "fn_801F1700",
+      "caller": "LoadStructuredConfigFile",
       "caller_address": "0x801f1700",
       "instruction_address": "0x801f1750",
       "target_address": "0x801f30b0",
@@ -1382,7 +1382,7 @@
       "target_containing_function": "fn_801F30B0"
     },
     {
-      "caller": "fn_801F1700",
+      "caller": "LoadStructuredConfigFile",
       "caller_address": "0x801f1700",
       "instruction_address": "0x801f1764",
       "target_address": "0x801fec18",
@@ -1390,7 +1390,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F1700",
+      "caller": "LoadStructuredConfigFile",
       "caller_address": "0x801f1700",
       "instruction_address": "0x801f177c",
       "target_address": "0x801fed18",
@@ -1850,8 +1850,8 @@
       "caller_address": "0x801f1fc0",
       "instruction_address": "0x801f2010",
       "target_address": "0x801f1700",
-      "callee": "fn_801F1700",
-      "target_containing_function": "fn_801F1700"
+      "callee": "LoadStructuredConfigFile",
+      "target_containing_function": "LoadStructuredConfigFile"
     },
     {
       "caller": "LoadBootAnimationTheme",

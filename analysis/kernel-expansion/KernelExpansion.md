@@ -59,6 +59,9 @@ lift. The first exact-byte-bound routines are:
   file-service workflow. It preserves pending-I/O waiting, allocation of the
   file size plus one, NUL placement, failure cleanup order, and the rule that
   caller outputs change only after a successful read.
+- `LoadStructuredConfigFile` (`0x801f1700`, 144 bytes), represented as the
+  generic schema-parser wrapper layered on that loader. It always releases a
+  successfully loaded buffer after the parser returns.
 - `InstallKernelXexDataHandlers` (`0x801f1790`, 352 bytes), represented as a
   bounds-checked mapped-PE walker. It finds `.xedata`, installs both relocated
   handler words, updates the table count, and performs the recovered CPU and
@@ -83,4 +86,7 @@ This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 351 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
-`ClassifyFatBootSector` lift now makes those outcomes explicit.
+`ClassifyFatBootSector` lift now makes those outcomes explicit. The former
+`ParsePeerPressureConfig` label was also corrected to
+`InitializeDefaultConfig`: the routine is reached on a config-read failure and
+establishes the default singleton before entering the locked config path.

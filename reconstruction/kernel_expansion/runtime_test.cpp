@@ -117,6 +117,25 @@ class FakeFileServices final
   }
 };
 
+class FakeConfigParser final
+    : public bandwagon::kernel_expansion::StructuredConfigParser {
+ public:
+  bool result = true;
+  void* expected_destination = nullptr;
+  const void* expected_schema = nullptr;
+  std::vector<std::string>* events = nullptr;
+
+  bool Parse(const std::uint8_t* text, void* destination,
+             const void* schema, std::uint32_t count) override {
+    assert(text && text[0] == 'a' && text[1] == 'b' && text[2] == 'c' &&
+           text[3] == 0);
+    assert(destination == expected_destination && schema == expected_schema);
+    assert(count == 6);
+    if (events) events->emplace_back("parse");
+    return result;
+  }
+};
+
 std::array<std::uint8_t, 0x5c> FixedPointGptHeader() {
   std::array<std::uint8_t, 0x5c> header{};
   constexpr std::array<std::uint8_t, 12> prefix{{
@@ -207,6 +226,26 @@ int main() {
 
   assert(!ReadFileToAllocatedBuffer(nullptr, kTestPath, &data, &size));
   assert(!ReadFileToAllocatedBuffer(&file_success, {}, &data, &size));
+
+  int destination = 0;
+  int schema = 0;
+  FakeFileServices structured_files;
+  FakeConfigParser parser;
+  parser.expected_destination = &destination;
+  parser.expected_schema = &schema;
+  parser.events = &structured_files.events;
+  assert(LoadStructuredConfigFile(
+      &structured_files, &parser, kTestPath, &destination, &schema, 6));
+  assert((structured_files.events == std::vector<std::string>{
+      "open", "query", "allocate", "read", "close", "parse", "free"}));
+
+  FakeFileServices structured_failure;
+  structured_failure.read_result = -1;
+  parser.events = &structured_failure.events;
+  assert(!LoadStructuredConfigFile(
+      &structured_failure, &parser, kTestPath, &destination, &schema, 6));
+  assert((structured_failure.events == std::vector<std::string>{
+      "open", "query", "allocate", "read", "free", "close"}));
 
   auto header = FixedPointGptHeader();
   assert(ComputeRecoveredGptChecksum(header.data(), header.size()) ==

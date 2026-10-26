@@ -1474,7 +1474,7 @@ ReadFileToAllocatedBuffer:
     .long 0x7f23cb78 /* 0x0169c */
     .long 0x38210110 /* 0x016a0 */
     .long 0x4800d474 /* 0x016a4 */
-ParsePeerPressureConfig:
+InitializeDefaultConfig:
     .long 0x7d8802a6 /* 0x016a8 */
     .long 0x9181fff8 /* 0x016ac */
     .long 0xfbe1fff0 /* 0x016b0 */
@@ -1497,7 +1497,7 @@ ParsePeerPressureConfig:
     .long 0x7d8803a6 /* 0x016f4 */
     .long 0xebe1fff0 /* 0x016f8 */
     .long 0x4e800020 /* 0x016fc */
-fn_801F1700:
+LoadStructuredConfigFile:
     .long 0x7d8802a6 /* 0x01700 */
     .long 0x4800d3cd /* 0x01704 */
     .long 0x9421ff70 /* 0x01708 */
