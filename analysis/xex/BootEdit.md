@@ -48,6 +48,12 @@ exactly but still need individual attribution. The separate
 bundled 9199 `bootanim.xex` is a 2010 Microsoft component and is documented as
 out of Peer-authored source scope in `BootAnim-9199-provenance.md`.
 
+The semantic map additionally names `ColorEqualsExact` at `0x82050a00` and
+`DrawColorContextMenu` at `0x82050b08`. The former is a non-`.pdata` leaf whose
+76 bytes are fingerprinted independently. `tools/validate_bootedit_analysis.py`
+binds both names to the exact image, menu strings, and direct call edge during
+every full BootEdit regeneration.
+
 `reconstruction/boot_edit/theme_editor.cpp` begins the portable first-party
 reconstruction with two dependency-free behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full

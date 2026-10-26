@@ -3,6 +3,20 @@
   "image_sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
   "symbols": [
     {
+      "address": "0x82050a00",
+      "recovered_name": null,
+      "semantic_name": "ColorEqualsExact",
+      "confidence": "high",
+      "evidence": ["non-pdata 76-byte leaf compares four float components in order", "called by DrawColorContextMenu to enable Undo changes"]
+    },
+    {
+      "address": "0x82050b08",
+      "recovered_name": "fn_82050B08",
+      "semantic_name": "DrawColorContextMenu",
+      "confidence": "high",
+      "evidence": ["owns Copy, Paste, Undo changes, and Reset to default menu items", "copies exact four-float colors through the shared clipboard and calls ColorEqualsExact"]
+    },
+    {
       "address": "0x8204c870",
       "recovered_name": "fn_8204C870",
       "semantic_name": "ConfirmDiscardUnsavedChanges",
