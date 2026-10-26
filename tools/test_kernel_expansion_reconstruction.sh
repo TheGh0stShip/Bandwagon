@@ -204,6 +204,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/sata_udma_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/xconfig_hooks.cpp" \
+    "$root/reconstruction/kernel_expansion/xconfig_hooks_test.cpp" \
+    -o "$work/xconfig_hooks_test"
+"$work/xconfig_hooks_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/flash_versions.cpp" \
     "$root/reconstruction/kernel_expansion/flash_versions_test.cpp" \
     -o "$work/flash_versions_test"

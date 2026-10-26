@@ -306,9 +306,9 @@
       "address": "0x801f1c60",
       "section_offset": "0x1c60",
       "size_to_next_symbol": 80,
-      "name": "fn_801F1C60",
+      "name": "ForceDvdRegionFreeHook",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by the internal XConfig query, secured DVDRegion category/setting pair, and successful 0xff override"
       ],
       "kind": "local_code"
     },

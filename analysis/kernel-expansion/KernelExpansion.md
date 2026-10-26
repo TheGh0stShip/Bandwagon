@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 80 high-confidence behavioral labels are emitted directly into the exact
+- 81 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -195,6 +195,15 @@ lift. The first exact-byte-bound routines are:
   every boundary mode, highest-bit selection, clamping, and ignored refresh
   failure. The source preserves the target's uninitialized stack-buffer
   contract: a successful IDENTIFY service call owns the full output.
+- `ForceDvdRegionFreeHook` (`0x801f1c60`, 80 bytes), represented as a typed
+  five-argument XConfig wrapper. It forwards every argument to the original
+  secured-settings query, propagates every nonzero status unchanged, and on
+  success compares only the low 16 bits of category and setting. Secured
+  category two / `DVDRegion` setting four receives the recovered region-free
+  value `0xff`; other successful queries remain untouched. Tests bind argument
+  forwarding, status propagation, high-bit truncation, exact four-byte output
+  replacement, adjacent-byte preservation, and the labeled host-only null
+  guard.
 - `ReplaceInstructionWithNop` (`0x801f2d70`, 72 bytes), represented as a typed
   instruction mutation with the recovered CPU flush, physical-address
   translation, and hypervisor data-cache flush ordering.
@@ -308,7 +317,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-70 independently bounded routines totaling 12,272 original instruction bytes.
+71 independently bounded routines totaling 12,352 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 372 discovered entries are maintainable

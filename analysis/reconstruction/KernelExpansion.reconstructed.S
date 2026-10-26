@@ -1851,7 +1851,7 @@ ConfigureAuroraSideLoad:
     .long 0x4e800421 /* 0x01c54 */
     .long 0x382100e0 /* 0x01c58 */
     .long 0x4800cebc /* 0x01c5c */
-fn_801F1C60:
+ForceDvdRegionFreeHook:
     .long 0x7d8802a6 /* 0x01c60 */
     .long 0x4800ce75 /* 0x01c64 */
     .long 0x9421ff90 /* 0x01c68 */

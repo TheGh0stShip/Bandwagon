@@ -204,6 +204,15 @@
       "symbols": ["InstructionPatchLocation", "InstructionPatchServices", "InstallAbsoluteBranchHook"]
     },
     {
+      "address": "0x801f1c60",
+      "size": 80,
+      "sha256": "ce91397858c9066529901595cfa383de344d1966fae40f5f1bd081a3df7654ff",
+      "semantic_name": "ForceDvdRegionFreeHook",
+      "source": "reconstruction/kernel_expansion/xconfig_hooks.cpp",
+      "header": "reconstruction/kernel_expansion/xconfig_hooks.hpp",
+      "symbols": ["XConfigHookServices", "ForceDvdRegionFreeHook", "kSecuredXConfigCategory", "kDvdRegionXConfigSetting", "kRegionFreeDvdRegion"]
+    },
+    {
       "address": "0x801f1cb0",
       "size": 64,
       "sha256": "febe25d05bb8211efb7581f959cd1c8bf698c36e053c1e4e33965593dc5604e6",
@@ -722,6 +731,7 @@
     "reconstruction/kernel_expansion/unsupported_operation_test.cpp",
     "reconstruction/kernel_expansion/version_test.cpp",
     "reconstruction/kernel_expansion/volume_capacity_test.cpp",
+    "reconstruction/kernel_expansion/xconfig_hooks_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]

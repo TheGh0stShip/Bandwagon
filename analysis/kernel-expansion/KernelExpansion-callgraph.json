@@ -1638,7 +1638,7 @@
       "target_containing_function": "XamLoaderTerminateTitle"
     },
     {
-      "caller": "fn_801F1C60",
+      "caller": "ForceDvdRegionFreeHook",
       "caller_address": "0x801f1c60",
       "instruction_address": "0x801f1c64",
       "target_address": "0x801fead8",
@@ -1646,7 +1646,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801F1C60",
+      "caller": "ForceDvdRegionFreeHook",
       "caller_address": "0x801f1c60",
       "instruction_address": "0x801f1c78",
       "target_address": "0x801fefc8",

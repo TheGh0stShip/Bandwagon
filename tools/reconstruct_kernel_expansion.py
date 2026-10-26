@@ -64,6 +64,7 @@ SEMANTIC_NAMES = {
     0x18E8: "ReturnImmediatelyHook",
     0x18F0: "InstallAbsoluteBranchHook",
     0x1A60: "ConfigureAuroraSideLoad",
+    0x1C60: "ForceDvdRegionFreeHook",
     0x1CB0: "InstallSfcxNandWriteProtectionHooks",
     0x1CF0: "LoadBootImage",
     0x1FC0: "LoadBootAnimationTheme",
@@ -155,6 +156,9 @@ SEMANTIC_EVIDENCE = {
     ],
     0x18F0: [
         "behavioral name corroborated by lis/addi/mtctr/bctr stub construction, optional backup, and cache maintenance"
+    ],
+    0x1C60: [
+        "behavioral name corroborated by the internal XConfig query, secured DVDRegion category/setting pair, and successful 0xff override"
     ],
     0x1CB0: [
         "behavioral name corroborated by four writes into the retail SfcxDriverObject dispatch table"
