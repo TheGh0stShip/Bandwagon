@@ -27,7 +27,7 @@
     },
     {
       "start": "0x98008d68",
-      "end_exclusive": "0x9800d130",
+      "end_exclusive": "0x9800ce38",
       "classification": "miniz compression and ZIP library",
       "confidence": "high",
       "evidence": [
@@ -44,23 +44,24 @@
       }
     },
     {
-      "start": "0x9800d130",
-      "end_exclusive": "0x9801a740",
+      "start": "0x9800ce38",
+      "end_exclusive": "0x9801a720",
       "classification": "Xbox/MSVC startup, CRT, unwind, math, and compiler support",
-      "confidence": "medium",
+      "confidence": "high",
       "evidence": [
-        "begins at the PE entry point",
+        "begins with four CRT lifecycle/startup entries before the PE entry point",
         "contains __savegprlr/__restgprlr and compiler floating-point diagnostics",
-        "terminates at the first named Xbox import thunk"
+        "terminates at the first named Xbox import thunk",
+        "the exhaustive function-ownership manifest independently classifies all 215 entries in this range"
       ],
-      "caveat": "This broad block still needs function-level attribution; startup can reference Peer globals even when supplied by the platform toolchain."
+      "caveat": "Startup can reference product globals even when its implementation is supplied by the platform toolchain."
     },
     {
-      "start": "0x9801a740",
+      "start": "0x9801a720",
       "end_exclusive": "0x9801aa40",
       "classification": "Xbox kernel and XAM import thunks plus terminal padding",
       "confidence": "high",
-      "evidence": ["48 thunks are named from XEX import metadata", "fixed indirect-branch thunk pattern"]
+      "evidence": ["47 import thunks are named from XEX import metadata", "fixed indirect-branch thunk pattern", "the final two inventory entries are terminal linker/import metadata"]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema": "bandwagon-kernel-expansion-peer-source-coverage-v1",
   "status": "partial",
-  "scope_note": "This manifest binds readable lifts to code resident in the closed Kernel Expansion image. Inclusion does not assert unique Peer or Grimdoomer authorship; public, platform, compiler-runtime, and third-party ranges are classified separately and should be mapped to upstream source rather than redundantly rewritten.",
+  "scope_note": "This manifest binds readable lifts to code resident in the closed Kernel Expansion image. Inclusion does not assert unique Peer or Grimdoomer authorship. App-local adapters remain in the product reconstruction boundary even when they call platform APIs; only proven compiler/runtime, import, and stock third-party ranges are excluded.",
   "image": {
     "path": "PeerPressure/System/KernelExpansion.bin",
     "base_address": "0x801f0000",
@@ -12,10 +12,10 @@
   "summary": {
     "lifted_function_count": 73,
     "lifted_instruction_bytes": 12632,
-    "peer_product_adapter_or_policy_function_count": 37,
-    "peer_product_adapter_or_policy_instruction_bytes": 5168,
-    "generic_platform_function_count": 9,
-    "generic_platform_instruction_bytes": 1312,
+    "peer_product_adapter_or_policy_function_count": 46,
+    "peer_product_adapter_or_policy_instruction_bytes": 6480,
+    "generic_platform_function_count": 0,
+    "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
     "unattributed_instruction_bytes": 5112,
     "upstream_fatfs_function_count": 5,

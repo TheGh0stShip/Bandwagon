@@ -1,0 +1,506 @@
+{
+  "schema": "bandwagon-updatecheck-function-ownership-v1",
+  "status": "exhaustive_conservative_partition",
+  "policy": "Every discovered function extent and every initialized .text byte is assigned exactly once. product_application_or_glue means evidenced Peer Pressure component behavior, integration glue, or a modified upstream-derived adapter that remains in the reconstruction queue; it is not a claim of personal authorship, originality, or exclusive copyright. Only stock-source-equivalent upstream blocks and proven platform/toolchain blocks are excluded from lifting. Code with only an XDK-facing role or cross-component sharing remains unknown.",
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
+    "base_address": "0x91a00000",
+    "size": 278528,
+    "sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/UpdateCheck-functions.json",
+    "sha256": "cfa45de4e8b31be13df83acfe2b6cb2387464a6da1944bc9fbe74dfd4ea9e877",
+    "entry_count": 804
+  },
+  "instruction_region": {
+    "start": "0x91a0a000",
+    "end_exclusive": "0x91a412ec",
+    "size": 226028,
+    "sha256": "bde6177f39e9fcee9534b311cea3d420f09e75e45e0385618b9c8b58c3dbdf33"
+  },
+  "classification_rules": [
+    "A function extent is the half-open interval from its inventory entry to the next entry, with the final extent capped at the initialized .text end.",
+    "A contiguous library block requires multiple exact upstream string/semantic anchors, agreement with source organization, function-aligned link boundaries, and corroboration from the separately linked SettingsApp copy.",
+    "Product classification includes the two function-local routines already bound by UpdateCheck-peer-source-coverage.json, the XHttps/update integration bodies established by component-local strings and call topology, and the BearSSL-derived C++/platform certificate adapter; only the first two are currently source-covered.",
+    "MSVC STL/CRT/startup code, the XEX entry stub, import thunks, and compiler-emitted string/vector/map support islands are platform/toolchain when binary diagnostics or structural evidence establish that provenance; merely calling XDK imports is insufficient.",
+    "Code without a defensible source boundary is unknown even when it is shared between Peer Pressure components."
+  ],
+  "evidence_files": {
+    "semantic_symbols": {
+      "path": "analysis/xex/UpdateCheck-symbols.json",
+      "sha256": "46664f6e0f64d678426d2dccb19a7c89eab834dce54f476173c14794016bf652"
+    },
+    "string_xrefs": {
+      "path": "analysis/xex/UpdateCheck-string-xrefs.json",
+      "sha256": "003a73e59cb39b6b073d7b8278cb38c3d40a4844f19449dd1521d2f4d78ad132"
+    },
+    "direct_callgraph": {
+      "path": "analysis/xex/UpdateCheck-callgraph.json",
+      "sha256": "0a961f0a8c4d5106881541dc255413164cdf4208b277601fcfcac85b0c48d12c"
+    },
+    "declared_provenance": {
+      "path": "analysis/xex/UpdateCheck-provenance.json",
+      "sha256": "279fe9a3e9aec2c3943a6ca33ddceb74b7682c99e6dadbef9e1f1c0d2f7c4249"
+    },
+    "peer_source_coverage": {
+      "path": "analysis/xex/UpdateCheck-peer-source-coverage.json",
+      "sha256": "465fd7f8482ef3ab1ea309481468659a1fd229f97d5ca03069dc6f572b1fdd23"
+    }
+  },
+  "upstream_sources": {
+    "bearssl_0_6": {
+      "name": "BearSSL 0.6",
+      "submodule_path": "third_party/BearSSL",
+      "commit": "8ef7680081c61b486622f2d983c0d3d21e83caad",
+      "tree_hash_algorithm": "SHA-256 over sorted files: uint64be(relative-path byte length), UTF-8 POSIX relative path, uint64be(file size), then file bytes",
+      "trees": [
+        {
+          "path": "src",
+          "file_count": 287,
+          "size": 1807387,
+          "sha256": "022da0cff47427fe550dc57a178ef05751c6d85ef6f8062af5cb4837b30c2fe0"
+        },
+        {
+          "path": "inc",
+          "file_count": 13,
+          "size": 518079,
+          "sha256": "169497f71c8810b9230897b06e40d6a62fbe20e9208f0b2514bdd09ae3c31083"
+        }
+      ],
+      "signature_files": [
+        {
+          "path": "src/ssl/ssl_engine.c",
+          "sha256": "b13575daaa5b0343640d62982f35e71842f230121364a33b5ca5bab14f9efc53",
+          "contains": ["master secret", "key expansion"]
+        },
+        {
+          "path": "src/ssl/ssl_hs_client.c",
+          "sha256": "d945ca6109d0bc2376019ce015fd2b0d8bd94dd372fafb337880acda48567367",
+          "contains": ["server finished", "client finished"]
+        },
+        {
+          "path": "src/codec/pemdec.c",
+          "sha256": "063c4e3c3036008fbd9cf434298872a20f6c13ce27f7d4e07e0b0c7c9617ec7d",
+          "contains": ["br_pem_decoder_init", "br_pem_decoder_push"]
+        },
+        {
+          "path": "tools/files.c",
+          "sha256": "c1286515150bb89af8688357b4adf1f1ede5147b6c491684d4b2dab58cc1f5e6",
+          "contains": ["BR_PEM_BEGIN_OBJ", "read_certificates", "free_certificates"]
+        }
+      ]
+    },
+    "jsoncpp_00_11_0": {
+      "name": "JsonCpp 00.11.0",
+      "submodule_path": "third_party/jsoncpp",
+      "commit": "7c186e549fba358ac0541ed75f5a524b393954b3",
+      "tree_hash_algorithm": "SHA-256 over sorted files: uint64be(relative-path byte length), UTF-8 POSIX relative path, uint64be(file size), then file bytes",
+      "trees": [
+        {
+          "path": "src/lib_json",
+          "file_count": 6,
+          "size": 167938,
+          "sha256": "384fb0b18096c14879d8b91a90ac6d8cdbc4fe77a5d54384ef34baa6694a65df"
+        },
+        {
+          "path": "include",
+          "file_count": 11,
+          "size": 74898,
+          "sha256": "a7f65b88f6070f6bc421e745e1067de60413758535371ad3ba236208559667c6"
+        }
+      ],
+      "signature_files": [
+        {
+          "path": "src/lib_json/json_reader.cpp",
+          "sha256": "93c8ce8ae6c3e49bdf824c9621d9f5b7d6b2339f72c1e670973581a104d3fe37",
+          "contains": [
+            "allowTrailingCommas",
+            "additional six characters expected to parse unicode surrogate pair.",
+            "Extra non-whitespace after JSON value."
+          ]
+        },
+        {
+          "path": "src/lib_json/json_value.cpp",
+          "sha256": "c5f61de248d3f6212c668141d29e780a31c5f77de32aa9897bc1ff9806b734cb",
+          "contains": [
+            "Failed to allocate string value buffer",
+            "in Json::Value::operator[](ArrayIndex): requires arrayValue",
+            "Exception::Exception(String msg)",
+            "RuntimeError::RuntimeError(String const& msg)",
+            "LogicError::LogicError(String const& msg)",
+            "throwRuntimeError(String const& msg)",
+            "throwLogicError(String const& msg)"
+          ]
+        },
+        {
+          "path": "src/lib_json/json_writer.cpp",
+          "sha256": "e6ef2df79cea277e68aea644686ef1d92281a92a1ef2dafadaa758abe4268484",
+          "contains": ["%.*g", "%.*f"]
+        }
+      ]
+    }
+  },
+  "semantic_anchor_requirements": {
+    "product_application_or_glue": {
+      "expected_count": 2,
+      "addresses": ["0x91a0c3e8", "0x91a0d860"]
+    },
+    "bearssl_0_6": {
+      "expected_count": 3,
+      "ownership_label": "BearSSL 0.6"
+    },
+    "jsoncpp_00_11_0": {
+      "expected_count": 22,
+      "ownership_label": "JsonCpp 00.11.0"
+    }
+  },
+  "platform_requirements": {
+    "entry_point": {
+      "address": "0x91a2e158",
+      "name": "_start"
+    },
+    "named_import_thunk_count": 64,
+    "import_thunk_range": {
+      "start": "0x91a40ebc",
+      "end_exclusive": "0x91a412ec"
+    }
+  },
+  "cross_component_comparison": {
+    "purpose": "SettingsApp independently links the same BearSSL and JsonCpp versions with the same Xbox compiler. Relocation-tolerant matches corroborate object boundaries, including equal 187-entry stock BearSSL cores and equal 3-entry modified certificate adapters. Shared code or an XDK-facing role alone does not establish platform provenance or personal authorship.",
+    "fingerprint_algorithm": "For each big-endian PPC function extent, clear LI in opcode 18 while retaining AA/LK; clear the 16-bit immediate in opcodes 14 and 15; hash the normalized bytes with SHA-256; match on original size plus hash.",
+    "image": {
+      "path": "analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe",
+      "base_address": "0x82000000",
+      "size": 2555904,
+      "sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"
+    },
+    "function_inventory": {
+      "path": "analysis/xex/SettingsApp-functions.json",
+      "entry_count": 1824,
+      "sha256": "db1b3fc77c2f56d7c2ef242fb1a7f19d006fddc3c71af906f5a801e34c446797"
+    },
+    "ownership_partition": {
+      "path": "analysis/xex/SettingsApp-function-ownership.json",
+      "sha256": "5efdb1291fdc2b7a794379f8fa380e3643238e4e4ccb5e36ee7537c7cafa816a"
+    },
+    "refined_bridge_boundaries": {
+      "settings_product_integration": {"start":"0x8205e8b0","end_exclusive":"0x8205efd8","category":"peer_product_application_glue"},
+      "settings_platform_helpers": {"start":"0x8205efd8","end_exclusive":"0x8205f480","category":"platform_toolchain_graphics"},
+      "settings_bearssl_certificate_adapter": {"start":"0x8205f480","end_exclusive":"0x8205fa90","category":"peer_product_application_glue"},
+      "settings_bearssl_core": {"start":"0x8205fa90","end_exclusive":"0x820723f8","category":"upstream_bearssl_0_6"},
+      "update_product_integration": {"start":"0x91a0ef08","end_exclusive":"0x91a0f758","category":"product_application_or_glue"},
+      "update_platform_helpers": {"start":"0x91a0f758","end_exclusive":"0x91a0fcb8","category":"platform_toolchain"},
+      "update_bearssl_certificate_adapter": {"start":"0x91a0fcb8","end_exclusive":"0x91a102c8","category":"product_application_or_glue"},
+      "update_bearssl_core": {"start":"0x91a102c8","end_exclusive":"0x91a22c90","category":"bearssl_0_6"}
+    },
+    "bearssl_block": {
+      "start": "0x8205fa90",
+      "end_exclusive": "0x820723f8",
+      "size": 76136,
+      "inventory_entry_count": 187,
+      "sha256": "5d177af3a36d5853f54be4f88eb671835d32b2ae495a536ca453ae96487cb3e7"
+    },
+    "certificate_adapter": {
+      "source_basis": "BearSSL tools/files.c certificate loading lineage with C++ containers and Xbox/platform adaptation; modified adapters remain product/mixed rather than stock upstream.",
+      "update_start": "0x91a0fcb8",
+      "update_end_exclusive": "0x91a102c8",
+      "settings_start": "0x8205f480",
+      "settings_end_exclusive": "0x8205fa90",
+      "inventory_entry_count": 3,
+      "size": 1552,
+      "exact_normalized_pairs": [
+        {"update_address":"0x91a0fcb8","settings_address":"0x8205f480","size":584,"normalized_sha256":"65bb6406910e5c2b0aa3a1b4f037f657dae75c162744fbac29a159adaf2cf590"},
+        {"update_address":"0x91a0ff00","settings_address":"0x8205f6c8","size":216,"normalized_sha256":"8a90c0142d6026b560ca915e3255d2c690d84aea4ca6d42969e09f4a9d932513"},
+        {"update_address":"0x91a0ffd8","settings_address":"0x8205f7a0","size":752,"normalized_sha256":"09534931669caebb9e2d3562995a7ce0f376bf5981a7ac8c9ce250d4aa651470"}
+      ]
+    },
+    "msvc_runtime_island": {
+      "update_start": "0x91a0dc58",
+      "update_end_exclusive": "0x91a0ef08",
+      "settings_start": "0x820321a8",
+      "settings_end_exclusive": "0x82033458",
+      "inventory_entry_count": 47,
+      "size": 4784,
+      "settings_sha256": "dfc416a590f69b32f0c9091efb13895b4332412e07a13b914c76e2a3108bb00b",
+      "position_matched_entry_count": 34,
+      "position_matched_size": 3292,
+      "diagnostic_anchors": [
+        {"update_function":"0x91a0e5f0","string":"Unknown exception"},
+        {"update_function":"0x91a0e918","string":"iostream stream error"},
+        {"update_function":"0x91a0ecc8","string":"bad allocation"}
+      ],
+      "caveat": "The preceding 0x91a0d9f8-0x91a0dc58 wrappers call Xbox imports but lack exact platform-source provenance and therefore remain unknown."
+    },
+    "jsoncpp_exception_helpers": {
+      "update_start": "0x91a2af30",
+      "update_end_exclusive": "0x91a2b088",
+      "inventory_entry_count": 4,
+      "size": 344,
+      "source_basis": "JsonCpp json_value.cpp defines Exception, RuntimeError, LogicError, throwRuntimeError, and throwLogicError immediately before their assertion consumers.",
+      "exact_normalized_pairs": [
+        {"update_address":"0x91a2af30","settings_address":"0x82073018","size":104,"normalized_sha256":"37b7f80074f9517fb3d1b943180bade728bde2219ea50acd70e0d7ce45d75b44"},
+        {"update_address":"0x91a2af98","settings_address":"0x82073080","size":88,"normalized_sha256":"7cd8f5a00c1bdc0f76f545e9583ea10bfd4d7c45de68bd9bf2f776b05d7e80a3"},
+        {"update_address":"0x91a2aff0","settings_address":"0x82073128","size":64,"normalized_sha256":"a1171b057f9df3b2f1acd1ccad9f3b9430f3772d363a50c8b4b17babd1435754"},
+        {"update_address":"0x91a2b030","settings_address":"0x82073168","size":88,"normalized_sha256":"fba68ff977e4c6468ebce44f29cc9a0f5853652b97b3f47d7a66d05917752ec7"}
+      ]
+    },
+    "category_summary": {
+      "platform_toolchain": {
+        "matching_entry_count": 278,
+        "matching_size": 55456,
+        "unique_matching_entry_count": 252,
+        "unique_matching_size": 49932
+      },
+      "product_application_or_glue": {
+        "matching_entry_count": 13,
+        "matching_size": 4248,
+        "unique_matching_entry_count": 11,
+        "unique_matching_size": 3920
+      },
+      "bearssl_0_6": {
+        "matching_entry_count": 179,
+        "matching_size": 68712,
+        "unique_matching_entry_count": 164,
+        "unique_matching_size": 66760
+      },
+      "jsoncpp_00_11_0": {
+        "matching_entry_count": 150,
+        "matching_size": 37664,
+        "unique_matching_entry_count": 136,
+        "unique_matching_size": 35248
+      },
+      "unknown": {
+        "matching_entry_count": 0,
+        "matching_size": 0,
+        "unique_matching_entry_count": 0,
+        "unique_matching_size": 0
+      }
+    },
+    "totals": {
+      "matching_entry_count": 620,
+      "matching_size": 166080,
+      "unique_matching_entry_count": 563,
+      "unique_matching_size": 155860
+    }
+  },
+  "categories": {
+    "platform_toolchain": {
+      "inventory_entry_count": 423,
+      "size": 98772,
+      "concatenated_sha256": "de79ea0c1cb3802176e4c7a14929ea66bc1d17a9b41f816a1e22ee6eb770335a",
+      "peer_specific": false,
+      "description": "MSVC STL/CRT and exception support, the compiler/XEX entry path, import thunks, and string/vector/map support islands emitted between application and upstream functions. XDK-facing wrappers without independent provenance are excluded.",
+      "ranges": [
+        {
+          "start": "0x91a0a000",
+          "end_exclusive": "0x91a0c3e8",
+          "size": 9192,
+          "inventory_entry_count": 56,
+          "sha256": "ee1827859c8ab07af9e110b3d5334b626691e9e2834b34e2611ac6e061f73302",
+          "basis": "MSVC exception, iostream, locale, and string diagnostics plus same-toolchain SettingsApp fingerprints"
+        },
+        {
+          "start": "0x91a0c520",
+          "end_exclusive": "0x91a0cd28",
+          "size": 2056,
+          "inventory_entry_count": 14,
+          "sha256": "b2b7cb2a70b15d3f96b210efc4acc67bd75a8b40dc73b67a036e1df4ec302556",
+          "basis": "std::string/allocator helpers called transitively by JsonCpp and matching SettingsApp or Updater compiler-emitted bodies"
+        },
+        {
+          "start": "0x91a0cff0",
+          "end_exclusive": "0x91a0d1e8",
+          "size": 504,
+          "inventory_entry_count": 3,
+          "sha256": "f83d60f12f198a157b05c2d4f8c17a4a0731935e72368ae763526ed0d0a3dcff",
+          "basis": "shared std::string construction/destruction support used by both JsonCpp and the HTTP caller"
+        },
+        {
+          "start": "0x91a0dc58",
+          "end_exclusive": "0x91a0ef08",
+          "size": 4784,
+          "inventory_entry_count": 47,
+          "sha256": "29740664425327eaa17cbaab842742c76512078e4de7c35a789750718a2ed935",
+          "basis": "MSVC exception/iostream runtime island: equal 47-entry/4,784-byte SettingsApp sequence, 34 exact positional normalized matches, and Unknown exception, iostream stream error, and bad allocation diagnostics"
+        },
+        {
+          "start": "0x91a0f758",
+          "end_exclusive": "0x91a0fcb8",
+          "size": 1376,
+          "inventory_entry_count": 7,
+          "sha256": "20d20e34ba569a3044e52d0fc948ea3988953cec2f2fad86834a8460086d9d58",
+          "basis": "compiler-emitted vector allocation/lifecycle block matching the refined SettingsApp platform boundary and ending at the BearSSL certificate-reader object"
+        },
+        {
+          "start": "0x91a2a4e8",
+          "end_exclusive": "0x91a2af30",
+          "size": 2632,
+          "inventory_entry_count": 10,
+          "sha256": "cad03458c826654665cf6efecd5fca64396672ca625fe9909c7aae0d61f582f9",
+          "basis": "interposed MSVC container support ending before the JsonCpp exception island; includes invalid map/set<T> iterator"
+        },
+        {
+          "start": "0x91a2e158",
+          "end_exclusive": "0x91a412ec",
+          "size": 78228,
+          "inventory_entry_count": 286,
+          "sha256": "45a5a4d5d0553cda346860af8e937ba9f785e0083eb542c07159c092a330333a",
+          "basis": "_start, Visual C++ CRT/runtime and numeric-format diagnostics, and all 64 named XAM/xboxkrnl import thunks"
+        }
+      ]
+    },
+    "product_application_or_glue": {
+      "inventory_entry_count": 19,
+      "size": 6768,
+      "concatenated_sha256": "20ff2310ced98ab569b2636d392be789ba6292b5c56d33406d296015d8199ac4",
+      "peer_specific": true,
+      "personal_authorship_claim": false,
+      "description": "The two strict Peer Pressure update-policy routines, the shared XHttps request/response integration layer selected and configured by this component, and the BearSSL-derived C++/platform certificate adapter. This is a reconstruction boundary, not personal authorship attribution.",
+      "ranges": [
+        {
+          "start": "0x91a0c3e8",
+          "end_exclusive": "0x91a0c520",
+          "size": 312,
+          "inventory_entry_count": 1,
+          "sha256": "32e314097c5da75530e0ecb21469fafad42cd9973ea537a746e655b579db8ee6",
+          "semantic_name": "ParseReleaseVersion"
+        },
+        {
+          "start": "0x91a0cd28",
+          "end_exclusive": "0x91a0cff0",
+          "size": 712,
+          "inventory_entry_count": 1,
+          "sha256": "4109955b6cbe16cb5f78744a6796ea7735c195730a0506098ec4beb648b341aa",
+          "basis": "component HTTPS/XDK orchestration calling CheckLatestReleaseVersion, TLS helpers, and XAM services"
+        },
+        {
+          "start": "0x91a0d1e8",
+          "end_exclusive": "0x91a0d860",
+          "size": 1656,
+          "inventory_entry_count": 2,
+          "sha256": "ef402f4371a491544fbcc3472c64dd991b689766f184ffc849168087b89f6c6a",
+          "basis": "XHttps request construction and redirect/response orchestration identified by Accept and location diagnostics"
+        },
+        {
+          "start": "0x91a0d860",
+          "end_exclusive": "0x91a0d9f8",
+          "size": 408,
+          "inventory_entry_count": 1,
+          "sha256": "f95a72f104f2ac76bca278112be5d8780fb9792e23df45236bb689d88f5f5e7e",
+          "semantic_name": "CheckLatestReleaseVersion"
+        },
+        {
+          "start": "0x91a0ef08",
+          "end_exclusive": "0x91a0f758",
+          "size": 2128,
+          "inventory_entry_count": 11,
+          "sha256": "d06ae731c260dbe23b3d439f00f29dde8b3dc6a9a59acb9ef3740e9d5370f2ec",
+          "basis": "shared XHttps response-buffer and HTTP parsing object family, bounded by exact SettingsApp product and platform transitions"
+        },
+        {
+          "start": "0x91a0fcb8",
+          "end_exclusive": "0x91a102c8",
+          "size": 1552,
+          "inventory_entry_count": 3,
+          "sha256": "87321252f16f4629520444136e5ce35a724d29ab330e30f15fa8291c6ada089b",
+          "basis": "BearSSL tools/files.c certificate-reader lineage modified with C++ containers and Xbox/platform adaptation; exact normalized counterparts form the same product/mixed adapter in SettingsApp"
+        }
+      ]
+    },
+    "bearssl_0_6": {
+      "inventory_entry_count": 187,
+      "size": 76232,
+      "concatenated_sha256": "582e47e494984681adf17d21f2e5357b7d9d5a8c2b50fb7d1bca633e64a73dcb",
+      "peer_specific": false,
+      "description": "The stock-source-equivalent BearSSL 0.6 codec, cryptographic, X.509, TLS-engine, and client-handshake object family; the preceding modified certificate adapter is excluded.",
+      "evidence": [
+        "exact master secret, key expansion, server finished, and client finished source strings",
+        "three function-local semantic anchors tied to the pinned BearSSL 0.6 source",
+        "the same 187-entry stock core follows the separately classified certificate adapter in SettingsApp; 179 entries and 68,712 bytes match after documented relocation normalization"
+      ],
+      "ranges": [
+        {
+          "start": "0x91a102c8",
+          "end_exclusive": "0x91a22c90",
+          "size": 76232,
+          "inventory_entry_count": 187,
+          "sha256": "582e47e494984681adf17d21f2e5357b7d9d5a8c2b50fb7d1bca633e64a73dcb"
+        }
+      ]
+    },
+    "jsoncpp_00_11_0": {
+      "inventory_entry_count": 170,
+      "size": 43648,
+      "concatenated_sha256": "f5ef08ecdab74f68901811828ede41ce5eff82571a7eb046c6e5799b873e85c3",
+      "peer_specific": false,
+      "description": "JsonCpp 00.11.0 reader/builder followed, after an interposed MSVC container island, by its exception, value, and writer block.",
+      "evidence": [
+        "22 high-confidence function-local reader/value anchors",
+        "exact reader settings and diagnostics, value assertions, and writer %.*g/%.*f strings in the pinned source",
+        "four exception helpers match the same pre-assertion JsonCpp object sequence in SettingsApp and agree with pinned json_value.cpp",
+        "150 entries and 37,664 bytes match the separately linked SettingsApp copy after documented relocation normalization"
+      ],
+      "ranges": [
+        {
+          "start": "0x91a22c90",
+          "end_exclusive": "0x91a2a4e8",
+          "size": 30808,
+          "inventory_entry_count": 100,
+          "sha256": "db72dc3af57f9e848e8214fd3751a4fb83e61eb869f947469bea5b0b94c24831",
+          "basis": "CharReaderBuilder and OurReader block through OurCharReader::parse"
+        },
+        {
+          "start": "0x91a2af30",
+          "end_exclusive": "0x91a2e158",
+          "size": 12840,
+          "inventory_entry_count": 70,
+          "sha256": "07af8c32dd56c60ccea3182311c3f7d898489a86a739c34788925c7a892b5c52",
+          "basis": "Json exception/throw helpers, assert-json, Json::Value, and writer block ending at the XEX entry stub"
+        }
+      ]
+    },
+    "unknown": {
+      "inventory_entry_count": 5,
+      "size": 608,
+      "concatenated_sha256": "2bbbb667947b25c4c1fcff6820fa8e83a2ec8b5469c75cfbf1b76509dc1038da",
+      "peer_specific": null,
+      "description": "Xbox-network-facing wrappers whose role and import calls are known but whose implementation provenance is not established by pinned source or diagnostic runtime anchors.",
+      "ranges": [
+        {
+          "start": "0x91a0d9f8",
+          "end_exclusive": "0x91a0dc58",
+          "size": 608,
+          "inventory_entry_count": 5,
+          "sha256": "2bbbb667947b25c4c1fcff6820fa8e83a2ec8b5469c75cfbf1b76509dc1038da",
+          "basis": "calls Xbox imports and maintains errno-like state, but XDK-facing role and cross-component use do not prove Microsoft/XDK implementation provenance"
+        }
+      ]
+    }
+  },
+  "unknown_refinement": {
+    "before": {"inventory_entry_count":97,"size":15720},
+    "reassigned_to_platform_toolchain": {"inventory_entry_count":71,"size":8720},
+    "reassigned_to_jsoncpp_00_11_0": {"inventory_entry_count":4,"size":344},
+    "reassigned_to_product_application_or_glue": {"inventory_entry_count":17,"size":6048},
+    "reassigned_to_bearssl_0_6": {"inventory_entry_count":0,"size":0},
+    "after": {"inventory_entry_count":5,"size":608}
+  },
+  "caveats": [
+    "The shared XHttps range is classified as product integration glue at the component boundary; this is not a claim that its implementation was personally authored by any Peer Pressure contributor.",
+    "The three-function certificate adapter has pinned BearSSL tools/files.c lineage but remains product/mixed because its C++ and Xbox/platform adaptation is not stock-source-equivalent.",
+    "The five Xbox-network-facing wrappers at 0x91a0d9f8-0x91a0dc58 remain unknown: API role and import calls alone are not platform provenance.",
+    "Relocation-normalized cross-component equality is corroborating evidence only. It does not by itself identify an upstream project or an individual author.",
+    "The partition covers initialized .text bytes and the 804 discovered inventory entries. It does not claim that exception metadata discovers every possible unlabeled internal entry point.",
+    "Stock BearSSL, JsonCpp, proven MSVC/XDK, startup, and import implementations are not reconstruction targets; product/mixed and unknown extents remain in the queue."
+  ],
+  "totals": {
+    "inventory_entry_count": 804,
+    "instruction_size": 226028,
+    "category_count": 5,
+    "classified_entry_count": 799,
+    "classified_size": 225420,
+    "upstream_library_entry_count": 357,
+    "upstream_library_size": 119880
+  }
+}

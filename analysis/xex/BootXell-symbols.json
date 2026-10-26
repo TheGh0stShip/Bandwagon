@@ -10,6 +10,20 @@
       "evidence": ["searches for updxell.bin, flashdmp.bin, and updflash.bin", "zeroes each matched name and an immediately preceding slash, then writes sentinel byte 1"]
     },
     {
+      "address": "0x91a05260",
+      "recovered_name": "fn_91A05260",
+      "semantic_name": "InflateRawDeflateBuffer",
+      "confidence": "high",
+      "evidence": ["constructs the standard miniz mz_stream layout and calls mz_inflateInit2, mz_inflate(MZ_FINISH), and mz_inflateEnd", "uses window bits -15 instead of miniz's stock zlib-wrapped mz_uncompress helper", "preserves the stock MZ_BUF_ERROR with exhausted input to MZ_DATA_ERROR conversion"]
+    },
+    {
+      "address": "0x91a05338",
+      "recovered_name": "fn_91A05338",
+      "semantic_name": "DeflateRawDeflateBuffer",
+      "confidence": "high",
+      "evidence": ["constructs the standard miniz mz_stream layout and calls mz_deflateInit2, mz_deflate(MZ_FINISH), and mz_deflateEnd", "selects level 10, method 8, window bits -15, memory level 9, and default strategy", "preserves the stock MZ_OK to MZ_BUF_ERROR conversion when the stream does not finish"]
+    },
+    {
       "address": "0x91a05410",
       "recovered_name": "fn_91A05410",
       "semantic_name": "SanitizeXellImage",

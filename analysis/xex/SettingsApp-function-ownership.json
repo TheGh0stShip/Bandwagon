@@ -1,0 +1,453 @@
+{
+  "schema": "bandwagon-settingsapp-function-ownership-v1",
+  "status": "exhaustive_conservative_partition",
+  "policy": "Every SettingsApp function inventory extent and every byte of the initialized .text virtual range is assigned exactly once. Product application/glue is a component-level reconstruction priority, not a claim of personal authorship, novelty, or copyright ownership. Evidenced stock open-source libraries, compiler/XDK/toolchain support, and import thunks are outside the Peer-specific lifting target. Unpinned adapters remain product/mixed or unknown even when they serve platform or graphics roles.",
+  "limitations": [
+    "The inventory uses size_to_next_symbol extents, so function byte totals include normal linker alignment between adjacent starts.",
+    "A contiguous object-family range can include compiler-generated templates or adapters emitted for that object; the category describes the strongest provenance boundary supported by the present binary evidence.",
+    "The shared HTTP layer is classified as product integration glue, not as evidence that its implementation was personally authored by any named contributor.",
+    "The BearSSL-derived certificate reader is kept in the product/mixed-adapter queue because the binary includes C++/platform adaptation around pinned tools/files.c logic; JsonCpp exception ownership includes two compiler-generated destructor variants.",
+    "The XPR2 packed-resource helpers and Xbox360/DX9 backend are known roles but remain unknown provenance because no exact public/toolchain implementation is pinned; role alone does not exclude them from closed-source reconstruction.",
+    "Product classification does not identify an individual author."
+  ],
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe",
+    "format": "memory-layout PE image extracted from PeerPressure/System/SettingsApp.xex",
+    "load_address": "0x82000000",
+    "size": 2555904,
+    "sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/SettingsApp-functions.json",
+    "schema": "bandwagon-xbox-pdata-functions-v1",
+    "sha256": "db1b3fc77c2f56d7c2ef242fb1a7f19d006fddc3c71af906f5a801e34c446797",
+    "entry_count": 1824,
+    "pdata_record_count": 1680,
+    "idc_name_count": 144
+  },
+  "evidence_artifacts": {
+    "semantic_symbols": {
+      "path": "analysis/xex/SettingsApp-symbols.json",
+      "schema": "bandwagon-settingsapp-semantic-symbols-v1",
+      "sha256": "a22f14cd7bdb119752f777f6569d41e69e44bbb19a37483d7a589a8574af0364"
+    },
+    "third_party_symbols": {
+      "path": "analysis/xex/SettingsApp-thirdparty-symbols.json",
+      "schema": "bandwagon-settingsapp-thirdparty-symbols-v1",
+      "sha256": "66ef78c1f5a317a42aeaf155e6d0d4e7e7409c23d49b741627dfb2573a7c2e86"
+    },
+    "provenance": {
+      "path": "analysis/xex/SettingsApp-provenance.json",
+      "schema": "bandwagon-settingsapp-provenance-v1",
+      "sha256": "b852797bd574f004806f5ee483c77f978c8ab13da26e659439dbe8cf16930193"
+    },
+    "string_xrefs": {
+      "path": "analysis/xex/SettingsApp-string-xrefs.json",
+      "schema": "bandwagon-ppc-string-xrefs-v1",
+      "sha256": "9a34f7db91772e1b75bdb5b952453285849f01f2287e5f8600ed23724eabe2a3"
+    },
+    "callgraph": {
+      "path": "analysis/xex/SettingsApp-callgraph.json",
+      "schema": "bandwagon-ppc-direct-callgraph-v1",
+      "sha256": "80bd1d8c7dc90e1ad5470efa79e03b695e22b779f91f6cf871255126b9ffd611"
+    },
+    "shared_function_fingerprints": {
+      "path": "analysis/xex/shared-function-fingerprints.json",
+      "schema": "bandwagon-shared-xex-functions-v1",
+      "sha256": "f00acc1ded92c15bfe04ec8700d14aa478d517a582805b436ec944d9b6467896"
+    },
+    "updater_source_attribution": {
+      "path": "analysis/xex/Updater-source-attribution.json",
+      "schema": "bandwagon-updater-source-attribution-v1",
+      "sha256": "f199a9c239ada0cbda6af8412ba83997a2fd1524aa4a919013f3b3757da90552"
+    },
+    "updater_provenance": {
+      "path": "analysis/xex/Updater-provenance.json",
+      "schema": "bandwagon-updater-provenance-v1",
+      "sha256": "6b0f6aa5985cf7fd2b1c313b6dda731bb8d30dde05890768d7681d87c2c66cde"
+    }
+  },
+  "code_region": {
+    "section": ".text",
+    "rva": "0x00020000",
+    "file_offset": "0x00020000",
+    "start": "0x82020000",
+    "end_exclusive": "0x820b975c",
+    "size": 628572,
+    "sha256": "051ce3e3064b79729e0785de15f1b53315b89e3ec0bada2db5d6d3c335ed3d1f"
+  },
+  "upstream_sources": {
+    "dear_imgui_1_86": {
+      "name": "Dear ImGui",
+      "version": "1.86",
+      "vendored_root": "third_party/imgui",
+      "commit": "512c54bbc062c41c74f8a8bd8ff1fd6bebd1e6d0",
+      "license": "MIT"
+    },
+    "bearssl_0_6": {
+      "name": "BearSSL",
+      "version": "0.6",
+      "vendored_root": "third_party/BearSSL",
+      "commit": "8ef7680081c61b486622f2d983c0d3d21e83caad",
+      "license": "MIT"
+    },
+    "jsoncpp_00_11_0": {
+      "name": "JsonCpp",
+      "version": "00.11.0",
+      "vendored_root": "third_party/jsoncpp",
+      "commit": "7c186e549fba358ac0541ed75f5a524b393954b3",
+      "license": "MIT"
+    },
+    "miniz_3_1_1": {
+      "name": "Miniz",
+      "version": "3.1.1",
+      "vendored_root": "third_party/miniz",
+      "commit": "d10b03cc73475af673df40f06e5cefd1d5f940d9",
+      "license": "MIT"
+    }
+  },
+  "classification_anchors": {
+    "product_semantic_symbols": {
+      "artifact": "semantic_symbols",
+      "expected_count": 15,
+      "required_category": "peer_product_application_glue"
+    },
+    "third_party_symbols": {
+      "artifact": "third_party_symbols",
+      "expected_count": 28,
+      "ownership_to_category": {
+        "Dear ImGui 1.86": "upstream_dear_imgui_1_86",
+        "BearSSL 0.6": "upstream_bearssl_0_6",
+        "JsonCpp 00.11.0": "upstream_jsoncpp_00_11_0"
+      }
+    },
+    "entry_point": {
+      "address": "0x8202e0e0",
+      "name": "_start",
+      "required_category": "platform_toolchain_graphics"
+    },
+    "import_thunks": {
+      "start": "0x820b8e6c",
+      "end_exclusive": "0x820b975c",
+      "expected_count": 143,
+      "allowed_name_prefixes": ["xam_xex_", "xboxkrnl_exe_", "__imp_xboxkrnl_exe_"],
+      "required_category": "platform_import_thunks"
+    },
+    "packed_resource_cross_component": {
+      "method": "BootEdit independently links the same Xbox packed-resource helper family. The loaders recognize XPR2 and TX records, walk 16-byte resource entries, fix physical-resource offsets, and expose lookup/size/data accessors. This proves they are not Dear ImGui core, but without a pinned exact public implementation it does not prove platform/toolchain provenance.",
+      "bootedit_image": {
+        "path": "analysis/xex/basefiles/PeerPressure_System_BootEdit.pe",
+        "size": 2228224,
+        "sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8"
+      },
+      "bootedit_function_inventory": {
+        "path": "analysis/xex/BootEdit-functions.json",
+        "schema": "bandwagon-xbox-pdata-functions-v1",
+        "sha256": "83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025",
+        "entry_count": 934
+      },
+      "bootedit_text_file_offset": "0x00010000",
+      "settings_packed_resource_range": {
+        "start": "0x8205d3d8",
+        "end_exclusive": "0x8205d688",
+        "required_category": "unknown"
+      },
+      "settings_graphics_backend_prelude": {
+        "start": "0x8205d688",
+        "end_exclusive": "0x8205d840",
+        "required_category": "unknown"
+      },
+      "required_call_edges": [
+        {"caller":"0x8204d198","target":"0x8205d3d8"},
+        {"caller":"0x8204d198","target":"0x8205d610"},
+        {"caller":"0x8204d198","target":"0x8205d640"},
+        {"caller":"0x8205d610","target":"0x8205d590"},
+        {"caller":"0x8205d640","target":"0x8205d590"},
+        {"caller":"0x8205db30","target":"0x8205d688"}
+      ],
+      "required_magic_bytes": [
+        {"settings_address":"0x8205d3d8","bootedit_address":"0x82052a88","settings_hex":"3d605850616b5232","bootedit_hex":"3d405850614a5232","meaning":"XPR2"},
+        {"settings_address":"0x8205d3d8","bootedit_address":"0x82052a88","settings_hex":"2b0a5458","bootedit_hex":"2b0a5458","meaning":"TX record"}
+      ],
+      "normalized_function_comparisons": [
+        {"settings_address":"0x8205d590","bootedit_address":"0x82052c48","settings_extent_size":128,"bootedit_extent_size":128,"comparison_size":128,"normalized_sha256":"3453bfeb20cd766635fd3e8bccadfc71e631faecab007f21a702f0e9b7a702cb"},
+        {"settings_address":"0x8205d610","bootedit_address":"0x82052cc8","settings_extent_size":48,"bootedit_extent_size":48,"comparison_size":48,"normalized_sha256":"0d6c84184f6b2346c1fb2502e32ca8aa9a9d88560e466891fe12209de98cc33e"},
+        {"settings_address":"0x8205d640","bootedit_address":"0x82052cf8","settings_extent_size":72,"bootedit_extent_size":88,"comparison_size":72,"normalized_sha256":"9438a8f2e184c2e71a8b576f242363bb5806bc8f3958db6112e04db1ac9d8892"}
+      ]
+    },
+    "unknown_bucket_refinement": {
+      "method": "Previously unknown functions are split only at inventory boundaries. Relocation-normalized cross-XEX identity corroborates object families; SettingsApp call topology and strings distinguish product HTTP integration, MSVC vector support, BearSSL certificate loading, and JsonCpp exception support. Shared code is not a personal-authorship claim.",
+      "updatecheck_image": {
+        "path": "analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
+        "size": 278528,
+        "sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece"
+      },
+      "updatecheck_function_inventory": {
+        "path": "analysis/xex/UpdateCheck-functions.json",
+        "schema": "bandwagon-xbox-pdata-functions-v1",
+        "sha256": "cfa45de4e8b31be13df83acfe2b6cb2387464a6da1944bc9fbe74dfd4ea9e877",
+        "entry_count": 804
+      },
+      "updatecheck_text_file_offset": "0x0000a000",
+      "product_http_integration": {
+        "start": "0x8205e8b0",
+        "end_exclusive": "0x8205efd8",
+        "required_category": "peer_product_application_glue",
+        "required_call_edges": [
+          {"caller":"0x820247e0","target":"0x8205e970"},
+          {"caller":"0x820247e0","target":"0x8205ea00"},
+          {"caller":"0x820247e0","target":"0x8205ed38"},
+          {"caller":"0x82024a58","target":"0x8205ec00"},
+          {"caller":"0x82024c18","target":"0x8205ec00"}
+        ],
+        "required_string_owners": [
+          {"address":"0x8205eaf0","string":"HTTP/"},
+          {"address":"0x8205edc8","string":"content-length:"}
+        ],
+        "exact_normalized_function_pairs": [
+          {"settings_address":"0x8205e8b0","updatecheck_address":"0x91a0ef08","size":192,"normalized_sha256":"c95b6d28c339b9cb73a9bdec38c1e66a36f944a7fe90482221742404f2d9e051"},
+          {"settings_address":"0x8205ec00","updatecheck_address":"0x91a0f260","size":80,"normalized_sha256":"fc42e668d961f97e5b682ccf8c586f15f3575c2914d7e6c3a7fa845656e78edd"},
+          {"settings_address":"0x8205edc8","updatecheck_address":"0x91a0f548","size":528,"normalized_sha256":"0dd4489d5fb08617da2e6816fbbf7be40ba97b0a8cf1b9784525466c45f533de"}
+        ]
+      },
+      "platform_vector_support": {
+        "start": "0x8205efd8",
+        "end_exclusive": "0x8205f480",
+        "required_category": "platform_toolchain_graphics",
+        "required_string_owners": [
+          {"address":"0x8205f188","string":"vector<T> too long"},
+          {"address":"0x8205f278","string":"vector<T> too long"}
+        ],
+        "exact_normalized_function_pairs": [
+          {"settings_address":"0x8205efd8","updatecheck_address":"0x91a0f758","size":104,"normalized_sha256":"b50f994fcae53d0cefefe813061ee83403ca8613bf50955363c3b02790f5af7d"},
+          {"settings_address":"0x8205f0a8","updatecheck_address":"0x91a0f7c0","size":224,"normalized_sha256":"ca9d5f3cf4c3a5441abc4203cc1c6a7295a5d3fad996d00017b04f9ea9c64431"},
+          {"settings_address":"0x8205f188","updatecheck_address":"0x91a0f908","size":240,"normalized_sha256":"70da469b0cbd5062b51180202f8641dc1aa532c8115371c0bf39923a17363e3e"},
+          {"settings_address":"0x8205f278","updatecheck_address":"0x91a0f9f8","size":464,"normalized_sha256":"187f69e09fdf84e86e9872c4d9bcff5ca753cce8ac7bca37f16e0505b074d0c7"},
+          {"settings_address":"0x8205f448","updatecheck_address":"0x91a0fc80","size":56,"normalized_sha256":"77cc9a90fb8c6b20a7a6f7847f85b1e84ec8a4dd798418e182f09d4073476e21"}
+        ]
+      },
+      "bearssl_certificate_loader": {
+        "start": "0x8205f480",
+        "end_exclusive": "0x8205fa90",
+        "required_category": "peer_product_application_glue",
+        "source": {
+          "path": "third_party/BearSSL/tools/files.c",
+          "sha256": "c1286515150bb89af8688357b4adf1f1ede5147b6c491684d4b2dab58cc1f5e6",
+          "contains": ["CERTIFICATE", "X509 CERTIFICATE", "read_certificates"]
+        },
+        "required_string_owners": [
+          {"address":"0x8205f7a0","string":"CERTIFICATE"},
+          {"address":"0x8205f7a0","string":"X509 CERTIFICATE"}
+        ],
+        "exact_normalized_function_pairs": [
+          {"settings_address":"0x8205f480","updatecheck_address":"0x91a0fcb8","size":584,"normalized_sha256":"48e38d924a904b98ad6a910bcb8e46874189813c2c9a8f657280b9df906de2b8"},
+          {"settings_address":"0x8205f6c8","updatecheck_address":"0x91a0ff00","size":216,"normalized_sha256":"6c579c43c9357e0b3edc08aa085a2f3bd075986566da11bf946c6b5cd78d2f5b"},
+          {"settings_address":"0x8205f7a0","updatecheck_address":"0x91a0ffd8","size":752,"normalized_sha256":"bd7ae9f50e716f2d56d43f4c4afb41a389baccdee2c0de9aec4710e6e3ed61fe"}
+        ]
+      },
+      "jsoncpp_exception_support": {
+        "start": "0x82073018",
+        "end_exclusive": "0x82073200",
+        "required_category": "upstream_jsoncpp_00_11_0",
+        "compiler_generated_variant_addresses": ["0x820730d8", "0x820731c0"],
+        "source": {
+          "path": "third_party/jsoncpp/src/lib_json/json_value.cpp",
+          "sha256": "c5f61de248d3f6212c668141d29e780a31c5f77de32aa9897bc1ff9806b734cb",
+          "contains": [
+            "Exception::Exception(String msg)",
+            "RuntimeError::RuntimeError(String const& msg)",
+            "LogicError::LogicError(String const& msg)",
+            "throwRuntimeError(String const& msg)",
+            "throwLogicError(String const& msg)"
+          ]
+        },
+        "exact_normalized_function_pairs": [
+          {"settings_address":"0x82073018","updatecheck_address":"0x91a2af30","size":104,"normalized_sha256":"313cd5571704146288261c8f8fdf38ab4a5e657d7fdc072088e95be5de8246cc"},
+          {"settings_address":"0x82073080","updatecheck_address":"0x91a2af98","size":88,"normalized_sha256":"293ed9ea31e478286c0656da4bcf0e23bb67c6f2294e61b08ff4c1367381a6e4"},
+          {"settings_address":"0x82073128","updatecheck_address":"0x91a2aff0","size":64,"normalized_sha256":"0096f0ac333656ee5bdbd8f5c970bff20ca904fca9365a5625bd00421e0a4599"},
+          {"settings_address":"0x82073168","updatecheck_address":"0x91a2b030","size":88,"normalized_sha256":"23aedba62e5aaf7fef60f27a3190eeaa80ef18d788d1c4233d7ed4a10b530188"}
+        ]
+      }
+    },
+    "miniz_cross_component": {
+      "method": "Direct branch targets and image-pointer operands are masked; opcode/register structure and every other instruction bit remain. Nine functions then match Updater's proven Miniz block exactly, and the leading 5,288-byte inflater matches in 1,315 of 1,322 normalized words.",
+      "updater_image": {
+        "path": "analysis/xex/basefiles/Updater.pe",
+        "size": 118784,
+        "sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c"
+      },
+      "updater_function_inventory": {
+        "path": "analysis/xex/Updater-functions.json",
+        "schema": "bandwagon-xbox-coff-functions-v1",
+        "sha256": "d72f84938cdace8ec6833248d2942afed55a37a6ee73c913120fd32441d6a34d",
+        "entry_count": 376
+      },
+      "updater_text_file_offset": "0x00005000",
+      "updater_source_attribution_artifact": "updater_source_attribution",
+      "updater_proven_range": {
+        "start": "0x98008d68",
+        "end_exclusive": "0x9800ce38",
+        "classification": "miniz compression and ZIP library"
+      },
+      "first_inflater_shape": {
+        "settings_address": "0x8207cb18",
+        "updater_address": "0x98008d68",
+        "size": 5288,
+        "word_count": 1322,
+        "equal_word_count": 1315
+      },
+      "exact_normalized_function_pairs": [
+        {"settings_address":"0x8207e098","updater_address":"0x9800a210","size":288,"normalized_sha256":"196cad9da7b6158bc27046e8346f68d0d49a90e8a8c31bd325e77b5a2d7d17c8"},
+        {"settings_address":"0x8207e1b8","updater_address":"0x9800a330","size":1248,"normalized_sha256":"17da3ac87470a4edc1a5c3f23c6b391ee3878fc6ba0d426560c4f2724ecf01c2"},
+        {"settings_address":"0x8207e698","updater_address":"0x9800a810","size":296,"normalized_sha256":"5266b93e3a90b478d0f4aa61b2afa7be2f6de02c87410d35eabc2dbdd57d2b3b"},
+        {"settings_address":"0x8207e7c0","updater_address":"0x9800a938","size":2672,"normalized_sha256":"c10dc4db96b055447fcb8b1cde3d2a107bfad34c447a93ba46b22424d36cf809"},
+        {"settings_address":"0x8207f230","updater_address":"0x9800b3a8","size":320,"normalized_sha256":"e39343545a77240edc294ee1df40b452673b2c0a58ab27ef1c7f5c97129acf6d"},
+        {"settings_address":"0x8207f370","updater_address":"0x9800b4e8","size":120,"normalized_sha256":"fe7d8f66dacd80de4d2a8a141887dca7ae6c266bd05ef3326416891c404374ea"},
+        {"settings_address":"0x8207f3e8","updater_address":"0x9800b560","size":208,"normalized_sha256":"ecf67a4c65c5472b784fa43534644118dcff4b681a1004614b619848622c42e0"},
+        {"settings_address":"0x8207f718","updater_address":"0x9800b810","size":1360,"normalized_sha256":"4ba89be6fff2aa7f0339c2080e504f75dc5f5cff3de91cc04e50d7bf400bdcb3"},
+        {"settings_address":"0x8207fc68","updater_address":"0x9800bd60","size":384,"normalized_sha256":"73133629a62b99622d73cbe0697fa3fb34b29e77af937b1e0e1aeedc7de65234"}
+      ]
+    }
+  },
+  "categories": {
+    "peer_product_application_glue": {
+      "inventory_entry_count": 246,
+      "size": 62264,
+      "concatenated_sha256": "51cdf0067345fd0108c80e9e4770adcc893598d7793104c66fa16cb3ea5a4ca8",
+      "product_specific": true,
+      "personal_authorship_claim": false,
+      "confidence": "high at the component boundary; individual generic helpers are not originality claims",
+      "description": "Settings/update policy, UI orchestration, filesystem/network adapters, the component-specific font-loading island, the HTTP integration layer, and a BearSSL-derived certificate-reader adaptation. This includes compiler-emitted template bodies linked on behalf of product translation units.",
+      "evidence": [
+        "all 15 high-confidence SettingsApp semantic symbols fall in the first range",
+        "Peer-specific PPROOT, update, boot-animation, dashboard, OtherOS, NAND-policy, and version strings are confined to the first range",
+        "the second range is the five-function UIDATA/NotoSans font integration island between ImGui object families",
+        "the third range is called directly by recovered release-asset/changelog/latest-release routines, owns HTTP protocol/header strings, and has exact normalized matches in UpdateCheck's corresponding integration layer",
+        "the fourth range contains pinned BearSSL tools/files.c certificate-reader logic but remains a product/mixed adapter because its C++/platform replacement delta is not stock-source-equivalent"
+      ],
+      "ranges": [
+        {"start":"0x82020000","end_exclusive":"0x8202e0e0","size":57568,"inventory_entry_count":228,"sha256":"7f87cfee75a63fdf5ef5a8e34ec84185cb2ca2725a4197fddf69469a4adea4df"},
+        {"start":"0x8204d140","end_exclusive":"0x8204d660","size":1312,"inventory_entry_count":5,"sha256":"1a86f1280aee4a171de5f2042ad5788521d3f701585486bbce71825994b668fe"},
+        {"start":"0x8205e8b0","end_exclusive":"0x8205efd8","size":1832,"inventory_entry_count":10,"sha256":"0ca8330d16509b843ca7a688bb7f7d9740076225fa4f937343f2349063183a0c"},
+        {"start":"0x8205f480","end_exclusive":"0x8205fa90","size":1552,"inventory_entry_count":3,"sha256":"57dee984442b751df96f5a76e147859073b370c66d708681d1732c3becfd6f67"}
+      ]
+    },
+    "platform_toolchain_graphics": {
+      "inventory_entry_count": 689,
+      "size": 261508,
+      "concatenated_sha256": "719ab0f51d80d159878f98e9e78a2ca08c61facd1497cc45401757d0be1ae239",
+      "product_specific": false,
+      "confidence": "medium to high by subrange",
+      "description": "MSVC/XDK startup, standard-library and exception support, compiler helpers, CRT/math, and interposed C++ template helpers. The unpinned XPR2 and Xbox 360/DX9 integration ranges are deliberately excluded from this category.",
+      "evidence": [
+        "the first range begins exactly at _start and contains cross-XEX startup/runtime bodies plus standard-library diagnostics",
+        "0x8205efd8-0x8205f480 is a bounded MSVC vector-support island with vector<T> too long diagnostics and five exact normalized UpdateCheck matches",
+        "0x820723f8-0x82073018 maps to the helper block interposed between BearSSL and JsonCpp object families and contains the invalid map/set<T> iterator path",
+        "the final range begins with bodies shared by BootEdit, BootXell, UpdateCheck, and Updater, contains __savegprlr and Visual C++ CRT diagnostics, and stops at the first named import thunk"
+      ],
+      "ranges": [
+        {"start":"0x8202e0e0","end_exclusive":"0x82034830","size":26448,"inventory_entry_count":106,"sha256":"0eb9a3be2de0dfd7e3d403e9fd4178bd3dc80abe166aee0383e910c84d14a027"},
+        {"start":"0x8205efd8","end_exclusive":"0x8205f480","size":1192,"inventory_entry_count":6,"sha256":"cb047faf2ff33e02f5583f2693968c9dffc288634d83e53caeafa3d61e4700c1"},
+        {"start":"0x820723f8","end_exclusive":"0x82073018","size":3104,"inventory_entry_count":12,"sha256":"84c8c40d9de70c3062b35241d41ee40bb929b8e101efbebd3627441a00a288ef"},
+        {"start":"0x82080900","end_exclusive":"0x820b8e6c","size":230764,"inventory_entry_count":565,"sha256":"7070767539cc191bbb5e2a6d2f7829fe53dacc7ff114c62a87020f0d033affd4"}
+      ]
+    },
+    "platform_import_thunks": {
+      "inventory_entry_count": 143,
+      "size": 2288,
+      "concatenated_sha256": "963233c7b3ca7d7ddbbe6f9500af4204edbae7b05bac94ec49561821c33a8474",
+      "product_specific": false,
+      "confidence": "high",
+      "description": "Named XAM and xboxkrnl import thunks recovered from XEX import metadata.",
+      "ranges": [
+        {"start":"0x820b8e6c","end_exclusive":"0x820b975c","size":2288,"inventory_entry_count":143,"sha256":"963233c7b3ca7d7ddbbe6f9500af4204edbae7b05bac94ec49561821c33a8474"}
+      ]
+    },
+    "upstream_dear_imgui_1_86": {
+      "inventory_entry_count": 376,
+      "size": 165512,
+      "concatenated_sha256": "af4ddce29aff63c694e9a0adff413cf35cf41853352c892c701b0cba4af8ec48",
+      "product_specific": false,
+      "confidence": "high at object-family boundaries",
+      "description": "Dear ImGui 1.86 core, widgets, drawing/font, and table object families, excluding the component font loader, XPR2 packed-resource family, and Xbox 360/DX9 backend block.",
+      "evidence": [
+        "the first range begins with the same 136/320/624-byte function sequence as BootEdit's ImGui block",
+        "the exact 1.86 version checker at 0x820364b8 and upstream ini/debug/navigation/widget strings occur throughout the ranges",
+        "the second range resumes at the ImGui draw/font sequence shared with BootEdit and ends immediately before the XPR2 packed-resource loader"
+      ],
+      "ranges": [
+        {"start":"0x82034830","end_exclusive":"0x8204d140","size":100624,"inventory_entry_count":234,"sha256":"3418497f61246e6e5b948a3f73c1f61c98e7c4b3142ddb3f990a23953a58e5ab"},
+        {"start":"0x8204d660","end_exclusive":"0x8205d3d8","size":64888,"inventory_entry_count":142,"sha256":"b6a0fce396fe55e3975721d52bb747a3cb99ce1f2d857faac0e829c5abd02b48"}
+      ]
+    },
+    "upstream_bearssl_0_6": {
+      "inventory_entry_count": 187,
+      "size": 76136,
+      "concatenated_sha256": "5d177af3a36d5853f54be4f88eb671835d32b2ae495a536ca453ae96487cb3e7",
+      "product_specific": false,
+      "confidence": "high",
+      "description": "The contiguous stock-attributed BearSSL 0.6 cryptographic/TLS core shared with UpdateCheck, excluding the preceding adapted certificate reader and ending before the interposed C++ helper block.",
+      "evidence": [
+        "the range has the same 187 inventory entries as UpdateCheck's BearSSL core and extensive relocation-normalized cross-component matches",
+        "br_ssl_engine_compute_master, compute_key_block, and br_ssl_hs_client_run are independently anchored by exact TLS labels",
+        "the pinned BearSSL 0.6 source and component provenance agree"
+      ],
+      "ranges": [
+        {"start":"0x8205fa90","end_exclusive":"0x820723f8","size":76136,"inventory_entry_count":187,"sha256":"5d177af3a36d5853f54be4f88eb671835d32b2ae495a536ca453ae96487cb3e7"}
+      ]
+    },
+    "upstream_jsoncpp_00_11_0": {
+      "inventory_entry_count": 153,
+      "size": 39680,
+      "concatenated_sha256": "7c0036320fbaf5ec0555a528ee03d3ee8a9d198406bfc6c5684fba6b481cfc95",
+      "product_specific": false,
+      "confidence": "high",
+      "description": "JsonCpp 00.11.0 exception, Value, reader, and writer object families, including two compiler-emitted exception destructor variants.",
+      "evidence": [
+        "the range begins with the pinned json_value.cpp Exception/RuntimeError/LogicError/throw-helper sequence; four functions exactly match UpdateCheck and two interleaved entries are compiler-generated variants",
+        "the assert json failed support and following object families contain 24 independently named upstream routines",
+        "reader option, conversion, Unicode, parse, and duplicate-string diagnostics match pinned JsonCpp 00.11.0",
+        "the %.*g/%.*f writer format occurs immediately before the Miniz boundary"
+      ],
+      "ranges": [
+        {"start":"0x82073018","end_exclusive":"0x8207cb18","size":39680,"inventory_entry_count":153,"sha256":"7c0036320fbaf5ec0555a528ee03d3ee8a9d198406bfc6c5684fba6b481cfc95"}
+      ]
+    },
+    "upstream_miniz_3_1_1": {
+      "inventory_entry_count": 17,
+      "size": 15848,
+      "concatenated_sha256": "f0b9401c166ceb98876abf47fdf54af901093ac442d87f216e2eaaa06effd537",
+      "product_specific": false,
+      "confidence": "high family attribution; exact 3.1.1 revision combines the author declaration, Updater evidence, and pinned source",
+      "description": "SettingsApp's linked Miniz ZIP/inflate subset.",
+      "evidence": [
+        "the first 5,288-byte function is structurally the same inflater that begins Updater's proven Miniz range",
+        "nine following functions are byte-identical to Updater Miniz after only direct-branch and image-pointer operand normalization",
+        "Updater's complete Miniz 3.x error table plus the author declaration pins release 3.1.1"
+      ],
+      "ranges": [
+        {"start":"0x8207cb18","end_exclusive":"0x82080900","size":15848,"inventory_entry_count":17,"sha256":"f0b9401c166ceb98876abf47fdf54af901093ac442d87f216e2eaaa06effd537"}
+      ]
+    },
+    "unknown": {
+      "inventory_entry_count": 13,
+      "size": 5336,
+      "concatenated_sha256": "1f2b3b73783e3613dfd9a47611593d87852e64bc1b8722359d4699353f5e1fe1",
+      "product_specific": null,
+      "confidence": "role is high confidence; original implementation provenance is unresolved",
+      "description": "XPR2 packed-resource helpers, an adjacent graphics helper, and the Xbox360/DX9 ImGui backend. Their role is known and they are not ImGui core, but no exact public/toolchain source is pinned, so they remain in the closed-source reconstruction queue.",
+      "ranges": [
+        {"start":"0x8205d3d8","end_exclusive":"0x8205e8b0","size":5336,"inventory_entry_count":13,"sha256":"1f2b3b73783e3613dfd9a47611593d87852e64bc1b8722359d4699353f5e1fe1"}
+      ]
+    }
+  },
+  "totals": {
+    "inventory_entry_count": 1824,
+    "code_size": 628572,
+    "category_count": 8,
+    "ownership_map_encoding": "ranges sorted by start; ASCII category, NUL, eight-digit lowercase start, NUL, eight-digit lowercase end, newline",
+    "ownership_map_sha256": "6cfeb3bb1a02517efed8cfd197f0cb8585d0ab2d4d0e5db2d059f017609c9e90",
+    "category_totals_encoding": "UTF-8 canonical JSON with sort_keys=true and separators comma/colon over categories, inventory_entry_count, code_size, category_count",
+    "category_totals_sha256": "8f5e4b924c6004476757688905a2a98dac33d3d164be25705f0dcf7525236973"
+  }
+}

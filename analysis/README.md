@@ -52,13 +52,16 @@ kernel import thunks, and emits a machine-readable address inventory. The
 entire 88,640-byte Updater `.text` section now has a buildable, byte-identical
 assembly reconstruction. Its initialized `.rdata`, `.pdata`, and `.data`
 sections are also exactly reconstructable. Reproducible call/string graphs,
-source attribution, semantic symbols, and a portable tested reconstruction of
-the Stage2 bootstrap-record builder are tracked alongside it.
+semantic symbols, and a portable tested reconstruction of the Stage2
+bootstrap-record builder are tracked alongside it. Exhaustive ownership
+reduces the readable-source target to 20 product entries / 6,728 bytes; 356
+miniz/platform/toolchain entries are excluded.
 
 `xex/BootXell.md` documents the OtherOS launcher. Its complete initialized
 `.text`, `.rdata`, `.pdata`, and `.data` ranges now have byte-identical assembly
 source, plus reproducible function, call, string-reference, and semantic-symbol
-inventories.
+inventories. Every one of its 256 code entries is classified and all 9 product
+routines / 2,944 bytes now have tested readable source.
 
 `xex/AuroraFixer.md` reconstructs the SideLoading compatibility DLL. Its full
 initialized code/data image is byte-identical assembly, and its process-attach
@@ -68,16 +71,27 @@ The pure branch encoder also has a portable C++ reconstruction and host test.
 `xex/UpdateCheck.md` reconstructs the network update checker, including the
 trusted-root path, GitHub latest-release endpoint, HTTP status gate, JSON
 `tag_name` lookup, and three-component release version parser. All initialized
-sections have exact assembly source and reproducible static-analysis maps.
+sections have exact assembly source and reproducible static-analysis maps. Its
+804-entry ownership partition identifies 19 product/mixed integration entries
+/ 6,768 bytes, excludes 780 upstream/platform entries, and conservatively keeps
+5 XDK/network-facing wrappers unknown. Two product routines / 720 bytes are
+already source-covered.
 
 `xex/BootEdit.md` covers the ImGui boot-theme editor: exact initialized
 sections, function/call/string inventories, and semantic names for theme
 enumeration, editing, save/load feedback, settings application, and selection.
+Its exhaustive partition identifies 24 product entries / 14,072 bytes, excludes
+792 pinned-ImGui or proven-platform entries, and conservatively retains 118 entries /
+31,336 bytes as unknown.
 
 `xex/SettingsApp.md` covers the main settings UI. Its entire initialized image
 is exact assembly, with reproducible maps and initial semantic names spanning
 online/offline updates, boot themes, dashboard and OtherOS configuration,
 settings persistence, and displayed Peer/kernel/SMC version information.
+All 1,824 code entries are now partitioned: 246 product/mixed candidates /
+62,264 bytes remain the conservative source-recovery upper bound, 1,565
+upstream/platform entries are excluded, and 13 XPR2/graphics-backend entries
+remain unknown.
 
 `stage2/PeerPressureExploit-Stage2.md` documents the persistent HDD Stage2 ROP
 image and its relocated PowerPC worker. The complete 217,796-byte file now has

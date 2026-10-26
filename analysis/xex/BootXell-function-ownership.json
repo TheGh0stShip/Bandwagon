@@ -1,0 +1,301 @@
+{
+  "schema": "bandwagon-bootxell-function-ownership-v1",
+  "scope": "Exhaustive ownership partition of every initialized BootXell .text inventory entry. Product-specific means part of the Peer Pressure product delta; it is not a claim of personal authorship.",
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_OtherOS_BootXell.pe",
+    "sha256": "4ef810a55390105a0756d2dc48502f8d9fad50edc08d8617fe146bc3ae496ebc",
+    "base_address": "0x91a00000"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/BootXell-functions.json",
+    "sha256": "9434184375188a1f5714aacfb4824707b03ca51ef40076fd94ee98356d3a2c69",
+    "entry_count": 256
+  },
+  "instruction_region": {
+    "start": "0x91a05000",
+    "end_exclusive": "0x91a17458",
+    "size": 74840,
+    "sha256": "accec1f0174a197cf7fd3aa658a84d801c1fa8f660f525d8fce9d570f6cde818"
+  },
+  "upstream_sources": {
+    "inih_r62": {
+      "name": "inih",
+      "version": "r62",
+      "commit": "26254ee9de7681f8825433415443e7116ff24b98",
+      "license": "BSD-3-Clause",
+      "vendored_root": "third_party/inih",
+      "files": [
+        {
+          "path": "ini.c",
+          "sha256": "c071f6f04d28e8cf8aaf648c568708caca0bbc8d9f77ab25738421688396d506"
+        },
+        {
+          "path": "ini.h",
+          "sha256": "7b03bf19c593c239ca7f795ac99884e0e165ea5ada5d845460d6cc1a1760b76a"
+        }
+      ]
+    },
+    "miniz_311": {
+      "name": "miniz",
+      "version": "3.1.1",
+      "commit": "d10b03cc73475af673df40f06e5cefd1d5f940d9",
+      "license": "MIT",
+      "vendored_root": "third_party/miniz",
+      "files": [
+        {
+          "path": "miniz.c",
+          "sha256": "6a0314b68c9b804f33e27d89aa3144ef7724fd787043ba8c95d1b19be2d64afd"
+        },
+        {
+          "path": "miniz.h",
+          "sha256": "0c85210868066516ecc76a9c9cbf77c69bb085ade34ab78177bb3acaf8c1a6d7"
+        },
+        {
+          "path": "miniz_tdef.c",
+          "sha256": "b368132832eebb4680d8849e3b313876c4833bcc9e03f32821665edef9d3f191"
+        },
+        {
+          "path": "miniz_tinfl.c",
+          "sha256": "ced7aa650454250544a02f107fad4790c76924cce68d19e9496dcd25588e89b5"
+        }
+      ]
+    }
+  },
+  "categories": {
+    "peer_product_adapter_or_policy": {
+      "definition": "Peer Pressure application policy and app-local compression, file, allocation, and launch adapters. This is the closed product delta to recover, not an authorship assertion.",
+      "source_recovery_policy": "Recover readable behavior and replace these routines; do not preserve them only as assembly.",
+      "ranges": [
+        {
+          "start": "0x91a05190",
+          "end_exclusive": "0x91a05568",
+          "size": 984,
+          "inventory_entry_count": 4,
+          "sha256": "aeb36116744760bdcd18ae35b2b75e31a730ae6650fc175b88adcfe4c944946b",
+          "evidence": "Xell filename sanitation plus app-local inflate/deflate buffer adapters called only by SanitizeXellImage."
+        },
+        {
+          "start": "0x91a06188",
+          "end_exclusive": "0x91a06758",
+          "size": 1488,
+          "inventory_entry_count": 4,
+          "sha256": "8ddaa4b6eb6c35986fb96d74e2066de539d3a10ce37c71da36bb12f9693c8ac6",
+          "evidence": "BootOption policy, boot.ini loading, marker gate, and rbtr launch orchestration before the standard XDK wrapper block."
+        },
+        {
+          "start": "0x91a07550",
+          "end_exclusive": "0x91a07728",
+          "size": 472,
+          "inventory_entry_count": 1,
+          "sha256": "d3e59aff45027bbd5a71e09e5dd16134a3f403b03e0fa8640ede588b226a695b",
+          "evidence": "ReadFileToBuffer application adapter called by LoadBootIni."
+        }
+      ],
+      "inventory_entry_count": 9,
+      "size": 2944,
+      "concatenated_sha256": "bef684ac48cfd4fc0bd7591f8ba462f86b488537b0fc33d9c3d06b328b864705"
+    },
+    "upstream_inih_r62": {
+      "definition": "The declared inih r62 string parser implementation, separated from the Peer-specific callback.",
+      "source_recovery_policy": "Map to the pinned upstream source; do not relift it as Peer Pressure source.",
+      "ranges": [
+        {
+          "start": "0x91a07228",
+          "end_exclusive": "0x91a07550",
+          "size": 808,
+          "inventory_entry_count": 2,
+          "sha256": "00e7a39fbeca5265d4467302181897e92fb8a13c21a1cc40d2aa8ae31acf1824",
+          "evidence": "Line parser and ini_parse_string driver; the line parser is byte-identical in BootEdit and SettingsApp and the driver is relocation-normalized identical in all three XEXs."
+        }
+      ],
+      "inventory_entry_count": 2,
+      "size": 808,
+      "concatenated_sha256": "00e7a39fbeca5265d4467302181897e92fb8a13c21a1cc40d2aa8ae31acf1824"
+    },
+    "upstream_miniz_311": {
+      "definition": "miniz zlib-compatible Adler-32, deflate, and inflate implementation used for the optional gzip-wrapped Xell image.",
+      "source_recovery_policy": "Map to the pinned upstream source; do not relift the compression engine as Peer Pressure source.",
+      "ranges": [
+        {
+          "start": "0x91a07728",
+          "end_exclusive": "0x91a0c080",
+          "size": 18776,
+          "inventory_entry_count": 18,
+          "sha256": "6b33cfc5bdda30e178db375f6ebff0de5e95d50de391826a96aca26c1f28183d",
+          "evidence": "Starts with the miniz Adler-32 implementation and zlib-compatible stream wrappers; the 5,288-byte tinfl core is relocation-normalized identical to the independently attributed Updater and SettingsApp copies."
+        }
+      ],
+      "inventory_entry_count": 18,
+      "size": 18776,
+      "concatenated_sha256": "6b33cfc5bdda30e178db375f6ebff0de5e95d50de391826a96aca26c1f28183d"
+    },
+    "platform_toolchain": {
+      "definition": "MSVC C++ templates, exception/runtime support, Xbox startup/CRT/unwind/math code, and XEX import thunks.",
+      "source_recovery_policy": "Describe ABI boundaries and use the target toolchain/platform APIs; do not relift these bodies as Peer Pressure source.",
+      "ranges": [
+        {
+          "start": "0x91a05000",
+          "end_exclusive": "0x91a05190",
+          "size": 400,
+          "inventory_entry_count": 4,
+          "sha256": "9bc7e09a99846957989d6f7f030471c5396a2d083063e8243cb0448b4eb7466a",
+          "evidence": "C++ exception/string support and Xbox module lookup helper preceding the first application routine."
+        },
+        {
+          "start": "0x91a05568",
+          "end_exclusive": "0x91a06188",
+          "size": 3104,
+          "inventory_entry_count": 18,
+          "sha256": "f017823bdc86b6c7d428c1243561ec372d91f24c45702910e8837ce715598832",
+          "evidence": "Compiler-emitted std::string/std::vector allocation, mutation, and failure paths."
+        },
+        {
+          "start": "0x91a06758",
+          "end_exclusive": "0x91a06d00",
+          "size": 1448,
+          "inventory_entry_count": 7,
+          "sha256": "04f8f657745ce96f84c8acd827f1f788471db61c8bccb2733f63acd4685d7d40",
+          "evidence": "Standard XDK CloseHandle, XPhysicalAlloc/XPhysicalFree, ReadFile, GetFileSize, CreateFileA, GetFileSizeEx, and NTSTATUS/last-error wrapper block."
+        },
+        {
+          "start": "0x91a06d00",
+          "end_exclusive": "0x91a07228",
+          "size": 1320,
+          "inventory_entry_count": 13,
+          "sha256": "155d8ad3623737172988a28110e3c442fe35a6a51174a19f834341dcea26be1c",
+          "evidence": "MSVC exception, bad-allocation, and C++ support paths with no product strings or policy decisions."
+        },
+        {
+          "start": "0x91a0c080",
+          "end_exclusive": "0x91a17138",
+          "size": 45240,
+          "inventory_entry_count": 138,
+          "sha256": "701d85936cab40b54dfaa5c18ebcce2b808d32ee7d86619101b29e7b088ea4f4",
+          "evidence": "PE/XEX entry startup, __savegprlr, MSVC CRT, TLS, unwind, allocation, formatting, floating-point, and virtual-memory support."
+        },
+        {
+          "start": "0x91a17138",
+          "end_exclusive": "0x91a17458",
+          "size": 800,
+          "inventory_entry_count": 47,
+          "sha256": "7c2cb27ad17dd168c7076f853205555df00cf31465c4412eb0c8ec74cb980aab",
+          "evidence": "Xbox kernel import thunks recovered from XEX metadata, including terminal thunk extent/padding."
+        }
+      ],
+      "inventory_entry_count": 227,
+      "size": 52312,
+      "concatenated_sha256": "fb7365dc97b86423560722d13635fc45e6df97dce52dc733709dab1575dea1c3"
+    }
+  },
+  "relocation_normalized_evidence": {
+    "normalization": "For structural comparison only, preserve opcode/register fields while zeroing relative branch displacements and addi/addis immediates. Raw range hashes remain authoritative.",
+    "references": {
+      "BootEdit": {
+        "path": "analysis/xex/basefiles/PeerPressure_System_BootEdit.pe",
+        "sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
+        "base_address": "0x82000000"
+      },
+      "SettingsApp": {
+        "path": "analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe",
+        "sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a",
+        "base_address": "0x82000000"
+      },
+      "Updater": {
+        "path": "analysis/xex/basefiles/Updater.pe",
+        "sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+        "base_address": "0x98000000"
+      }
+    },
+    "matches": [
+      {
+        "name": "inih line parser",
+        "bootxell_start": "0x91a07228",
+        "reference_component": "BootEdit",
+        "reference_start": "0x82058e68",
+        "size": 520,
+        "word_count": 130,
+        "identical_word_count": 130,
+        "normalized_sha256": "b2d7dc0376617770a85e4a5aae78d35603738472dadaf8489aac5187d4e7f2ea"
+      },
+      {
+        "name": "inih line parser",
+        "bootxell_start": "0x91a07228",
+        "reference_component": "SettingsApp",
+        "reference_start": "0x82080900",
+        "size": 520,
+        "word_count": 130,
+        "identical_word_count": 130,
+        "normalized_sha256": "b2d7dc0376617770a85e4a5aae78d35603738472dadaf8489aac5187d4e7f2ea"
+      },
+      {
+        "name": "inih string driver",
+        "bootxell_start": "0x91a07430",
+        "reference_component": "BootEdit",
+        "reference_start": "0x82059070",
+        "size": 288,
+        "word_count": 72,
+        "identical_word_count": 68,
+        "normalized_sha256": "274eede3c70c67551211e29a4d3556d6e7fbbd395d4251005413aab0fcce5d30"
+      },
+      {
+        "name": "inih string driver",
+        "bootxell_start": "0x91a07430",
+        "reference_component": "SettingsApp",
+        "reference_start": "0x82080b08",
+        "size": 288,
+        "word_count": 72,
+        "identical_word_count": 68,
+        "normalized_sha256": "274eede3c70c67551211e29a4d3556d6e7fbbd395d4251005413aab0fcce5d30"
+      },
+      {
+        "name": "miniz tinfl core",
+        "bootxell_start": "0x91a0a518",
+        "reference_component": "Updater",
+        "reference_start": "0x98008d68",
+        "size": 5288,
+        "word_count": 1322,
+        "identical_word_count": 1291,
+        "normalized_sha256": "498ee4942d250d0752c6322988dfba82301a615c39c6d51efdc8ed694bf51021"
+      },
+      {
+        "name": "miniz tinfl core",
+        "bootxell_start": "0x91a0a518",
+        "reference_component": "SettingsApp",
+        "reference_start": "0x8207cb18",
+        "size": 5288,
+        "word_count": 1322,
+        "identical_word_count": 1291,
+        "normalized_sha256": "498ee4942d250d0752c6322988dfba82301a615c39c6d51efdc8ed694bf51021"
+      }
+    ]
+  },
+  "source_recovery": {
+    "existing_coverage": {
+      "path": "analysis/xex/BootXell-peer-source-coverage.json",
+      "sha256": "876c85fc94e2372d446c48b3370475926a470226ca115cadc7f6ac778071dfd7",
+      "inventory_entry_count": 9,
+      "size": 2944
+    },
+    "remaining_product_entries": [],
+    "remaining_product_entry_count": 0,
+    "remaining_product_size": 0
+  },
+  "totals": {
+    "category_count": 4,
+    "inventory_entry_count": 256,
+    "instruction_size": 74840,
+    "product_entry_count": 9,
+    "product_size": 2944,
+    "upstream_entry_count": 20,
+    "upstream_size": 19584,
+    "platform_toolchain_entry_count": 227,
+    "platform_toolchain_size": 52312,
+    "unknown_entry_count": 0,
+    "unknown_size": 0
+  },
+  "limitations": [
+    "Ownership is source-family classification, not a claim that every compiler-emitted instruction can be reproduced byte-for-byte from the pinned modern host checkout.",
+    "The two app-local raw-deflate wrappers remain in the product queue because they modify miniz's stock compress/uncompress helpers; standard XDK wrappers are excluded as platform code.",
+    "The platform/toolchain bucket is excluded from manual lifting but still requires compatible target declarations and ABI integration in a source-built replacement."
+  ]
+}

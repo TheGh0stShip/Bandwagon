@@ -8,6 +8,7 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/verify_updatecheck_peer_source_coverage.py"
+python3 "$root/tools/verify_updatecheck_function_ownership.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/update_check/release_version.cpp" \

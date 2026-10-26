@@ -22,6 +22,30 @@ names), the direct-call graph contains 4,777 edges, and the direct string map
 contains 218 references in 69 functions. Regenerate the complete set with
 `tools/analyze_bootedit_xex.sh`.
 
+## Exhaustive source ownership
+
+`BootEdit-function-ownership.json` assigns all 934 inventory entries and all
+369,424 initialized instruction bytes exactly once:
+
+| Ownership | Entries | Bytes | Recovery treatment |
+| --- | ---: | ---: | --- |
+| Product theme-editor application | 24 | 14,072 | Recover as readable source |
+| Dear ImGui 1.86 | 441 | 231,096 | Use the pinned upstream source |
+| MSVC/Xbox platform and toolchain | 351 | 92,920 | Reuse the target ABI/runtime; do not relift |
+| Unknown framework/backend/lookup code | 118 | 31,336 | Fingerprint before deciding whether to lift |
+
+The product category is a conservative component classification, not a claim
+of individual authorship. It includes the independently fingerprinted
+76-byte non-`.pdata` `ColorEqualsExact` leaf; six independently matched
+runtime/template helpers / 552 bytes are kept in the platform bucket. A 22-entry /
+9,552-byte prefix before the version checker is pinned to ImGui by the shared
+136/320/624-byte opening sequence and normalized SettingsApp matches. Four
+more entries / 360 bytes exactly normalize to independently proven Updater
+runtime bodies. The custom or mixed Xbox 360/DX9 backend and XPR2
+packed-resource family remain unknown: role and API use do not establish
+source provenance. Run
+`tools/verify_bootedit_function_ownership.py` to reproduce the partition.
+
 ## Recovered application behavior
 
 BootEdit is an ImGui-based editor for boot-animation theme material and mesh

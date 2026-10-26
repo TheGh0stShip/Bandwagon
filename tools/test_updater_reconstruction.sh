@@ -8,6 +8,8 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
+python3 "$root/tools/verify_updater_function_ownership.py"
+
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/updater/bootstrap_record.cpp" \
     "$root/reconstruction/updater/bootstrap_record_test.cpp" \

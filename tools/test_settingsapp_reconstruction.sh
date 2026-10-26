@@ -7,6 +7,8 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
+python3 "$root/tools/verify_settingsapp_function_ownership.py"
+
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/updater/archive_wrapper.cpp" \
     "$root/reconstruction/settings_app/offline_update.cpp" \

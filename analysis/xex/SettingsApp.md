@@ -22,6 +22,31 @@ The reproducible inventory contains 1,824 labels (1,680 exception records and
 144 IDC names), 8,808 direct calls, and 403 direct string references in 154
 functions. `tools/analyze_settingsapp_xex.sh` regenerates all artifacts.
 
+## Exhaustive source ownership
+
+`SettingsApp-function-ownership.json` conservatively partitions all 1,824
+entries and all 628,572 initialized code bytes:
+
+| Ownership | Entries | Bytes | Recovery treatment |
+| --- | ---: | ---: | --- |
+| Product application/mixed adapters | 246 | 62,264 | Review at function level and recover the actual product behavior |
+| Dear ImGui 1.86 | 376 | 165,512 | Use the pinned upstream source |
+| BearSSL 0.6 | 187 | 76,136 | Use the pinned upstream source |
+| JsonCpp 00.11.0 | 153 | 39,680 | Use the pinned upstream source |
+| miniz 3.1.1 | 17 | 15,848 | Use the pinned upstream source |
+| MSVC/Xbox platform/toolchain and imports | 832 | 263,796 | Reuse the target ABI/runtime; do not relift |
+| Unknown XPR2/graphics backend | 13 | 5,336 | Fingerprint before deciding whether to lift |
+
+This removes 1,565 entries / 560,972 bytes of pinned-library and platform code
+from the closed-source queue. The 246-entry product/glue bucket is a
+conservative component boundary, not a claim that every template or helper in
+it is original Peer Pressure logic. It is now the auditable upper bound to
+refine and source-cover. The three-function BearSSL-derived certificate loader
+stays product/mixed because its C++/platform adapter delta is not stock source.
+The XPR2 resource helpers and mixed Xbox 360/DX9 backend stay unknown because
+role and API use do not establish provenance. Run
+`tools/verify_settingsapp_function_ownership.py` to reproduce the partition.
+
 ## Recovered application behavior
 
 The settings application coordinates the complete user-facing configuration

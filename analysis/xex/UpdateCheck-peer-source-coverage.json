@@ -29,5 +29,5 @@
       "symbols": ["CheckLatestReleaseVersion", "kTrustedRootsPath", "kLatestReleaseUrl"]
     }
   ],
-  "scope_note": "Covers every Peer application routine currently identified by function-local evidence; whole-image function ownership classification remains pending."
+  "scope_note": "Covers 2 of the 19 product/mixed integration entries in the exhaustive whole-image ownership partition (720 of 6,768 bytes). The remaining 17 product entries / 6,048 bytes still require readable source; stock BearSSL, JsonCpp, proven MSVC/XDK runtime, and import bodies are pinned or excluded rather than relifted."
 }

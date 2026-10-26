@@ -7,6 +7,8 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
+python3 "$root/tools/verify_bootedit_function_ownership.py"
+
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/theme_editor.cpp" \
     "$root/reconstruction/boot_edit/theme_editor_test.cpp" \

@@ -63,10 +63,17 @@ its exact binary range, hash, and upstream symbol.
 both the immutable image and the vendored official source.
 
 `KernelExpansion-function-ownership.json` exhaustively partitions all 372
-inventory entries and all 62,632 instruction bytes: 166 entries / 3,884 bytes
-are platform or toolchain, 47 / 18,728 are strict FatFs, 87 / 23,996 are
+inventory entries and all 62,632 instruction bytes: 157 entries / 2,572 bytes
+are proven platform or toolchain, 47 / 18,728 are strict FatFs, 96 / 25,308 are
 product adapter or policy, and 72 / 16,024 remain unknown. Its verifier rejects
 gaps, overlaps, split functions, range/hash drift, or aggregate-count drift.
+
+Nine app-local helpers / 1,312 bytes were moved from the platform bucket into
+the product/local-adapter boundary. They implement hook patching, Xbox
+object-manager links, SATA UDMA policy, file loading, and bootstrap cleanup;
+calling platform APIs does not establish platform-source provenance. All nine
+already have tested readable source, so this correction does not increase the
+remaining backlog: 50 known product functions / 18,828 bytes still need lifts.
 
 The fingerprint is the unpatched base release, not current patched FatFs.
 ChaN's official patch page records later R0.16 correctness and security fixes.
@@ -372,10 +379,10 @@ Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
 73 independently bounded routines totaling 12,632 original instruction bytes.
-Five routines / 1,040 bytes are upstream FatFs regression models, nine / 1,312
-bytes are generic platform helpers, and 22 / 5,112 bytes remain unattributed.
-Only 37 current lifts / 5,168 bytes are presently classified as product
-adapter or policy behavior, without implying personal authorship.
+Five routines / 1,040 bytes are upstream FatFs regression models and 22 /
+5,112 bytes remain unattributed. The other 46 current lifts / 6,480 bytes are
+classified as product adapter or policy behavior, including the nine
+source-covered app-local helpers, without implying personal authorship.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 372 discovered entries are maintainable

@@ -22,6 +22,15 @@ all XEX files supplied with Peer Pressure as valid PE32 XBOX PowerPC images.
 
 The tool is distributed under MIT OR Apache-2.0; see `LICENSE-xex2ool-MIT`.
 
+`report_recovery_dashboard.py` reads the hash-bound function-ownership and
+source-coverage manifests and prints the live product/upstream/platform/unknown
+denominator. It intentionally reports unbound behavioral models as zero
+verified function coverage:
+
+```sh
+python3 tools/report_recovery_dashboard.py
+```
+
 `analyze_stage4_preamble.py` statically validates the Peer/public Stage4 clean
 block boundary, decodes the Peer big-endian patch stream, maps raw targets to
 the exact effective 64-bit addresses used by the payload, verifies selected

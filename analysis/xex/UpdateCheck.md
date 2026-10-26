@@ -21,6 +21,29 @@ The reproducible inventory contains 804 labels (738 exception records and 65
 IDC import names), 3,472 direct calls, and 130 direct string references in 72
 labeled functions. Run `tools/analyze_updatecheck_xex.sh` to regenerate it.
 
+## Exhaustive source ownership
+
+`UpdateCheck-function-ownership.json` assigns all 804 inventory entries and
+all 226,028 initialized instruction bytes exactly once:
+
+| Ownership | Entries | Bytes | Recovery treatment |
+| --- | ---: | ---: | --- |
+| Product/mixed update integration | 19 | 6,768 | Recover as readable source; 2 entries / 720 bytes are already covered |
+| BearSSL 0.6 | 187 | 76,232 | Use the pinned upstream source |
+| JsonCpp 00.11.0 | 170 | 43,648 | Use the pinned upstream source |
+| MSVC/Xbox platform and toolchain | 423 | 98,772 | Reuse the target ABI/runtime; do not relift |
+| Unknown XDK/network-facing wrappers | 5 | 608 | Fingerprint before deciding whether to lift |
+
+The XHttps request path and BearSSL-derived certificate reader are
+product/mixed integration code: their lineage is recorded, but their adapter
+delta is not stock source, and this is not a claim of personal authorship. The
+two functions in `UpdateCheck-peer-source-coverage.json` are covered; 17
+product entries / 6,048 bytes still require hash-bound readable source. Five
+merely XDK/network-facing wrappers remain unknown instead of being excluded by
+role alone. Consequently the component is not yet source-complete, but none of
+the 218,652 proven upstream/platform bytes belongs in the lifting queue. Run
+`tools/verify_updatecheck_function_ownership.py` to reproduce the partition.
+
 ## Recovered application behavior
 
 `CheckLatestReleaseVersion` at `0x91a0d860` initializes the networking/TLS

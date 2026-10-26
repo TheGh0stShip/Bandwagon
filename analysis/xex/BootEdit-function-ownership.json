@@ -1,0 +1,252 @@
+{
+  "schema": "bandwagon-bootedit-function-ownership-v1",
+  "status": "exhaustive_provenance_first_partition",
+  "policy": "Every recovered BootEdit inventory entry and every byte in the initialized .text virtual range is assigned exactly once. product_application means code implementing BootEdit product behavior; it is not a claim of personal authorship, originality, or copyright ownership. Pinned Dear ImGui code is attributed rather than relifted. Compiler/XDK/CRT/import code and the two independently evidenced out-of-line standard-library templates are platform_toolchain. Where the present evidence cannot separate generic application support, third-party-derived adapters, and compiler emission, the entry remains unknown instead of being guessed into the product bucket.",
+  "scope_note": "This artifact partitions the authoritative 934-entry size-to-next-symbol inventory and its complete byte extents. Normal linker padding belongs to the preceding recovered extent. A known non-pdata leaf inside one extent is separately recorded, but does not create overlapping byte ownership.",
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_System_BootEdit.pe",
+    "size": 2228224,
+    "sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
+    "load_address": "0x82000000",
+    "entry_point": "0x82053a40",
+    "layout": "memory-layout PE; section RVA, not PointerToRawData, locates initialized bytes"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/BootEdit-functions.json",
+    "schema": "bandwagon-xbox-pdata-functions-v1",
+    "sha256": "83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025",
+    "entry_count": 934,
+    "pdata_record_count": 865,
+    "idc_name_count": 70
+  },
+  "evidence_inputs": [
+    {"path":"analysis/xex/BootEdit-callgraph.json","schema":"bandwagon-ppc-direct-callgraph-v1","sha256":"e36d1ea7d3b73eaca2d3f893a4218bf9dba1e016fd54214635185d896aec9b9a","role":"direct-call topology and ownership-boundary evidence"},
+    {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa","role":"product, ImGui, backend, and standard-library diagnostic anchors"},
+    {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","sha256":"026f9b01e179ef18c273ce9e26d90cf10960c4be7c0820e76c9a8732a7385aac","role":"high-confidence product semantic overlay, including one non-pdata leaf"},
+    {"path":"analysis/xex/BootEdit-thirdparty-symbols.json","schema":"bandwagon-bootedit-thirdparty-symbols-v1","sha256":"b28e6c9a06b5c084b12739df38b0f43f68534319c87ee1d24a2615b78a601e54","role":"high-confidence Dear ImGui version/layout-checker anchor"},
+    {"path":"analysis/xex/BootEdit-provenance.json","schema":"bandwagon-bootedit-provenance-v1","sha256":"6fea0971d477922695d565eec451ba61a865b0b37fc627ebb0e447b42be2f41e","role":"declared Dear ImGui release and independent binary signatures"}
+  ],
+  "instruction_region": {
+    "section": ".text",
+    "rva": "0x00010000",
+    "start": "0x82010000",
+    "end_exclusive": "0x8206a310",
+    "size": 369424,
+    "sha256": "c2555a4532b28ca8e23da1f93066a9cd383a805826f83676d4910856e6d52df0"
+  },
+  "upstream_sources": {
+    "dear_imgui_1_86": {
+      "name": "Dear ImGui",
+      "version": "1.86",
+      "license": "MIT",
+      "vendored_root": "third_party/imgui",
+      "gitlink_commit": "512c54bbc062c41c74f8a8bd8ff1fd6bebd1e6d0",
+      "upstream": "https://github.com/ocornut/imgui/tree/v1.86",
+      "files": [
+        {"path":"LICENSE.txt","sha256":"e06a3394ffbde6fee1ae1b6273d7f5cb2bbf1baa7074858ae00211210107c9cb"},
+        {"path":"imconfig.h","sha256":"3de00daa35087bdf39e7d917b5ffa7affec457cfa961d09a175064f67e64a810"},
+        {"path":"imgui.cpp","sha256":"c1cc2e100fc7f1ef8ca92b67c53503b05ec0cda18a9df8446cd0325ca26dc730"},
+        {"path":"imgui.h","sha256":"14ff878dd7127c95cddb89be002e7826734d34ada935e9bd0ac92909bd16d826"},
+        {"path":"imgui_internal.h","sha256":"3be2a6bdf8a6b35961701a87283a07188de5513f248bbf4302cad73e810d34c2"},
+        {"path":"imgui_draw.cpp","sha256":"bae66c1976c7935ad429da2cf722cf6944f2287f47e354f740786f7f09926ec1"},
+        {"path":"imgui_tables.cpp","sha256":"f762e5bb623116ecd38d4786008565abb98d898f65bba827812106f45d5d6ac6"},
+        {"path":"imgui_widgets.cpp","sha256":"8f166d38f260823856800ec8dbdfe005f67df1edbfe253d19b00ec9b72c3a262"},
+        {"path":"imstb_rectpack.h","sha256":"3ea6a501366c56fc914cb27186f30e974bb255522cd3e35707247ab6674d129f"},
+        {"path":"imstb_textedit.h","sha256":"8ace1cd8362e9690408664b2fb6733d352d5591fd8e6a6f4af6c3b1230ae326c"},
+        {"path":"imstb_truetype.h","sha256":"89024f2732b99c80853a877ed7fb09aa7ffac858c2658d6f2eb1f54b0cc40a5d"},
+        {"path":"backends/imgui_impl_dx9.cpp","sha256":"ec833c94c3eed9880a2b481c9a385f017c188fd1bcb56d85b61cae605e039450"},
+        {"path":"backends/imgui_impl_dx9.h","sha256":"1d00e5c5ca709f4dd298228e9a0123a8578862db573e5497ea7abb914510e715"}
+      ],
+      "version_basis": "The ImGui object family starts at 0x82011ed8 with the same 136/320/624-byte opening sequence as SettingsApp's pinned ImGui family. Exact relocation-normalized matches at 0x820126f8 and 0x82012780, the exact 1.86 version/layout checker at 0x82014428, and ordered core/tables/widgets/draw behavior agree with the repository's v1.86 gitlink. The Xbox 360/DX9 backend interval is deliberately excluded from upstream because no imgui_impl_xbox360 source exists in the pinned tree."
+    }
+  },
+  "boundary_evidence": [
+    {
+      "start": "0x82011ed8",
+      "end_exclusive": "0x82038ab8",
+      "classification": "upstream_imgui_1_86",
+      "confidence": "high",
+      "evidence": ["the first three entries have the same 136/320/624-byte sequence and near-identical normalized instruction structure as SettingsApp ImGui at 0x82034830", "0x820126f8 and 0x82012780 exactly match SettingsApp ImGui functions after relocation normalization", "0x82014428 is the independently identified ImGui::DebugCheckVersionAndDataLayout 1.86", "0x82038970 and 0x820389e0 implement ImFontAtlas alpha/RGBA texture extraction before the boundary"]
+    },
+    {
+      "start": "0x82038ab8",
+      "end_exclusive": "0x82039ec0",
+      "classification": "unknown",
+      "confidence": "high that it is a mixed/custom backend; source provenance unresolved",
+      "evidence": ["0x82038e78 owns 1.86, imgui_impl_xbox360, and imgui_impl_dx9 identifiers", "the complete block is the Xbox/D3D/GPU renderer and platform integration between ImGui object families", "the pinned upstream tree contains imgui_impl_dx9 but no imgui_impl_xbox360 implementation", "calling XDK/D3D interfaces proves role, not platform-source provenance, so the closed mixed adapter remains unknown"]
+    },
+    {
+      "start": "0x82039ec0",
+      "end_exclusive": "0x8204b998",
+      "classification": "upstream_imgui_1_86",
+      "confidence": "high",
+      "evidence": ["0x82039ec0 owns upstream table-settings serialization strings", "the interval proceeds through pinned tables/widgets/color-picker behavior", "0x8204b768 owns upstream color-picker option labels; 0x8204b998 begins the application modal class"]
+    }
+  ],
+  "bounded_refinement": {
+    "before": {"unknown_entry_count":144,"unknown_size":41248,"product_application_entry_count":24,"product_application_size":14072},
+    "reassignments": [
+      {"from":"unknown","to":"upstream_imgui_1_86","start":"0x82011ed8","end_exclusive":"0x82014428","inventory_entry_count":22,"size":9552,"basis":"SettingsApp ImGui opening sequence, exact normalized matches, object-family continuity, and later 1.86 checker"},
+      {"from":"unknown","to":"platform_toolchain","inventory_entry_count":4,"size":360,"basis":"exact relocation-normalized matches to functions independently platform-owned in Updater","addresses":["0x82011878","0x8204c280","0x8204cb90","0x82051af8"]}
+    ],
+    "after": {"unknown_entry_count":118,"unknown_size":31336,"product_application_entry_count":24,"product_application_size":14072}
+  },
+  "cross_component_evidence": {
+    "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
+    "settings_inventory":{"path":"analysis/xex/SettingsApp-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","sha256":"db1b3fc77c2f56d7c2ef242fb1a7f19d006fddc3c71af906f5a801e34c446797","entry_count":1824},
+    "updater_image":{"path":"analysis/xex/basefiles/Updater.pe","size":118784,"sha256":"2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c"},
+    "updater_inventory":{"path":"analysis/xex/Updater-functions.json","schema":"bandwagon-xbox-coff-functions-v1","sha256":"d72f84938cdace8ec6833248d2942afed55a37a6ee73c913120fd32441d6a34d","entry_count":376},
+    "updater_ownership":{"path":"analysis/xex/Updater-function-ownership.json","schema":"bandwagon-updater-function-ownership-v1","sha256":"b89a6e0404a3cb313b52097ca56f3057c84c1263f2d77aac2387c68bc6f60853"},
+    "relocation_normalized_exact_pairs": [
+      {"bootedit_address":"0x820126f8","other_component":"SettingsApp","other_address":"0x82034d20","size":136,"normalized_sha256":"f9ff918da196ea267b014074d61b381757593928be75945c76f298647a0e629e","classification":"upstream_imgui_1_86"},
+      {"bootedit_address":"0x82012780","other_component":"SettingsApp","other_address":"0x82034da8","size":320,"normalized_sha256":"8bbb98e40c3d14c07592f7e1a55652e735d0061516586c9820f13f0882bb4773","classification":"upstream_imgui_1_86"},
+      {"bootedit_address":"0x82011878","other_component":"Updater","other_address":"0x980060e8","size":112,"normalized_sha256":"e921d5e63cd1da7ebfb308e8630ca8650e21db39e5e636dd85e691505cf8bf1d","classification":"platform_toolchain"},
+      {"bootedit_address":"0x8204c280","other_component":"Updater","other_address":"0x98005d80","size":88,"normalized_sha256":"57c01b9b4b707d1ecaee88be6b5b1331c6ba498d836fcde626a86436af40dc2a","classification":"platform_toolchain"},
+      {"bootedit_address":"0x8204cb90","other_component":"Updater","other_address":"0x98005080","size":72,"normalized_sha256":"d892798f65ba7db0356d04295095105bf87f488867ca9f5e043fa84492d43690","classification":"platform_toolchain"},
+      {"bootedit_address":"0x82051af8","other_component":"Updater","other_address":"0x98008b20","size":88,"normalized_sha256":"06d0a7469ab57b789dcc1f5067e60ede573a9a66ef90a73527de362bb5278303","classification":"platform_toolchain"}
+    ]
+  },
+  "product_application_entries": [
+    {"address":"0x820110d0","role":"mount and BootAnim theme bootstrap","confidence":"high"},
+    {"address":"0x820118e8","role":"theme-name validation and overwrite policy","confidence":"high"},
+    {"address":"0x8204b998","role":"BootEdit modal object destruction","confidence":"medium"},
+    {"address":"0x8204b9e8","role":"BootEdit modal state helper","confidence":"medium"},
+    {"address":"0x8204bb60","role":"BootEdit modal virtual callback","confidence":"medium"},
+    {"address":"0x8204bbc0","role":"BootEdit modal virtual callback","confidence":"medium"},
+    {"address":"0x8204bda0","role":"BootEdit modal renderer owning Cancel actions","confidence":"high"},
+    {"address":"0x8204c690","role":"theme path formatter","confidence":"high"},
+    {"address":"0x8204c870","role":"ConfirmDiscardUnsavedChanges","confidence":"high"},
+    {"address":"0x82050018","role":"default theme-name initializer","confidence":"high"},
+    {"address":"0x820506b8","role":"EnumerateSavedThemes","confidence":"high"},
+    {"address":"0x82050958","role":"saved-theme state initializer containing ColorEqualsExact leaf","confidence":"high"},
+    {"address":"0x82050b08","role":"DrawColorContextMenu","confidence":"high"},
+    {"address":"0x82050d80","role":"mesh color editor","confidence":"high"},
+    {"address":"0x82050f60","role":"LoadEditorFonts","confidence":"high"},
+    {"address":"0x820512e8","role":"DrawThemeEditor","confidence":"high"},
+    {"address":"0x82051c08","role":"unnamed-theme normalization","confidence":"high"},
+    {"address":"0x82051c98","role":"SaveThemeWithFeedback","confidence":"high"},
+    {"address":"0x82051e70","role":"LoadThemeWithFeedback","confidence":"high"},
+    {"address":"0x82052060","role":"ApplyThemeSettings","confidence":"high"},
+    {"address":"0x82052468","role":"DrawThemeSelector","confidence":"high"},
+    {"address":"0x82052830","role":"theme-selector menu/list continuation","confidence":"high"},
+    {"address":"0x82053238","role":"launch-data symbolic-name adapter","confidence":"medium"},
+    {"address":"0x820537e0","role":"BootEdit application entry/orchestration before CRT entry","confidence":"high"}
+  ],
+  "supplemental_discovered_functions": [
+    {"address":"0x82050a00","end_exclusive":"0x82050a4c","size":76,"sha256":"1c39100e26bf568f13260a9672759e5cd09aa4de8bca4316f4889cf0ba2c8c33","semantic_name":"ColorEqualsExact","inventory_container":"0x82050958","classification":"product_application","evidence":"non-pdata four-float equality leaf named by the semantic overlay; byte ownership remains the single product-owned containing extent"}
+  ],
+  "compiler_emitted_template_partition": {
+    "classification": "platform_toolchain",
+    "inventory_entry_count": 6,
+    "size": 552,
+    "description": "Six standalone compiler/standard-library helpers are positively identified by diagnostics or exact relocation-normalized matches to Updater platform bodies and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
+    "ranges": [
+      {"start":"0x82011878","end_exclusive":"0x820118e8","size":112,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x980060e8"},
+      {"start":"0x8204c280","end_exclusive":"0x8204c2d8","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005d80"},
+      {"start":"0x8204cb90","end_exclusive":"0x8204cbd8","size":72,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005080"},
+      {"start":"0x8204d818","end_exclusive":"0x8204d878","size":96,"inventory_entry_count":1,"evidence":"owns vector<T> too long"},
+      {"start":"0x82051af8","end_exclusive":"0x82051b50","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98008b20"},
+      {"start":"0x82051ba8","end_exclusive":"0x82051c08","size":96,"inventory_entry_count":1,"evidence":"owns invalid vector<T> subscript"}
+    ]
+  },
+  "categories": {
+    "product_application": {
+      "inventory_entry_count": 24,
+      "size": 14072,
+      "concatenated_sha256": "24b77cb16919a4a3af6ea49751b1571959f55429e7903e50ef6d442150460b1c",
+      "product_specific": true,
+      "personal_authorship_claim": false,
+      "ranges": [
+        {"start":"0x820110d0","end_exclusive":"0x820112e0","inventory_entry_count":1,"size":528,"sha256":"3f78d1350fbec288603f79c000bfdbf28bc138fa2ecacb1456111d20649f9b76"},
+        {"start":"0x820118e8","end_exclusive":"0x82011ed8","inventory_entry_count":1,"size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425"},
+        {"start":"0x8204b998","end_exclusive":"0x8204c280","inventory_entry_count":5,"size":2280,"sha256":"884937ffd8e8ece66dc557be8864951cc42488ff28ea7a3f77f892cce272e0b3"},
+        {"start":"0x8204c690","end_exclusive":"0x8204c790","inventory_entry_count":1,"size":256,"sha256":"dafaaca53dbdb4db1bdcf57fe945b24ae2e574ea0154118363ab58d2bf69b08c"},
+        {"start":"0x8204c870","end_exclusive":"0x8204cb28","inventory_entry_count":1,"size":696,"sha256":"577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015"},
+        {"start":"0x82050018","end_exclusive":"0x820500c8","inventory_entry_count":1,"size":176,"sha256":"ff0c7f969b27124dd90ff25016b2d2b9424585d1c66b8abb7534fadc9537455f"},
+        {"start":"0x820506b8","end_exclusive":"0x82050900","inventory_entry_count":1,"size":584,"sha256":"3327b4dbf9e2293762a552593aed8be9e0e6b8b2f16d7ec5c0fa6b80ad1e4131"},
+        {"start":"0x82050958","end_exclusive":"0x82050a50","inventory_entry_count":1,"size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a"},
+        {"start":"0x82050b08","end_exclusive":"0x82050c98","inventory_entry_count":1,"size":400,"sha256":"9abd621304d0f2942cd80d7c4409b3f9e9de3fba9e686c602e7e2905f5156d1f"},
+        {"start":"0x82050d80","end_exclusive":"0x82050f08","inventory_entry_count":1,"size":392,"sha256":"3e5951836adab1321018b615a9a12a20ed2360627dc0c3297c55692d9172c317"},
+        {"start":"0x82050f60","end_exclusive":"0x82051238","inventory_entry_count":1,"size":728,"sha256":"bf13e96bfcd3be60250a639d0ca53428e90df7c8bea252666e6959557c9c7551"},
+        {"start":"0x820512e8","end_exclusive":"0x82051af8","inventory_entry_count":1,"size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9"},
+        {"start":"0x82051c08","end_exclusive":"0x82051db8","inventory_entry_count":2,"size":432,"sha256":"34aaffba30da78afa641e83f9247b4e9453df7e353c52bf98abc48c448bf04eb"},
+        {"start":"0x82051e70","end_exclusive":"0x82051f28","inventory_entry_count":1,"size":184,"sha256":"abed3022e201cd788bac8558b3c42865cea2f4875856aa077ecca70c2050ab76"},
+        {"start":"0x82052060","end_exclusive":"0x82052a88","inventory_entry_count":3,"size":2600,"sha256":"c4dd96f46ef9b595e2c0ff76edae0ad1ac2948e6a636eb29fd21d2b030b50739"},
+        {"start":"0x82053238","end_exclusive":"0x820533b0","inventory_entry_count":1,"size":376,"sha256":"131570ed2ad2c33b19dbf2b49a3748d2061dd18a2f389de52d0153a8b2c71e58"},
+        {"start":"0x820537e0","end_exclusive":"0x82053a40","inventory_entry_count":1,"size":608,"sha256":"0b31a4bde8d411b828adc22afe159f2d3118c8c8f647b9a5298670abb1c8992a"}
+      ]
+    },
+    "upstream_imgui_1_86": {
+      "inventory_entry_count": 441,
+      "size": 231096,
+      "concatenated_sha256": "856bf2bf92686c212e058fe6f6eba474e95e5b09d9e28c670d744e8b9f3ed8d0",
+      "product_specific": false,
+      "ranges": [
+        {"start":"0x82011ed8","end_exclusive":"0x82038ab8","inventory_entry_count":344,"size":158688,"sha256":"e93bb4e55ca6005cc362eef1241170dc40d9c93b900e34af1bad120d792716ed"},
+        {"start":"0x82039ec0","end_exclusive":"0x8204b998","inventory_entry_count":97,"size":72408,"sha256":"2e00bfb5fa8b5b3c19f954e945f2e8da0b81ebff40fcf1726e1bbdca9781450e"}
+      ]
+    },
+    "platform_toolchain": {
+      "inventory_entry_count": 351,
+      "size": 92920,
+      "concatenated_sha256": "a2344c0c1e4c4c2ebf3c06eeb87f92c7bd703d84b295391910d51251c4dccc67",
+      "product_specific": false,
+      "ranges": [
+        {"start":"0x82011878","end_exclusive":"0x820118e8","inventory_entry_count":1,"size":112,"sha256":"2c09abbb3b957d7989c7cf1f2cc60d3ed27248747c873357fe20e8cd505beab1"},
+        {"start":"0x8204c280","end_exclusive":"0x8204c2d8","inventory_entry_count":1,"size":88,"sha256":"bca7f616a674060c39bb9497fea3a29f2e3d4db941beb04fea6401ff7cc3e43f"},
+        {"start":"0x8204cb90","end_exclusive":"0x8204cbd8","inventory_entry_count":1,"size":72,"sha256":"896fe8992209a16c6cb7d39357a3ad38194549965f525c581a870ac6f1f95a89"},
+        {"start":"0x8204d818","end_exclusive":"0x8204d878","inventory_entry_count":1,"size":96,"sha256":"a93b3598c46d6af9e25aa4b7ce533eacca11ebb6cde593d7a3a2ded24421f734"},
+        {"start":"0x82051af8","end_exclusive":"0x82051b50","inventory_entry_count":1,"size":88,"sha256":"0d90d0714ef08da0acd6e92475c04448fd78da6f00609e9029d3a5f80eb035af"},
+        {"start":"0x82051ba8","end_exclusive":"0x82051c08","inventory_entry_count":1,"size":96,"sha256":"42374f379418b87faeb97f439bd3c67509bdb5a267683c8a5725d453726bca61"},
+        {"start":"0x82053a40","end_exclusive":"0x82069eb0","inventory_entry_count":276,"size":91248,"sha256":"f6c40e776fb0334089e7f6b04fb11be0c5f390028862564a916845d45caf1c18"},
+        {"start":"0x82069eb0","end_exclusive":"0x8206a310","inventory_entry_count":69,"size":1120,"sha256":"96309be976d83510bbfbaf67c0aca0d7301e9074e88ca95812c59ee3c10c8927"}
+      ]
+    },
+    "unknown": {
+      "inventory_entry_count": 118,
+      "size": 31336,
+      "concatenated_sha256": "2760703f55e73d9d7133f524bfba9bc0c6513976cbefc50d816dffc9f115642d",
+      "product_specific": null,
+      "ranges": [
+        {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
+        {"start":"0x820112e0","end_exclusive":"0x82011878","inventory_entry_count":8,"size":1432,"sha256":"88589b4dc4c9df66f232cfc1370eba0a46ced6ae60be1d877154ae100170cae4"},
+        {"start":"0x82038ab8","end_exclusive":"0x82039ec0","inventory_entry_count":11,"size":5128,"sha256":"3ad48c5ef04825cb71d1abb95764c52706e8887d72c212695b2b75c3fbefafbe"},
+        {"start":"0x8204c2d8","end_exclusive":"0x8204c690","inventory_entry_count":5,"size":952,"sha256":"233c03c2ff4f40dc6decf31bb1509f804093d6d81517161428f2d47f36f2fd21"},
+        {"start":"0x8204c790","end_exclusive":"0x8204c870","inventory_entry_count":1,"size":224,"sha256":"1fb3322526336109e78e9e7ec24a43a4e56823a363e2940ae26caf57cb6d4ee5"},
+        {"start":"0x8204cb28","end_exclusive":"0x8204cb90","inventory_entry_count":1,"size":104,"sha256":"3c49d36ca55c4889a03fe6b15eabef6cecfa5d8a6a141d370dd3489928444552"},
+        {"start":"0x8204cbd8","end_exclusive":"0x8204d818","inventory_entry_count":9,"size":3136,"sha256":"31c2907d79c66d2efb37e070c0afcd9886e3e12a1cd22ebbdef6deaf13394e46"},
+        {"start":"0x8204d878","end_exclusive":"0x82050018","inventory_entry_count":33,"size":10144,"sha256":"d21d20f999e96fb16c4de5b7bf5b31528cc8126bff342364afe8db2190d33562"},
+        {"start":"0x820500c8","end_exclusive":"0x820506b8","inventory_entry_count":6,"size":1520,"sha256":"9bd711dbf76655b8c025a68b40b852083180a9a6d784baaadff0fd54a80996b6"},
+        {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
+        {"start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"sha256":"fcb81938e3cf52fb232b8866e6f90fb853d6c45cb5a637b9c64dc83ae24f3a57"},
+        {"start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"sha256":"15cad7ac5ca342357a0021474f87182f16103ae26fc61642201d4d5cfeaaa11f"},
+        {"start":"0x82050f08","end_exclusive":"0x82050f60","inventory_entry_count":1,"size":88,"sha256":"ecca5e3ceb0e0e23e3cd70e699b1ec7597a24d9df6ef00cb57fcf0b80153329a"},
+        {"start":"0x82051238","end_exclusive":"0x820512e8","inventory_entry_count":1,"size":176,"sha256":"f19a497aeb40e0ca7278e98e5d63ab4a1292e9533f80b8a3f6551e9494b0c843"},
+        {"start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"sha256":"8c68ac5f246d04c85c76a82642a061497f7696e8409164771fe87170125616ff"},
+        {"start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"sha256":"5439f89570a358c61190693664e17b8f9216694f756e0858894af0ac614a67b8"},
+        {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
+        {"start":"0x82052a88","end_exclusive":"0x82053238","inventory_entry_count":13,"size":1968,"sha256":"3cc32e440ca29100e2c04611ab52f25f7e9d994129ff09bf994c230186d52dcd"},
+        {"start":"0x820533b0","end_exclusive":"0x820537e0","inventory_entry_count":6,"size":1072,"sha256":"f2c7f01dfc78bb436607d894b8367817537e9d2fdfd306b509276d66782fbb3c"}
+      ]
+    }
+  },
+  "uncertainties": [
+    "The 11-entry, 5,128-byte Xbox 360/DX9 backend is certainly distinct from unmodified ImGui core, but may mix adapted MIT imgui_impl_dx9 code with closed Xbox integration. Backend role alone is not source provenance, so it remains unknown.",
+    "Early theme/archive/framework helpers and generic C++ bodies interposed around named application functions remain unknown unless a product string, named call chain, or standard-library diagnostic proves ownership.",
+    "The 0x82052a88 packed-resource family checks XPR2, fixes 16-byte resource records, handles TX texture records, and is shared with SettingsApp. That establishes Xbox packed-resource role but not exact public/platform source provenance, so the family remains unknown.",
+    "The non-pdata packed-resource constructor at 0x82052a60 is embedded at the tail of the product-owned 0x82052830 inventory extent; under the inventory-granularity policy those 40 bytes inherit the containing extent instead of creating overlapping ownership.",
+    "ColorEqualsExact at 0x82050a00 is a known non-pdata leaf inside the product-owned 0x82050958 inventory extent; it is not counted as a 935th inventory entry.",
+    "Product classification is component-level reconstruction priority, never a claim that a named individual personally authored the bytes."
+  ],
+  "totals": {
+    "category_count": 4,
+    "inventory_entry_count": 934,
+    "instruction_size": 369424,
+    "product_application_entry_count": 24,
+    "product_application_size": 14072,
+    "non_product_entry_count": 910,
+    "non_product_size": 355352,
+    "unknown_entry_count": 118,
+    "unknown_size": 31336
+  }
+}

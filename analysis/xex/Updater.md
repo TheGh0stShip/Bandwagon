@@ -90,7 +90,7 @@ record flow rather than inferred from address adjacency.
 
 ## Source attribution
 
-The range `0x98008d68`–`0x9800d130` is embedded miniz. Five externally used
+The range `0x98008d68`–`0x9800ce38` is embedded miniz. Five externally used
 functions are now named at high confidence: `mz_zip_reader_init_mem`,
 `mz_zip_reader_locate_file`, `mz_zip_get_last_error`,
 `mz_zip_get_error_string`, and `mz_zip_reader_extract_to_mem`. The complete
@@ -102,11 +102,25 @@ version and rules out the 2.x releases checked. The author's public
 `Updater-provenance.json` records both independent evidence paths and rejects
 regeneration if the component-local error-table signatures disappear.
 
-The Peer application and its compiler-emitted `std::string`/`std::vector`
-instantiations occupy `0x98005000`–`0x98008010`. MSVC library/exception support
-follows through `0x98008d68`; platform startup and CRT code begins at the PE
-entry point `0x9800d130`; named import thunks begin at `0x9801a740`. The broad
-CRT range remains medium-confidence pending function-level attribution.
+`Updater-function-ownership.json` supersedes the earlier coarse contiguous
+ranges with an exact, gap-free partition of all 376 entries and 88,640 code
+bytes:
+
+| Ownership | Entries | Bytes | Recovery treatment |
+| --- | ---: | ---: | --- |
+| Peer Pressure product application | 20 | 6,728 | Recover as readable source |
+| miniz 3.1.1 | 22 | 16,592 | Use the pinned upstream source |
+| MSVC/Xbox platform and toolchain | 334 | 65,320 | Reuse the target ABI/runtime; do not relift |
+
+The miniz endpoint is `0x9800ce38`, not the PE entry point. The four entries /
+760 bytes from `0x9800ce38` through `0x9800d130` are CRT lifecycle and startup
+code. Likewise, 34 compiler-emitted `std::string`, `std::vector`, and allocator
+template entries / 5,256 bytes are explicitly platform/toolchain rather than
+product algorithms. The product ranges are intentionally non-contiguous and
+contain only archive wrapping, SoftmodData/XBPP logic, HDD bootstrap policy,
+phase-two staging, path/file policy, diagnostics, lifecycle glue, and update
+orchestration. Run `tools/verify_updater_function_ownership.py` to validate the
+partition and pinned miniz evidence.
 
 ### Stage2 HDD bootstrap record
 

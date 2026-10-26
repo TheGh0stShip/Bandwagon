@@ -78,22 +78,16 @@
   ],
   "categories": {
     "platform_toolchain": {
-      "inventory_entry_count": 166,
-      "size": 3884,
-      "concatenated_sha256": "8d37213e67c08ce12be72e27363d6d2a145dcceb8eefbc68d5d1a68a741fd938",
+      "inventory_entry_count": 157,
+      "size": 2572,
+      "concatenated_sha256": "ad6fccd18f6ff87460d494513113e81cbb6aa158357b0cd877da49d01c4b9f8a",
       "peer_specific": false,
-      "description": "MSVC/Xenon save/restore islands, compiler/linker import thunks, and nine generic Xbox platform-facing helpers. The helper implementations are classified by role, not claimed to be Microsoft source.",
+      "description": "MSVC/Xenon save/restore islands and compiler/linker import thunks with independently established toolchain/platform provenance.",
       "subclassification_summary": [
         {"name":"compiler save/restore entry points","inventory_entry_count":16,"size":316},
-        {"name":"absolute platform import thunks","inventory_entry_count":141,"size":2256},
-        {"name":"generic local platform-facing helpers","inventory_entry_count":9,"size":1312}
+        {"name":"absolute platform import thunks","inventory_entry_count":141,"size":2256}
       ],
       "ranges": [
-        {"start":"0x801f03c0","end_exclusive":"0x801f0568","size":424,"inventory_entry_count":3,"sha256":"1f1e22d74cca51af0a4254ad8f478cd48b97ef82e0553929c5dd51fc744ac2b4"},
-        {"start":"0x801f05f0","end_exclusive":"0x801f0648","size":88,"inventory_entry_count":1,"sha256":"80213b6bf11423cab347a1c2b912b7f6f33103bf9636417470e7941d19a875e2"},
-        {"start":"0x801f14d0","end_exclusive":"0x801f16a8","size":472,"inventory_entry_count":1,"sha256":"f92933d46674beba0bafbee3a34f82b146b158e1784b13a1e0c5cd47cd1348e8"},
-        {"start":"0x801f18e8","end_exclusive":"0x801f19c8","size":224,"inventory_entry_count":2,"sha256":"49b7d8f3bc993816f12f3b57e132016c1f6bb164cb9162390aa7b4a244b063a3"},
-        {"start":"0x801f2d70","end_exclusive":"0x801f2dd8","size":104,"inventory_entry_count":2,"sha256":"beb2edc034ea0c77996af27a560f195123c1bc49850a58cf11fc7772c86ea25c"},
         {"start":"0x801fea9c","end_exclusive":"0x801ff4a8","size":2572,"inventory_entry_count":157,"sha256":"ad6fccd18f6ff87460d494513113e81cbb6aa158357b0cd877da49d01c4b9f8a"}
       ]
     },
@@ -122,31 +116,38 @@
       ]
     },
     "peer_product_adapter_or_policy": {
-      "inventory_entry_count": 87,
-      "size": 23996,
-      "concatenated_sha256": "ccd53f22c0169604d1db94a6484a02f764cc48926d90fd596b8a4f11bad29ca3",
+      "inventory_entry_count": 96,
+      "size": 25308,
+      "concatenated_sha256": "3f43758f5e4267b54f0f44cf2e461d3bebbba2ff81ba9e2baab94e059bbfb158",
       "peer_specific": true,
       "personal_authorship_claim": false,
-      "description": "Conservative Peer Pressure product-behavior slice: the Xbox exFAT FSD/disk/IRP adapter plus directly evidenced bootstrap, configuration, boot, side-loading, XEX, NAND, update, and UI policy. This is a component attribution only.",
+      "description": "Conservative Peer Pressure product-behavior slice: the Xbox exFAT FSD/disk/IRP adapter, app-local platform adapters and patch helpers, plus directly evidenced bootstrap, configuration, boot, side-loading, XEX, NAND, update, and UI policy. This is a component attribution only.",
       "subclassification_summary": [
         {"name":"Xbox exFAT FSD, disk, and platform adapter including mixed f_getfree derivative","inventory_entry_count":43,"size":12452},
-        {"name":"direct Peer Pressure product policy and orchestration","inventory_entry_count":44,"size":11544}
+        {"name":"direct Peer Pressure product policy and orchestration","inventory_entry_count":44,"size":11544},
+        {"name":"source-covered app-local platform adapters and patch helpers","inventory_entry_count":9,"size":1312}
       ],
       "evidence": [
         "ExFatCreateVolumeDevice and ExFatFsdCreate/ReadWrite/DirectoryControl/Cleanup diagnostics with Xbox IRP, object-manager, and share-access calls",
         "custom disk_read, disk_write, disk_ioctl, memory, clock, and drive-registry callbacks around the stock FatFs core",
+        "local hook patching, object-manager link, file-loading, SATA policy, and bootstrap-release helpers whose API-facing role does not establish platform-source provenance",
         "private PeerPressure Config.ini, kernel_patches.bin, BootXell, custom boot, Aurora, SettingsApp, UpdateCheck, and update.phase2 paths",
         "launch.xex and Plugins\\Nova.xex blocking, DVD-region policy, and SFCX NAND write-protection behavior"
       ],
       "ranges": [
         {"start":"0x801f0000","end_exclusive":"0x801f0150","size":336,"inventory_entry_count":1,"sha256":"4ef2d8843cf562695cfa6cc8e7b4c53409721a0972ca6eed44ebf8178fe04b10"},
+        {"start":"0x801f03c0","end_exclusive":"0x801f0568","size":424,"inventory_entry_count":3,"sha256":"1f1e22d74cca51af0a4254ad8f478cd48b97ef82e0553929c5dd51fc744ac2b4"},
         {"start":"0x801f0568","end_exclusive":"0x801f05f0","size":136,"inventory_entry_count":1,"sha256":"82a9d861ab34ce9e9cc7c8abcb9d019f004721f9d5c56c1938c14455bfce3ae8"},
+        {"start":"0x801f05f0","end_exclusive":"0x801f0648","size":88,"inventory_entry_count":1,"sha256":"80213b6bf11423cab347a1c2b912b7f6f33103bf9636417470e7941d19a875e2"},
         {"start":"0x801f0648","end_exclusive":"0x801f0de8","size":1952,"inventory_entry_count":5,"sha256":"8609ed987bac3a02e02a0ff0526e184a37147d70ebd48b05df167a5188eb5b6e"},
         {"start":"0x801f0e38","end_exclusive":"0x801f14d0","size":1688,"inventory_entry_count":7,"sha256":"35e280e77c9f7113b1116d947aafd6c5979cd36fd5356d3c5c9cd052c399cc6a"},
+        {"start":"0x801f14d0","end_exclusive":"0x801f16a8","size":472,"inventory_entry_count":1,"sha256":"f92933d46674beba0bafbee3a34f82b146b158e1784b13a1e0c5cd47cd1348e8"},
         {"start":"0x801f16a8","end_exclusive":"0x801f1700","size":88,"inventory_entry_count":1,"sha256":"3c0f307a4da409bc4f25c0362dacdf799ed5840b4f357b5f5297d3b2c15f1a0d"},
         {"start":"0x801f1790","end_exclusive":"0x801f18e8","size":344,"inventory_entry_count":1,"sha256":"9dfea271154216d491d2e806b72a906506adc0bedea72962b3562c5c3e3b60c8"},
+        {"start":"0x801f18e8","end_exclusive":"0x801f19c8","size":224,"inventory_entry_count":2,"sha256":"49b7d8f3bc993816f12f3b57e132016c1f6bb164cb9162390aa7b4a244b063a3"},
         {"start":"0x801f19c8","end_exclusive":"0x801f1a20","size":88,"inventory_entry_count":1,"sha256":"c397b6f869ec8d0ce5f4a3c608b2927b85db2be15bbc84b760effa13b46c48e0"},
         {"start":"0x801f1a60","end_exclusive":"0x801f2058","size":1528,"inventory_entry_count":5,"sha256":"8ee12751a407dd5a85df2d6e1ddb38596311fd33cff6c5a3709ff4be4afdf3bb"},
+        {"start":"0x801f2d70","end_exclusive":"0x801f2dd8","size":104,"inventory_entry_count":2,"sha256":"beb2edc034ea0c77996af27a560f195123c1bc49850a58cf11fc7772c86ea25c"},
         {"start":"0x801f2dd8","end_exclusive":"0x801f30b0","size":728,"inventory_entry_count":4,"sha256":"c16861b3c4af184b6c82d3b38f92cf9d4328cb262cfb46e6b2535cdc6da2842c"},
         {"start":"0x801f3218","end_exclusive":"0x801f32d8","size":192,"inventory_entry_count":1,"sha256":"3716c228dfb7755c2dfbfc4e77fa92ec70933df2cbdc1ad3fce01e0711507dc6"},
         {"start":"0x801f3378","end_exclusive":"0x801f38f8","size":1408,"inventory_entry_count":6,"sha256":"04ed16fc8ea4e68526a390a1fe41aa78600dd9aaf033dba0a0567380d9ce9cc3"},

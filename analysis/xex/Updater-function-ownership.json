@@ -1,0 +1,596 @@
+{
+  "schema": "bandwagon-updater-function-ownership-v1",
+  "status": "exhaustive_provenance_first_partition",
+  "policy": "Every recovered inventory entry and every byte in Updater's initialized .text virtual range is assigned exactly once. product_application identifies Peer Pressure product behavior and reconstruction priority, not personal authorship, originality, or copyright ownership. Standalone MSVC standard-library template instantiations emitted into application translation units remain platform_toolchain rather than product logic. Inlined support instructions inherit the ownership of their containing recovered function because the inventory has no smaller defensible ownership unit. unknown is reserved for an entry whose provenance cannot be supported; this evidence set leaves that bucket empty.",
+  "scope_note": "This is an ownership and prioritization artifact, not a source lift. The vendored miniz tree is pinned and attributed instead of being rewritten. Two terminal inventory entries describe linker/import metadata rather than callable functions; they are retained because the authoritative function inventory exposes them and their bytes still require exactly-once accounting.",
+  "image": {
+    "path": "analysis/xex/basefiles/Updater.pe",
+    "size": 118784,
+    "sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+    "load_address": "0x98000000",
+    "entry_point": "0x9800d130",
+    "layout": "memory-layout PE; section RVA, not PointerToRawData, locates initialized bytes"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/Updater-functions.json",
+    "sha256": "d72f84938cdace8ec6833248d2942afed55a37a6ee73c913120fd32441d6a34d",
+    "entry_count": 376,
+    "recovery_source": {
+      "path": "third_party/artifacts/updater-dtk/auto_02_98005000_text.obj",
+      "size": 131316,
+      "sha256": "39811ef46d24b01267dea8cd081612322dd7e48ebd6b660cff3cf9bd7f1a5322"
+    }
+  },
+  "evidence_inputs": [
+    {
+      "path": "analysis/xex/Updater-callgraph.json",
+      "sha256": "5056ac681f300ad6f33109048100f31321f26f19585a82298955f6d169ffbfc2",
+      "role": "direct-call topology and transition-boundary evidence"
+    },
+    {
+      "path": "analysis/xex/Updater-string-xrefs.json",
+      "sha256": "15af4c57ebacff384480f6445a2ccc7a423324f5f7f8fb5369a3e8a471b8b669",
+      "role": "product diagnostics, STL diagnostics, and miniz family evidence"
+    },
+    {
+      "path": "analysis/xex/Updater-symbols.json",
+      "sha256": "010363a43c096608a48f62eaa4c16caddad791713c5862dbcfe7955fcfe1376f",
+      "role": "high-confidence semantic overlay"
+    },
+    {
+      "path": "analysis/xex/Updater-provenance.json",
+      "sha256": "6b0f6aa5985cf7fd2b1c313b6dda731bb8d30dde05890768d7681d87c2c66cde",
+      "role": "author-declared miniz release plus independent binary-family evidence"
+    },
+    {
+      "path": "analysis/xex/Updater-source-attribution.json",
+      "sha256": "f199a9c239ada0cbda6af8412ba83997a2fd1524aa4a919013f3b3757da90552",
+      "role": "coarse whole-text provenance partition refined here to function boundaries"
+    }
+  ],
+  "instruction_region": {
+    "section": ".text",
+    "rva": "0x00005000",
+    "start": "0x98005000",
+    "end_exclusive": "0x9801aa40",
+    "size": 88640,
+    "sha256": "3a2f4088b82f70165888a152480c3bb0d4543fa0e3503cea03ac476194aa5022"
+  },
+  "upstream_sources": {
+    "miniz_3_1_1": {
+      "name": "miniz 3.1.1",
+      "license": "MIT",
+      "vendored_root": "third_party/miniz",
+      "gitlink_commit": "d10b03cc73475af673df40f06e5cefd1d5f940d9",
+      "upstream": "https://github.com/richgel999/miniz/tree/3.1.1",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "0115478d567121238cf6cc1c0c361926cf07a49d9e4c9e66da97fac6a01646b3"
+        },
+        {
+          "path": "CMakeLists.txt",
+          "sha256": "5f78924cc7419d3065b725a0f795ee5cc87e151b8450c4abfdb673d1d264833b"
+        },
+        {
+          "path": "miniz.c",
+          "sha256": "6a0314b68c9b804f33e27d89aa3144ef7724fd787043ba8c95d1b19be2d64afd"
+        },
+        {
+          "path": "miniz.h",
+          "sha256": "0c85210868066516ecc76a9c9cbf77c69bb085ade34ab78177bb3acaf8c1a6d7"
+        },
+        {
+          "path": "miniz_common.h",
+          "sha256": "fa5bf07d72efa51640f9d8ee11431fd2538e6218aea9e9328905edeb54187997"
+        },
+        {
+          "path": "miniz_tinfl.c",
+          "sha256": "ced7aa650454250544a02f107fad4790c76924cce68d19e9496dcd25588e89b5"
+        },
+        {
+          "path": "miniz_tinfl.h",
+          "sha256": "ef18f995b0151095a0e9ed718114bd03437c607b302ee979a9d371f157bacf8a"
+        },
+        {
+          "path": "miniz_zip.c",
+          "sha256": "1ab94b269cd6021b006dac0fa78a42c73e1559676d086a16059fb98e21830606"
+        },
+        {
+          "path": "miniz_zip.h",
+          "sha256": "eff19da6bcd7e127bb4447bf67a6093a6e589ee496fd251a444ec3b58c1d86f4"
+        }
+      ],
+      "version_basis": "The binary's ordered ZIP error table proves the miniz 3.x family; the public author attribution fixes release 3.1.1, and the repository gitlink fixes commit d10b03cc73475af673df40f06e5cefd1d5f940d9. This is provenance evidence, not a claim that compiler output can be byte-matched to source text."
+    }
+  },
+  "boundary_refinements": [
+    {
+      "coarse_input_range": {
+        "start": "0x98008d68",
+        "end_exclusive": "0x9800d130",
+        "classification": "miniz compression and ZIP library"
+      },
+      "refined_upstream_end_exclusive": "0x9800ce38",
+      "moved_to_platform_toolchain": {
+        "start": "0x9800ce38",
+        "end_exclusive": "0x9800d130",
+        "inventory_entry_count": 4,
+        "size": 760
+      },
+      "confidence": "high",
+      "evidence": [
+        "fn_9800CDD8 remains in the miniz extraction call chain, calling mz_zip_reader_locate_file and the internal extraction worker",
+        "fn_9800CE38 begins process attach/detach lifecycle handling and calls CRT initialization functions rather than miniz routines",
+        "the PE entry instruction at 0x9800D130 is 0x4bfffea8, an unconditional relative branch to fn_9800CFD8 inside this lifecycle block",
+        "fn_9800CE38, fn_9800CF64, fn_9800CFD8, and fn_9800D100 contain startup/unwind patterns and no miniz data or error-table references"
+      ]
+    }
+  ],
+  "product_application_entries": [
+    {
+      "address": "0x98005140",
+      "semantic_name": "ZipArchive_ExtractToBuffer",
+      "confidence": "high",
+      "evidence": "product diagnostic strings and calls to miniz locate/extract APIs"
+    },
+    {
+      "address": "0x98005280",
+      "semantic_name": "ZipArchive_ExtractToHeap",
+      "confidence": "high",
+      "evidence": "product diagnostic strings, product allocation policy, and miniz locate/extract calls"
+    },
+    {
+      "address": "0x980053d8",
+      "semantic_name": "WriteFileCallback",
+      "confidence": "high",
+      "evidence": "references the WriteFileCallback failure diagnostic and adapts the updater's file handle to the archive callback ABI"
+    },
+    {
+      "address": "0x98005ca8",
+      "semantic_name": "SoftmodData_Construct",
+      "confidence": "high",
+      "evidence": "initializes the exact SoftmodData archive, manifest-vector, and ownership fields later consumed by named methods"
+    },
+    {
+      "address": "0x98005d18",
+      "semantic_name": "SoftmodData_Destroy",
+      "confidence": "high",
+      "evidence": "releases the same archive, buffer, and manifest-vector fields initialized by SoftmodData_Construct"
+    },
+    {
+      "address": "0x98005eb0",
+      "semantic_name": "SoftmodData_LoadManifest",
+      "confidence": "high",
+      "evidence": "extracts softmod.manifest and validates the product-specific XBPP record set"
+    },
+    {
+      "address": "0x980062c8",
+      "semantic_name": "SoftmodData_LoadArchive",
+      "confidence": "high",
+      "evidence": "owns the SoftmodData::LoadArchive diagnostic and initializes the miniz memory reader"
+    },
+    {
+      "address": "0x980064b8",
+      "semantic_name": "SoftmodData_FindFile",
+      "confidence": "high",
+      "evidence": "searches product manifest records and returns the matching Stage2/update metadata"
+    },
+    {
+      "address": "0x98006740",
+      "semantic_name": "SoftmodData_ExtractFileToPath",
+      "confidence": "high",
+      "evidence": "connects a selected manifest record, miniz extraction, destination preparation, and product file-output policy"
+    },
+    {
+      "address": "0x98006990",
+      "semantic_name": "SoftmodData_CollectFilesByPrefix",
+      "confidence": "high",
+      "evidence": "selects and validates product manifest records under the PeerPressure/ prefix"
+    },
+    {
+      "address": "0x98006bd0",
+      "semantic_name": "FormatDiagnosticAndDispatch",
+      "confidence": "high",
+      "evidence": "formats product diagnostics into the updater's 1024-byte sink buffer and dispatches through the registered callback"
+    },
+    {
+      "address": "0x98006c70",
+      "semantic_name": "UpdaterDllLifecycleHook",
+      "confidence": "medium",
+      "evidence": "the CRT lifecycle driver calls this product hook on attach/detach; the closed implementation accepts every event"
+    },
+    {
+      "address": "0x98006ce0",
+      "semantic_name": "GetSoftmodDataContext",
+      "confidence": "medium",
+      "evidence": "constructs and registers destruction for the singleton passed to all SoftmodData methods"
+    },
+    {
+      "address": "0x98006d40",
+      "semantic_name": "InstallHddBootstrap",
+      "confidence": "high",
+      "evidence": "opens the physical HDD and installs the product-specific XBPP Stage2 bootstrap record"
+    },
+    {
+      "address": "0x98006f60",
+      "semantic_name": "WritePhaseTwoFileList",
+      "confidence": "high",
+      "evidence": "serializes product paths to PPROOT:\\update.phase2"
+    },
+    {
+      "address": "0x98007680",
+      "semantic_name": "AppendPhaseTwoPath",
+      "confidence": "high",
+      "evidence": "adds only manifest records carrying the product's phase-two flag"
+    },
+    {
+      "address": "0x98007758",
+      "semantic_name": "RunUpdate",
+      "confidence": "high",
+      "evidence": "owns the updater progress states and coordinates archive extraction, HDD bootstrap installation, and finalization"
+    },
+    {
+      "address": "0x98007bc0",
+      "semantic_name": "FileExists",
+      "confidence": "high",
+      "evidence": "implements RunUpdate's preserve-existing-file policy"
+    },
+    {
+      "address": "0x98007da8",
+      "semantic_name": "CompareStringsWithCaseOption",
+      "confidence": "medium",
+      "evidence": "product helper adds selectable ASCII case folding around std::string storage; it is not a standalone STL body"
+    },
+    {
+      "address": "0x98007ef0",
+      "semantic_name": "EnsureParentDirectories",
+      "confidence": "high",
+      "evidence": "walks product destination components and treats ERROR_ALREADY_EXISTS as successful preparation"
+    }
+  ],
+  "compiler_emitted_template_partition": {
+    "inventory_entry_count": 34,
+    "size": 5256,
+    "classification": "platform_toolchain",
+    "description": "Out-of-line MSVC std::string, std::vector, allocator, and element-lifecycle instantiations emitted for Updater translation units. They are not counted as product algorithms merely because the linker placed them between product routines.",
+    "ranges": [
+      {
+        "start": "0x98005448",
+        "end_exclusive": "0x98005ca8",
+        "inventory_entry_count": 14,
+        "size": 2144,
+        "evidence": "small-string storage tests, allocator overflow checks, string search/growth, vector growth diagnostics, and element destruction"
+      },
+      {
+        "start": "0x98005d80",
+        "end_exclusive": "0x98005eb0",
+        "inventory_entry_count": 2,
+        "size": 304,
+        "evidence": "std::string construction/assignment and vector insertion over four-byte elements"
+      },
+      {
+        "start": "0x980060e8",
+        "end_exclusive": "0x980062c8",
+        "inventory_entry_count": 3,
+        "size": 480,
+        "evidence": "std::string construction/move and vector reserve for 0x470-byte records"
+      },
+      {
+        "start": "0x980066c8",
+        "end_exclusive": "0x98006740",
+        "inventory_entry_count": 1,
+        "size": 120,
+        "evidence": "vector capacity-growth calculation with vector<T> too long failure"
+      },
+      {
+        "start": "0x980068b0",
+        "end_exclusive": "0x98006990",
+        "inventory_entry_count": 1,
+        "size": 224,
+        "evidence": "vector insertion/copy body over manifest-record elements"
+      },
+      {
+        "start": "0x98006c78",
+        "end_exclusive": "0x98006ce0",
+        "inventory_entry_count": 1,
+        "size": 104,
+        "evidence": "allocator overflow check and allocation for 28-byte vector elements"
+      },
+      {
+        "start": "0x980070c0",
+        "end_exclusive": "0x98007680",
+        "inventory_entry_count": 10,
+        "size": 1472,
+        "evidence": "std::string append/assign/operator+ bodies and vector reserve/destruction for 28-byte elements"
+      },
+      {
+        "start": "0x98007c10",
+        "end_exclusive": "0x98007da8",
+        "inventory_entry_count": 2,
+        "size": 408,
+        "evidence": "std::string substring and character-set search bodies over small-string storage"
+      }
+    ]
+  },
+  "miniz_key_matches": [
+    {
+      "address": "0x98008d68",
+      "upstream_symbol": "tinfl_decompress",
+      "confidence": "high",
+      "evidence": "size, constants, and decompressor state-machine shape"
+    },
+    {
+      "address": "0x9800b560",
+      "upstream_symbol": "mz_zip_reader_init_mem",
+      "confidence": "high",
+      "evidence": "application call ABI and memory-reader initialization flow"
+    },
+    {
+      "address": "0x9800bee0",
+      "upstream_symbol": "mz_zip_reader_locate_file",
+      "confidence": "high",
+      "evidence": "application call ABI and archive-member lookup flow"
+    },
+    {
+      "address": "0x9800c248",
+      "upstream_symbol": "mz_zip_get_last_error",
+      "confidence": "high",
+      "evidence": "40-byte accessor and null behavior match upstream"
+    },
+    {
+      "address": "0x9800c270",
+      "upstream_symbol": "mz_zip_get_error_string",
+      "confidence": "high",
+      "evidence": "complete ordered miniz 3.x ZIP error-string switch"
+    },
+    {
+      "address": "0x9800c450",
+      "upstream_symbol": "mz_zip_reader_extract_to_mem",
+      "confidence": "high",
+      "evidence": "application call ABI and forwarding wrapper shape"
+    }
+  ],
+  "categories": {
+    "product_application": {
+      "inventory_entry_count": 20,
+      "size": 6728,
+      "concatenated_sha256": "ab3b40b241ad554ab1250044de4c08f876dfb205de300a74677dc2b1e185632b",
+      "peer_specific": true,
+      "personal_authorship_claim": false,
+      "description": "Updater-specific archive wrapping, SoftmodData/XBPP parsing and selection, HDD bootstrap policy, phase-two staging, file/path policy, diagnostics, lifecycle hook, and update orchestration. The label is product provenance, not a claim about the identity of a human author.",
+      "ranges": [
+        {
+          "start": "0x98005140",
+          "end_exclusive": "0x98005448",
+          "size": 776,
+          "inventory_entry_count": 3,
+          "sha256": "dee5d66c55a7938b7efc469caf1579731499d5787e8cfa20ad8c4e22354dc97a"
+        },
+        {
+          "start": "0x98005ca8",
+          "end_exclusive": "0x98005d80",
+          "size": 216,
+          "inventory_entry_count": 2,
+          "sha256": "8c2fc1ba5c4842ba20bcc12482305af836b7c9b045c6948c14bb21f75053557b"
+        },
+        {
+          "start": "0x98005eb0",
+          "end_exclusive": "0x980060e8",
+          "size": 568,
+          "inventory_entry_count": 1,
+          "sha256": "ef5b97688dd9bebdb8db5f9cda8cecbc72aee907108c4bae4948882ccf5705ba"
+        },
+        {
+          "start": "0x980062c8",
+          "end_exclusive": "0x980066c8",
+          "size": 1024,
+          "inventory_entry_count": 2,
+          "sha256": "df11e558b3f40fdac27ab3a29470810b6d4cd1bdf6bc5021d7d783335f7abc07"
+        },
+        {
+          "start": "0x98006740",
+          "end_exclusive": "0x980068b0",
+          "size": 368,
+          "inventory_entry_count": 1,
+          "sha256": "3da76fd9998df86dc22baacdf3729c58cab04cf6030890d0530cf30e8739ba40"
+        },
+        {
+          "start": "0x98006990",
+          "end_exclusive": "0x98006c78",
+          "size": 744,
+          "inventory_entry_count": 3,
+          "sha256": "adb4b6a83fbb6113783a5e46b46da4d66d67f1ac40abf4d23581eab1971abc25"
+        },
+        {
+          "start": "0x98006ce0",
+          "end_exclusive": "0x980070c0",
+          "size": 992,
+          "inventory_entry_count": 3,
+          "sha256": "b1e3319031e3d02723b15b9130883260b6e89b1674326353f60679330aaa6081"
+        },
+        {
+          "start": "0x98007680",
+          "end_exclusive": "0x98007c10",
+          "size": 1424,
+          "inventory_entry_count": 3,
+          "sha256": "748b0f249877a70ee9a80e0738e34921d43c1fd663371a5151210cde2569d7a5"
+        },
+        {
+          "start": "0x98007da8",
+          "end_exclusive": "0x98008010",
+          "size": 616,
+          "inventory_entry_count": 2,
+          "sha256": "a8ff47208de4c31d2e0ecb4ed93c9467e76c4a303333cde5640ba4d2accb5b0b"
+        }
+      ]
+    },
+    "upstream_miniz": {
+      "inventory_entry_count": 22,
+      "size": 16592,
+      "concatenated_sha256": "9cc2bc621cb1aa041aad227d1c65423ab9592740c74eb561630f8377d398cf26",
+      "peer_specific": false,
+      "description": "The contiguous miniz decompressor and ZIP-reader implementation. It is attributed and pinned to the declared upstream release; it is outside the closed product-source reconstruction queue.",
+      "ranges": [
+        {
+          "start": "0x98008d68",
+          "end_exclusive": "0x9800ce38",
+          "size": 16592,
+          "inventory_entry_count": 22,
+          "sha256": "9cc2bc621cb1aa041aad227d1c65423ab9592740c74eb561630f8377d398cf26"
+        }
+      ]
+    },
+    "platform_toolchain": {
+      "inventory_entry_count": 334,
+      "size": 65320,
+      "concatenated_sha256": "08c20d44f38396dfe4d506ce7fb7621e343308f034ae2db7bf4d54171595506d",
+      "peer_specific": false,
+      "description": "MSVC C++ support and emitted STL templates, Xbox/MSVC file support, process startup, CRT/unwind/math/compiler helpers, import thunks, and terminal linker metadata. Platform classification describes the supplied implementation role; it does not imply those proprietary library sources are vendored or open source.",
+      "subclassification_summary": [
+        {
+          "name": "MSVC C++ support and compiler-emitted application-TU templates",
+          "inventory_entry_count": 40,
+          "size": 5576
+        },
+        {
+          "name": "Xbox/MSVC file, allocation, and exception support",
+          "inventory_entry_count": 30,
+          "size": 3416
+        },
+        {
+          "name": "Xbox/MSVC startup, CRT, unwind, math, and compiler support",
+          "inventory_entry_count": 215,
+          "size": 55528
+        },
+        {
+          "name": "Xbox kernel import thunks",
+          "inventory_entry_count": 47,
+          "size": 752
+        },
+        {
+          "name": "terminal linker/import metadata represented as inventory entries",
+          "inventory_entry_count": 2,
+          "size": 48
+        }
+      ],
+      "ranges": [
+        {
+          "start": "0x98005000",
+          "end_exclusive": "0x98005140",
+          "size": 320,
+          "inventory_entry_count": 6,
+          "sha256": "655b0b34fd5531c17824388b926d4abe16bb570ab31608edecbfd10133e029ac"
+        },
+        {
+          "start": "0x98005448",
+          "end_exclusive": "0x98005ca8",
+          "size": 2144,
+          "inventory_entry_count": 14,
+          "sha256": "10df33270b13c9140d3140c4aa245665b87b92fe0a546ecbc5cc437d4dab88db"
+        },
+        {
+          "start": "0x98005d80",
+          "end_exclusive": "0x98005eb0",
+          "size": 304,
+          "inventory_entry_count": 2,
+          "sha256": "923f386dcac6f7e394ee46ba64f75afef33b913c0ea1d2901dfa77e106f455dc"
+        },
+        {
+          "start": "0x980060e8",
+          "end_exclusive": "0x980062c8",
+          "size": 480,
+          "inventory_entry_count": 3,
+          "sha256": "0ba1b6f252de9505aad882e3f1bb0b3f42fd83368cb089848b3ddce7ae297912"
+        },
+        {
+          "start": "0x980066c8",
+          "end_exclusive": "0x98006740",
+          "size": 120,
+          "inventory_entry_count": 1,
+          "sha256": "283708af8a87561ede9ea117b80bece00605762be9f8dc9a9fa459501fbd0f70"
+        },
+        {
+          "start": "0x980068b0",
+          "end_exclusive": "0x98006990",
+          "size": 224,
+          "inventory_entry_count": 1,
+          "sha256": "e891c372569ab10187d9145fcb825ee3fb29ed51e704b8a289b4cfb1daea7774"
+        },
+        {
+          "start": "0x98006c78",
+          "end_exclusive": "0x98006ce0",
+          "size": 104,
+          "inventory_entry_count": 1,
+          "sha256": "1757c4ef41203c032876be57cab5ec8dd74c4e0887e48c5aca8b0ebaa8227549"
+        },
+        {
+          "start": "0x980070c0",
+          "end_exclusive": "0x98007680",
+          "size": 1472,
+          "inventory_entry_count": 10,
+          "sha256": "af679b3f1fd702dd00f7350e836a85ca275c6d2babee97f6629dc72e6b996fbf"
+        },
+        {
+          "start": "0x98007c10",
+          "end_exclusive": "0x98007da8",
+          "size": 408,
+          "inventory_entry_count": 2,
+          "sha256": "f8ec20184d1ec5d78d1c72ad512eaea07cbb366fc2958ece04887c1638f5a7b5"
+        },
+        {
+          "start": "0x98008010",
+          "end_exclusive": "0x98008d68",
+          "size": 3416,
+          "inventory_entry_count": 30,
+          "sha256": "5d616d7f24ac4b74b9d84d42338213ee5fb9c85e2139064da1e480269455d002"
+        },
+        {
+          "start": "0x9800ce38",
+          "end_exclusive": "0x9801a720",
+          "size": 55528,
+          "inventory_entry_count": 215,
+          "sha256": "1b7281f6dfb0933bdecc013db91f785b5b889b1e900b3ccf1a7bbb411f39fad5"
+        },
+        {
+          "start": "0x9801a720",
+          "end_exclusive": "0x9801aa10",
+          "size": 752,
+          "inventory_entry_count": 47,
+          "sha256": "8fafb44564529709b052a7389717d4aac0630788e8ceb18d3a1c98f81d07a648"
+        },
+        {
+          "start": "0x9801aa10",
+          "end_exclusive": "0x9801aa40",
+          "size": 48,
+          "inventory_entry_count": 2,
+          "sha256": "69546aa7118fdd2f8164bd526c1d35e28b731f84e2182b83b4d36585952d4fb8"
+        }
+      ]
+    },
+    "unknown": {
+      "inventory_entry_count": 0,
+      "size": 0,
+      "concatenated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "peer_specific": null,
+      "description": "No recovered entry remains unassigned after separating product routines, standalone emitted templates/support, miniz, runtime, imports, and terminal metadata.",
+      "ranges": []
+    }
+  },
+  "totals": {
+    "inventory_entry_count": 376,
+    "instruction_size": 88640,
+    "category_count": 4,
+    "product_application_entry_count": 20,
+    "product_application_size": 6728,
+    "non_product_entry_count": 356,
+    "non_product_size": 81912
+  },
+  "uncertainties": [
+    "Product classification is component-level provenance, not a claim that Grimdoomer or any named person personally authored every instruction in those functions.",
+    "Semantic names not already present in Updater-symbols.json are descriptive recovery labels and are not asserted to be original PDB spellings.",
+    "The exact miniz revision rests on the public author declaration plus the pinned gitlink; the binary independently proves the 3.x family but compiler optimization prevents source-text byte identity.",
+    "Standalone template bodies are separated from product logic, but compiler-inlined standard-library sequences inside a product function cannot be assigned independently without inventing sub-function ownership boundaries.",
+    "The final 48 .text bytes are linker/import metadata, including a pointer to RunUpdate, rather than executable product logic; the function-recovery inventory nevertheless exposes two entries there, so this partition accounts for them as platform/toolchain-generated metadata."
+  ]
+}

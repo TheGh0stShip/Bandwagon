@@ -66,6 +66,34 @@ inih r62, upstream commit `26254ee9de7681f8825433415443e7116ff24b98`.
 dispatch. This separates the upstream parser from Peer's `ParseBootIniOption`
 callback without attributing diagnostic-free runtime code by address alone.
 
+## Exhaustive source ownership
+
+`BootXell-function-ownership.json` classifies every one of the 256 function
+inventory entries and all 74,840 initialized instruction bytes:
+
+| Ownership | Entries | Bytes | Recovery treatment |
+| --- | ---: | ---: | --- |
+| Peer Pressure product policy/adapters | 9 | 2,944 | Recovered as readable source |
+| inih r62 | 2 | 808 | Use the pinned upstream source |
+| miniz 3.1.1 | 18 | 18,776 | Use the pinned upstream source |
+| MSVC/Xbox platform and toolchain | 227 | 52,312 | Reuse the target ABI/runtime; do not relift |
+
+The miniz boundary is not based on adjacency alone. Its 5,288-byte `tinfl`
+core is instruction-structure-identical after relocation normalization to the
+independently attributed copies in Updater and SettingsApp. The inih line
+parser is byte-identical in BootEdit and SettingsApp, and its string driver is
+also structure-identical after relocation normalization.
+
+All nine product entries now have readable source coverage. The final two were
+app-local derivatives of miniz's stock compress/uncompress helpers: they select
+raw DEFLATE with window bits `-15`, and the compressor fixes level 10, method
+8, memory level 9, and default strategy. The adjacent seven file,
+physical-memory, last-error, and handle routines are standard XDK wrappers and
+are excluded as platform code. No inih, miniz engine, CRT, XDK wrapper, or
+import-thunk body remains in the product queue. Run
+`tools/verify_bootxell_function_ownership.py` to verify the partition and its
+cross-XEX evidence.
+
 `reconstruction/bootxell/boot_options.cpp` reconstructs the Peer INI callback,
 quoted value trimming, hexadecimal 64-bit base addresses, exact bypass
 acknowledgement, record finalization, marker gate, OtherOS path join, and
@@ -73,8 +101,8 @@ five-field `rbtr` request. `reconstruction/bootxell/xell_scan.cpp` implements
 the direct and gzip-wrapped sanitizer. `reconstruction/bootxell/runtime.cpp`
 lifts `ReadFileToBuffer`, `LoadBootIni`, `LaunchBootOption`, and `BootXellMain`
 behind explicit file, memory, parser, compression, and launch interfaces.
-`BootXell-peer-source-coverage.json` binds all seven currently identified Peer
-routines (2,512 bytes) to exact image hashes and source symbols. The option
+`BootXell-peer-source-coverage.json` binds all nine product routines (2,944
+bytes) to exact image hashes and source symbols. The option
 lookup preserves `BootXellMain`'s first-match, 64-byte bounded comparison.
 Run all host tests and the coverage check with
 `tools/test_bootxell_reconstruction.sh`.

@@ -187,6 +187,31 @@ def main() -> None:
         if entry_owners.get(address) != "peer_product_adapter_or_policy":
             fail(f"mixed FatFs-derived routine {address:#x} left the adapter bucket")
 
+    # Calling an XDK service or implementing a generic-looking hook does not
+    # establish compiler/platform ownership. These nine app-local bodies have
+    # readable replacement source and must remain in the product/local-adapter
+    # boundary rather than being excluded by role alone.
+    required_local_adapters = {
+        0x801F03C0: 192,
+        0x801F0480: 56,
+        0x801F04B8: 176,
+        0x801F05F0: 88,
+        0x801F14D0: 472,
+        0x801F18E8: 8,
+        0x801F18F0: 216,
+        0x801F2D70: 72,
+        0x801F2DB8: 32,
+    }
+    function_sizes = {
+        int(function["address"], 0): int(function["size_to_next_symbol"])
+        for function in functions
+    }
+    for address, size in required_local_adapters.items():
+        if function_sizes.get(address) != size:
+            fail(f"app-local adapter boundary changed at {address:#x}")
+        if entry_owners.get(address) != "peer_product_adapter_or_policy":
+            fail(f"app-local adapter {address:#x} left the product boundary")
+
     # Every complete inventory function extent must remain in one category. The
     # final inventory span includes eight alignment bytes, so cap it at f4a8.
     for index, function in enumerate(functions):

@@ -186,7 +186,7 @@ def main() -> None:
         "adapter/policy functions / "
         f"{summary['peer_product_adapter_or_policy_instruction_bytes']} bytes; "
         f"{upstream_count} FatFs, {summary['generic_platform_function_count']} "
-        f"platform, {summary['unattributed_function_count']} unattributed; "
+        f"platform/toolchain, {summary['unattributed_function_count']} unattributed; "
         f"{data_range_count} data {range_label}, "
         f"{data_total} exact bytes"
     )
