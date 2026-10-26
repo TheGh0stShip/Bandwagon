@@ -23,7 +23,7 @@ not the final implementation.
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Partial: shared `XBPP` handshake and staged transfer |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
 | BootXell | Complete initialized sections | Partial: boot-option parsing and launch decisions |
-| AuroraFixer | Complete initialized sections | Partial: import lookup/redirection, branch encoding, module entry flow |
+| AuroraFixer | Complete initialized sections | Complete: all five Peer-authored routines, including live import traversal, mutation, cache maintenance, and entry flow |
 | UpdateCheck | Complete initialized sections | Partial: release-version handling |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
 | BootEdit | Complete initialized sections | Partial: theme navigation/edit decisions |

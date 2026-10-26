@@ -33,8 +33,9 @@ The public BadUpdate source baseline is pinned as the
   semantic-symbol inventories; its Stage2 HDD record algorithm is documented.
 - BootXell's initialized code and data sections have complete byte-identical
   assembly reconstructions, with its INI option and launch flow documented.
-- AuroraFixer has a complete byte-identical initialized-image reconstruction;
-  its `DbgBreakPoint` import redirection and branch encoder are open and tested.
+- AuroraFixer has a complete byte-identical initialized-image reconstruction
+  and complete source-level recovery of all five Peer-authored routines; its
+  live `DbgBreakPoint` import redirection and cache maintenance are tested.
 - UpdateCheck has a complete byte-identical initialized-image reconstruction;
   its HTTPS latest-release lookup and semantic-version parser are documented.
 - BootEdit has a complete byte-identical initialized-image reconstruction and

@@ -77,3 +77,26 @@ image mapping, it scans every address in the matched library record and
 patches both direct IAT words and absolute branch thunks, matching the closed
 routine's non-short-circuiting behavior. Its result reports each form
 separately; invalid virtual addresses are rejected instead of dereferenced.
+
+`reconstruction/aurora_fixer/patch_runtime.cpp` completes the live behavior of
+`PatchAbsoluteBranch` behind an adapter. It optionally saves the original 16
+bytes, installs the encoded thunk, calls imported ordinal `0xbe`
+(`MmGetPhysicalAddress`), calls ordinal `0x61` (`KeFlushCacheRange`), and then
+invokes syscall `0x0c` (`HvxFlushDcacheRange`) with the patched address and
+length 16, exactly matching the recovered call sequence.
+
+`reconstruction/aurora_fixer/live_module_import.cpp` supplies the previously
+missing live loader path. It obtains and parses the target image's import
+descriptor, resolves the requested ordinal, scans every matching library stub,
+and applies either the four-byte direct-IAT write or the sixteen-byte branch
+rewrite. Both paths reproduce their distinct physical-address and cache-flush
+sequences. `live_dll_main.cpp` connects that routine directly to process attach
+and provides the source equivalent of the one-instruction
+`ReturnImmediately` target. Platform adapters isolate the proprietary XEX
+loader calls and syscall boundary; none of the recovered decision-making or
+mutation logic is left behind an opaque callback.
+
+Together these modules cover all five Peer-authored routines identified by the
+ownership inventory. AuroraFixer's source-level recovery is therefore complete;
+the linked MSVC/XDK runtime and Microsoft import thunks remain classified as
+third-party platform code rather than falsely rewritten as Peer source.

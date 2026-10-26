@@ -41,4 +41,22 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/module_import_test"
 "$work/module_import_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/aurora_fixer/absolute_branch.cpp" \
+    "$root/reconstruction/aurora_fixer/patch_runtime.cpp" \
+    "$root/reconstruction/aurora_fixer/patch_runtime_test.cpp" \
+    -o "$work/patch_runtime_test"
+"$work/patch_runtime_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/aurora_fixer/absolute_branch.cpp" \
+    "$root/reconstruction/aurora_fixer/import_stub.cpp" \
+    "$root/reconstruction/aurora_fixer/import_descriptor.cpp" \
+    "$root/reconstruction/aurora_fixer/patch_runtime.cpp" \
+    "$root/reconstruction/aurora_fixer/live_module_import.cpp" \
+    "$root/reconstruction/aurora_fixer/live_dll_main.cpp" \
+    "$root/reconstruction/aurora_fixer/live_module_import_test.cpp" \
+    -o "$work/live_module_import_test"
+"$work/live_module_import_test"
+
 echo "AuroraFixer portable reconstruction tests passed"
