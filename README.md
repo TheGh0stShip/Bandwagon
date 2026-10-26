@@ -36,8 +36,10 @@ The public BadUpdate source baseline is pinned as the
   its HTTPS latest-release lookup and semantic-version parser are documented.
 - BootEdit has a complete byte-identical initialized-image reconstruction and
   an initial semantic map of its `.xbat` theme editing workflow.
+- SettingsApp has a complete byte-identical initialized-image reconstruction
+  and a semantic map of update, boot, dashboard, OtherOS, and version settings.
 - The bundled dashboard-9199 boot animation is provenance-recorded as Microsoft
   code and intentionally excluded from Peer-authored source publication.
 
-Semantic recovery of the remaining executable functions, types, globals,
-indirect control flow, raw stage payloads, and SMC firmware is still in progress.
+Semantic recovery of remaining functions, types, globals, indirect control
+flow, raw stage payloads, and SMC firmware is still in progress.

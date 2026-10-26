@@ -1,0 +1,21 @@
+{
+  "schema": "bandwagon-settingsapp-semantic-symbols-v1",
+  "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a",
+  "symbols": [
+    {"address":"0x82021e08","recovered_name":"fn_82021E08","semantic_name":"LaunchUpdater","confidence":"high","evidence":["references Updater.xex and transfers control to the updater application"]},
+    {"address":"0x82023810","recovered_name":"fn_82023810","semantic_name":"FindOfflineUpdate","confidence":"high","evidence":["searches Mass%d:\\$SoftmodUpdate\\UpdateData.zip across removable mass-storage devices"]},
+    {"address":"0x820247e0","recovered_name":"fn_820247E0","semantic_name":"DownloadReleaseAsset","confidence":"high","evidence":["formats the GitHub release-asset API URL from a 64-bit asset ID","writes PPROOT:\\UpdateData.zip and sets the GitHub API version header"]},
+    {"address":"0x82024a58","recovered_name":"fn_82024A58","semantic_name":"FetchChangeLog","confidence":"high","evidence":["requests a GitHub release asset","owns the Failed to fetch change log diagnostic"]},
+    {"address":"0x82024c18","recovered_name":"fn_82024C18","semantic_name":"FetchLatestRelease","confidence":"high","evidence":["requests the GitHub latest-release API","selects the UpdateData.zip release asset"]},
+    {"address":"0x82027a10","recovered_name":"fn_82027A10","semantic_name":"DrawUpdatePane","confidence":"high","evidence":["owns update discovery, download, install, error, success, and reboot countdown UI","coordinates online and offline update paths"]},
+    {"address":"0x82028238","recovered_name":"fn_82028238","semantic_name":"DrawBootAnimationSettings","confidence":"high","evidence":["owns boot animation mode/theme UI","launches PPROOT:\\System\\BootEdit.xex"]},
+    {"address":"0x82028960","recovered_name":"fn_82028960","semantic_name":"ScanBootAnimationThemes","confidence":"high","evidence":["enumerates PPROOT:\\Themes\\BootAnim\\9199\\*.xbat"]},
+    {"address":"0x820295d0","recovered_name":"fn_820295D0","semantic_name":"DrawDashboardSettings","confidence":"high","evidence":["owns Dashboard Path and dashboard executable selection UI"]},
+    {"address":"0x82029c00","recovered_name":"fn_82029C00","semantic_name":"LoadOtherOsBootOptions","confidence":"high","evidence":["loads PPROOT:\\OtherOS\\boot.ini","consumes BootOption records"]},
+    {"address":"0x8202a038","recovered_name":"fn_8202A038","semantic_name":"DrawAutoUpdateSettings","confidence":"high","evidence":["owns startup update-check toggle, current/available version state, and install action"]},
+    {"address":"0x8202a3d8","recovered_name":"fn_8202A3D8","semantic_name":"LoadUpdateLog","confidence":"high","evidence":["loads PPROOT:\\System\\UpdateLog.txt for display"]},
+    {"address":"0x8202b778","recovered_name":"fn_8202B778","semantic_name":"SaveSettings","confidence":"high","evidence":["serializes current settings and owns Failed to save settings"]},
+    {"address":"0x8202b830","recovered_name":"fn_8202B830","semantic_name":"DrawSettingsNavigation","confidence":"high","evidence":["owns Boot Animation, Dashboard, Reboot in Retail Mode, Auto Update, and Settings navigation entries"]},
+    {"address":"0x8202c4d0","recovered_name":"fn_8202C4D0","semantic_name":"DrawPeerPressureInfo","confidence":"high","evidence":["displays kernel, SMC, and Peer Pressure version fields"]}
+  ]
+}

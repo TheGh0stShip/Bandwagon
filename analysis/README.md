@@ -74,6 +74,11 @@ sections have exact assembly source and reproducible static-analysis maps.
 sections, function/call/string inventories, and semantic names for theme
 enumeration, editing, save/load feedback, settings application, and selection.
 
+`xex/SettingsApp.md` covers the main settings UI. Its entire initialized image
+is exact assembly, with reproducible maps and initial semantic names spanning
+online/offline updates, boot themes, dashboard and OtherOS configuration,
+settings persistence, and displayed Peer/kernel/SMC version information.
+
 ## BadUpdate baseline and modified stages
 
 `badupdate-v1.3-baseline.md` records the pinned public-source/release
