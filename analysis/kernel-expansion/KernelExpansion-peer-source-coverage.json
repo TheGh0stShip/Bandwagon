@@ -88,6 +88,15 @@
       "symbols": ["InstructionPatchServices", "ReplaceInstructionWithNop", "kPpcNopInstruction"]
     },
     {
+      "address": "0x801f2db8",
+      "size": 32,
+      "sha256": "293f9e8329ff34c3111cda2f0d2618fe504e36dc96ce4c632877e93a59355ce8",
+      "semantic_name": "ReleaseBootstrapMapping",
+      "source": "reconstruction/kernel_expansion/bootstrap_mapping.cpp",
+      "header": "reconstruction/kernel_expansion/bootstrap_mapping.hpp",
+      "symbols": ["BootstrapMappingRelease", "BootstrapMappingServices", "ReleaseBootstrapMapping"]
+    },
+    {
       "address": "0x801f6af0",
       "size": 120,
       "sha256": "a8f598c960e062214fa71aea956ea83f7b12a9b39fb9d6b825eb721d2fe39c18",
@@ -186,6 +195,7 @@
     }
   ],
   "tests": [
+    "reconstruction/kernel_expansion/bootstrap_mapping_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",

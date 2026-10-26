@@ -13,13 +13,13 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 354 entry points from standard PPC prologues, direct `bl` targets, and three
-  independently bounded indirect callbacks.
+- 362 entry points from standard PPC prologues, direct `bl` targets, three
+  independently bounded indirect callbacks, and tail-only import thunks.
 - 1,085 direct call edges.
-- 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
+- 141 four-instruction absolute retail-kernel thunks; 96 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 33 high-confidence behavioral labels are emitted directly into the exact
+- 34 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -81,6 +81,10 @@ lift. The first exact-byte-bound routines are:
 - `ReplaceInstructionWithNop` (`0x801f2d70`, 72 bytes), represented as a typed
   instruction mutation with the recovered CPU flush, physical-address
   translation, and hypervisor data-cache flush ordering.
+- `ReleaseBootstrapMapping` (`0x801f2db8`, 32 bytes), represented as the fixed
+  release request tail-called through the newly recovered `MiFreeMappedMemory`
+  thunk. The unknown type of its second kernel argument remains explicitly
+  opaque rather than being guessed.
 - `RecognizeGptDisk` (`0x801fa540`, 256 bytes), represented as a bounds-safe
   GPT-header recognizer and the exact recovered reflected CRC-32 loop. The
   binary includes the stored checksum field in its checksum input; the lift
@@ -121,10 +125,10 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-20 independently bounded routines totaling 3,232 original instruction bytes.
+21 independently bounded routines totaling 3,264 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 354 discovered entries are maintainable
+evidence oracle, not a claim that all 362 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former

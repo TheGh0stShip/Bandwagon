@@ -4,9 +4,9 @@
   "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
   "image_base": "0x801f0000",
   "text_end": "0xf4b0",
-  "function_count": 354,
-  "kernel_thunk_count": 133,
-  "resolved_kernel_thunk_count": 91,
+  "function_count": 362,
+  "kernel_thunk_count": 141,
+  "resolved_kernel_thunk_count": 96,
   "functions": [
     {
       "address": "0x801f0000",
@@ -372,9 +372,9 @@
       "address": "0x801f2db8",
       "section_offset": "0x2db8",
       "size_to_next_symbol": 32,
-      "name": "fn_801F2DB8",
+      "name": "ReleaseBootstrapMapping",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -2224,7 +2224,7 @@
       "size_to_next_symbol": 16,
       "name": "memset",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010d110",
@@ -2236,7 +2236,7 @@
       "size_to_next_symbol": 16,
       "name": "XexUnloadImage",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8007d0e8",
@@ -2248,7 +2248,7 @@
       "size_to_next_symbol": 16,
       "name": "FscInvalidateDevice",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006eb20",
@@ -2260,7 +2260,7 @@
       "size_to_next_symbol": 16,
       "name": "HalSendSMCMessage",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80067f48",
@@ -2272,7 +2272,7 @@
       "size_to_next_symbol": 16,
       "name": "DbgPrint",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80085ee8",
@@ -2284,7 +2284,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlGetStackLimits",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800893b0",
@@ -2296,7 +2296,7 @@
       "size_to_next_symbol": 16,
       "name": "KeStallExecutionProcessor",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80073484",
@@ -2308,7 +2308,7 @@
       "size_to_next_symbol": 16,
       "name": "KeFlushCacheRange",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80073850",
@@ -2320,7 +2320,7 @@
       "size_to_next_symbol": 16,
       "name": "MmGetPhysicalAddress",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80080048",
@@ -2332,7 +2332,7 @@
       "size_to_next_symbol": 16,
       "name": "HvxFlushDCacheRange",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8007f968",
@@ -2344,7 +2344,7 @@
       "size_to_next_symbol": 16,
       "name": "DbgBreakPoint",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80085ea0",
@@ -2356,7 +2356,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlInitAnsiString",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80086110",
@@ -2368,7 +2368,7 @@
       "size_to_next_symbol": 16,
       "name": "ObDeleteSymbolicLink",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008af50",
@@ -2380,7 +2380,7 @@
       "size_to_next_symbol": 16,
       "name": "SataChannelIdentifyDevice",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8015e218",
@@ -2392,7 +2392,7 @@
       "size_to_next_symbol": 16,
       "name": "SataChannelSetTransferMode",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8015e2b8",
@@ -2404,7 +2404,7 @@
       "size_to_next_symbol": 16,
       "name": "MmFreePhysicalMemory",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800807b8",
@@ -2416,7 +2416,7 @@
       "size_to_next_symbol": 16,
       "name": "ObCreateSymbolicLink",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008aef0",
@@ -2428,7 +2428,7 @@
       "size_to_next_symbol": 16,
       "name": "ExInitializeReadWriteLock",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80064498",
@@ -2440,7 +2440,7 @@
       "size_to_next_symbol": 16,
       "name": "NtAllocateVirtualMemory",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80083aa8",
@@ -2452,7 +2452,7 @@
       "size_to_next_symbol": 16,
       "name": "VdDisplayFatalError",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800bdd40",
@@ -2464,7 +2464,7 @@
       "size_to_next_symbol": 16,
       "name": "ExFreePool",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80064768",
@@ -2476,7 +2476,7 @@
       "size_to_next_symbol": 16,
       "name": "NtCreateFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006caa8",
@@ -2488,7 +2488,7 @@
       "size_to_next_symbol": 16,
       "name": "NtQueryInformationFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006d630",
@@ -2500,7 +2500,7 @@
       "size_to_next_symbol": 16,
       "name": "NtReadFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006cec8",
@@ -2512,7 +2512,7 @@
       "size_to_next_symbol": 16,
       "name": "NtWaitForSingleObjectEx",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008b188",
@@ -2524,7 +2524,7 @@
       "size_to_next_symbol": 16,
       "name": "NtClose",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80089eb0",
@@ -2536,7 +2536,7 @@
       "size_to_next_symbol": 16,
       "name": "memcpy",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010cc40",
@@ -2548,7 +2548,7 @@
       "size_to_next_symbol": 16,
       "name": "NtFreeVirtualMemory",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80083190",
@@ -2560,7 +2560,7 @@
       "size_to_next_symbol": 16,
       "name": "XexLoadImage",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8007d7c0",
@@ -2572,7 +2572,7 @@
       "size_to_next_symbol": 16,
       "name": "XexGetProcedureAddress",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8007d1b0",
@@ -2584,7 +2584,7 @@
       "size_to_next_symbol": 16,
       "name": "AnipCheckFlags",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80061498",
@@ -2596,7 +2596,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEDC8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800c6918",
@@ -2608,7 +2608,7 @@
       "size_to_next_symbol": 16,
       "name": "VdSetDisplayModeOverride",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800c6b58",
@@ -2620,7 +2620,7 @@
       "size_to_next_symbol": 16,
       "name": "VdSetDisplayMode",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800c7650",
@@ -2632,7 +2632,7 @@
       "size_to_next_symbol": 16,
       "name": "VdSetWSSOption",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800bede8",
@@ -2644,7 +2644,7 @@
       "size_to_next_symbol": 16,
       "name": "VdInitializeScaler",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800cf670",
@@ -2653,14 +2653,26 @@
     {
       "address": "0x801fee18",
       "section_offset": "0xee18",
-      "size_to_next_symbol": 32,
+      "size_to_next_symbol": 16,
       "name": "VdTurnDisplayOn",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800c6010",
       "target_name": "VdTurnDisplayOn"
+    },
+    {
+      "address": "0x801fee28",
+      "section_offset": "0xee28",
+      "size_to_next_symbol": 16,
+      "name": "AnipPlayBootAnimationThread",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800614f0",
+      "target_name": "AnipPlayBootAnimationThread"
     },
     {
       "address": "0x801fee38",
@@ -2668,7 +2680,7 @@
       "size_to_next_symbol": 16,
       "name": "ExCreateThread",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80065f40",
@@ -2680,7 +2692,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlInitUnicodeString",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80086150",
@@ -2692,7 +2704,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlCompareUnicodeStringN",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800864b0",
@@ -2704,7 +2716,7 @@
       "size_to_next_symbol": 16,
       "name": "KfAcquireSpinLock",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80070138",
@@ -2716,7 +2728,7 @@
       "size_to_next_symbol": 16,
       "name": "ObDissectName",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008c148",
@@ -2728,7 +2740,7 @@
       "size_to_next_symbol": 16,
       "name": "ObpLookupElementNameInDirectory",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008a348",
@@ -2740,7 +2752,7 @@
       "size_to_next_symbol": 16,
       "name": "ObReferenceObject",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008b8e0",
@@ -2752,7 +2764,7 @@
       "size_to_next_symbol": 16,
       "name": "KfReleaseSpinLock",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8007018c",
@@ -2764,7 +2776,7 @@
       "size_to_next_symbol": 16,
       "name": "ObDereferenceObject",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008b928",
@@ -2776,7 +2788,7 @@
       "size_to_next_symbol": 16,
       "name": "KeEnterCriticalRegion",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800718e0",
@@ -2788,7 +2800,7 @@
       "size_to_next_symbol": 16,
       "name": "ExAcquireReadWriteLockShared",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800642b8",
@@ -2800,7 +2812,7 @@
       "size_to_next_symbol": 16,
       "name": "ExReleaseReadWriteLock",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800643d8",
@@ -2812,7 +2824,7 @@
       "size_to_next_symbol": 16,
       "name": "KeLeaveCriticalRegion",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800718f8",
@@ -2824,7 +2836,7 @@
       "size_to_next_symbol": 16,
       "name": "strncpy",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010d1b0",
@@ -2836,7 +2848,7 @@
       "size_to_next_symbol": 16,
       "name": "ExAcquireReadWriteLockExclusive",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800641d8",
@@ -2848,7 +2860,7 @@
       "size_to_next_symbol": 16,
       "name": "ExAllocatePool",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80064a68",
@@ -2860,7 +2872,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlImageNtHeader",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800893e8",
@@ -2872,7 +2884,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEF48",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80089678",
@@ -2884,7 +2896,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlCompareStringN",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80086390",
@@ -2896,7 +2908,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlImageXexHeaderField",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80089590",
@@ -2908,7 +2920,7 @@
       "size_to_next_symbol": 16,
       "name": "NtCreateEvent",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80066368",
@@ -2920,7 +2932,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEF88",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0bf0",
@@ -2932,7 +2944,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEF98",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816c5508",
@@ -2944,7 +2956,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEFA8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a2898",
@@ -2956,7 +2968,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEFB8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a1458",
@@ -2968,7 +2980,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FEFC8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800655a0",
@@ -2980,7 +2992,7 @@
       "size_to_next_symbol": 16,
       "name": "MmAllocatePhysicalMemoryEx",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800801d8",
@@ -2989,14 +3001,26 @@
     {
       "address": "0x801fefe8",
       "section_offset": "0xefe8",
-      "size_to_next_symbol": 32,
+      "size_to_next_symbol": 16,
       "name": "_snprintf",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010c7f8",
       "target_name": "_snprintf"
+    },
+    {
+      "address": "0x801feff8",
+      "section_offset": "0xeff8",
+      "size_to_next_symbol": 16,
+      "name": "MiFreeMappedMemory",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x800817d0",
+      "target_name": "MiFreeMappedMemory"
     },
     {
       "address": "0x801ff008",
@@ -3004,7 +3028,7 @@
       "size_to_next_symbol": 16,
       "name": "IoCreateDevice",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006aea0",
@@ -3016,7 +3040,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlInitializeCriticalSection",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80089760",
@@ -3025,14 +3049,26 @@
     {
       "address": "0x801ff028",
       "section_offset": "0xf028",
-      "size_to_next_symbol": 32,
+      "size_to_next_symbol": 16,
       "name": "IoDeleteDevice",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006b150",
       "target_name": "IoDeleteDevice"
+    },
+    {
+      "address": "0x801ff038",
+      "section_offset": "0xf038",
+      "size_to_next_symbol": 16,
+      "name": "ExExpansionCall",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80066400",
+      "target_name": "ExExpansionCall"
     },
     {
       "address": "0x801ff048",
@@ -3040,7 +3076,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF048",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8167c0e0",
@@ -3052,7 +3088,7 @@
       "size_to_next_symbol": 16,
       "name": "_snwprintf",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010c880",
@@ -3061,13 +3097,49 @@
     {
       "address": "0x801ff068",
       "section_offset": "0xf068",
-      "size_to_next_symbol": 64,
+      "size_to_next_symbol": 16,
       "name": "fn_801FF068",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80092458",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff078",
+      "section_offset": "0xf078",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF078",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80094828",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff088",
+      "section_offset": "0xf088",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF088",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80093990",
+      "target_name": null
+    },
+    {
+      "address": "0x801ff098",
+      "section_offset": "0xf098",
+      "size_to_next_symbol": 16,
+      "name": "fn_801FF098",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x80093ed8",
       "target_name": null
     },
     {
@@ -3076,7 +3148,7 @@
       "size_to_next_symbol": 16,
       "name": "NtWriteFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006cf00",
@@ -3088,7 +3160,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF0B8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010f438",
@@ -3100,7 +3172,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF0C8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a9de8",
@@ -3112,7 +3184,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF0D8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816dd118",
@@ -3124,7 +3196,7 @@
       "size_to_next_symbol": 16,
       "name": "XexGetModuleHandle",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8007d320",
@@ -3136,7 +3208,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF0F8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816ddb20",
@@ -3148,7 +3220,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF108",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80092028",
@@ -3160,7 +3232,7 @@
       "size_to_next_symbol": 16,
       "name": "IoAcquireDeviceObjectLock",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006ab28",
@@ -3172,7 +3244,7 @@
       "size_to_next_symbol": 16,
       "name": "IoReleaseDeviceObjectLock",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006ab38",
@@ -3184,7 +3256,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlEnterCriticalSection",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80088fa0",
@@ -3196,7 +3268,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF148",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x801495d0",
@@ -3208,7 +3280,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlLeaveCriticalSection",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800890f8",
@@ -3220,7 +3292,7 @@
       "size_to_next_symbol": 16,
       "name": "ObIsTitleObject",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008b9b0",
@@ -3232,7 +3304,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlMultiByteToUnicodeN",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800868a8",
@@ -3244,7 +3316,7 @@
       "size_to_next_symbol": 16,
       "name": "IoCompleteRequest",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006ac20",
@@ -3256,7 +3328,7 @@
       "size_to_next_symbol": 16,
       "name": "IoSetShareAccess",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006bbd0",
@@ -3268,7 +3340,7 @@
       "size_to_next_symbol": 16,
       "name": "IoRemoveShareAccess",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006bb38",
@@ -3280,7 +3352,7 @@
       "size_to_next_symbol": 16,
       "name": "IoCheckShareAccess",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006b9d0",
@@ -3292,7 +3364,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF1C8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006b440",
@@ -3304,7 +3376,7 @@
       "size_to_next_symbol": 16,
       "name": "IoCallDriver",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006ab48",
@@ -3316,7 +3388,7 @@
       "size_to_next_symbol": 16,
       "name": "IoIsNameInExpression",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8015bac8",
@@ -3328,7 +3400,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlUnicodeToUtf8Size",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80086a98",
@@ -3340,7 +3412,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlUnicodeToUtf8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80086af0",
@@ -3352,7 +3424,7 @@
       "size_to_next_symbol": 16,
       "name": "_vsnprintf",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8010caa0",
@@ -3364,7 +3436,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF228",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816968a8",
@@ -3376,7 +3448,7 @@
       "size_to_next_symbol": 16,
       "name": "ObReferenceObjectByHandle",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8008ba50",
@@ -3388,7 +3460,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF248",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816ba440",
@@ -3400,7 +3472,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF258",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816b7b80",
@@ -3412,7 +3484,7 @@
       "size_to_next_symbol": 16,
       "name": "NicAttach",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800d2160",
@@ -3421,14 +3493,38 @@
     {
       "address": "0x801ff278",
       "section_offset": "0xf278",
-      "size_to_next_symbol": 48,
+      "size_to_next_symbol": 16,
       "name": "fn_801FF278",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e3510",
       "target_name": null
+    },
+    {
+      "address": "0x801ff288",
+      "section_offset": "0xf288",
+      "size_to_next_symbol": 16,
+      "name": "XexLoadExecutable",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007d7e0",
+      "target_name": "XexLoadExecutable"
+    },
+    {
+      "address": "0x801ff298",
+      "section_offset": "0xf298",
+      "size_to_next_symbol": 16,
+      "name": "XexStartExecutable",
+      "evidence": [
+        "absolute thunk pattern in trailing import table"
+      ],
+      "kind": "retail_kernel_thunk",
+      "target_address": "0x8007b0c8",
+      "target_name": "XexStartExecutable"
     },
     {
       "address": "0x801ff2a8",
@@ -3436,7 +3532,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF2A8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816ba660",
@@ -3448,7 +3544,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF2B8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816b7c10",
@@ -3460,7 +3556,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF2C8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0c68",
@@ -3472,7 +3568,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF2D8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0ca0",
@@ -3484,7 +3580,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF2E8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e0298",
@@ -3496,7 +3592,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF2F8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a2588",
@@ -3508,7 +3604,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF308",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817c4a58",
@@ -3520,7 +3616,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF318",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817bd708",
@@ -3532,7 +3628,7 @@
       "size_to_next_symbol": 16,
       "name": "ExAllocatePoolTypeWithTag",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800644e8",
@@ -3544,7 +3640,7 @@
       "size_to_next_symbol": 16,
       "name": "IopCopyTemplateFileName",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8015b8b0",
@@ -3556,7 +3652,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlTimeFieldsToTime",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80089a58",
@@ -3568,7 +3664,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF358",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e24b8",
@@ -3580,7 +3676,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF368",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816e2200",
@@ -3592,7 +3688,7 @@
       "size_to_next_symbol": 16,
       "name": "NicDetach",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800d21e8",
@@ -3604,7 +3700,7 @@
       "size_to_next_symbol": 16,
       "name": "NicGetLinkState",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800d27c0",
@@ -3616,7 +3712,7 @@
       "size_to_next_symbol": 16,
       "name": "KeSetEvent",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800741d8",
@@ -3628,7 +3724,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF3A8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722ed0",
@@ -3640,7 +3736,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF3B8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722ef8",
@@ -3652,7 +3748,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF3C8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722fa8",
@@ -3664,7 +3760,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF3D8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817b3d10",
@@ -3676,7 +3772,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF3E8",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x817af168",
@@ -3688,7 +3784,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlUpperChar",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800861f0",
@@ -3700,7 +3796,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF408",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81722e30",
@@ -3712,7 +3808,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF418",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816cb168",
@@ -3724,7 +3820,7 @@
       "size_to_next_symbol": 16,
       "name": "KeQuerySystemTime",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x80071948",
@@ -3736,7 +3832,7 @@
       "size_to_next_symbol": 16,
       "name": "RtlTimeToTimeFields",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x800898e8",
@@ -3748,7 +3844,7 @@
       "size_to_next_symbol": 16,
       "name": "IoSynchronousFsdRequest",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x8006b928",
@@ -3760,7 +3856,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF458",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816cac20",
@@ -3772,7 +3868,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF468",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816caf08",
@@ -3784,7 +3880,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF478",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x81721b90",
@@ -3796,7 +3892,7 @@
       "size_to_next_symbol": 16,
       "name": "fn_801FF488",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816c7d78",
@@ -3808,7 +3904,7 @@
       "size_to_next_symbol": 24,
       "name": "fn_801FF498",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "absolute thunk pattern in trailing import table"
       ],
       "kind": "retail_kernel_thunk",
       "target_address": "0x816a0d70",

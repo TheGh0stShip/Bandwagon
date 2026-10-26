@@ -8,6 +8,12 @@ cxx="${CXX:-g++}"
 
 python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/bootstrap_mapping.cpp" \
+    "$root/reconstruction/kernel_expansion/bootstrap_mapping_test.cpp" \
+    -o "$work/bootstrap_mapping_test"
+"$work/bootstrap_mapping_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/runtime.cpp" \
     "$root/reconstruction/kernel_expansion/runtime_test.cpp" \
     -o "$work/runtime_test"

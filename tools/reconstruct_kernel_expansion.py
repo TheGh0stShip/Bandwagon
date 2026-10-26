@@ -15,6 +15,7 @@ OUTDIR = ROOT / "analysis/kernel-expansion"
 SOURCE = ROOT / "analysis/reconstruction/KernelExpansion.reconstructed.S"
 BASE = 0x801F0000
 TEXT_END = 0xF4B0
+THUNK_TABLE_START = 0xEBD8
 
 # Leaf callbacks reached indirectly are not discoverable from direct BL targets
 # and do not use the standard non-leaf prologue.  Their boundaries are proved
@@ -46,6 +47,7 @@ SEMANTIC_NAMES = {
     0x1CF0: "LoadBootImage",
     0x1FC0: "LoadBootAnimationTheme",
     0x2D70: "ReplaceInstructionWithNop",
+    0x2DB8: "ReleaseBootstrapMapping",
     0x3378: "ResolveSideLoadConfiguration",
     0x4938: "ParseDllConfigEntry",
     0x6AF0: "ParseDriveNumberPrefix",
@@ -90,6 +92,7 @@ def main() -> None:
     digest = hashlib.sha256(data).hexdigest()
     words = [int.from_bytes(data[i : i + 4], "big") for i in range(0, TEXT_END, 4)]
     starts = {0, *EXPLICIT_STARTS}
+    table_thunks = set()
     for offset, word in enumerate(words):
         byte_offset = offset * 4
         if word in (0x7D8802A6, 0x7C0802A6):
@@ -97,6 +100,11 @@ def main() -> None:
         target = direct_target(byte_offset, word)
         if target is not None and 0 <= target < TEXT_END and target % 4 == 0:
             starts.add(target)
+        if byte_offset >= THUNK_TABLE_START and offset + 3 < len(words):
+            a, b, c, d = words[offset : offset + 4]
+            if a >> 26 == 15 and b >> 26 == 24 and c == 0x7D6903A6 and d == 0x4E800420:
+                starts.add(byte_offset)
+                table_thunks.add(byte_offset)
 
     known = kernel_symbols()
     thunks: dict[int, tuple[int, str | None]] = {}
@@ -123,6 +131,8 @@ def main() -> None:
         end = ordered[index + 1] if index + 1 < len(ordered) else TEXT_END
         if offset in EXPLICIT_STARTS:
             evidence = ["indirect leaf callback boundary and decoded behavior"]
+        elif offset in table_thunks:
+            evidence = ["absolute thunk pattern in trailing import table"]
         elif offset in SEMANTIC_NAMES:
             evidence = ["behavioral name corroborated by strings and call role"]
         else:

@@ -1002,8 +1002,8 @@
       "caller_address": "0x801f0de8",
       "instruction_address": "0x801f0e18",
       "target_address": "0x801f2db8",
-      "callee": "fn_801F2DB8",
-      "target_containing_function": "fn_801F2DB8"
+      "callee": "ReleaseBootstrapMapping",
+      "target_containing_function": "ReleaseBootstrapMapping"
     },
     {
       "caller": "fn_801F0E38",

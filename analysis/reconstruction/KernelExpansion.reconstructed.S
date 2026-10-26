@@ -2968,7 +2968,7 @@ ReplaceInstructionWithNop:
     .long 0x7d8803a6 /* 0x02dac */
     .long 0xebe1fff0 /* 0x02db0 */
     .long 0x4e800020 /* 0x02db4 */
-fn_801F2DB8:
+ReleaseBootstrapMapping:
     .long 0x3d608017 /* 0x02db8 */
     .long 0x3ca00007 /* 0x02dbc */
     .long 0x38c00000 /* 0x02dc0 */
@@ -15506,6 +15506,7 @@ VdTurnDisplayOn:
     .long 0x616b6010 /* 0x0ee1c */
     .long 0x7d6903a6 /* 0x0ee20 */
     .long 0x4e800420 /* 0x0ee24 */
+AnipPlayBootAnimationThread:
     .long 0x3d608006 /* 0x0ee28 */
     .long 0x616b14f0 /* 0x0ee2c */
     .long 0x7d6903a6 /* 0x0ee30 */
@@ -15650,6 +15651,7 @@ _snprintf:
     .long 0x616bc7f8 /* 0x0efec */
     .long 0x7d6903a6 /* 0x0eff0 */
     .long 0x4e800420 /* 0x0eff4 */
+MiFreeMappedMemory:
     .long 0x3d608008 /* 0x0eff8 */
     .long 0x616b17d0 /* 0x0effc */
     .long 0x7d6903a6 /* 0x0f000 */
@@ -15669,6 +15671,7 @@ IoDeleteDevice:
     .long 0x616bb150 /* 0x0f02c */
     .long 0x7d6903a6 /* 0x0f030 */
     .long 0x4e800420 /* 0x0f034 */
+ExExpansionCall:
     .long 0x3d608006 /* 0x0f038 */
     .long 0x616b6400 /* 0x0f03c */
     .long 0x7d6903a6 /* 0x0f040 */
@@ -15688,14 +15691,17 @@ fn_801FF068:
     .long 0x616b2458 /* 0x0f06c */
     .long 0x7d6903a6 /* 0x0f070 */
     .long 0x4e800420 /* 0x0f074 */
+fn_801FF078:
     .long 0x3d608009 /* 0x0f078 */
     .long 0x616b4828 /* 0x0f07c */
     .long 0x7d6903a6 /* 0x0f080 */
     .long 0x4e800420 /* 0x0f084 */
+fn_801FF088:
     .long 0x3d608009 /* 0x0f088 */
     .long 0x616b3990 /* 0x0f08c */
     .long 0x7d6903a6 /* 0x0f090 */
     .long 0x4e800420 /* 0x0f094 */
+fn_801FF098:
     .long 0x3d608009 /* 0x0f098 */
     .long 0x616b3ed8 /* 0x0f09c */
     .long 0x7d6903a6 /* 0x0f0a0 */
@@ -15850,10 +15856,12 @@ fn_801FF278:
     .long 0x616b3510 /* 0x0f27c */
     .long 0x7d6903a6 /* 0x0f280 */
     .long 0x4e800420 /* 0x0f284 */
+XexLoadExecutable:
     .long 0x3d608007 /* 0x0f288 */
     .long 0x616bd7e0 /* 0x0f28c */
     .long 0x7d6903a6 /* 0x0f290 */
     .long 0x4e800420 /* 0x0f294 */
+XexStartExecutable:
     .long 0x3d608007 /* 0x0f298 */
     .long 0x616bb0c8 /* 0x0f29c */
     .long 0x7d6903a6 /* 0x0f2a0 */
