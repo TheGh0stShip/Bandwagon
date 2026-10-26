@@ -19,12 +19,13 @@ STAGE3_SOURCE = ROOT / "analysis/reconstruction/PeerPressureExploit-3rdStage-pro
 STAGE3_REFERENCE = ROOT / "BadUpdatePayload/BadUpdateExploit-3rdStage.bin"
 
 STAGE3_RANGES = (
+    (0x000, 0x0F8, "Peer Stage3 entry point and alignment"),
     (0x0F8, 0x1E8, "Peer-specific probe function and alignment"),
     (0x680, 0x68C, "syscall 0x0d stub"),
     (0x690, 0x69C, "syscall 0x00 stub"),
     (0x11D0, 0x11EC, "savegpr_27 fragment"),
     (0x1220, 0x1240, "restoregpr_27 return fragment"),
-    (0x1250, 0x1280, "physical-address, free, and memset stubs"),
+    (0x1240, 0x12A0, "fatal-error, physical-memory, memset, SMC, and launch stubs"),
     (0x12A0, 0x12C0, "allocation and memcpy stubs"),
     (0x15A0, 0x15D8, "embedded HV probe"),
 )

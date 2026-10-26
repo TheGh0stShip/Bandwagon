@@ -15,11 +15,12 @@ local public Stage4 artifact rather than duplicated.
 
 ## Stage3
 
-`PeerPressureExploit-3rdStage-probe.reconstructed.S` rebuilds the recovered new
-function at file `0x0f8-0x1e7`, its embedded probe at `0x15a0-0x15d7`, and the
-exact syscall/compiler/import stubs that those regions call. Unreconstructed
-gaps are explicit zero placeholders created by `.org`; they are not claimed
-as equivalent to the original Stage3 bytes.
+`PeerPressureExploit-3rdStage-probe.reconstructed.S` rebuilds the complete
+entry point at file `0x0000-0x00f7`, the recovered new function at
+`0x0f8-0x1e7`, its embedded probe at `0x15a0-0x15d7`, and the exact
+syscall/compiler/import stubs that those regions call. Unreconstructed gaps
+are explicit zero placeholders created by `.org`; they are not claimed as
+equivalent to the original Stage3 bytes.
 
 ## Verification
 

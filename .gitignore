@@ -11,6 +11,7 @@
 /softmod.manifest
 /analysis/xex/basefiles/
 /tools/xex2ool
+/third_party/artifacts/
 
 # Generated local state.
 __pycache__/

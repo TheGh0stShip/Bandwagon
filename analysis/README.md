@@ -61,11 +61,17 @@ reconstructed.
 only a hypothesis-grade behavioral label pending resolution of both syscall
 paths.
 
+`peer-stage3-entry.md` reconstructs the complete entry point at file
+`0x0000-0x00f7` and proves its boot decision: an available resident dispatcher
+skips the inherited BadUpdate race, while probe failure runs the race and
+Stage4 installation path before both branches launch the normal payload.
+
 `reconstruction/` contains buildable big-endian PowerPC assembly rather than
 invented C. The reconstructed Stage4 assembly rebuilds the complete file
-byte-for-byte. The Stage3 assembly currently rebuilds the new probe function,
-its embedded code, and its direct support stubs byte-for-byte; gaps are clearly
-excluded rather than filled with speculative source.
+byte-for-byte. The Stage3 assembly currently rebuilds the complete entry point,
+the new probe function, its embedded code, and their direct support stubs
+byte-for-byte; gaps are clearly excluded rather than filled with speculative
+source.
 
 ## Extraction verification
 
