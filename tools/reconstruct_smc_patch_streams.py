@@ -17,6 +17,61 @@ RECON = ROOT / "analysis/reconstruction"
 OUTDIR = ROOT / "analysis/smc"
 
 
+def analyze_xbpp_handshake(board: str, payload: bytes, base: int) -> dict[str, object]:
+    marker = bytes.fromhex("e5f1b458")
+    offset = payload.find(marker)
+    if offset < 12 or payload.find(marker, offset + 1) >= 0:
+        raise SystemExit(f"{board}: expected one XBPP comparison chain")
+    expected = {
+        0: bytes.fromhex("e5f1b458"),
+        5: bytes.fromhex("e5f2b442"),
+        10: bytes.fromhex("e5f3b450"),
+        15: bytes.fromhex("e5f4b450"),
+    }
+    for relative, prefix in expected.items():
+        if payload[offset + relative : offset + relative + 4] != prefix:
+            raise SystemExit(f"{board}: malformed XBPP comparison at +0x{relative:x}")
+    state_clear = payload[offset - 12 : offset - 9]
+    if len(state_clear) != 3 or state_clear[0] != 0x53 or state_clear[2] != 0xFE:
+        raise SystemExit(f"{board}: missing XBPP state-bit clear")
+    if payload[offset - 9 : offset] != bytes.fromhex("75eb0175ea1075f500"):
+        raise SystemExit(f"{board}: missing XBPP initial SFR writes")
+
+    cursor = offset + 20
+    rewrites_eb = payload[cursor : cursor + 3] == bytes.fromhex("75eb01")
+    if rewrites_eb:
+        cursor += 3
+    if payload[cursor : cursor + 6] != bytes.fromhex("75ea1875f500"):
+        raise SystemExit(f"{board}: missing XBPP transfer SFR writes")
+    cursor += 6
+    if payload[cursor] != 0x78:
+        raise SystemExit(f"{board}: missing XBPP staging-pointer load")
+    staging_ram = payload[cursor + 1]
+    cursor += 2
+    if payload[cursor : cursor + 8] != bytes.fromhex("a6f308a6f208a6f1"):
+        raise SystemExit(f"{board}: missing XBPP reverse-byte staging")
+    cursor += 8
+    if payload[cursor] != 0x43 or payload[cursor + 2] != 1:
+        raise SystemExit(f"{board}: missing XBPP state-bit set")
+    state_set_address = payload[cursor + 1]
+    cursor += 3
+    corona_followup = payload[cursor : cursor + 9] == bytes.fromhex("75eb0175ea1c75f500")
+    if state_set_address != state_clear[1]:
+        raise SystemExit(f"{board}: XBPP state clear/set address mismatch")
+    return {
+        "comparison_address": f"0x{base + offset:04x}",
+        "magic_ascii": "XBPP",
+        "input_sfrs": ["0xf1", "0xf2", "0xf3", "0xf4"],
+        "initial_sfr_writes": {"0xeb": "0x01", "0xea": "0x10", "0xf5": "0x00"},
+        "state_ram_address": f"0x{state_clear[1]:02x}",
+        "staging_ram_address": f"0x{staging_ram:02x}",
+        "staged_sfr_order": ["0xf3", "0xf2", "0xf1"],
+        "rewrites_eb_for_transfer": rewrites_eb,
+        "transfer_ea": "0x18",
+        "corona_followup_ea": "0x1c" if corona_followup else None,
+    }
+
+
 def emit_source(board: str, records: list[dict[str, object]]) -> Path:
     output = RECON / f"{board}_SmcExploit.reconstructed.S"
     lines = [
@@ -64,13 +119,18 @@ def emit_8051_listing(board: str, records: list[dict[str, object]]) -> dict[str,
         "; architecture: Intel 8051-compatible SMC\n\n"
     )
     listing.write_text(header + result.stdout, encoding="utf-8")
-    return {"target_address": f"0x{address:04x}", "size": len(payload), "sha256": hashlib.sha256(payload).hexdigest()}
+    return {
+        "target_address": f"0x{address:04x}",
+        "size": len(payload),
+        "sha256": hashlib.sha256(payload).hexdigest(),
+        "xbpp_handshake": analyze_xbpp_handshake(board, payload, address),
+    }
 
 
 def main() -> None:
     RECON.mkdir(parents=True, exist_ok=True)
     OUTDIR.mkdir(parents=True, exist_ok=True)
-    summary = {"schema": "bandwagon-smc-patch-summary-v1", "boards": []}
+    summary = {"schema": "bandwagon-smc-patch-summary-v2", "boards": []}
     embedded_payloads: dict[str, bytes] = {}
     for board in BOARDS:
         source = ROOT / "Flash" / f"{board}_SmcExploit.bin"
