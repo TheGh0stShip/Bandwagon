@@ -151,6 +151,14 @@ ordering, bounds, alignment, and byte order while deliberately zeroing the
 closed binary's uninitialized sector tail. Physical-disk opening and writing
 remain isolated to the Xbox-specific layer and are not exercised by host tests.
 
+`reconstruction/updater/softmod_manifest.cpp` is the corresponding portable
+source reconstruction of the `XBPP` manifest parser and serializer. It checks
+the big-endian header, SHA-1 coverage beginning at offset `0x1c`, version fields,
+entry bounds, ASCII/NUL-padded paths, flags, trailing bytes, and the exact
+four-byte record alignment. Its host test covers exact round-trip serialization
+and rejection of a corrupted hash. Run both portable Updater test programs with
+`tools/test_updater_reconstruction.sh`.
+
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
 expand semantic names and types across the remaining application functions,
