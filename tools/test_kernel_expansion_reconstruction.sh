@@ -18,3 +18,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/xex_hooks_test.cpp" \
     -o "$work/xex_hooks_test"
 "$work/xex_hooks_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/storage.cpp" \
+    "$root/reconstruction/kernel_expansion/storage_test.cpp" \
+    -o "$work/storage_test"
+"$work/storage_test"

@@ -71,6 +71,9 @@ lift. The first exact-byte-bound routines are:
   replacing it with the conventional GPT algorithm.
 - `IsAsciiAlphaNumeric` (`0x801fa640`, 72 bytes), a direct typed predicate for
   the binary's three accepted ASCII ranges.
+- `ClassifyFatBootSector` (`0x801fa320`, 440 bytes), represented as a typed
+  five-result classifier. Tests cover its exact exFAT prefix, FAT32 label,
+  structural FAT fallback, MBR signature, unknown-sector, and read-error paths.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
@@ -79,6 +82,5 @@ with `tools/test_kernel_expansion_reconstruction.sh`.
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 351 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
-exFAT and returns multiple classification values; it is now conservatively
-named `ClassifyFatBootSector` and still needs a typed lift before it can be
-counted as recovered source.
+exFAT and returns multiple classification values; its corrected
+`ClassifyFatBootSector` lift now makes those outcomes explicit.

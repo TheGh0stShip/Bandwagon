@@ -43,6 +43,15 @@
       "symbols": ["ComputeRecoveredGptChecksum", "IsRecognizedGptHeader"]
     },
     {
+      "address": "0x801fa320",
+      "size": 440,
+      "sha256": "0ec6569aa7a3f684cb18d55ce6f03382dfec6087d38bbb7053d422b3b23c62b3",
+      "semantic_name": "ClassifyFatBootSector",
+      "source": "reconstruction/kernel_expansion/storage.cpp",
+      "header": "reconstruction/kernel_expansion/storage.hpp",
+      "symbols": ["BootSectorKind", "SectorReader", "ClassifyFatBootSector"]
+    },
+    {
       "address": "0x801fa640",
       "size": 72,
       "sha256": "83e84dfb3cd5429eaf62716815d63e3d75ada84f05ca1299740013b3e3e56990",
@@ -53,6 +62,7 @@
   ],
   "tests": [
     "reconstruction/kernel_expansion/runtime_test.cpp",
+    "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]
