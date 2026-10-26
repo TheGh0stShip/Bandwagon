@@ -24,7 +24,10 @@ The public BadUpdate source baseline is pinned as the
   reconstructions.
 - Updater's complete 88,640-byte PowerPC `.text` section has a labeled,
   byte-identical assembly reconstruction.
+- Updater's initialized `.rdata`, `.pdata`, and `.data` sections have
+  byte-identical, buildable assembly reconstructions.
+- Updater has reproducible function, direct-call, string-reference, and initial
+  semantic-symbol inventories; its Stage2 HDD record algorithm is documented.
 
-Exact reconstruction of the remaining executable functions, imports, types,
-globals, control flow, raw stage payloads, and SMC firmware is still in
-progress.
+Semantic recovery of the remaining executable functions, types, globals,
+indirect control flow, raw stage payloads, and SMC firmware is still in progress.

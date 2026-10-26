@@ -23,6 +23,10 @@ Direct PPC address-construction references into `.rdata` are generated in
 [`Updater-string-xrefs.json`](Updater-string-xrefs.json). The initial semantic
 name overlay, with confidence and evidence kept separate from recovered COFF
 symbols, is in [`Updater-symbols.json`](Updater-symbols.json).
+[`Updater-callgraph.json`](Updater-callgraph.json) records 1,099 direct
+branch-and-link call sites, 967 of which resolve exactly to a recovered function
+entry. Indirect virtual calls and `bctrl` import patterns are intentionally not
+guessed; each edge retains its instruction and target address for review.
 
 [`Updater.text.reconstructed.S`](../reconstruction/Updater.text.reconstructed.S)
 is a complete buildable reconstruction of the 88,640-byte `.text` section.

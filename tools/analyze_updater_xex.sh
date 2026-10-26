@@ -64,6 +64,13 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" \
     --string-start 0x98000400 \
     --string-end 0x98004400 \
     --output "$root/analysis/xex/Updater-string-xrefs.json"
+python3 -B "$root/tools/analyze_ppc_calls.py" \
+    "$root/analysis/xex/basefiles/Updater.pe" \
+    "$root/analysis/xex/Updater-functions.json" \
+    --text-offset 0x5000 \
+    --text-address 0x98005000 \
+    --text-size 0x15a40 \
+    --output "$root/analysis/xex/Updater-callgraph.json"
 python3 -B "$root/tools/reconstruct_xex_nontext.py" \
     "$root/analysis/xex/basefiles/Updater.pe" \
     "$root/analysis/reconstruction/Updater.nontext.reconstructed.S"
