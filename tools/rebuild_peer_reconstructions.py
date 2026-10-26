@@ -27,6 +27,7 @@ KERNEL_EXPANSION_SOURCE = ROOT / "analysis/reconstruction/KernelExpansion.recons
 KERNEL_EXPANSION_REFERENCE = ROOT / "PeerPressure/System/KernelExpansion.bin"
 KERNEL_PATCH_SOURCE = ROOT / "analysis/reconstruction/kernel_patches.reconstructed.S"
 KERNEL_PATCH_REFERENCE = ROOT / "PeerPressure/System/kernel_patches.bin"
+SMC_BOARDS = ("Corona", "Falcon", "Jasper", "Trinity", "Xenon", "Zephyr")
 
 STAGE3_RANGES = (
     (0x000, 0x0F8, "Peer Stage3 entry point and alignment"),
@@ -92,6 +93,7 @@ def main() -> None:
         flash_dma_output = temporary_path / "flash-dma.bin"
         kernel_expansion_output = temporary_path / "kernel-expansion.bin"
         kernel_patch_output = temporary_path / "kernel-patches.bin"
+        smc_outputs = {board: temporary_path / f"{board}-smc-exploit.bin" for board in SMC_BOARDS}
         assemble(STAGE4_SOURCE, stage4_output, llvm_mc, llvm_objcopy)
         assemble(STAGE3_SOURCE, stage3_output, llvm_mc, llvm_objcopy)
         assemble(STAGE2_SOURCE, stage2_output, llvm_mc, llvm_objcopy)
@@ -99,6 +101,28 @@ def main() -> None:
         assemble(FLASH_DMA_SOURCE, flash_dma_output, llvm_mc, llvm_objcopy)
         assemble(KERNEL_EXPANSION_SOURCE, kernel_expansion_output, llvm_mc, llvm_objcopy)
         assemble(KERNEL_PATCH_SOURCE, kernel_patch_output, llvm_mc, llvm_objcopy)
+        for board, output in smc_outputs.items():
+            assemble(
+                ROOT / f"analysis/reconstruction/{board}_SmcExploit.reconstructed.S",
+                output,
+                llvm_mc,
+                llvm_objcopy,
+            )
+
+        smc_results = {}
+        for board, output in smc_outputs.items():
+            built = output.read_bytes()
+            reference_path = ROOT / f"Flash/{board}_SmcExploit.bin"
+            reference = reference_path.read_bytes()
+            if built != reference:
+                raise SystemExit(f"{board} SMC exploit reconstruction mismatch")
+            smc_results[board.lower()] = {
+                "source": f"analysis/reconstruction/{board}_SmcExploit.reconstructed.S",
+                "reference": f"Flash/{board}_SmcExploit.bin",
+                "size": len(built),
+                "sha256": sha256(built),
+                "whole_file_byte_identical": True,
+            }
 
         kernel_patch_built = kernel_patch_output.read_bytes()
         kernel_patch_reference = KERNEL_PATCH_REFERENCE.read_bytes()
@@ -188,6 +212,7 @@ def main() -> None:
 
         result = {
             "assembler_target": "powerpc64-unknown-linux-gnu (big-endian)",
+            "smc_exploit_streams": smc_results,
             "flash_dma": {
                 "source": str(FLASH_DMA_SOURCE.relative_to(ROOT)),
                 "reference": str(FLASH_DMA_REFERENCE.relative_to(ROOT)),
@@ -244,6 +269,11 @@ def main() -> None:
     if args.json:
         print(json.dumps(result, indent=2))
     else:
+        for board, item in result["smc_exploit_streams"].items():
+            print(
+                f"{board.capitalize()} SMC exploit: exact whole-file rebuild, "
+                f"{item['size']} bytes, SHA-256 {item['sha256']}"
+            )
         print(
             "Kernel patch stream: exact whole-file rebuild, "
             f"{result['kernel_patch_stream']['size']} bytes, "

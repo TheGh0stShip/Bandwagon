@@ -5,10 +5,9 @@
   "status_counts": {
     "binary_asset": 1,
     "exact_initialized_source": 6,
-    "exact_whole_file_source": 6,
+    "exact_whole_file_source": 12,
     "human_readable_data": 1,
     "human_readable_source": 3,
-    "lossless_structured_source": 6,
     "provenance_only": 1,
     "public_baseline_identical": 3,
     "reference_binary_only": 6
@@ -48,8 +47,8 @@
       "sha1": "c55e932af5d3dc039bac6bae7955caeabbc127ff",
       "sha256": "c3e455bb46373527782dee312ec09b8b0bf745e6064c16d6e00dfa486137b3c7",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/Flash_Corona_SmcExploit.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/smc/README.md"
     },
     {
       "path": "Flash\\Falcon_SmcCode.bin",
@@ -66,8 +65,8 @@
       "sha1": "15fe9bc57dd560e4ff684a3983b02579722ea991",
       "sha256": "c60354879fe67fd2813e74466c167d8598ceda5314bf090261c8357fd8f25fcb",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/Flash_Falcon_SmcExploit.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/smc/README.md"
     },
     {
       "path": "Flash\\FlashDmaPayload.bin",
@@ -93,8 +92,8 @@
       "sha1": "2b765bdec9519088f8c7e7f8759a329ab3fb00de",
       "sha256": "44e525b4609fe4eedc9a66d76a64efe20ca9a4b48e6b18fa2521dca624075e46",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/Flash_Jasper_SmcExploit.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/smc/README.md"
     },
     {
       "path": "Flash\\Trinity_SmcCode.bin",
@@ -111,8 +110,8 @@
       "sha1": "dbf8574dcda56e87a2056773e826a218df68c28c",
       "sha256": "4475e4316f9d6d24406adac7d525e5c26e89a513c8dc6f61ded76395ea5cee64",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/Flash_Trinity_SmcExploit.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/smc/README.md"
     },
     {
       "path": "Flash\\Xenon_SmcCode.bin",
@@ -129,8 +128,8 @@
       "sha1": "516a6e79a7f74a02dd30f0127be5c0f09a7d3f2a",
       "sha256": "2907897a8f4ac99699b55b6b559531fe4a214ea0b44ded5e72d6ed33240722d3",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/Flash_Xenon_SmcExploit.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/smc/README.md"
     },
     {
       "path": "Flash\\Zephyr_SmcCode.bin",
@@ -147,8 +146,8 @@
       "sha1": "451d5cfd6902e794ce493817c593ef7fe70dcab4",
       "sha256": "3f231e580734e0607a0719c42f23f7cdd6f4b410b6fa3cfce8fbf8c2c8eb7da4",
       "category": "peer_patch_stream",
-      "status": "lossless_structured_source",
-      "evidence": "analysis/patch-records/Flash_Zephyr_SmcExploit.json"
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/smc/README.md"
     },
     {
       "path": "Hdd\\HddSecuritySectorPayload.bin",
