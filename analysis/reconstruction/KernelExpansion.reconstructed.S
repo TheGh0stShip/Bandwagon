@@ -7806,7 +7806,7 @@ fn_801F7730:
     .long 0x8181fff8 /* 0x0786c */
     .long 0x7d8803a6 /* 0x07870 */
     .long 0x4e800020 /* 0x07874 */
-fn_801F7878:
+ComputeConfigKeyHash:
     .long 0x89630000 /* 0x07878 */
     .long 0x3920ffff /* 0x0787c */
     .long 0x280b0000 /* 0x07880 */

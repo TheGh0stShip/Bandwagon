@@ -59,6 +59,7 @@ SEMANTIC_NAMES = {
     0x4ED8: "PromoteLocalSigninInfo",
     0x62C0: "UnsupportedDeviceOperation",
     0x6AF0: "ParseDriveNumberPrefix",
+    0x7878: "ComputeConfigKeyHash",
     0x78E0: "ParseSignedDecimal",
     0x7E68: "FindSoftmodUpdateArchive",
     0x8080: "LaunchSettingsApp",

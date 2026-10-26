@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 51 high-confidence behavioral labels are emitted directly into the exact
+- 52 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -158,6 +158,10 @@ lift. The first exact-byte-bound routines are:
   config-text integer parser. Tests preserve its optional-minus-only grammar,
   lack of whitespace and plus-sign handling, first-nondigit stop, and exact
   low-32-bit wraparound rather than substituting host `atoi` behavior.
+- `ComputeConfigKeyHash` (`0x801f7878`, 104 bytes), represented as the
+  ASCII-case-insensitive reflected CRC-32 used by schema lookup. Tests bind the
+  exact hashes embedded beside all six PeerPressure `Config.ini` keys, as well
+  as case folding and empty-input behavior.
 - `IsVersionAtLeastComponentWise` (`0x801f87f8`, 80 bytes), the exact four-byte
   bound predicate used by `ParseDllConfigEntry`. It treats `0xff` on either side
   as a wildcard and intentionally preserves the binary's component-wise rather
@@ -194,7 +198,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-40 independently bounded routines totaling 4,984 original instruction bytes.
+41 independently bounded routines totaling 5,088 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

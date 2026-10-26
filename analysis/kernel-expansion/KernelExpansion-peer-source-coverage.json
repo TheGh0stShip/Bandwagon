@@ -187,6 +187,15 @@
       "symbols": ["ParseDriveNumberPrefix"]
     },
     {
+      "address": "0x801f7878",
+      "size": 104,
+      "sha256": "766c2722358bf26c31238ced31c15013e092dd55c20f365aaf2419226711b5ff",
+      "semantic_name": "ComputeConfigKeyHash",
+      "source": "reconstruction/kernel_expansion/config_hash.cpp",
+      "header": "reconstruction/kernel_expansion/config_hash.hpp",
+      "symbols": ["ComputeConfigKeyHash"]
+    },
+    {
       "address": "0x801f78e0",
       "size": 88,
       "sha256": "7a0c6d5e51a3e08f152ae699677963b892f633024c0156d997e6d6a2ef76efca",
@@ -369,6 +378,7 @@
     "reconstruction/kernel_expansion/bootstrap_mapping_test.cpp",
     "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
+    "reconstruction/kernel_expansion/config_hash_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/decimal_test.cpp",
     "reconstruction/kernel_expansion/drive_binding_test.cpp",

@@ -2770,8 +2770,8 @@
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f4218",
       "target_address": "0x801f7878",
-      "callee": "fn_801F7878",
-      "target_containing_function": "fn_801F7878"
+      "callee": "ComputeConfigKeyHash",
+      "target_containing_function": "ComputeConfigKeyHash"
     },
     {
       "caller": "fn_801F41E8",

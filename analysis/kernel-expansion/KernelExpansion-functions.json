@@ -912,9 +912,9 @@
       "address": "0x801f7878",
       "section_offset": "0x7878",
       "size_to_next_symbol": 104,
-      "name": "fn_801F7878",
+      "name": "ComputeConfigKeyHash",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
