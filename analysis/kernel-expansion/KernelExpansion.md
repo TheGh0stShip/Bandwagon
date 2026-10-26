@@ -67,6 +67,15 @@ lift. The first exact-byte-bound routines are:
   byte-0x129 default flag is named; unclassified fields remain indexed storage.
   Tests preserve the initializer's unusual always-false return after it zeros
   the singleton, enables that flag, and enters the locked config path.
+- `LoadPeerPressureConfig` (`0x801f0648`, 256 bytes), represented as the full
+  configuration bootstrap: initialize the global lock, allocate the 0x170-byte
+  singleton with the recovered virtual-memory parameters, probe the exact
+  object-manager `Config.ini` path, then parse it through the six-entry schema.
+  Tests preserve the binary's two distinct file reads and fallback behavior:
+  a failed probe invokes the always-false default initializer, while a failed
+  parse directly resets the singleton and sets byte `0x129` without entering
+  the locked default path. The fatal allocation path and code `0x12400` are
+  also explicit.
 - `ReadFileToAllocatedBuffer` (`0x801f14d0`, 472 bytes), represented as a typed
   file-service workflow. It preserves pending-I/O waiting, allocation of the
   file size plus one, NUL placement, failure cleanup order, and the rule that
@@ -140,7 +149,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-25 independently bounded routines totaling 3,720 original instruction bytes.
+26 independently bounded routines totaling 3,976 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable
@@ -149,6 +158,7 @@ exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former
 `ParsePeerPressureConfig` label was also corrected to
 `InitializeDefaultConfig`: the routine is reached on a config-read failure and
-establishes the default singleton before entering the locked config path; that
-bounded behavior now has a typed lift while the deeper common config path is
-still being classified.
+establishes the default singleton before entering the locked config path. Its
+caller is now also lifted, including allocation, probing, six-entry schema
+dispatch, and both fallback paths; the deeper common config path invoked by
+the default initializer is still being classified.

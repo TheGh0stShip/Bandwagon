@@ -28,6 +28,15 @@
       "symbols": ["SymbolicLinkServices", "CreateObjectManagerSymbolicLink"]
     },
     {
+      "address": "0x801f0648",
+      "size": 256,
+      "sha256": "2fecabed610fafacb17e8bd194b3d2bcdbc6752c5c5a7fb5972df3fc24138a1e",
+      "semantic_name": "LoadPeerPressureConfig",
+      "source": "reconstruction/kernel_expansion/config_loader.cpp",
+      "header": "reconstruction/kernel_expansion/config_loader.hpp",
+      "symbols": ["ConfigAllocationRequest", "ConfigBootstrapServices", "LoadPeerPressureConfig", "kPeerPressureConfigPath", "kConfigSchemaEntryCount", "kConfigFatalErrorCode"]
+    },
+    {
       "address": "0x801f09c0",
       "size": 16,
       "sha256": "4292106e9d4a5e7ecb01420a96312dbdd837ec466641c7dfbb83e0fccf1a00c4",
@@ -232,6 +241,7 @@
   ],
   "tests": [
     "reconstruction/kernel_expansion/bootstrap_mapping_test.cpp",
+    "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",

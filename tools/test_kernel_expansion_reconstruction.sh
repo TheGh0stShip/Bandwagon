@@ -38,6 +38,14 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/config_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/config.cpp" \
+    "$root/reconstruction/kernel_expansion/runtime.cpp" \
+    "$root/reconstruction/kernel_expansion/config_loader.cpp" \
+    "$root/reconstruction/kernel_expansion/config_loader_test.cpp" \
+    -o "$work/config_loader_test"
+"$work/config_loader_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/update_check_launch.cpp" \
     "$root/reconstruction/kernel_expansion/update_check_launch_test.cpp" \
     -o "$work/update_check_launch_test"
