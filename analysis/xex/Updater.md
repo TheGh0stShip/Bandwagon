@@ -174,6 +174,13 @@ its possibly larger return value is passed unchanged to the write helper. The
 portable serializer matches valid inputs and rejects paths longer than 258
 bytes instead of reproducing the resulting stack over-read.
 
+`reconstruction/updater/parent_directories.cpp` recovers the path traversal
+inside `EnsureParentDirectories`. Starting at character offset 1, it visits
+each backslash-delimited prefix but not the final filename. The platform layer
+creates each prefix and treats error 183 (`ERROR_ALREADY_EXISTS`) as success;
+the portable layer returns the exact ordered prefix list without filesystem
+side effects.
+
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
 expand semantic names and types across the remaining application functions,

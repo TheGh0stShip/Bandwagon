@@ -32,4 +32,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/phase_two_list_test"
 "$work/phase_two_list_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/updater/parent_directories.cpp" \
+    "$root/reconstruction/updater/parent_directories_test.cpp" \
+    -o "$work/parent_directories_test"
+"$work/parent_directories_test"
+
 echo "Updater portable reconstruction tests passed"
