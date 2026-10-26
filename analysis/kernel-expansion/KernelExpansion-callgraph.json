@@ -1470,7 +1470,7 @@
       "target_containing_function": "HvxFlushDCacheRange"
     },
     {
-      "caller": "fn_801F19C8",
+      "caller": "FilterBlockedXexLoadPaths",
       "caller_address": "0x801f19c8",
       "instruction_address": "0x801f19cc",
       "target_address": "0x801fead4",
@@ -1478,15 +1478,15 @@
       "target_containing_function": "fn_801FEAD4"
     },
     {
-      "caller": "fn_801F19C8",
+      "caller": "FilterBlockedXexLoadPaths",
       "caller_address": "0x801f19c8",
       "instruction_address": "0x801f19e4",
       "target_address": "0x801f3218",
-      "callee": "fn_801F3218",
-      "target_containing_function": "fn_801F3218"
+      "callee": "IsBlockedXexLoadPath",
+      "target_containing_function": "IsBlockedXexLoadPath"
     },
     {
-      "caller": "fn_801F19C8",
+      "caller": "FilterBlockedXexLoadPaths",
       "caller_address": "0x801f19c8",
       "instruction_address": "0x801f1a10",
       "target_address": "0x801f32d8",
@@ -2222,7 +2222,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F3218",
+      "caller": "IsBlockedXexLoadPath",
       "caller_address": "0x801f3218",
       "instruction_address": "0x801f321c",
       "target_address": "0x801fead0",
@@ -2230,7 +2230,7 @@
       "target_containing_function": "fn_801FEAD0"
     },
     {
-      "caller": "fn_801F3218",
+      "caller": "IsBlockedXexLoadPath",
       "caller_address": "0x801f3218",
       "instruction_address": "0x801f329c",
       "target_address": "0x801fef58",

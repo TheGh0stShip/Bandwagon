@@ -7,6 +7,7 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 
 python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
+python3 "$root/tools/verify_kernel_expansion_source_attribution.py"
 python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/bootstrap_mapping.cpp" \
@@ -208,6 +209,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
     "$root/reconstruction/kernel_expansion/xconfig_hooks_test.cpp" \
     -o "$work/xconfig_hooks_test"
 "$work/xconfig_hooks_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/xex_load_hooks.cpp" \
+    "$root/reconstruction/kernel_expansion/xex_load_hooks_test.cpp" \
+    -o "$work/xex_load_hooks_test"
+"$work/xex_load_hooks_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/flash_versions.cpp" \

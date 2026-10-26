@@ -1,0 +1,74 @@
+{
+  "schema": "bandwagon-kernel-expansion-source-attribution-v1",
+  "status": "partial",
+  "image": {
+    "path": "PeerPressure/System/KernelExpansion.bin",
+    "base_address": "0x801f0000",
+    "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8"
+  },
+  "policy": "Classify provenance before source lifting. Public, platform, compiler-runtime, and third-party code is mapped to its upstream implementation instead of being presented as uniquely Peer-authored source. Presence in the closed Peer Pressure image proves component provenance, not individual authorship or originality.",
+  "classified_ranges": [
+    {
+      "start": "0x801fea9c",
+      "end_exclusive": "0x801febd8",
+      "size": 316,
+      "sha256": "83b1e4024ef858bf4a9835f9d702a76741f8cb824aa5898a11e3f2394a7f2947",
+      "inventory_entry_count": 16,
+      "classification": "MSVC/Xenon compiler save-and-restore helper islands",
+      "peer_specific": false,
+      "confidence": "high",
+      "evidence": [
+        "contiguous r14-r31 GPR save/restore sequences",
+        "contiguous f14-f31 FPR save/restore sequences",
+        "sixteen inventory entry points are branch targets into shared compiler epilogues"
+      ]
+    },
+    {
+      "start": "0x801febd8",
+      "end_exclusive": "0x801ff4a8",
+      "size": 2256,
+      "sha256": "64470a644c9c5ae0614fcb74bd063db77c04c9b10df317ecc56d9ec24089ec19",
+      "inventory_entry_count": 141,
+      "classification": "compiler/linker-generated absolute import thunks targeting Microsoft Xbox kernel, XAM, and CRT services",
+      "peer_specific": false,
+      "confidence": "high",
+      "evidence": [
+        "141 uniform lis/ori/mtctr/bctr thunks",
+        "127 targets resolve against pinned public retail-17559 symbol maps",
+        "the remaining targets retain the same platform-thunk encoding and address domain"
+      ]
+    }
+  ],
+  "confirmed_peer_specific_behavior": [
+    {
+      "addresses": ["0x801f0748"],
+      "symbols": ["InstallKernelPatchesAndHooks"],
+      "evidence": [
+        "uses the private PeerPressure kernel_patches.bin path",
+        "installs the fixed Peer Pressure XEX, plugin-policy, side-loading, DVD-region, and NAND-protection hook set",
+        "has no corresponding implementation in the pinned public BadUpdate tree"
+      ]
+    },
+    {
+      "addresses": ["0x801f19c8", "0x801f3218"],
+      "symbols": ["FilterBlockedXexLoadPaths", "IsBlockedXexLoadPath"],
+      "evidence": [
+        "enforces the Peer Pressure no-DashLaunch/plugin policy through launch.xex and Plugins\\Nova.xex suffixes",
+        "the official Peer Pressure documentation states that DashLaunch and its plugins are unsupported",
+        "the policy strings and implementation are absent from the pinned public BadUpdate source"
+      ],
+      "caveat": "This establishes Peer-specific product behavior, not the identity of the individual author."
+    }
+  ],
+  "open_source_candidates_requiring_fingerprinting": [
+    {
+      "component": "embedded FatFs-compatible exFAT core",
+      "evidence": [
+        "f_stat, f_close, f_closedir, disk_read, disk_write, and disk_ioctl call surface",
+        "FAT/exFAT tables and diagnostics in the latter half of the image"
+      ],
+      "required_action": "identify and pin the exact public FatFs revision, then map matching functions instead of relifting them"
+    }
+  ],
+  "remaining_scope": "All other code ranges remain unclassified for ownership. They must be fingerprinted before additional source-lift work is prioritized."
+}

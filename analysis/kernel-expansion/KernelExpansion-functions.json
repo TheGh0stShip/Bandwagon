@@ -276,9 +276,9 @@
       "address": "0x801f19c8",
       "section_offset": "0x19c8",
       "size_to_next_symbol": 88,
-      "name": "fn_801F19C8",
+      "name": "FilterBlockedXexLoadPaths",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by the blocked-path predicate, object-name-not-found result, and original XEX-load continuation"
       ],
       "kind": "local_code"
     },
@@ -496,9 +496,9 @@
       "address": "0x801f3218",
       "section_offset": "0x3218",
       "size_to_next_symbol": 192,
-      "name": "fn_801F3218",
+      "name": "IsBlockedXexLoadPath",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by case-insensitive suffix checks for launch.xex and Plugins\\Nova.xex plus the exact DLL-load flag policy"
       ],
       "kind": "local_code"
     },

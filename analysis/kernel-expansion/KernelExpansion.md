@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 81 high-confidence behavioral labels are emitted directly into the exact
+- 83 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -35,6 +35,23 @@ to strings without evidence.
 Regenerate the source and function inventory with
 `python tools/reconstruct_kernel_expansion.py`; the common reconstruction
 verifier proves whole-file identity.
+
+## Attribution boundary
+
+Code being present in the closed `KernelExpansion.bin` proves component
+provenance, not that every routine was uniquely authored for Peer Pressure or
+by one individual. Source work is now provenance-first: known public,
+Microsoft/XDK, compiler-runtime, and third-party code is mapped to its upstream
+source rather than redundantly rewritten.
+
+`KernelExpansion-source-attribution.json` begins that machine-readable split.
+It already excludes the 316-byte MSVC/Xenon register save/restore islands and
+all 2,256 bytes of the 141 compiler/linker-generated Microsoft/CRT import
+thunks from the Peer-specific implementation target. The FatFs-compatible
+exFAT core is an explicit
+fingerprinting target; once its precise public revision is established, exact
+matches will likewise be referenced instead of lifted. The remaining ranges
+are not presumed Peer-authored until evidence classifies them.
 
 ## Initial semantic recovery
 
@@ -204,6 +221,16 @@ lift. The first exact-byte-bound routines are:
   forwarding, status propagation, high-bit truncation, exact four-byte output
   replacement, adjacent-byte preservation, and the labeled host-only null
   guard.
+- `FilterBlockedXexLoadPaths` and `IsBlockedXexLoadPath` (`0x801f19c8` and
+  `0x801f3218`, 280 bytes together), represented as the Peer-specific XEX-load
+  policy. Case-insensitive `launch.xex` suffixes are hidden only for the exact
+  DLL-load flag eight, while `Plugins\Nova.xex` is always hidden. Blocked loads
+  return `STATUS_OBJECT_NAME_NOT_FOUND` without reaching the original loader;
+  allowed requests preserve all four arguments and the original result. Tests
+  bind exact and longer suffixes, case folding, shorter/non-suffix paths, flag
+  values `0`, `8`, `9`, and `0x10008`, and no-forward behavior. This policy is
+  product-specific and directly corroborates Peer Pressure's documented lack
+  of DashLaunch/plugin support.
 - `ReplaceInstructionWithNop` (`0x801f2d70`, 72 bytes), represented as a typed
   instruction mutation with the recovered CPU flush, physical-address
   translation, and hypervisor data-cache flush ordering.
@@ -317,7 +344,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-71 independently bounded routines totaling 12,352 original instruction bytes.
+73 independently bounded routines totaling 12,632 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 372 discovered entries are maintainable

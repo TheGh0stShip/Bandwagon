@@ -63,6 +63,7 @@ SEMANTIC_NAMES = {
     0x1790: "InstallKernelXexDataHandlers",
     0x18E8: "ReturnImmediatelyHook",
     0x18F0: "InstallAbsoluteBranchHook",
+    0x19C8: "FilterBlockedXexLoadPaths",
     0x1A60: "ConfigureAuroraSideLoad",
     0x1C60: "ForceDvdRegionFreeHook",
     0x1CB0: "InstallSfcxNandWriteProtectionHooks",
@@ -74,6 +75,7 @@ SEMANTIC_NAMES = {
     0x3000: "ProcessPeerPressureConfigFile",
     0x3050: "RunLockedPeerPressureConfigFile",
     0x30B0: "ParseConfigFileBuffer",
+    0x3218: "IsBlockedXexLoadPath",
     0x3378: "ResolveSideLoadConfiguration",
     0x3758: "FilterSfcxCreate",
     0x3828: "FilterSfcxDeviceControl",
@@ -157,8 +159,14 @@ SEMANTIC_EVIDENCE = {
     0x18F0: [
         "behavioral name corroborated by lis/addi/mtctr/bctr stub construction, optional backup, and cache maintenance"
     ],
+    0x19C8: [
+        "behavioral name corroborated by the blocked-path predicate, object-name-not-found result, and original XEX-load continuation"
+    ],
     0x1C60: [
         "behavioral name corroborated by the internal XConfig query, secured DVDRegion category/setting pair, and successful 0xff override"
+    ],
+    0x3218: [
+        "behavioral name corroborated by case-insensitive suffix checks for launch.xex and Plugins\\Nova.xex plus the exact DLL-load flag policy"
     ],
     0x1CB0: [
         "behavioral name corroborated by four writes into the retail SfcxDriverObject dispatch table"

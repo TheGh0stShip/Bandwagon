@@ -1682,7 +1682,7 @@ InstallAbsoluteBranchHook:
     .long 0x7d8803a6 /* 0x019bc */
     .long 0xebe1fff0 /* 0x019c0 */
     .long 0x4e800020 /* 0x019c4 */
-fn_801F19C8:
+FilterBlockedXexLoadPaths:
     .long 0x7d8802a6 /* 0x019c8 */
     .long 0x4800d109 /* 0x019cc */
     .long 0x9421ff80 /* 0x019d0 */
@@ -3260,7 +3260,7 @@ fn_801F31A0:
     .long 0x4e800020 /* 0x0320c */
     .long 0x4800be28 /* 0x03210 */
     .long 0x00000000 /* 0x03214 */
-fn_801F3218:
+IsBlockedXexLoadPath:
     .long 0x7d8802a6 /* 0x03218 */
     .long 0x4800b8b5 /* 0x0321c */
     .long 0x9421ff80 /* 0x03220 */

@@ -1,6 +1,7 @@
 {
   "schema": "bandwagon-kernel-expansion-peer-source-coverage-v1",
   "status": "partial",
+  "scope_note": "This manifest binds readable lifts to code resident in the closed Kernel Expansion image. Inclusion does not assert unique Peer or Grimdoomer authorship; public, platform, compiler-runtime, and third-party ranges are classified separately and should be mapped to upstream source rather than redundantly rewritten.",
   "image": {
     "path": "PeerPressure/System/KernelExpansion.bin",
     "base_address": "0x801f0000",
@@ -204,6 +205,15 @@
       "symbols": ["InstructionPatchLocation", "InstructionPatchServices", "InstallAbsoluteBranchHook"]
     },
     {
+      "address": "0x801f19c8",
+      "size": 88,
+      "sha256": "c397b6f869ec8d0ce5f4a3c608b2927b85db2be15bbc84b760effa13b46c48e0",
+      "semantic_name": "FilterBlockedXexLoadPaths",
+      "source": "reconstruction/kernel_expansion/xex_load_hooks.cpp",
+      "header": "reconstruction/kernel_expansion/xex_load_hooks.hpp",
+      "symbols": ["XexLoadHookServices", "FilterBlockedXexLoadPaths", "kStatusObjectNameNotFound"]
+    },
+    {
       "address": "0x801f1c60",
       "size": 80,
       "sha256": "ce91397858c9066529901595cfa383de344d1966fae40f5f1bd081a3df7654ff",
@@ -283,6 +293,37 @@
       "source": "reconstruction/kernel_expansion/config_reader.cpp",
       "header": "reconstruction/kernel_expansion/config_reader.hpp",
       "symbols": ["ConfigReaderDiagnostics", "ConfigFileBufferParser", "ParseConfigFileBuffer"]
+    },
+    {
+      "address": "0x801f3218",
+      "size": 192,
+      "sha256": "3716c228dfb7755c2dfbfc4e77fa92ec70933df2cbdc1ad3fce01e0711507dc6",
+      "semantic_name": "IsBlockedXexLoadPath",
+      "source": "reconstruction/kernel_expansion/xex_load_hooks.cpp",
+      "header": "reconstruction/kernel_expansion/xex_load_hooks.hpp",
+      "symbols": ["IsBlockedXexLoadPath", "kBlockedLaunchXexSuffix", "kBlockedNovaXexSuffix", "kXexDllLoadFlag"],
+      "data_dependencies": [
+        {
+          "address": "0x801ff6dc",
+          "size": 11,
+          "sha256": "d0b22bd74433630d53e38ac0b024125e6ea8fe17506e5bbc845fa2a1b61eb15c",
+          "semantic_name": "BlockedLaunchXexSuffix",
+          "symbols": ["kBlockedLaunchXexSuffix"]
+        },
+        {
+          "address": "0x801ff6e8",
+          "size": 17,
+          "sha256": "a337dcac497bd2e73866916255b98e03c0fae99ee8043f9a0b7003fe3d7cd386",
+          "semantic_name": "BlockedNovaXexSuffix",
+          "symbols": ["kBlockedNovaXexSuffix"]
+        },
+        {
+          "address": "0x802032cc",
+          "size": 8,
+          "sha256": "3106db48e5a0c90b0223abca9f0bd87c347b3e467a866d18426d9f56fd2f7dfd",
+          "semantic_name": "BlockedXexSuffixPointerTable"
+        }
+      ]
     },
     {
       "address": "0x801f3758",
@@ -733,6 +774,7 @@
     "reconstruction/kernel_expansion/volume_capacity_test.cpp",
     "reconstruction/kernel_expansion/xconfig_hooks_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
+    "reconstruction/kernel_expansion/xex_load_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]
 }

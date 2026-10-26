@@ -68,11 +68,11 @@ The public BadUpdate source baseline is pinned as the
 matrix. Of 33 installed components, no Peer raw payload remains without
 binary-exact source-form reconstruction. `FlashDmaPayload.bin` additionally
 has complete source-level C++ recovery. `KernelExpansion.bin` now has its first
-71 exact-byte-bound C++ lifts, including its optional kernel-patch installer,
+73 exact-byte-bound C++ lifts, including its optional kernel-patch installer,
 relative and absolute PowerPC branch-hook primitives, fixed post-load hook
 sequence, SATA Ultra DMA negotiation, flash-backed current/installed version
-query and NAND geometry selector, the DVD region-free XConfig hook, typed
-six-field configuration
+query and NAND geometry selector, the DVD region-free XConfig hook, the
+Peer-specific blocked-plugin policy, typed six-field configuration
 layout and schema, complete read/write INI pipeline, table-exposed hash-only
 value accessors, configuration bootstrap, fixed persistence/locking adapters,
 tokenizer, buffered serializer, key hash, and typed value dispatcher,
