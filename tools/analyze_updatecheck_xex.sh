@@ -25,5 +25,6 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" "$image" "$functions" \
     --string-start 0x91a00400 --string-end 0x91a07f54 \
     --output "$root/analysis/xex/UpdateCheck-string-xrefs.json"
 python3 -B "$root/tools/analyze_updatecheck_provenance.py"
+python3 -B "$root/tools/recover_updatecheck_jsoncpp_symbols.py"
 
 echo "UpdateCheck exact sections and static analysis regenerated"

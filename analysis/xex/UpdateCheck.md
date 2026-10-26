@@ -45,5 +45,13 @@ set and distinctive parser/value diagnostics; the recorded tag resolves to
 upstream commit `7c186e549fba358ac0541ed75f5a524b393954b3`.
 
 This establishes the third-party ownership boundary and exact declared
-versions. Function-level matching to those upstream sources remains pending,
-so generic functions are not renamed solely from their address range.
+versions. Function names are assigned only where function-local evidence
+supports them, not merely from membership in a broad address range.
+
+`UpdateCheck-symbols.json` now recovers 22 high-confidence JsonCpp functions
+whose exact diagnostics or settings identify their upstream roles. These cover
+the modern `OurReader` parse core, `CharReaderBuilder` construction, and core
+`Json::Value` conversion/indexing helpers. The generator requires every name's
+signature to remain attached to the expected function, preventing silent name
+drift when the inventories are regenerated. Broader byte-level matching of
+diagnostic-free JsonCpp functions remains pending.
