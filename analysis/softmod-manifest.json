@@ -1,0 +1,477 @@
+{
+  "magic": "XBPP",
+  "manifest_flags": 0,
+  "smc_version": "1.1",
+  "smc_reserved": 0,
+  "softmod_version": "1.0.477",
+  "entries_offset": "0x00000030",
+  "entry_count": 33,
+  "entries": [
+    {
+      "path": "Updater.xex",
+      "flags": 0,
+      "sha1": "ca12f5f0a96f6c5b419b719c9f3bf1b05aca9dbb"
+    },
+    {
+      "path": "Flash\\bootanim.xex",
+      "flags": 0,
+      "sha1": "3c1bf1edc06a385455e74876c3aa28280e8f363c"
+    },
+    {
+      "path": "Flash\\Corona_SmcCode.bin",
+      "flags": 0,
+      "sha1": "9a7c48d1253039beecbf4118006198b8d2026c72"
+    },
+    {
+      "path": "Flash\\Corona_SmcExploit.bin",
+      "flags": 0,
+      "sha1": "c55e932af5d3dc039bac6bae7955caeabbc127ff"
+    },
+    {
+      "path": "Flash\\Falcon_SmcCode.bin",
+      "flags": 0,
+      "sha1": "96a63b85b36fa86e69548ead9d07a5f6b060e255"
+    },
+    {
+      "path": "Flash\\Falcon_SmcExploit.bin",
+      "flags": 0,
+      "sha1": "15fe9bc57dd560e4ff684a3983b02579722ea991"
+    },
+    {
+      "path": "Flash\\FlashDmaPayload.bin",
+      "flags": 0,
+      "sha1": "fe3edae1bd416c66bdc04871616fe7bcf9b4285b"
+    },
+    {
+      "path": "Flash\\Jasper_SmcCode.bin",
+      "flags": 0,
+      "sha1": "a51154c1e04fa4e3f5f5c2c4be0bcfe4d05068bb"
+    },
+    {
+      "path": "Flash\\Jasper_SmcExploit.bin",
+      "flags": 0,
+      "sha1": "2b765bdec9519088f8c7e7f8759a329ab3fb00de"
+    },
+    {
+      "path": "Flash\\Trinity_SmcCode.bin",
+      "flags": 0,
+      "sha1": "ff5601c445bf0e2d22a4a41aa60c27f595b285df"
+    },
+    {
+      "path": "Flash\\Trinity_SmcExploit.bin",
+      "flags": 0,
+      "sha1": "dbf8574dcda56e87a2056773e826a218df68c28c"
+    },
+    {
+      "path": "Flash\\Xenon_SmcCode.bin",
+      "flags": 0,
+      "sha1": "a131a33393868787ceaace3795ac4a1a3019cbc4"
+    },
+    {
+      "path": "Flash\\Xenon_SmcExploit.bin",
+      "flags": 0,
+      "sha1": "516a6e79a7f74a02dd30f0127be5c0f09a7d3f2a"
+    },
+    {
+      "path": "Flash\\Zephyr_SmcCode.bin",
+      "flags": 0,
+      "sha1": "22657d98e59f96bbe4618d2a21a79530d0c6863b"
+    },
+    {
+      "path": "Flash\\Zephyr_SmcExploit.bin",
+      "flags": 0,
+      "sha1": "451d5cfd6902e794ce493817c593ef7fe70dcab4"
+    },
+    {
+      "path": "Hdd\\HddSecuritySectorPayload.bin",
+      "flags": 0,
+      "sha1": "c55c2e46ad3ae6eeb55c85adb5432127dff0377b"
+    },
+    {
+      "path": "Hdd\\PeerPressureExploit-Stage2.bin",
+      "flags": 0,
+      "sha1": "e5907a4981a9b5c8393750d4de311df1c23d3675"
+    },
+    {
+      "path": "PeerPressure\\OtherOS\\boot.ini",
+      "flags": 1,
+      "sha1": "db6243bec78ae8ce0aac3fb5255be483b500f10c"
+    },
+    {
+      "path": "PeerPressure\\OtherOS\\BootXell.xex",
+      "flags": 0,
+      "sha1": "1ff0ddd36c80ee45cdb70271ad339219cc5df205"
+    },
+    {
+      "path": "PeerPressure\\SideLoading\\AuroraFixer.xex",
+      "flags": 0,
+      "sha1": "e4de6e4270378f43a7f074acf78324730ef685b9"
+    },
+    {
+      "path": "PeerPressure\\SideLoading\\SideLoad.ini",
+      "flags": 0,
+      "sha1": "030f0f8e96374b7cfc39701de7a493a797149cbb"
+    },
+    {
+      "path": "PeerPressure\\System\\BootEdit.xex",
+      "flags": 0,
+      "sha1": "d24d7fdc48c976af56aa485207b210edaac26e25"
+    },
+    {
+      "path": "PeerPressure\\System\\Config.ini",
+      "flags": 1,
+      "sha1": "b86e3472580bde31724b87a64a91a2dc080bd0b7"
+    },
+    {
+      "path": "PeerPressure\\System\\HudResources.xzp",
+      "flags": 2,
+      "sha1": "dbe701654dc6e6c2a2d97f7c8a8f244739f98098"
+    },
+    {
+      "path": "PeerPressure\\System\\IncludedRootsPEM.txt",
+      "flags": 0,
+      "sha1": "a522c8cfa3bdd527cf1ec521c5002a4be9a9e39c"
+    },
+    {
+      "path": "PeerPressure\\System\\KernelExpansion.bin",
+      "flags": 0,
+      "sha1": "1899b198f3c745a499e0994c3d9f51b19a093271"
+    },
+    {
+      "path": "PeerPressure\\System\\kernel_patches.bin",
+      "flags": 0,
+      "sha1": "e1253d592fce50fd7def99e99f443091edd9e334"
+    },
+    {
+      "path": "PeerPressure\\System\\PeerPressureExploit-4thStage.bin",
+      "flags": 0,
+      "sha1": "a3ca6a4db79b8e881faf15f8ec03edc87cb22316"
+    },
+    {
+      "path": "PeerPressure\\System\\SettingsApp.xex",
+      "flags": 0,
+      "sha1": "076247918bc4f547ddfa1c9076e64fbd83da54b9"
+    },
+    {
+      "path": "PeerPressure\\System\\UpdateCheck.xex",
+      "flags": 0,
+      "sha1": "3420d6ec2f2343986a4807d75c8238ec2a09a6ae"
+    },
+    {
+      "path": "PeerPressure\\System\\update_data.bin",
+      "flags": 0,
+      "sha1": "be4bda2a91ab48ae1c8e8af39d91278fa4c48996"
+    },
+    {
+      "path": "PeerPressure\\System\\xke_update.bin",
+      "flags": 0,
+      "sha1": "f0434fa898b8cd53dfb6d34713bb86aa4a94e699"
+    },
+    {
+      "path": "PeerPressure\\Themes\\BootAnim\\9199\\bootanim.xex",
+      "flags": 0,
+      "sha1": "614548900f80e3b52ce7281a92219e24eb9ab786"
+    }
+  ],
+  "file_verification": [
+    {
+      "path": "Updater.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "ca12f5f0a96f6c5b419b719c9f3bf1b05aca9dbb",
+      "actual_sha1": "ca12f5f0a96f6c5b419b719c9f3bf1b05aca9dbb",
+      "matches": true
+    },
+    {
+      "path": "Flash\\bootanim.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "3c1bf1edc06a385455e74876c3aa28280e8f363c",
+      "actual_sha1": "3c1bf1edc06a385455e74876c3aa28280e8f363c",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Corona_SmcCode.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "9a7c48d1253039beecbf4118006198b8d2026c72",
+      "actual_sha1": "9a7c48d1253039beecbf4118006198b8d2026c72",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Corona_SmcExploit.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "c55e932af5d3dc039bac6bae7955caeabbc127ff",
+      "actual_sha1": "c55e932af5d3dc039bac6bae7955caeabbc127ff",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Falcon_SmcCode.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "96a63b85b36fa86e69548ead9d07a5f6b060e255",
+      "actual_sha1": "96a63b85b36fa86e69548ead9d07a5f6b060e255",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Falcon_SmcExploit.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "15fe9bc57dd560e4ff684a3983b02579722ea991",
+      "actual_sha1": "15fe9bc57dd560e4ff684a3983b02579722ea991",
+      "matches": true
+    },
+    {
+      "path": "Flash\\FlashDmaPayload.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "fe3edae1bd416c66bdc04871616fe7bcf9b4285b",
+      "actual_sha1": "fe3edae1bd416c66bdc04871616fe7bcf9b4285b",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Jasper_SmcCode.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "a51154c1e04fa4e3f5f5c2c4be0bcfe4d05068bb",
+      "actual_sha1": "a51154c1e04fa4e3f5f5c2c4be0bcfe4d05068bb",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Jasper_SmcExploit.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "2b765bdec9519088f8c7e7f8759a329ab3fb00de",
+      "actual_sha1": "2b765bdec9519088f8c7e7f8759a329ab3fb00de",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Trinity_SmcCode.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "ff5601c445bf0e2d22a4a41aa60c27f595b285df",
+      "actual_sha1": "ff5601c445bf0e2d22a4a41aa60c27f595b285df",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Trinity_SmcExploit.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "dbf8574dcda56e87a2056773e826a218df68c28c",
+      "actual_sha1": "dbf8574dcda56e87a2056773e826a218df68c28c",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Xenon_SmcCode.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "a131a33393868787ceaace3795ac4a1a3019cbc4",
+      "actual_sha1": "a131a33393868787ceaace3795ac4a1a3019cbc4",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Xenon_SmcExploit.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "516a6e79a7f74a02dd30f0127be5c0f09a7d3f2a",
+      "actual_sha1": "516a6e79a7f74a02dd30f0127be5c0f09a7d3f2a",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Zephyr_SmcCode.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "22657d98e59f96bbe4618d2a21a79530d0c6863b",
+      "actual_sha1": "22657d98e59f96bbe4618d2a21a79530d0c6863b",
+      "matches": true
+    },
+    {
+      "path": "Flash\\Zephyr_SmcExploit.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "451d5cfd6902e794ce493817c593ef7fe70dcab4",
+      "actual_sha1": "451d5cfd6902e794ce493817c593ef7fe70dcab4",
+      "matches": true
+    },
+    {
+      "path": "Hdd\\HddSecuritySectorPayload.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "c55c2e46ad3ae6eeb55c85adb5432127dff0377b",
+      "actual_sha1": "c55c2e46ad3ae6eeb55c85adb5432127dff0377b",
+      "matches": true
+    },
+    {
+      "path": "Hdd\\PeerPressureExploit-Stage2.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "e5907a4981a9b5c8393750d4de311df1c23d3675",
+      "actual_sha1": "e5907a4981a9b5c8393750d4de311df1c23d3675",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\OtherOS\\boot.ini",
+      "flags": 1,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "db6243bec78ae8ce0aac3fb5255be483b500f10c",
+      "actual_sha1": "db6243bec78ae8ce0aac3fb5255be483b500f10c",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\OtherOS\\BootXell.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "1ff0ddd36c80ee45cdb70271ad339219cc5df205",
+      "actual_sha1": "1ff0ddd36c80ee45cdb70271ad339219cc5df205",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\SideLoading\\AuroraFixer.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "e4de6e4270378f43a7f074acf78324730ef685b9",
+      "actual_sha1": "e4de6e4270378f43a7f074acf78324730ef685b9",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\SideLoading\\SideLoad.ini",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "030f0f8e96374b7cfc39701de7a493a797149cbb",
+      "actual_sha1": "030f0f8e96374b7cfc39701de7a493a797149cbb",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\BootEdit.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "d24d7fdc48c976af56aa485207b210edaac26e25",
+      "actual_sha1": "d24d7fdc48c976af56aa485207b210edaac26e25",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\Config.ini",
+      "flags": 1,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "b86e3472580bde31724b87a64a91a2dc080bd0b7",
+      "actual_sha1": "b86e3472580bde31724b87a64a91a2dc080bd0b7",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\HudResources.xzp",
+      "flags": 2,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "dbe701654dc6e6c2a2d97f7c8a8f244739f98098",
+      "actual_sha1": "dbe701654dc6e6c2a2d97f7c8a8f244739f98098",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\IncludedRootsPEM.txt",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "a522c8cfa3bdd527cf1ec521c5002a4be9a9e39c",
+      "actual_sha1": "a522c8cfa3bdd527cf1ec521c5002a4be9a9e39c",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\KernelExpansion.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "1899b198f3c745a499e0994c3d9f51b19a093271",
+      "actual_sha1": "1899b198f3c745a499e0994c3d9f51b19a093271",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\kernel_patches.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "e1253d592fce50fd7def99e99f443091edd9e334",
+      "actual_sha1": "e1253d592fce50fd7def99e99f443091edd9e334",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\PeerPressureExploit-4thStage.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "a3ca6a4db79b8e881faf15f8ec03edc87cb22316",
+      "actual_sha1": "a3ca6a4db79b8e881faf15f8ec03edc87cb22316",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\SettingsApp.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "076247918bc4f547ddfa1c9076e64fbd83da54b9",
+      "actual_sha1": "076247918bc4f547ddfa1c9076e64fbd83da54b9",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\UpdateCheck.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "3420d6ec2f2343986a4807d75c8238ec2a09a6ae",
+      "actual_sha1": "3420d6ec2f2343986a4807d75c8238ec2a09a6ae",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\update_data.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "be4bda2a91ab48ae1c8e8af39d91278fa4c48996",
+      "actual_sha1": "be4bda2a91ab48ae1c8e8af39d91278fa4c48996",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\System\\xke_update.bin",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "f0434fa898b8cd53dfb6d34713bb86aa4a94e699",
+      "actual_sha1": "f0434fa898b8cd53dfb6d34713bb86aa4a94e699",
+      "matches": true
+    },
+    {
+      "path": "PeerPressure\\Themes\\BootAnim\\9199\\bootanim.xex",
+      "flags": 0,
+      "safe_path": true,
+      "exists": true,
+      "stored_sha1": "614548900f80e3b52ce7281a92219e24eb9ab786",
+      "actual_sha1": "614548900f80e3b52ce7281a92219e24eb9ab786",
+      "matches": true
+    }
+  ],
+  "roundtrip_identical": true,
+  "rebuilt_sha256": "6e955c6cf2aa85ad077834c49b88f65c8920a8c2e2ed88769daff93a6c8f20de"
+}

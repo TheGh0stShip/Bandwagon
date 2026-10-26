@@ -1,0 +1,529 @@
+{
+  "baseline": "grimdoomer/Xbox360BadUpdate release BadUpdate-v1.3",
+  "source_commit": "94f9215a00382c218288ea230d5f81d73b7f2f9b",
+  "release_archive": "Xbox360BadUpdate-Retail-USB-v1.3.zip",
+  "release_archive_sha256": "cfd56bca11ec94bbb132a29633eeea82c0f02c016a83f9a8e6c9df2714dfe003",
+  "components": [
+    {
+      "name": "BadUpdateExploit-2ndStage.bin",
+      "peer_pressure_path": "BadUpdatePayload/BadUpdateExploit-2ndStage.bin",
+      "upstream_size": 384960,
+      "peer_pressure_size": 384960,
+      "upstream_sha256": "852e45553d14a47ec1b7413c57f1e4cdd45b11d92bfdbf75ff1342c1943cf02f",
+      "peer_pressure_sha256": "852e45553d14a47ec1b7413c57f1e4cdd45b11d92bfdbf75ff1342c1943cf02f",
+      "byte_identical": true
+    },
+    {
+      "name": "BadUpdateExploit-3rdStage.bin",
+      "peer_pressure_path": "BadUpdatePayload/BadUpdateExploit-3rdStage.bin",
+      "upstream_size": 6352,
+      "peer_pressure_size": 5600,
+      "upstream_sha256": "8e3ab4a77ab60146e8ce3c7fec382574af0cc6dacb496577957de595b8839c63",
+      "peer_pressure_sha256": "2370dc4a9c66152bef173631e1db7fa2b2cba380f528b417b57364dfd99ac47a",
+      "byte_identical": false,
+      "matching_blocks_min_16_bytes": [
+        {
+          "upstream_offset": "0x00000090",
+          "peer_pressure_offset": "0x00000080",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x000000c8",
+          "peer_pressure_offset": "0x000000b8",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00000134",
+          "peer_pressure_offset": "0x0000021c",
+          "size": 34
+        },
+        {
+          "upstream_offset": "0x00000198",
+          "peer_pressure_offset": "0x00000274",
+          "size": 166
+        },
+        {
+          "upstream_offset": "0x00000260",
+          "peer_pressure_offset": "0x00000330",
+          "size": 18
+        },
+        {
+          "upstream_offset": "0x00000274",
+          "peer_pressure_offset": "0x00000344",
+          "size": 47
+        },
+        {
+          "upstream_offset": "0x000002a4",
+          "peer_pressure_offset": "0x00000374",
+          "size": 27
+        },
+        {
+          "upstream_offset": "0x000002f8",
+          "peer_pressure_offset": "0x000003bc",
+          "size": 18
+        },
+        {
+          "upstream_offset": "0x0000030c",
+          "peer_pressure_offset": "0x000003d0",
+          "size": 87
+        },
+        {
+          "upstream_offset": "0x00000380",
+          "peer_pressure_offset": "0x00000434",
+          "size": 18
+        },
+        {
+          "upstream_offset": "0x000003e8",
+          "peer_pressure_offset": "0x00000498",
+          "size": 74
+        },
+        {
+          "upstream_offset": "0x00000440",
+          "peer_pressure_offset": "0x000004f0",
+          "size": 70
+        },
+        {
+          "upstream_offset": "0x000004a0",
+          "peer_pressure_offset": "0x00000550",
+          "size": 26
+        },
+        {
+          "upstream_offset": "0x000004cc",
+          "peer_pressure_offset": "0x0000057c",
+          "size": 50
+        },
+        {
+          "upstream_offset": "0x00000500",
+          "peer_pressure_offset": "0x000005b0",
+          "size": 18
+        },
+        {
+          "upstream_offset": "0x00000524",
+          "peer_pressure_offset": "0x000005d4",
+          "size": 35
+        },
+        {
+          "upstream_offset": "0x00000548",
+          "peer_pressure_offset": "0x000005f8",
+          "size": 30
+        },
+        {
+          "upstream_offset": "0x00000568",
+          "peer_pressure_offset": "0x00000618",
+          "size": 50
+        },
+        {
+          "upstream_offset": "0x0000059c",
+          "peer_pressure_offset": "0x0000064c",
+          "size": 18
+        },
+        {
+          "upstream_offset": "0x000005c4",
+          "peer_pressure_offset": "0x00000694",
+          "size": 46
+        },
+        {
+          "upstream_offset": "0x000005f4",
+          "peer_pressure_offset": "0x000006c4",
+          "size": 30
+        },
+        {
+          "upstream_offset": "0x00000614",
+          "peer_pressure_offset": "0x000006e4",
+          "size": 50
+        },
+        {
+          "upstream_offset": "0x000006ac",
+          "peer_pressure_offset": "0x00000764",
+          "size": 35
+        },
+        {
+          "upstream_offset": "0x00000730",
+          "peer_pressure_offset": "0x000007e4",
+          "size": 21
+        },
+        {
+          "upstream_offset": "0x000007aa",
+          "peer_pressure_offset": "0x0000084e",
+          "size": 20
+        },
+        {
+          "upstream_offset": "0x000007d6",
+          "peer_pressure_offset": "0x0000087a",
+          "size": 24
+        },
+        {
+          "upstream_offset": "0x00000870",
+          "peer_pressure_offset": "0x000008e0",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x000008b4",
+          "peer_pressure_offset": "0x00000910",
+          "size": 20
+        },
+        {
+          "upstream_offset": "0x000008c8",
+          "peer_pressure_offset": "0x00000928",
+          "size": 94
+        },
+        {
+          "upstream_offset": "0x00000948",
+          "peer_pressure_offset": "0x000009a8",
+          "size": 39
+        },
+        {
+          "upstream_offset": "0x00000984",
+          "peer_pressure_offset": "0x000009e4",
+          "size": 39
+        },
+        {
+          "upstream_offset": "0x000009c8",
+          "peer_pressure_offset": "0x00000a28",
+          "size": 103
+        },
+        {
+          "upstream_offset": "0x00000a30",
+          "peer_pressure_offset": "0x00000a90",
+          "size": 38
+        },
+        {
+          "upstream_offset": "0x00000a60",
+          "peer_pressure_offset": "0x00000ac0",
+          "size": 22
+        },
+        {
+          "upstream_offset": "0x00000a80",
+          "peer_pressure_offset": "0x00000ae0",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00000ab0",
+          "peer_pressure_offset": "0x00000b04",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00000ad4",
+          "peer_pressure_offset": "0x00000b28",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00000b00",
+          "peer_pressure_offset": "0x00000b54",
+          "size": 19
+        },
+        {
+          "upstream_offset": "0x00000b14",
+          "peer_pressure_offset": "0x00000b68",
+          "size": 19
+        },
+        {
+          "upstream_offset": "0x00000b28",
+          "peer_pressure_offset": "0x00000b7c",
+          "size": 19
+        },
+        {
+          "upstream_offset": "0x00000b9c",
+          "peer_pressure_offset": "0x00000be4",
+          "size": 27
+        },
+        {
+          "upstream_offset": "0x00000bb8",
+          "peer_pressure_offset": "0x00000c00",
+          "size": 114
+        },
+        {
+          "upstream_offset": "0x00000c2c",
+          "peer_pressure_offset": "0x00000c74",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00000c4c",
+          "peer_pressure_offset": "0x00000c94",
+          "size": 74
+        },
+        {
+          "upstream_offset": "0x00000cb8",
+          "peer_pressure_offset": "0x00000cf4",
+          "size": 83
+        },
+        {
+          "upstream_offset": "0x00000d14",
+          "peer_pressure_offset": "0x00000d50",
+          "size": 24
+        },
+        {
+          "upstream_offset": "0x00000d38",
+          "peer_pressure_offset": "0x00000d70",
+          "size": 63
+        },
+        {
+          "upstream_offset": "0x00000d84",
+          "peer_pressure_offset": "0x00000dbc",
+          "size": 103
+        },
+        {
+          "upstream_offset": "0x00000e00",
+          "peer_pressure_offset": "0x00000e38",
+          "size": 31
+        },
+        {
+          "upstream_offset": "0x00000e70",
+          "peer_pressure_offset": "0x00000eb4",
+          "size": 18
+        },
+        {
+          "upstream_offset": "0x00000e84",
+          "peer_pressure_offset": "0x00000ec8",
+          "size": 27
+        },
+        {
+          "upstream_offset": "0x00000efc",
+          "peer_pressure_offset": "0x00000ef8",
+          "size": 27
+        },
+        {
+          "upstream_offset": "0x00000f1c",
+          "peer_pressure_offset": "0x00000f24",
+          "size": 19
+        },
+        {
+          "upstream_offset": "0x00000f44",
+          "peer_pressure_offset": "0x00000f74",
+          "size": 31
+        },
+        {
+          "upstream_offset": "0x00000f9c",
+          "peer_pressure_offset": "0x00000fb0",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00000fe0",
+          "peer_pressure_offset": "0x00000fec",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00001030",
+          "peer_pressure_offset": "0x00001038",
+          "size": 27
+        },
+        {
+          "upstream_offset": "0x00001060",
+          "peer_pressure_offset": "0x00001068",
+          "size": 267
+        },
+        {
+          "upstream_offset": "0x0000116c",
+          "peer_pressure_offset": "0x00001174",
+          "size": 207
+        },
+        {
+          "upstream_offset": "0x00001240",
+          "peer_pressure_offset": "0x00001248",
+          "size": 16
+        },
+        {
+          "upstream_offset": "0x00001260",
+          "peer_pressure_offset": "0x00001258",
+          "size": 91
+        },
+        {
+          "upstream_offset": "0x000012bb",
+          "peer_pressure_offset": "0x000012c3",
+          "size": 53
+        },
+        {
+          "upstream_offset": "0x000012f0",
+          "peer_pressure_offset": "0x00001308",
+          "size": 187
+        },
+        {
+          "upstream_offset": "0x000013b0",
+          "peer_pressure_offset": "0x000013c8",
+          "size": 40
+        },
+        {
+          "upstream_offset": "0x00001408",
+          "peer_pressure_offset": "0x000013f0",
+          "size": 40
+        },
+        {
+          "upstream_offset": "0x00001488",
+          "peer_pressure_offset": "0x00001418",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x0000153b",
+          "peer_pressure_offset": "0x0000142f",
+          "size": 213
+        },
+        {
+          "upstream_offset": "0x00001634",
+          "peer_pressure_offset": "0x00001504",
+          "size": 23
+        },
+        {
+          "upstream_offset": "0x00001723",
+          "peer_pressure_offset": "0x0000151b",
+          "size": 125
+        }
+      ],
+      "matching_block_bytes": 3584,
+      "function_map": [
+        {
+          "peer_pressure_range": "0x0000-0x00f8",
+          "best_upstream_range": "0x0000-0x0108",
+          "normalized_instruction_similarity": 0.75
+        },
+        {
+          "peer_pressure_range": "0x00f8-0x01e8",
+          "best_upstream_range": "0x0000-0x0108",
+          "normalized_instruction_similarity": 0.238095
+        },
+        {
+          "peer_pressure_range": "0x01e8-0x0490",
+          "best_upstream_range": "0x0108-0x03e0",
+          "normalized_instruction_similarity": 0.920455
+        },
+        {
+          "peer_pressure_range": "0x0490-0x06a0",
+          "best_upstream_range": "0x03e0-0x05d0",
+          "normalized_instruction_similarity": 0.9375
+        },
+        {
+          "peer_pressure_range": "0x06a0-0x06f8",
+          "best_upstream_range": "0x05d0-0x0628",
+          "normalized_instruction_similarity": 1.0
+        },
+        {
+          "peer_pressure_range": "0x06f8-0x0780",
+          "best_upstream_range": "0x0628-0x06c8",
+          "normalized_instruction_similarity": 0.864865
+        },
+        {
+          "peer_pressure_range": "0x0780-0x08e0",
+          "best_upstream_range": "0x06c8-0x0870",
+          "normalized_instruction_similarity": 0.597938
+        },
+        {
+          "peer_pressure_range": "0x08e0-0x0928",
+          "best_upstream_range": "0x0870-0x08c8",
+          "normalized_instruction_similarity": 0.85
+        },
+        {
+          "peer_pressure_range": "0x0928-0x0a88",
+          "best_upstream_range": "0x08c8-0x0a28",
+          "normalized_instruction_similarity": 0.965909
+        },
+        {
+          "peer_pressure_range": "0x0a88-0x0be8",
+          "best_upstream_range": "0x0a28-0x0ba0",
+          "normalized_instruction_similarity": 0.912088
+        },
+        {
+          "peer_pressure_range": "0x0be8-0x0ca8",
+          "best_upstream_range": "0x0ba0-0x0c60",
+          "normalized_instruction_similarity": 1.0
+        },
+        {
+          "peer_pressure_range": "0x0ca8-0x0d68",
+          "best_upstream_range": "0x0c60-0x0d30",
+          "normalized_instruction_similarity": 0.96
+        },
+        {
+          "peer_pressure_range": "0x0d68-0x0e30",
+          "best_upstream_range": "0x0d30-0x0df8",
+          "normalized_instruction_similarity": 1.0
+        },
+        {
+          "peer_pressure_range": "0x0e30-0x0f68",
+          "best_upstream_range": "0x0df8-0x0f38",
+          "normalized_instruction_similarity": 0.708861
+        },
+        {
+          "peer_pressure_range": "0x0f68-0x1038",
+          "best_upstream_range": "0x0f38-0x1030",
+          "normalized_instruction_similarity": 0.807018
+        },
+        {
+          "peer_pressure_range": "0x1038-0x1090",
+          "best_upstream_range": "0x1030-0x1088",
+          "normalized_instruction_similarity": 1.0
+        },
+        {
+          "peer_pressure_range": "0x1090-0x1128",
+          "best_upstream_range": "0x1088-0x1120",
+          "normalized_instruction_similarity": 1.0
+        },
+        {
+          "peer_pressure_range": "0x1128-0x15e0",
+          "best_upstream_range": "0x1120-0x18d0",
+          "normalized_instruction_similarity": 0.692695
+        }
+      ]
+    },
+    {
+      "name": "BadUpdateExploit-4thStage.bin",
+      "peer_pressure_path": "BadUpdatePayload/BadUpdateExploit-4thStage.bin",
+      "upstream_size": 65920,
+      "peer_pressure_size": 65920,
+      "upstream_sha256": "25a75b533b110973ea1b94967bf0dff1bbb82e621fa145f12b7862f1e13d3cc9",
+      "peer_pressure_sha256": "25a75b533b110973ea1b94967bf0dff1bbb82e621fa145f12b7862f1e13d3cc9",
+      "byte_identical": true
+    },
+    {
+      "name": "BadUpdateExploit-Data.bin",
+      "peer_pressure_path": "BadUpdatePayload/BadUpdateExploit-Data.bin",
+      "upstream_size": 1124,
+      "peer_pressure_size": 1124,
+      "upstream_sha256": "3be04877001617305ec9d1c34e03ecd117af4f7586441e49c6cc9347302e492d",
+      "peer_pressure_sha256": "3be04877001617305ec9d1c34e03ecd117af4f7586441e49c6cc9347302e492d",
+      "byte_identical": true
+    },
+    {
+      "name": "update_data.bin",
+      "peer_pressure_path": "BadUpdatePayload/update_data.bin",
+      "upstream_size": 45360,
+      "peer_pressure_size": 45360,
+      "upstream_sha256": "141604af68d4ccd24663ce7cad56ad1e2a9ed9467dbb629159ad4d2d6c837cb7",
+      "peer_pressure_sha256": "141604af68d4ccd24663ce7cad56ad1e2a9ed9467dbb629159ad4d2d6c837cb7",
+      "byte_identical": true
+    },
+    {
+      "name": "xke_update.bin",
+      "peer_pressure_path": "BadUpdatePayload/xke_update.bin",
+      "upstream_size": 20480,
+      "peer_pressure_size": 20480,
+      "upstream_sha256": "88f456c0b0091d691b3723dea190b428b3002443c13b7171b0ae9dafc92b5402",
+      "peer_pressure_sha256": "88f456c0b0091d691b3723dea190b428b3002443c13b7171b0ae9dafc92b5402",
+      "byte_identical": true
+    },
+    {
+      "name": "bootanim.xex",
+      "peer_pressure_path": "BadUpdatePayload/bootanim.xex",
+      "upstream_size": 397312,
+      "peer_pressure_size": 397312,
+      "upstream_sha256": "45eb980c0f841b4807d43c07c766fae5e70b8e2fa4d13fb247a491897cfc6de7",
+      "peer_pressure_sha256": "45eb980c0f841b4807d43c07c766fae5e70b8e2fa4d13fb247a491897cfc6de7",
+      "byte_identical": true
+    },
+    {
+      "name": "default.xex",
+      "peer_pressure_path": "BadUpdatePayload/default.xex",
+      "upstream_size": 27504640,
+      "peer_pressure_size": 1003520,
+      "upstream_sha256": "11b760f32807b3ff57b6e11f55423dfa3811629e18dae292848fc334f16d29dc",
+      "peer_pressure_sha256": "b68f12c1093f17f916a710e81fae1856b55f2a4a1d8cc01dd113bd9cf27e3ff0",
+      "byte_identical": false
+    },
+    {
+      "name": "DaTArrest_Xbox360BadUpdate",
+      "peer_pressure_path": "Content/0000000000000000/5841122D/00000001/DaTArrest_Xbox360BadUpdate",
+      "upstream_size": 90112,
+      "peer_pressure_size": 90112,
+      "upstream_sha256": "bc140cde71af8281147458856b0142a766135efe6cf0fa630093d29ba77172e4",
+      "peer_pressure_sha256": "bc140cde71af8281147458856b0142a766135efe6cf0fa630093d29ba77172e4",
+      "byte_identical": true
+    }
+  ]
+}

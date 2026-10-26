@@ -1,0 +1,8 @@
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.S text eol=lf
+*.asm text eol=lf
+*.dot text eol=lf
+*.idc text eol=lf

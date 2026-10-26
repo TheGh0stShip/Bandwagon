@@ -1,0 +1,18 @@
+# Closed-source release inputs. Keep these available locally for reproducible
+# analysis, but do not publish them from this repository.
+/BadUpdatePayload/
+/Content/
+/Flash/
+/Hdd/
+/PeerPressure/
+/SoftmodInstaller.zip
+/UpdateData.zip
+/Updater.xex
+/softmod.manifest
+/analysis/xex/basefiles/
+/tools/xex2ool
+
+# Generated local state.
+__pycache__/
+*.py[cod]
+.venv/

@@ -1,0 +1,148 @@
+{
+  "source": "PeerPressure/System/kernel_patches.bin",
+  "size": 372,
+  "byte_order": "big",
+  "records": [
+    {
+      "file_offset": "0x00000000",
+      "target_address": "0x8007b920",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x00000010",
+      "target_address": "0x8007c4b8",
+      "size": 4,
+      "data_hex": "38600001"
+    },
+    {
+      "file_offset": "0x0000001c",
+      "target_address": "0x8007c5e8",
+      "size": 4,
+      "data_hex": "38600000"
+    },
+    {
+      "file_offset": "0x00000028",
+      "target_address": "0x8007c634",
+      "size": 4,
+      "data_hex": "39600000"
+    },
+    {
+      "file_offset": "0x00000034",
+      "target_address": "0x8007c684",
+      "size": 4,
+      "data_hex": "39600000"
+    },
+    {
+      "file_offset": "0x00000040",
+      "target_address": "0x8007af08",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x00000050",
+      "target_address": "0x800998d0",
+      "size": 4,
+      "data_hex": "2b0b00ff"
+    },
+    {
+      "file_offset": "0x0000005c",
+      "target_address": "0x800992b4",
+      "size": 20,
+      "data_hex": "3860000060000000600000006000000060000000"
+    },
+    {
+      "file_offset": "0x00000078",
+      "target_address": "0x80109c90",
+      "size": 8,
+      "data_hex": "386000014e800020"
+    },
+    {
+      "file_offset": "0x00000088",
+      "target_address": "0x8010a788",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x00000098",
+      "target_address": "0x8010aa68",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x000000a8",
+      "target_address": "0x8010af30",
+      "size": 8,
+      "data_hex": "386000014e800020"
+    },
+    {
+      "file_offset": "0x000000b8",
+      "target_address": "0x8010b138",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x000000c8",
+      "target_address": "0x8010b0e8",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x000000d8",
+      "target_address": "0x8010b278",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x000000e8",
+      "target_address": "0x8010b3f8",
+      "size": 8,
+      "data_hex": "386000004e800020"
+    },
+    {
+      "file_offset": "0x000000f8",
+      "target_address": "0x8010bf20",
+      "size": 20,
+      "data_hex": "280500003860000141820008906500004e800020"
+    },
+    {
+      "file_offset": "0x00000114",
+      "target_address": "0x80111990",
+      "size": 8,
+      "data_hex": "386000014e800020"
+    },
+    {
+      "file_offset": "0x00000124",
+      "target_address": "0x800e1754",
+      "size": 4,
+      "data_hex": "48000018"
+    },
+    {
+      "file_offset": "0x00000130",
+      "target_address": "0x800e17cc",
+      "size": 12,
+      "data_hex": "835c00986000000060000000"
+    },
+    {
+      "file_offset": "0x00000144",
+      "target_address": "0x8015d9d8",
+      "size": 8,
+      "data_hex": "386000014e800020"
+    },
+    {
+      "file_offset": "0x00000154",
+      "target_address": "0x8009d660",
+      "size": 4,
+      "data_hex": "48000068"
+    },
+    {
+      "file_offset": "0x00000160",
+      "target_address": "0x800d8748",
+      "size": 8,
+      "data_hex": "386000014e800020"
+    },
+    {
+      "sentinel": "0xffffffff"
+    }
+  ]
+}

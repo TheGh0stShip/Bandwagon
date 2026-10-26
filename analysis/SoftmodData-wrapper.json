@@ -1,0 +1,257 @@
+{
+  "source": "BadUpdatePayload/SoftmodData.zip",
+  "wrapper_size": 24,
+  "wrapper_sha1": "15c48fb589452a4ef64f6f00aaf0372af8653965",
+  "hash_coverage": "bytes 0x14 through EOF (version + ZIP)",
+  "softmod_version": "1.0.477",
+  "zip_offset": "0x00000018",
+  "zip_member_count": 35,
+  "all_member_paths_safe": true,
+  "members": [
+    {
+      "path": "Updater.xex",
+      "safe_path": true,
+      "uncompressed_size": 53248,
+      "compressed_size": 49912,
+      "crc32": "d76d81e1"
+    },
+    {
+      "path": "Flash/bootanim.xex",
+      "safe_path": true,
+      "uncompressed_size": 397312,
+      "compressed_size": 381246,
+      "crc32": "58b9bc04"
+    },
+    {
+      "path": "Flash/Corona_SmcCode.bin",
+      "safe_path": true,
+      "uncompressed_size": 14336,
+      "compressed_size": 9275,
+      "crc32": "683c3323"
+    },
+    {
+      "path": "Flash/Corona_SmcExploit.bin",
+      "safe_path": true,
+      "uncompressed_size": 657,
+      "compressed_size": 499,
+      "crc32": "c3d11f96"
+    },
+    {
+      "path": "Flash/Falcon_SmcCode.bin",
+      "safe_path": true,
+      "uncompressed_size": 12288,
+      "compressed_size": 8407,
+      "crc32": "ae295a0c"
+    },
+    {
+      "path": "Flash/Falcon_SmcExploit.bin",
+      "safe_path": true,
+      "uncompressed_size": 587,
+      "compressed_size": 439,
+      "crc32": "5f40d4d0"
+    },
+    {
+      "path": "Flash/FlashDmaPayload.bin",
+      "safe_path": true,
+      "uncompressed_size": 16384,
+      "compressed_size": 379,
+      "crc32": "1b0a6aa3"
+    },
+    {
+      "path": "Flash/Jasper_SmcCode.bin",
+      "safe_path": true,
+      "uncompressed_size": 12288,
+      "compressed_size": 8489,
+      "crc32": "e81fd632"
+    },
+    {
+      "path": "Flash/Jasper_SmcExploit.bin",
+      "safe_path": true,
+      "uncompressed_size": 582,
+      "compressed_size": 442,
+      "crc32": "a1e3b02d"
+    },
+    {
+      "path": "Flash/Trinity_SmcCode.bin",
+      "safe_path": true,
+      "uncompressed_size": 12288,
+      "compressed_size": 8757,
+      "crc32": "37811d4b"
+    },
+    {
+      "path": "Flash/Trinity_SmcExploit.bin",
+      "safe_path": true,
+      "uncompressed_size": 550,
+      "compressed_size": 432,
+      "crc32": "3be7220d"
+    },
+    {
+      "path": "Flash/Xenon_SmcCode.bin",
+      "safe_path": true,
+      "uncompressed_size": 12288,
+      "compressed_size": 8539,
+      "crc32": "0a0bea88"
+    },
+    {
+      "path": "Flash/Xenon_SmcExploit.bin",
+      "safe_path": true,
+      "uncompressed_size": 587,
+      "compressed_size": 445,
+      "crc32": "08c38b78"
+    },
+    {
+      "path": "Flash/Zephyr_SmcCode.bin",
+      "safe_path": true,
+      "uncompressed_size": 12288,
+      "compressed_size": 8307,
+      "crc32": "29f08cdc"
+    },
+    {
+      "path": "Flash/Zephyr_SmcExploit.bin",
+      "safe_path": true,
+      "uncompressed_size": 587,
+      "compressed_size": 444,
+      "crc32": "4a2dd8fc"
+    },
+    {
+      "path": "Hdd/HddSecuritySectorPayload.bin",
+      "safe_path": true,
+      "uncompressed_size": 24,
+      "compressed_size": 23,
+      "crc32": "bd2d3ac2"
+    },
+    {
+      "path": "Hdd/PeerPressureExploit-Stage2.bin",
+      "safe_path": true,
+      "uncompressed_size": 217796,
+      "compressed_size": 9777,
+      "crc32": "5df600a2"
+    },
+    {
+      "path": "PeerPressure/OtherOS/boot.ini",
+      "safe_path": true,
+      "uncompressed_size": 2627,
+      "compressed_size": 1189,
+      "crc32": "a334f3f4"
+    },
+    {
+      "path": "PeerPressure/OtherOS/BootXell.xex",
+      "safe_path": true,
+      "uncompressed_size": 47104,
+      "compressed_size": 43762,
+      "crc32": "65af6e94"
+    },
+    {
+      "path": "PeerPressure/SideLoading/AuroraFixer.xex",
+      "safe_path": true,
+      "uncompressed_size": 102400,
+      "compressed_size": 99258,
+      "crc32": "1139c3dc"
+    },
+    {
+      "path": "PeerPressure/SideLoading/SideLoad.ini",
+      "safe_path": true,
+      "uncompressed_size": 3160,
+      "compressed_size": 1243,
+      "crc32": "67b7b62c"
+    },
+    {
+      "path": "PeerPressure/System/BootEdit.xex",
+      "safe_path": true,
+      "uncompressed_size": 868352,
+      "compressed_size": 866135,
+      "crc32": "a96a46be"
+    },
+    {
+      "path": "PeerPressure/System/Config.ini",
+      "safe_path": true,
+      "uncompressed_size": 1412,
+      "compressed_size": 709,
+      "crc32": "b6d76fee"
+    },
+    {
+      "path": "PeerPressure/System/HudResources.xzp",
+      "safe_path": true,
+      "uncompressed_size": 2871,
+      "compressed_size": 1007,
+      "crc32": "dd5e1332"
+    },
+    {
+      "path": "PeerPressure/System/IncludedRootsPEM.txt",
+      "safe_path": true,
+      "uncompressed_size": 177207,
+      "compressed_size": 104175,
+      "crc32": "6566e3a1"
+    },
+    {
+      "path": "PeerPressure/System/KernelExpansion.bin",
+      "safe_path": true,
+      "uncompressed_size": 83792,
+      "compressed_size": 43364,
+      "crc32": "47d580e5"
+    },
+    {
+      "path": "PeerPressure/System/kernel_patches.bin",
+      "safe_path": true,
+      "uncompressed_size": 372,
+      "compressed_size": 176,
+      "crc32": "666f59c8"
+    },
+    {
+      "path": "PeerPressure/System/PeerPressureExploit-4thStage.bin",
+      "safe_path": true,
+      "uncompressed_size": 67456,
+      "compressed_size": 6022,
+      "crc32": "aea9e04f"
+    },
+    {
+      "path": "PeerPressure/System/SettingsApp.xex",
+      "safe_path": true,
+      "uncompressed_size": 1015808,
+      "compressed_size": 1014199,
+      "crc32": "463924b3"
+    },
+    {
+      "path": "PeerPressure/System/UpdateCheck.xex",
+      "safe_path": true,
+      "uncompressed_size": 129024,
+      "compressed_size": 125928,
+      "crc32": "8a25d414"
+    },
+    {
+      "path": "PeerPressure/System/update_data.bin",
+      "safe_path": true,
+      "uncompressed_size": 45360,
+      "compressed_size": 45375,
+      "crc32": "8b1a03ef"
+    },
+    {
+      "path": "PeerPressure/System/xke_update.bin",
+      "safe_path": true,
+      "uncompressed_size": 20480,
+      "compressed_size": 20490,
+      "crc32": "02806766"
+    },
+    {
+      "path": "PeerPressure/Themes/BootAnim/9199/bootanim.xex",
+      "safe_path": true,
+      "uncompressed_size": 593920,
+      "compressed_size": 408783,
+      "crc32": "bd2e0530"
+    },
+    {
+      "path": "softmod.manifest",
+      "safe_path": true,
+      "uncompressed_size": 1980,
+      "compressed_size": 1247,
+      "crc32": "c792f50c"
+    },
+    {
+      "path": "ChangeLog.txt",
+      "safe_path": true,
+      "uncompressed_size": 4,
+      "compressed_size": 6,
+      "crc32": "d87f7e0c"
+    }
+  ]
+}
