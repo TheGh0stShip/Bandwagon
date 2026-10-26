@@ -300,6 +300,15 @@
       "source": "reconstruction/kernel_expansion/phase_two_restore.cpp",
       "header": "reconstruction/kernel_expansion/phase_two_restore.hpp",
       "symbols": ["FindCharacterOnLine"]
+    },
+    {
+      "address": "0x801fda38",
+      "size": 72,
+      "sha256": "7ed3f4dc42ca76a62167a08d34dd70f4424e13766f2d10a439cf661dabeb29ee",
+      "semantic_name": "DecodeOem437Character",
+      "source": "reconstruction/kernel_expansion/oem437.cpp",
+      "header": "reconstruction/kernel_expansion/oem437.hpp",
+      "symbols": ["DecodeOem437Character", "kOemUnitedStatesCodePage", "kOem437ToUnicode"]
     }
   ],
   "tests": [
@@ -314,6 +323,7 @@
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",
+    "reconstruction/kernel_expansion/oem437_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",
     "reconstruction/kernel_expansion/path_fields_test.cpp",
     "reconstruction/kernel_expansion/phase_two_restore_test.cpp",

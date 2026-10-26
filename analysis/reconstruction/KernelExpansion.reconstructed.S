@@ -14159,7 +14159,7 @@ fn_801FD9C0:
     .long 0x4e800020 /* 0x0da2c */
     .long 0x38600000 /* 0x0da30 */
     .long 0x4e800020 /* 0x0da34 */
-fn_801FDA38:
+DecodeOem437Character:
     .long 0x546a043e /* 0x0da38 */
     .long 0x7c6b1b78 /* 0x0da3c */
     .long 0x38600000 /* 0x0da40 */

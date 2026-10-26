@@ -1882,9 +1882,9 @@
       "address": "0x801fda38",
       "section_offset": "0xda38",
       "size_to_next_symbol": 72,
-      "name": "fn_801FDA38",
+      "name": "DecodeOem437Character",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

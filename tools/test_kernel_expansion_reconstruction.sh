@@ -107,6 +107,12 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/namespace_links_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/oem437.cpp" \
+    "$root/reconstruction/kernel_expansion/oem437_test.cpp" \
+    -o "$work/oem437_test"
+"$work/oem437_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/instruction_patch.cpp" \
     "$root/reconstruction/kernel_expansion/instruction_patch_test.cpp" \
     -o "$work/instruction_patch_test"
