@@ -24,8 +24,10 @@ class MockPlatform final : public bandwagon::stage3::Platform {
   void ZeroMemory(std::uint64_t address, std::size_t size) override {
     zeroed = {address, size};
   }
-  void InstallResidentProbe(std::uint64_t address) override {
+  void InstallResidentProbe(std::uint64_t address, const std::uint8_t* data,
+                            std::size_t size) override {
     probe_installed_at = address;
+    installed_probe.assign(data, data + size);
   }
   std::uint32_t GetPhysicalAddress(std::uint64_t address) override {
     return address == probe_allocation ? probe_physical : stage4_physical;
@@ -74,6 +76,7 @@ class MockPlatform final : public bandwagon::stage3::Platform {
   std::array<std::uint32_t, 6> allocation_arguments{};
   std::pair<std::uint64_t, std::size_t> zeroed{};
   std::uint64_t probe_installed_at = 0;
+  std::vector<std::uint8_t> installed_probe;
   bool synchronized = false;
   std::vector<std::pair<std::uint32_t, std::uint64_t>> frees;
   std::vector<bandwagon::stage3::HypervisorCall> calls;
@@ -99,6 +102,9 @@ int main() {
   assert(resident.zeroed.first == resident.probe_allocation &&
          resident.zeroed.second == 0x1000);
   assert(resident.probe_installed_at == resident.probe_allocation);
+  assert(resident.installed_probe.size() == 0x38);
+  assert(resident.installed_probe.front() == 0x3c);
+  assert(resident.installed_probe.back() == 0x20);
   assert(resident.synchronized && resident.frees.size() == 1);
   assert(resident.sent_smc && resident.smc[0] == 0x99);
   assert(resident.launched == "PAYLOAD:\\default.xex");

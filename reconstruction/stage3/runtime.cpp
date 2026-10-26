@@ -1,6 +1,7 @@
 #include "runtime.hpp"
 
 #include "entry_flow.hpp"
+#include "probe_payload.hpp"
 
 namespace bandwagon::stage3 {
 namespace {
@@ -10,7 +11,8 @@ bool ProbeResident(Platform* platform) {
       1, 0x1000, 0x204, 0, 0xffffffffu, 0x80);
   if (allocation == 0) return false;
   platform->ZeroMemory(allocation, 0x1000);
-  platform->InstallResidentProbe(allocation);
+  platform->InstallResidentProbe(allocation, kResidentProbePayload.data(),
+                                 kResidentProbePayload.size());
   platform->SynchronizeCode();
   const bool available = ProbeResidentPeerDispatcher(
       platform->GetPhysicalAddress(allocation), *platform);

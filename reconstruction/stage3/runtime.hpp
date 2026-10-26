@@ -17,7 +17,9 @@ class Platform : public HypervisorInvoker {
       std::uint32_t minimum_address, std::uint32_t maximum_address,
       std::uint32_t alignment) = 0;
   virtual void ZeroMemory(std::uint64_t address, std::size_t size) = 0;
-  virtual void InstallResidentProbe(std::uint64_t address) = 0;
+  virtual void InstallResidentProbe(std::uint64_t address,
+                                    const std::uint8_t* data,
+                                    std::size_t size) = 0;
   virtual std::uint32_t GetPhysicalAddress(std::uint64_t address) = 0;
   virtual void SynchronizeCode() = 0;
   virtual void FreePhysicalMemory(std::uint32_t flags,
@@ -41,7 +43,7 @@ struct RuntimeResult {
 
 // Source-level implementation of GameSaveExploitMain plus its Peer-specific
 // resident probe orchestration. InstallResidentProbe is the sole target-code
-// boundary: a console backend supplies the recovered 0x38-byte PowerPC probe.
+// boundary: a console backend copies the supplied 0x38-byte PowerPC probe.
 RuntimeResult RunStage3(Platform* platform);
 
 }  // namespace bandwagon::stage3

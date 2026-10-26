@@ -7,6 +7,8 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
+python3 "$root/tools/generate_stage3_probe_data.py" --check
+
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/stage3/resident_probe.cpp" \
     "$root/reconstruction/stage3/resident_probe_test.cpp" \

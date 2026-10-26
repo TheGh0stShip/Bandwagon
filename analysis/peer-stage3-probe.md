@@ -97,3 +97,8 @@ and enumerates the embedded probe's twelve strided HV sample addresses. Actual
 allocation, code copying, and syscall execution remain behind an injected
 interface and are not performed by the host test. Run it with
 `tools/test_stage3_reconstruction.sh`.
+
+The exact target stub is also published as the typed C++ array
+`reconstruction/stage3/probe_payload.hpp`, generated and checked by
+`tools/generate_stage3_probe_data.py`. The Stage3 runtime passes those bytes
+explicitly to its platform adapter rather than hiding them in a backend.
