@@ -1,0 +1,6429 @@
+{
+  "schema": "bandwagon-shared-xex-functions-v1",
+  "method": "SHA-256 of exact initialized function bytes in memory-layout PE images",
+  "limitations": "Only exact bodies match; relocation or link-layout changes can hide shared source.",
+  "group_count": 203,
+  "instance_count": 506,
+  "safe_name_propagation_group_count": 41,
+  "propagated_alias_count": 80,
+  "propagated_aliases": [
+    {
+      "component": "AuroraFixer",
+      "address": "0x88010ba0",
+      "old_name": "fn_88010BA0",
+      "propagated_name": "__savegprlr",
+      "evidence_sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880147dc",
+      "old_name": "xboxkrnl_exe_2",
+      "propagated_name": "RtlCompareStringN",
+      "evidence_sha256": "041a1d3a8996594176dc64a316bc084ab4c25f890e42129a537bf01f53e111d5"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880147ec",
+      "old_name": "xboxkrnl_exe_3",
+      "propagated_name": "RtlImageXexHeaderField",
+      "evidence_sha256": "6f8fc1ca701f037b808f9f23857125995bfaefb6bead767c1c8b863067684ed2"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801482c",
+      "old_name": "xboxkrnl_exe_7",
+      "propagated_name": "__C_specific_handler",
+      "evidence_sha256": "31cba2921de1360d02fd9c5b496fb7b6436417a67eb30b14483833871d7c09bf"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801483c",
+      "old_name": "xboxkrnl_exe_8",
+      "propagated_name": "KeTlsGetValue",
+      "evidence_sha256": "9afbc7a2d724b7ace9522be9585f43f242528337b4dd7f51c99e0fbb07022fd2"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801484c",
+      "old_name": "xboxkrnl_exe_9",
+      "propagated_name": "KeTlsSetValue",
+      "evidence_sha256": "24306d9b6369d7158fd12094b48e2d4c12205440054fa1d173640c1b981d947e"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801485c",
+      "old_name": "xboxkrnl_exe_10",
+      "propagated_name": "KeTlsFree",
+      "evidence_sha256": "82aa1b1dc80ea045d090824ed9c982317b58a7c35984268b56819b24ca4afc10"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801486c",
+      "old_name": "xboxkrnl_exe_11",
+      "propagated_name": "KeTlsAlloc",
+      "evidence_sha256": "1318b45cdb97d7da949ce9bf5a686f162a330d21fc849259b9be9c4bad593e4b"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801487c",
+      "old_name": "xboxkrnl_exe_12",
+      "propagated_name": "KeBugCheck",
+      "evidence_sha256": "0a61d972e0d60739118fb0bb5fc50b80af0a9eb5e41ab6098302791b8ac35a99"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801488c",
+      "old_name": "xboxkrnl_exe_13",
+      "propagated_name": "RtlLeaveCriticalSection",
+      "evidence_sha256": "015fc30296c7176b001088c78c0a217619157384af038bad343853d2bf8c843d"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801489c",
+      "old_name": "xboxkrnl_exe_14",
+      "propagated_name": "RtlInitializeCriticalSectionAndSpinCount",
+      "evidence_sha256": "553d2f8f89366c2dbd68bf000fa1dae6c2780375aebeb1daa1ba806731c82af6"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880148ac",
+      "old_name": "xboxkrnl_exe_15",
+      "propagated_name": "RtlEnterCriticalSection",
+      "evidence_sha256": "145da3232188596777696c65e6481fa5b8df68ebd34ac2188036884f8dc3e891"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880148bc",
+      "old_name": "__imp_xboxkrnl_exe_17",
+      "propagated_name": "RtlInitAnsiString",
+      "evidence_sha256": "9b23720027671f6112e07b394706658c632185baf6ce36697f2d997f278ab77b"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880148cc",
+      "old_name": "__imp_xboxkrnl_exe_18",
+      "propagated_name": "NtAllocateVirtualMemory",
+      "evidence_sha256": "06362550d15c61b446e4021afa0e7935bc4a7a6706c2378dcd156441258b5691"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880148dc",
+      "old_name": "__imp_xboxkrnl_exe_19",
+      "propagated_name": "KeBugCheckEx",
+      "evidence_sha256": "bc4b6bf6ade61144f18447545086f5cb1dd56c3bfcf61be5813205b2efce488e"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880148ec",
+      "old_name": "__imp_xboxkrnl_exe_20",
+      "propagated_name": "KeGetCurrentProcessType",
+      "evidence_sha256": "eec128320e9d9b9b93f1f4de4f4ef9502617918cc9c0b0981a314dc1252e71b2"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880148fc",
+      "old_name": "__imp_xboxkrnl_exe_21",
+      "propagated_name": "NtFreeVirtualMemory",
+      "evidence_sha256": "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801490c",
+      "old_name": "__imp_xboxkrnl_exe_22",
+      "propagated_name": "RtlCompareMemoryUlong",
+      "evidence_sha256": "ceef78e5109c647515c9c48f906182df8bc7184615fd15a01df3ae812acd27ab"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801491c",
+      "old_name": "__imp_xboxkrnl_exe_23",
+      "propagated_name": "RtlInitializeCriticalSection",
+      "evidence_sha256": "2e91a8d56bcdd6b0f0efe8816785b5fda591105af3ca6ff828e8b9917674a190"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801492c",
+      "old_name": "__imp_xboxkrnl_exe_24",
+      "propagated_name": "NtQueryVirtualMemory",
+      "evidence_sha256": "5b5f010cda5376813b77fd31463388a5b7e4b11210faf1d9aa2b486b0dd9a61b"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801493c",
+      "old_name": "__imp_xboxkrnl_exe_25",
+      "propagated_name": "RtlRaiseException",
+      "evidence_sha256": "43dbdd3ba06c9fac0a0d469a63569033df91a319aa919356583bae10b27359fc"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801494c",
+      "old_name": "__imp_xboxkrnl_exe_26",
+      "propagated_name": "RtlFreeAnsiString",
+      "evidence_sha256": "7c047696c0383c5aca6dd7b268d6875aa7a6d1dc9e4b99a77a22f54b19e9a0f9"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801495c",
+      "old_name": "__imp_xboxkrnl_exe_27",
+      "propagated_name": "RtlUnicodeStringToAnsiString",
+      "evidence_sha256": "ac72da5e159a0e36e5938f317255b5ff8fb92d761d050ff04f2cb170aefa8438"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801496c",
+      "old_name": "__imp_xboxkrnl_exe_28",
+      "propagated_name": "RtlInitUnicodeString",
+      "evidence_sha256": "53892601a0beba80c061faf9331a62fbdbab775fd10a73ebfd8eea3a917e6af8"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801497c",
+      "old_name": "xboxkrnl_exe_29",
+      "propagated_name": "NtQueryFullAttributesFile",
+      "evidence_sha256": "3a2e909b2aadfd7eedd1b5273700918854b39ec5bdd55ea2f56f070ca92c2aa2"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801498c",
+      "old_name": "xboxkrnl_exe_30",
+      "propagated_name": "NtOpenFile",
+      "evidence_sha256": "6889e42ef79cddb3d2331c2a7ff73fe997ea9f03b4c6610dc8a230739528f828"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x8801499c",
+      "old_name": "xboxkrnl_exe_31",
+      "propagated_name": "NtSetInformationFile",
+      "evidence_sha256": "7e04c7b4caa441e23719b5f1712caece6c6d23cd7e600fb5ededd027e40641f8"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880149ac",
+      "old_name": "xboxkrnl_exe_32",
+      "propagated_name": "NtQueryInformationFile",
+      "evidence_sha256": "e241c7d0022d498124b343951135d754cb6af7ce43e1ea4db0549fbc669d2d99"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880149bc",
+      "old_name": "xboxkrnl_exe_33",
+      "propagated_name": "NtQueryVolumeInformationFile",
+      "evidence_sha256": "c7490510fcaa2b594730c7a285c7e6d57058cf0af1b5465b97b91e013535d7e0"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880149cc",
+      "old_name": "xboxkrnl_exe_34",
+      "propagated_name": "NtQueryDirectoryFile",
+      "evidence_sha256": "93c9dfdfff31b080b8d68337cd5a0f18bd2b77940c963b2ef085de55156622e0"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880149dc",
+      "old_name": "xboxkrnl_exe_35",
+      "propagated_name": "NtReadFileScatter",
+      "evidence_sha256": "f274fdfc4527e2a3d363b72902c18e59111688e1db6a1479808e43e21405d207"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880149ec",
+      "old_name": "xboxkrnl_exe_36",
+      "propagated_name": "NtReadFile",
+      "evidence_sha256": "fb4872da7643eab20a8bdc6d22fdcc329b4fc1e266afd454e06103dc8de5a276"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x880149fc",
+      "old_name": "xboxkrnl_exe_37",
+      "propagated_name": "NtCreateFile",
+      "evidence_sha256": "93bfa5e8c5533d038200d21fc85cabe0c5ecfa8918979cf66f961cc19bdc9299"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x88014a0c",
+      "old_name": "xboxkrnl_exe_38",
+      "propagated_name": "NtDuplicateObject",
+      "evidence_sha256": "31fc28b2fc4e0377df716432f892db5977071e86784c1bef0e7558718b3c9da1"
+    },
+    {
+      "component": "AuroraFixer",
+      "address": "0x88014a1c",
+      "old_name": "xboxkrnl_exe_39",
+      "propagated_name": "NtClose",
+      "evidence_sha256": "d73db1828adf01aff2af4dfc52ae99ae43f9ee61bc4cf590703f3b9f2d02e924"
+    },
+    {
+      "component": "BootEdit",
+      "address": "0x82059470",
+      "old_name": "fn_82059470",
+      "propagated_name": "__savegprlr",
+      "evidence_sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a0c420",
+      "old_name": "fn_91A0C420",
+      "propagated_name": "__savegprlr",
+      "evidence_sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17168",
+      "old_name": "xboxkrnl_exe_3",
+      "propagated_name": "RtlInitAnsiString",
+      "evidence_sha256": "9b23720027671f6112e07b394706658c632185baf6ce36697f2d997f278ab77b"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171a8",
+      "old_name": "xboxkrnl_exe_7",
+      "propagated_name": "MmAllocatePhysicalMemoryEx",
+      "evidence_sha256": "00cad833f59157636abf6c760759a0fcf53227bf01112cbedcf31271c411e347"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171b8",
+      "old_name": "xboxkrnl_exe_8",
+      "propagated_name": "MmFreePhysicalMemory",
+      "evidence_sha256": "cdf6e4bf1504ed27f104d22546f389aba9a50763a71d41a5e298d502dc8461c2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171c8",
+      "old_name": "xboxkrnl_exe_9",
+      "propagated_name": "NtWaitForSingleObjectEx",
+      "evidence_sha256": "ff0c7de4e379f796bc2a77615ec0165378fc46b215574da8a541dc78647b1e61"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171d8",
+      "old_name": "xboxkrnl_exe_10",
+      "propagated_name": "RtlNtStatusToDosError",
+      "evidence_sha256": "e11ada1e0420b1a659f4ec1971688776267144cbdf6ee2cada861405d5cdeb89"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171e8",
+      "old_name": "xboxkrnl_exe_11",
+      "propagated_name": "NtQueryFullAttributesFile",
+      "evidence_sha256": "3a2e909b2aadfd7eedd1b5273700918854b39ec5bdd55ea2f56f070ca92c2aa2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171f8",
+      "old_name": "xboxkrnl_exe_12",
+      "propagated_name": "NtOpenFile",
+      "evidence_sha256": "6889e42ef79cddb3d2331c2a7ff73fe997ea9f03b4c6610dc8a230739528f828"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17208",
+      "old_name": "xboxkrnl_exe_13",
+      "propagated_name": "NtSetInformationFile",
+      "evidence_sha256": "7e04c7b4caa441e23719b5f1712caece6c6d23cd7e600fb5ededd027e40641f8"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17218",
+      "old_name": "xboxkrnl_exe_14",
+      "propagated_name": "NtQueryInformationFile",
+      "evidence_sha256": "e241c7d0022d498124b343951135d754cb6af7ce43e1ea4db0549fbc669d2d99"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17228",
+      "old_name": "xboxkrnl_exe_15",
+      "propagated_name": "NtQueryVolumeInformationFile",
+      "evidence_sha256": "c7490510fcaa2b594730c7a285c7e6d57058cf0af1b5465b97b91e013535d7e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17238",
+      "old_name": "xboxkrnl_exe_16",
+      "propagated_name": "NtQueryDirectoryFile",
+      "evidence_sha256": "93c9dfdfff31b080b8d68337cd5a0f18bd2b77940c963b2ef085de55156622e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17248",
+      "old_name": "xboxkrnl_exe_17",
+      "propagated_name": "NtReadFileScatter",
+      "evidence_sha256": "f274fdfc4527e2a3d363b72902c18e59111688e1db6a1479808e43e21405d207"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17258",
+      "old_name": "xboxkrnl_exe_18",
+      "propagated_name": "NtReadFile",
+      "evidence_sha256": "fb4872da7643eab20a8bdc6d22fdcc329b4fc1e266afd454e06103dc8de5a276"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17268",
+      "old_name": "xboxkrnl_exe_19",
+      "propagated_name": "NtCreateFile",
+      "evidence_sha256": "93bfa5e8c5533d038200d21fc85cabe0c5ecfa8918979cf66f961cc19bdc9299"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17278",
+      "old_name": "xboxkrnl_exe_20",
+      "propagated_name": "NtDuplicateObject",
+      "evidence_sha256": "31fc28b2fc4e0377df716432f892db5977071e86784c1bef0e7558718b3c9da1"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17288",
+      "old_name": "xboxkrnl_exe_21",
+      "propagated_name": "NtClose",
+      "evidence_sha256": "d73db1828adf01aff2af4dfc52ae99ae43f9ee61bc4cf590703f3b9f2d02e924"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172a8",
+      "old_name": "xboxkrnl_exe_23",
+      "propagated_name": "NtWriteFile",
+      "evidence_sha256": "f58b100269035dd176880d38103f64d288ada078dabe382d89e2b42f9cfbe4db"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172b8",
+      "old_name": "xboxkrnl_exe_24",
+      "propagated_name": "__C_specific_handler",
+      "evidence_sha256": "31cba2921de1360d02fd9c5b496fb7b6436417a67eb30b14483833871d7c09bf"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172c8",
+      "old_name": "xboxkrnl_exe_25",
+      "propagated_name": "KeBugCheck",
+      "evidence_sha256": "0a61d972e0d60739118fb0bb5fc50b80af0a9eb5e41ab6098302791b8ac35a99"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172d8",
+      "old_name": "xboxkrnl_exe_26",
+      "propagated_name": "KeTlsGetValue",
+      "evidence_sha256": "9afbc7a2d724b7ace9522be9585f43f242528337b4dd7f51c99e0fbb07022fd2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172e8",
+      "old_name": "xboxkrnl_exe_27",
+      "propagated_name": "KeTlsSetValue",
+      "evidence_sha256": "24306d9b6369d7158fd12094b48e2d4c12205440054fa1d173640c1b981d947e"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172f8",
+      "old_name": "xboxkrnl_exe_28",
+      "propagated_name": "KeTlsFree",
+      "evidence_sha256": "82aa1b1dc80ea045d090824ed9c982317b58a7c35984268b56819b24ca4afc10"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17308",
+      "old_name": "xboxkrnl_exe_29",
+      "propagated_name": "KeTlsAlloc",
+      "evidence_sha256": "1318b45cdb97d7da949ce9bf5a686f162a330d21fc849259b9be9c4bad593e4b"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17318",
+      "old_name": "xboxkrnl_exe_30",
+      "propagated_name": "RtlLeaveCriticalSection",
+      "evidence_sha256": "015fc30296c7176b001088c78c0a217619157384af038bad343853d2bf8c843d"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17328",
+      "old_name": "xboxkrnl_exe_31",
+      "propagated_name": "RtlInitializeCriticalSectionAndSpinCount",
+      "evidence_sha256": "553d2f8f89366c2dbd68bf000fa1dae6c2780375aebeb1daa1ba806731c82af6"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17338",
+      "old_name": "xboxkrnl_exe_32",
+      "propagated_name": "RtlEnterCriticalSection",
+      "evidence_sha256": "145da3232188596777696c65e6481fa5b8df68ebd34ac2188036884f8dc3e891"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17348",
+      "old_name": "xboxkrnl_exe_33",
+      "propagated_name": "RtlUnwind",
+      "evidence_sha256": "df64b3a1bf059842f3dfe87d09b64295417764af10545a5dff01e7c962edaedb"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17358",
+      "old_name": "xboxkrnl_exe_34",
+      "propagated_name": "RtlImageXexHeaderField",
+      "evidence_sha256": "6f8fc1ca701f037b808f9f23857125995bfaefb6bead767c1c8b863067684ed2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17368",
+      "old_name": "xboxkrnl_exe_36",
+      "propagated_name": "NtAllocateVirtualMemory",
+      "evidence_sha256": "06362550d15c61b446e4021afa0e7935bc4a7a6706c2378dcd156441258b5691"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17378",
+      "old_name": "xboxkrnl_exe_37",
+      "propagated_name": "KeBugCheckEx",
+      "evidence_sha256": "bc4b6bf6ade61144f18447545086f5cb1dd56c3bfcf61be5813205b2efce488e"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17388",
+      "old_name": "xboxkrnl_exe_38",
+      "propagated_name": "KeGetCurrentProcessType",
+      "evidence_sha256": "eec128320e9d9b9b93f1f4de4f4ef9502617918cc9c0b0981a314dc1252e71b2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17398",
+      "old_name": "xboxkrnl_exe_39",
+      "propagated_name": "NtFreeVirtualMemory",
+      "evidence_sha256": "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173a8",
+      "old_name": "xboxkrnl_exe_40",
+      "propagated_name": "RtlCompareMemoryUlong",
+      "evidence_sha256": "ceef78e5109c647515c9c48f906182df8bc7184615fd15a01df3ae812acd27ab"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173b8",
+      "old_name": "xboxkrnl_exe_41",
+      "propagated_name": "RtlInitializeCriticalSection",
+      "evidence_sha256": "2e91a8d56bcdd6b0f0efe8816785b5fda591105af3ca6ff828e8b9917674a190"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173c8",
+      "old_name": "xboxkrnl_exe_42",
+      "propagated_name": "NtQueryVirtualMemory",
+      "evidence_sha256": "5b5f010cda5376813b77fd31463388a5b7e4b11210faf1d9aa2b486b0dd9a61b"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173d8",
+      "old_name": "xboxkrnl_exe_43",
+      "propagated_name": "RtlRaiseException",
+      "evidence_sha256": "43dbdd3ba06c9fac0a0d469a63569033df91a319aa919356583bae10b27359fc"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173e8",
+      "old_name": "xboxkrnl_exe_44",
+      "propagated_name": "RtlFreeAnsiString",
+      "evidence_sha256": "7c047696c0383c5aca6dd7b268d6875aa7a6d1dc9e4b99a77a22f54b19e9a0f9"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173f8",
+      "old_name": "xboxkrnl_exe_45",
+      "propagated_name": "RtlUnicodeStringToAnsiString",
+      "evidence_sha256": "ac72da5e159a0e36e5938f317255b5ff8fb92d761d050ff04f2cb170aefa8438"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17408",
+      "old_name": "xboxkrnl_exe_46",
+      "propagated_name": "RtlInitUnicodeString",
+      "evidence_sha256": "53892601a0beba80c061faf9331a62fbdbab775fd10a73ebfd8eea3a917e6af8"
+    },
+    {
+      "component": "SettingsApp",
+      "address": "0x82081eb0",
+      "old_name": "fn_82081EB0",
+      "propagated_name": "__savegprlr",
+      "evidence_sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+    },
+    {
+      "component": "SettingsApp",
+      "address": "0x820b8efc",
+      "old_name": "xam_xex_9",
+      "propagated_name": "NtFreeVirtualMemory",
+      "evidence_sha256": "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c"
+    },
+    {
+      "component": "UpdateCheck",
+      "address": "0x91a2e200",
+      "old_name": "fn_91A2E200",
+      "propagated_name": "__savegprlr",
+      "evidence_sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+    },
+    {
+      "component": "UpdateCheck",
+      "address": "0x91a40fac",
+      "old_name": "xam_xex_15",
+      "propagated_name": "NtFreeVirtualMemory",
+      "evidence_sha256": "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c"
+    }
+  ],
+  "groups": [
+    {
+      "sha256": "473c91e68cdeed3c646f021921168ab5b20938f2ba14fe11c9623eaf81752d6d",
+      "size": 40,
+      "component_count": 6,
+      "components": [
+        "AuroraFixer",
+        "BootEdit",
+        "BootXell",
+        "SettingsApp",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "fn_88011570",
+          "address": "0x88011570",
+          "size": 40
+        },
+        {
+          "component": "BootEdit",
+          "name": "fn_82061A40",
+          "address": "0x82061a40",
+          "size": 40
+        },
+        {
+          "component": "BootXell",
+          "name": "fn_91A0F508",
+          "address": "0x91a0f508",
+          "size": 40
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8208AF18",
+          "address": "0x8208af18",
+          "size": 40
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A347C8",
+          "address": "0x91a347c8",
+          "size": 40
+        },
+        {
+          "component": "Updater",
+          "name": "fn_980115B0",
+          "address": "0x980115b0",
+          "size": 40
+        }
+      ]
+    },
+    {
+      "sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0",
+      "size": 80,
+      "component_count": 6,
+      "components": [
+        "AuroraFixer",
+        "BootEdit",
+        "BootXell",
+        "SettingsApp",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "__savegprlr"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "fn_88010BA0",
+          "address": "0x88010ba0",
+          "size": 80
+        },
+        {
+          "component": "BootEdit",
+          "name": "fn_82059470",
+          "address": "0x82059470",
+          "size": 80
+        },
+        {
+          "component": "BootXell",
+          "name": "fn_91A0C420",
+          "address": "0x91a0c420",
+          "size": 80
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82081EB0",
+          "address": "0x82081eb0",
+          "size": 80
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2E200",
+          "address": "0x91a2e200",
+          "size": 80
+        },
+        {
+          "component": "Updater",
+          "name": "__savegprlr",
+          "address": "0x9800d840",
+          "size": 80
+        }
+      ]
+    },
+    {
+      "sha256": "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c",
+      "size": 16,
+      "component_count": 5,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "SettingsApp",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtFreeVirtualMemory"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_21",
+          "address": "0x880148fc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_39",
+          "address": "0x91a17398",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_9",
+          "address": "0x820b8efc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_15",
+          "address": "0x91a40fac",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtFreeVirtualMemory",
+          "address": "0x9801a940",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "d19a2a61af14e7b911c112ef5dd00ca62ec6f5a25cbe887de72346f6a24aae27",
+      "size": 36,
+      "component_count": 5,
+      "components": [
+        "BootEdit",
+        "BootXell",
+        "SettingsApp",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82057B9C",
+          "address": "0x82057b9c",
+          "size": 36
+        },
+        {
+          "component": "BootXell",
+          "name": "fn_91A16B74",
+          "address": "0x91a16b74",
+          "size": 36
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82031FB4",
+          "address": "0x82031fb4",
+          "size": 36
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A4047C",
+          "address": "0x91a4047c",
+          "size": 36
+        },
+        {
+          "component": "Updater",
+          "name": "fn_98019B6C",
+          "address": "0x98019b6c",
+          "size": 36
+        }
+      ]
+    },
+    {
+      "sha256": "b018fe2d93d4f1b2a0e793fba3163f69727a9c5e665bfd73ba2926197a33a627",
+      "size": 16,
+      "component_count": 4,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_4",
+          "address": "0x880147fc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_2",
+          "address": "0x91a17158",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_8",
+          "address": "0x820b8eec",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_14",
+          "address": "0x91a40f9c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "d87f66aa3bd948d8c14ac6f3f249ac097d20f65a38a233d1e339b86cf1b1f78d",
+      "size": 16,
+      "component_count": 4,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82064CA0",
+          "address": "0x82064ca0",
+          "size": 16
+        },
+        {
+          "component": "BootEdit",
+          "name": "fn_82065430",
+          "address": "0x82065430",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8208BCC8",
+          "address": "0x8208bcc8",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A33C90",
+          "address": "0x91a33c90",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "fn_98019B90",
+          "address": "0x98019b90",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "28dce7ab22481dad297319e302a1be794d31221a56f503de230a03a2c6c842b4",
+      "size": 8,
+      "component_count": 3,
+      "components": [
+        "BootXell",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "_start",
+          "address": "0x91a0c378",
+          "size": 8
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "_start",
+          "address": "0x91a2e158",
+          "size": 8
+        },
+        {
+          "component": "Updater",
+          "name": "fn_9800D130",
+          "address": "0x9800d130",
+          "size": 8
+        }
+      ]
+    },
+    {
+      "sha256": "00959716fcd0911dcd7201f85cb16fa665c4796430d5a117c823f90d8b76142e",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_10",
+          "address": "0x82069fc0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_55",
+          "address": "0x820b8fdc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_21",
+          "address": "0x91a4111c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "015fc30296c7176b001088c78c0a217619157384af038bad343853d2bf8c843d",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlLeaveCriticalSection"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_13",
+          "address": "0x8801488c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_30",
+          "address": "0x91a17318",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlLeaveCriticalSection",
+          "address": "0x9801a8d0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "05a421b162020016dae7944c66500cf4c12367c62dd182654f861a53c7276193",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_28",
+          "address": "0x8206a0e0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_19",
+          "address": "0x820b91ec",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_23",
+          "address": "0x91a4113c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "06362550d15c61b446e4021afa0e7935bc4a7a6706c2378dcd156441258b5691",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtAllocateVirtualMemory"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_18",
+          "address": "0x880148cc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_36",
+          "address": "0x91a17368",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtAllocateVirtualMemory",
+          "address": "0x9801a920",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "0a61d972e0d60739118fb0bb5fc50b80af0a9eb5e41ab6098302791b8ac35a99",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeBugCheck"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_12",
+          "address": "0x8801487c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_25",
+          "address": "0x91a172c8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeBugCheck",
+          "address": "0x9801a880",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "118ef50bacdbc03231827603b50257e9e068aac6e38702b8960695857106adde",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_62",
+          "address": "0x8206a2e0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_78",
+          "address": "0x820b94ac",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_44",
+          "address": "0x91a4127c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "1318b45cdb97d7da949ce9bf5a686f162a330d21fc849259b9be9c4bad593e4b",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeTlsAlloc"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_11",
+          "address": "0x8801486c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_29",
+          "address": "0x91a17308",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeTlsAlloc",
+          "address": "0x9801a8c0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "141a3fd27e1957c1d217c907988114d4ce866409d379cdc7fa21c02a8faa911d",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_39",
+          "address": "0x8206a190",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_31",
+          "address": "0x820b912c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_13",
+          "address": "0x91a40ffc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "145da3232188596777696c65e6481fa5b8df68ebd34ac2188036884f8dc3e891",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlEnterCriticalSection"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_15",
+          "address": "0x880148ac",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_32",
+          "address": "0x91a17338",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlEnterCriticalSection",
+          "address": "0x9801a8f0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "1653c2170424dd0342d53c0b2666c51a2c762d181fe63677685d8951c142207c",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_48",
+          "address": "0x8206a200",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_1",
+          "address": "0x820b92fc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_40",
+          "address": "0x91a4123c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "1c52f10230960963a2a9c2f5e1e6b5d50b3becd350d548f3f879b6c951996d98",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_61",
+          "address": "0x8206a2d0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_77",
+          "address": "0x820b949c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_43",
+          "address": "0x91a4126c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "23bb3066fb3d7c3cc8a0fe2cf87470a59fdfe93566021ab9e49a06bca5454900",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_52",
+          "address": "0x8206a240",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_28",
+          "address": "0x820b915c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_32",
+          "address": "0x91a411cc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "24306d9b6369d7158fd12094b48e2d4c12205440054fa1d173640c1b981d947e",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeTlsSetValue"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_9",
+          "address": "0x8801484c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_27",
+          "address": "0x91a172e8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeTlsSetValue",
+          "address": "0x9801a8a0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "2e91a8d56bcdd6b0f0efe8816785b5fda591105af3ca6ff828e8b9917674a190",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlInitializeCriticalSection"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_23",
+          "address": "0x8801491c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_41",
+          "address": "0x91a173b8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlInitializeCriticalSection",
+          "address": "0x9801a960",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "31cba2921de1360d02fd9c5b496fb7b6436417a67eb30b14483833871d7c09bf",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "__C_specific_handler"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_7",
+          "address": "0x8801482c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_24",
+          "address": "0x91a172b8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "__C_specific_handler",
+          "address": "0x9801a870",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "31fc28b2fc4e0377df716432f892db5977071e86784c1bef0e7558718b3c9da1",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtDuplicateObject"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_38",
+          "address": "0x88014a0c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_20",
+          "address": "0x91a17278",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtDuplicateObject",
+          "address": "0x9801a860",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "338b87bcf61a8e27419aedf464164192ba748130ae2b7e6ad3adbb95b1e96cae",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_1",
+          "address": "0x82069f40",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_49",
+          "address": "0x820b903c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_17",
+          "address": "0x91a40fcc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "38592d4edfb2c2ecee7478cb1c015690cd5209e2fe65548909f56ae20be438f4",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_24",
+          "address": "0x8206a0a0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_46",
+          "address": "0x820b905c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_0",
+          "address": "0x91a410cc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "3a2e909b2aadfd7eedd1b5273700918854b39ec5bdd55ea2f56f070ca92c2aa2",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtQueryFullAttributesFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_29",
+          "address": "0x8801497c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_11",
+          "address": "0x91a171e8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtQueryFullAttributesFile",
+          "address": "0x9801a7e0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "43dbdd3ba06c9fac0a0d469a63569033df91a319aa919356583bae10b27359fc",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlRaiseException"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_25",
+          "address": "0x8801493c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_43",
+          "address": "0x91a173d8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlRaiseException",
+          "address": "0x9801a980",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "4bb2e4d42e11b6b3d5c6d435c161a71936de410940d0458cf88672c77cd4aa29",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_36",
+          "address": "0x8206a160",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_13",
+          "address": "0x820b924c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_3",
+          "address": "0x91a4109c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "4cc1d96c9ac33583dc2be3e152cde4f9e9844b63ab23be4ce413823d283b1497",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_41",
+          "address": "0x8206a1a0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_9",
+          "address": "0x820b928c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_34",
+          "address": "0x91a411ec",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "532253556af4f8d87eaefce3351d5f591392fb552247891b38f0d0eb3bb8dc01",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_33",
+          "address": "0x8206a130",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_30",
+          "address": "0x820b913c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_6",
+          "address": "0x91a4106c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "53892601a0beba80c061faf9331a62fbdbab775fd10a73ebfd8eea3a917e6af8",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlInitUnicodeString"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_28",
+          "address": "0x8801496c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_46",
+          "address": "0x91a17408",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlInitUnicodeString",
+          "address": "0x9801a9f0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "553d2f8f89366c2dbd68bf000fa1dae6c2780375aebeb1daa1ba806731c82af6",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlInitializeCriticalSectionAndSpinCount"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_14",
+          "address": "0x8801489c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_31",
+          "address": "0x91a17328",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlInitializeCriticalSectionAndSpinCount",
+          "address": "0x9801a8e0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "55e1bc0a4b7806431c15c8c1080a267d60459f2f8a212c6a7c6f8b5a571cb609",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_8",
+          "address": "0x82069fa0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_43",
+          "address": "0x820b908c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_11",
+          "address": "0x91a4101c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "5924154ef4bc310c6a50be8b495b4c4665e52e2c825db13df1404ded0e2ecd2d",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_35",
+          "address": "0x8206a150",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_14",
+          "address": "0x820b923c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_4",
+          "address": "0x91a4108c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "5b5f010cda5376813b77fd31463388a5b7e4b11210faf1d9aa2b486b0dd9a61b",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtQueryVirtualMemory"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_24",
+          "address": "0x8801492c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_42",
+          "address": "0x91a173c8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtQueryVirtualMemory",
+          "address": "0x9801a970",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "5d4f7bf49084f7530a4a74c68ccdddc8a09d6d5e903bde8d7317a7321ae2aaa7",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_45",
+          "address": "0x8206a1d0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_4",
+          "address": "0x820b92cc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_37",
+          "address": "0x91a4120c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "5e38e550cf567ab199595254c49b959d10971cadf02159ce5bcda2e946e9ddb5",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_44",
+          "address": "0x8206a1c0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_6",
+          "address": "0x820b92ac",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_36",
+          "address": "0x91a411fc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "6575f2dc9592b86d4c764398303478dea5713b2045e728e1f4a4de6e055a8cf6",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_37",
+          "address": "0x8206a170",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_44",
+          "address": "0x820b907c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_2",
+          "address": "0x91a410ac",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "6889e42ef79cddb3d2331c2a7ff73fe997ea9f03b4c6610dc8a230739528f828",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtOpenFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_30",
+          "address": "0x8801498c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_12",
+          "address": "0x91a171f8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtOpenFile",
+          "address": "0x9801a7f0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "6ba9121022da823659a952b4c17317aa8996037c797d0f270bfb0fe25bbb6f60",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_53",
+          "address": "0x8206a250",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_64",
+          "address": "0x820b93cc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_24",
+          "address": "0x91a4114c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "6f8fc1ca701f037b808f9f23857125995bfaefb6bead767c1c8b863067684ed2",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlImageXexHeaderField"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_3",
+          "address": "0x880147ec",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_34",
+          "address": "0x91a17358",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlImageXexHeaderField",
+          "address": "0x9801a910",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "748e56c6e1553ac60dc89e738636dc5c3d393f941eff644db05d351319cc90f6",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_22",
+          "address": "0x8206a080",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_24",
+          "address": "0x820b919c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_42",
+          "address": "0x91a4125c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "75489918163bd9a9d63b9b8d83f17d9c1ebc3ad2f1b2f65a4798b300dab86baa",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_31",
+          "address": "0x8206a110",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_35",
+          "address": "0x820b90fc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_8",
+          "address": "0x91a4104c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "7757062d79626094acd6573a21da8aa635c0358e0b436e89476913736033d859",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_46",
+          "address": "0x8206a1e0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_3",
+          "address": "0x820b92dc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_38",
+          "address": "0x91a4121c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "7c047696c0383c5aca6dd7b268d6875aa7a6d1dc9e4b99a77a22f54b19e9a0f9",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlFreeAnsiString"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_26",
+          "address": "0x8801494c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_44",
+          "address": "0x91a173e8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlFreeAnsiString",
+          "address": "0x9801a9d0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "7c7241ba3917c0bc7a35d060c51c65aa1990ade77a45ba12903526df431de4cc",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_29",
+          "address": "0x8206a0f0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_17",
+          "address": "0x820b920c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_10",
+          "address": "0x91a4102c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "7e04c7b4caa441e23719b5f1712caece6c6d23cd7e600fb5ededd027e40641f8",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtSetInformationFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_31",
+          "address": "0x8801499c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_13",
+          "address": "0x91a17208",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtSetInformationFile",
+          "address": "0x9801a800",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "812c636ed9310f5f010ce7f343ab06e040f1e589db6d4a5c7fc07869dbfb1fe5",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_20",
+          "address": "0x8206a060",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_74",
+          "address": "0x820b946c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_46",
+          "address": "0x91a4129c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "82aa1b1dc80ea045d090824ed9c982317b58a7c35984268b56819b24ca4afc10",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeTlsFree"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_10",
+          "address": "0x8801485c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_28",
+          "address": "0x91a172f8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeTlsFree",
+          "address": "0x9801a8b0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "841ec670c85a07db4a8d8484265e977ff0647f1cee57ad824a4a0881816de810",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_25",
+          "address": "0x8206a0b0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_33",
+          "address": "0x820b911c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_15",
+          "address": "0x91a40fec",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "86f1d8534f1944f84a25da6997759c6f2f37acaa0e73299a3153e50f2e295d1a",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_3",
+          "address": "0x82069f50",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_58",
+          "address": "0x820b8fac",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_16",
+          "address": "0x91a40fdc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "93bfa5e8c5533d038200d21fc85cabe0c5ecfa8918979cf66f961cc19bdc9299",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtCreateFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_37",
+          "address": "0x880149fc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_19",
+          "address": "0x91a17268",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtCreateFile",
+          "address": "0x9801a770",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "93c9dfdfff31b080b8d68337cd5a0f18bd2b77940c963b2ef085de55156622e0",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtQueryDirectoryFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_34",
+          "address": "0x880149cc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_16",
+          "address": "0x91a17238",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtQueryDirectoryFile",
+          "address": "0x9801a830",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "967ce05c68b13f47f2df934f55f20e802002cc6703a12870cf55f26c2c493c61",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_38",
+          "address": "0x8206a180",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_12",
+          "address": "0x820b925c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_1",
+          "address": "0x91a410bc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "9afbc7a2d724b7ace9522be9585f43f242528337b4dd7f51c99e0fbb07022fd2",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeTlsGetValue"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_8",
+          "address": "0x8801483c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_26",
+          "address": "0x91a172d8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeTlsGetValue",
+          "address": "0x9801a890",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "9b23720027671f6112e07b394706658c632185baf6ce36697f2d997f278ab77b",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlInitAnsiString"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_17",
+          "address": "0x880148bc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_3",
+          "address": "0x91a17168",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlInitAnsiString",
+          "address": "0x9801a780",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a3bf0b480e6a786e73dd45fee5c499452f0f6d66b6999b1ca9988a6b0cf722f2",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_59",
+          "address": "0x8206a2b0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_69",
+          "address": "0x820b941c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_29",
+          "address": "0x91a4119c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a461058e2f4969bfe0d8f01f4061dc123091a44dc4698e01867156c4cf7ed7fc",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_18",
+          "address": "0x8206a040",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_18",
+          "address": "0x820b91fc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_12",
+          "address": "0x91a4100c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a73296f11f3fa39ad48ed465b1f725258bcb50db10a0a5bd52571cd5dc86c000",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_11",
+          "address": "0x82069fd0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_54",
+          "address": "0x820b8fec",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_20",
+          "address": "0x91a4110c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "abb7b62204489a985bb5b0a3015f4fed5c4e2592990254ef8e1cfe09c2a9f53c",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_54",
+          "address": "0x8206a260",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_65",
+          "address": "0x820b93dc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_25",
+          "address": "0x91a4115c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ac72da5e159a0e36e5938f317255b5ff8fb92d761d050ff04f2cb170aefa8438",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlUnicodeStringToAnsiString"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_27",
+          "address": "0x8801495c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_45",
+          "address": "0x91a173f8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlUnicodeStringToAnsiString",
+          "address": "0x9801a9e0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "b118a8d1509bbb738a220656f4e028963cff73dddf20a9982cea468650869efa",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_30",
+          "address": "0x8206a100",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_34",
+          "address": "0x820b910c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_9",
+          "address": "0x91a4103c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "bc4b6bf6ade61144f18447545086f5cb1dd56c3bfcf61be5813205b2efce488e",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeBugCheckEx"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_19",
+          "address": "0x880148dc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_37",
+          "address": "0x91a17378",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeBugCheckEx",
+          "address": "0x9801a930",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "bceb81422e735921a7500e7d1fa97c7ce5aa97d7fafa6d584e3f90e96b536b62",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_0",
+          "address": "0x82069f30",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_60",
+          "address": "0x820b8f8c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_18",
+          "address": "0x91a40fbc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "c06812f24ab7a2e94e835f178fb67865ae0b46d436d04c0053a5bfe7b9316512",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_9",
+          "address": "0x82069fb0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_56",
+          "address": "0x820b8fcc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_19",
+          "address": "0x91a410fc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "c5e26e99093999d9f5402e1f88689713b325f4c5bb40578a14f515c3a902bc19",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_55",
+          "address": "0x8206a270",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_66",
+          "address": "0x820b93ec",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_26",
+          "address": "0x91a4116c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "c7490510fcaa2b594730c7a285c7e6d57058cf0af1b5465b97b91e013535d7e0",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtQueryVolumeInformationFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_33",
+          "address": "0x880149bc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_15",
+          "address": "0x91a17228",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtQueryVolumeInformationFile",
+          "address": "0x9801a820",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ce64592897c467098bbc3d2e73503ae6dbff1856b1caca5f5634b690ea8790c1",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_47",
+          "address": "0x8206a1f0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_2",
+          "address": "0x820b92ec",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_39",
+          "address": "0x91a4122c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ceef78e5109c647515c9c48f906182df8bc7184615fd15a01df3ae812acd27ab",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlCompareMemoryUlong"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_22",
+          "address": "0x8801490c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_40",
+          "address": "0x91a173a8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlCompareMemoryUlong",
+          "address": "0x9801a950",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "cfde7dc707ce2e912f06cb25b8834f6bff17e920907c35d544abd95cef6c5b17",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_58",
+          "address": "0x8206a2a0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_70",
+          "address": "0x820b942c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_31",
+          "address": "0x91a411bc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "d73db1828adf01aff2af4dfc52ae99ae43f9ee61bc4cf590703f3b9f2d02e924",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtClose"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_39",
+          "address": "0x88014a1c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_21",
+          "address": "0x91a17288",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtClose",
+          "address": "0x9801a740",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "e03ed14834eb09e76560c4d07a1a3f3622e87837b58fc2cd61a6805b9b74bde9",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_32",
+          "address": "0x8206a120",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_16",
+          "address": "0x820b921c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_7",
+          "address": "0x91a4105c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "e241c7d0022d498124b343951135d754cb6af7ce43e1ea4db0549fbc669d2d99",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtQueryInformationFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_32",
+          "address": "0x880149ac",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_14",
+          "address": "0x91a17218",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtQueryInformationFile",
+          "address": "0x9801a810",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "e41fd49cba583040ebf386e1c6c35d03494b0de2006b7e002e2c9aa68cf165f0",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_57",
+          "address": "0x8206a290",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_68",
+          "address": "0x820b940c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_28",
+          "address": "0x91a4118c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ee5ccdd00aa8664e8165c8c36bc5ae7f7b6116bbbe04181c22bc48f70a17d2be",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_34",
+          "address": "0x8206a140",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_15",
+          "address": "0x820b922c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xboxkrnl_exe_5",
+          "address": "0x91a4107c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "eec128320e9d9b9b93f1f4de4f4ef9502617918cc9c0b0981a314dc1252e71b2",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "KeGetCurrentProcessType"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "__imp_xboxkrnl_exe_20",
+          "address": "0x880148ec",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_38",
+          "address": "0x91a17388",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "KeGetCurrentProcessType",
+          "address": "0x9801a7c0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f274fdfc4527e2a3d363b72902c18e59111688e1db6a1479808e43e21405d207",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtReadFileScatter"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_35",
+          "address": "0x880149dc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_17",
+          "address": "0x91a17248",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtReadFileScatter",
+          "address": "0x9801a840",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f321ef2ebfdfe369bb68a9623d48ac44f2876e0e603acb1bce54d34ab7c4f555",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_60",
+          "address": "0x8206a2c0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_71",
+          "address": "0x820b943c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_30",
+          "address": "0x91a411ac",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f8da46f926ae6f0ab4d448118ff409e01c349128da8a346a81e905de63bf3a85",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_56",
+          "address": "0x8206a280",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_67",
+          "address": "0x820b93fc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_27",
+          "address": "0x91a4117c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "fa00f50eefe6681e1c6622b4771b361bfbfa5333152ffea3892f11b6736b079c",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_49",
+          "address": "0x8206a210",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_0",
+          "address": "0x820b930c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_41",
+          "address": "0x91a4124c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "fb4872da7643eab20a8bdc6d22fdcc329b4fc1e266afd454e06103dc8de5a276",
+      "size": 16,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtReadFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_36",
+          "address": "0x880149ec",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_18",
+          "address": "0x91a17258",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtReadFile",
+          "address": "0x9801a850",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "8b8ff908772f3f5495d3ccc49b2840db661ee06e6d518da1c21303b277a177f9",
+      "size": 32,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82064800",
+          "address": "0x82064800",
+          "size": 32
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8208B828",
+          "address": "0x8208b828",
+          "size": 32
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A337F0",
+          "address": "0x91a337f0",
+          "size": 32
+        }
+      ]
+    },
+    {
+      "sha256": "ad13a38b6fdd2bdd62c0df8ad40f07d84fbb8f42a8c66f69d301c0fffdf6e71d",
+      "size": 40,
+      "component_count": 3,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82082130",
+          "address": "0x82082130",
+          "size": 40
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2EF10",
+          "address": "0x91a2ef10",
+          "size": 40
+        },
+        {
+          "component": "Updater",
+          "name": "fn_9800DDB8",
+          "address": "0x9800ddb8",
+          "size": 40
+        }
+      ]
+    },
+    {
+      "sha256": "b2cca21795a253c7c4489e67aaf1840f577ceaac04e60f1148ff3cf7747b9b9b",
+      "size": 72,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205DCD8",
+          "address": "0x8205dcd8",
+          "size": 72
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82083488",
+          "address": "0x82083488",
+          "size": 72
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2F228",
+          "address": "0x91a2f228",
+          "size": 72
+        }
+      ]
+    },
+    {
+      "sha256": "3de5ef03594f34718a3ff4a3c9ce292cdc391e3fb938f5e854604f1179e62f4d",
+      "size": 96,
+      "component_count": 3,
+      "components": [
+        "AuroraFixer",
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "fn_88010BF0",
+          "address": "0x88010bf0",
+          "size": 96
+        },
+        {
+          "component": "BootEdit",
+          "name": "fn_820594C0",
+          "address": "0x820594c0",
+          "size": 96
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82081F00",
+          "address": "0x82081f00",
+          "size": 96
+        }
+      ]
+    },
+    {
+      "sha256": "c07b7c04a4e098e51917c33158d6d19c8fa4982d4dfd74cf566bb1817281c99b",
+      "size": 152,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "SettingsApp",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205EFB8",
+          "address": "0x8205efb8",
+          "size": 152
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82088F60",
+          "address": "0x82088f60",
+          "size": 152
+        },
+        {
+          "component": "Updater",
+          "name": "fn_98010660",
+          "address": "0x98010660",
+          "size": 152
+        }
+      ]
+    },
+    {
+      "sha256": "2418a7f579bd6f8fa651d28cb81d52a1d700d946f878ec7057881bacf3556ff2",
+      "size": 520,
+      "component_count": 3,
+      "components": [
+        "BootEdit",
+        "BootXell",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82058E68",
+          "address": "0x82058e68",
+          "size": 520
+        },
+        {
+          "component": "BootXell",
+          "name": "fn_91A07228",
+          "address": "0x91a07228",
+          "size": 520
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82080900",
+          "address": "0x82080900",
+          "size": 520
+        }
+      ]
+    },
+    {
+      "sha256": "00cad833f59157636abf6c760759a0fcf53227bf01112cbedcf31271c411e347",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "MmAllocatePhysicalMemoryEx"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_7",
+          "address": "0x91a171a8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "MmAllocatePhysicalMemoryEx",
+          "address": "0x9801a7a0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "041a1d3a8996594176dc64a316bc084ab4c25f890e42129a537bf01f53e111d5",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "AuroraFixer",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlCompareStringN"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_2",
+          "address": "0x880147dc",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlCompareStringN",
+          "address": "0x9801a730",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "0b09c2bfe85f7a5e6090cc20e91f05816e5e735b6302af0c0125424b9b29c086",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_3",
+          "address": "0x820b8e9c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_9",
+          "address": "0x91a40f4c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "2078853304f0aac598a197dd9131303b20b616f31468eee9c9843ef0dc781311",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_0",
+          "address": "0x82069eb0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_19",
+          "address": "0x820b937c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "2df89be03213340b0aa8a1e542db64df5b0b8f81d6e33399f1e038b22f59e53f",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_21",
+          "address": "0x820b935c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_17",
+          "address": "0x91a410dc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "31f2f898fba5273ba715269d977891700dd6f9407a8cfa8ea9b24791b378231f",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_7",
+          "address": "0x820b8edc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_13",
+          "address": "0x91a40f8c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "3570b4b2f9a475c8119c378d163103357157b2371eafbfa65bed78d9c74404de",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_14",
+          "address": "0x8206a000",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_42",
+          "address": "0x820b909c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "3b3a7162a9d5ea8c84a96271bcc7af82602398283b40dd3f16981703ee4e9d3f",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_23",
+          "address": "0x820b933c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_2",
+          "address": "0x91a40edc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "42f6c1734d45cca4416591ea5716d7bc5be10d935a522300a4d316710815ebb9",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_43",
+          "address": "0x8206a1b0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_7",
+          "address": "0x820b929c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "45d7e05c4aad8f1550194a030df9ed092fbd606a88d9393a1834b4afcc4fd0a2",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "AuroraFixer",
+        "BootXell"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_0",
+          "address": "0x880147bc",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_6",
+          "address": "0x91a17198",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "51598d5c0f6a992f08c27c322b3418ab383569d7f155f2abe265b16f2d7ee644",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_13",
+          "address": "0x82069ff0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_52",
+          "address": "0x820b900c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "5732e5cb39a9c6ca5ec173c14d5faa534cc215230e43e696f42b9435e3e6bbfe",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_7",
+          "address": "0x82069f20",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_16",
+          "address": "0x820b8f6c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "580bf782b0e2a56a9d565673907e3c8adcf445f2c0e4f8d27908668747341af9",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_79",
+          "address": "0x820b94bc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_45",
+          "address": "0x91a4128c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "5fb2f6261c05b29beca5e275374e7292add2a739f7fb5b8dc76559672866ded4",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_4",
+          "address": "0x820b8eac",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_10",
+          "address": "0x91a40f5c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "6898bb56d082b1c63dd851be64a9a5a6efdb7db66a095a0acf4e5300fd00e291",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_23",
+          "address": "0x8206a090",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_22",
+          "address": "0x820b91bc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "6d8ab0ebff3e7addfa61d80001b1d1fe8c51a7cea6f59b1c854e5b5c9a85e610",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_15",
+          "address": "0x8206a010",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_50",
+          "address": "0x820b902c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "72a7d98cef04784c4f49cb10c9231e206740d584b83fa6fe9f9b0d513aaea15c",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_5",
+          "address": "0x820b8ebc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_11",
+          "address": "0x91a40f6c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "77f3540d8978f0d8128078464dafeeb749b30f823c407d52b8d4e30d5c835a81",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_0",
+          "address": "0x820b8e6c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_0",
+          "address": "0x91a40ebc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "7ae2166a35f9fed5321c56bffc72e1e7c7dccc9efb93f25bc5e236725139d3fd",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_5",
+          "address": "0x82069f00",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_14",
+          "address": "0x820b8f4c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "80a1101ff316f7ea2e4bd79d93a33628724d9c0b7bc82036c66814a74867d762",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_73",
+          "address": "0x820b945c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_33",
+          "address": "0x91a411dc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "8b7f40e576dd572dd3ea23aa576fdfe5af7750e4b16976c9e3fbab3217ebdbbe",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_12",
+          "address": "0x82069fe0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_53",
+          "address": "0x820b8ffc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "8d8e5f57a182c9e1ddf8fa86721587080f672408f669b8739c5c23155c7eaf3f",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_22",
+          "address": "0x820b934c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_4",
+          "address": "0x91a40efc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "9fb336f4646377428a39886ffb4517b1c2244f335d5fc35ada5218f40f57556d",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_4",
+          "address": "0x82069ef0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_13",
+          "address": "0x820b8f3c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a0944169067ebb76edcfcd58e0c9d3eac22dd45cf6a11218e4953f5d1cc2203e",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_51",
+          "address": "0x8206a230",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_63",
+          "address": "0x820b93bc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a1ce396e0f9fb6091b606d3220e92e9e71bf7653f0de94a705dec7b94f32043a",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_18",
+          "address": "0x820b938c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_3",
+          "address": "0x91a40eec",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a3d041d54314a28b92653912e3e20202bb30642dc9e9ef33156041db30cccd4c",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_3",
+          "address": "0x82069ee0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_12",
+          "address": "0x820b8f2c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a70b8cc67ccab63fc82ed8388438d190297b2ae560e2ce14298830ee6bd3274f",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_6",
+          "address": "0x82069f10",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_15",
+          "address": "0x820b8f5c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "a9f08b7259f9ed19d96831758b0326f02c6e7901b89720a043cd445d28eb6f42",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_6",
+          "address": "0x82069f80",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_23",
+          "address": "0x820b91ac",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "b1012c90e55278f5c6716c038351a8ddec493772298db32472db2dfbad97adb9",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_27",
+          "address": "0x8206a0d0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_20",
+          "address": "0x820b91dc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "b354d2d9a7b48abe2cedf8047eb05b9152cd1327fbad8490fb77f92af4a958ba",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_17",
+          "address": "0x8206a030",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_25",
+          "address": "0x820b918c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "b53f78015ca767ea483a65ad310cd54ebf085d4cb8a6503ee426dbf6c091b432",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_5",
+          "address": "0x82069f70",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_11",
+          "address": "0x820b926c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "cdf6e4bf1504ed27f104d22546f389aba9a50763a71d41a5e298d502dc8461c2",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "MmFreePhysicalMemory"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_8",
+          "address": "0x91a171b8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "MmFreePhysicalMemory",
+          "address": "0x9801a7b0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "d5a06f13c475a0e2e83776572f6c8ad46ed13fdae01d8fe5ab13381b68a7fa05",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_4",
+          "address": "0x82069f60",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_61",
+          "address": "0x820b8f7c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "d7c9c5bc308c1c6c67118df66d3d05e9a9a0b8869b9b01c924f9b994c797581a",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xam_xex_2",
+          "address": "0x82069ed0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_17",
+          "address": "0x820b939c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "da75d256819568473f437594de0e930448479e4735c5be171cb18e8dc58f749f",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "AuroraFixer",
+        "BootXell"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_5",
+          "address": "0x8801480c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_0",
+          "address": "0x91a17138",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ddb26c1c65e17a9bd74c583a17a1d25cfbdcfe86877bf47da0bedd40c51a72fc",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_6",
+          "address": "0x820b8ecc",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_12",
+          "address": "0x91a40f7c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "de328efb21c9dc1a90098056f91a949b249cc7df3b971e3f726c90611c627ef6",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_1",
+          "address": "0x820b8e7c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_1",
+          "address": "0x91a40ecc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "df64b3a1bf059842f3dfe87d09b64295417764af10545a5dff01e7c962edaedb",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlUnwind"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_33",
+          "address": "0x91a17348",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlUnwind",
+          "address": "0x9801a900",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "e11ada1e0420b1a659f4ec1971688776267144cbdf6ee2cada861405d5cdeb89",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "RtlNtStatusToDosError"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_10",
+          "address": "0x91a171d8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "RtlNtStatusToDosError",
+          "address": "0x9801a7d0",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "e70df6416b5785c104e71f974e7ebd0221c61ca4af5c268334b9b5f9e0c168db",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_21",
+          "address": "0x8206a070",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_27",
+          "address": "0x820b916c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ea0dc26cb90964dfceeae8820be6a85937bbb91ab5fb1efe6a29d68435e0d22b",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_62",
+          "address": "0x820b93ac",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "__imp_xboxkrnl_exe_22",
+          "address": "0x91a4112c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f04f3c55b58826da5cad5fbe51bea923c18056f16953a3495e1be068099a1680",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_26",
+          "address": "0x8206a0c0",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_21",
+          "address": "0x820b91cc",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f2646f51d931dbe9e6bf3a1f0e26cc0add88be7715eff5c86d350fae240b3e8b",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_25",
+          "address": "0x820b931c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_5",
+          "address": "0x91a40f0c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f27fea600ceacb74e033cbde8362d24e4a58c909c35c0a34594f3b49bac1315d",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "xboxkrnl_exe_19",
+          "address": "0x8206a050",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "xboxkrnl_exe_10",
+          "address": "0x820b927c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f28ad68a60a6dcaed634c62f39ac00da4b15eab05fa6de31a67e4dce3405755b",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "AuroraFixer",
+        "BootXell"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "AuroraFixer",
+          "name": "xboxkrnl_exe_6",
+          "address": "0x8801481c",
+          "size": 16
+        },
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_1",
+          "address": "0x91a17148",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f58b100269035dd176880d38103f64d288ada078dabe382d89e2b42f9cfbe4db",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtWriteFile"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_23",
+          "address": "0x91a172a8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtWriteFile",
+          "address": "0x9801a750",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "f7fd8df6e7c01821a401bbe8f6d86626f239c88d2376470d7bab53404d7f561e",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "xam_xex_20",
+          "address": "0x820b936c",
+          "size": 16
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "xam_xex_16",
+          "address": "0x91a410ec",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "fe008929ca11f7f4fca89531a019fc61896faad0dfd1584080819505952cb486",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "__imp_xboxkrnl_exe_50",
+          "address": "0x8206a220",
+          "size": 16
+        },
+        {
+          "component": "SettingsApp",
+          "name": "__imp_xboxkrnl_exe_51",
+          "address": "0x820b901c",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "ff0c7de4e379f796bc2a77615ec0165378fc46b215574da8a541dc78647b1e61",
+      "size": 16,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [
+        "NtWaitForSingleObjectEx"
+      ],
+      "name_propagation_safe": true,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "xboxkrnl_exe_9",
+          "address": "0x91a171c8",
+          "size": 16
+        },
+        {
+          "component": "Updater",
+          "name": "NtWaitForSingleObjectEx",
+          "address": "0x9801a790",
+          "size": 16
+        }
+      ]
+    },
+    {
+      "sha256": "c071105df30774b569f923d6d93767c60a7e71a02e5fe9b0901ca343e0915176",
+      "size": 40,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82081540",
+          "address": "0x82081540",
+          "size": 40
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2DD78",
+          "address": "0x91a2dd78",
+          "size": 40
+        }
+      ]
+    },
+    {
+      "sha256": "0749fb29000e5611b4284e3a29a03eb35455ca824c493cd036a6a4eabd068393",
+      "size": 48,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820643D8",
+          "address": "0x820643d8",
+          "size": 48
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A14C10",
+          "address": "0x91a14c10",
+          "size": 48
+        }
+      ]
+    },
+    {
+      "sha256": "ab3a89a9f4c7023c9ea9323d0f84322e8f5f40853676eede0f713a61391c271b",
+      "size": 48,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82052CC8",
+          "address": "0x82052cc8",
+          "size": 48
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8205D610",
+          "address": "0x8205d610",
+          "size": 48
+        }
+      ]
+    },
+    {
+      "sha256": "ea265be89f3e7832c04aec63950b95bd02661a039086e7a06105f8c05808f5a5",
+      "size": 48,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82064408",
+          "address": "0x82064408",
+          "size": 48
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A14C40",
+          "address": "0x91a14c40",
+          "size": 48
+        }
+      ]
+    },
+    {
+      "sha256": "aa713b39787b2f11bba6a2e8504fb8de27965d2d3afdcb1661ab86d513dce3ee",
+      "size": 56,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82070D90",
+          "address": "0x82070d90",
+          "size": 56
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A215C8",
+          "address": "0x91a215c8",
+          "size": 56
+        }
+      ]
+    },
+    {
+      "sha256": "33bb736e98b51be2876d7c933a6abf025895f0568d59a314a0dd7bd3a46862f2",
+      "size": 64,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205D258",
+          "address": "0x8205d258",
+          "size": 64
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82082EB8",
+          "address": "0x82082eb8",
+          "size": 64
+        }
+      ]
+    },
+    {
+      "sha256": "b7f113bd1f41ae4cde17a16e128c7e1756710acbf34ae16cf4761177bac4b8e3",
+      "size": 64,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "fn_91A0DB68",
+          "address": "0x91a0db68",
+          "size": 64
+        },
+        {
+          "component": "Updater",
+          "name": "fn_9800EDC0",
+          "address": "0x9800edc0",
+          "size": 64
+        }
+      ]
+    },
+    {
+      "sha256": "e2b44e1401d63eceb670dc4c842d6c94c77e154c11eebc456474b2d5afba6462",
+      "size": 64,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820640C0",
+          "address": "0x820640c0",
+          "size": 64
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A148F8",
+          "address": "0x91a148f8",
+          "size": 64
+        }
+      ]
+    },
+    {
+      "sha256": "3d17b06d53bb2a63bf509134609cfb917ef28bb404659dc5ef54915bbb8c56d1",
+      "size": 72,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8206F8C0",
+          "address": "0x8206f8c0",
+          "size": 72
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A1FED0",
+          "address": "0x91a1fed0",
+          "size": 72
+        }
+      ]
+    },
+    {
+      "sha256": "7b8d182913d616c5892226bceaa451615193a5c98d9acbbc0bbb5cb8e521d1e9",
+      "size": 76,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82059520",
+          "address": "0x82059520",
+          "size": 76
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82082630",
+          "address": "0x82082630",
+          "size": 76
+        }
+      ]
+    },
+    {
+      "sha256": "08f9c92b49811ecb96f37e9cd5b6e375b95c07486e138293adc5a1c047202bb9",
+      "size": 80,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_820256E0",
+          "address": "0x820256e0",
+          "size": 80
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82046D30",
+          "address": "0x82046d30",
+          "size": 80
+        }
+      ]
+    },
+    {
+      "sha256": "253501048f318cb26104275f9611b7d6404ea1065ee1985bf651bc9e56560405",
+      "size": 80,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82074938",
+          "address": "0x82074938",
+          "size": 80
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2C380",
+          "address": "0x91a2c380",
+          "size": 80
+        }
+      ]
+    },
+    {
+      "sha256": "5b46b1a7e694e565eed425202003067f90f724d64407079f3e1179f6d88528fb",
+      "size": 80,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82074988",
+          "address": "0x82074988",
+          "size": 80
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2C3D0",
+          "address": "0x91a2c3d0",
+          "size": 80
+        }
+      ]
+    },
+    {
+      "sha256": "99949b5656bdc1189880e3e4ca0a5d05549b00f3fa63bec60e3940fb7d519e51",
+      "size": 80,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82073968",
+          "address": "0x82073968",
+          "size": 80
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2B830",
+          "address": "0x91a2b830",
+          "size": 80
+        }
+      ]
+    },
+    {
+      "sha256": "d18a7f9c1f73642f6942bcea270b8be70db75a4275930755bb25cf3686bd9489",
+      "size": 80,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8201BAF0",
+          "address": "0x8201baf0",
+          "size": 80
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8203D388",
+          "address": "0x8203d388",
+          "size": 80
+        }
+      ]
+    },
+    {
+      "sha256": "128f42e297f115b6bbcea0a8de9ae70b607f6c7032c56f121a4dff2c9298e194",
+      "size": 88,
+      "component_count": 2,
+      "components": [
+        "BootXell",
+        "Updater"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootXell",
+          "name": "fn_91A10008",
+          "address": "0x91a10008",
+          "size": 88
+        },
+        {
+          "component": "Updater",
+          "name": "fn_98012C98",
+          "address": "0x98012c98",
+          "size": 88
+        }
+      ]
+    },
+    {
+      "sha256": "8ddcd09722445bdc5be8ee9f42d6683378496c940c43554640110222e003b505",
+      "size": 88,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820206D8",
+          "address": "0x820206d8",
+          "size": 88
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A231C0",
+          "address": "0x91a231c0",
+          "size": 88
+        }
+      ]
+    },
+    {
+      "sha256": "cba94fbcd088d11af211f1f32d2764061b4a5364a4280824b29a71bc6f8df82f",
+      "size": 88,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820749D8",
+          "address": "0x820749d8",
+          "size": 88
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2C420",
+          "address": "0x91a2c420",
+          "size": 88
+        }
+      ]
+    },
+    {
+      "sha256": "53a489607be4742beaa35f39214801320f37b2fabfd7e7a500b0e38ce5ed9319",
+      "size": 92,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205A404",
+          "address": "0x8205a404",
+          "size": 92
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82084334",
+          "address": "0x82084334",
+          "size": 92
+        }
+      ]
+    },
+    {
+      "sha256": "c0154df5f6a9ae7a0d10062eafe80936723ee1ae2523a7d975e619ad7b5ab347",
+      "size": 92,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205A5C4",
+          "address": "0x8205a5c4",
+          "size": 92
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_820844F4",
+          "address": "0x820844f4",
+          "size": 92
+        }
+      ]
+    },
+    {
+      "sha256": "c42ef3e30135a225bfb6d97134dfbd8684d1570f0976ebff6ea94f106d4dc126",
+      "size": 92,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205A8CC",
+          "address": "0x8205a8cc",
+          "size": 92
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_820847FC",
+          "address": "0x820847fc",
+          "size": 92
+        }
+      ]
+    },
+    {
+      "sha256": "a32e765080d73ff9ef9537f3627140fa698fbae553e5c5a58b136fead43aea38",
+      "size": 96,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820628D0",
+          "address": "0x820628d0",
+          "size": 96
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A129A0",
+          "address": "0x91a129a0",
+          "size": 96
+        }
+      ]
+    },
+    {
+      "sha256": "f6dfade3bacc4bf863c3050deedb1ce190f5d554218997edfd982fb0ec5351d6",
+      "size": 96,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820760E8",
+          "address": "0x820760e8",
+          "size": 96
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A23768",
+          "address": "0x91a23768",
+          "size": 96
+        }
+      ]
+    },
+    {
+      "sha256": "b848d88a543de07c268027b53d826841ddd0c747f912b9538f71da41d3836632",
+      "size": 100,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205A254",
+          "address": "0x8205a254",
+          "size": 100
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82084184",
+          "address": "0x82084184",
+          "size": 100
+        }
+      ]
+    },
+    {
+      "sha256": "63ca237b00160fc7d210071b5113e69024be630b1a4090b74d445e0a2b85eaf3",
+      "size": 104,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8207AE50",
+          "address": "0x8207ae50",
+          "size": 104
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A28DF0",
+          "address": "0x91a28df0",
+          "size": 104
+        }
+      ]
+    },
+    {
+      "sha256": "95f07642cec557d335daa4d8ddf010a0b8f4a693fbeb0c83b2f0a5b96309eab9",
+      "size": 104,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82020E78",
+          "address": "0x82020e78",
+          "size": 104
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A0AB68",
+          "address": "0x91a0ab68",
+          "size": 104
+        }
+      ]
+    },
+    {
+      "sha256": "ef047bbf9e1e373b4a68d4db268cdac3b9816cd62a0c60c5590715eb913a038a",
+      "size": 104,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202C5B8",
+          "address": "0x8202c5b8",
+          "size": 104
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204FAD8",
+          "address": "0x8204fad8",
+          "size": 104
+        }
+      ]
+    },
+    {
+      "sha256": "c80a3df5f0246e81b2173108fa2aa25d536fc5c77c555ab1ceb7e1588c0802b9",
+      "size": 116,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8205AC74",
+          "address": "0x8205ac74",
+          "size": 116
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82084BA4",
+          "address": "0x82084ba4",
+          "size": 116
+        }
+      ]
+    },
+    {
+      "sha256": "1a282471e37dbd8b95c255626c5e2693d8d78d846df112359ce225b51de83d5b",
+      "size": 120,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8201EAA0",
+          "address": "0x8201eaa0",
+          "size": 120
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_820401C0",
+          "address": "0x820401c0",
+          "size": 120
+        }
+      ]
+    },
+    {
+      "sha256": "44a3b64d826bee347d5d3bc6a24424c218595b9b5c922f3adb30c1a37a7730cc",
+      "size": 120,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8206DAC0",
+          "address": "0x8206dac0",
+          "size": 120
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A1E2F8",
+          "address": "0x91a1e2f8",
+          "size": 120
+        }
+      ]
+    },
+    {
+      "sha256": "c25a5ccbf0b6cf192fb45921f2a818a8064d71522b399afa79e3dce4f3b8c738",
+      "size": 120,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82015FA0",
+          "address": "0x82015fa0",
+          "size": 120
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82037DB8",
+          "address": "0x82037db8",
+          "size": 120
+        }
+      ]
+    },
+    {
+      "sha256": "97dd49312a26218c94ad37045fe5a75d883ccc551f4a4884498ced5b38d7e2ed",
+      "size": 128,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82073808",
+          "address": "0x82073808",
+          "size": 128
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A2B6D0",
+          "address": "0x91a2b6d0",
+          "size": 128
+        }
+      ]
+    },
+    {
+      "sha256": "a3fcda4dcf64fdc9b827ce8352fc0e365a74adf2dd5e643b81635ed121ea6709",
+      "size": 128,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060E30",
+          "address": "0x82060e30",
+          "size": 128
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A11668",
+          "address": "0x91a11668",
+          "size": 128
+        }
+      ]
+    },
+    {
+      "sha256": "4c18474ea3d1c4d5a63d7dbe5140461ba312ad63dc87bf74de2c8aa782bcdc00",
+      "size": 136,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_820302B0",
+          "address": "0x820302b0",
+          "size": 136
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_820537D0",
+          "address": "0x820537d0",
+          "size": 136
+        }
+      ]
+    },
+    {
+      "sha256": "60cc2c427e49cdea176174beba2404286fd5f7680737282cfd28b68e4f02bc3f",
+      "size": 136,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820761E8",
+          "address": "0x820761e8",
+          "size": 136
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A23868",
+          "address": "0x91a23868",
+          "size": 136
+        }
+      ]
+    },
+    {
+      "sha256": "b1801d92f2932159981a7801718005ab52af5bdfe4e9fda5eea95fb9944e44f0",
+      "size": 136,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_82035798",
+          "address": "0x82035798",
+          "size": 136
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82058998",
+          "address": "0x82058998",
+          "size": 136
+        }
+      ]
+    },
+    {
+      "sha256": "f7e41f71ffcbc12cf45107ddbb796a31bc6f2414c347e11c0a9a4c909fff9cd7",
+      "size": 136,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060DA8",
+          "address": "0x82060da8",
+          "size": 136
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A115E0",
+          "address": "0x91a115e0",
+          "size": 136
+        }
+      ]
+    },
+    {
+      "sha256": "055ca863e1f264e741b07819ef00279d40dd0070e366bdd53371c3c8c00e3985",
+      "size": 152,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202C620",
+          "address": "0x8202c620",
+          "size": 152
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204FB40",
+          "address": "0x8204fb40",
+          "size": 152
+        }
+      ]
+    },
+    {
+      "sha256": "2337a932b119e83e995fb35a5ae2a2fcf5662979e408176fe0058eae48f32241",
+      "size": 152,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8205FA90",
+          "address": "0x8205fa90",
+          "size": 152
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A102C8",
+          "address": "0x91a102c8",
+          "size": 152
+        }
+      ]
+    },
+    {
+      "sha256": "8f678e0904632fd0de829ecf9c89fbf5a1266c8c65a5b9c8edf0fa32bad3eaa6",
+      "size": 152,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82032AB8",
+          "address": "0x82032ab8",
+          "size": 152
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A0E558",
+          "address": "0x91a0e558",
+          "size": 152
+        }
+      ]
+    },
+    {
+      "sha256": "a2b1046eea74fa1087c54113a562eadecac76bd8e0ccab210b8720fc6d35e26b",
+      "size": 152,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060000",
+          "address": "0x82060000",
+          "size": 152
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A10838",
+          "address": "0x91a10838",
+          "size": 152
+        }
+      ]
+    },
+    {
+      "sha256": "e2e30c21f1bb454016e3d864ed560ab91eb48dcc668c52f3b6e41c78f741fd98",
+      "size": 152,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202AB00",
+          "address": "0x8202ab00",
+          "size": 152
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204E020",
+          "address": "0x8204e020",
+          "size": 152
+        }
+      ]
+    },
+    {
+      "sha256": "234aeca2d122e36e7f2d3d8b9ef5f6fb4e574bd9f91a34ad5bfec948a7b5c63f",
+      "size": 160,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82076148",
+          "address": "0x82076148",
+          "size": 160
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A237C8",
+          "address": "0x91a237c8",
+          "size": 160
+        }
+      ]
+    },
+    {
+      "sha256": "fde5b75be5d6c3eaa920cf89a1090e738fe93b67563966483ceaf1c9211fb52a",
+      "size": 176,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202A140",
+          "address": "0x8202a140",
+          "size": 176
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204D660",
+          "address": "0x8204d660",
+          "size": 176
+        }
+      ]
+    },
+    {
+      "sha256": "690c6f05ff2bc1845bc77aeb3d8aa0da77c634d3e5e8fe65dc014503ba96668c",
+      "size": 192,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820646D8",
+          "address": "0x820646d8",
+          "size": 192
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A14F10",
+          "address": "0x91a14f10",
+          "size": 192
+        }
+      ]
+    },
+    {
+      "sha256": "93fe37ce7847a1ac0fdffe9bba3267a979ba64159200e7115eabf268933d133e",
+      "size": 192,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202C4F8",
+          "address": "0x8202c4f8",
+          "size": 192
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204FA18",
+          "address": "0x8204fa18",
+          "size": 192
+        }
+      ]
+    },
+    {
+      "sha256": "abb39e64a5ad74bd3651eab1930ec5a5d5f500dbdd74b15978c0d9fc6d957a3c",
+      "size": 192,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060850",
+          "address": "0x82060850",
+          "size": 192
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A11088",
+          "address": "0x91a11088",
+          "size": 192
+        }
+      ]
+    },
+    {
+      "sha256": "4d018022b3fadd23e53750c85eccc4fd11ace768800f74322df6d7d16f6fcf16",
+      "size": 200,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8203D280",
+          "address": "0x8203d280",
+          "size": 200
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204B630",
+          "address": "0x8204b630",
+          "size": 200
+        }
+      ]
+    },
+    {
+      "sha256": "2ad0d4fdc1e833e5fce9a4020c321868396e9621682ee62f047002e44e8621c5",
+      "size": 208,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82076360",
+          "address": "0x82076360",
+          "size": 208
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A239E0",
+          "address": "0x91a239e0",
+          "size": 208
+        }
+      ]
+    },
+    {
+      "sha256": "3f4a3eaa2379e33e5606646ea97471e4598c56af1b91be1726285fa338fdaee0",
+      "size": 208,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8206F440",
+          "address": "0x8206f440",
+          "size": 208
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A1FA50",
+          "address": "0x91a1fa50",
+          "size": 208
+        }
+      ]
+    },
+    {
+      "sha256": "4f883a708a3aaac927e2085abda1e0a71cc26dbaebb6b16c54dfb9bfa4f0c8ff",
+      "size": 208,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202C428",
+          "address": "0x8202c428",
+          "size": 208
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204F948",
+          "address": "0x8204f948",
+          "size": 208
+        }
+      ]
+    },
+    {
+      "sha256": "7f219ed3c27cdc13402a77c6f03d6b5688f392d14260456b5172f08e66969591",
+      "size": 216,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82079D70",
+          "address": "0x82079d70",
+          "size": 216
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A27D10",
+          "address": "0x91a27d10",
+          "size": 216
+        }
+      ]
+    },
+    {
+      "sha256": "bad92a3d8da9c3223d5e28327719f6ab6ccd1771387e10562851c08d11010b9d",
+      "size": 216,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82079E48",
+          "address": "0x82079e48",
+          "size": 216
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A27DE8",
+          "address": "0x91a27de8",
+          "size": 216
+        }
+      ]
+    },
+    {
+      "sha256": "c716452c63e09accd3b6e3a5ff196e48774209c3031c80405e0a5fe9ba8028e6",
+      "size": 232,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202C6B8",
+          "address": "0x8202c6b8",
+          "size": 232
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204FBD8",
+          "address": "0x8204fbd8",
+          "size": 232
+        }
+      ]
+    },
+    {
+      "sha256": "5d680f96cbf907ad921d85683ac5c8819b4d1e956d94c7cf38af56fb98b619c4",
+      "size": 256,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060750",
+          "address": "0x82060750",
+          "size": 256
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A10F88",
+          "address": "0x91a10f88",
+          "size": 256
+        }
+      ]
+    },
+    {
+      "sha256": "82c2e0a196aa2beee9a9d34b0377af56344e9c292deb0a28c9342192ac381ec9",
+      "size": 264,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060648",
+          "address": "0x82060648",
+          "size": 264
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A10E80",
+          "address": "0x91a10e80",
+          "size": 264
+        }
+      ]
+    },
+    {
+      "sha256": "8a6bd1cc426bfa4d00e5e5c2561be9fc7e989614c20d8a91ca028f33a42c2fbb",
+      "size": 272,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82071990",
+          "address": "0x82071990",
+          "size": 272
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A221C8",
+          "address": "0x91a221c8",
+          "size": 272
+        }
+      ]
+    },
+    {
+      "sha256": "79d9940b21c9f49abe0b7b64b29dff696cc115e54d46a7cf65e83855ede36657",
+      "size": 280,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202AE88",
+          "address": "0x8202ae88",
+          "size": 280
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204E3A8",
+          "address": "0x8204e3a8",
+          "size": 280
+        }
+      ]
+    },
+    {
+      "sha256": "2c30a856033f7ac26837b7502cac099626d83fc08c6fc5ba11c20772eac939df",
+      "size": 288,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82061150",
+          "address": "0x82061150",
+          "size": 288
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A11988",
+          "address": "0x91a11988",
+          "size": 288
+        }
+      ]
+    },
+    {
+      "sha256": "bd7a3a8d8c6734095948f45618b8a425727742e4e2565c2018a236de1088fb90",
+      "size": 288,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_82060098",
+          "address": "0x82060098",
+          "size": 288
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A108D0",
+          "address": "0x91a108d0",
+          "size": 288
+        }
+      ]
+    },
+    {
+      "sha256": "676dae80dcc2d4558fb2e1ddd55c60ab621026a5773dacf9472e9993176c7f68",
+      "size": 296,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202FE40",
+          "address": "0x8202fe40",
+          "size": 296
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_82053360",
+          "address": "0x82053360",
+          "size": 296
+        }
+      ]
+    },
+    {
+      "sha256": "7030332992fcd79ff571c7efc12c90b3c70bcec5590e0079c1e4967c40db241e",
+      "size": 360,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8206BCC8",
+          "address": "0x8206bcc8",
+          "size": 360
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A1C500",
+          "address": "0x91a1c500",
+          "size": 360
+        }
+      ]
+    },
+    {
+      "sha256": "ade32be78879c2482f1616e795bc57423040d0b7726149011d81267ccbcc5989",
+      "size": 536,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202A8E8",
+          "address": "0x8202a8e8",
+          "size": 536
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204DE08",
+          "address": "0x8204de08",
+          "size": 536
+        }
+      ]
+    },
+    {
+      "sha256": "7edb6de71da0d34695c1ae7a5caa8bc910d77ba0813e306a5bff33742c3c8404",
+      "size": 552,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202A6C0",
+          "address": "0x8202a6c0",
+          "size": 552
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204DBE0",
+          "address": "0x8204dbe0",
+          "size": 552
+        }
+      ]
+    },
+    {
+      "sha256": "0762eeaf0abc1faf96a57555c90935c70ce74a3308a7612c836f0d1c2b498008",
+      "size": 624,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_8205FD90",
+          "address": "0x8205fd90",
+          "size": 624
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A105C8",
+          "address": "0x91a105c8",
+          "size": 624
+        }
+      ]
+    },
+    {
+      "sha256": "fd70aeb4e273832eff27e4f364d958c2662b1b42a54c3c38ed5abbfc195b0955",
+      "size": 640,
+      "component_count": 2,
+      "components": [
+        "SettingsApp",
+        "UpdateCheck"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "SettingsApp",
+          "name": "fn_820603C8",
+          "address": "0x820603c8",
+          "size": 640
+        },
+        {
+          "component": "UpdateCheck",
+          "name": "fn_91A10C00",
+          "address": "0x91a10c00",
+          "size": 640
+        }
+      ]
+    },
+    {
+      "sha256": "1ad4a11928b1683848cc57cfd148760a3757d0037148e199cdfc7fe762d1f1e9",
+      "size": 752,
+      "component_count": 2,
+      "components": [
+        "BootEdit",
+        "SettingsApp"
+      ],
+      "authoritative_names": [],
+      "name_propagation_safe": false,
+      "instances": [
+        {
+          "component": "BootEdit",
+          "name": "fn_8202AB98",
+          "address": "0x8202ab98",
+          "size": 752
+        },
+        {
+          "component": "SettingsApp",
+          "name": "fn_8204E0B8",
+          "address": "0x8204e0b8",
+          "size": 752
+        }
+      ]
+    }
+  ]
+}
