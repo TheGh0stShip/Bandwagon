@@ -1378,8 +1378,8 @@
       "caller_address": "0x801f1700",
       "instruction_address": "0x801f1750",
       "target_address": "0x801f30b0",
-      "callee": "fn_801F30B0",
-      "target_containing_function": "fn_801F30B0"
+      "callee": "ParseConfigFileBuffer",
+      "target_containing_function": "ParseConfigFileBuffer"
     },
     {
       "caller": "LoadStructuredConfigFile",
@@ -2206,15 +2206,15 @@
       "target_containing_function": "KeLeaveCriticalRegion"
     },
     {
-      "caller": "fn_801F30B0",
+      "caller": "ParseConfigFileBuffer",
       "caller_address": "0x801f30b0",
       "instruction_address": "0x801f30ec",
       "target_address": "0x801f44e0",
-      "callee": "fn_801F44E0",
-      "target_containing_function": "fn_801F44E0"
+      "callee": "ParseIniDocument",
+      "target_containing_function": "ParseIniDocument"
     },
     {
-      "caller": "fn_801F30B0",
+      "caller": "ParseConfigFileBuffer",
       "caller_address": "0x801f30b0",
       "instruction_address": "0x801f3100",
       "target_address": "0x801fec18",
@@ -2402,8 +2402,8 @@
       "caller_address": "0x801f3378",
       "instruction_address": "0x801f3564",
       "target_address": "0x801f44e0",
-      "callee": "fn_801F44E0",
-      "target_containing_function": "fn_801F44E0"
+      "callee": "ParseIniDocument",
+      "target_containing_function": "ParseIniDocument"
     },
     {
       "caller": "ResolveSideLoadConfiguration",
@@ -2814,7 +2814,7 @@
       "target_containing_function": "fn_801FF0B8"
     },
     {
-      "caller": "fn_801F44E0",
+      "caller": "ParseIniDocument",
       "caller_address": "0x801f44e0",
       "instruction_address": "0x801f44e4",
       "target_address": "0x801fead4",
@@ -2822,7 +2822,7 @@
       "target_containing_function": "fn_801FEAD4"
     },
     {
-      "caller": "fn_801F44E0",
+      "caller": "ParseIniDocument",
       "caller_address": "0x801f44e0",
       "instruction_address": "0x801f450c",
       "target_address": "0x801febd8",
@@ -2830,7 +2830,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "fn_801F44E0",
+      "caller": "ParseIniDocument",
       "caller_address": "0x801f44e0",
       "instruction_address": "0x801f4524",
       "target_address": "0x801f7938",
@@ -2838,7 +2838,7 @@
       "target_containing_function": "ParseIniLine"
     },
     {
-      "caller": "fn_801F44E0",
+      "caller": "ParseIniDocument",
       "caller_address": "0x801f44e0",
       "instruction_address": "0x801f456c",
       "target_address": "0x801fef08",

@@ -24,7 +24,7 @@ int main() {
   using namespace bandwagon::kernel_expansion;
 
   PeerPressureConfig config;
-  config.storage.fill(0xa5);
+  std::fill_n(config.Data(), config.Size(), 0xa5);
   ConfigurationState state{&config};
   assert(GetPeerPressureConfig(&state) == &config);
   assert(GetPeerPressureConfig(nullptr) == nullptr);
@@ -32,11 +32,11 @@ int main() {
   FakeConfigServices services;
   assert(!InitializeDefaultConfig(&config, &services));
   assert(services.calls == 1);
-  assert(config.DefaultEnabledFlag());
-  assert(std::count(config.storage.begin(), config.storage.end(), 0) ==
+  assert(config.CheckForUpdatesOnStartup());
+  assert(std::count(config.Data(), config.Data() + config.Size(), 0) ==
          static_cast<std::ptrdiff_t>(kPeerPressureConfigSize - 1));
-  assert(config.storage.front() == 0);
-  assert(config.storage.back() == 0);
+  assert(config.Data()[0] == 0);
+  assert(config.Data()[config.Size() - 1] == 0);
 
   assert(!InitializeDefaultConfig(nullptr, &services));
   assert(!InitializeDefaultConfig(&config, nullptr));

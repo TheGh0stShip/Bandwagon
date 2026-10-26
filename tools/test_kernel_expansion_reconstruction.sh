@@ -7,6 +7,7 @@ trap 'rm -rf -- "$work"' EXIT
 cxx="${CXX:-g++}"
 
 python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
+python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/bootstrap_mapping.cpp" \
     "$root/reconstruction/kernel_expansion/bootstrap_mapping_test.cpp" \
@@ -51,6 +52,13 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/config_hash.cpp" \
+    "$root/reconstruction/kernel_expansion/config_schema.cpp" \
+    "$root/reconstruction/kernel_expansion/config_schema_test.cpp" \
+    -o "$work/config_schema_test"
+"$work/config_schema_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/config_hash.cpp" \
     "$root/reconstruction/kernel_expansion/decimal.cpp" \
     "$root/reconstruction/kernel_expansion/config_value.cpp" \
     "$root/reconstruction/kernel_expansion/config_value_test.cpp" \
@@ -65,14 +73,28 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/config_writer_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/runtime.cpp" \
+    "$root/reconstruction/kernel_expansion/config_writer.cpp" \
+    "$root/reconstruction/kernel_expansion/config_value.cpp" \
+    "$root/reconstruction/kernel_expansion/config_hash.cpp" \
+    "$root/reconstruction/kernel_expansion/decimal.cpp" \
+    "$root/reconstruction/kernel_expansion/config_schema.cpp" \
+    "$root/reconstruction/kernel_expansion/config_reader.cpp" \
+    "$root/reconstruction/kernel_expansion/config_reader_test.cpp" \
+    -o "$work/config_reader_test"
+"$work/config_reader_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/config.cpp" \
     "$root/reconstruction/kernel_expansion/runtime.cpp" \
+    "$root/reconstruction/kernel_expansion/config_schema.cpp" \
     "$root/reconstruction/kernel_expansion/config_loader.cpp" \
     "$root/reconstruction/kernel_expansion/config_loader_test.cpp" \
     -o "$work/config_loader_test"
 "$work/config_loader_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/config_schema.cpp" \
     "$root/reconstruction/kernel_expansion/config_persistence.cpp" \
     "$root/reconstruction/kernel_expansion/config_persistence_test.cpp" \
     -o "$work/config_persistence_test"

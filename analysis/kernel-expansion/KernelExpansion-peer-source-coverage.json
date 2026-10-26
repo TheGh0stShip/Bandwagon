@@ -34,7 +34,7 @@
       "semantic_name": "LoadPeerPressureConfig",
       "source": "reconstruction/kernel_expansion/config_loader.cpp",
       "header": "reconstruction/kernel_expansion/config_loader.hpp",
-      "symbols": ["ConfigAllocationRequest", "ConfigBootstrapServices", "LoadPeerPressureConfig", "kPeerPressureConfigPath", "kConfigSchemaEntryCount", "kConfigFatalErrorCode"]
+      "symbols": ["ConfigAllocationRequest", "ConfigBootstrapServices", "LoadPeerPressureConfig", "kPeerPressureConfigPath", "kPeerPressureConfigSchema", "kConfigFatalErrorCode"]
     },
     {
       "address": "0x801f09c0",
@@ -68,7 +68,7 @@
       "semantic_name": "InitializeDefaultConfig",
       "source": "reconstruction/kernel_expansion/config.cpp",
       "header": "reconstruction/kernel_expansion/config.hpp",
-      "symbols": ["PeerPressureConfig", "ConfigServices", "InitializeDefaultConfig", "kDefaultEnabledFlagOffset"]
+      "symbols": ["PeerPressureConfig", "ConfigServices", "InitializeDefaultConfig", "kCheckForUpdatesOnStartupOffset"]
     },
     {
       "address": "0x801f1700",
@@ -112,7 +112,7 @@
       "semantic_name": "ProcessPeerPressureConfigFile",
       "source": "reconstruction/kernel_expansion/config_persistence.cpp",
       "header": "reconstruction/kernel_expansion/config_persistence.hpp",
-      "symbols": ["ConfigFileWorkflow", "ProcessPeerPressureConfigFile", "kPeerPressureConfigPath", "kConfigSchemaEntryCount"]
+      "symbols": ["ConfigFileWorkflow", "ProcessPeerPressureConfigFile", "kPeerPressureConfigPath", "kPeerPressureConfigSchema"]
     },
     {
       "address": "0x801f3050",
@@ -122,6 +122,15 @@
       "source": "reconstruction/kernel_expansion/config_persistence.cpp",
       "header": "reconstruction/kernel_expansion/config_persistence.hpp",
       "symbols": ["ConfigLockServices", "RunLockedPeerPressureConfigFile"]
+    },
+    {
+      "address": "0x801f30b0",
+      "size": 112,
+      "sha256": "e524ce8087e12a067cb34ee9ec3ef97e72ba3f674488330f8437bc0db1a6ba09",
+      "semantic_name": "ParseConfigFileBuffer",
+      "source": "reconstruction/kernel_expansion/config_reader.cpp",
+      "header": "reconstruction/kernel_expansion/config_reader.hpp",
+      "symbols": ["ConfigReaderDiagnostics", "ConfigFileBufferParser", "ParseConfigFileBuffer"]
     },
     {
       "address": "0x801f3d90",
@@ -167,6 +176,15 @@
       "source": "reconstruction/kernel_expansion/config_value.cpp",
       "header": "reconstruction/kernel_expansion/config_value.hpp",
       "symbols": ["StructuredConfigValueType", "StructuredConfigEntry", "StructuredConfigDestination", "ConfigValueDiagnostics", "ApplyStructuredConfigValue"]
+    },
+    {
+      "address": "0x801f44e0",
+      "size": 288,
+      "sha256": "db0454d5a2280ff9a2991857e4475387029c16069acbce06897768c9104b90b3",
+      "semantic_name": "ParseIniDocument",
+      "source": "reconstruction/kernel_expansion/config_reader.cpp",
+      "header": "reconstruction/kernel_expansion/config_reader.hpp",
+      "symbols": ["IniValueCallback", "ParseIniDocument"]
     },
     {
       "address": "0x801f4d08",
@@ -460,8 +478,10 @@
     "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
     "reconstruction/kernel_expansion/config_hash_test.cpp",
+    "reconstruction/kernel_expansion/config_schema_test.cpp",
     "reconstruction/kernel_expansion/config_value_test.cpp",
     "reconstruction/kernel_expansion/config_writer_test.cpp",
+    "reconstruction/kernel_expansion/config_reader_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/decimal_test.cpp",
     "reconstruction/kernel_expansion/drive_binding_test.cpp",

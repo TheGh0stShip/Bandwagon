@@ -33,7 +33,6 @@ bool LoadPeerPressureConfig(ConfigurationState* state,
                             ConfigBootstrapServices* bootstrap,
                             FileServices* files,
                             StructuredConfigParser* parser,
-                            ConfigServices* config_services,
-                            const void* schema_entries);
+                            ConfigServices* config_services);
 
 }  // namespace bandwagon::kernel_expansion

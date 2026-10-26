@@ -403,8 +403,7 @@ std::uint8_t StructuredConfigFileWorkflow::Process(
     std::uint32_t entry_count) {
   if (!config) return 0;
   return WriteStructuredConfigFile(
-             services_, path, mode, config->storage.data(),
-             config->storage.size(),
+             services_, path, mode, config->Data(), config->Size(),
              schema_entries, entry_count)
              ? 1
              : 0;

@@ -103,8 +103,12 @@ void ApplyStructuredConfigValue(
   const StructuredConfigEntry* match = nullptr;
   for (std::uint32_t index = 0; index < entry_count; ++index) {
     const StructuredConfigEntry& entry = entries[index];
-    if (entry.key_hash != 0 && entry.key_hash != key_hash) continue;
-    if (!EqualsIgnoringAsciiCase(key, entry.key)) continue;
+    // A matching cached hash bypasses the key string comparison. A zero or
+    // stale hash falls back to the full string, as required by the shipped
+    // EjectButtonAction record whose cache still hashes its former name.
+    if (entry.key_hash == 0 || entry.key_hash != key_hash) {
+      if (!EqualsIgnoringAsciiCase(key, entry.key)) continue;
+    }
     if (!EqualsIgnoringAsciiCase(section, entry.section)) continue;
     match = &entry;
     break;

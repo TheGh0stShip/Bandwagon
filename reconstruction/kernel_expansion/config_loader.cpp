@@ -1,13 +1,14 @@
 #include "config_loader.hpp"
 
+#include "config_schema.hpp"
+
 namespace bandwagon::kernel_expansion {
 
 bool LoadPeerPressureConfig(ConfigurationState* state,
                             ConfigBootstrapServices* bootstrap,
                             FileServices* files,
                             StructuredConfigParser* parser,
-                            ConfigServices* config_services,
-                            const void* schema_entries) {
+                            ConfigServices* config_services) {
   if (!state || !bootstrap || !files || !parser || !config_services)
     return false;
 
@@ -31,11 +32,12 @@ bool LoadPeerPressureConfig(ConfigurationState* state,
     result = InitializeDefaultConfig(state->singleton, config_services);
   } else {
     result = LoadStructuredConfigFile(
-        files, parser, kPeerPressureConfigPath, state->singleton,
-        schema_entries, kConfigSchemaEntryCount);
+        files, parser, kPeerPressureConfigPath,
+        {state->singleton->Data(), state->singleton->Size()},
+        kPeerPressureConfigSchema.data(), kPeerPressureConfigSchema.size());
     if (!result) {
-      state->singleton->storage.fill(0);
-      state->singleton->storage[kDefaultEnabledFlagOffset] = 1;
+      *state->singleton = PeerPressureConfig{};
+      state->singleton->check_for_updates_on_startup = 1;
     }
   }
 

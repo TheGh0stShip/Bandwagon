@@ -3163,7 +3163,7 @@ RunLockedPeerPressureConfigFile:
     .long 0xebe1fff0 /* 0x030a4 */
     .long 0x4e800020 /* 0x030a8 */
     .long 0x00000000 /* 0x030ac */
-fn_801F30B0:
+ParseConfigFileBuffer:
     .long 0x7d8802a6 /* 0x030b0 */
     .long 0x9181fff8 /* 0x030b4 */
     .long 0x9421ff80 /* 0x030b8 */
@@ -3192,6 +3192,7 @@ fn_801F30B0:
     .long 0x8181fff8 /* 0x03114 */
     .long 0x7d8803a6 /* 0x03118 */
     .long 0x4e800020 /* 0x0311c */
+fn_801F3120:
     .long 0x540b0ffe /* 0x03120 */
     .long 0x280b0000 /* 0x03124 */
     .long 0x41820038 /* 0x03128 */
@@ -3224,6 +3225,7 @@ fn_801F30B0:
     .long 0x60630001 /* 0x03194 */
     .long 0x4e800020 /* 0x03198 */
     .long 0x00000000 /* 0x0319c */
+fn_801F31A0:
     .long 0x3d605056 /* 0x031a0 */
     .long 0x616b3033 /* 0x031a4 */
     .long 0x7f035840 /* 0x031a8 */
@@ -4473,7 +4475,7 @@ ApplyStructuredConfigValue:
     .long 0x4200ffb0 /* 0x044d4 */
     .long 0x4bfffe08 /* 0x044d8 */
     .long 0x00000000 /* 0x044dc */
-fn_801F44E0:
+ParseIniDocument:
     .long 0x7d8802a6 /* 0x044e0 */
     .long 0x4800a5f1 /* 0x044e4 */
     .long 0x9421fef0 /* 0x044e8 */

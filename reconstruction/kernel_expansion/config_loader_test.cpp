@@ -1,4 +1,5 @@
 #include "config_loader.hpp"
+#include "config_schema.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -13,6 +14,8 @@ namespace {
 using bandwagon::kernel_expansion::ConfigAllocationRequest;
 using bandwagon::kernel_expansion::FileHandle;
 using bandwagon::kernel_expansion::PeerPressureConfig;
+using bandwagon::kernel_expansion::StructuredConfigDestination;
+using bandwagon::kernel_expansion::StructuredConfigEntry;
 
 class FakeBootstrap final
     : public bandwagon::kernel_expansion::ConfigBootstrapServices {
@@ -125,26 +128,27 @@ class FakeParser final
   bool result = true;
   int calls = 0;
   PeerPressureConfig* expected_destination = nullptr;
-  const void* expected_schema = nullptr;
+  const StructuredConfigEntry* expected_schema = nullptr;
 
-  bool Parse(const std::uint8_t* text, void* destination,
-             const void* schema_entries,
+  bool Parse(std::uint8_t* text, StructuredConfigDestination destination,
+             const StructuredConfigEntry* schema_entries,
              std::uint32_t entry_count) override {
     using namespace bandwagon::kernel_expansion;
     assert(text && std::memcmp(text, "abc\0", 4) == 0);
-    assert(destination == expected_destination);
+    assert(destination.data == expected_destination->Data());
+    assert(destination.size == expected_destination->Size());
     assert(schema_entries == expected_schema);
     assert(entry_count == kConfigSchemaEntryCount);
     ++calls;
-    static_cast<PeerPressureConfig*>(destination)->storage[7] = 0x5a;
+    destination.data[7] = 0x5a;
     return result;
   }
 };
 
-void PrepareParser(FakeParser* parser, FakeBootstrap* bootstrap,
-                   const void* schema) {
+void PrepareParser(FakeParser* parser, FakeBootstrap* bootstrap) {
   parser->expected_destination = &bootstrap->config;
-  parser->expected_schema = schema;
+  parser->expected_schema =
+      bandwagon::kernel_expansion::kPeerPressureConfigSchema.data();
 }
 
 }  // namespace
@@ -152,22 +156,20 @@ void PrepareParser(FakeParser* parser, FakeBootstrap* bootstrap,
 int main() {
   using namespace bandwagon::kernel_expansion;
 
-  const std::uint32_t schema_marker = 0x12345678;
-
   ConfigurationState state{};
   FakeBootstrap bootstrap;
   FakeFiles files;
   FakeParser parser;
   FakeConfigServices config_services;
-  PrepareParser(&parser, &bootstrap, &schema_marker);
+  PrepareParser(&parser, &bootstrap);
   assert(LoadPeerPressureConfig(&state, &bootstrap, &files, &parser,
-                                &config_services, &schema_marker));
+                                &config_services));
   assert(state.singleton == &bootstrap.config);
   assert(bootstrap.initialize_calls == 1 && bootstrap.allocate_calls == 1);
   assert(bootstrap.fatal_calls == 0);
   assert(files.open_calls == 2 && files.close_calls == 2);
   assert(files.free_calls == 2 && files.live_allocations.empty());
-  assert(parser.calls == 1 && bootstrap.config.storage[7] == 0x5a);
+  assert(parser.calls == 1 && bootstrap.config.Data()[7] == 0x5a);
   assert(config_services.calls == 0);
 
   ConfigurationState missing_state{};
@@ -176,34 +178,34 @@ int main() {
   missing_files.open_status = -1;
   FakeParser missing_parser;
   FakeConfigServices missing_services;
-  PrepareParser(&missing_parser, &missing_bootstrap, &schema_marker);
+  PrepareParser(&missing_parser, &missing_bootstrap);
   assert(!LoadPeerPressureConfig(
       &missing_state, &missing_bootstrap, &missing_files, &missing_parser,
-      &missing_services, &schema_marker));
+      &missing_services));
   assert(missing_files.open_calls == 1 && missing_files.close_calls == 0);
   assert(missing_files.live_allocations.empty() && missing_parser.calls == 0);
   assert(missing_services.calls == 1);
-  assert(missing_bootstrap.config.DefaultEnabledFlag());
+  assert(missing_bootstrap.config.CheckForUpdatesOnStartup());
 
   ConfigurationState parse_failure_state{};
   FakeBootstrap parse_failure_bootstrap;
-  parse_failure_bootstrap.config.storage.fill(0xcc);
+  std::fill_n(parse_failure_bootstrap.config.Data(),
+              parse_failure_bootstrap.config.Size(), 0xcc);
   FakeFiles parse_failure_files;
   FakeParser parse_failure_parser;
   parse_failure_parser.result = false;
   FakeConfigServices parse_failure_services;
-  PrepareParser(&parse_failure_parser, &parse_failure_bootstrap,
-                &schema_marker);
+  PrepareParser(&parse_failure_parser, &parse_failure_bootstrap);
   assert(!LoadPeerPressureConfig(
       &parse_failure_state, &parse_failure_bootstrap, &parse_failure_files,
-      &parse_failure_parser, &parse_failure_services, &schema_marker));
+      &parse_failure_parser, &parse_failure_services));
   assert(parse_failure_files.open_calls == 2);
   assert(parse_failure_files.free_calls == 2 &&
          parse_failure_files.live_allocations.empty());
   assert(parse_failure_parser.calls == 1);
   assert(parse_failure_services.calls == 0);
-  assert(parse_failure_bootstrap.config.storage[7] == 0);
-  assert(parse_failure_bootstrap.config.DefaultEnabledFlag());
+  assert(parse_failure_bootstrap.config.Data()[7] == 0);
+  assert(parse_failure_bootstrap.config.CheckForUpdatesOnStartup());
 
   ConfigurationState allocation_failure_state{};
   FakeBootstrap allocation_failure_bootstrap;
@@ -215,7 +217,7 @@ int main() {
   assert(!LoadPeerPressureConfig(
       &allocation_failure_state, &allocation_failure_bootstrap,
       &allocation_failure_files, &allocation_failure_parser,
-      &allocation_failure_services, &schema_marker));
+      &allocation_failure_services));
   assert(allocation_failure_bootstrap.fatal_calls == 1);
   assert(allocation_failure_bootstrap.fatal_code == kConfigFatalErrorCode);
   assert(allocation_failure_files.open_calls == 0);
@@ -226,18 +228,18 @@ int main() {
   FakeFiles warning_files;
   FakeParser warning_parser;
   FakeConfigServices warning_services;
-  PrepareParser(&warning_parser, &warning_bootstrap, &schema_marker);
+  PrepareParser(&warning_parser, &warning_bootstrap);
   assert(LoadPeerPressureConfig(
       &warning_state, &warning_bootstrap, &warning_files, &warning_parser,
-      &warning_services, &schema_marker));
+      &warning_services));
   assert(warning_bootstrap.fatal_calls == 1);
   assert(warning_bootstrap.fatal_code == kConfigFatalErrorCode);
   assert(warning_parser.calls == 1);
 
   assert(!LoadPeerPressureConfig(nullptr, &bootstrap, &files, &parser,
-                                 &config_services, &schema_marker));
+                                 &config_services));
   assert(!LoadPeerPressureConfig(&state, nullptr, &files, &parser,
-                                 &config_services, &schema_marker));
+                                 &config_services));
 
   std::cout << "Kernel Expansion config loader tests passed\n";
 }

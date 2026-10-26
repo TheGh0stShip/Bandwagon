@@ -13,20 +13,21 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 363 entry points from standard PPC prologues, direct `bl` targets, four
-  independently bounded indirect callbacks, and tail-only import thunks.
+- 365 entry points from standard PPC prologues, direct `bl` targets, six
+  independently bounded local entries, and tail-only import thunks.
 - 1,085 direct call edges.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 61 high-confidence behavioral labels are emitted directly into the exact
+- 63 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
   the original binary.
 
 The machine-readable evidence is in `KernelExpansion-functions.json`,
-`KernelExpansion-callgraph.json`, and `KernelExpansion-string-xrefs.json`.
+`KernelExpansion-callgraph.json`, `KernelExpansion-string-xrefs.json`, and the
+byte-verified six-record `KernelExpansion-config-schema.json`.
 `KernelExpansion-strings.txt` is the deterministic address inventory for every
 four-byte-or-longer printable run in the data region; it is intentionally kept
 separate from confirmed xrefs so random printable table bytes are not promoted
@@ -63,10 +64,11 @@ lift. The first exact-byte-bound routines are:
   manager calls. Tests bind the `PAYLOAD:` link and target ordering and both
   zero/nonzero status conversions.
 - `GetPeerPressureConfig` and `InitializeDefaultConfig` (104 bytes together),
-  represented with an explicit 0x170-byte config type. Only the recovered
-  byte-0x129 default flag is named; unclassified fields remain indexed storage.
-  Tests preserve the initializer's unusual always-false return after it zeros
-  the singleton, enables that flag, and enters the locked config path.
+  represented with the fully recovered 0x170-byte `PeerPressureConfig` layout:
+  boot-animation type and theme, dashboard path, startup-update flag, eject
+  action, and OtherOS name. Tests preserve the initializer's unusual
+  always-false return after it zeros the singleton, enables the startup-update
+  flag, and enters the locked config path.
 - `LoadPeerPressureConfig` (`0x801f0648`, 256 bytes), represented as the full
   configuration bootstrap: initialize the global lock, allocate the 0x170-byte
   singleton with the recovered virtual-memory parameters, probe the exact
@@ -83,6 +85,14 @@ lift. The first exact-byte-bound routines are:
 - `LoadStructuredConfigFile` (`0x801f1700`, 144 bytes), represented as the
   generic schema-parser wrapper layered on that loader. It always releases a
   successfully loaded buffer after the parser returns.
+- `ParseConfigFileBuffer` and `ParseIniDocument` (`0x801f30b0` and
+  `0x801f44e0`, 400 bytes together), represented as the complete read-side INI
+  pipeline. The dispatcher destructively tokenizes the loaded buffer, retains
+  a bounded 127-byte section name, emits section-entry and all-null
+  section-finish callbacks in target order, ignores comments and blank lines,
+  and rejects malformed nonempty input. The adapter binds those events to the
+  destination, six-record schema, and typed value dispatcher, and exposes the
+  target's parse-failure diagnostic through a typed hook.
 - `ProcessPeerPressureConfigFile` and
   `RunLockedPeerPressureConfigFile` (`0x801f3000` and `0x801f3050`, 176 bytes
   together), represented as the fixed-path/config/schema adapter and its
@@ -171,15 +181,19 @@ lift. The first exact-byte-bound routines are:
   lack of whitespace and plus-sign handling, first-nondigit stop, and exact
   low-32-bit wraparound rather than substituting host `atoi` behavior.
 - `ComputeConfigKeyHash` (`0x801f7878`, 104 bytes), represented as the
-  ASCII-case-insensitive reflected CRC-32 used by schema lookup. Tests bind the
-  exact hashes embedded beside all six PeerPressure `Config.ini` keys, as well
-  as case folding and empty-input behavior.
+  ASCII-case-insensitive reflected CRC-32 used by schema lookup. Tests bind five
+  current-key hashes plus the shipped stale `EjectButtonBehavior` hash retained
+  beside the renamed `EjectButtonAction` key, as well as case folding and
+  empty-input behavior.
 - `ApplyStructuredConfigValue` (`0x801f41e8`, 760 bytes), represented as the
-  complete typed schema dispatcher over recovered 20-byte records. It matches
-  the optional key CRC plus case-insensitive section/key strings, then applies
-  bounded optionally quoted strings, wrapping signed decimals, first-character
-  Booleans, or `0x` colors. Color tests cover all four normalized float channels
-  and the option bits that retain selected channels in raw 0-255 form.
+  complete typed schema dispatcher over recovered 20-byte records. A cached-key
+  hash match bypasses the key string comparison; a zero, mismatched, or stale
+  cache falls back to a case-insensitive key comparison before matching the
+  section. This exact behavior keeps the renamed `EjectButtonAction` record
+  usable. The dispatcher then applies bounded optionally quoted strings,
+  wrapping signed decimals, first-character Booleans, or `0x` colors. Color
+  tests cover all four normalized float channels and the option bits that retain
+  selected channels in raw 0-255 form.
 - `IsVersionAtLeastComponentWise` (`0x801f87f8`, 80 bytes), the exact four-byte
   bound predicate used by `ParseDllConfigEntry`. It treats `0xff` on either side
   as a wildcard and intentionally preserves the binary's component-wise rather
@@ -216,10 +230,10 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-50 independently bounded routines totaling 8,728 original instruction bytes.
+52 independently bounded routines totaling 9,128 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 363 discovered entries are maintainable
+evidence oracle, not a claim that all 365 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former
@@ -227,6 +241,7 @@ exFAT and returns multiple classification values; its corrected
 `InitializeDefaultConfig`: the routine is reached on a config-read failure and
 establishes the default singleton before entering the locked config path. Its
 caller is now also lifted, including allocation, probing, six-entry schema
-dispatch, and both fallback paths. The common config adapter, lock wrapper,
-mode-dependent INI rewrite transaction, key hash, typed value dispatcher,
-tokenizer, serializer, and buffered output helpers are all lifted.
+dispatch, and both fallback paths. The concrete table and destination layout,
+common read and write adapters, parser, lock wrapper, mode-dependent INI rewrite
+transaction, key hash, typed value dispatcher, tokenizer, serializer, and
+buffered output helpers are all lifted.

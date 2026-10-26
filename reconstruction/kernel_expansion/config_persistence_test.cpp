@@ -1,4 +1,5 @@
 #include "config_persistence.hpp"
+#include "config_schema.hpp"
 
 #include <cassert>
 #include <cstdint>
@@ -54,42 +55,37 @@ int main() {
   using namespace bandwagon::kernel_expansion;
 
   PeerPressureConfig config{};
-  const StructuredConfigEntry schema_marker{};
 
   FakeWorkflow success;
   success.result = 0x80;
   success.expected_mode = 1;
   success.expected_config = &config;
-  success.expected_schema = &schema_marker;
-  assert(ProcessPeerPressureConfigFile(1, &config, &schema_marker, &success));
+  success.expected_schema = kPeerPressureConfigSchema.data();
+  assert(ProcessPeerPressureConfigFile(1, &config, &success));
   assert(success.calls == 1);
 
   FakeWorkflow failure;
   failure.result = 0;
   failure.expected_config = &config;
-  failure.expected_schema = &schema_marker;
-  assert(!ProcessPeerPressureConfigFile(
-      0, &config, &schema_marker, &failure));
+  failure.expected_schema = kPeerPressureConfigSchema.data();
+  assert(!ProcessPeerPressureConfigFile(0, &config, &failure));
   assert(failure.calls == 1);
 
   FakeLocks locks;
   FakeWorkflow locked;
   locked.result = 1;
   locked.expected_config = &config;
-  locked.expected_schema = &schema_marker;
+  locked.expected_schema = kPeerPressureConfigSchema.data();
   locked.events = &locks.events;
-  assert(!RunLockedPeerPressureConfigFile(
-      0, &config, &schema_marker, &locked, &locks));
+  assert(!RunLockedPeerPressureConfigFile(0, &config, &locked, &locks));
   assert((locks.events == std::vector<std::string>{
       "enter", "acquire", "process", "release", "leave"}));
   assert(locked.calls == 1);
 
-  assert(!ProcessPeerPressureConfigFile(
-      0, nullptr, &schema_marker, &success));
-  assert(!ProcessPeerPressureConfigFile(
-      0, &config, &schema_marker, nullptr));
+  assert(!ProcessPeerPressureConfigFile(0, nullptr, &success));
+  assert(!ProcessPeerPressureConfigFile(0, &config, nullptr));
   assert(!RunLockedPeerPressureConfigFile(
-      0, &config, &schema_marker, &success, nullptr));
+      0, &config, &success, nullptr));
 
   std::cout << "Kernel Expansion config persistence tests passed\n";
 }

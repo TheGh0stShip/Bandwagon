@@ -25,7 +25,6 @@ class ConfigFileWorkflow {
 // generic engine's result participates in the returned Boolean value.
 bool ProcessPeerPressureConfigFile(std::uint32_t mode,
                                    PeerPressureConfig* config,
-                                   const StructuredConfigEntry* schema_entries,
                                    ConfigFileWorkflow* workflow);
 
 class ConfigLockServices {
@@ -42,7 +41,6 @@ class ConfigLockServices {
 // file workflow result and returns zero after releasing the lock.
 bool RunLockedPeerPressureConfigFile(std::uint32_t mode,
                                      PeerPressureConfig* config,
-                                     const StructuredConfigEntry* schema_entries,
                                      ConfigFileWorkflow* workflow,
                                      ConfigLockServices* locks);
 

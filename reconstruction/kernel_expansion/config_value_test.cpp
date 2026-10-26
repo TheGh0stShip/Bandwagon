@@ -113,5 +113,19 @@ int main() {
                              "System", nullptr, "9", &diagnostics);
   assert(storage == unchanged && diagnostics.calls == 2);
 
+  const StructuredConfigEntry stale_hash{
+      "System", ComputeConfigKeyHash("FormerName"), "RenamedValue", 0,
+      StructuredConfigValueType::kInteger, 48};
+  ApplyStructuredConfigValue(destination, &stale_hash, 1, "System",
+                             "RenamedValue", "77", &diagnostics);
+  assert(ReadInteger(storage.data() + 48) == 77);
+
+  const StructuredConfigEntry hash_match{
+      "System", ComputeConfigKeyHash("HashOnlyName"), "DifferentName", 0,
+      StructuredConfigValueType::kInteger, 52};
+  ApplyStructuredConfigValue(destination, &hash_match, 1, "System",
+                             "HashOnlyName", "88", &diagnostics);
+  assert(ReadInteger(storage.data() + 52) == 88);
+
   std::cout << "Kernel Expansion config value tests passed\n";
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "config_value.hpp"
+
 #include <cstddef>
 #include <cstdint>
 #include <string_view>
@@ -60,8 +62,9 @@ bool ReadFileToAllocatedBuffer(FileServices* services, std::string_view path,
 class StructuredConfigParser {
  public:
   virtual ~StructuredConfigParser() = default;
-  virtual bool Parse(const std::uint8_t* nul_terminated_text,
-                     void* destination, const void* schema_entries,
+  virtual bool Parse(std::uint8_t* nul_terminated_text,
+                     StructuredConfigDestination destination,
+                     const StructuredConfigEntry* schema_entries,
                      std::uint32_t entry_count) = 0;
 };
 
@@ -70,8 +73,9 @@ class StructuredConfigParser {
 // post-load path.
 bool LoadStructuredConfigFile(FileServices* files,
                               StructuredConfigParser* parser,
-                              std::string_view path, void* destination,
-                              const void* schema_entries,
+                              std::string_view path,
+                              StructuredConfigDestination destination,
+                              const StructuredConfigEntry* schema_entries,
                               std::uint32_t entry_count);
 
 // Exact reflected CRC-32 loop recovered from 0x801fa540. Unlike a conventional

@@ -8,21 +8,45 @@
 namespace bandwagon::kernel_expansion {
 
 inline constexpr std::size_t kPeerPressureConfigSize = 0x170;
-inline constexpr std::size_t kDefaultEnabledFlagOffset = 0x129;
+inline constexpr std::size_t kBootAnimationThemeNameCapacity = 0x25;
+inline constexpr std::size_t kDashboardPathCapacity = 0x100;
+inline constexpr std::size_t kOtherOsNameCapacity = 0x40;
+inline constexpr std::size_t kCheckForUpdatesOnStartupOffset = 0x129;
 inline constexpr std::string_view kPeerPressureConfigPath =
     "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\Config.ini";
 inline constexpr std::uint32_t kConfigSchemaEntryCount = 6;
 
-// Only fields established by direct accesses are named. The remaining bytes
-// stay explicit, indexed configuration storage until their schema entries are
-// individually recovered.
 struct PeerPressureConfig {
-  std::array<std::uint8_t, kPeerPressureConfigSize> storage{};
+  std::uint32_t boot_animation_type = 0;                         // +0x000
+  std::array<char, kBootAnimationThemeNameCapacity>
+      boot_animation_theme_name{};                              // +0x004
+  std::array<char, kDashboardPathCapacity> dashboard_path{};    // +0x029
+  std::uint8_t check_for_updates_on_startup = 0;                 // +0x129
+  std::array<std::uint8_t, 2> reserved_12a{};                    // +0x12a
+  std::int32_t eject_button_action = 0;                          // +0x12c
+  std::array<char, kOtherOsNameCapacity> other_os_name{};        // +0x130
 
-  bool DefaultEnabledFlag() const {
-    return storage[kDefaultEnabledFlagOffset] != 0;
+  std::uint8_t* Data() {
+    return reinterpret_cast<std::uint8_t*>(this);
+  }
+  const std::uint8_t* Data() const {
+    return reinterpret_cast<const std::uint8_t*>(this);
+  }
+  static constexpr std::size_t Size() { return kPeerPressureConfigSize; }
+
+  bool CheckForUpdatesOnStartup() const {
+    return check_for_updates_on_startup != 0;
   }
 };
+
+static_assert(sizeof(PeerPressureConfig) == kPeerPressureConfigSize);
+static_assert(offsetof(PeerPressureConfig, boot_animation_type) == 0x000);
+static_assert(offsetof(PeerPressureConfig, boot_animation_theme_name) == 0x004);
+static_assert(offsetof(PeerPressureConfig, dashboard_path) == 0x029);
+static_assert(offsetof(PeerPressureConfig, check_for_updates_on_startup) ==
+              kCheckForUpdatesOnStartupOffset);
+static_assert(offsetof(PeerPressureConfig, eject_button_action) == 0x12c);
+static_assert(offsetof(PeerPressureConfig, other_os_name) == 0x130);
 
 struct ConfigurationState {
   PeerPressureConfig* singleton = nullptr;

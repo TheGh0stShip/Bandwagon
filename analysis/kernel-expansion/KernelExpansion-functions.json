@@ -4,7 +4,7 @@
   "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
   "image_base": "0x801f0000",
   "text_end": "0xf4b0",
-  "function_count": 363,
+  "function_count": 365,
   "kernel_thunk_count": 141,
   "resolved_kernel_thunk_count": 127,
   "functions": [
@@ -421,10 +421,30 @@
     {
       "address": "0x801f30b0",
       "section_offset": "0x30b0",
-      "size_to_next_symbol": 360,
-      "name": "fn_801F30B0",
+      "size_to_next_symbol": 112,
+      "name": "ParseConfigFileBuffer",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f3120",
+      "section_offset": "0x3120",
+      "size_to_next_symbol": 128,
+      "name": "fn_801F3120",
+      "evidence": [
+        "independently bounded local boundary and decoded behavior"
+      ],
+      "kind": "local_code"
+    },
+    {
+      "address": "0x801f31a0",
+      "section_offset": "0x31a0",
+      "size_to_next_symbol": 120,
+      "name": "fn_801F31A0",
+      "evidence": [
+        "independently bounded local boundary and decoded behavior"
       ],
       "kind": "local_code"
     },
@@ -602,9 +622,9 @@
       "address": "0x801f44e0",
       "section_offset": "0x44e0",
       "size_to_next_symbol": 288,
-      "name": "fn_801F44E0",
+      "name": "ParseIniDocument",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -884,7 +904,7 @@
       "size_to_next_symbol": 8,
       "name": "AcceptIniSection",
       "evidence": [
-        "indirect leaf callback boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior"
       ],
       "kind": "local_code"
     },
@@ -1004,7 +1024,7 @@
       "size_to_next_symbol": 40,
       "name": "InitializeCallbackOutputs",
       "evidence": [
-        "indirect leaf callback boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior"
       ],
       "kind": "local_code"
     },
@@ -1014,7 +1034,7 @@
       "size_to_next_symbol": 56,
       "name": "MapCallbackValue",
       "evidence": [
-        "indirect leaf callback boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior"
       ],
       "kind": "local_code"
     },
@@ -1024,7 +1044,7 @@
       "size_to_next_symbol": 104,
       "name": "ClassifyStfsPackageMagic",
       "evidence": [
-        "indirect leaf callback boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior"
       ],
       "kind": "local_code"
     },

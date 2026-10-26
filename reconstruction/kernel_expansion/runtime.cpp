@@ -71,8 +71,9 @@ bool ReadFileToAllocatedBuffer(FileServices* services, std::string_view path,
 
 bool LoadStructuredConfigFile(FileServices* files,
                               StructuredConfigParser* parser,
-                              std::string_view path, void* destination,
-                              const void* schema_entries,
+                              std::string_view path,
+                              StructuredConfigDestination destination,
+                              const StructuredConfigEntry* schema_entries,
                               std::uint32_t entry_count) {
   if (!files || !parser) return false;
   std::uint8_t* contents = nullptr;
@@ -80,8 +81,7 @@ bool LoadStructuredConfigFile(FileServices* files,
   bool parsed = false;
   if (ReadFileToAllocatedBuffer(
           files, path, &contents, &allocation_size)) {
-    parsed = parser->Parse(
-        contents, destination, schema_entries, entry_count);
+    parsed = parser->Parse(contents, destination, schema_entries, entry_count);
   }
   if (contents) files->Free(contents);
   return parsed;

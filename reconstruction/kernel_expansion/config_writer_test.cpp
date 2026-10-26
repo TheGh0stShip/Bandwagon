@@ -321,7 +321,7 @@ void TestUnknownTypeAndWorkflowBridge() {
   Fixture fixture;
   PeerPressureConfig config{};
   std::copy(fixture.values.begin(), fixture.values.end(),
-            config.storage.begin());
+            config.Data());
   FakeWriterServices workflow_files;
   StructuredConfigFileWorkflow workflow(&workflow_files);
   assert(workflow.Process("config.ini", 0, &config, fixture.entries.data(),

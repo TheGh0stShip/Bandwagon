@@ -9,8 +9,8 @@ PeerPressureConfig* GetPeerPressureConfig(ConfigurationState* state) {
 bool InitializeDefaultConfig(PeerPressureConfig* config,
                              ConfigServices* services) {
   if (!config || !services) return false;
-  config->storage.fill(0);
-  config->storage[kDefaultEnabledFlagOffset] = 1;
+  *config = PeerPressureConfig{};
+  config->check_for_updates_on_startup = 1;
   services->RunLockedConfigPath(0);
   return false;
 }

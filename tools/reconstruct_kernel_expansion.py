@@ -19,9 +19,11 @@ THUNK_TABLE_START = 0xEBD8
 
 # Leaf callbacks reached indirectly are not discoverable from direct BL targets
 # and do not use the standard non-leaf prologue.  Their boundaries are proved
-# by the return instructions and the surrounding independently discovered
-# entry points.
+# by return instructions, local control flow, and the surrounding independently
+# discovered entry points.
 EXPLICIT_STARTS = {
+    0x3120,
+    0x31A0,
     0x73C0,
     0x8210,
     0x8238,
@@ -51,12 +53,14 @@ SEMANTIC_NAMES = {
     0x2DB8: "ReleaseBootstrapMapping",
     0x3000: "ProcessPeerPressureConfigFile",
     0x3050: "RunLockedPeerPressureConfigFile",
+    0x30B0: "ParseConfigFileBuffer",
     0x3378: "ResolveSideLoadConfiguration",
     0x3D90: "RegisterDriveDevice",
     0x3E08: "UnregisterDriveDevice",
     0x3E68: "BindDrivePath",
     0x3F00: "WriteStructuredConfigFile",
     0x41E8: "ApplyStructuredConfigValue",
+    0x44E0: "ParseIniDocument",
     0x4938: "ParseDllConfigEntry",
     0x4D08: "PromoteLocalSigninState",
     0x4ED8: "PromoteLocalSigninInfo",
@@ -165,7 +169,7 @@ def main() -> None:
     for index, offset in enumerate(ordered):
         end = ordered[index + 1] if index + 1 < len(ordered) else TEXT_END
         if offset in EXPLICIT_STARTS:
-            evidence = ["indirect leaf callback boundary and decoded behavior"]
+            evidence = ["independently bounded local boundary and decoded behavior"]
         elif offset in table_thunks:
             evidence = ["absolute thunk pattern in trailing import table"]
         elif offset in SEMANTIC_NAMES:
