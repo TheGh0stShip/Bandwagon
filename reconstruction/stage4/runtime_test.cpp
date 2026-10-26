@@ -20,11 +20,11 @@ void Append32(std::vector<std::uint8_t>* bytes, std::uint32_t value) {
 
 class MockPlatform final : public bandwagon::stage4::Platform {
  public:
-  void SendSmcMessage(
-      const std::array<std::uint8_t, 16>& value) override {
-    smc = value;
-    sent_smc = true;
+  void WriteSmcMmioWord(std::uint64_t address,
+                        std::uint32_t value) override {
+    smc_writes.emplace_back(address, value);
   }
+  void SmcIoBarrier() override { ++smc_barriers; }
   void RelocateCacheLines(const std::uint8_t* source, std::uint64_t destination,
                           std::uint32_t count) override {
     relocate_source = source;
@@ -38,8 +38,13 @@ class MockPlatform final : public bandwagon::stage4::Platform {
     words[address] = value;
     word_writes.emplace_back(address, value);
   }
-  void WriteFlagHalfword(std::uint16_t offset, std::uint16_t value) override {
-    flags.emplace_back(offset, value);
+  std::uint64_t GetFlagTableBase() override {
+    ++flag_table_lookups;
+    return flag_table_base;
+  }
+  void WriteMappedHalfword(std::uint64_t address,
+                           std::uint16_t value) override {
+    flags.emplace_back(address, value);
   }
   void FlushAddress(std::uint64_t address) override {
     flushes.push_back(address);
@@ -50,14 +55,16 @@ class MockPlatform final : public bandwagon::stage4::Platform {
                              std::vector<std::uint8_t>(data, data + size));
   }
 
-  bool sent_smc = false;
-  std::array<std::uint8_t, 16> smc{};
+  std::vector<std::pair<std::uint64_t, std::uint32_t>> smc_writes;
+  std::uint32_t smc_barriers = 0;
   const std::uint8_t* relocate_source = nullptr;
   std::uint64_t relocate_destination = 0;
   std::uint32_t relocate_count = 0;
   std::map<std::uint64_t, std::uint32_t> words;
   std::vector<std::pair<std::uint64_t, std::uint32_t>> word_writes;
-  std::vector<std::pair<std::uint16_t, std::uint16_t>> flags;
+  std::uint64_t flag_table_base = 0x80000000u;
+  std::uint32_t flag_table_lookups = 0;
+  std::vector<std::pair<std::uint64_t, std::uint16_t>> flags;
   std::vector<std::uint64_t> flushes;
   std::vector<std::pair<std::uint64_t, std::vector<std::uint8_t>>> byte_writes;
 };
@@ -84,10 +91,19 @@ int main() {
   mode0.input_r0 = 0x1122334455667788ULL;
   const auto mode0_result = RunStage4(mode0, &mode0_platform);
   assert(mode0_result.succeeded && mode0_result.return_value == 0x41414141u);
-  assert(mode0_platform.sent_smc);
-  assert(mode0_platform.smc[0] == 0x99 && mode0_platform.smc[1] == 0xff &&
-         mode0_platform.smc[2] == 0xff && mode0_platform.smc[3] == 0x44);
-  assert(mode0_platform.smc[8] == 0x11 && mode0_platform.smc[15] == 0x88);
+  assert(mode0_platform.smc_writes.size() == 6);
+  assert(mode0_platform.smc_barriers == 6);
+  using SmcWrite = std::pair<std::uint64_t, std::uint32_t>;
+  assert(mode0_platform.smc_writes[0] ==
+         SmcWrite(0x80000200ea001084ULL, 0x04000000u));
+  assert(mode0_platform.smc_writes[1] ==
+         SmcWrite(0x80000200ea001080ULL, 0x99ffff44u));
+  assert(mode0_platform.smc_writes[3] ==
+         SmcWrite(0x80000200ea001080ULL, 0x11223344u));
+  assert(mode0_platform.smc_writes[4] ==
+         SmcWrite(0x80000200ea001080ULL, 0x55667788u));
+  assert(mode0_platform.smc_writes[5] ==
+         SmcWrite(0x80000200ea001084ULL, 0u));
   assert(mode0_platform.relocate_source == clean.data());
   assert(mode0_platform.relocate_destination == 0x8000010600030000ULL);
   assert(mode0_platform.relocate_count == 0x200);
@@ -123,6 +139,10 @@ int main() {
   assert(mode1_platform.word_writes[0] == initial_write);
   assert(mode1_platform.word_writes[1] == table_write);
   assert(mode1_platform.flags.size() == 1 &&
+         mode1_platform.flag_table_lookups == 1 &&
+         mode1_platform.flags[0].first ==
+             mode1_platform.flag_table_base +
+                 2u * ((0x12345678u >> 6) & 0x3fffu) &&
          mode1_platform.flags[0].second == 0x0800);
   assert(mode1_platform.flushes == std::vector<std::uint64_t>{0x80050000});
 

@@ -1,0 +1,35 @@
+{
+  "schema": "bandwagon-stage4-source-coverage-v1",
+  "artifact": {
+    "path": "PeerPressure/System/PeerPressureExploit-4thStage.bin",
+    "size": 67456,
+    "sha256": "f482f2e13b3e4d04b0a322f4553c628f7afe556c070da25710b8581d3c37df22",
+    "load_address": "caller_supplied"
+  },
+  "clean_hv_provenance": {
+    "artifact_range": "0x0780-0x10780",
+    "owner": "Microsoft Xbox 360 hypervisor data, redistributed by public BadUpdate",
+    "source_path": "third_party/Xbox360BadUpdate/Stage4/Stage4_CleanHvData_Retail_17559.bin",
+    "size": 65536,
+    "sha256": "3764ec2a48529924b1422b4e19eaada348cb5a2f9fde310a94b75d332c601b47",
+    "upstream_commit": "94f9215a00382c218288ea230d5f81d73b7f2f9b"
+  },
+  "coverage": [
+    {"start": "0x0000", "end": "0x00ec", "kind": "peer_cpp", "symbols": ["RunStage4"], "sources": ["reconstruction/stage4/runtime.cpp", "reconstruction/stage4/entry_flow.cpp"]},
+    {"start": "0x00ec", "end": "0x0174", "kind": "peer_cpp", "symbols": ["ParsePatchStream", "WriteBytes"], "sources": ["reconstruction/stage4/patch_stream.cpp", "reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
+    {"start": "0x0174", "end": "0x0210", "kind": "peer_cpp", "symbols": ["ParseAddressValueTable", "GetFlagTableBase"], "sources": ["reconstruction/stage4/maintenance_helpers.cpp", "reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
+    {"start": "0x0210", "end": "0x0294", "kind": "peer_cpp", "symbols": ["PlanMappingRange"], "sources": ["reconstruction/stage4/maintenance_helpers.cpp", "reconstruction/stage4/runtime.cpp"]},
+    {"start": "0x0294", "end": "0x0300", "kind": "peer_cpp", "symbols": ["SendSmcMessage", "WriteSmcMmioWord", "SmcIoBarrier"], "sources": ["reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
+    {"start": "0x0300", "end": "0x0380", "kind": "peer_constants_and_reserved", "symbols": ["kCleanHvDestination"], "sources": ["reconstruction/stage4/runtime.hpp", "analysis/reconstruction/PeerPressureExploit-4thStage.reconstructed.S"]},
+    {"start": "0x0380", "end": "0x04e0", "kind": "peer_generated_cpp_data", "symbols": ["kEmbeddedPatchStream"], "sources": ["reconstruction/stage4/embedded_data.hpp"]},
+    {"start": "0x04e0", "end": "0x0508", "kind": "peer_target_code_and_cpp", "symbols": ["SelectPostOutputTarget"], "sources": ["reconstruction/stage4/resident_runtime.hpp"]},
+    {"start": "0x0508", "end": "0x0524", "kind": "peer_target_code_and_cpp", "symbols": ["CopiedDispatcherTarget"], "sources": ["reconstruction/stage4/resident_runtime.hpp"]},
+    {"start": "0x0524", "end": "0x052c", "kind": "peer_generated_cpp_data", "symbols": ["kEmbeddedPatchStream"], "sources": ["reconstruction/stage4/embedded_data.hpp"]},
+    {"start": "0x052c", "end": "0x05bc", "kind": "peer_target_code_and_cpp", "symbols": ["RunRbtrDispatcher"], "sources": ["reconstruction/stage4/resident_runtime.cpp", "reconstruction/stage4/rbtr_dispatcher.cpp"]},
+    {"start": "0x05bc", "end": "0x062c", "kind": "peer_target_code_and_cpp", "symbols": ["RunCopiedContinuation"], "sources": ["reconstruction/stage4/resident_runtime.cpp", "reconstruction/stage4/copied_continuation.cpp"]},
+    {"start": "0x062c", "end": "0x073c", "kind": "peer_structured_data", "symbols": ["ParseXeCryptRsaPublic2048", "kEmbeddedPatchStream"], "sources": ["reconstruction/stage4/rsa_public_key.cpp", "reconstruction/stage4/embedded_data.hpp"]},
+    {"start": "0x073c", "end": "0x0750", "kind": "peer_generated_cpp_data", "symbols": ["kEmbeddedPatchStream"], "sources": ["reconstruction/stage4/embedded_data.hpp"]},
+    {"start": "0x0750", "end": "0x0780", "kind": "alignment", "symbols": [], "sources": ["analysis/reconstruction/PeerPressureExploit-4thStage.reconstructed.S"]},
+    {"start": "0x0780", "end": "0x10780", "kind": "third_party_firmware_data", "symbols": [], "sources": ["third_party/Xbox360BadUpdate/Stage4/Stage4_CleanHvData_Retail_17559.bin"]}
+  ]
+}

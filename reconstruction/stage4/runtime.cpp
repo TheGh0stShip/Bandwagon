@@ -24,6 +24,21 @@ void StoreBigEndian64(std::uint64_t value, std::uint8_t* output) {
 
 RuntimeResult Success() { return {true, kStage4ReturnMarker}; }
 
+void SendSmcMessage(const std::array<std::uint8_t, 16>& message,
+                    Platform* platform) {
+  constexpr std::uint64_t kSmcCommand = 0x80000200ea001080ULL;
+  constexpr std::uint64_t kSmcStatus = 0x80000200ea001084ULL;
+  platform->WriteSmcMmioWord(kSmcStatus, 0x04000000u);
+  platform->SmcIoBarrier();
+  for (std::size_t offset = 0; offset < message.size(); offset += 4) {
+    platform->WriteSmcMmioWord(kSmcCommand,
+                               LoadBigEndian32(message.data() + offset));
+    platform->SmcIoBarrier();
+  }
+  platform->WriteSmcMmioWord(kSmcStatus, 0);
+  platform->SmcIoBarrier();
+}
+
 }  // namespace
 
 RuntimeResult RunStage4(const RuntimeInputs& inputs, Platform* platform) {
@@ -50,9 +65,9 @@ RuntimeResult RunStage4(const RuntimeInputs& inputs, Platform* platform) {
     message[0] = 0x99;
     message[1] = 0xff;
     message[2] = 0xff;
-    platform->SendSmcMessage(message);
-    platform->RelocateCacheLines(inputs.clean_hv, 0x8000010600030000ULL,
-                                 0x200);
+    SendSmcMessage(message, platform);
+    platform->RelocateCacheLines(inputs.clean_hv, kCleanHvDestination,
+                                 kCleanHvCacheLineCount);
     for (const auto& patch : patches) {
       platform->WriteBytes(patch.effective_target, patch.payload.data(),
                            patch.payload.size());
@@ -74,10 +89,11 @@ RuntimeResult RunStage4(const RuntimeInputs& inputs, Platform* platform) {
         0x10000ULL;
     const std::uint32_t initial = platform->ReadMappedWord(initial_address);
     platform->WriteMappedWord(initial_address, initial & ~0x20u);
+    const std::uint64_t flag_table = platform->GetFlagTableBase();
     for (const auto& action : values.actions) {
       platform->WriteMappedWord(action.mapped_address, action.mapped_value);
-      platform->WriteFlagHalfword(action.flag_table_byte_offset,
-                                  action.flag_value);
+      platform->WriteMappedHalfword(flag_table + action.flag_table_byte_offset,
+                                    action.flag_value);
       platform->FlushAddress(action.flush_address);
     }
     return Success();

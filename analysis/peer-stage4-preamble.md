@@ -270,9 +270,12 @@ common `0x41414141` return marker. It performs none of the privileged calls.
 
 `reconstruction/stage4/runtime.cpp` is the source-level implementation that
 composes the recovered entry, patch parser, pair-table helper, and range helper.
-Privileged reads, writes, cache relocation, flushes, and SMC I/O are isolated
+Privileged address mapping, cache relocation, and flush calls are isolated
 behind a `Platform` interface, allowing the full three-mode flow to execute in
 host tests against a mock while remaining usable by a target-specific backend.
+The recovered C++ itself performs the SMC busy/write/ready MMIO sequence and
+barriers, and obtains the flag-table base once before applying pair records;
+those algorithms are no longer hidden in platform callbacks.
 The runtime defaults to the typed, generated C++ patch data in
 `reconstruction/stage4/embedded_data.hpp`; regenerate and verify it with
 `tools/generate_stage4_embedded_data.py`.
@@ -307,3 +310,14 @@ unsupported values, return `0x41414141` at `B+0x0cc`–`B+0x0d0`.
 Names for `0x057c`, `0x05c0`, `0x2510`, the patched HV targets, and the
 structured data at file `0x62c` remain unresolved. No claim is made that Peer
 Pressure source was published.
+
+## Source-level completion and ownership boundary
+
+`analysis/stage4/source-coverage.json` assigns every byte to recovered Peer
+source, typed Peer data, alignment, or the third-party clean-HV input.
+`tools/verify_stage4_source_coverage.py` checks that partition, every named
+source owner, the full artifact hash, the pinned BadUpdate commit, and exact
+equality of file `0x780-0x10780` with the public clean-HV file. All 1,872
+non-alignment Peer bytes have readable C++ or typed-data coverage. Stage4 is
+therefore source-level complete without falsely presenting Microsoft
+hypervisor data as Peer-authored C++.

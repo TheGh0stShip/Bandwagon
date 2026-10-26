@@ -8,6 +8,7 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/generate_stage4_embedded_data.py" --check
+python3 "$root/tools/verify_stage4_source_coverage.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/stage4/rbtr_dispatcher.cpp" \

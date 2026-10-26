@@ -18,7 +18,7 @@ not the final implementation.
 
 | Component | Binary-exact evidence | Source-level recovery |
 |---|---|---|
-| Stage4 | Complete whole-file assembly | Near-complete: executable entry/resident code through platform adapters; typed/generated Peer patch and RSA data; public clean-HV input remains external |
+| Stage4 | Complete whole-file assembly | Complete: all 1,872 Peer-authored bytes have C++/typed-source coverage; the verified 64 KiB tail is third-party hypervisor data |
 | Stage3 | Complete whole-file assembly | Complete: Peer entry/probe source plus function-by-function verified composition with pinned public BadUpdate C++ |
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Partial: shared `XBPP` handshake and staged transfer |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |

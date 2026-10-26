@@ -7,20 +7,25 @@
 
 namespace bandwagon::stage4 {
 
+constexpr std::uint64_t kCleanHvDestination = 0x8000010600030000ULL;
+constexpr std::uint32_t kCleanHvCacheLineCount = 0x200;
+
 class Platform {
  public:
   virtual ~Platform() = default;
 
-  virtual void SendSmcMessage(
-      const std::array<std::uint8_t, 16>& message) = 0;
+  virtual void WriteSmcMmioWord(std::uint64_t address,
+                                std::uint32_t value) = 0;
+  virtual void SmcIoBarrier() = 0;
   virtual void RelocateCacheLines(const std::uint8_t* source,
                                   std::uint64_t destination,
                                   std::uint32_t count) = 0;
   virtual std::uint32_t ReadMappedWord(std::uint64_t address) = 0;
   virtual void WriteMappedWord(std::uint64_t address,
                                std::uint32_t value) = 0;
-  virtual void WriteFlagHalfword(std::uint16_t byte_offset,
-                                 std::uint16_t value) = 0;
+  virtual std::uint64_t GetFlagTableBase() = 0;
+  virtual void WriteMappedHalfword(std::uint64_t address,
+                                   std::uint16_t value) = 0;
   virtual void FlushAddress(std::uint64_t address) = 0;
   virtual void WriteBytes(std::uint64_t address, const std::uint8_t* data,
                           std::size_t size) = 0;
