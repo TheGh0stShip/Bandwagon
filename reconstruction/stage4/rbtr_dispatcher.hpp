@@ -19,7 +19,7 @@ struct DispatchPlan {
   std::uint64_t branch_target = 0;
   std::uint64_t copy_destination = 0;
   std::uint64_t copy_source = 0;
-  std::uint32_t copy_word_count = 0;
+  std::uint64_t copy_word_count = 0;
   std::uint64_t delegated_r3 = 0;
   std::uint64_t delegated_r4 = 0;
   std::uint64_t delegated_r5 = 0;

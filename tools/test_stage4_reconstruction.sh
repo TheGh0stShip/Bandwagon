@@ -53,4 +53,12 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/runtime_test"
 "$work/runtime_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/stage4/rbtr_dispatcher.cpp" \
+    "$root/reconstruction/stage4/copied_continuation.cpp" \
+    "$root/reconstruction/stage4/resident_runtime.cpp" \
+    "$root/reconstruction/stage4/resident_runtime_test.cpp" \
+    -o "$work/resident_runtime_test"
+"$work/resident_runtime_test"
+
 echo "Stage4 portable reconstruction tests passed"

@@ -21,7 +21,7 @@ DispatchPlan PlanRbtrDispatch(std::uint32_t magic, std::uint32_t operation,
     plan.branch_target = r5;
     plan.copy_destination = r5;
     plan.copy_source = r6;
-    plan.copy_word_count = static_cast<std::uint32_t>(r7);
+    plan.copy_word_count = r7;
     return plan;
   }
   if (operation == 5) {

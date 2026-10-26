@@ -25,7 +25,7 @@ int main() {
   assert(copy.kind == DispatchKind::kCopyAndExecute);
   assert(copy.copy_destination == 0x1000 && copy.branch_target == 0x1000);
   assert(copy.copy_source == 0x2000);
-  assert(copy.copy_word_count == 3);
+  assert(copy.copy_word_count == 0x100000003ULL);
 
   const auto op5 = PlanRbtrDispatch(0x72627472u, 5, 0x50, 0x60, 0x70);
   assert(op5.kind == DispatchKind::kDelegateOperation5);

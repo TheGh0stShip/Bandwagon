@@ -281,6 +281,14 @@ structured-data address `0x6000320b8`, adjacent zero area `0x6000321c8`, and
 final branch `0x400029b3c`; and leaves the unresolved absolute callees named by
 address. The model performs no external calls or control transfers.
 
+`reconstruction/stage4/resident_runtime.cpp` provides the executable C++ lift
+of both the `rbtr` dispatcher and copied continuation. Memory copying, cache
+maintenance, external calls, and tail branches are expressed through a
+`ResidentPlatform` adapter and exercised with a host mock. Operation 4 retains
+the full 64-bit CTR count and its original do/while semantics. The same header
+also exposes the status trampoline's exact marker/target selection and the
+copied dispatcher jump target.
+
 `reconstruction/stage4/rsa_public_key.cpp` provides the corresponding strict,
 big-endian `XECRYPT_RSAPUB_2048` decoder. It exposes the exact header and
 256-byte modulus while deliberately making no ownership or trust claim.
