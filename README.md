@@ -20,8 +20,8 @@ The public BadUpdate source baseline is pinned as the
 - SMC and kernel patch streams have reproducible JSON decodes.
 - XEX base images have been extracted locally with recorded hashes.
 - Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
-- The complete Peer Stage 3 entry point, Peer-specific probe, and their support
-  stubs have a partial, byte-identical PowerPC assembly reconstruction.
+- Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
+  reconstructions.
 
 Exact reconstruction of the remaining executable functions, imports, types,
 globals, control flow, raw stage payloads, and SMC firmware is still in

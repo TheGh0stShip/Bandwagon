@@ -15,10 +15,11 @@ The behavioral hypothesis `probe_stage4_hv_dispatch` is used below for
 discussion only. It is not a recovered symbol or final source-level name.
 
 Buildable assembly for the recovered regions is in
-[`reconstruction/PeerPressureExploit-3rdStage-probe.reconstructed.S`](reconstruction/PeerPressureExploit-3rdStage-probe.reconstructed.S).
+[`reconstruction/PeerPressureExploit-3rdStage.reconstructed.S`](reconstruction/PeerPressureExploit-3rdStage.reconstructed.S).
 The function, embedded probe, syscall stubs, save/restore fragments, and direct
-import stubs rebuild byte-for-byte. Unreconstructed Stage3 gaps remain explicit
-and are not claimed as source-equivalent.
+import stubs rebuild byte-for-byte. The complete Stage3 file now also rebuilds
+byte-for-byte; generated regions preserve exact instructions while semantic
+naming and higher-level recovery continue.
 
 ## Instruction-level proof
 

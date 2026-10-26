@@ -15,12 +15,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 STAGE4_SOURCE = ROOT / "analysis/reconstruction/PeerPressureExploit-4thStage.reconstructed.S"
 STAGE4_REFERENCE = ROOT / "PeerPressure/System/PeerPressureExploit-4thStage.bin"
-STAGE3_SOURCE = ROOT / "analysis/reconstruction/PeerPressureExploit-3rdStage-probe.reconstructed.S"
+STAGE3_SOURCE = ROOT / "analysis/reconstruction/PeerPressureExploit-3rdStage.reconstructed.S"
 STAGE3_REFERENCE = ROOT / "BadUpdatePayload/BadUpdateExploit-3rdStage.bin"
 
 STAGE3_RANGES = (
     (0x000, 0x0F8, "Peer Stage3 entry point and alignment"),
     (0x0F8, 0x1E8, "Peer-specific probe function and alignment"),
+    (0x1E8, 0x490, "modified RunBadUpdateExploit"),
     (0x680, 0x68C, "syscall 0x0d stub"),
     (0x690, 0x69C, "syscall 0x00 stub"),
     (0x11D0, 0x11EC, "savegpr_27 fragment"),
@@ -117,6 +118,21 @@ def main() -> None:
                 }
             )
 
+        if stage3_built != stage3_reference:
+            mismatch = next(
+                (
+                    offset
+                    for offset, (actual, expected) in enumerate(
+                        zip(stage3_built, stage3_reference)
+                    )
+                    if actual != expected
+                ),
+                min(len(stage3_built), len(stage3_reference)),
+            )
+            raise SystemExit(
+                f"Stage3 whole-file reconstruction mismatch at file offset 0x{mismatch:x}"
+            )
+
         result = {
             "assembler_target": "powerpc64-unknown-linux-gnu (big-endian)",
             "stage4": {
@@ -130,8 +146,10 @@ def main() -> None:
                 "source": str(STAGE3_SOURCE.relative_to(ROOT)),
                 "reference": str(STAGE3_REFERENCE.relative_to(ROOT)),
                 "reference_sha256": sha256(stage3_reference),
+                "size": len(stage3_built),
                 "verified_ranges": stage3_results,
-                "whole_file_reconstructed": False,
+                "whole_file_reconstructed": True,
+                "whole_file_byte_identical": True,
             },
         }
 
@@ -142,7 +160,11 @@ def main() -> None:
             "Stage4: exact whole-file rebuild, "
             f"{result['stage4']['size']} bytes, SHA-256 {result['stage4']['sha256']}"
         )
-        print(f"Stage3: {len(stage3_results)} recovered ranges are byte-identical")
+        print(
+            "Stage3: exact whole-file rebuild, "
+            f"{result['stage3']['size']} bytes, "
+            f"SHA-256 {result['stage3']['reference_sha256']}"
+        )
 
 
 if __name__ == "__main__":

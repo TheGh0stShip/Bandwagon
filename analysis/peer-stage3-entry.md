@@ -5,7 +5,7 @@
 The complete Peer entry point at file `0x0000-0x00f3` (runtime
 `0x98030000-0x980300f3`) and its four-byte alignment word at `0x00f4` rebuild
 byte-for-byte from
-[`PeerPressureExploit-3rdStage-probe.reconstructed.S`](reconstruction/PeerPressureExploit-3rdStage-probe.reconstructed.S).
+[`PeerPressureExploit-3rdStage.reconstructed.S`](reconstruction/PeerPressureExploit-3rdStage.reconstructed.S).
 The verified `0x00f8`-byte range has SHA-256
 `3b1ee997820824ad743467c16c55ae607a7180ff138c83784563ee140b042641`.
 

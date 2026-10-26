@@ -43,9 +43,23 @@ python3 tools/analyze_stage3_probe.py
 ```
 
 `rebuild_peer_reconstructions.py` assembles the recovered big-endian PowerPC
-source and enforces byte identity. It compares the entire reconstructed
-Stage4 and only the explicitly recovered Stage3 ranges:
+source and enforces whole-file byte identity for both Stage3 and Stage4:
 
 ```sh
 python3 -B tools/rebuild_peer_reconstructions.py
+```
+
+`recover_ppc_region.py` deterministically converts a selected raw big-endian
+PowerPC range into LLVM-compatible assembly with source offsets and original
+bytes recorded on every line. `--data` emits literal bytes for non-code
+regions. Generated Stage3 includes live under
+`analysis/reconstruction/generated/`; the whole-file rebuild gate prevents
+decoder or transcription drift.
+
+Regenerate all generated Stage3 regions, or verify that the checked-in files
+are deterministic, with:
+
+```sh
+python3 -B tools/regenerate_stage3_generated.py
+python3 -B tools/regenerate_stage3_generated.py --check
 ```

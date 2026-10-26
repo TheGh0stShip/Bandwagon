@@ -67,11 +67,10 @@ skips the inherited BadUpdate race, while probe failure runs the race and
 Stage4 installation path before both branches launch the normal payload.
 
 `reconstruction/` contains buildable big-endian PowerPC assembly rather than
-invented C. The reconstructed Stage4 assembly rebuilds the complete file
-byte-for-byte. The Stage3 assembly currently rebuilds the complete entry point,
-the new probe function, its embedded code, and their direct support stubs
-byte-for-byte; gaps are clearly excluded rather than filled with speculative
-source.
+invented C. The reconstructed Stage3 and Stage4 assembly files both rebuild
+their complete inputs byte-for-byte. Stage3's entry point and new probe are
+hand-labeled; deterministic generated assembly preserves the remaining code
+while semantic function naming and higher-level recovery continue.
 
 ## Extraction verification
 
@@ -91,9 +90,10 @@ source.
 ## Current analysis boundary
 
 The XEX container layer, patch-list containers, manifest, update wrapper, and
-Peer Stage4 preamble patch stream are decoded exactly. Exact source
-reconstruction remains in progress: executable functions, imports, types,
-globals, and control flow have not yet been completely recovered. The focused
+Peer Stage4 preamble patch stream are decoded exactly. Stage3 and Stage4 have
+complete byte-identical assembly reconstructions. Higher-level recovery
+remains in progress: executable functions, imports, types, globals, and control
+flow have not yet been completely named across all components. The focused
 Stage4 preamble CFG does not imply that the clean-HV data tail is executable.
 Other raw stage payloads and the 8051-family SMC firmware still require
 architecture-specific loaders and annotation.
