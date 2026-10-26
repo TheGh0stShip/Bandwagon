@@ -71,3 +71,10 @@ function does not check the return from `sscanf("%*c%d.%d.%d")`; malformed
 tags can therefore cause it to pack indeterminate stack values. The portable
 boundary rejects malformed tags while preserving the observed valid-input
 behavior.
+
+`reconstruction/settings_app/update_decision.cpp` recovers the status branch
+tree in `DrawAutoUpdateSettings`. It compares packed 8/8/16 versions as
+unsigned words, offers nothing unless the available version is strictly newer,
+uses source state 3 for the download wording and other ready sources for the
+install wording, and distinguishes failed state 1 from all other non-ready
+checking states.

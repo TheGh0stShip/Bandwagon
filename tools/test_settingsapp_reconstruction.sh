@@ -21,4 +21,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/release_metadata_test"
 "$work/release_metadata_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/settings_app/update_decision.cpp" \
+    "$root/reconstruction/settings_app/update_decision_test.cpp" \
+    -o "$work/update_decision_test"
+"$work/update_decision_test"
+
 echo "SettingsApp portable reconstruction tests passed"
