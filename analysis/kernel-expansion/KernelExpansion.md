@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 32 high-confidence behavioral labels are emitted directly into the exact
+- 33 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -106,6 +106,10 @@ lift. The first exact-byte-bound routines are:
   UTF-16 cursor parser for the recovered one-decimal-digit drive syntax. Tests
   cover valid zero and nine prefixes, absent prefixes, malformed prefixes,
   control-character termination, cursor preservation, and null strings.
+- `IsVersionAtLeastComponentWise` (`0x801f87f8`, 80 bytes), the exact four-byte
+  bound predicate used by `ParseDllConfigEntry`. It treats `0xff` on either side
+  as a wildcard and intentionally preserves the binary's component-wise rather
+  than lexicographic ordering.
 - `CopyPathAndParentDirectory` (`0x801faac0`, 144 bytes), represented with the
   recovered object field offsets and 256-byte bound. It preserves the exact
   final-backslash split, leading-backslash behavior, low-byte flag comparison,
@@ -117,7 +121,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-19 independently bounded routines totaling 3,152 original instruction bytes.
+20 independently bounded routines totaling 3,232 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 354 discovered entries are maintainable

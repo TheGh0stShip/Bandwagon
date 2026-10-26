@@ -124,6 +124,15 @@
       "symbols": ["StfsPackageType", "ClassifyStfsPackageMagic", "kUnrecognizedPackageStatus"]
     },
     {
+      "address": "0x801f87f8",
+      "size": 80,
+      "sha256": "8df813a4e57c83a7eb0ed50021d9ea9b0d37b610f25d9ab473cbdf96a037a7eb",
+      "semantic_name": "IsVersionAtLeastComponentWise",
+      "source": "reconstruction/kernel_expansion/version.cpp",
+      "header": "reconstruction/kernel_expansion/version.hpp",
+      "symbols": ["VersionBytes", "IsVersionAtLeastComponentWise", "kVersionWildcard"]
+    },
+    {
       "address": "0x801fa540",
       "size": 256,
       "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
@@ -186,6 +195,7 @@
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",
+    "reconstruction/kernel_expansion/version_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]

@@ -1082,9 +1082,9 @@
       "address": "0x801f87f8",
       "section_offset": "0x87f8",
       "size_to_next_symbol": 80,
-      "name": "fn_801F87F8",
+      "name": "IsVersionAtLeastComponentWise",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

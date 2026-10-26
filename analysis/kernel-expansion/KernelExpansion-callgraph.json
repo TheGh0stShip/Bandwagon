@@ -3066,16 +3066,16 @@
       "caller_address": "0x801f4938",
       "instruction_address": "0x801f4a10",
       "target_address": "0x801f87f8",
-      "callee": "fn_801F87F8",
-      "target_containing_function": "fn_801F87F8"
+      "callee": "IsVersionAtLeastComponentWise",
+      "target_containing_function": "IsVersionAtLeastComponentWise"
     },
     {
       "caller": "ParseDllConfigEntry",
       "caller_address": "0x801f4938",
       "instruction_address": "0x801f4a28",
       "target_address": "0x801f87f8",
-      "callee": "fn_801F87F8",
-      "target_containing_function": "fn_801F87F8"
+      "callee": "IsVersionAtLeastComponentWise",
+      "target_containing_function": "IsVersionAtLeastComponentWise"
     },
     {
       "caller": "ParseDllConfigEntry",

@@ -8815,7 +8815,7 @@ fn_801F8710:
     .long 0x38600000 /* 0x087ec */
     .long 0x38210070 /* 0x087f0 */
     .long 0x48006334 /* 0x087f4 */
-fn_801F87F8:
+IsVersionAtLeastComponentWise:
     .long 0x39000000 /* 0x087f8 */
     .long 0x7c8b2378 /* 0x087fc */
     .long 0x7ce41850 /* 0x08800 */

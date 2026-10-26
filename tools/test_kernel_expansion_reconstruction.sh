@@ -66,3 +66,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/instruction_patch_test.cpp" \
     -o "$work/instruction_patch_test"
 "$work/instruction_patch_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/version.cpp" \
+    "$root/reconstruction/kernel_expansion/version_test.cpp" \
+    -o "$work/version_test"
+"$work/version_test"
