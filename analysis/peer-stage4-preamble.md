@@ -267,6 +267,13 @@ source/destination/count, and patch-stream offset; mode 1's initial `0x20` bit
 clear and pair-table call; mode 2's range plan; the no-op default; and the
 common `0x41414141` return marker. It performs none of the privileged calls.
 
+`reconstruction/stage4/copied_continuation.cpp` reconstructs the copied block
+at `0x600032048` as an explicit two-call plan. It preserves the incoming stack,
+TOC, `r28`-`r30`, and first-call-result decisions; identifies the embedded
+structured-data address `0x6000320b8`, adjacent zero area `0x6000321c8`, and
+final branch `0x400029b3c`; and leaves the unresolved absolute callees named by
+address. The model performs no external calls or control transfers.
+
 ## Entry and exit summary
 
 The resident entry is a mode-controlled HV maintenance/patch routine. Mode

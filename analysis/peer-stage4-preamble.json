@@ -752,50 +752,50 @@
         "va_range": "0x600032040-0x600032048"
       },
       {
-        "id": "copied_continuation_hypothesis_5bc",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_5bc",
+        "region": "copied_continuation",
         "file_range": "0x5bc-0x5dc",
         "va_range": "0x600032048-0x600032068"
       },
       {
-        "id": "copied_continuation_hypothesis_5dc",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_5dc",
+        "region": "copied_continuation",
         "file_range": "0x5dc-0x5e4",
         "va_range": "0x600032068-0x600032070"
       },
       {
-        "id": "copied_continuation_hypothesis_5e4",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_5e4",
+        "region": "copied_continuation",
         "file_range": "0x5e4-0x5ec",
         "va_range": "0x600032070-0x600032078"
       },
       {
-        "id": "copied_continuation_hypothesis_5ec",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_5ec",
+        "region": "copied_continuation",
         "file_range": "0x5ec-0x5f4",
         "va_range": "0x600032078-0x600032080"
       },
       {
-        "id": "copied_continuation_hypothesis_5f4",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_5f4",
+        "region": "copied_continuation",
         "file_range": "0x5f4-0x604",
         "va_range": "0x600032080-0x600032090"
       },
       {
-        "id": "copied_continuation_hypothesis_604",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_604",
+        "region": "copied_continuation",
         "file_range": "0x604-0x608",
         "va_range": "0x600032090-0x600032094"
       },
       {
-        "id": "copied_continuation_hypothesis_608",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_608",
+        "region": "copied_continuation",
         "file_range": "0x608-0x610",
         "va_range": "0x600032094-0x60003209c"
       },
       {
-        "id": "copied_continuation_hypothesis_610",
-        "region": "copied_continuation_hypothesis",
+        "id": "copied_continuation_610",
+        "region": "copied_continuation",
         "file_range": "0x610-0x62c",
         "va_range": "0x60003209c-0x6000320b8"
       }
@@ -1207,67 +1207,67 @@
         "kind": "return"
       },
       {
-        "from": "copied_continuation_hypothesis_5bc",
+        "from": "copied_continuation_5bc",
         "to": "external_0xb3d8",
         "kind": "call_absolute"
       },
       {
-        "from": "copied_continuation_hypothesis_5bc",
-        "to": "copied_continuation_hypothesis_5dc",
+        "from": "copied_continuation_5bc",
+        "to": "copied_continuation_5dc",
         "kind": "return_site"
       },
       {
-        "from": "copied_continuation_hypothesis_5dc",
-        "to": "copied_continuation_hypothesis_5e4",
+        "from": "copied_continuation_5dc",
+        "to": "copied_continuation_5e4",
         "kind": "false"
       },
       {
-        "from": "copied_continuation_hypothesis_5dc",
-        "to": "copied_continuation_hypothesis_610",
+        "from": "copied_continuation_5dc",
+        "to": "copied_continuation_610",
         "kind": "true"
       },
       {
-        "from": "copied_continuation_hypothesis_5e4",
-        "to": "copied_continuation_hypothesis_5ec",
+        "from": "copied_continuation_5e4",
+        "to": "copied_continuation_5ec",
         "kind": "false"
       },
       {
-        "from": "copied_continuation_hypothesis_5e4",
-        "to": "copied_continuation_hypothesis_5f4",
+        "from": "copied_continuation_5e4",
+        "to": "copied_continuation_5f4",
         "kind": "true"
       },
       {
-        "from": "copied_continuation_hypothesis_5ec",
-        "to": "copied_continuation_hypothesis_608",
+        "from": "copied_continuation_5ec",
+        "to": "copied_continuation_608",
         "kind": "jump"
       },
       {
-        "from": "copied_continuation_hypothesis_5f4",
-        "to": "copied_continuation_hypothesis_604",
+        "from": "copied_continuation_5f4",
+        "to": "copied_continuation_604",
         "kind": "false"
       },
       {
-        "from": "copied_continuation_hypothesis_5f4",
-        "to": "copied_continuation_hypothesis_608",
+        "from": "copied_continuation_5f4",
+        "to": "copied_continuation_608",
         "kind": "true"
       },
       {
-        "from": "copied_continuation_hypothesis_604",
-        "to": "copied_continuation_hypothesis_608",
+        "from": "copied_continuation_604",
+        "to": "copied_continuation_608",
         "kind": "fallthrough"
       },
       {
-        "from": "copied_continuation_hypothesis_608",
+        "from": "copied_continuation_608",
         "to": "external_0xb388",
         "kind": "call_absolute"
       },
       {
-        "from": "copied_continuation_hypothesis_608",
-        "to": "copied_continuation_hypothesis_610",
+        "from": "copied_continuation_608",
+        "to": "copied_continuation_610",
         "kind": "return_site"
       },
       {
-        "from": "copied_continuation_hypothesis_610",
+        "from": "copied_continuation_610",
         "to": "indirect_jump",
         "kind": "indirect_jump"
       }
