@@ -1,0 +1,34 @@
+diff --git a/src/analysis/slices.rs b/src/analysis/slices.rs
+index 12a3c4c..64c4e25 100644
+--- a/src/analysis/slices.rs
++++ b/src/analysis/slices.rs
+@@ -945,0 +946 @@ impl FunctionSlices {
++        let mut section_end_blocks = Vec::new();
+@@ -961,0 +963,23 @@ impl FunctionSlices {
++            if let Some(known_end) = function_end {
++                let section_end = (section.address + section.size) as u32;
++                if known_end.address == section_end && start.address < section_end {
++                    log::warn!(
++                        "Finalizing fallthrough block @ {:#010X} at code-section end {:#010X}",
++                        start,
++                        known_end
++                    );
++                    section_end_blocks.push((start, known_end));
++                    continue;
++                }
++            }
++            let section_end = (section.address + section.size) as u32;
++            if start.address < section_end && section_end - start.address <= 0x10 {
++                let end = SectionAddress::new(start.section, section_end);
++                log::warn!(
++                    "Finalizing terminal fallthrough block @ {:#010X} at code-section end {:#010X}",
++                    start,
++                    end
++                );
++                section_end_blocks.push((start, end));
++                continue;
++            }
+@@ -968,0 +993,3 @@ impl FunctionSlices {
++        for (start, end) in section_end_blocks {
++            self.blocks.insert(start, Some(end));
++        }

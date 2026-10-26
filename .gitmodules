@@ -1,3 +1,6 @@
 [submodule "third_party/Xbox360BadUpdate"]
 	path = third_party/Xbox360BadUpdate
 	url = https://github.com/grimdoomer/Xbox360BadUpdate.git
+[submodule "third_party/jeff"]
+	path = third_party/jeff
+	url = https://github.com/freeqaz/jeff.git

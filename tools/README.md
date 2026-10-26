@@ -63,3 +63,11 @@ are deterministic, with:
 python3 -B tools/regenerate_stage3_generated.py
 python3 -B tools/regenerate_stage3_generated.py --check
 ```
+
+`analyze_updater_xex.sh` builds the pinned jeff submodule with a temporary,
+documented terminal-section fix, recovers the Updater XEX function map, and
+restores the submodule before exiting:
+
+```sh
+bash tools/analyze_updater_xex.sh
+```

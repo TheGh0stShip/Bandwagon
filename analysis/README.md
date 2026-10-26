@@ -41,6 +41,10 @@ Two original XEX files, `BadUpdatePayload/bootanim.xex` and
 `Flash/bootanim.xex`, are byte-identical and therefore produce identical base
 files. They are retained under both names to preserve provenance.
 
+`xex/Updater.md` records the first full XEX function-boundary pass. The pinned
+decompilation pipeline recovers 376 Updater code symbols, including 48 named
+kernel import thunks, and emits a machine-readable address inventory.
+
 ## BadUpdate baseline and modified stages
 
 `badupdate-v1.3-baseline.md` records the pinned public-source/release
