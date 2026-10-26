@@ -8428,6 +8428,7 @@ LaunchSettingsApp:
     .long 0x48002a0d /* 0x08204 */
     .long 0x382100e0 /* 0x08208 */
     .long 0x480068fc /* 0x0820c */
+InitializeCallbackOutputs:
     .long 0x2b050000 /* 0x08210 */
     .long 0x419a000c /* 0x08214 */
     .long 0x39600001 /* 0x08218 */
@@ -8438,6 +8439,7 @@ LaunchSettingsApp:
     .long 0x91660000 /* 0x0822c */
     .long 0x38600000 /* 0x08230 */
     .long 0x4e800020 /* 0x08234 */
+MapCallbackValue:
     .long 0x2b060000 /* 0x08238 */
     .long 0x419a001c /* 0x0823c */
     .long 0x3d60000d /* 0x08240 */
@@ -8452,6 +8454,7 @@ LaunchSettingsApp:
     .long 0x91670000 /* 0x08264 */
     .long 0x38600000 /* 0x08268 */
     .long 0x4e800020 /* 0x0826c */
+ClassifyStfsPackageMagic:
     .long 0x2b040000 /* 0x08270 */
     .long 0x419a0050 /* 0x08274 */
     .long 0x3d40434f /* 0x08278 */

@@ -61,6 +61,33 @@
       "symbols": ["XexHookServices", "InstallKernelXexDataHandlers", "kFirstXexDataHandler", "kSecondXexDataHandler"]
     },
     {
+      "address": "0x801f8210",
+      "size": 40,
+      "sha256": "bef1c5f2c9886531ba4dfdea36adf5aeeb6c16788c6c2c41f62e41b03483a951",
+      "semantic_name": "InitializeCallbackOutputs",
+      "source": "reconstruction/kernel_expansion/package_callbacks.cpp",
+      "header": "reconstruction/kernel_expansion/package_callbacks.hpp",
+      "symbols": ["InitializeCallbackOutputs"]
+    },
+    {
+      "address": "0x801f8238",
+      "size": 56,
+      "sha256": "5c75ab9cea2a1e55894d3e0fc77c54bfeb87ca170790d78af7a24c55bc33bc1f",
+      "semantic_name": "MapCallbackValue",
+      "source": "reconstruction/kernel_expansion/package_callbacks.cpp",
+      "header": "reconstruction/kernel_expansion/package_callbacks.hpp",
+      "symbols": ["MapCallbackValue", "kMappedCallbackValue"]
+    },
+    {
+      "address": "0x801f8270",
+      "size": 104,
+      "sha256": "964038be0204c48ae1e544cc931b30f54329b300bd6e11ddd4dc64bf6b84d818",
+      "semantic_name": "ClassifyStfsPackageMagic",
+      "source": "reconstruction/kernel_expansion/package_callbacks.cpp",
+      "header": "reconstruction/kernel_expansion/package_callbacks.hpp",
+      "symbols": ["StfsPackageType", "ClassifyStfsPackageMagic", "kUnrecognizedPackageStatus"]
+    },
+    {
       "address": "0x801fa540",
       "size": 256,
       "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
@@ -97,6 +124,7 @@
   ],
   "tests": [
     "reconstruction/kernel_expansion/config_test.cpp",
+    "reconstruction/kernel_expansion/package_callbacks_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",

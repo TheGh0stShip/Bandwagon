@@ -13,12 +13,13 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 351 entry points from standard PPC prologues and direct `bl` targets.
+- 354 entry points from standard PPC prologues, direct `bl` targets, and three
+  independently bounded indirect callbacks.
 - 1,085 direct call edges.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 21 high-confidence behavioral labels are emitted directly into the exact
+- 26 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -86,13 +87,21 @@ lift. The first exact-byte-bound routines are:
   state transition around `UpdateCheck.xex`: it detaches stale NIC state,
   dereferences the prior object under the spin lock, invokes ordinal one,
   records only a newer returned version, prepares the module, and unloads it.
+- Three leaf callbacks immediately following `LaunchSettingsApp` are now
+  separated from that function and represented in
+  `package_callbacks.{hpp,cpp}`: `InitializeCallbackOutputs` (`0x801f8210`, 40
+  bytes), `MapCallbackValue` (`0x801f8238`, 56 bytes), and
+  `ClassifyStfsPackageMagic` (`0x801f8270`, 104 bytes). The classifier preserves
+  the exact `CON `, `LIVE`, and `PIRS` mappings, its one-byte output, the
+  unchanged-output failure path, and status `0x80070570`.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
-with `tools/test_kernel_expansion_reconstruction.sh`.
+with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
+13 independently bounded routines totaling 2,488 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 351 discovered entries are maintainable
+evidence oracle, not a claim that all 354 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former

@@ -16,6 +16,16 @@ SOURCE = ROOT / "analysis/reconstruction/KernelExpansion.reconstructed.S"
 BASE = 0x801F0000
 TEXT_END = 0xF4B0
 
+# Leaf callbacks reached indirectly are not discoverable from direct BL targets
+# and do not use the standard non-leaf prologue.  Their boundaries are proved
+# by the return instructions and the surrounding independently discovered
+# entry points.
+EXPLICIT_STARTS = {
+    0x8210,
+    0x8238,
+    0x8270,
+}
+
 # Behavioral names are deliberately distinct from claims about original private
 # symbols.  Each is backed by direct paths, diagnostics, or a simple call role.
 SEMANTIC_NAMES = {
@@ -37,6 +47,9 @@ SEMANTIC_NAMES = {
     0x4938: "ParseDllConfigEntry",
     0x7E68: "FindSoftmodUpdateArchive",
     0x8080: "LaunchSettingsApp",
+    0x8210: "InitializeCallbackOutputs",
+    0x8238: "MapCallbackValue",
+    0x8270: "ClassifyStfsPackageMagic",
     0xA320: "ClassifyFatBootSector",
     0xA540: "RecognizeGptDisk",
     0xA640: "IsAsciiAlphaNumeric",
@@ -69,7 +82,7 @@ def main() -> None:
     data = INPUT.read_bytes()
     digest = hashlib.sha256(data).hexdigest()
     words = [int.from_bytes(data[i : i + 4], "big") for i in range(0, TEXT_END, 4)]
-    starts = {0}
+    starts = {0, *EXPLICIT_STARTS}
     for offset, word in enumerate(words):
         byte_offset = offset * 4
         if word in (0x7D8802A6, 0x7C0802A6):
@@ -101,12 +114,18 @@ def main() -> None:
     functions = []
     for index, offset in enumerate(ordered):
         end = ordered[index + 1] if index + 1 < len(ordered) else TEXT_END
+        if offset in EXPLICIT_STARTS:
+            evidence = ["indirect leaf callback boundary and decoded behavior"]
+        elif offset in SEMANTIC_NAMES:
+            evidence = ["behavioral name corroborated by strings and call role"]
+        else:
+            evidence = ["direct BL target or standard PPC prologue"]
         item = {
             "address": f"0x{BASE + offset:08x}",
             "section_offset": f"0x{offset:x}",
             "size_to_next_symbol": end - offset,
             "name": names[offset],
-            "evidence": (["behavioral name corroborated by strings and call role"] if offset in SEMANTIC_NAMES else ["direct BL target or standard PPC prologue"]),
+            "evidence": evidence,
         }
         if offset in thunks:
             address, symbol = thunks[offset]
