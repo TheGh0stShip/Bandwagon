@@ -84,12 +84,22 @@
       "semantic_name": "IsAsciiAlphaNumeric",
       "source": "reconstruction/kernel_expansion/runtime.cpp",
       "symbols": ["IsAsciiAlphaNumeric"]
+    },
+    {
+      "address": "0x801fa798",
+      "size": 320,
+      "sha256": "685660c0d6ba6a2704ecc674a79f7b385902f33c8abbed35dad28b68b3b971f3",
+      "semantic_name": "LaunchUpdateCheck",
+      "source": "reconstruction/kernel_expansion/update_check_launch.cpp",
+      "header": "reconstruction/kernel_expansion/update_check_launch.hpp",
+      "symbols": ["UpdateCheckState", "UpdateCheckServices", "LaunchUpdateCheck", "kUpdateCheckPath"]
     }
   ],
   "tests": [
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
+    "reconstruction/kernel_expansion/update_check_launch_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]

@@ -82,6 +82,10 @@ lift. The first exact-byte-bound routines are:
 - `ClassifyFatBootSector` (`0x801fa320`, 440 bytes), represented as a typed
   five-result classifier. Tests cover its exact exFAT prefix, FAT32 label,
   structural FAT fallback, MBR signature, unknown-sector, and read-error paths.
+- `LaunchUpdateCheck` (`0x801fa798`, 320 bytes), represented as a synchronized
+  state transition around `UpdateCheck.xex`: it detaches stale NIC state,
+  dereferences the prior object under the spin lock, invokes ordinal one,
+  records only a newer returned version, prepares the module, and unloads it.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests

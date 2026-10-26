@@ -30,3 +30,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/config_test.cpp" \
     -o "$work/config_test"
 "$work/config_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/update_check_launch.cpp" \
+    "$root/reconstruction/kernel_expansion/update_check_launch_test.cpp" \
+    -o "$work/update_check_launch_test"
+"$work/update_check_launch_test"
