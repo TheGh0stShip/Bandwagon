@@ -1272,9 +1272,9 @@
       "address": "0x801f9ec0",
       "section_offset": "0x9ec0",
       "size_to_next_symbol": 80,
-      "name": "fn_801F9EC0",
+      "name": "QueryFatVolumeCapacity",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

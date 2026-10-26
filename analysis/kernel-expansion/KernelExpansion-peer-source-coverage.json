@@ -232,6 +232,15 @@
       "symbols": ["FileCreateDisposition", "FileDispositionDiagnostics", "MapCreateDispositionToOpenFlags", "kSupersedeOrOverwriteIfFlag", "kCreateFlag", "kOpenIfFlag"]
     },
     {
+      "address": "0x801f9ec0",
+      "size": 80,
+      "sha256": "93b5ff9e58280ea3978f6b63f27bfb0ae3c1c3b4e5df37f746c0cc8e34458cfe",
+      "semantic_name": "QueryFatVolumeCapacity",
+      "source": "reconstruction/kernel_expansion/volume_capacity.cpp",
+      "header": "reconstruction/kernel_expansion/volume_capacity.hpp",
+      "symbols": ["FatVolumeCapacitySource", "QueryFatVolumeCapacity"]
+    },
+    {
       "address": "0x801fa2e0",
       "size": 32,
       "sha256": "ba2401094ba49b5244ba592e4e601191fd7cdede6c2f3783b5e6f01dd1995e81",
@@ -350,6 +359,7 @@
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",
     "reconstruction/kernel_expansion/version_test.cpp",
+    "reconstruction/kernel_expansion/volume_capacity_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]

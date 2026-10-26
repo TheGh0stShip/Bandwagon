@@ -32,6 +32,12 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/storage_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/volume_capacity.cpp" \
+    "$root/reconstruction/kernel_expansion/volume_capacity_test.cpp" \
+    -o "$work/volume_capacity_test"
+"$work/volume_capacity_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/config.cpp" \
     "$root/reconstruction/kernel_expansion/config_test.cpp" \
     -o "$work/config_test"

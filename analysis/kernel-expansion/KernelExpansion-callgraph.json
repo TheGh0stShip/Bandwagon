@@ -4106,8 +4106,8 @@
       "caller_address": "0x801f5f58",
       "instruction_address": "0x801f6040",
       "target_address": "0x801f9ec0",
-      "callee": "fn_801F9EC0",
-      "target_containing_function": "fn_801F9EC0"
+      "callee": "QueryFatVolumeCapacity",
+      "target_containing_function": "QueryFatVolumeCapacity"
     },
     {
       "caller": "fn_801F5F58",

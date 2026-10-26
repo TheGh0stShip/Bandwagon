@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 47 high-confidence behavioral labels are emitted directly into the exact
+- 48 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -120,6 +120,10 @@ lift. The first exact-byte-bound routines are:
 - `ClassifyFatBootSector` (`0x801fa320`, 440 bytes), represented as a typed
   five-result classifier. Tests cover its exact exFAT prefix, FAT32 label,
   structural FAT fallback, MBR signature, unknown-sector, and read-error paths.
+- `QueryFatVolumeCapacity` (`0x801f9ec0`, 80 bytes), represented with a
+  flattened typed view of the four nested fields it reads. Tests preserve zero
+  output plus success when capacity is unavailable and the target's two
+  wrapping 32-bit multiplies before the result is zero-extended to 64 bits.
 - `LaunchUpdateCheck` (`0x801fa798`, 320 bytes), represented as a synchronized
   state transition around `UpdateCheck.xex`: it detaches stale NIC state,
   dereferences the prior object under the spin lock, invokes ordinal one,
@@ -183,7 +187,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-36 independently bounded routines totaling 4,840 original instruction bytes.
+37 independently bounded routines totaling 4,920 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

@@ -10292,7 +10292,7 @@ fn_801F9D60:
     .long 0xebe1fff0 /* 0x09eb4 */
     .long 0x4e800020 /* 0x09eb8 */
     .long 0x00000000 /* 0x09ebc */
-fn_801F9EC0:
+QueryFatVolumeCapacity:
     .long 0x81640008 /* 0x09ec0 */
     .long 0x39200000 /* 0x09ec4 */
     .long 0x7c6a1b78 /* 0x09ec8 */
