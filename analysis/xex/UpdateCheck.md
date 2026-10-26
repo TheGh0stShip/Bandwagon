@@ -35,7 +35,15 @@ discarded and exactly three decimal components must parse. Those components are
 packed into the caller's 32-bit version output. Every network, response, JSON,
 and TLS object observed in this path is destroyed before return.
 
-Large portions of this image are third-party HTTP/TLS and JsonCpp code. The
-JsonCpp boundary is strongly identified by its complete parser diagnostics, but
-exact library revisions and function-level source attribution remain pending;
-the reconstruction therefore does not yet claim those names.
+Large portions of this image are third-party HTTP/TLS and JSON code. The
+author's public `ATTRIBUTION.md` identifies BearSSL 0.6 and JsonCpp tag
+`00.11.0`; `UpdateCheck-provenance.json` records that declaration and verifies
+it against binary-resident signatures. BearSSL evidence includes the TLS key
+schedule labels `master secret`, `key expansion`, `server finished`, and
+`client finished`. JsonCpp evidence includes the complete modern reader-option
+set and distinctive parser/value diagnostics; the recorded tag resolves to
+upstream commit `7c186e549fba358ac0541ed75f5a524b393954b3`.
+
+This establishes the third-party ownership boundary and exact declared
+versions. Function-level matching to those upstream sources remains pending,
+so generic functions are not renamed solely from their address range.

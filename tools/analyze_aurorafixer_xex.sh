@@ -24,5 +24,6 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" "$image" "$functions" \
     --text-address 0x88010000 --text-size 0x4a2c \
     --string-start 0x88000400 --string-end 0x880010d4 \
     --output "$root/analysis/xex/AuroraFixer-string-xrefs.json"
+python3 -B "$root/tools/classify_aurorafixer_functions.py"
 
 echo "AuroraFixer exact sections and static analysis regenerated"

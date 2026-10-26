@@ -1,0 +1,42 @@
+{
+  "schema": "bandwagon-updatecheck-provenance-v1",
+  "image": "analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
+  "image_sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece",
+  "author_attribution": {
+    "repository": "https://github.com/grimdoomer/Xbox360PeerPressure",
+    "commit": "df524f050db795d6212128e3a4b0c5904ac764e1",
+    "file": "ATTRIBUTION.md"
+  },
+  "libraries": [
+    {
+      "name": "BearSSL",
+      "version": "0.6",
+      "license": "MIT",
+      "upstream": "https://bearssl.org/",
+      "binary_signatures": [
+        "X509 CERTIFICATE",
+        "master secret",
+        "key expansion",
+        "server finished",
+        "client finished"
+      ],
+      "all_binary_signatures_present": true
+    },
+    {
+      "name": "JsonCpp",
+      "version": "00.11.0",
+      "license": "MIT",
+      "upstream": "https://github.com/open-source-parsers/jsoncpp/tree/00.11.0",
+      "tag_commit": "7c186e549fba358ac0541ed75f5a524b393954b3",
+      "binary_signatures": [
+        "allowTrailingCommas",
+        "rejectDupKeys",
+        "skipBom",
+        "additional six characters expected to parse unicode surrogate pair.",
+        "in Json::Value::duplicateStringValue(): Failed to allocate string value buffer"
+      ],
+      "all_binary_signatures_present": true
+    }
+  ],
+  "scope": "third-party ownership boundary; not proof that every library function has been named"
+}
