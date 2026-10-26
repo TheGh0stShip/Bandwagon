@@ -1202,9 +1202,9 @@
       "address": "0x801f92f8",
       "section_offset": "0x92f8",
       "size_to_next_symbol": 96,
-      "name": "fn_801F92F8",
+      "name": "MapCreateDispositionToOpenFlags",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

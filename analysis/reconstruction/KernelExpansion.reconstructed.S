@@ -9531,7 +9531,7 @@ fn_801F91D0:
     .long 0x4bffff90 /* 0x092ec */
     .long 0x3be00005 /* 0x092f0 */
     .long 0x4bffffa0 /* 0x092f4 */
-fn_801F92F8:
+MapCreateDispositionToOpenFlags:
     .long 0x7d8802a6 /* 0x092f8 */
     .long 0x9181fff8 /* 0x092fc */
     .long 0x9421ffa0 /* 0x09300 */

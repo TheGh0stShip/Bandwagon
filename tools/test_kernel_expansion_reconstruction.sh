@@ -89,6 +89,12 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/drive_registry_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/file_disposition.cpp" \
+    "$root/reconstruction/kernel_expansion/file_disposition_test.cpp" \
+    -o "$work/file_disposition_test"
+"$work/file_disposition_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/path_fields.cpp" \
     "$root/reconstruction/kernel_expansion/path_fields_test.cpp" \
     -o "$work/path_fields_test"

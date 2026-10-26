@@ -65,6 +65,7 @@ SEMANTIC_NAMES = {
     0x8238: "MapCallbackValue",
     0x8270: "ClassifyStfsPackageMagic",
     0x87F8: "IsVersionAtLeastComponentWise",
+    0x92F8: "MapCreateDispositionToOpenFlags",
     0xA320: "ClassifyFatBootSector",
     0xA540: "RecognizeGptDisk",
     0xA640: "IsAsciiAlphaNumeric",

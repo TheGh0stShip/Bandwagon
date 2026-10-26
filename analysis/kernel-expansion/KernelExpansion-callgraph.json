@@ -3754,8 +3754,8 @@
       "caller_address": "0x801f52a8",
       "instruction_address": "0x801f5a88",
       "target_address": "0x801f92f8",
-      "callee": "fn_801F92F8",
-      "target_containing_function": "fn_801F92F8"
+      "callee": "MapCreateDispositionToOpenFlags",
+      "target_containing_function": "MapCreateDispositionToOpenFlags"
     },
     {
       "caller": "fn_801F52A8",
@@ -5930,8 +5930,8 @@
       "caller_address": "0x801f8fe8",
       "instruction_address": "0x801f9080",
       "target_address": "0x801f92f8",
-      "callee": "fn_801F92F8",
-      "target_containing_function": "fn_801F92F8"
+      "callee": "MapCreateDispositionToOpenFlags",
+      "target_containing_function": "MapCreateDispositionToOpenFlags"
     },
     {
       "caller": "fn_801F8FE8",
@@ -6070,7 +6070,7 @@
       "target_containing_function": "fn_801FB4E8"
     },
     {
-      "caller": "fn_801F92F8",
+      "caller": "MapCreateDispositionToOpenFlags",
       "caller_address": "0x801f92f8",
       "instruction_address": "0x801f9328",
       "target_address": "0x801fec78",
