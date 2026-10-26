@@ -159,6 +159,13 @@ four-byte record alignment. Its host test covers exact round-trip serialization
 and rejection of a corrupted hash. Run both portable Updater test programs with
 `tools/test_updater_reconstruction.sh`.
 
+`reconstruction/updater/archive_wrapper.cpp` reconstructs the enclosing
+24-byte Peer archive format used by both `SoftmodData.zip` and
+`UpdateData.zip`: a 20-byte SHA-1 covering the four-byte big-endian version and
+the ordinary ZIP payload, followed by version and ZIP bytes. Its portable test
+verifies version `1.0.477`, byte-exact round trips, ZIP-magic validation, and
+hash-corruption rejection.
+
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
 expand semantic names and types across the remaining application functions,

@@ -20,4 +20,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/softmod_manifest_test"
 "$work/softmod_manifest_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/updater/archive_wrapper.cpp" \
+    "$root/reconstruction/updater/archive_wrapper_test.cpp" \
+    -o "$work/archive_wrapper_test"
+"$work/archive_wrapper_test"
+
 echo "Updater portable reconstruction tests passed"
