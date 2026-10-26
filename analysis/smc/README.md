@@ -63,6 +63,18 @@ payload hashes, record ownership, gap-free routine coverage, required source
 symbols, and the complete ordered board-profile values before the host tests
 run.
 
+Corona's divergent 507-byte routine is completely lifted in
+`reconstruction/smc/corona_runtime.cpp`. In addition to the shared lifecycle,
+the typed source preserves its eight-byte external-memory read hook,
+P2.6-gated command transaction, combined sender/timer, and ordered final
+hardware sequence (`F5 = 0x55`, `0xaa`, then `0x08`).
+`Corona-source-coverage.json` partitions all 507 executable bytes and 13
+integration records. `tools/verify_corona_smc_source_coverage.py` binds that
+partition and the complete hardware/address profile to the original stream.
+Consequently all six motherboard SMC streams now have both binary-exact
+assembly evidence and complete source-level recovery of their executable
+replacement records.
+
 The strongest pairwise matches are Falcon/Jasper (`0.933031`) and
 Xenon/Zephyr (`0.907449`). Corona is the most divergent family member
 (`0.408421` to `0.468750` against the others) and uses nine short `ljmp`

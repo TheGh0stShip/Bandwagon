@@ -20,7 +20,7 @@ not the final implementation.
 |---|---|---|
 | Stage4 | Complete whole-file assembly | Complete: all 1,872 Peer-authored bytes have C++/typed-source coverage; the verified 64 KiB tail is third-party hypervisor data |
 | Stage3 | Complete whole-file assembly | Complete: Peer entry/probe source plus function-by-function verified composition with pinned public BadUpdate C++ |
-| Motherboard SMC patches | Complete streams and mapped 8051 listings | Partial: Trinity plus Falcon/Jasper/Xenon/Zephyr executable records complete; shared `XBPP` handshake/sender recovered on all six boards; Corona remains |
+| Motherboard SMC patches | Complete streams and mapped 8051 listings | Complete: all executable records for all six boards have verified C++ coverage; integration edits have machine-readable ownership |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
 | BootXell | Complete initialized sections | Partial: boot-option parsing and launch decisions |
 | AuroraFixer | Complete initialized sections | Complete: all five Peer-authored routines, including live import traversal, mutation, cache maintenance, and entry flow |
