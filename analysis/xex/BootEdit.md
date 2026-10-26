@@ -54,4 +54,6 @@ become a display name by removing the final `.xbat` occurrence and a full
 `Themes:\` path. The color context-menu model preserves its shared four-float
 clipboard and availability flag: Copy only updates the clipboard, while
 enabled Paste, Undo, and Reset replace the edited value and report a change.
+The companion four-component equality predicate reproduces the exact float
+comparisons used to enable Undo, including treating NaN components as unequal.
 Run the host test with `tools/test_bootedit_reconstruction.sh`.

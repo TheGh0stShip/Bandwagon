@@ -23,6 +23,9 @@ struct ColorClipboard {
 
 enum class ColorAction { kNone, kCopy, kPaste, kUndo, kReset };
 
+bool ColorsEqual(const Color& left, const Color& right);
+bool CanUndoColor(const Color& edited, const Color& undo_value);
+
 // Reconstructs the non-ImGui state changes in the color context menu. Returns
 // true exactly for actions that replace the edited color.
 bool ApplyColorAction(ColorAction action, Color* edited,

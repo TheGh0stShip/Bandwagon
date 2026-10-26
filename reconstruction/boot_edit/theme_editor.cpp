@@ -10,6 +10,15 @@ SavedTheme BuildSavedTheme(std::string_view file_name) {
   };
 }
 
+bool ColorsEqual(const Color& left, const Color& right) {
+  return left[0] == right[0] && left[1] == right[1] &&
+         left[2] == right[2] && left[3] == right[3];
+}
+
+bool CanUndoColor(const Color& edited, const Color& undo_value) {
+  return !ColorsEqual(edited, undo_value);
+}
+
 bool ApplyColorAction(ColorAction action, Color* edited,
                       const Color& undo_value, const Color& default_value,
                       ColorClipboard* clipboard) {
