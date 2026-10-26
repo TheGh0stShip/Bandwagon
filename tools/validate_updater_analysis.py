@@ -9,6 +9,16 @@ import json
 from pathlib import Path
 
 
+REQUIRED_APPLICATION_EDGES = {
+    (0x98007758, 0x98006990),  # RunUpdate -> SoftmodData_CollectFilesByPrefix
+    (0x98007758, 0x98007BC0),  # RunUpdate -> FileExists
+    (0x98007758, 0x98007EF0),  # RunUpdate -> EnsureParentDirectories
+    (0x98007758, 0x98006740),  # RunUpdate -> SoftmodData_ExtractFileToPath
+    (0x98007758, 0x98007680),  # RunUpdate -> AppendPhaseTwoPath
+    (0x98007758, 0x98006F60),  # RunUpdate -> WritePhaseTwoFileList
+}
+
+
 def load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -47,6 +57,11 @@ def main() -> None:
     for edge in calls["edges"]:
         if int(edge["caller_address"], 0) not in addresses:
             raise SystemExit(f"call edge caller is not mapped: {edge['caller_address']}")
+    edge_pairs = {(int(edge["caller_address"], 0), int(edge["target_address"], 0)) for edge in calls["edges"]}
+    missing_edges = REQUIRED_APPLICATION_EDGES - edge_pairs
+    if missing_edges:
+        rendered = ", ".join(f"0x{caller:08x}->0x{target:08x}" for caller, target in sorted(missing_edges))
+        raise SystemExit(f"Updater application pipeline edges changed: {rendered}")
 
     cursor = args.text_address
     for item in attribution["ranges"]:

@@ -79,6 +79,15 @@ Static strings and call targets establish these major responsibilities:
 - report and preserve explicit failure states for archive, allocation, file,
   and raw-disk operations.
 
+The semantic overlay now also names the per-record update pipeline:
+`SoftmodData_CollectFilesByPrefix` selects and validates the `PeerPressure/`
+manifest records, `FileExists` implements preserve-existing-file decisions,
+`EnsureParentDirectories` prepares each destination,
+`SoftmodData_ExtractFileToPath` writes the selected archive member, and
+`AppendPhaseTwoPath` accumulates records later serialized by
+`WritePhaseTwoFileList`. These names are tied to their call roles and manifest
+record flow rather than inferred from address adjacency.
+
 ## Source attribution
 
 The range `0x98008d68`–`0x9800d130` is embedded miniz. Five externally used

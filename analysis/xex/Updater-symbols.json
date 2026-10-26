@@ -38,6 +38,20 @@
       "evidence": ["searches parsed manifest records and compares the requested path", "returns the matching record containing the Stage2 size and integrity metadata"]
     },
     {
+      "address": "0x98006740",
+      "recovered_name": "fn_98006740",
+      "semantic_name": "SoftmodData_ExtractFileToPath",
+      "confidence": "high",
+      "evidence": ["accepts a manifest/archive record and destination path", "extracts through the miniz reader and writes the result through the file-output helper", "called once per selected PeerPressure/ record by RunUpdate"]
+    },
+    {
+      "address": "0x98006990",
+      "recovered_name": "fn_98006990",
+      "semantic_name": "SoftmodData_CollectFilesByPrefix",
+      "confidence": "high",
+      "evidence": ["called by RunUpdate with the PeerPressure/ prefix and an output vector", "iterates 0x470-byte manifest records, compares paths, verifies archive extraction and integrity state, and appends matching records"]
+    },
+    {
       "address": "0x98006ce0",
       "recovered_name": "fn_98006CE0",
       "semantic_name": "GetSoftmodDataContext",
@@ -59,11 +73,32 @@
       "evidence": ["references PPROOT:\\update.phase2", "serializes the phase-two path list"]
     },
     {
+      "address": "0x98007680",
+      "recovered_name": "fn_98007680",
+      "semantic_name": "AppendPhaseTwoPath",
+      "confidence": "high",
+      "evidence": ["appends a normalized path to the vector later consumed by WritePhaseTwoFileList", "called only for manifest records carrying the phase-two flag"]
+    },
+    {
       "address": "0x98007758",
       "recovered_name": "fn_98007758",
       "semantic_name": "RunUpdate",
       "confidence": "high",
       "evidence": ["owns the Loading update data, Updating HDD payload, Extracting, and Finalizing progress states", "coordinates PeerPressure/ extraction and the HDD bootstrap install"]
+    },
+    {
+      "address": "0x98007bc0",
+      "recovered_name": "fn_98007BC0",
+      "semantic_name": "FileExists",
+      "confidence": "high",
+      "evidence": ["opens the supplied path without creating it", "returns false on the invalid-handle sentinel and otherwise closes the handle before returning true", "used by RunUpdate's preserve-existing-file decision"]
+    },
+    {
+      "address": "0x98007ef0",
+      "recovered_name": "fn_98007EF0",
+      "semantic_name": "EnsureParentDirectories",
+      "confidence": "medium",
+      "evidence": ["walks components of a destination path and invokes the directory/file helper chain", "RunUpdate requires it to succeed immediately before SoftmodData_ExtractFileToPath"]
     },
     {
       "address": "0x9800b560",
