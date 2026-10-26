@@ -151,6 +151,15 @@
       "symbols": ["DrivePathBinding", "DrivePathBindingTable", "DrivePathProbeServices", "BindDrivePath", "kInvalidDrivePathStatus"]
     },
     {
+      "address": "0x801f41e8",
+      "size": 760,
+      "sha256": "4cc9e5bd18c35fa23c7379f545f4ba07a38ee0034a7b120ca9f06b28791e6b7c",
+      "semantic_name": "ApplyStructuredConfigValue",
+      "source": "reconstruction/kernel_expansion/config_value.cpp",
+      "header": "reconstruction/kernel_expansion/config_value.hpp",
+      "symbols": ["StructuredConfigValueType", "StructuredConfigEntry", "StructuredConfigDestination", "ConfigValueDiagnostics", "ApplyStructuredConfigValue"]
+    },
+    {
       "address": "0x801f4d08",
       "size": 48,
       "sha256": "73ef2c07b47a2efbaeb7168d6b6991ca940bebc21015c50df3598b12a8ec003a",
@@ -379,6 +388,7 @@
     "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
     "reconstruction/kernel_expansion/config_hash_test.cpp",
+    "reconstruction/kernel_expansion/config_value_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/decimal_test.cpp",
     "reconstruction/kernel_expansion/drive_binding_test.cpp",

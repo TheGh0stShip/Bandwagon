@@ -2758,7 +2758,7 @@
       "target_containing_function": "NtClose"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f41ec",
       "target_address": "0x801feac0",
@@ -2766,7 +2766,7 @@
       "target_containing_function": "fn_801FEAC0"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f4218",
       "target_address": "0x801f7878",
@@ -2774,7 +2774,7 @@
       "target_containing_function": "ComputeConfigKeyHash"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f4288",
       "target_address": "0x801fef58",
@@ -2782,7 +2782,7 @@
       "target_containing_function": "RtlCompareStringN"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f42ac",
       "target_address": "0x801fef58",
@@ -2790,7 +2790,7 @@
       "target_containing_function": "RtlCompareStringN"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f42dc",
       "target_address": "0x801fec18",
@@ -2798,7 +2798,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f4388",
       "target_address": "0x801f78e0",
@@ -2806,7 +2806,7 @@
       "target_containing_function": "ParseSignedDecimal"
     },
     {
-      "caller": "fn_801F41E8",
+      "caller": "ApplyStructuredConfigValue",
       "caller_address": "0x801f41e8",
       "instruction_address": "0x801f440c",
       "target_address": "0x801ff0b8",

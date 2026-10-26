@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 52 high-confidence behavioral labels are emitted directly into the exact
+- 53 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -162,6 +162,12 @@ lift. The first exact-byte-bound routines are:
   ASCII-case-insensitive reflected CRC-32 used by schema lookup. Tests bind the
   exact hashes embedded beside all six PeerPressure `Config.ini` keys, as well
   as case folding and empty-input behavior.
+- `ApplyStructuredConfigValue` (`0x801f41e8`, 760 bytes), represented as the
+  complete typed schema dispatcher over recovered 20-byte records. It matches
+  the optional key CRC plus case-insensitive section/key strings, then applies
+  bounded optionally quoted strings, wrapping signed decimals, first-character
+  Booleans, or `0x` colors. Color tests cover all four normalized float channels
+  and the option bits that retain selected channels in raw 0-255 form.
 - `IsVersionAtLeastComponentWise` (`0x801f87f8`, 80 bytes), the exact four-byte
   bound predicate used by `ParseDllConfigEntry`. It treats `0xff` on either side
   as a wildcard and intentionally preserves the binary's component-wise rather
@@ -198,7 +204,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-41 independently bounded routines totaling 5,088 original instruction bytes.
+42 independently bounded routines totaling 5,848 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable
@@ -210,5 +216,6 @@ exFAT and returns multiple classification values; its corrected
 establishes the default singleton before entering the locked config path. Its
 caller is now also lifted, including allocation, probing, six-entry schema
 dispatch, and both fallback paths. The common config adapter and its lock
-wrapper are also lifted; the generic mode-dependent config engine they invoke
-is still being classified.
+wrapper, key hash, and complete typed value dispatcher are also lifted; the
+generic mode-dependent config file transaction they invoke is still being
+classified.

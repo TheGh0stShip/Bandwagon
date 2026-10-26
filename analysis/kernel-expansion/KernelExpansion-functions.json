@@ -592,9 +592,9 @@
       "address": "0x801f41e8",
       "section_offset": "0x41e8",
       "size_to_next_symbol": 760,
-      "name": "fn_801F41E8",
+      "name": "ApplyStructuredConfigValue",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

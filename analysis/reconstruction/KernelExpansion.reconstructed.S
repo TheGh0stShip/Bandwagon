@@ -4282,7 +4282,7 @@ fn_801F3F00:
     .long 0x38210130 /* 0x041dc */
     .long 0x4800a928 /* 0x041e0 */
     .long 0x00000000 /* 0x041e4 */
-fn_801F41E8:
+ApplyStructuredConfigValue:
     .long 0x7d8802a6 /* 0x041e8 */
     .long 0x4800a8d5 /* 0x041ec */
     .long 0x9421ff50 /* 0x041f0 */

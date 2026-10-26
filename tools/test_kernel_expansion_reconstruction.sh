@@ -50,6 +50,14 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/config_hash_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/config_hash.cpp" \
+    "$root/reconstruction/kernel_expansion/decimal.cpp" \
+    "$root/reconstruction/kernel_expansion/config_value.cpp" \
+    "$root/reconstruction/kernel_expansion/config_value_test.cpp" \
+    -o "$work/config_value_test"
+"$work/config_value_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/config.cpp" \
     "$root/reconstruction/kernel_expansion/runtime.cpp" \
     "$root/reconstruction/kernel_expansion/config_loader.cpp" \
