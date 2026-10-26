@@ -56,3 +56,11 @@ replacement intentionally zeroes that padding and tests the deviation.
 launcher's initialized code, while `BootXell.nontext.reconstructed.S` rebuilds
 its `.rdata`, `.pdata`, and `.data` ranges. `tools/analyze_bootxell_xex.sh`
 regenerates both sources and their function, call, and string-reference maps.
+
+## AuroraFixer
+
+`AuroraFixer.text.reconstructed.S` and
+`AuroraFixer.nontext.reconstructed.S` exactly rebuild every initialized code
+and data section in the compatibility DLL. The portable C++ under
+`reconstruction/aurora_fixer/` reproduces its four-instruction absolute branch
+encoder without performing live memory writes.

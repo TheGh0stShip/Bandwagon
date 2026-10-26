@@ -55,6 +55,11 @@ the Stage2 bootstrap-record builder are tracked alongside it.
 source, plus reproducible function, call, string-reference, and semantic-symbol
 inventories.
 
+`xex/AuroraFixer.md` reconstructs the SideLoading compatibility DLL. Its full
+initialized code/data image is byte-identical assembly, and its process-attach
+hook, import lookup, and absolute-branch patch encoder are semantically named.
+The pure branch encoder also has a portable C++ reconstruction and host test.
+
 ## BadUpdate baseline and modified stages
 
 `badupdate-v1.3-baseline.md` records the pinned public-source/release

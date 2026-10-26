@@ -1,0 +1,34 @@
+{
+  "schema": "bandwagon-aurorafixer-semantic-symbols-v1",
+  "image_sha256": "eca239f0f17b4c8c4b9e1e24bb29fad324ed6b698081bf8e2fa379707b2de168",
+  "symbols": [
+    {
+      "address": "0x88010018",
+      "recovered_name": "fn_88010018",
+      "semantic_name": "PatchAbsoluteBranch",
+      "confidence": "high",
+      "evidence": ["emits lis/addi/mtctr/bctr or bctrl at the supplied address", "optionally copies the replaced 16 bytes and performs instruction-cache maintenance"]
+    },
+    {
+      "address": "0x880100f0",
+      "recovered_name": "fn_880100F0",
+      "semantic_name": "PatchModuleImportByOrdinal",
+      "confidence": "high",
+      "evidence": ["walks the XEX import descriptor and import records", "diagnostics explicitly identify module/ordinal lookup, export resolution, and import-stub patch failures", "calls PatchAbsoluteBranch on the matching import stub"]
+    },
+    {
+      "address": "0x880102f8",
+      "recovered_name": null,
+      "semantic_name": "ReturnImmediately",
+      "confidence": "high",
+      "evidence": ["single blr instruction", "installed as the replacement for xboxkrnl ordinal 1"]
+    },
+    {
+      "address": "0x88010300",
+      "recovered_name": "fn_88010300",
+      "semantic_name": "AuroraFixerDllMain",
+      "confidence": "high",
+      "evidence": ["tests for DLL_PROCESS_ATTACH", "references Hello from DLL_PROCESS_ATTACH and xboxkrnl.exe", "patches xboxkrnl ordinal 1 to ReturnImmediately"]
+    }
+  ]
+}

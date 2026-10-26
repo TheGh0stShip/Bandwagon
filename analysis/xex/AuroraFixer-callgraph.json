@@ -1,0 +1,1897 @@
+{
+  "schema": "bandwagon-ppc-direct-callgraph-v1",
+  "image": "/mnt/c/temp/Bandwagon/analysis/xex/basefiles/PeerPressure_SideLoading_AuroraFixer.pe",
+  "image_sha256": "eca239f0f17b4c8c4b9e1e24bb29fad324ed6b698081bf8e2fa379707b2de168",
+  "edge_count": 236,
+  "resolved_function_entry_edges": 178,
+  "edges": [
+    {
+      "caller": "fn_88010018",
+      "caller_address": "0x88010018",
+      "instruction_address": "0x880100ac",
+      "target_address": "0x88010670",
+      "callee": null,
+      "target_containing_function": "_start"
+    },
+    {
+      "caller": "fn_88010018",
+      "caller_address": "0x88010018",
+      "instruction_address": "0x880100bc",
+      "target_address": "0x88010670",
+      "callee": null,
+      "target_containing_function": "_start"
+    },
+    {
+      "caller": "fn_88010018",
+      "caller_address": "0x88010018",
+      "instruction_address": "0x880100c8",
+      "target_address": "0x880147cc",
+      "callee": "xboxkrnl_exe_1",
+      "target_containing_function": "xboxkrnl_exe_1"
+    },
+    {
+      "caller": "fn_88010018",
+      "caller_address": "0x88010018",
+      "instruction_address": "0x880100d0",
+      "target_address": "0x880147bc",
+      "callee": "xboxkrnl_exe_0",
+      "target_containing_function": "xboxkrnl_exe_0"
+    },
+    {
+      "caller": "fn_88010018",
+      "caller_address": "0x88010018",
+      "instruction_address": "0x880100d8",
+      "target_address": "0x88010000",
+      "callee": "fn_88010000",
+      "target_containing_function": "fn_88010000"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x880100f4",
+      "target_address": "0x88010bc8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010120",
+      "target_address": "0x8801481c",
+      "callee": "xboxkrnl_exe_6",
+      "target_containing_function": "xboxkrnl_exe_6"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010148",
+      "target_address": "0x8801480c",
+      "callee": "xboxkrnl_exe_5",
+      "target_containing_function": "xboxkrnl_exe_5"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010164",
+      "target_address": "0x880147fc",
+      "callee": "xboxkrnl_exe_4",
+      "target_containing_function": "xboxkrnl_exe_4"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010178",
+      "target_address": "0x880147ec",
+      "callee": "xboxkrnl_exe_3",
+      "target_containing_function": "xboxkrnl_exe_3"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010190",
+      "target_address": "0x880147fc",
+      "callee": "xboxkrnl_exe_4",
+      "target_containing_function": "xboxkrnl_exe_4"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x8801020c",
+      "target_address": "0x880147dc",
+      "callee": "xboxkrnl_exe_2",
+      "target_containing_function": "xboxkrnl_exe_2"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010268",
+      "target_address": "0x880147cc",
+      "callee": "xboxkrnl_exe_1",
+      "target_containing_function": "xboxkrnl_exe_1"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010270",
+      "target_address": "0x880147bc",
+      "callee": "xboxkrnl_exe_0",
+      "target_containing_function": "xboxkrnl_exe_0"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x88010278",
+      "target_address": "0x88010000",
+      "callee": "fn_88010000",
+      "target_containing_function": "fn_88010000"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x880102b0",
+      "target_address": "0x88010018",
+      "callee": "fn_88010018",
+      "target_containing_function": "fn_88010018"
+    },
+    {
+      "caller": "fn_880100F0",
+      "caller_address": "0x880100f0",
+      "instruction_address": "0x880102e4",
+      "target_address": "0x880147fc",
+      "callee": "xboxkrnl_exe_4",
+      "target_containing_function": "xboxkrnl_exe_4"
+    },
+    {
+      "caller": "fn_88010300",
+      "caller_address": "0x88010300",
+      "instruction_address": "0x88010324",
+      "target_address": "0x880147fc",
+      "callee": "xboxkrnl_exe_4",
+      "target_containing_function": "xboxkrnl_exe_4"
+    },
+    {
+      "caller": "fn_88010300",
+      "caller_address": "0x88010300",
+      "instruction_address": "0x88010330",
+      "target_address": "0x8801481c",
+      "callee": "xboxkrnl_exe_6",
+      "target_containing_function": "xboxkrnl_exe_6"
+    },
+    {
+      "caller": "fn_88010300",
+      "caller_address": "0x88010300",
+      "instruction_address": "0x8801034c",
+      "target_address": "0x880100f0",
+      "callee": "fn_880100F0",
+      "target_containing_function": "fn_880100F0"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x88010398",
+      "target_address": "0x88011ed8",
+      "callee": "fn_88011ED8",
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x880103ac",
+      "target_address": "0x88010ee0",
+      "callee": "fn_88010EE0",
+      "target_containing_function": "fn_88010EE0"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x880103b8",
+      "target_address": "0x88011e78",
+      "callee": "fn_88011E78",
+      "target_containing_function": "fn_88011E78"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x880103c0",
+      "target_address": "0x88011e00",
+      "callee": "fn_88011E00",
+      "target_containing_function": "fn_88011E00"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x880103cc",
+      "target_address": "0x88011d20",
+      "callee": "fn_88011D20",
+      "target_containing_function": "fn_88011D20"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x88010420",
+      "target_address": "0x88010c50",
+      "callee": "fn_88010C50",
+      "target_containing_function": "fn_88010C50"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x8801045c",
+      "target_address": "0x88011228",
+      "callee": null,
+      "target_containing_function": "fn_880111C4"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x88010484",
+      "target_address": "0x88010c50",
+      "callee": "fn_88010C50",
+      "target_containing_function": "fn_88010C50"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x88010488",
+      "target_address": "0x88011e78",
+      "callee": "fn_88011E78",
+      "target_containing_function": "fn_88011E78"
+    },
+    {
+      "caller": "fn_88010370",
+      "caller_address": "0x88010370",
+      "instruction_address": "0x88010494",
+      "target_address": "0x880104bc",
+      "callee": null,
+      "target_containing_function": "fn_8801049C"
+    },
+    {
+      "caller": "fn_8801049C",
+      "caller_address": "0x8801049c",
+      "instruction_address": "0x880104ec",
+      "target_address": "0x88010c50",
+      "callee": "fn_88010C50",
+      "target_containing_function": "fn_88010C50"
+    },
+    {
+      "caller": "fn_88010510",
+      "caller_address": "0x88010510",
+      "instruction_address": "0x88010514",
+      "target_address": "0x88010bd4",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88010510",
+      "caller_address": "0x88010510",
+      "instruction_address": "0x8801057c",
+      "target_address": "0x88010370",
+      "callee": "fn_88010370",
+      "target_containing_function": "fn_88010370"
+    },
+    {
+      "caller": "fn_88010510",
+      "caller_address": "0x88010510",
+      "instruction_address": "0x880105a4",
+      "target_address": "0x88010300",
+      "callee": "fn_88010300",
+      "target_containing_function": "fn_88010300"
+    },
+    {
+      "caller": "fn_88010510",
+      "caller_address": "0x88010510",
+      "instruction_address": "0x880105cc",
+      "target_address": "0x88010300",
+      "callee": "fn_88010300",
+      "target_containing_function": "fn_88010300"
+    },
+    {
+      "caller": "fn_88010510",
+      "caller_address": "0x88010510",
+      "instruction_address": "0x880105dc",
+      "target_address": "0x88010370",
+      "callee": "fn_88010370",
+      "target_containing_function": "fn_88010370"
+    },
+    {
+      "caller": "fn_88010510",
+      "caller_address": "0x88010510",
+      "instruction_address": "0x880105fc",
+      "target_address": "0x88010370",
+      "callee": "fn_88010370",
+      "target_containing_function": "fn_88010370"
+    },
+    {
+      "caller": "fn_88010638",
+      "caller_address": "0x88010638",
+      "instruction_address": "0x88010650",
+      "target_address": "0x88011450",
+      "callee": null,
+      "target_containing_function": "fn_88011268"
+    },
+    {
+      "caller": "fn_88010C50",
+      "caller_address": "0x88010c50",
+      "instruction_address": "0x88010c70",
+      "target_address": "0x8801485c",
+      "callee": "xboxkrnl_exe_10",
+      "target_containing_function": "xboxkrnl_exe_10"
+    },
+    {
+      "caller": "fn_88010C50",
+      "caller_address": "0x88010c50",
+      "instruction_address": "0x88010c7c",
+      "target_address": "0x88011470",
+      "callee": "fn_88011470",
+      "target_containing_function": "fn_88011470"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010c9c",
+      "target_address": "0x88010bdc",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010ca4",
+      "target_address": "0x88011fc8",
+      "callee": null,
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010cb4",
+      "target_address": "0x8801483c",
+      "callee": "xboxkrnl_exe_8",
+      "target_containing_function": "xboxkrnl_exe_8"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010cc8",
+      "target_address": "0x8801484c",
+      "callee": "xboxkrnl_exe_9",
+      "target_containing_function": "xboxkrnl_exe_9"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010cdc",
+      "target_address": "0x88011820",
+      "callee": "fn_88011820",
+      "target_containing_function": "fn_88011820"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010cf0",
+      "target_address": "0x8801484c",
+      "callee": "xboxkrnl_exe_9",
+      "target_containing_function": "xboxkrnl_exe_9"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010d18",
+      "target_address": "0x88011fb8",
+      "callee": null,
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010d30",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010d40",
+      "target_address": "0x8801484c",
+      "callee": "xboxkrnl_exe_9",
+      "target_containing_function": "xboxkrnl_exe_9"
+    },
+    {
+      "caller": "fn_88010C98",
+      "caller_address": "0x88010c98",
+      "instruction_address": "0x88010d5c",
+      "target_address": "0x88011fb0",
+      "callee": null,
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_88010D70",
+      "caller_address": "0x88010d70",
+      "instruction_address": "0x88010d80",
+      "target_address": "0x88010c98",
+      "callee": "fn_88010C98",
+      "target_containing_function": "fn_88010C98"
+    },
+    {
+      "caller": "fn_88010D70",
+      "caller_address": "0x88010d70",
+      "instruction_address": "0x88010d90",
+      "target_address": "0x88011238",
+      "callee": "fn_88011238",
+      "target_containing_function": "fn_88011238"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010dd8",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010de8",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010df8",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010e08",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010e18",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010e28",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010e38",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010e50",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010DB0",
+      "caller_address": "0x88010db0",
+      "instruction_address": "0x88010e58",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88010E70",
+      "caller_address": "0x88010e70",
+      "instruction_address": "0x88010ea4",
+      "target_address": "0x8801483c",
+      "callee": "xboxkrnl_exe_8",
+      "target_containing_function": "xboxkrnl_exe_8"
+    },
+    {
+      "caller": "fn_88010E70",
+      "caller_address": "0x88010e70",
+      "instruction_address": "0x88010eb8",
+      "target_address": "0x8801484c",
+      "callee": "xboxkrnl_exe_9",
+      "target_containing_function": "xboxkrnl_exe_9"
+    },
+    {
+      "caller": "fn_88010E70",
+      "caller_address": "0x88010e70",
+      "instruction_address": "0x88010ec0",
+      "target_address": "0x88010db0",
+      "callee": "fn_88010DB0",
+      "target_containing_function": "fn_88010DB0"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010ef4",
+      "target_address": "0x88010fc0",
+      "callee": "fn_88010FC0",
+      "target_containing_function": "fn_88010FC0"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010ef8",
+      "target_address": "0x88011598",
+      "callee": "fn_88011598",
+      "target_containing_function": "fn_88011598"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010f04",
+      "target_address": "0x8801486c",
+      "callee": "xboxkrnl_exe_11",
+      "target_containing_function": "xboxkrnl_exe_11"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010f24",
+      "target_address": "0x88011820",
+      "callee": "fn_88011820",
+      "target_containing_function": "fn_88011820"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010f38",
+      "target_address": "0x8801484c",
+      "callee": "xboxkrnl_exe_9",
+      "target_containing_function": "xboxkrnl_exe_9"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010f60",
+      "target_address": "0x88011fb8",
+      "callee": null,
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010f8c",
+      "target_address": "0x88011fd0",
+      "callee": "fn_88011FD0",
+      "target_containing_function": "fn_88011FD0"
+    },
+    {
+      "caller": "fn_88010EE0",
+      "caller_address": "0x88010ee0",
+      "instruction_address": "0x88010f98",
+      "target_address": "0x88010c50",
+      "callee": "fn_88010C50",
+      "target_containing_function": "fn_88010C50"
+    },
+    {
+      "caller": "fn_88010FC0",
+      "caller_address": "0x88010fc0",
+      "instruction_address": "0x88010fd0",
+      "target_address": "0x88011930",
+      "callee": null,
+      "target_containing_function": "fn_880118EC"
+    },
+    {
+      "caller": "fn_88010FC0",
+      "caller_address": "0x88010fc0",
+      "instruction_address": "0x88010fd8",
+      "target_address": "0x88011920",
+      "callee": null,
+      "target_containing_function": "fn_880118EC"
+    },
+    {
+      "caller": "fn_88010FC0",
+      "caller_address": "0x88010fc0",
+      "instruction_address": "0x88010fe0",
+      "target_address": "0x88011910",
+      "callee": null,
+      "target_containing_function": "fn_880118EC"
+    },
+    {
+      "caller": "fn_88010FC0",
+      "caller_address": "0x88010fc0",
+      "instruction_address": "0x88010fe8",
+      "target_address": "0x880118f8",
+      "callee": null,
+      "target_containing_function": "fn_880118EC"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x88011064",
+      "target_address": "0x88010bc8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x88011080",
+      "target_address": "0x88011760",
+      "callee": "fn_88011760",
+      "target_containing_function": "fn_88011760"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x880110ac",
+      "target_address": "0x8801487c",
+      "callee": "xboxkrnl_exe_12",
+      "target_containing_function": "xboxkrnl_exe_12"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x88011184",
+      "target_address": "0x88011000",
+      "callee": "fn_88011000",
+      "target_containing_function": "fn_88011000"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x88011198",
+      "target_address": "0x88011000",
+      "callee": "fn_88011000",
+      "target_containing_function": "fn_88011000"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x880111a4",
+      "target_address": "0x880111e4",
+      "callee": null,
+      "target_containing_function": "fn_880111C4"
+    },
+    {
+      "caller": "fn_88011060",
+      "caller_address": "0x88011060",
+      "instruction_address": "0x880111b8",
+      "target_address": "0x8801487c",
+      "callee": "xboxkrnl_exe_12",
+      "target_containing_function": "xboxkrnl_exe_12"
+    },
+    {
+      "caller": "fn_880111C4",
+      "caller_address": "0x880111c4",
+      "instruction_address": "0x88011208",
+      "target_address": "0x880114e0",
+      "callee": null,
+      "target_containing_function": "fn_88011470"
+    },
+    {
+      "caller": "fn_88011238",
+      "caller_address": "0x88011238",
+      "instruction_address": "0x8801124c",
+      "target_address": "0x88011a00",
+      "callee": "fn_88011A00",
+      "target_containing_function": "fn_88011A00"
+    },
+    {
+      "caller": "fn_88011238",
+      "caller_address": "0x88011238",
+      "instruction_address": "0x88011254",
+      "target_address": "0x880119d0",
+      "callee": "fn_880119D0",
+      "target_containing_function": "fn_880119D0"
+    },
+    {
+      "caller": "fn_88011238",
+      "caller_address": "0x88011238",
+      "instruction_address": "0x88011260",
+      "target_address": "0x88011060",
+      "callee": "fn_88011060",
+      "target_containing_function": "fn_88011060"
+    },
+    {
+      "caller": "fn_88011268",
+      "caller_address": "0x88011268",
+      "instruction_address": "0x8801126c",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011268",
+      "caller_address": "0x88011268",
+      "instruction_address": "0x8801127c",
+      "target_address": "0x88010c98",
+      "callee": "fn_88010C98",
+      "target_containing_function": "fn_88010C98"
+    },
+    {
+      "caller": "fn_88011470",
+      "caller_address": "0x88011470",
+      "instruction_address": "0x880114a8",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88011500",
+      "caller_address": "0x88011500",
+      "instruction_address": "0x88011520",
+      "target_address": "0x8801489c",
+      "callee": "xboxkrnl_exe_14",
+      "target_containing_function": "xboxkrnl_exe_14"
+    },
+    {
+      "caller": "fn_88011500",
+      "caller_address": "0x88011500",
+      "instruction_address": "0x88011550",
+      "target_address": "0x88011fb0",
+      "callee": null,
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_88011598",
+      "caller_address": "0x88011598",
+      "instruction_address": "0x8801159c",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011598",
+      "caller_address": "0x88011598",
+      "instruction_address": "0x880115d8",
+      "target_address": "0x88011500",
+      "callee": "fn_88011500",
+      "target_containing_function": "fn_88011500"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x88011624",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x8801163c",
+      "target_address": "0x88012080",
+      "callee": null,
+      "target_containing_function": "fn_88012040"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x88011648",
+      "target_address": "0x88011a00",
+      "callee": "fn_88011A00",
+      "target_containing_function": "fn_88011A00"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x88011650",
+      "target_address": "0x880119d0",
+      "callee": "fn_880119D0",
+      "target_containing_function": "fn_880119D0"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x88011658",
+      "target_address": "0x88010fb8",
+      "callee": null,
+      "target_containing_function": "fn_88010EE0"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x88011680",
+      "target_address": "0x88011af0",
+      "callee": "fn_88011AF0",
+      "target_containing_function": "fn_88011AF0"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x8801168c",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x880116a8",
+      "target_address": "0x88011760",
+      "callee": "fn_88011760",
+      "target_containing_function": "fn_88011760"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x880116c4",
+      "target_address": "0x88011500",
+      "callee": "fn_88011500",
+      "target_containing_function": "fn_88011500"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x880116d4",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x880116d8",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x880116f8",
+      "target_address": "0x880117c0",
+      "callee": "fn_880117C0",
+      "target_containing_function": "fn_880117C0"
+    },
+    {
+      "caller": "fn_88011620",
+      "caller_address": "0x88011620",
+      "instruction_address": "0x88011704",
+      "target_address": "0x88011730",
+      "callee": null,
+      "target_containing_function": "fn_88011714"
+    },
+    {
+      "caller": "fn_88011714",
+      "caller_address": "0x88011714",
+      "instruction_address": "0x88011744",
+      "target_address": "0x8801488c",
+      "callee": "xboxkrnl_exe_13",
+      "target_containing_function": "xboxkrnl_exe_13"
+    },
+    {
+      "caller": "fn_88011760",
+      "caller_address": "0x88011760",
+      "instruction_address": "0x8801178c",
+      "target_address": "0x88011620",
+      "callee": "fn_88011620",
+      "target_containing_function": "fn_88011620"
+    },
+    {
+      "caller": "fn_88011760",
+      "caller_address": "0x88011760",
+      "instruction_address": "0x8801179c",
+      "target_address": "0x88011238",
+      "callee": "fn_88011238",
+      "target_containing_function": "fn_88011238"
+    },
+    {
+      "caller": "fn_88011760",
+      "caller_address": "0x88011760",
+      "instruction_address": "0x880117a4",
+      "target_address": "0x880148ac",
+      "callee": "xboxkrnl_exe_15",
+      "target_containing_function": "xboxkrnl_exe_15"
+    },
+    {
+      "caller": "fn_880117C0",
+      "caller_address": "0x880117c0",
+      "instruction_address": "0x880117dc",
+      "target_address": "0x88012080",
+      "callee": null,
+      "target_containing_function": "fn_88012040"
+    },
+    {
+      "caller": "fn_880117C0",
+      "caller_address": "0x880117c0",
+      "instruction_address": "0x880117e8",
+      "target_address": "0x880142a0",
+      "callee": "fn_880142A0",
+      "target_containing_function": "fn_880142A0"
+    },
+    {
+      "caller": "fn_880117C0",
+      "caller_address": "0x880117c0",
+      "instruction_address": "0x880117f4",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_880117C0",
+      "caller_address": "0x880117c0",
+      "instruction_address": "0x880117fc",
+      "target_address": "0x88011fc8",
+      "callee": null,
+      "target_containing_function": "fn_88011ED8"
+    },
+    {
+      "caller": "fn_880117C0",
+      "caller_address": "0x880117c0",
+      "instruction_address": "0x88011800",
+      "target_address": "0x88011a48",
+      "callee": null,
+      "target_containing_function": "fn_88011A00"
+    },
+    {
+      "caller": "fn_88011820",
+      "caller_address": "0x88011820",
+      "instruction_address": "0x8801183c",
+      "target_address": "0x88011bb8",
+      "callee": "fn_88011BB8",
+      "target_containing_function": "fn_88011BB8"
+    },
+    {
+      "caller": "fn_88011820",
+      "caller_address": "0x88011820",
+      "instruction_address": "0x88011854",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011820",
+      "caller_address": "0x88011820",
+      "instruction_address": "0x88011860",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_880118A0",
+      "caller_address": "0x880118a0",
+      "instruction_address": "0x880118b4",
+      "target_address": "0x88010d70",
+      "callee": "fn_88010D70",
+      "target_containing_function": "fn_88010D70"
+    },
+    {
+      "caller": "fn_880118A0",
+      "caller_address": "0x880118a0",
+      "instruction_address": "0x880118e8",
+      "target_address": "0x8801487c",
+      "callee": "xboxkrnl_exe_12",
+      "target_containing_function": "xboxkrnl_exe_12"
+    },
+    {
+      "caller": "fn_880119D0",
+      "caller_address": "0x880119d0",
+      "instruction_address": "0x880119dc",
+      "target_address": "0x88011988",
+      "callee": null,
+      "target_containing_function": "fn_88011940"
+    },
+    {
+      "caller": "fn_880119D0",
+      "caller_address": "0x880119d0",
+      "instruction_address": "0x880119e8",
+      "target_address": "0x88014590",
+      "callee": "fn_88014590",
+      "target_containing_function": "fn_88014590"
+    },
+    {
+      "caller": "fn_88011A00",
+      "caller_address": "0x88011a00",
+      "instruction_address": "0x88011a10",
+      "target_address": "0x88011988",
+      "callee": null,
+      "target_containing_function": "fn_88011940"
+    },
+    {
+      "caller": "fn_88011A00",
+      "caller_address": "0x88011a00",
+      "instruction_address": "0x88011a1c",
+      "target_address": "0x88014590",
+      "callee": "fn_88014590",
+      "target_containing_function": "fn_88014590"
+    },
+    {
+      "caller": "fn_88011A00",
+      "caller_address": "0x88011a00",
+      "instruction_address": "0x88011a24",
+      "target_address": "0x88011988",
+      "callee": null,
+      "target_containing_function": "fn_88011940"
+    },
+    {
+      "caller": "fn_88011A00",
+      "caller_address": "0x88011a00",
+      "instruction_address": "0x88011a30",
+      "target_address": "0x88014590",
+      "callee": "fn_88014590",
+      "target_containing_function": "fn_88014590"
+    },
+    {
+      "caller": "fn_88011AB8",
+      "caller_address": "0x88011ab8",
+      "instruction_address": "0x88011ac4",
+      "target_address": "0x88010c98",
+      "callee": "fn_88010C98",
+      "target_containing_function": "fn_88010C98"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011af4",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b10",
+      "target_address": "0x88012080",
+      "callee": null,
+      "target_containing_function": "fn_88012040"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b1c",
+      "target_address": "0x88011a00",
+      "callee": "fn_88011A00",
+      "target_containing_function": "fn_88011A00"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b24",
+      "target_address": "0x880119d0",
+      "callee": "fn_880119D0",
+      "target_containing_function": "fn_880119D0"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b2c",
+      "target_address": "0x88010fb8",
+      "callee": null,
+      "target_containing_function": "fn_88010EE0"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b40",
+      "target_address": "0x88012080",
+      "callee": null,
+      "target_containing_function": "fn_88012040"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b4c",
+      "target_address": "0x880139a8",
+      "callee": "fn_880139A8",
+      "target_containing_function": "fn_880139A8"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b6c",
+      "target_address": "0x88011940",
+      "callee": "fn_88011940",
+      "target_containing_function": "fn_88011940"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b7c",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b84",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b98",
+      "target_address": "0x88011940",
+      "callee": "fn_88011940",
+      "target_containing_function": "fn_88011940"
+    },
+    {
+      "caller": "fn_88011AF0",
+      "caller_address": "0x88011af0",
+      "instruction_address": "0x88011b9c",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011BB8",
+      "caller_address": "0x88011bb8",
+      "instruction_address": "0x88011bbc",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011BB8",
+      "caller_address": "0x88011bb8",
+      "instruction_address": "0x88011be4",
+      "target_address": "0x88011ab8",
+      "callee": "fn_88011AB8",
+      "target_containing_function": "fn_88011AB8"
+    },
+    {
+      "caller": "fn_88011BB8",
+      "caller_address": "0x88011bb8",
+      "instruction_address": "0x88011c18",
+      "target_address": "0x88012080",
+      "callee": null,
+      "target_containing_function": "fn_88012040"
+    },
+    {
+      "caller": "fn_88011BB8",
+      "caller_address": "0x88011bb8",
+      "instruction_address": "0x88011c24",
+      "target_address": "0x880139a8",
+      "callee": "fn_880139A8",
+      "target_containing_function": "fn_880139A8"
+    },
+    {
+      "caller": "fn_88011BB8",
+      "caller_address": "0x88011bb8",
+      "instruction_address": "0x88011c40",
+      "target_address": "0x88011940",
+      "callee": "fn_88011940",
+      "target_containing_function": "fn_88011940"
+    },
+    {
+      "caller": "fn_88011E78",
+      "caller_address": "0x88011e78",
+      "instruction_address": "0x88011e98",
+      "target_address": "0x88012bb0",
+      "callee": "fn_88012BB0",
+      "target_containing_function": "fn_88012BB0"
+    },
+    {
+      "caller": "fn_88011E78",
+      "caller_address": "0x88011e78",
+      "instruction_address": "0x88011eb4",
+      "target_address": "0x88012bb0",
+      "callee": "fn_88012BB0",
+      "target_containing_function": "fn_88012BB0"
+    },
+    {
+      "caller": "fn_88011ED8",
+      "caller_address": "0x88011ed8",
+      "instruction_address": "0x88011f10",
+      "target_address": "0x880147ec",
+      "callee": "xboxkrnl_exe_3",
+      "target_containing_function": "xboxkrnl_exe_3"
+    },
+    {
+      "caller": "fn_88011ED8",
+      "caller_address": "0x88011ed8",
+      "instruction_address": "0x88011f78",
+      "target_address": "0x880133d8",
+      "callee": "fn_880133D8",
+      "target_containing_function": "fn_880133D8"
+    },
+    {
+      "caller": "fn_88011ED8",
+      "caller_address": "0x88011ed8",
+      "instruction_address": "0x88011f80",
+      "target_address": "0x88014600",
+      "callee": "fn_88014600",
+      "target_containing_function": "fn_88014600"
+    },
+    {
+      "caller": "fn_88011FD0",
+      "caller_address": "0x88011fd0",
+      "instruction_address": "0x88011fd4",
+      "target_address": "0x88010bdc",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88011FD0",
+      "caller_address": "0x88011fd0",
+      "instruction_address": "0x88011ff0",
+      "target_address": "0x880148ac",
+      "callee": "xboxkrnl_exe_15",
+      "target_containing_function": "xboxkrnl_exe_15"
+    },
+    {
+      "caller": "fn_88011FD0",
+      "caller_address": "0x88011fd0",
+      "instruction_address": "0x88012030",
+      "target_address": "0x8801488c",
+      "callee": "xboxkrnl_exe_13",
+      "target_containing_function": "xboxkrnl_exe_13"
+    },
+    {
+      "caller": "fn_88012040",
+      "caller_address": "0x88012040",
+      "instruction_address": "0x88012064",
+      "target_address": "0x880148bc",
+      "callee": "__imp_xboxkrnl_exe_17",
+      "target_containing_function": "__imp_xboxkrnl_exe_17"
+    },
+    {
+      "caller": "fn_88012040",
+      "caller_address": "0x88012040",
+      "instruction_address": "0x8801206c",
+      "target_address": "0x880146d8",
+      "callee": null,
+      "target_containing_function": "fn_88014600"
+    },
+    {
+      "caller": "fn_88012090",
+      "caller_address": "0x88012090",
+      "instruction_address": "0x8801210c",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012090",
+      "caller_address": "0x88012090",
+      "instruction_address": "0x8801215c",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012090",
+      "caller_address": "0x88012090",
+      "instruction_address": "0x88012194",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012090",
+      "caller_address": "0x88012090",
+      "instruction_address": "0x880121b8",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_88012268",
+      "caller_address": "0x88012268",
+      "instruction_address": "0x8801226c",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012268",
+      "caller_address": "0x88012268",
+      "instruction_address": "0x88012310",
+      "target_address": "0x88012090",
+      "callee": "fn_88012090",
+      "target_containing_function": "fn_88012090"
+    },
+    {
+      "caller": "fn_88012388",
+      "caller_address": "0x88012388",
+      "instruction_address": "0x8801238c",
+      "target_address": "0x88010bcc",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012388",
+      "caller_address": "0x88012388",
+      "instruction_address": "0x8801243c",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012618",
+      "caller_address": "0x88012618",
+      "instruction_address": "0x88012654",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_88012670",
+      "caller_address": "0x88012670",
+      "instruction_address": "0x88012674",
+      "target_address": "0x88010bcc",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012670",
+      "caller_address": "0x88012670",
+      "instruction_address": "0x88012768",
+      "target_address": "0x8801490c",
+      "callee": "__imp_xboxkrnl_exe_22",
+      "target_containing_function": "__imp_xboxkrnl_exe_22"
+    },
+    {
+      "caller": "fn_88012670",
+      "caller_address": "0x88012670",
+      "instruction_address": "0x88012814",
+      "target_address": "0x8801490c",
+      "callee": "__imp_xboxkrnl_exe_22",
+      "target_containing_function": "__imp_xboxkrnl_exe_22"
+    },
+    {
+      "caller": "fn_88012670",
+      "caller_address": "0x88012670",
+      "instruction_address": "0x88012954",
+      "target_address": "0x8801490c",
+      "callee": "__imp_xboxkrnl_exe_22",
+      "target_containing_function": "__imp_xboxkrnl_exe_22"
+    },
+    {
+      "caller": "fn_88012670",
+      "caller_address": "0x88012670",
+      "instruction_address": "0x88012a20",
+      "target_address": "0x8801490c",
+      "callee": "__imp_xboxkrnl_exe_22",
+      "target_containing_function": "__imp_xboxkrnl_exe_22"
+    },
+    {
+      "caller": "fn_88012A78",
+      "caller_address": "0x88012a78",
+      "instruction_address": "0x88012a7c",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012BB0",
+      "caller_address": "0x88012bb0",
+      "instruction_address": "0x88012bb4",
+      "target_address": "0x88010bd8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012BB0",
+      "caller_address": "0x88012bb0",
+      "instruction_address": "0x88012bd4",
+      "target_address": "0x880148ec",
+      "callee": "__imp_xboxkrnl_exe_20",
+      "target_containing_function": "__imp_xboxkrnl_exe_20"
+    },
+    {
+      "caller": "fn_88012BB0",
+      "caller_address": "0x88012bb0",
+      "instruction_address": "0x88012bf8",
+      "target_address": "0x880148dc",
+      "callee": "__imp_xboxkrnl_exe_19",
+      "target_containing_function": "__imp_xboxkrnl_exe_19"
+    },
+    {
+      "caller": "fn_88012BB0",
+      "caller_address": "0x88012bb0",
+      "instruction_address": "0x88012c2c",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_88012BB0",
+      "caller_address": "0x88012bb0",
+      "instruction_address": "0x88012c74",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_88012BB0",
+      "caller_address": "0x88012bb0",
+      "instruction_address": "0x88012cac",
+      "target_address": "0x88012618",
+      "callee": "fn_88012618",
+      "target_containing_function": "fn_88012618"
+    },
+    {
+      "caller": "fn_88012CC8",
+      "caller_address": "0x88012cc8",
+      "instruction_address": "0x88012ccc",
+      "target_address": "0x88010bc0",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012CC8",
+      "caller_address": "0x88012cc8",
+      "instruction_address": "0x88012d64",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012CC8",
+      "caller_address": "0x88012cc8",
+      "instruction_address": "0x88012de0",
+      "target_address": "0x88012268",
+      "callee": "fn_88012268",
+      "target_containing_function": "fn_88012268"
+    },
+    {
+      "caller": "fn_88012CC8",
+      "caller_address": "0x88012cc8",
+      "instruction_address": "0x88012e20",
+      "target_address": "0x88012a78",
+      "callee": "fn_88012A78",
+      "target_containing_function": "fn_88012A78"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012e34",
+      "target_address": "0x88010bd4",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012ea4",
+      "target_address": "0x88012388",
+      "callee": "fn_88012388",
+      "target_containing_function": "fn_88012388"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012ec8",
+      "target_address": "0x88012670",
+      "callee": "fn_88012670",
+      "target_containing_function": "fn_88012670"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012edc",
+      "target_address": "0x88012a78",
+      "callee": "fn_88012A78",
+      "target_containing_function": "fn_88012A78"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012f5c",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012fa0",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88012ff0",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x88013020",
+      "target_address": "0x88012cc8",
+      "callee": "fn_88012CC8",
+      "target_containing_function": "fn_88012CC8"
+    },
+    {
+      "caller": "fn_88012E30",
+      "caller_address": "0x88012e30",
+      "instruction_address": "0x8801305c",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_88013070",
+      "caller_address": "0x88013070",
+      "instruction_address": "0x88013074",
+      "target_address": "0x88010bb4",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_88013070",
+      "caller_address": "0x88013070",
+      "instruction_address": "0x88013178",
+      "target_address": "0x88012090",
+      "callee": "fn_88012090",
+      "target_containing_function": "fn_88012090"
+    },
+    {
+      "caller": "fn_88013070",
+      "caller_address": "0x88013070",
+      "instruction_address": "0x88013194",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_88013070",
+      "caller_address": "0x88013070",
+      "instruction_address": "0x880131c8",
+      "target_address": "0x88012268",
+      "callee": "fn_88012268",
+      "target_containing_function": "fn_88012268"
+    },
+    {
+      "caller": "fn_88013070",
+      "caller_address": "0x88013070",
+      "instruction_address": "0x880133c4",
+      "target_address": "0x88012a78",
+      "callee": "fn_88012A78",
+      "target_containing_function": "fn_88012A78"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x880133dc",
+      "target_address": "0x88010bb8",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013458",
+      "target_address": "0x88014700",
+      "callee": null,
+      "target_containing_function": "fn_88014600"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x880135e4",
+      "target_address": "0x880148ec",
+      "callee": "__imp_xboxkrnl_exe_20",
+      "target_containing_function": "__imp_xboxkrnl_exe_20"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x8801364c",
+      "target_address": "0x88011c80",
+      "callee": null,
+      "target_containing_function": "fn_88011BB8"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013660",
+      "target_address": "0x8801492c",
+      "callee": "__imp_xboxkrnl_exe_24",
+      "target_containing_function": "__imp_xboxkrnl_exe_24"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013698",
+      "target_address": "0x88011c80",
+      "callee": null,
+      "target_containing_function": "fn_88011BB8"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x880136b8",
+      "target_address": "0x8801492c",
+      "callee": "__imp_xboxkrnl_exe_24",
+      "target_containing_function": "__imp_xboxkrnl_exe_24"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013720",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013770",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013798",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x88013874",
+      "target_address": "0x880148ec",
+      "callee": "__imp_xboxkrnl_exe_20",
+      "target_containing_function": "__imp_xboxkrnl_exe_20"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x880138c8",
+      "target_address": "0x8801491c",
+      "callee": "__imp_xboxkrnl_exe_23",
+      "target_containing_function": "__imp_xboxkrnl_exe_23"
+    },
+    {
+      "caller": "fn_880133D8",
+      "caller_address": "0x880133d8",
+      "instruction_address": "0x880138f4",
+      "target_address": "0x88012cc8",
+      "callee": "fn_88012CC8",
+      "target_containing_function": "fn_88012CC8"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x880139ac",
+      "target_address": "0x88010bc0",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x880139e8",
+      "target_address": "0x880148ec",
+      "callee": "__imp_xboxkrnl_exe_20",
+      "target_containing_function": "__imp_xboxkrnl_exe_20"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88013a0c",
+      "target_address": "0x880148dc",
+      "callee": "__imp_xboxkrnl_exe_19",
+      "target_containing_function": "__imp_xboxkrnl_exe_19"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88013a4c",
+      "target_address": "0x880148ac",
+      "callee": "xboxkrnl_exe_15",
+      "target_containing_function": "xboxkrnl_exe_15"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88013cf4",
+      "target_address": "0x88012e30",
+      "callee": "fn_88012E30",
+      "target_containing_function": "fn_88012E30"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x8801409c",
+      "target_address": "0x88012a78",
+      "callee": "fn_88012A78",
+      "target_containing_function": "fn_88012A78"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x880140f0",
+      "target_address": "0x8801488c",
+      "callee": "xboxkrnl_exe_13",
+      "target_containing_function": "xboxkrnl_exe_13"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88014110",
+      "target_address": "0x88011c80",
+      "callee": null,
+      "target_containing_function": "fn_88011BB8"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88014150",
+      "target_address": "0x880148cc",
+      "callee": "__imp_xboxkrnl_exe_18",
+      "target_containing_function": "__imp_xboxkrnl_exe_18"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88014168",
+      "target_address": "0x88011c80",
+      "callee": null,
+      "target_containing_function": "fn_88011BB8"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88014208",
+      "target_address": "0x8801493c",
+      "callee": "__imp_xboxkrnl_exe_25",
+      "target_containing_function": "__imp_xboxkrnl_exe_25"
+    },
+    {
+      "caller": "fn_880139A8",
+      "caller_address": "0x880139a8",
+      "instruction_address": "0x88014218",
+      "target_address": "0x88014250",
+      "callee": null,
+      "target_containing_function": "fn_88014228"
+    },
+    {
+      "caller": "fn_88014228",
+      "caller_address": "0x88014228",
+      "instruction_address": "0x88014278",
+      "target_address": "0x8801488c",
+      "callee": "xboxkrnl_exe_13",
+      "target_containing_function": "xboxkrnl_exe_13"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x880142a4",
+      "target_address": "0x88010bd0",
+      "callee": null,
+      "target_containing_function": "fn_88010BA0"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x880142dc",
+      "target_address": "0x880148ec",
+      "callee": "__imp_xboxkrnl_exe_20",
+      "target_containing_function": "__imp_xboxkrnl_exe_20"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x88014300",
+      "target_address": "0x880148dc",
+      "callee": "__imp_xboxkrnl_exe_19",
+      "target_containing_function": "__imp_xboxkrnl_exe_19"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x88014330",
+      "target_address": "0x880148ac",
+      "callee": "xboxkrnl_exe_15",
+      "target_containing_function": "xboxkrnl_exe_15"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x88014360",
+      "target_address": "0x88012670",
+      "callee": "fn_88012670",
+      "target_containing_function": "fn_88012670"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x88014410",
+      "target_address": "0x88013070",
+      "callee": "fn_88013070",
+      "target_containing_function": "fn_88013070"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x8801449c",
+      "target_address": "0x88012a78",
+      "callee": "fn_88012A78",
+      "target_containing_function": "fn_88012A78"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x880144c8",
+      "target_address": "0x8801488c",
+      "callee": "xboxkrnl_exe_13",
+      "target_containing_function": "xboxkrnl_exe_13"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x880144f0",
+      "target_address": "0x880148fc",
+      "callee": "__imp_xboxkrnl_exe_21",
+      "target_containing_function": "__imp_xboxkrnl_exe_21"
+    },
+    {
+      "caller": "fn_880142A0",
+      "caller_address": "0x880142a0",
+      "instruction_address": "0x8801450c",
+      "target_address": "0x88014544",
+      "callee": null,
+      "target_containing_function": "fn_8801451C"
+    },
+    {
+      "caller": "fn_8801451C",
+      "caller_address": "0x8801451c",
+      "instruction_address": "0x8801456c",
+      "target_address": "0x8801488c",
+      "callee": "xboxkrnl_exe_13",
+      "target_containing_function": "xboxkrnl_exe_13"
+    },
+    {
+      "caller": "fn_88014590",
+      "caller_address": "0x88014590",
+      "instruction_address": "0x880145a8",
+      "target_address": "0x8801496c",
+      "callee": "__imp_xboxkrnl_exe_28",
+      "target_containing_function": "__imp_xboxkrnl_exe_28"
+    },
+    {
+      "caller": "fn_88014590",
+      "caller_address": "0x88014590",
+      "instruction_address": "0x880145b8",
+      "target_address": "0x8801495c",
+      "callee": "__imp_xboxkrnl_exe_27",
+      "target_containing_function": "__imp_xboxkrnl_exe_27"
+    },
+    {
+      "caller": "fn_88014590",
+      "caller_address": "0x88014590",
+      "instruction_address": "0x880145d4",
+      "target_address": "0x88012040",
+      "callee": "fn_88012040",
+      "target_containing_function": "fn_88012040"
+    },
+    {
+      "caller": "fn_88014590",
+      "caller_address": "0x88014590",
+      "instruction_address": "0x880145e4",
+      "target_address": "0x8801494c",
+      "callee": "__imp_xboxkrnl_exe_26",
+      "target_containing_function": "__imp_xboxkrnl_exe_26"
+    },
+    {
+      "caller": "fn_88014600",
+      "caller_address": "0x88014600",
+      "instruction_address": "0x88014670",
+      "target_address": "0x880133d8",
+      "callee": "fn_880133D8",
+      "target_containing_function": "fn_880133D8"
+    }
+  ]
+}

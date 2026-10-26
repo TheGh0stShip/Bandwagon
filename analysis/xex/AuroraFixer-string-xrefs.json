@@ -1,0 +1,16 @@
+{
+  "schema": "bandwagon-ppc-string-xrefs-v1",
+  "image": "/mnt/c/temp/Bandwagon/analysis/xex/basefiles/PeerPressure_SideLoading_AuroraFixer.pe",
+  "image_sha256": "eca239f0f17b4c8c4b9e1e24bb29fad324ed6b698081bf8e2fa379707b2de168",
+  "reference_count": 1,
+  "functions_with_references": 1,
+  "references": [
+    {
+      "function": "fn_88010300",
+      "function_address": "0x88010300",
+      "instruction_address": "0x88010344",
+      "string_address": "0x880005b0",
+      "string": "xboxkrnl.exe"
+    }
+  ]
+}

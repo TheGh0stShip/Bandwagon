@@ -1,0 +1,836 @@
+{
+  "schema": "bandwagon-xbox-pdata-functions-v1",
+  "source": "/mnt/c/temp/Bandwagon/analysis/xex/basefiles/PeerPressure_SideLoading_AuroraFixer.pe",
+  "source_sha256": "eca239f0f17b4c8c4b9e1e24bb29fad324ed6b698081bf8e2fa379707b2de168",
+  "pdata_record_count": 62,
+  "idc_name_count": 40,
+  "function_count": 103,
+  "base_address": "0x88010000",
+  "section_end_offset": "0x00004a2c",
+  "functions": [
+    {
+      "name": "fn_88010000",
+      "section": 1,
+      "section_offset": "0x00000000",
+      "address": "0x88010000",
+      "storage_class": 2,
+      "size_to_next_symbol": 24
+    },
+    {
+      "name": "fn_88010018",
+      "section": 1,
+      "section_offset": "0x00000018",
+      "address": "0x88010018",
+      "storage_class": 2,
+      "size_to_next_symbol": 216
+    },
+    {
+      "name": "fn_880100F0",
+      "section": 1,
+      "section_offset": "0x000000f0",
+      "address": "0x880100f0",
+      "storage_class": 2,
+      "size_to_next_symbol": 528
+    },
+    {
+      "name": "fn_88010300",
+      "section": 1,
+      "section_offset": "0x00000300",
+      "address": "0x88010300",
+      "storage_class": 2,
+      "size_to_next_symbol": 112
+    },
+    {
+      "name": "fn_88010370",
+      "section": 1,
+      "section_offset": "0x00000370",
+      "address": "0x88010370",
+      "storage_class": 2,
+      "size_to_next_symbol": 300
+    },
+    {
+      "name": "fn_8801049C",
+      "section": 1,
+      "section_offset": "0x0000049c",
+      "address": "0x8801049c",
+      "storage_class": 2,
+      "size_to_next_symbol": 116
+    },
+    {
+      "name": "fn_88010510",
+      "section": 1,
+      "section_offset": "0x00000510",
+      "address": "0x88010510",
+      "storage_class": 2,
+      "size_to_next_symbol": 296
+    },
+    {
+      "name": "fn_88010638",
+      "section": 1,
+      "section_offset": "0x00000638",
+      "address": "0x88010638",
+      "storage_class": 2,
+      "size_to_next_symbol": 48
+    },
+    {
+      "name": "_start",
+      "section": 1,
+      "section_offset": "0x00000668",
+      "address": "0x88010668",
+      "storage_class": 2,
+      "size_to_next_symbol": 1336
+    },
+    {
+      "name": "fn_88010BA0",
+      "section": 1,
+      "section_offset": "0x00000ba0",
+      "address": "0x88010ba0",
+      "storage_class": 2,
+      "size_to_next_symbol": 80
+    },
+    {
+      "name": "fn_88010BF0",
+      "section": 1,
+      "section_offset": "0x00000bf0",
+      "address": "0x88010bf0",
+      "storage_class": 2,
+      "size_to_next_symbol": 96
+    },
+    {
+      "name": "fn_88010C50",
+      "section": 1,
+      "section_offset": "0x00000c50",
+      "address": "0x88010c50",
+      "storage_class": 2,
+      "size_to_next_symbol": 72
+    },
+    {
+      "name": "fn_88010C98",
+      "section": 1,
+      "section_offset": "0x00000c98",
+      "address": "0x88010c98",
+      "storage_class": 2,
+      "size_to_next_symbol": 216
+    },
+    {
+      "name": "fn_88010D70",
+      "section": 1,
+      "section_offset": "0x00000d70",
+      "address": "0x88010d70",
+      "storage_class": 2,
+      "size_to_next_symbol": 64
+    },
+    {
+      "name": "fn_88010DB0",
+      "section": 1,
+      "section_offset": "0x00000db0",
+      "address": "0x88010db0",
+      "storage_class": 2,
+      "size_to_next_symbol": 192
+    },
+    {
+      "name": "fn_88010E70",
+      "section": 1,
+      "section_offset": "0x00000e70",
+      "address": "0x88010e70",
+      "storage_class": 2,
+      "size_to_next_symbol": 112
+    },
+    {
+      "name": "fn_88010EE0",
+      "section": 1,
+      "section_offset": "0x00000ee0",
+      "address": "0x88010ee0",
+      "storage_class": 2,
+      "size_to_next_symbol": 224
+    },
+    {
+      "name": "fn_88010FC0",
+      "section": 1,
+      "section_offset": "0x00000fc0",
+      "address": "0x88010fc0",
+      "storage_class": 2,
+      "size_to_next_symbol": 64
+    },
+    {
+      "name": "fn_88011000",
+      "section": 1,
+      "section_offset": "0x00001000",
+      "address": "0x88011000",
+      "storage_class": 2,
+      "size_to_next_symbol": 96
+    },
+    {
+      "name": "fn_88011060",
+      "section": 1,
+      "section_offset": "0x00001060",
+      "address": "0x88011060",
+      "storage_class": 2,
+      "size_to_next_symbol": 356
+    },
+    {
+      "name": "fn_880111C4",
+      "section": 1,
+      "section_offset": "0x000011c4",
+      "address": "0x880111c4",
+      "storage_class": 2,
+      "size_to_next_symbol": 116
+    },
+    {
+      "name": "fn_88011238",
+      "section": 1,
+      "section_offset": "0x00001238",
+      "address": "0x88011238",
+      "storage_class": 2,
+      "size_to_next_symbol": 48
+    },
+    {
+      "name": "fn_88011268",
+      "section": 1,
+      "section_offset": "0x00001268",
+      "address": "0x88011268",
+      "storage_class": 2,
+      "size_to_next_symbol": 520
+    },
+    {
+      "name": "fn_88011470",
+      "section": 1,
+      "section_offset": "0x00001470",
+      "address": "0x88011470",
+      "storage_class": 2,
+      "size_to_next_symbol": 144
+    },
+    {
+      "name": "fn_88011500",
+      "section": 1,
+      "section_offset": "0x00001500",
+      "address": "0x88011500",
+      "storage_class": 2,
+      "size_to_next_symbol": 112
+    },
+    {
+      "name": "fn_88011570",
+      "section": 1,
+      "section_offset": "0x00001570",
+      "address": "0x88011570",
+      "storage_class": 2,
+      "size_to_next_symbol": 40
+    },
+    {
+      "name": "fn_88011598",
+      "section": 1,
+      "section_offset": "0x00001598",
+      "address": "0x88011598",
+      "storage_class": 2,
+      "size_to_next_symbol": 136
+    },
+    {
+      "name": "fn_88011620",
+      "section": 1,
+      "section_offset": "0x00001620",
+      "address": "0x88011620",
+      "storage_class": 2,
+      "size_to_next_symbol": 244
+    },
+    {
+      "name": "fn_88011714",
+      "section": 1,
+      "section_offset": "0x00001714",
+      "address": "0x88011714",
+      "storage_class": 2,
+      "size_to_next_symbol": 76
+    },
+    {
+      "name": "fn_88011760",
+      "section": 1,
+      "section_offset": "0x00001760",
+      "address": "0x88011760",
+      "storage_class": 2,
+      "size_to_next_symbol": 96
+    },
+    {
+      "name": "fn_880117C0",
+      "section": 1,
+      "section_offset": "0x000017c0",
+      "address": "0x880117c0",
+      "storage_class": 2,
+      "size_to_next_symbol": 96
+    },
+    {
+      "name": "fn_88011820",
+      "section": 1,
+      "section_offset": "0x00001820",
+      "address": "0x88011820",
+      "storage_class": 2,
+      "size_to_next_symbol": 128
+    },
+    {
+      "name": "fn_880118A0",
+      "section": 1,
+      "section_offset": "0x000018a0",
+      "address": "0x880118a0",
+      "storage_class": 2,
+      "size_to_next_symbol": 76
+    },
+    {
+      "name": "fn_880118EC",
+      "section": 1,
+      "section_offset": "0x000018ec",
+      "address": "0x880118ec",
+      "storage_class": 2,
+      "size_to_next_symbol": 84
+    },
+    {
+      "name": "fn_88011940",
+      "section": 1,
+      "section_offset": "0x00001940",
+      "address": "0x88011940",
+      "storage_class": 2,
+      "size_to_next_symbol": 144
+    },
+    {
+      "name": "fn_880119D0",
+      "section": 1,
+      "section_offset": "0x000019d0",
+      "address": "0x880119d0",
+      "storage_class": 2,
+      "size_to_next_symbol": 48
+    },
+    {
+      "name": "fn_88011A00",
+      "section": 1,
+      "section_offset": "0x00001a00",
+      "address": "0x88011a00",
+      "storage_class": 2,
+      "size_to_next_symbol": 184
+    },
+    {
+      "name": "fn_88011AB8",
+      "section": 1,
+      "section_offset": "0x00001ab8",
+      "address": "0x88011ab8",
+      "storage_class": 2,
+      "size_to_next_symbol": 56
+    },
+    {
+      "name": "fn_88011AF0",
+      "section": 1,
+      "section_offset": "0x00001af0",
+      "address": "0x88011af0",
+      "storage_class": 2,
+      "size_to_next_symbol": 200
+    },
+    {
+      "name": "fn_88011BB8",
+      "section": 1,
+      "section_offset": "0x00001bb8",
+      "address": "0x88011bb8",
+      "storage_class": 2,
+      "size_to_next_symbol": 360
+    },
+    {
+      "name": "fn_88011D20",
+      "section": 1,
+      "section_offset": "0x00001d20",
+      "address": "0x88011d20",
+      "storage_class": 2,
+      "size_to_next_symbol": 224
+    },
+    {
+      "name": "fn_88011E00",
+      "section": 1,
+      "section_offset": "0x00001e00",
+      "address": "0x88011e00",
+      "storage_class": 2,
+      "size_to_next_symbol": 120
+    },
+    {
+      "name": "fn_88011E78",
+      "section": 1,
+      "section_offset": "0x00001e78",
+      "address": "0x88011e78",
+      "storage_class": 2,
+      "size_to_next_symbol": 96
+    },
+    {
+      "name": "fn_88011ED8",
+      "section": 1,
+      "section_offset": "0x00001ed8",
+      "address": "0x88011ed8",
+      "storage_class": 2,
+      "size_to_next_symbol": 248
+    },
+    {
+      "name": "fn_88011FD0",
+      "section": 1,
+      "section_offset": "0x00001fd0",
+      "address": "0x88011fd0",
+      "storage_class": 2,
+      "size_to_next_symbol": 112
+    },
+    {
+      "name": "fn_88012040",
+      "section": 1,
+      "section_offset": "0x00002040",
+      "address": "0x88012040",
+      "storage_class": 2,
+      "size_to_next_symbol": 80
+    },
+    {
+      "name": "fn_88012090",
+      "section": 1,
+      "section_offset": "0x00002090",
+      "address": "0x88012090",
+      "storage_class": 2,
+      "size_to_next_symbol": 472
+    },
+    {
+      "name": "fn_88012268",
+      "section": 1,
+      "section_offset": "0x00002268",
+      "address": "0x88012268",
+      "storage_class": 2,
+      "size_to_next_symbol": 288
+    },
+    {
+      "name": "fn_88012388",
+      "section": 1,
+      "section_offset": "0x00002388",
+      "address": "0x88012388",
+      "storage_class": 2,
+      "size_to_next_symbol": 656
+    },
+    {
+      "name": "fn_88012618",
+      "section": 1,
+      "section_offset": "0x00002618",
+      "address": "0x88012618",
+      "storage_class": 2,
+      "size_to_next_symbol": 88
+    },
+    {
+      "name": "fn_88012670",
+      "section": 1,
+      "section_offset": "0x00002670",
+      "address": "0x88012670",
+      "storage_class": 2,
+      "size_to_next_symbol": 1032
+    },
+    {
+      "name": "fn_88012A78",
+      "section": 1,
+      "section_offset": "0x00002a78",
+      "address": "0x88012a78",
+      "storage_class": 2,
+      "size_to_next_symbol": 312
+    },
+    {
+      "name": "fn_88012BB0",
+      "section": 1,
+      "section_offset": "0x00002bb0",
+      "address": "0x88012bb0",
+      "storage_class": 2,
+      "size_to_next_symbol": 280
+    },
+    {
+      "name": "fn_88012CC8",
+      "section": 1,
+      "section_offset": "0x00002cc8",
+      "address": "0x88012cc8",
+      "storage_class": 2,
+      "size_to_next_symbol": 360
+    },
+    {
+      "name": "fn_88012E30",
+      "section": 1,
+      "section_offset": "0x00002e30",
+      "address": "0x88012e30",
+      "storage_class": 2,
+      "size_to_next_symbol": 576
+    },
+    {
+      "name": "fn_88013070",
+      "section": 1,
+      "section_offset": "0x00003070",
+      "address": "0x88013070",
+      "storage_class": 2,
+      "size_to_next_symbol": 872
+    },
+    {
+      "name": "fn_880133D8",
+      "section": 1,
+      "section_offset": "0x000033d8",
+      "address": "0x880133d8",
+      "storage_class": 2,
+      "size_to_next_symbol": 1468
+    },
+    {
+      "name": "fn_88013994",
+      "section": 1,
+      "section_offset": "0x00003994",
+      "address": "0x88013994",
+      "storage_class": 2,
+      "size_to_next_symbol": 20
+    },
+    {
+      "name": "fn_880139A8",
+      "section": 1,
+      "section_offset": "0x000039a8",
+      "address": "0x880139a8",
+      "storage_class": 2,
+      "size_to_next_symbol": 2176
+    },
+    {
+      "name": "fn_88014228",
+      "section": 1,
+      "section_offset": "0x00004228",
+      "address": "0x88014228",
+      "storage_class": 2,
+      "size_to_next_symbol": 120
+    },
+    {
+      "name": "fn_880142A0",
+      "section": 1,
+      "section_offset": "0x000042a0",
+      "address": "0x880142a0",
+      "storage_class": 2,
+      "size_to_next_symbol": 636
+    },
+    {
+      "name": "fn_8801451C",
+      "section": 1,
+      "section_offset": "0x0000451c",
+      "address": "0x8801451c",
+      "storage_class": 2,
+      "size_to_next_symbol": 116
+    },
+    {
+      "name": "fn_88014590",
+      "section": 1,
+      "section_offset": "0x00004590",
+      "address": "0x88014590",
+      "storage_class": 2,
+      "size_to_next_symbol": 112
+    },
+    {
+      "name": "fn_88014600",
+      "section": 1,
+      "section_offset": "0x00004600",
+      "address": "0x88014600",
+      "storage_class": 2,
+      "size_to_next_symbol": 444
+    },
+    {
+      "name": "xboxkrnl_exe_0",
+      "section": 1,
+      "section_offset": "0x000047bc",
+      "address": "0x880147bc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_1",
+      "section": 1,
+      "section_offset": "0x000047cc",
+      "address": "0x880147cc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_2",
+      "section": 1,
+      "section_offset": "0x000047dc",
+      "address": "0x880147dc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_3",
+      "section": 1,
+      "section_offset": "0x000047ec",
+      "address": "0x880147ec",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_4",
+      "section": 1,
+      "section_offset": "0x000047fc",
+      "address": "0x880147fc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_5",
+      "section": 1,
+      "section_offset": "0x0000480c",
+      "address": "0x8801480c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_6",
+      "section": 1,
+      "section_offset": "0x0000481c",
+      "address": "0x8801481c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_7",
+      "section": 1,
+      "section_offset": "0x0000482c",
+      "address": "0x8801482c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_8",
+      "section": 1,
+      "section_offset": "0x0000483c",
+      "address": "0x8801483c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_9",
+      "section": 1,
+      "section_offset": "0x0000484c",
+      "address": "0x8801484c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_10",
+      "section": 1,
+      "section_offset": "0x0000485c",
+      "address": "0x8801485c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_11",
+      "section": 1,
+      "section_offset": "0x0000486c",
+      "address": "0x8801486c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_12",
+      "section": 1,
+      "section_offset": "0x0000487c",
+      "address": "0x8801487c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_13",
+      "section": 1,
+      "section_offset": "0x0000488c",
+      "address": "0x8801488c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_14",
+      "section": 1,
+      "section_offset": "0x0000489c",
+      "address": "0x8801489c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_15",
+      "section": 1,
+      "section_offset": "0x000048ac",
+      "address": "0x880148ac",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_17",
+      "section": 1,
+      "section_offset": "0x000048bc",
+      "address": "0x880148bc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_18",
+      "section": 1,
+      "section_offset": "0x000048cc",
+      "address": "0x880148cc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_19",
+      "section": 1,
+      "section_offset": "0x000048dc",
+      "address": "0x880148dc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_20",
+      "section": 1,
+      "section_offset": "0x000048ec",
+      "address": "0x880148ec",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_21",
+      "section": 1,
+      "section_offset": "0x000048fc",
+      "address": "0x880148fc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_22",
+      "section": 1,
+      "section_offset": "0x0000490c",
+      "address": "0x8801490c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_23",
+      "section": 1,
+      "section_offset": "0x0000491c",
+      "address": "0x8801491c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_24",
+      "section": 1,
+      "section_offset": "0x0000492c",
+      "address": "0x8801492c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_25",
+      "section": 1,
+      "section_offset": "0x0000493c",
+      "address": "0x8801493c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_26",
+      "section": 1,
+      "section_offset": "0x0000494c",
+      "address": "0x8801494c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_27",
+      "section": 1,
+      "section_offset": "0x0000495c",
+      "address": "0x8801495c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "__imp_xboxkrnl_exe_28",
+      "section": 1,
+      "section_offset": "0x0000496c",
+      "address": "0x8801496c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_29",
+      "section": 1,
+      "section_offset": "0x0000497c",
+      "address": "0x8801497c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_30",
+      "section": 1,
+      "section_offset": "0x0000498c",
+      "address": "0x8801498c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_31",
+      "section": 1,
+      "section_offset": "0x0000499c",
+      "address": "0x8801499c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_32",
+      "section": 1,
+      "section_offset": "0x000049ac",
+      "address": "0x880149ac",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_33",
+      "section": 1,
+      "section_offset": "0x000049bc",
+      "address": "0x880149bc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_34",
+      "section": 1,
+      "section_offset": "0x000049cc",
+      "address": "0x880149cc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_35",
+      "section": 1,
+      "section_offset": "0x000049dc",
+      "address": "0x880149dc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_36",
+      "section": 1,
+      "section_offset": "0x000049ec",
+      "address": "0x880149ec",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_37",
+      "section": 1,
+      "section_offset": "0x000049fc",
+      "address": "0x880149fc",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_38",
+      "section": 1,
+      "section_offset": "0x00004a0c",
+      "address": "0x88014a0c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    },
+    {
+      "name": "xboxkrnl_exe_39",
+      "section": 1,
+      "section_offset": "0x00004a1c",
+      "address": "0x88014a1c",
+      "storage_class": 2,
+      "size_to_next_symbol": 16
+    }
+  ]
+}
