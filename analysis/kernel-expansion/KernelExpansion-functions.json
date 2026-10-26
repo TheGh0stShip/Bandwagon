@@ -1462,9 +1462,9 @@
       "address": "0x801faac0",
       "section_offset": "0xaac0",
       "size_to_next_symbol": 144,
-      "name": "fn_801FAAC0",
+      "name": "CopyPathAndParentDirectory",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

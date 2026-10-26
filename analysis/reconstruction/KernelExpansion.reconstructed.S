@@ -11079,7 +11079,7 @@ fn_801FAA08:
     .long 0x7d8803a6 /* 0x0aab4 */
     .long 0xebe1fff0 /* 0x0aab8 */
     .long 0x4e800020 /* 0x0aabc */
-fn_801FAAC0:
+CopyPathAndParentDirectory:
     .long 0x38e00000 /* 0x0aac0 */
     .long 0x7c892378 /* 0x0aac4 */
     .long 0x7ceb3b78 /* 0x0aac8 */

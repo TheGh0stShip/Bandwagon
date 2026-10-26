@@ -56,6 +56,7 @@ SEMANTIC_NAMES = {
     0xA640: "IsAsciiAlphaNumeric",
     0xA688: "CheckPhaseTwoMarker",
     0xA798: "LaunchUpdateCheck",
+    0xAAC0: "CopyPathAndParentDirectory",
 }
 
 

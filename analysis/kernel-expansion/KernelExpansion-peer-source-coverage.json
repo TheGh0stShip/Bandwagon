@@ -129,12 +129,22 @@
       "source": "reconstruction/kernel_expansion/update_check_launch.cpp",
       "header": "reconstruction/kernel_expansion/update_check_launch.hpp",
       "symbols": ["UpdateCheckState", "UpdateCheckServices", "LaunchUpdateCheck", "kUpdateCheckPath"]
+    },
+    {
+      "address": "0x801faac0",
+      "size": 144,
+      "sha256": "7a9e8c334495c9786186e08ec868d8705d43f84a5906f046a416f10bb364b69c",
+      "semantic_name": "CopyPathAndParentDirectory",
+      "source": "reconstruction/kernel_expansion/path_fields.cpp",
+      "header": "reconstruction/kernel_expansion/path_fields.hpp",
+      "symbols": ["PathFieldBlock", "CopyPathAndParentDirectory", "kPathFieldCapacity"]
     }
   ],
   "tests": [
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",
+    "reconstruction/kernel_expansion/path_fields_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",

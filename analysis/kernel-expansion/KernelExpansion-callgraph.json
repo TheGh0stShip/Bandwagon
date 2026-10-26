@@ -5266,8 +5266,8 @@
       "caller_address": "0x801f7c50",
       "instruction_address": "0x801f7d58",
       "target_address": "0x801faac0",
-      "callee": "fn_801FAAC0",
-      "target_containing_function": "fn_801FAAC0"
+      "callee": "CopyPathAndParentDirectory",
+      "target_containing_function": "CopyPathAndParentDirectory"
     },
     {
       "caller": "FindSoftmodUpdateArchive",
