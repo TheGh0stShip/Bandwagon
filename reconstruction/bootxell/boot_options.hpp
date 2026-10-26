@@ -41,5 +41,7 @@ std::string BuildOtherOsPath(const BootOption& option);
 RbtrLaunchRequest BuildRbtrLaunchRequest(const BootOption& option,
                                          std::uint32_t physical_address,
                                          std::uint32_t file_size);
+const BootOption* FindBootOption(const std::vector<BootOption>& options,
+                                 const char* requested_name);
 
 }  // namespace bandwagon::bootxell

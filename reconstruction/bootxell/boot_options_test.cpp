@@ -61,5 +61,17 @@ int main() {
   assert(defaulted.base_address == 0x800000001c040000ULL);
   assert(defaulted.word_count == 32u);
 
+  bandwagon::bootxell::BootOption second;
+  second.name = "Recovery";
+  state.options.push_back(second);
+  assert(bandwagon::bootxell::FindBootOption(state.options, "Xell R99") ==
+         &state.options[0]);
+  assert(bandwagon::bootxell::FindBootOption(state.options, "Recovery") ==
+         &state.options[1]);
+  assert(bandwagon::bootxell::FindBootOption(state.options, "Missing") ==
+         nullptr);
+  assert(bandwagon::bootxell::FindBootOption(state.options, nullptr) ==
+         nullptr);
+
   std::cout << "BootXell option reconstruction tests passed\n";
 }

@@ -63,6 +63,7 @@ acknowledgement, record finalization, and the required sixteen-byte
 `xxxxxxxxxxxxxxxx` trailer. It also reconstructs the OtherOS path join and the
 five arguments of the `rbtr` request: command 4, high-half physical alias,
 128-byte-rounded word count, and the default base `0x800000001c040000` used
-when no high-half configured base is present. The host test exercises these
-rules without invoking any Xbox file or launch API; run it with
+when no high-half configured base is present. Its option lookup preserves
+`BootXellMain`'s first-match, 64-byte bounded name comparison. The host test
+exercises these rules without invoking any Xbox file or launch API; run it with
 `tools/test_bootxell_reconstruction.sh`.

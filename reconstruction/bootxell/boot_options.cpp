@@ -108,4 +108,15 @@ RbtrLaunchRequest BuildRbtrLaunchRequest(const BootOption& option,
   };
 }
 
+const BootOption* FindBootOption(const std::vector<BootOption>& options,
+                                 const char* requested_name) {
+  if (!requested_name) return nullptr;
+  for (const auto& option : options) {
+    if (std::strncmp(option.name.c_str(), requested_name, 64) == 0) {
+      return &option;
+    }
+  }
+  return nullptr;
+}
+
 }  // namespace bandwagon::bootxell
