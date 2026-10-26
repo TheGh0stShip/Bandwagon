@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 42 high-confidence behavioral labels are emitted directly into the exact
+- 43 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -141,6 +141,11 @@ lift. The first exact-byte-bound routines are:
   Tests bind first-free selection, full-table failure as minus one, slot
   clearing, and exact acquire/release cookie flow; the host lift safely rejects
   the out-of-range clear that trusted target callers never supply.
+- `BindDrivePath` (`0x801f3e68`, 152 bytes), represented as the per-prefix
+  binding transaction layered on `ParseDriveNumberPrefix`. It clears a replaced
+  binding's state byte, initializes the new binding's recovered state and drive
+  number bytes, honors only the low byte of the probe flag, and passes the
+  original unadvanced path to the optional media probe.
 - `ParseSignedDecimal` (`0x801f78e0`, 88 bytes), represented as the shared
   config-text integer parser. Tests preserve its optional-minus-only grammar,
   lack of whitespace and plus-sign handling, first-nondigit stop, and exact
@@ -166,7 +171,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-31 independently bounded routines totaling 4,456 original instruction bytes.
+32 independently bounded routines totaling 4,608 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

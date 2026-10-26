@@ -4056,7 +4056,7 @@ UnregisterDriveDevice:
     .long 0xebc1ffe8 /* 0x03e5c */
     .long 0xebe1fff0 /* 0x03e60 */
     .long 0x4e800020 /* 0x03e64 */
-fn_801F3E68:
+BindDrivePath:
     .long 0x7d8802a6 /* 0x03e68 */
     .long 0x9181fff8 /* 0x03e6c */
     .long 0x9421ffa0 /* 0x03e70 */

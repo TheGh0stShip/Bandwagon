@@ -142,6 +142,15 @@
       "symbols": ["UnregisterDriveDevice"]
     },
     {
+      "address": "0x801f3e68",
+      "size": 152,
+      "sha256": "5e802a46f6e47e3abff5db81a2064de5c4d6d23be879d28114e09b52991116f2",
+      "semantic_name": "BindDrivePath",
+      "source": "reconstruction/kernel_expansion/drive_binding.cpp",
+      "header": "reconstruction/kernel_expansion/drive_binding.hpp",
+      "symbols": ["DrivePathBinding", "DrivePathBindingTable", "DrivePathProbeServices", "BindDrivePath", "kInvalidDrivePathStatus"]
+    },
+    {
       "address": "0x801f4d08",
       "size": 48,
       "sha256": "73ef2c07b47a2efbaeb7168d6b6991ca940bebc21015c50df3598b12a8ec003a",
@@ -290,6 +299,7 @@
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/decimal_test.cpp",
+    "reconstruction/kernel_expansion/drive_binding_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/drive_registry_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",

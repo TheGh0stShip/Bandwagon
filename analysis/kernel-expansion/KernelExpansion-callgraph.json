@@ -2146,8 +2146,8 @@
       "caller_address": "0x801f2dd8",
       "instruction_address": "0x801f2f68",
       "target_address": "0x801f3e68",
-      "callee": "fn_801F3E68",
-      "target_containing_function": "fn_801F3E68"
+      "callee": "BindDrivePath",
+      "target_containing_function": "BindDrivePath"
     },
     {
       "caller": "fn_801F2DD8",
@@ -2598,7 +2598,7 @@
       "target_containing_function": "KfReleaseSpinLock"
     },
     {
-      "caller": "fn_801F3E68",
+      "caller": "BindDrivePath",
       "caller_address": "0x801f3e68",
       "instruction_address": "0x801f3e84",
       "target_address": "0x801f6af0",
@@ -2606,7 +2606,7 @@
       "target_containing_function": "ParseDriveNumberPrefix"
     },
     {
-      "caller": "fn_801F3E68",
+      "caller": "BindDrivePath",
       "caller_address": "0x801f3e68",
       "instruction_address": "0x801f3eec",
       "target_address": "0x801f6b68",
@@ -3362,8 +3362,8 @@
       "caller_address": "0x801f5160",
       "instruction_address": "0x801f51dc",
       "target_address": "0x801f3e68",
-      "callee": "fn_801F3E68",
-      "target_containing_function": "fn_801F3E68"
+      "callee": "BindDrivePath",
+      "target_containing_function": "BindDrivePath"
     },
     {
       "caller": "fn_801F5160",

@@ -53,6 +53,7 @@ SEMANTIC_NAMES = {
     0x3378: "ResolveSideLoadConfiguration",
     0x3D90: "RegisterDriveDevice",
     0x3E08: "UnregisterDriveDevice",
+    0x3E68: "BindDrivePath",
     0x4938: "ParseDllConfigEntry",
     0x4D08: "PromoteLocalSigninState",
     0x4ED8: "PromoteLocalSigninInfo",

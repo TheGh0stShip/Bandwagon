@@ -572,9 +572,9 @@
       "address": "0x801f3e68",
       "section_offset": "0x3e68",
       "size_to_next_symbol": 152,
-      "name": "fn_801F3E68",
+      "name": "BindDrivePath",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

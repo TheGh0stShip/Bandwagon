@@ -76,6 +76,13 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 "$work/drive_prefix_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/drive_prefix.cpp" \
+    "$root/reconstruction/kernel_expansion/drive_binding.cpp" \
+    "$root/reconstruction/kernel_expansion/drive_binding_test.cpp" \
+    -o "$work/drive_binding_test"
+"$work/drive_binding_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/drive_registry.cpp" \
     "$root/reconstruction/kernel_expansion/drive_registry_test.cpp" \
     -o "$work/drive_registry_test"
