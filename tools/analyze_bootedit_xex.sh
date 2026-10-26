@@ -24,5 +24,6 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" "$image" "$functions" \
     --text-address 0x82010000 --text-size 0x5a310 \
     --string-start 0x82000400 --string-end 0x8200bf38 \
     --output "$root/analysis/xex/BootEdit-string-xrefs.json"
+python3 -B "$root/tools/analyze_bootedit_provenance.py"
 
 echo "BootEdit exact sections and static analysis regenerated"

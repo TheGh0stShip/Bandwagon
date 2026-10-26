@@ -37,8 +37,13 @@ prompts before discarding them, and reports all save/load/apply outcomes. Eight
 application functions carrying this flow have high-confidence semantic names
 in `BootEdit-symbols.json`.
 
-The image also embeds ImGui, the Xbox 360 ImGui backend, standard-library code,
-and rendering support. These are preserved exactly in assembly but have not yet
-been attributed function-by-function to upstream revisions. The separate
+`BootEdit-provenance.json` verifies Dear ImGui 1.86 against the embedded exact
+version, standard state-file names, and Xbox 360/DX9 backend identifiers; the
+declared upstream tag resolves to commit
+`512c54bbc062c41c74f8a8bd8ff1fd6bebd1e6d0`.
+`BootEdit-thirdparty-symbols.json` additionally recovers
+`ImGui::DebugCheckVersionAndDataLayout` from its function-local version check.
+Remaining ImGui, standard-library, and rendering functions are preserved
+exactly but still need individual attribution. The separate
 bundled 9199 `bootanim.xex` is a 2010 Microsoft component and is documented as
 out of Peer-authored source scope in `BootAnim-9199-provenance.md`.

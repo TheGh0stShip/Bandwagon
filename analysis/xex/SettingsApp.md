@@ -48,7 +48,7 @@ in `SettingsApp-symbols.json`.
 `SettingsApp-provenance.json` independently verifies component-local binary
 signatures for the author's declared Dear ImGui 1.86, BearSSL 0.6, and JsonCpp
 `00.11.0` dependencies. `SettingsApp-thirdparty-symbols.json` recovers 24
-JsonCpp and three BearSSL routines from exact function-local diagnostics, TLS
-labels, and one verified parser-wrapper call chain. ImGui/rendering, HTTP, and
+JsonCpp routines, three BearSSL routines, and ImGui's version/layout checker
+from exact function-local diagnostics, TLS labels, and one verified parser-wrapper call chain. Rendering, HTTP, and
 remaining diagnostic-free library functions are preserved exactly but still
 need function-level attribution.

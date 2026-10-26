@@ -3,9 +3,20 @@
   "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a",
   "counts": {
     "jsoncpp": 24,
-    "bearssl": 3
+    "bearssl": 3,
+    "imgui": 1
   },
   "symbols": [
+    {
+      "address": "0x820364b8",
+      "recovered_name": "fn_820364B8",
+      "semantic_name": "ImGui::DebugCheckVersionAndDataLayout",
+      "confidence": "high",
+      "ownership": "Dear ImGui 1.86",
+      "evidence": [
+        "function-local exact upstream signature: 1.86"
+      ]
+    },
     {
       "address": "0x820609c8",
       "recovered_name": "fn_820609C8",

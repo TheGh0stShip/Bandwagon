@@ -1,0 +1,17 @@
+{
+  "schema": "bandwagon-bootedit-thirdparty-symbols-v1",
+  "image_sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
+  "symbols": [
+    {
+      "address": "0x82014428",
+      "recovered_name": "fn_82014428",
+      "semantic_name": "ImGui::DebugCheckVersionAndDataLayout",
+      "confidence": "high",
+      "ownership": "Dear ImGui 1.86",
+      "evidence": [
+        "function-local comparison against exact IMGUI_VERSION string",
+        "called by BootEdit's ImGui initialization path"
+      ]
+    }
+  ]
+}

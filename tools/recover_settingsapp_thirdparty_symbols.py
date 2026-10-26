@@ -42,6 +42,10 @@ BEARSSL = {
     0x82065CC0: ("br_ssl_hs_client_run", "server finished"),
 }
 
+IMGUI = {
+    0x820364B8: ("ImGui::DebugCheckVersionAndDataLayout", "1.86"),
+}
+
 
 def main() -> None:
     refs = json.loads(XREFS.read_text(encoding="utf-8"))["references"]
@@ -53,7 +57,7 @@ def main() -> None:
         strings.setdefault(int(item["function_address"], 0), set()).add(item["string"])
 
     symbols = []
-    for ownership, mapping in (("JsonCpp 00.11.0", JSONCPP), ("BearSSL 0.6", BEARSSL)):
+    for ownership, mapping in (("JsonCpp 00.11.0", JSONCPP), ("BearSSL 0.6", BEARSSL), ("Dear ImGui 1.86", IMGUI)):
         for address, (name, signature) in mapping.items():
             if signature not in strings.get(address, set()):
                 raise SystemExit(f"{address:#x}: missing signature {signature!r}")
@@ -66,7 +70,7 @@ def main() -> None:
     symbols.append({"address": f"0x{wrapper:08x}", "recovered_name": original[wrapper], "semantic_name": "Json::OurCharReader::parse", "confidence": "high", "ownership": "JsonCpp 00.11.0", "evidence": ["calls recovered OurReader::parse and OurReader::getFormattedErrorMessages"]})
 
     symbols.sort(key=lambda item: int(item["address"], 0))
-    result = {"schema": "bandwagon-settingsapp-thirdparty-symbols-v1", "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a", "counts": {"jsoncpp": len(JSONCPP) + 1, "bearssl": len(BEARSSL)}, "symbols": symbols}
+    result = {"schema": "bandwagon-settingsapp-thirdparty-symbols-v1", "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a", "counts": {"jsoncpp": len(JSONCPP) + 1, "bearssl": len(BEARSSL), "imgui": len(IMGUI)}, "symbols": symbols}
     OUTPUT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(f"SettingsApp third-party symbols: {len(symbols)} recovered")
 

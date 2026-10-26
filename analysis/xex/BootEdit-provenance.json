@@ -1,0 +1,24 @@
+{
+  "schema": "bandwagon-bootedit-provenance-v1",
+  "image_sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
+  "author_attribution": {
+    "repository": "https://github.com/grimdoomer/Xbox360PeerPressure",
+    "commit": "df524f050db795d6212128e3a4b0c5904ac764e1",
+    "file": "ATTRIBUTION.md"
+  },
+  "library": {
+    "name": "Dear ImGui",
+    "version": "1.86",
+    "license": "MIT",
+    "upstream": "https://github.com/ocornut/imgui/tree/v1.86",
+    "tag_commit": "512c54bbc062c41c74f8a8bd8ff1fd6bebd1e6d0",
+    "binary_signatures": [
+      "1.86",
+      "imgui.ini",
+      "imgui_impl_dx9",
+      "imgui_impl_xbox360",
+      "imgui_log.txt"
+    ],
+    "all_binary_signatures_present": true
+  }
+}
