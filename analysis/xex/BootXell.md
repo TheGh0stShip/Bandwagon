@@ -46,5 +46,12 @@ All handles and allocations are released on the observed exit paths.
 `BootXellMain` at `0x91a06658` loads
 `PPROOT:\\OtherOS\\boot.ini`, selects the requested named option from the parsed
 records, and passes it to `LaunchBootOption`. The exact platform import ordinals
-still need authoritative names; the behavior above is derived from local data
-flow and therefore does not guess those APIs.
+are named only when supported by exact cross-XEX fingerprints; 40 such safe
+aliases are recorded in `BootXell-provenance.json`.
+
+The same provenance record pins the bundled INI parser to the author's declared
+inih r62, upstream commit `26254ee9de7681f8825433415443e7116ff24b98`.
+`BootXell-thirdparty-symbols.json` recovers `ini_parse_string` from its call by
+`LoadBootIni`, its section/name/value parsing flow, and its indirect callback
+dispatch. This separates the upstream parser from Peer's `ParseBootIniOption`
+callback without attributing diagnostic-free runtime code by address alone.

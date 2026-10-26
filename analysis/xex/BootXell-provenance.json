@@ -1,0 +1,303 @@
+{
+  "schema": "bandwagon-bootxell-provenance-v1",
+  "image_sha256": "4ef810a55390105a0756d2dc48502f8d9fad50edc08d8617fe146bc3ae496ebc",
+  "author_attribution": {
+    "repository": "https://github.com/grimdoomer/Xbox360PeerPressure",
+    "commit": "df524f050db795d6212128e3a4b0c5904ac764e1",
+    "file": "ATTRIBUTION.md"
+  },
+  "library": {
+    "name": "inih",
+    "version": "r62",
+    "license": "BSD-3-Clause",
+    "upstream": "https://github.com/benhoyt/inih/tree/r62",
+    "tag_commit": "26254ee9de7681f8825433415443e7116ff24b98",
+    "component_evidence": [
+      "LoadBootIni passes ParseBootIniOption into the recovered parser entry",
+      "parser trims whitespace, recognizes sections and name/value separators, and dispatches through an indirect handler call"
+    ]
+  },
+  "safe_cross_xex_alias_count": 40,
+  "safe_cross_xex_aliases": [
+    {
+      "component": "BootXell",
+      "address": "0x91a0c420",
+      "old_name": "fn_91A0C420",
+      "propagated_name": "__savegprlr",
+      "evidence_sha256": "c91d6acdcca047ceaa15c988eab916f741a0dcb81941ab90e45888ef845539e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17168",
+      "old_name": "xboxkrnl_exe_3",
+      "propagated_name": "RtlInitAnsiString",
+      "evidence_sha256": "9b23720027671f6112e07b394706658c632185baf6ce36697f2d997f278ab77b"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171a8",
+      "old_name": "xboxkrnl_exe_7",
+      "propagated_name": "MmAllocatePhysicalMemoryEx",
+      "evidence_sha256": "00cad833f59157636abf6c760759a0fcf53227bf01112cbedcf31271c411e347"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171b8",
+      "old_name": "xboxkrnl_exe_8",
+      "propagated_name": "MmFreePhysicalMemory",
+      "evidence_sha256": "cdf6e4bf1504ed27f104d22546f389aba9a50763a71d41a5e298d502dc8461c2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171c8",
+      "old_name": "xboxkrnl_exe_9",
+      "propagated_name": "NtWaitForSingleObjectEx",
+      "evidence_sha256": "ff0c7de4e379f796bc2a77615ec0165378fc46b215574da8a541dc78647b1e61"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171d8",
+      "old_name": "xboxkrnl_exe_10",
+      "propagated_name": "RtlNtStatusToDosError",
+      "evidence_sha256": "e11ada1e0420b1a659f4ec1971688776267144cbdf6ee2cada861405d5cdeb89"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171e8",
+      "old_name": "xboxkrnl_exe_11",
+      "propagated_name": "NtQueryFullAttributesFile",
+      "evidence_sha256": "3a2e909b2aadfd7eedd1b5273700918854b39ec5bdd55ea2f56f070ca92c2aa2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a171f8",
+      "old_name": "xboxkrnl_exe_12",
+      "propagated_name": "NtOpenFile",
+      "evidence_sha256": "6889e42ef79cddb3d2331c2a7ff73fe997ea9f03b4c6610dc8a230739528f828"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17208",
+      "old_name": "xboxkrnl_exe_13",
+      "propagated_name": "NtSetInformationFile",
+      "evidence_sha256": "7e04c7b4caa441e23719b5f1712caece6c6d23cd7e600fb5ededd027e40641f8"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17218",
+      "old_name": "xboxkrnl_exe_14",
+      "propagated_name": "NtQueryInformationFile",
+      "evidence_sha256": "e241c7d0022d498124b343951135d754cb6af7ce43e1ea4db0549fbc669d2d99"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17228",
+      "old_name": "xboxkrnl_exe_15",
+      "propagated_name": "NtQueryVolumeInformationFile",
+      "evidence_sha256": "c7490510fcaa2b594730c7a285c7e6d57058cf0af1b5465b97b91e013535d7e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17238",
+      "old_name": "xboxkrnl_exe_16",
+      "propagated_name": "NtQueryDirectoryFile",
+      "evidence_sha256": "93c9dfdfff31b080b8d68337cd5a0f18bd2b77940c963b2ef085de55156622e0"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17248",
+      "old_name": "xboxkrnl_exe_17",
+      "propagated_name": "NtReadFileScatter",
+      "evidence_sha256": "f274fdfc4527e2a3d363b72902c18e59111688e1db6a1479808e43e21405d207"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17258",
+      "old_name": "xboxkrnl_exe_18",
+      "propagated_name": "NtReadFile",
+      "evidence_sha256": "fb4872da7643eab20a8bdc6d22fdcc329b4fc1e266afd454e06103dc8de5a276"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17268",
+      "old_name": "xboxkrnl_exe_19",
+      "propagated_name": "NtCreateFile",
+      "evidence_sha256": "93bfa5e8c5533d038200d21fc85cabe0c5ecfa8918979cf66f961cc19bdc9299"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17278",
+      "old_name": "xboxkrnl_exe_20",
+      "propagated_name": "NtDuplicateObject",
+      "evidence_sha256": "31fc28b2fc4e0377df716432f892db5977071e86784c1bef0e7558718b3c9da1"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17288",
+      "old_name": "xboxkrnl_exe_21",
+      "propagated_name": "NtClose",
+      "evidence_sha256": "d73db1828adf01aff2af4dfc52ae99ae43f9ee61bc4cf590703f3b9f2d02e924"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172a8",
+      "old_name": "xboxkrnl_exe_23",
+      "propagated_name": "NtWriteFile",
+      "evidence_sha256": "f58b100269035dd176880d38103f64d288ada078dabe382d89e2b42f9cfbe4db"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172b8",
+      "old_name": "xboxkrnl_exe_24",
+      "propagated_name": "__C_specific_handler",
+      "evidence_sha256": "31cba2921de1360d02fd9c5b496fb7b6436417a67eb30b14483833871d7c09bf"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172c8",
+      "old_name": "xboxkrnl_exe_25",
+      "propagated_name": "KeBugCheck",
+      "evidence_sha256": "0a61d972e0d60739118fb0bb5fc50b80af0a9eb5e41ab6098302791b8ac35a99"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172d8",
+      "old_name": "xboxkrnl_exe_26",
+      "propagated_name": "KeTlsGetValue",
+      "evidence_sha256": "9afbc7a2d724b7ace9522be9585f43f242528337b4dd7f51c99e0fbb07022fd2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172e8",
+      "old_name": "xboxkrnl_exe_27",
+      "propagated_name": "KeTlsSetValue",
+      "evidence_sha256": "24306d9b6369d7158fd12094b48e2d4c12205440054fa1d173640c1b981d947e"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a172f8",
+      "old_name": "xboxkrnl_exe_28",
+      "propagated_name": "KeTlsFree",
+      "evidence_sha256": "82aa1b1dc80ea045d090824ed9c982317b58a7c35984268b56819b24ca4afc10"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17308",
+      "old_name": "xboxkrnl_exe_29",
+      "propagated_name": "KeTlsAlloc",
+      "evidence_sha256": "1318b45cdb97d7da949ce9bf5a686f162a330d21fc849259b9be9c4bad593e4b"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17318",
+      "old_name": "xboxkrnl_exe_30",
+      "propagated_name": "RtlLeaveCriticalSection",
+      "evidence_sha256": "015fc30296c7176b001088c78c0a217619157384af038bad343853d2bf8c843d"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17328",
+      "old_name": "xboxkrnl_exe_31",
+      "propagated_name": "RtlInitializeCriticalSectionAndSpinCount",
+      "evidence_sha256": "553d2f8f89366c2dbd68bf000fa1dae6c2780375aebeb1daa1ba806731c82af6"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17338",
+      "old_name": "xboxkrnl_exe_32",
+      "propagated_name": "RtlEnterCriticalSection",
+      "evidence_sha256": "145da3232188596777696c65e6481fa5b8df68ebd34ac2188036884f8dc3e891"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17348",
+      "old_name": "xboxkrnl_exe_33",
+      "propagated_name": "RtlUnwind",
+      "evidence_sha256": "df64b3a1bf059842f3dfe87d09b64295417764af10545a5dff01e7c962edaedb"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17358",
+      "old_name": "xboxkrnl_exe_34",
+      "propagated_name": "RtlImageXexHeaderField",
+      "evidence_sha256": "6f8fc1ca701f037b808f9f23857125995bfaefb6bead767c1c8b863067684ed2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17368",
+      "old_name": "xboxkrnl_exe_36",
+      "propagated_name": "NtAllocateVirtualMemory",
+      "evidence_sha256": "06362550d15c61b446e4021afa0e7935bc4a7a6706c2378dcd156441258b5691"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17378",
+      "old_name": "xboxkrnl_exe_37",
+      "propagated_name": "KeBugCheckEx",
+      "evidence_sha256": "bc4b6bf6ade61144f18447545086f5cb1dd56c3bfcf61be5813205b2efce488e"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17388",
+      "old_name": "xboxkrnl_exe_38",
+      "propagated_name": "KeGetCurrentProcessType",
+      "evidence_sha256": "eec128320e9d9b9b93f1f4de4f4ef9502617918cc9c0b0981a314dc1252e71b2"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17398",
+      "old_name": "xboxkrnl_exe_39",
+      "propagated_name": "NtFreeVirtualMemory",
+      "evidence_sha256": "98e0f963418f345fa62922431019a34590d7f7274da028637cc19b7a9e25f94c"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173a8",
+      "old_name": "xboxkrnl_exe_40",
+      "propagated_name": "RtlCompareMemoryUlong",
+      "evidence_sha256": "ceef78e5109c647515c9c48f906182df8bc7184615fd15a01df3ae812acd27ab"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173b8",
+      "old_name": "xboxkrnl_exe_41",
+      "propagated_name": "RtlInitializeCriticalSection",
+      "evidence_sha256": "2e91a8d56bcdd6b0f0efe8816785b5fda591105af3ca6ff828e8b9917674a190"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173c8",
+      "old_name": "xboxkrnl_exe_42",
+      "propagated_name": "NtQueryVirtualMemory",
+      "evidence_sha256": "5b5f010cda5376813b77fd31463388a5b7e4b11210faf1d9aa2b486b0dd9a61b"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173d8",
+      "old_name": "xboxkrnl_exe_43",
+      "propagated_name": "RtlRaiseException",
+      "evidence_sha256": "43dbdd3ba06c9fac0a0d469a63569033df91a319aa919356583bae10b27359fc"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173e8",
+      "old_name": "xboxkrnl_exe_44",
+      "propagated_name": "RtlFreeAnsiString",
+      "evidence_sha256": "7c047696c0383c5aca6dd7b268d6875aa7a6d1dc9e4b99a77a22f54b19e9a0f9"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a173f8",
+      "old_name": "xboxkrnl_exe_45",
+      "propagated_name": "RtlUnicodeStringToAnsiString",
+      "evidence_sha256": "ac72da5e159a0e36e5938f317255b5ff8fb92d761d050ff04f2cb170aefa8438"
+    },
+    {
+      "component": "BootXell",
+      "address": "0x91a17408",
+      "old_name": "xboxkrnl_exe_46",
+      "propagated_name": "RtlInitUnicodeString",
+      "evidence_sha256": "53892601a0beba80c061faf9331a62fbdbab775fd10a73ebfd8eea3a917e6af8"
+    }
+  ]
+}

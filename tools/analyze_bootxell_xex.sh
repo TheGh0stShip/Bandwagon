@@ -24,5 +24,6 @@ python3 -B "$root/tools/analyze_ppc_string_xrefs.py" "$image" "$functions" \
     --text-address 0x91a05000 --text-size 0x12458 \
     --string-start 0x91a00400 --string-end 0x91a0382c \
     --output "$root/analysis/xex/BootXell-string-xrefs.json"
+python3 -B "$root/tools/analyze_bootxell_provenance.py"
 
 echo "BootXell exact sections and static analysis regenerated"
