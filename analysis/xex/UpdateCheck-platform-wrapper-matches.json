@@ -1,0 +1,242 @@
+{
+  "schema": "bandwagon-updatecheck-platform-wrapper-matches-v1",
+  "status": "positive_platform_provenance",
+  "policy": "The five former unknown inventory entries are excluded from Peer source lifting only because every substantive body relocation-normalizes to the clean Xbox 360 2.0.17559 boot animation shipped as the public BadUpdate recovery image, while the remaining instructions are direct platform thunks or zero padding. API role or cross-component sharing alone is not used as provenance.",
+  "subject_image": {
+    "path": "analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
+    "base_address": "0x91a00000",
+    "size": 278528,
+    "sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/UpdateCheck-functions.json",
+    "entry_count": 804,
+    "sha256": "cfa45de4e8b31be13df83acfe2b6cb2387464a6da1944bc9fbe74dfd4ea9e877"
+  },
+  "reference_image": {
+    "path": "analysis/xex/basefiles/Flash_bootanim.pe",
+    "base_address": "0x98000000",
+    "size": 638976,
+    "sha256": "b2bc842157ea7fbc6fde9adede7d55a5b6b9a4bdb88f73fbdb01f03371b1835b"
+  },
+  "reference_provenance": {
+    "component_inventory": {
+      "path": "analysis/component-inventory.json",
+      "sha256": "82f67adbfde0abc2a13507eba5336a061bcbaf649425ab62ebd6da1a09301dbf",
+      "expected_path": "Flash\\bootanim.xex",
+      "expected_size": 397312,
+      "expected_sha256": "45eb980c0f841b4807d43c07c766fae5e70b8e2fa4d13fb247a491897cfc6de7",
+      "expected_category": "bundled_baseline_binary",
+      "expected_status": "public_baseline_identical"
+    },
+    "public_baseline_readme": {
+      "path": "third_party/Xbox360BadUpdate/README.md",
+      "size": 7996,
+      "sha256": "accab9aa62443a911a04abdd2e1ef57307b5e5da4954dfa9d35e02f369090c73",
+      "required_text": "copy a clean bootanim.xex file in place"
+    },
+    "metadata_note": "The recovery XEX identifies itself as Xbox 360 bootanim version 2.0.17559.0, imports only xboxkrnl.exe 2.0.17559.0, and is bound to Device Flash bootanim.xex. This manifest relies on the independently recorded public-baseline identity plus exact PE comparisons; it does not redistribute or claim Microsoft source."
+  },
+  "normalization": {
+    "name": "ppc_wrapper_relocation_v1",
+    "description": "Retain opcode/register/control structure and exact conditional-branch targets while clearing direct-branch displacements and image-pointer immediates in lis plus dependent addi, ori, or lwz operations. All other instruction bits remain exact."
+  },
+  "inventory_entries": [
+    {
+      "address": "0x91a0d9f8",
+      "end_exclusive": "0x91a0da98",
+      "file_offset": "0x0000d9f8",
+      "size": 160,
+      "sha256": "7e7a7f708440dc55f87956247bc469dbd7156e5f58e635f2ebd27b4deacdccce"
+    },
+    {
+      "address": "0x91a0da98",
+      "end_exclusive": "0x91a0daf8",
+      "file_offset": "0x0000da98",
+      "size": 96,
+      "sha256": "1560520430880a6cda30816cf4d0586c743e2382f1418705d87a6424563a232e"
+    },
+    {
+      "address": "0x91a0daf8",
+      "end_exclusive": "0x91a0db78",
+      "file_offset": "0x0000daf8",
+      "size": 128,
+      "sha256": "36813db73104054f2bafe331657b2ef3d5876d8cc6f4e3e90d9f8d49a6c29c42"
+    },
+    {
+      "address": "0x91a0db78",
+      "end_exclusive": "0x91a0dbd0",
+      "file_offset": "0x0000db78",
+      "size": 88,
+      "sha256": "fbed91093ff8e3d2c52a07ff902c19a4e914660f8b1674620d58873cb570f09e"
+    },
+    {
+      "address": "0x91a0dbd0",
+      "end_exclusive": "0x91a0dc58",
+      "file_offset": "0x0000dbd0",
+      "size": 136,
+      "sha256": "9809b2bbff9b828d9353567106bf565166854e98e089a1407bfd68b0db7b2c71"
+    }
+  ],
+  "normalized_matches": [
+    {
+      "id": "create_event_a_wrapper",
+      "semantic_role": "CreateEventA-style NtCreateEvent wrapper",
+      "subject_address": "0x91a0d9f8",
+      "subject_file_offset": "0x0000d9f8",
+      "reference_address": "0x98048cf8",
+      "reference_file_offset": "0x00048cf8",
+      "size": 156,
+      "subject_sha256": "95994f5b7a5a2973dd6c502802c75615563241f163203065d1d305351e74012b",
+      "reference_sha256": "8e86aff5ce11ee4b55649c11a238ed0a3912723327fec54ca9b70c3585622b10",
+      "normalized_sha256": "da7c8c00dd70e94a5f43166dbeeac03d66695cd57a85c3c56155c0a0e96849cd"
+    },
+    {
+      "id": "nt_close_boolean_wrapper",
+      "semantic_role": "NtClose wrapper returning a Win32 Boolean and setting last error",
+      "subject_address": "0x91a0da98",
+      "subject_file_offset": "0x0000da98",
+      "reference_address": "0x98045a10",
+      "reference_file_offset": "0x00045a10",
+      "size": 72,
+      "subject_sha256": "eac3a0614edb6bfea8a90856bee55ce55d002f3d9a099c9b129ed23e0a89435d",
+      "reference_sha256": "5bb430dedbf97b5d3879e8673c888bbe5ea35d4931340c7d85e94dda392bfbef",
+      "normalized_sha256": "537d34bfd7f851c1045ae2f71738bdff299d5db5e53f7fb26e7afe296baa1549"
+    },
+    {
+      "id": "timestamp_accessor",
+      "semantic_role": "KeTimeStampBundle tick accessor",
+      "subject_address": "0x91a0dae0",
+      "subject_file_offset": "0x0000dae0",
+      "reference_address": "0x98045a00",
+      "reference_file_offset": "0x00045a00",
+      "size": 16,
+      "subject_sha256": "07b122fb85c84747f78d30f9874c866b945840039f71d2cbd760e07cd0ca8b6d",
+      "reference_sha256": "24fb1c04afc7522422776dc3db6bc5fcd5ec461c0a35ca395c0c9cd861194858",
+      "normalized_sha256": "2596fd4f4beb38dfad69d072441932c7cc1b51bd3102bc8dd5eaf830f7bd7fac"
+    },
+    {
+      "id": "wait_for_single_object_ex_wrapper",
+      "semantic_role": "WaitForSingleObjectEx-style NtWaitForSingleObjectEx wrapper",
+      "subject_address": "0x91a0daf8",
+      "subject_file_offset": "0x0000daf8",
+      "reference_address": "0x98049288",
+      "reference_file_offset": "0x00049288",
+      "size": 100,
+      "subject_sha256": "a89d2e67f847b7a91179e4027bcad6fe7069b0041324f767c9325dd9033baf2f",
+      "reference_sha256": "673f44e6432e7e5587f9d5ee552f27d5c8daa628faedb6ca0242afd82da6a04e",
+      "normalized_sha256": "848312bfbd8a0161004d5e91d581b85a1d4d7f5b7119caadb2cf16983735958a"
+    },
+    {
+      "id": "tls_set_last_error",
+      "semantic_role": "thread-local SetLastError storage",
+      "subject_address": "0x91a0db60",
+      "subject_file_offset": "0x0000db60",
+      "reference_address": "0x98049218",
+      "reference_file_offset": "0x00049218",
+      "size": 24,
+      "subject_sha256": "ad7a2b1528e3b330c957f7692054933abcb4f0315a826aef61046cdcb1bbee0d",
+      "reference_sha256": "ad7a2b1528e3b330c957f7692054933abcb4f0315a826aef61046cdcb1bbee0d",
+      "normalized_sha256": "ad7a2b1528e3b330c957f7692054933abcb4f0315a826aef61046cdcb1bbee0d"
+    },
+    {
+      "id": "ntstatus_to_last_error",
+      "semantic_role": "RtlNtStatusToDosError plus thread-local last-error store",
+      "subject_address": "0x91a0db78",
+      "subject_file_offset": "0x0000db78",
+      "reference_address": "0x98049230",
+      "reference_file_offset": "0x00049230",
+      "size": 52,
+      "subject_sha256": "bb1f170c8063ef6073f1d479e839688361c08cfd0189c8116e0bdf1502c65d46",
+      "reference_sha256": "bf418329953b65f3eb6953e8359e40131c60660b4e000f7f62cbd33053e73dbf",
+      "normalized_sha256": "d8ecc7ab65a76ca1f478a442c3e9272089b4be5a2af8a727956c17d3e7a84d00"
+    },
+    {
+      "id": "tls_get_last_error",
+      "semantic_role": "thread-local GetLastError storage",
+      "subject_address": "0x91a0dbb0",
+      "subject_file_offset": "0x0000dbb0",
+      "reference_address": "0x98049268",
+      "reference_file_offset": "0x00049268",
+      "size": 32,
+      "subject_sha256": "8a3d8e91bd13bea61c9cf2c5f069ae0a4a5fd1a8e6643d0034ee14881e511095",
+      "reference_sha256": "8a3d8e91bd13bea61c9cf2c5f069ae0a4a5fd1a8e6643d0034ee14881e511095",
+      "normalized_sha256": "8a3d8e91bd13bea61c9cf2c5f069ae0a4a5fd1a8e6643d0034ee14881e511095"
+    },
+    {
+      "id": "ansi_object_attributes_initializer",
+      "semantic_role": "RtlInitAnsiString-backed object-attributes initializer",
+      "subject_address": "0x91a0dbd0",
+      "subject_file_offset": "0x0000dbd0",
+      "reference_address": "0x9804a4f8",
+      "reference_file_offset": "0x0004a4f8",
+      "size": 88,
+      "subject_sha256": "6496bfc73ea8b861d9970517b621464a3ea9c6df2c3a29da7e329158400509a9",
+      "reference_sha256": "65568c81cce1437c99653a734b96192a30b8d880044ad4cab64445312a149824",
+      "normalized_sha256": "cf63a860449110c0aca0c9af539433c2c9880359d1b6b81647bd6ccde36827cb"
+    },
+    {
+      "id": "millisecond_timeout_converter",
+      "semantic_role": "Win32 milliseconds to negative 100-nanosecond NT timeout conversion",
+      "subject_address": "0x91a0dc28",
+      "subject_file_offset": "0x0000dc28",
+      "reference_address": "0x9804a550",
+      "reference_file_offset": "0x0004a550",
+      "size": 32,
+      "subject_sha256": "61132f26fb6c9ddf4a8bf47987adc4c73ca1f80a65f55d58999ae052323fc2d6",
+      "reference_sha256": "61132f26fb6c9ddf4a8bf47987adc4c73ca1f80a65f55d58999ae052323fc2d6",
+      "normalized_sha256": "61132f26fb6c9ddf4a8bf47987adc4c73ca1f80a65f55d58999ae052323fc2d6"
+    }
+  ],
+  "direct_thunks": [
+    {
+      "address": "0x91a0daf0",
+      "file_offset": "0x0000daf0",
+      "size": 4,
+      "sha256": "6f268c7824749820c10dff65f72c7aafdd0289e498d37a3bbd4f1874f78e9426",
+      "target_address": "0x91a0dbb0",
+      "target_role": "local TLS GetLastError body"
+    },
+    {
+      "address": "0x91a0dc48",
+      "file_offset": "0x0000dc48",
+      "size": 4,
+      "sha256": "5d4d567e1efda94e838a259f4649930ef4d321da47b0c2a2f48bdb801cf446f6",
+      "target_address": "0x91a410dc",
+      "target_role": "NetDll_inet_addr import thunk",
+      "iat_address": "0x91a00444",
+      "iat_record": "0x0000001a",
+      "ordinal": "0x001a"
+    },
+    {
+      "address": "0x91a0dc50",
+      "file_offset": "0x0000dc50",
+      "size": 4,
+      "sha256": "81f1ac7c97c942d7af6ca4d6df5ecaf829d3a018e68a61c0e9a1b67f88d5f890",
+      "target_address": "0x91a410ec",
+      "target_role": "NetDll_WSAGetLastError import thunk",
+      "iat_address": "0x91a00440",
+      "iat_record": "0x0000001b",
+      "ordinal": "0x001b"
+    }
+  ],
+  "padding": [
+    {"address":"0x91a0da94","file_offset":"0x0000da94","size":4,"sha256":"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"},
+    {"address":"0x91a0daf4","file_offset":"0x0000daf4","size":4,"sha256":"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"},
+    {"address":"0x91a0db5c","file_offset":"0x0000db5c","size":4,"sha256":"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"},
+    {"address":"0x91a0dbac","file_offset":"0x0000dbac","size":4,"sha256":"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"},
+    {"address":"0x91a0dc4c","file_offset":"0x0000dc4c","size":4,"sha256":"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"},
+    {"address":"0x91a0dc54","file_offset":"0x0000dc54","size":4,"sha256":"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"}
+  ],
+  "summary": {
+    "inventory_entry_count": 5,
+    "inventory_bytes": 608,
+    "normalized_match_count": 9,
+    "normalized_match_bytes": 572,
+    "direct_thunk_count": 3,
+    "direct_thunk_bytes": 12,
+    "padding_count": 6,
+    "padding_bytes": 24,
+    "remaining_unexplained_bytes": 0
+  }
+}

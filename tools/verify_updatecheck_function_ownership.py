@@ -145,6 +145,16 @@ def main() -> None:
         fail("UpdateCheck inventory is bound to a different image")
 
     evidence: dict[str, dict[str, object]] = ownership["evidence_files"]
+    required_evidence_roles = {
+        "semantic_symbols",
+        "string_xrefs",
+        "direct_callgraph",
+        "declared_provenance",
+        "peer_source_coverage",
+        "platform_wrapper_matches",
+    }
+    if set(evidence) != required_evidence_roles:
+        fail("UpdateCheck ownership evidence set differs")
     evidence_json: dict[str, dict[str, object]] = {}
     for role, item in evidence.items():
         evidence_json[role] = json.loads(read_bound_file(item, f"{role} evidence"))
@@ -153,6 +163,20 @@ def main() -> None:
             fail(f"{role} evidence is bound to a different image")
     if evidence_json["declared_provenance"].get("image_sha256") != image_info["sha256"]:
         fail("declared provenance is bound to a different image")
+    wrapper_matches = evidence_json["platform_wrapper_matches"]
+    if wrapper_matches.get("schema") != (
+        "bandwagon-updatecheck-platform-wrapper-matches-v1"
+    ):
+        fail("platform-wrapper evidence schema differs")
+    if wrapper_matches.get("status") != "positive_platform_provenance":
+        fail("platform-wrapper evidence is not positive")
+    wrapper_summary = wrapper_matches.get("summary", {})
+    if (
+        wrapper_summary.get("inventory_entry_count") != 5
+        or wrapper_summary.get("inventory_bytes") != 608
+        or wrapper_summary.get("remaining_unexplained_bytes") != 0
+    ):
+        fail("platform-wrapper evidence summary differs")
 
     verify_upstream_sources(ownership)
 
@@ -179,6 +203,24 @@ def main() -> None:
     categories = ownership["categories"]
     if set(categories) != required_categories:
         fail("UpdateCheck ownership category set differs")
+    unknown = categories["unknown"]
+    if unknown["inventory_entry_count"] != 0 or unknown["size"] != 0:
+        fail("UpdateCheck ownership still has unknown wrapper entries")
+    wrapper_range = next(
+        (
+            item
+            for item in categories["platform_toolchain"]["ranges"]
+            if int(item["start"], 0) == 0x91A0D9F8
+            and int(item["end_exclusive"], 0) == 0x91A0DC58
+        ),
+        None,
+    )
+    if (
+        wrapper_range is None
+        or wrapper_range["inventory_entry_count"] != 5
+        or wrapper_range["size"] != 608
+    ):
+        fail("positive wrapper range is absent from platform ownership")
 
     function_addresses = [int(function["address"], 0) for function in functions]
     if function_addresses != sorted(set(function_addresses)):

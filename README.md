@@ -18,7 +18,65 @@ versions are pinned under `third_party/`. Initialize them with
 `git submodule update --init --recursive`; see
 [`third_party/README.md`](third_party/README.md) for the revision ledger.
 
-## Status at a glance
+## Project state
+
+**Bandwagon is not yet a complete replacement for Peer Pressure.** The binary
+evidence inventory is complete, but readable source recovery and final
+integration are still in progress. Assembly is retained as evidence; it does
+not count as open-source completion.
+
+Status date: 2026-10-26
+
+| Gate | State | What that means |
+|---|---:|---|
+| Preserve and map the inputs | Complete | 33 / 33 installed artifacts recorded; all 4,194 XEX code entries are accounted for |
+| Recover maintainable Peer-specific source | In progress | 10 of 14 targets complete; in the measured five-XEX queue, 59 / 317 product candidates and 21,976 / 92,400 bytes have verified readable source |
+| Build and validate a replacement | Not complete | No single source-built replacement distribution exists yet |
+
+There is no honest single percentage for the whole project: the 14 targets
+differ greatly in size, and KernelExpansion, HDD Stage2, and final integration
+use different units. The best comparable meter is the five-XEX product queue:
+**18.6% of functions and 23.8% of bytes currently have verified readable
+source**. It excludes code positively identified as public upstream code or
+Xbox/compiler infrastructure.
+
+### Working now
+
+**UpdateCheck is now source-complete:** all 19 product functions / 6,768 bytes
+have verified readable source, and all five former unknown wrapper containers /
+608 bytes have positive Microsoft-platform provenance. The next focused queue
+is BootEdit: 15 known product functions / 11,272 bytes remain, while its 119
+unknown entries are fingerprinted before any lifting decision.
+
+### Already source-complete
+
+Readable product-specific source is complete for Stage3, Stage4, the kernel
+patch stream, HDD security trigger, flash DMA payload, motherboard SMC patches,
+AuroraFixer, BootXell, Updater, and UpdateCheck. Their binary/assembly
+reconstructions remain as test oracles, not as substitutes for readable source.
+
+### What remains after UpdateCheck
+
+| Workstream | Known source work still missing | Unresolved provenance |
+|---|---:|---:|
+| KernelExpansion | 50 functions / 18,828 bytes | 72 functions / 16,024 bytes |
+| HDD Stage2 | 3,432 candidate worker bytes, plus modified ROP/data | Included in its remaining analysis |
+| SettingsApp | 243 functions / 59,152 bytes | 13 functions / 5,336 bytes |
+| BootEdit | 15 functions / 11,272 bytes | 119 functions / 31,712 bytes |
+| Final integration | Source-built components, reproducible distribution, and host plus authorized target/emulator validation | - |
+
+### Forecast
+
+The current estimate is **24-50 substantive commits, or about 3-7 weeks of
+sustained engineering work**, to reach a source-built integration candidate.
+That is active engineering time, not calendar time between work sessions.
+Hardware/emulator validation can extend it.
+
+The exact per-component evidence and definition of 100% are in
+[`STATUS.md`](STATUS.md). [`SOURCE_RECOVERY.md`](SOURCE_RECOVERY.md) explains
+what qualifies as source-complete.
+
+## Detailed status ledger
 
 Status date: 2026-10-26
 
@@ -26,8 +84,8 @@ Status date: 2026-10-26
 |---|---:|---|
 | Installed-artifact inventory | 33 / 33 | Complete |
 | Raw-payload evidence | Every current raw Peer payload | Binary-exact; this is an evidence milestone, not source completion |
-| XEX function ownership | 4,194 / 4,194 entries and 1,387,504 / 1,387,504 code bytes | Exhaustively partitioned; 137 entries remain conservatively unknown |
-| Maintainable-source targets | 9 / 14 | Five targets remain partial |
+| XEX function ownership | 4,194 / 4,194 entries and 1,387,504 / 1,387,504 code bytes | Exhaustively partitioned; 132 entries remain conservatively unknown |
+| Maintainable-source targets | 10 / 14 | Four targets remain partial |
 | Source-built replacement distribution | 0 / 1 | Not yet integrated |
 
 ### Source-target ledger
@@ -50,50 +108,49 @@ already been built.
 | Updater | Complete | 20 / 20 product entries, 6,728 / 6,728 B | None |
 | KernelExpansion | Partial | 46 / 96 known product entries, 6,480 / 25,308 B | 50 entries / 18,828 B, plus 72 unknown entries / 16,024 B |
 | HDD Stage2 | Partial | Ownership split and exact binary reconstruction | 3,432 candidate product worker bytes, modified ROP/data, and integration |
-| UpdateCheck | Partial | 16 / 19 product entries, 4,400 / 6,768 B | 3 entries / 2,368 B, plus 5 unknown entries / 608 B |
+| UpdateCheck | Complete | 19 / 19 product entries, 6,768 / 6,768 B | None in the current source-composition boundary |
 | SettingsApp | Partial | 3 / 246 product/mixed entries, 3,112 / 62,264 B | 243 entries / 59,152 B, plus 13 unknown entries / 5,336 B |
 | BootEdit | Partial | 8 / 23 product entries, 2,424 / 13,696 B | 15 entries / 11,272 B, plus 119 unknown entries / 31,712 B |
 
-The five-XEX readable-source counter is therefore **56 / 317 product entries
-(17.7%) and 19,608 / 92,400 product bytes (21.2%)**. These percentages describe
+The five-XEX readable-source counter is therefore **59 / 317 product entries
+(18.6%) and 21,976 / 92,400 product bytes (23.8%)**. These percentages describe
 that measured XEX queue only; they deliberately exclude pinned public source,
 proven platform/toolchain code, KernelExpansion, Stage2, and final integration.
 
 The XEX ownership pass is now complete. Of their 1,387,504 code bytes,
-1,257,448 (90.6%) are pinned upstream or proven platform/toolchain code and are
+1,258,056 (90.7%) are pinned upstream or proven platform/toolchain code and are
 not a Peer source-recovery task. The current denominator is 317 product/mixed
-candidates / 92,400 bytes plus 137 unknown entries / 37,656 bytes. Of the
-product bucket, 56 entries / 19,608 bytes now have hash-bound readable-source
-coverage; 261 / 72,792 bytes remain. Existing unbound behavior models are not
+candidates / 92,400 bytes plus 132 unknown entries / 37,048 bytes. Of the
+product bucket, 59 entries / 21,976 bytes now have hash-bound readable-source
+coverage; 258 / 70,424 bytes remain. Existing unbound behavior models are not
 counted as completed functions.
 
 Within that XEX denominator, BootXell is 9/9 and Updater is 20/20 source
-covered. UpdateCheck is 16/19, SettingsApp is 3/246, and BootEdit is 8/23.
+covered. UpdateCheck is 19/19, SettingsApp is 3/246, and BootEdit is 8/23.
 That is the shortest current answer to "what is done versus left."
 
 This project is therefore **not near 100% source recovery**. The unfinished
-targets are the largest ones, so 9 / 14 completed targets must not be read as
-64% of the remaining effort. The current backlog is:
+targets are the largest ones, so 10 / 14 completed targets must not be read as
+71% of the remaining effort. The current backlog is:
 
 - 50 known KernelExpansion product functions / 18,828 instruction bytes that
   still lack readable source models, plus 72 functions still needing ownership
   classification;
 - 3,432 candidate product bytes in the Stage2 worker, plus its modified outer
   ROP/data;
-- readable source for 261 currently uncovered XEX product/mixed entries /
-  72,792 bytes: UpdateCheck 3 / 2,368, SettingsApp 243 / 59,152, and BootEdit
-  15 / 11,272;
-- provenance work on 137 unknown XEX entries / 37,656 bytes before treating
+- readable source for 258 currently uncovered XEX product/mixed entries /
+  70,424 bytes: SettingsApp 243 / 59,152 and BootEdit 15 / 11,272;
+- provenance work on 132 unknown XEX entries / 37,048 bytes before treating
   any of them as product code;
 - a final target-build and integration-validation phase.
 
-The current engineering forecast is **27-55 substantive commits and roughly
+The current engineering forecast is **24-50 substantive commits and roughly
 3-7 weeks of sustained, active engineering work to a source-built integration
-candidate**, not a few more commits. The estimate is approximately 2-5 commits
-for provenance refinement, 20-40 for the five partial source targets, and 5-10
+candidate**, not a few more commits. The estimate is approximately 1-4 commits
+for provenance refinement, 18-36 for the four partial source targets, and 5-10
 for build/integration closure. It is an active-work estimate, not elapsed time
 while no analysis session is running. Authorized target/emulator validation
-can extend that range. The estimate will narrow as the 137-entry unknown bucket
+can extend that range. The estimate will narrow as the 132-entry unknown bucket
 is resolved. See [`STATUS.md`](STATUS.md) for the component-by-component
 scoreboard, remaining queue, and exact definition of 100% completion.
 

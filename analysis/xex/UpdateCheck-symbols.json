@@ -14,6 +14,41 @@
       ]
     },
     {
+      "address": "0x91a0cd28",
+      "recovered_name": "fn_91A0CD28",
+      "semantic_name": "XHttps::HttpsClient::OpenConnection",
+      "confidence": "high",
+      "evidence": [
+        "opens an IPv4 TCP socket and applies socket option 0x5801",
+        "uses numeric IPv4 directly or resolves a host with XNetDnsLookup and waits on status 10036",
+        "tries each resolved address with NetDll_connect and returns the observed status family 0/1/2/3",
+        "references the six OpenConnection socket, DNS, connection, and timing diagnostics"
+      ]
+    },
+    {
+      "address": "0x91a0d1e8",
+      "recovered_name": "fn_91A0D1E8",
+      "semantic_name": "XHttps::BuildHttpRequest",
+      "confidence": "high",
+      "evidence": [
+        "assembles the method, path, HTTP/1.1 Host field, Xbox360XHttps/1.0 user agent, and connection policy in sequence",
+        "appends caller headers verbatim with CRLF",
+        "uses a seven-byte case-sensitive Accept: comparison and inserts Accept: */* when absent"
+      ]
+    },
+    {
+      "address": "0x91a0d328",
+      "recovered_name": "fn_91A0D328",
+      "semantic_name": "XHttps::HttpsClient::SubmitGETRequest",
+      "confidence": "high",
+      "evidence": [
+        "cracks the URL through the XAM XHttpCrackUrl import and defaults an empty path to /",
+        "calls OpenConnection at 0x91a0d4c4 and BuildHttpRequest at 0x91a0d514",
+        "streams BearSSL application data into the response object and preserves result codes 4/6/7",
+        "recognizes HTTP 302 and a case-insensitive location: header, resets the response, and recursively follows the redirect at 0x91a0d7c4"
+      ]
+    },
+    {
       "address": "0x91a0d860",
       "recovered_name": "fn_91A0D860",
       "semantic_name": "CheckLatestReleaseVersion",
@@ -302,7 +337,7 @@
     }
   ],
   "counts": {
-    "peer_application": 2,
+    "peer_application": 5,
     "jsoncpp": 22,
     "bearssl": 3
   }

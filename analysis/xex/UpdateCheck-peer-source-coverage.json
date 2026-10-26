@@ -1,5 +1,7 @@
 {
-  "schema": "bandwagon-updatecheck-peer-source-coverage-v2",
+  "schema": "bandwagon-updatecheck-peer-source-coverage-v3",
+  "status": "exhaustive_product_readable_source_coverage",
+  "policy": "Every entry classified as product application or glue by the exhaustive UpdateCheck ownership partition is bound to exact image bytes and readable, tested C++ behavior. Coverage means maintainable behavioral reconstruction, not compiler-identical source, personal authorship, or an ABI-identical Xbox build. Pinned BearSSL and JsonCpp plus proven Microsoft platform/toolchain code remain outside this manifest.",
   "image": {
     "path": "analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
     "size": 278528,
@@ -21,13 +23,17 @@
   },
   "peer_symbol_inventory": {
     "path": "analysis/xex/UpdateCheck-symbols.json",
-    "sha256": "46664f6e0f64d678426d2dccb19a7c89eab834dce54f476173c14794016bf652"
+    "sha256": "c2a70f3bc0707900a18e028bb55b8aa9ebdde6877a07fa46b3c11e6aff1e43e1"
   },
+  "evidence_inputs": [
+    {"path":"analysis/xex/UpdateCheck-callgraph.json","sha256":"0a961f0a8c4d5106881541dc255413164cdf4208b277601fcfcac85b0c48d12c"},
+    {"path":"analysis/xex/UpdateCheck-string-xrefs.json","sha256":"003a73e59cb39b6b073d7b8278cb38c3d40a4844f19449dd1521d2f4d78ad132"}
+  ],
   "coverage": {
-    "covered_inventory_entry_count": 16,
-    "covered_size": 4400,
-    "remaining_inventory_entry_count": 3,
-    "remaining_size": 2368
+    "covered_inventory_entry_count": 19,
+    "covered_size": 6768,
+    "remaining_inventory_entry_count": 0,
+    "remaining_size": 0
   },
   "source_files": [
     {"path":"reconstruction/update_check/release_version.hpp","sha256":"a8abd8605eb1d8a3612d40de1643090d9aebea3e30fdd35175461320f507caf2"},
@@ -37,16 +43,25 @@
     {"path":"reconstruction/update_check/http_response.hpp","sha256":"c9d6668cc49aa0102dd043a347d66b99f2357d4c3c13cd2da644710da5d132a4"},
     {"path":"reconstruction/update_check/http_response.cpp","sha256":"8133a7dfee2f8a461fcf21a959b20b3ab58e2b465b17b2b76c8f7583961e53e2"},
     {"path":"reconstruction/update_check/certificate_store.hpp","sha256":"db727fcbede5d653d97f99840e538ef209967187bc56189ab941a5bdd603dd26"},
-    {"path":"reconstruction/update_check/certificate_store.cpp","sha256":"f33f5a8a6b0f8b33863d745ef7f07443c9a42a7bc682951159c6105928d2a931"}
+    {"path":"reconstruction/update_check/certificate_store.cpp","sha256":"f33f5a8a6b0f8b33863d745ef7f07443c9a42a7bc682951159c6105928d2a931"},
+    {"path":"reconstruction/update_check/network_lifecycle.hpp","sha256":"0d23e09df8173988eee69a12e1f8a4a67e88d52534141fecc97c34a86d2c869f"},
+    {"path":"reconstruction/update_check/network_lifecycle.cpp","sha256":"bd334db9758875131b833a6c955c214e910eb20b897c303112d5baeebafc1145"},
+    {"path":"reconstruction/update_check/https_request.hpp","sha256":"697a3ccaeb80fcb8c59bc52afb5f98889bd47dfdc42c557446127fceb8586301"},
+    {"path":"reconstruction/update_check/https_request.cpp","sha256":"1a17baf43f0a0f098d97c879da168131ab31e3f863419b101cd06ab6079ca9d7"}
   ],
   "tests": [
     {"path":"reconstruction/update_check/release_version_test.cpp","sha256":"036e678fed3496fe8f794e1f1d14319924bb80d5acae2d98ccf73b1a3db144d4"},
     {"path":"reconstruction/update_check/latest_release_test.cpp","sha256":"e3758a71825d4e68c49cfe13b294d3d5e35e251df0dccfd9eac0b5f42ee9c45c"},
     {"path":"reconstruction/update_check/http_response_test.cpp","sha256":"5810226ceade84d556347935bd9198685ea4ba224f6d9e4a990b746c609662ee"},
-    {"path":"reconstruction/update_check/certificate_store_test.cpp","sha256":"197dda36e87167ca8a2b8344fe42f6858248a3b1efb38611a041b16230b25655"}
+    {"path":"reconstruction/update_check/certificate_store_test.cpp","sha256":"197dda36e87167ca8a2b8344fe42f6858248a3b1efb38611a041b16230b25655"},
+    {"path":"reconstruction/update_check/network_lifecycle_test.cpp","sha256":"0a3f9e0664d6b483e6048f437fd232fb41ff819cf7dc2ff978657891abc530c4"},
+    {"path":"reconstruction/update_check/https_request_test.cpp","sha256":"55f6ea3d59c66d5196f755ce76d9496a9e66146248fb1cf4062a2ec442e8c7c8"}
   ],
   "functions": [
     {"address":"0x91a0c3e8","size":312,"sha256":"32e314097c5da75530e0ecb21469fafad42cd9973ea537a746e655b579db8ee6","semantic_name":"ParseReleaseVersion","source":"reconstruction/update_check/release_version.cpp","symbols":["ParseReleaseVersion","ParseReleaseTag"]},
+    {"address":"0x91a0cd28","size":712,"sha256":"4109955b6cbe16cb5f78744a6796ea7735c195730a0506098ec4beb648b341aa","semantic_name":"XHttps::HttpsClient::OpenConnection","source":"reconstruction/update_check/network_lifecycle.cpp","supporting_sources":["reconstruction/update_check/network_lifecycle.hpp"],"symbols":["OpenHttpsConnection","ConnectionServices","OpenConnectionResult"],"fidelity":"behavioral_reconstruction","evidence":"IPv4 TCP socket creation, option 0x5801, numeric and XNDNS paths, pending wait, address iteration, result codes 0/1/2/3, cleanup order, TLS binding, and all six diagnostics are explicit"},
+    {"address":"0x91a0d1e8","size":320,"sha256":"74cae4343561e1be9e9c8747616e0a632476c0e0f90614008e7998485a4817e6","semantic_name":"XHttps::BuildHttpRequest","source":"reconstruction/update_check/https_request.cpp","supporting_sources":["reconstruction/update_check/https_request.hpp"],"symbols":["BuildHttpRequest","kHttpUserAgent","kDefaultAcceptHeader"],"fidelity":"exact_behavior","evidence":"method, path, HTTP/1.1 Host, user agent, connection policy, caller headers, case-sensitive Accept: probe, default Accept field, and final CRLF are reproduced in target order"},
+    {"address":"0x91a0d328","size":1336,"sha256":"fac97eb52eb1dc0f9eba6f765a61f682f413d1ad04bef94cff5ab36ab24cc118","semantic_name":"XHttps::HttpsClient::SubmitGETRequest","source":"reconstruction/update_check/https_request.cpp","supporting_sources":["reconstruction/update_check/https_request.hpp","reconstruction/update_check/http_response.cpp","reconstruction/update_check/http_response.hpp"],"symbols":["HttpsClient::SubmitGetRequest","HttpsRequestServices","kRedirectLocationMissing"],"fidelity":"behavioral_reconstruction","evidence":"URL cracking, default path, host-only connection reuse, OpenConnection passthrough, BearSSL write/read loop and finalization gate, response status handling, result codes 4/6/7, location parsing, response reset, and recursive 302 follow are explicit"},
     {"address":"0x91a0d860","size":408,"sha256":"f95a72f104f2ac76bca278112be5d8780fb9792e23df45236bb689d88f5f5e7e","semantic_name":"CheckLatestReleaseVersion","source":"reconstruction/update_check/latest_release.cpp","symbols":["CheckLatestReleaseVersion","kTrustedRootsPath","kLatestReleaseUrl"]},
     {"address":"0x91a0ef08","size":192,"sha256":"ed01f2ad6841953a653a2c847e42b0108b2346fa2088b14f381e32c8c4ec7950","semantic_name":"XHttps::HttpsResponseBuffer::WriteContentData","source":"reconstruction/update_check/http_response.cpp","symbols":["HttpsResponseBuffer::WriteContentData"]},
     {"address":"0x91a0efc8","size":104,"sha256":"533d116c7c4b8ea86c76878eebe60598373ad8e3188390c370a1ae308a3ccf2d","semantic_name":"XHttps header-vector allocation helper","source":"reconstruction/update_check/http_response.cpp","symbols":["AllocateHeaderStorage"]},
@@ -63,16 +78,13 @@
     {"address":"0x91a0ff00","size":216,"sha256":"15e9c499554da804648c4782d9b948689c296fa9bd80b98d4edfb10cd3ff8bfc","semantic_name":"XHttps certificate trust-anchor vector append helper","source":"reconstruction/update_check/certificate_store.cpp","symbols":["CertificateStore::AppendTrustAnchor"]},
     {"address":"0x91a0ffd8","size":752,"sha256":"828149c44ce3f020fe18fbabe0f2da11fd99ad95ff0a2240240a62f056f2c901","semantic_name":"XHttps::CertificateStore::LoadCertificate","source":"reconstruction/update_check/certificate_store.cpp","symbols":["CertificateStore::LoadCertificate","CERTIFICATE","X509 CERTIFICATE"]}
   ],
-  "remaining_functions": [
-    {"address":"0x91a0cd28","size":712,"sha256":"4109955b6cbe16cb5f78744a6796ea7735c195730a0506098ec4beb648b341aa","reason":"Xbox networking/security initialization and teardown use unresolved XAM/xboxkrnl ordinal contracts; the control-flow role is known but a faithful readable interface is not yet proven."},
-    {"address":"0x91a0d1e8","size":320,"sha256":"74cae4343561e1be9e9c8747616e0a632476c0e0f90614008e7998485a4817e6","reason":"HTTP request-header construction is evident from the Accept diagnostic, but field ownership and exact helper contracts remain incomplete."},
-    {"address":"0x91a0d328","size":1336,"sha256":"fac97eb52eb1dc0f9eba6f765a61f682f413d1ad04bef94cff5ab36ab24cc118","reason":"The connection, redirect-location, TLS, and response orchestration is cohesive but still contains unresolved helper and lifetime semantics; it remains explicitly uncovered rather than guessed."}
-  ],
+  "remaining_functions": [],
   "limitations": [
     "Coverage binds readable behavior models to exact inventory extents; it does not claim compiler-identical C++ output.",
     "The XHttps vector-helper entries are represented with standard C++ containers instead of relifting the target MSVC implementation.",
     "BearSSL PEM and X.509 decoding remain abstract service boundaries; only the modified ownership, filtering, deep-copy, and certificate-store integration logic is reconstructed.",
-    "Product/mixed classification and source coverage are component-level reconstruction statements, not personal-authorship claims."
+    "Product/mixed classification and source coverage are component-level reconstruction statements, not personal-authorship claims.",
+    "The HTTPS source uses injected Xbox networking, URL cracking, and BearSSL boundaries; it reconstructs the product control flow without claiming proprietary platform source or an ABI-identical build."
   ],
-  "scope_note": "Covers 16 of 19 product/mixed entries and 4,400 of 6,768 bytes. Three XHttps request/orchestration entries totaling 2,368 bytes remain explicitly uncovered. Stock BearSSL, JsonCpp, proven MSVC/XDK runtime, imports, and the five unknown-provenance network wrappers are outside this product coverage set."
+  "scope_note": "Covers all 19 product/mixed entries and all 6,768 bytes in the exhaustive UpdateCheck product partition. Stock BearSSL, JsonCpp, proven MSVC/XDK runtime, imports, and positively matched Microsoft networking wrappers are outside this product coverage set."
 }

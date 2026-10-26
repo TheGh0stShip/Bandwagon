@@ -9,12 +9,12 @@ Bandwagon has two distinct completion layers:
 | Layer | Status | Meaning |
 |---|---:|---|
 | Evidence preservation | Complete for the current 33-artifact inventory | Raw payloads have whole-file evidence; XEX work preserves initialized code/data; public and platform-only artifacts have provenance records |
-| Maintainable source recovery | 9 of 14 tracked targets complete | Readable source exists for the product-specific behavior, with upstream code mapped instead of rewritten |
+| Maintainable source recovery | 10 of 14 tracked targets complete | Readable source exists for the product-specific behavior, with upstream code mapped instead of rewritten |
 | Replacement build/integration | Not complete | The recovered pieces are not yet a single source-built replacement distribution |
 
-The project is not 64% complete by effort. The five partial targets include the
+The project is not 71% complete by effort. The four partial targets include the
 largest executables and most of the unresolved code. Their XEX ownership pass
-is now exhaustive: 90.6% of XEX code bytes have been removed from the lifting
+is now exhaustive: 90.7% of XEX code bytes have been removed from the lifting
 queue as pinned upstream or proven platform/toolchain code. The remaining work
 is still **dozens of material commits, not a few more commits**.
 
@@ -33,16 +33,16 @@ is still **dozens of material commits, not a few more commits**.
 | KernelExpansion | Partial | Exhaustive ownership for 372 entries; 46 product/local functions / 6,480 bytes currently have readable models | 50 known product entries / 18,828 bytes still need source; 72 entries / 16,024 bytes still need provenance; mixed data/types still need completion |
 | HDD Stage2 | Partial | Exact whole-file reconstruction; worker split into public, platform, and candidate product ranges | 3,432 candidate product worker bytes plus the modified outer ROP and remaining data need semantic/source recovery |
 | Updater | Complete | All 376 entries classified; all 20 product routines / 6,728 bytes have exact-entry readable models; 22 miniz entries are pinned and 334 platform/toolchain entries are excluded | None in the current source-composition boundary |
-| UpdateCheck | Partial | All 804 entries partitioned; 16 of 19 product/mixed routines / 4,400 of 6,768 bytes covered | Recover the final 3 product entries / 2,368 bytes and resolve 5 unknown XDK/network wrappers / 608 bytes |
+| UpdateCheck | Complete | All 804 entries partitioned; all 19 product/mixed routines / 6,768 bytes have readable models; five former unknown wrappers / 608 bytes positively match the clean Microsoft platform baseline | None in the current source-composition boundary |
 | SettingsApp | Partial | All 1,824 entries partitioned; 3 of 246 product/mixed candidates / 3,112 of 62,264 bytes have exact-entry behavioral models | Recover or reclassify the remaining 243 / 59,152 and resolve 13 XPR2/backend entries / 5,336 bytes |
 | BootEdit | Partial | All 934 entries partitioned; 8 of 23 product routines / 2,424 of 13,696 bytes covered; one generic shared 376-byte container was removed from the product queue | Recover the remaining 15 / 11,272 and resolve 119 unknown entries / 31,712 bytes |
 
 Across the five XEX ownership-pass targets, every one of 4,194 entries and
-1,387,504 code bytes has an ownership assignment. The aggregate is 3,740
-upstream or platform entries / 1,257,448 bytes, 317 conservative product/mixed
-entries / 92,400 bytes, and 137 unknown entries / 37,656 bytes. Fifty-six
-product entries / 19,608 bytes have hash-bound readable-source coverage,
-leaving 261 / 72,792 bytes in the current uncovered product upper bound. This is a real
+1,387,504 code bytes has an ownership assignment. The aggregate is 3,745
+upstream or platform entries / 1,258,056 bytes, 317 conservative product/mixed
+entries / 92,400 bytes, and 132 unknown entries / 37,048 bytes. Fifty-nine
+product entries / 21,976 bytes have hash-bound readable-source coverage,
+leaving 258 / 70,424 bytes in the current uncovered product upper bound. This is a real
 denominator, but it can shrink as generic glue/templates are proven non-product.
 
 ## Current measured boundaries
@@ -76,12 +76,13 @@ denominator, but it can shrink as generic glue/templates are proven non-product.
 ### UpdateCheck
 
 - 19 entries / 6,768 bytes: product/mixed update, XHttps, and certificate
-  adapter code; 16 / 4,400 bytes are source-covered, leaving 3 / 2,368.
+  adapter code; all 19 / 6,768 bytes are source-covered.
 - 187 entries / 76,232 bytes: stock pinned BearSSL 0.6.
 - 170 entries / 43,648 bytes: pinned JsonCpp 00.11.0.
-- 423 entries / 98,772 bytes: proven MSVC/Xbox platform and toolchain code.
-- 5 entries / 608 bytes: XDK/network-facing wrappers still unknown and not
-  excluded by role alone.
+- 428 entries / 99,380 bytes: proven MSVC/Xbox platform and toolchain code,
+  including five wrapper containers matched byte-completely to clean Microsoft
+  2.0.17559 bootanim code after constrained relocation normalization.
+- 0 entries / 0 bytes remain unknown.
 
 ### BootXell
 
@@ -122,18 +123,16 @@ it.
 
 ## Remaining work, in order
 
-1. Refine the 137 unknown XEX entries: 119 in BootEdit, 13 in SettingsApp, and
-   5 in UpdateCheck; narrow conservative product/mixed buckets before
-   lifting.
+1. Refine the 132 unknown XEX entries: 119 in BootEdit and 13 in SettingsApp;
+   narrow conservative product/mixed buckets before lifting.
 2. Recover the 50 known uncovered KernelExpansion product entries, prioritizing
    bootstrap, Xbox storage/FSD adapters, and product policy; fingerprint the 72
    unknown entries before lifting them.
 3. Recover the 3,432-byte Stage2 product worker and semantically reconstruct the
    modified outer ROP/data rather than leaving it as generated assembly.
-4. Recover the 261 currently uncovered XEX product/mixed candidates / 72,792
-   bytes: UpdateCheck 3 / 2,368, SettingsApp 243 / 59,152, and BootEdit 15 /
-   11,272. Continue narrowing SettingsApp's conservative upper bound before
-   lifting generic helpers.
+4. Recover the 258 currently uncovered XEX product/mixed candidates / 70,424
+   bytes: SettingsApp 243 / 59,152 and BootEdit 15 / 11,272. Continue narrowing
+   SettingsApp's conservative upper bound before lifting generic helpers.
 5. Produce target-buildable components, integrate them into a replacement
    distribution, and validate the static/host-test results against authorized
    Xbox hardware or an appropriate emulator environment.
@@ -141,12 +140,12 @@ it.
 ## Working forecast
 
 The ownership-denominator milestone is complete. The remaining planning range
-is 27-55 substantive commits: roughly 2-5 for provenance refinement, 20-40 for
-the product-source work across the five partial targets, and 5-10 for build and
+is 24-50 substantive commits: roughly 1-4 for provenance refinement, 18-36 for
+the product-source work across the four partial targets, and 5-10 for build and
 integration closure (some work can overlap). At the present accuracy bar this
 is approximately **3-7 weeks of sustained work to a source-built integration
 candidate**. Authorized hardware/emulator validation is a separate external
-gate and can extend that range. This forecast should narrow as the 137 XEX and
+gate and can extend that range. This forecast should narrow as the 132 XEX and
 72 KernelExpansion unknown entries are resolved.
 
 Run `python3 tools/report_recovery_dashboard.py` for the live hash-bound

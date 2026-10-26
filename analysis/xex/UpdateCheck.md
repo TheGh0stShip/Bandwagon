@@ -28,20 +28,23 @@ all 226,028 initialized instruction bytes exactly once:
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product/mixed update integration | 19 | 6,768 | Recover as readable source; 16 entries / 4,400 bytes are covered |
+| Product/mixed update integration | 19 | 6,768 | All entries have hash-bound readable source |
 | BearSSL 0.6 | 187 | 76,232 | Use the pinned upstream source |
 | JsonCpp 00.11.0 | 170 | 43,648 | Use the pinned upstream source |
-| MSVC/Xbox platform and toolchain | 423 | 98,772 | Reuse the target ABI/runtime; do not relift |
-| Unknown XDK/network-facing wrappers | 5 | 608 | Fingerprint before deciding whether to lift |
+| MSVC/Xbox platform and toolchain | 428 | 99,380 | Reuse the target ABI/runtime; do not relift |
+| Unknown | 0 | 0 | No unresolved ownership entries remain |
 
 The XHttps request path and BearSSL-derived certificate reader are
 product/mixed integration code: their lineage is recorded, but their adapter
 delta is not stock source, and this is not a claim of personal authorship. The
-sixteen functions in `UpdateCheck-peer-source-coverage.json` are covered; 3
-product entries / 2,368 bytes still require hash-bound readable source. Five
-merely XDK/network-facing wrappers remain unknown instead of being excluded by
-role alone. Consequently the component is not yet source-complete, but none of
-the 218,652 proven upstream/platform bytes belongs in the lifting queue. Run
+all 19 functions in `UpdateCheck-peer-source-coverage.json` are covered. The
+five former XDK/network-facing wrapper containers are excluded only after all
+608 bytes were accounted for: 572 substantive bytes match nine bodies in the
+clean Microsoft 2.0.17559 bootanim baseline after constrained relocation
+normalization, 12 bytes are direct thunks, and 24 bytes are zero padding. Thus
+the component is source-complete at this boundary, and none of the 219,260
+proven upstream/platform bytes belongs in the lifting queue. Run
+`tools/verify_updatecheck_platform_wrapper_matches.py` and
 `tools/verify_updatecheck_function_ownership.py` to reproduce the partition.
 
 ## Recovered application behavior
@@ -73,14 +76,27 @@ load, object allocation, recovered request method 2, HTTP-200 gate, JSON
 decode boundary, strict version comparison, output write, and ordered cleanup
 on every normal exit. Its service interface makes the Xbox and third-party
 boundaries explicit without hiding the Peer control flow.
-`UpdateCheck-peer-source-coverage.json` binds 16 product/mixed routines (4,400
-bytes total) to exact image hashes and readable source. In addition to release
-version policy, the covered set includes the complete 11-entry
-`HttpsResponseBuffer`/container-helper family and all three BearSSL-derived
-certificate-adapter entries. The remaining three entries / 2,368 bytes are
-listed explicitly with their unresolved XAM/xboxkrnl, request-header, redirect,
-TLS, and lifetime contracts. Run the host tests and coverage check with
-`tools/test_updatecheck_reconstruction.sh`.
+`reconstruction/update_check/network_lifecycle.cpp` recovers the complete
+`XHttps::HttpsClient::OpenConnection` behavior: IPv4 TCP socket creation,
+socket option `0x5801`, numeric-address and asynchronous XNDNS paths, status
+`10036` waiting, address iteration, result codes 0 through 3, diagnostic and
+cleanup ordering, TLS binding, and host adoption. Xbox and TLS operations stay
+behind explicit injected interfaces.
+
+`reconstruction/update_check/https_request.cpp` recovers both remaining
+entries. `BuildHttpRequest` preserves exact field order, the
+`Xbox360XHttps/1.0` user agent, connection policy, caller-header handling, and
+the target's case-sensitive seven-byte `Accept:` probe. `SubmitGetRequest`
+models XHttp URL cracking, default path selection, host-only connection reuse,
+the BearSSL write/read and finalization gates, error codes 4, 6, and 7, HTTP
+302 `location:` handling, response reset, and the observed recursive redirect.
+
+`UpdateCheck-peer-source-coverage.json` now binds all 19 product/mixed routines
+(6,768 bytes total) to exact image hashes and readable source. In addition to
+the three request/connection entries, the covered set includes release-version
+policy, the complete 11-entry `HttpsResponseBuffer`/container-helper family,
+and all three BearSSL-derived certificate-adapter entries. Run the host tests
+and coverage checks with `tools/test_updatecheck_reconstruction.sh`.
 
 Large portions of this image are third-party HTTP/TLS and JSON code. The
 author's public `ATTRIBUTION.md` identifies BearSSL 0.6 and JsonCpp tag

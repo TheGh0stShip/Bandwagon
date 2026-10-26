@@ -56,6 +56,21 @@ APPLICATION = [
         "evidence": ["looks up JSON member tag_name", "parses %*c%d.%d.%d and requires three conversions", "packs the three parsed components into the caller output"],
     },
     {
+        "address": "0x91a0cd28", "recovered_name": "fn_91A0CD28",
+        "semantic_name": "XHttps::HttpsClient::OpenConnection", "confidence": "high",
+        "evidence": ["opens an IPv4 TCP socket and applies socket option 0x5801", "uses numeric IPv4 directly or resolves a host with XNetDnsLookup and waits on status 10036", "tries each resolved address with NetDll_connect and returns the observed status family 0/1/2/3", "references the six OpenConnection socket, DNS, connection, and timing diagnostics"],
+    },
+    {
+        "address": "0x91a0d1e8", "recovered_name": "fn_91A0D1E8",
+        "semantic_name": "XHttps::BuildHttpRequest", "confidence": "high",
+        "evidence": ["assembles the method, path, HTTP/1.1 Host field, Xbox360XHttps/1.0 user agent, and connection policy in sequence", "appends caller headers verbatim with CRLF", "uses a seven-byte case-sensitive Accept: comparison and inserts Accept: */* when absent"],
+    },
+    {
+        "address": "0x91a0d328", "recovered_name": "fn_91A0D328",
+        "semantic_name": "XHttps::HttpsClient::SubmitGETRequest", "confidence": "high",
+        "evidence": ["cracks the URL through the XAM XHttpCrackUrl import and defaults an empty path to /", "calls OpenConnection at 0x91a0d4c4 and BuildHttpRequest at 0x91a0d514", "streams BearSSL application data into the response object and preserves result codes 4/6/7", "recognizes HTTP 302 and a case-insensitive location: header, resets the response, and recursively follows the redirect at 0x91a0d7c4"],
+    },
+    {
         "address": "0x91a0d860", "recovered_name": "fn_91A0D860",
         "semantic_name": "CheckLatestReleaseVersion", "confidence": "high",
         "evidence": ["loads PPROOT:\\System\\IncludedRootsPEM.txt", "requests the GitHub latest-release API URL", "requires HTTP status 200 and invokes ParseReleaseVersion", "returns success only when the parsed output fits the caller buffer"],
@@ -110,7 +125,7 @@ def main() -> None:
         "symbols": APPLICATION + recovered + bearssl,
         "counts": {"peer_application": len(APPLICATION), "jsoncpp": len(recovered), "bearssl": len(bearssl)},
     }
-    OUTPUT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    OUTPUT.write_bytes((json.dumps(result, indent=2) + "\n").encode("utf-8"))
     print(f"UpdateCheck symbols: {len(APPLICATION)} Peer, {len(recovered)} JsonCpp, and {len(bearssl)} BearSSL routines")
 
 

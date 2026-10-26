@@ -22,14 +22,14 @@
   "classification_rules": [
     "A function extent is the half-open interval from its inventory entry to the next entry, with the final extent capped at the initialized .text end.",
     "A contiguous library block requires multiple exact upstream string/semantic anchors, agreement with source organization, function-aligned link boundaries, and corroboration from the separately linked SettingsApp copy.",
-    "Product classification includes the two update-policy routines, the XHttps/update integration bodies established by component-local strings and call topology, and the BearSSL-derived C++/platform certificate adapter. UpdateCheck-peer-source-coverage.json currently covers 16 of 19 product/mixed entries (4,400 of 6,768 bytes) and keeps the remaining three orchestration entries explicit.",
+    "Product classification includes the two update-policy routines, the XHttps/update integration bodies established by component-local strings and call topology, and the BearSSL-derived C++/platform certificate adapter. UpdateCheck-peer-source-coverage.json covers all 19 product/mixed entries and all 6,768 bytes.",
     "MSVC STL/CRT/startup code, the XEX entry stub, import thunks, and compiler-emitted string/vector/map support islands are platform/toolchain when binary diagnostics or structural evidence establish that provenance; merely calling XDK imports is insufficient.",
-    "Code without a defensible source boundary is unknown even when it is shared between Peer Pressure components."
+    "Code without a defensible source boundary remains unknown even when shared between Peer Pressure components; no UpdateCheck entries currently remain in that category."
   ],
   "evidence_files": {
     "semantic_symbols": {
       "path": "analysis/xex/UpdateCheck-symbols.json",
-      "sha256": "46664f6e0f64d678426d2dccb19a7c89eab834dce54f476173c14794016bf652"
+      "sha256": "c2a70f3bc0707900a18e028bb55b8aa9ebdde6877a07fa46b3c11e6aff1e43e1"
     },
     "string_xrefs": {
       "path": "analysis/xex/UpdateCheck-string-xrefs.json",
@@ -45,7 +45,11 @@
     },
     "peer_source_coverage": {
       "path": "analysis/xex/UpdateCheck-peer-source-coverage.json",
-      "sha256": "4cedbbf8195a7b03a142d3c36e733c6197ca0eb3d260242ce6e2f131ddcbefe7"
+      "sha256": "ce2411cfc1e57a1da504cd422969b3087f8ba39b83ee61b1dff3efe8e1c63dbc"
+    },
+    "platform_wrapper_matches": {
+      "path": "analysis/xex/UpdateCheck-platform-wrapper-matches.json",
+      "sha256": "3534726c1978b6d8cae02544d095235a761d95fd4fe7a486a59bdb82ff5ce302"
     }
   },
   "upstream_sources": {
@@ -286,11 +290,11 @@
   },
   "categories": {
     "platform_toolchain": {
-      "inventory_entry_count": 423,
-      "size": 98772,
-      "concatenated_sha256": "de79ea0c1cb3802176e4c7a14929ea66bc1d17a9b41f816a1e22ee6eb770335a",
+      "inventory_entry_count": 428,
+      "size": 99380,
+      "concatenated_sha256": "ab9f7e17a107d0646f276c1782973dafe2134ea7de7acb6edd7cf96bda7fc5b9",
       "peer_specific": false,
-      "description": "MSVC STL/CRT and exception support, the compiler/XEX entry path, import thunks, and string/vector/map support islands emitted between application and upstream functions. XDK-facing wrappers without independent provenance are excluded.",
+      "description": "MSVC STL/CRT and exception support, the compiler/XEX entry path, import thunks, string/vector/map support islands, and five networking/runtime wrapper entries positively matched to the clean Microsoft 2.0.17559 boot animation baseline.",
       "ranges": [
         {
           "start": "0x91a0a000",
@@ -315,6 +319,14 @@
           "inventory_entry_count": 3,
           "sha256": "f83d60f12f198a157b05c2d4f8c17a4a0731935e72368ae763526ed0d0a3dcff",
           "basis": "shared std::string construction/destruction support used by both JsonCpp and the HTTP caller"
+        },
+        {
+          "start": "0x91a0d9f8",
+          "end_exclusive": "0x91a0dc58",
+          "size": 608,
+          "inventory_entry_count": 5,
+          "sha256": "2bbbb667947b25c4c1fcff6820fa8e83a2ec8b5469c75cfbf1b76509dc1038da",
+          "basis": "all 572 substantive bytes relocation-normalize to nine bodies in the clean Microsoft 2.0.17559 bootanim baseline; the remaining 12 bytes are direct local/XAM thunks and 24 bytes are zero padding, verified by UpdateCheck-platform-wrapper-matches.json"
         },
         {
           "start": "0x91a0dc58",
@@ -461,45 +473,36 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 5,
-      "size": 608,
-      "concatenated_sha256": "2bbbb667947b25c4c1fcff6820fa8e83a2ec8b5469c75cfbf1b76509dc1038da",
+      "inventory_entry_count": 0,
+      "size": 0,
+      "concatenated_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "peer_specific": null,
-      "description": "Xbox-network-facing wrappers whose role and import calls are known but whose implementation provenance is not established by pinned source or diagnostic runtime anchors.",
-      "ranges": [
-        {
-          "start": "0x91a0d9f8",
-          "end_exclusive": "0x91a0dc58",
-          "size": 608,
-          "inventory_entry_count": 5,
-          "sha256": "2bbbb667947b25c4c1fcff6820fa8e83a2ec8b5469c75cfbf1b76509dc1038da",
-          "basis": "calls Xbox imports and maintains errno-like state, but XDK-facing role and cross-component use do not prove Microsoft/XDK implementation provenance"
-        }
-      ]
+      "description": "No UpdateCheck inventory entries remain unresolved after the five networking/runtime wrapper containers were positively matched to the clean Microsoft platform baseline.",
+      "ranges": []
     }
   },
   "unknown_refinement": {
     "before": {"inventory_entry_count":97,"size":15720},
-    "reassigned_to_platform_toolchain": {"inventory_entry_count":71,"size":8720},
+    "reassigned_to_platform_toolchain": {"inventory_entry_count":76,"size":9328},
     "reassigned_to_jsoncpp_00_11_0": {"inventory_entry_count":4,"size":344},
     "reassigned_to_product_application_or_glue": {"inventory_entry_count":17,"size":6048},
     "reassigned_to_bearssl_0_6": {"inventory_entry_count":0,"size":0},
-    "after": {"inventory_entry_count":5,"size":608}
+    "after": {"inventory_entry_count":0,"size":0}
   },
   "caveats": [
     "The shared XHttps range is classified as product integration glue at the component boundary; this is not a claim that its implementation was personally authored by any Peer Pressure contributor.",
     "The three-function certificate adapter has pinned BearSSL tools/files.c lineage but remains product/mixed because its C++ and Xbox/platform adaptation is not stock-source-equivalent.",
-    "The five Xbox-network-facing wrappers at 0x91a0d9f8-0x91a0dc58 remain unknown: API role and import calls alone are not platform provenance.",
-    "Relocation-normalized cross-component equality is corroborating evidence only. It does not by itself identify an upstream project or an individual author.",
+    "The five Xbox-network-facing wrapper containers at 0x91a0d9f8-0x91a0dc58 are platform/toolchain only because all substantive bodies positively match the clean Microsoft 2.0.17559 bootanim baseline; API role alone would not suffice.",
+    "Relocation-normalized equality is used as platform provenance here only with the independently recorded Microsoft baseline identity and exhaustive byte accounting; it does not identify an individual author.",
     "The partition covers initialized .text bytes and the 804 discovered inventory entries. It does not claim that exception metadata discovers every possible unlabeled internal entry point.",
-    "Stock BearSSL, JsonCpp, proven MSVC/XDK, startup, and import implementations are not reconstruction targets; product/mixed and unknown extents remain in the queue."
+    "Stock BearSSL, JsonCpp, proven MSVC/XDK, startup, and import implementations are not reconstruction targets; all product/mixed extents remain explicitly tracked until readable-source coverage is complete."
   ],
   "totals": {
     "inventory_entry_count": 804,
     "instruction_size": 226028,
     "category_count": 5,
-    "classified_entry_count": 799,
-    "classified_size": 225420,
+    "classified_entry_count": 804,
+    "classified_size": 226028,
     "upstream_library_entry_count": 357,
     "upstream_library_size": 119880
   }

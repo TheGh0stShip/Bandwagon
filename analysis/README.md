@@ -74,9 +74,10 @@ trusted-root path, GitHub latest-release endpoint, HTTP status gate, JSON
 `tag_name` lookup, and three-component release version parser. All initialized
 sections have exact assembly source and reproducible static-analysis maps. Its
 804-entry ownership partition identifies 19 product/mixed integration entries
-/ 6,768 bytes, excludes 780 upstream/platform entries, and conservatively keeps
-5 XDK/network-facing wrappers unknown. Sixteen product routines / 4,400 bytes
-are source-covered; 3 / 2,368 remain.
+/ 6,768 bytes and excludes 785 upstream/platform entries. All 19 product
+routines / 6,768 bytes are source-covered. The five former unknown networking
+wrapper containers / 608 bytes are now positively bound to clean Microsoft
+2.0.17559 bootanim code, leaving no UpdateCheck ownership unknowns.
 
 `xex/BootEdit.md` covers the ImGui boot-theme editor: exact initialized
 sections, function/call/string inventories, and semantic names for theme
