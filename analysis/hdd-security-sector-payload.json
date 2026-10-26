@@ -12,5 +12,7 @@
     {"offset":"0x10","value":"0x800d27a0","meaning":"stack_pivot_entry gadget for retail kernel 17559","evidence":"third_party/Xbox360BadUpdate/Common/KernelConfig_Retail_17559.asm"},
     {"offset":"0x14","value":"0x58425050","meaning":"XBPP marker"}
   ],
-  "semantic_status": "lossless structure recovered; two kernel-memory targets remain unnamed"
+  "typed_source": "reconstruction/hdd_security/trigger_payload.hpp",
+  "typed_test": "tools/test_hdd_security_reconstruction.sh",
+  "semantic_status": "complete typed structure and exact serializer; two kernel-memory targets remain conservatively unnamed"
 }
