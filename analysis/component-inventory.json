@@ -5,18 +5,17 @@
   "status_counts": {
     "binary_asset": 1,
     "exact_initialized_source": 6,
-    "exact_whole_file_source": 2,
+    "exact_whole_file_source": 3,
     "human_readable_data": 1,
     "human_readable_source": 3,
     "lossless_structured_source": 7,
     "provenance_only": 1,
     "public_baseline_identical": 3,
     "reference_binary_only": 6,
-    "unresolved": 3
+    "unresolved": 2
   },
   "unresolved_peer_payloads": [
     "Flash\\FlashDmaPayload.bin",
-    "Hdd\\HddSecuritySectorPayload.bin",
     "PeerPressure\\System\\KernelExpansion.bin"
   ],
   "entries": [
@@ -160,9 +159,9 @@
       "size": 24,
       "sha1": "c55c2e46ad3ae6eeb55c85adb5432127dff0377b",
       "sha256": "9e8933f7f194aa045d4b202a63a7552503ec836d217bb48a3bbfbb2f1f5e6bdd",
-      "category": "peer_raw_payload",
-      "status": "unresolved",
-      "evidence": null
+      "category": "peer_structured_payload",
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/hdd-security-sector-payload.json"
     },
     {
       "path": "Hdd\\PeerPressureExploit-Stage2.bin",

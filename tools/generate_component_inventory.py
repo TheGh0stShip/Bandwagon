@@ -25,7 +25,7 @@ CLASSIFICATIONS = {
     "Flash\\Xenon_SmcExploit.bin": ("peer_patch_stream", "lossless_structured_source", "analysis/patch-records/Flash_Xenon_SmcExploit.json"),
     "Flash\\Zephyr_SmcExploit.bin": ("peer_patch_stream", "lossless_structured_source", "analysis/patch-records/Flash_Zephyr_SmcExploit.json"),
     "Flash\\FlashDmaPayload.bin": ("peer_raw_payload", "unresolved", None),
-    "Hdd\\HddSecuritySectorPayload.bin": ("peer_raw_payload", "unresolved", None),
+    "Hdd\\HddSecuritySectorPayload.bin": ("peer_structured_payload", "exact_whole_file_source", "analysis/hdd-security-sector-payload.json"),
     "Hdd\\PeerPressureExploit-Stage2.bin": ("peer_rop_and_code", "exact_whole_file_source", "analysis/stage2/PeerPressureExploit-Stage2.md"),
     "PeerPressure\\OtherOS\\boot.ini": ("peer_configuration", "human_readable_source", None),
     "PeerPressure\\OtherOS\\BootXell.xex": ("peer_executable", "exact_initialized_source", "analysis/xex/BootXell.md"),

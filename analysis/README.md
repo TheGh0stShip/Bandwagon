@@ -144,8 +144,10 @@ remains in progress: executable functions, imports, types, globals, and control
 flow have not yet been completely named across all components. The focused
 Stage4 preamble CFG does not imply that the clean-HV data tail is executable.
 The persistent HDD Stage2 is now exactly reconstructed; the manifest inventory
-identifies `FlashDmaPayload.bin`, `HddSecuritySectorPayload.bin`, and
-`KernelExpansion.bin` as the remaining unresolved Peer raw payloads. The six
+identifies `FlashDmaPayload.bin` and `KernelExpansion.bin` as the remaining
+unresolved Peer raw payloads. `HddSecuritySectorPayload.bin` is now a lossless
+six-word reconstruction with its retail-17559 stack-pivot gadget identified.
+The six
 platform SMC firmware images remain reference binaries requiring
 architecture-specific provenance/annotation rather than being treated as
 Peer-authored source.

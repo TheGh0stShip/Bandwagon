@@ -30,6 +30,10 @@ HDD ROP image, embedded relocated worker, strings, and trailer descriptor.
 map. The common reconstruction verifier now checks Stage2, Stage3, and Stage4
 as complete files.
 
+`HddSecuritySectorPayload.reconstructed.S` is the exact six-word HDD trigger
+record. Its known retail-17559 stack-pivot word and unresolved kernel pointers
+are documented without speculative names.
+
 ## Verification
 
 Run:

@@ -1,0 +1,16 @@
+{
+  "schema": "bandwagon-hdd-security-sector-payload-v1",
+  "source": "Hdd/HddSecuritySectorPayload.bin",
+  "size": 24,
+  "sha256": "9e8933f7f194aa045d4b202a63a7552503ec836d217bb48a3bbfbb2f1f5e6bdd",
+  "byte_order": "big-endian",
+  "words": [
+    {"offset":"0x00","value":"0x00000000","meaning":"unknown/reserved"},
+    {"offset":"0x04","value":"0x801ca000","meaning":"kernel-memory pointer; exact object unresolved"},
+    {"offset":"0x08","value":"0x00000000","meaning":"unknown/reserved"},
+    {"offset":"0x0c","value":"0x801ca1c8","meaning":"kernel-memory pointer; exact object unresolved"},
+    {"offset":"0x10","value":"0x800d27a0","meaning":"stack_pivot_entry gadget for retail kernel 17559","evidence":"third_party/Xbox360BadUpdate/Common/KernelConfig_Retail_17559.asm"},
+    {"offset":"0x14","value":"0x58425050","meaning":"XBPP marker"}
+  ],
+  "semantic_status": "lossless structure recovered; two kernel-memory targets remain unnamed"
+}

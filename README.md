@@ -44,9 +44,8 @@ The public BadUpdate source baseline is pinned as the
   reconstruction and an initial semantic map of its partition/update loader.
 
 `analysis/component-inventory.json` is the generated manifest-wide completion
-matrix. Of 33 installed components, only three Peer raw payloads remain without
-source-form reconstruction: `FlashDmaPayload.bin`,
-`HddSecuritySectorPayload.bin`, and `KernelExpansion.bin`.
+matrix. Of 33 installed components, only two Peer raw payloads remain without
+source-form reconstruction: `FlashDmaPayload.bin` and `KernelExpansion.bin`.
 
 Semantic recovery of remaining functions, types, globals, indirect control
 flow, raw stage payloads, and SMC firmware is still in progress.
