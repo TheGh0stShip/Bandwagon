@@ -38,10 +38,20 @@ is parsed in radix 16 and stored as a 64-bit value.
 
 `LaunchBootOption` at `0x91a064d8` prefixes the selected filename with
 `PPROOT:\\OtherOS\\`, opens the file, reads it into 128-byte-aligned physical
-memory, and—unless bypass was explicitly acknowledged—requires its final 16
-bytes to equal `xxxxxxxxxxxxxxxx`. It then constructs an `rbtr` launch request
-using either the configured base address or the allocated physical address.
-All handles and allocations are released on the observed exit paths.
+memory. A final `xxxxxxxxxxxxxxxx` is a scan marker, not a mandatory safe
+trailer: unmarked images proceed directly, while marked images invoke
+`SanitizeXellImage` unless the exact bypass acknowledgement was configured.
+It then constructs an `rbtr` launch request using either the configured base
+address or the allocated physical address. All handles and allocations are
+released on the observed exit paths.
+
+`SanitizeDangerousXellNames` at `0x91a05190` finds `updxell.bin`,
+`flashdmp.bin`, and `updflash.bin`, clears each match (including an immediately
+preceding slash), and leaves sentinel byte 1. `SanitizeXellImage` at
+`0x91a05410` first applies that pass directly. If no match is found, it
+recognizes a gzip member at offset `0x4000`, excludes the final 16-byte marker,
+decompresses up to 1 MiB, sanitizes the expanded data, and recompresses it into
+the original capacity.
 
 `BootXellMain` at `0x91a06658` loads
 `PPROOT:\\OtherOS\\boot.ini`, selects the requested named option from the parsed
@@ -56,14 +66,15 @@ inih r62, upstream commit `26254ee9de7681f8825433415443e7116ff24b98`.
 dispatch. This separates the upstream parser from Peer's `ParseBootIniOption`
 callback without attributing diagnostic-free runtime code by address alone.
 
-`reconstruction/bootxell/boot_options.cpp` is a portable source reconstruction
-of that Peer callback and the launch-image trailer guard. It preserves quoted
-value trimming, hexadecimal 64-bit base addresses, the exact bypass
-acknowledgement, record finalization, and the required sixteen-byte
-`xxxxxxxxxxxxxxxx` trailer. It also reconstructs the OtherOS path join and the
-five arguments of the `rbtr` request: command 4, high-half physical alias,
-128-byte-rounded word count, and the default base `0x800000001c040000` used
-when no high-half configured base is present. Its option lookup preserves
-`BootXellMain`'s first-match, 64-byte bounded name comparison. The host test
-exercises these rules without invoking any Xbox file or launch API; run it with
+`reconstruction/bootxell/boot_options.cpp` reconstructs the Peer INI callback,
+quoted value trimming, hexadecimal 64-bit base addresses, exact bypass
+acknowledgement, record finalization, marker gate, OtherOS path join, and
+five-field `rbtr` request. `reconstruction/bootxell/xell_scan.cpp` implements
+the direct and gzip-wrapped sanitizer. `reconstruction/bootxell/runtime.cpp`
+lifts `ReadFileToBuffer`, `LoadBootIni`, `LaunchBootOption`, and `BootXellMain`
+behind explicit file, memory, parser, compression, and launch interfaces.
+`BootXell-peer-source-coverage.json` binds all seven currently identified Peer
+routines (2,512 bytes) to exact image hashes and source symbols. The option
+lookup preserves `BootXellMain`'s first-match, 64-byte bounded comparison.
+Run all host tests and the coverage check with
 `tools/test_bootxell_reconstruction.sh`.

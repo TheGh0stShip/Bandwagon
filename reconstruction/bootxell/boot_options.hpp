@@ -33,9 +33,9 @@ int ParseBootIniOption(void* user, const char* section, const char* name,
                        const char* value);
 void FinalizeBootIniOptions(BootOptionParserState& state);
 
-bool HasSafeXellTrailer(const std::uint8_t* image, std::size_t size);
+bool HasXellScanMarker(const std::uint8_t* image, std::size_t size);
 bool IsLaunchImageAllowed(const BootOption& option, const std::uint8_t* image,
-                          std::size_t size);
+                          std::size_t size, bool scan_succeeded);
 
 std::string BuildOtherOsPath(const BootOption& option);
 RbtrLaunchRequest BuildRbtrLaunchRequest(const BootOption& option,

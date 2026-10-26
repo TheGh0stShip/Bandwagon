@@ -1,0 +1,25 @@
+{
+  "schema": "bandwagon-bootxell-peer-source-coverage-v1",
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_OtherOS_BootXell.pe",
+    "size": 106496,
+    "sha256": "4ef810a55390105a0756d2dc48502f8d9fad50edc08d8617fe146bc3ae496ebc",
+    "base_address": "0x91a00000"
+  },
+  "peer_symbol_inventory": "analysis/xex/BootXell-symbols.json",
+  "tests": [
+    "reconstruction/bootxell/boot_options_test.cpp",
+    "reconstruction/bootxell/xell_scan_test.cpp",
+    "reconstruction/bootxell/runtime_test.cpp"
+  ],
+  "functions": [
+    {"address": "0x91a05190", "size": 208, "sha256": "20bbc59c1d3ade0a034c5ec3054c16a80b919e6fd330aea9a78507bda2caf171", "semantic_name": "SanitizeDangerousXellNames", "source": "reconstruction/bootxell/xell_scan.cpp", "symbols": ["SanitizeDangerousXellNames"]},
+    {"address": "0x91a05410", "size": 344, "sha256": "780821c2f0a1bfb9c7689f49b58b1fa8af5ab00f9cea32de511d8c6d4c01f809", "semantic_name": "SanitizeXellImage", "source": "reconstruction/bootxell/xell_scan.cpp", "symbols": ["SanitizeXellImage", "kXellGzipHeaderOffset", "kXellGzipDataOffset"]},
+    {"address": "0x91a06188", "size": 712, "sha256": "f62ea08c8ae6a2c7d8d7262c8065f0e87cb7ce22ef21d92a682c56cc6c843a3c", "semantic_name": "ParseBootIniOption", "source": "reconstruction/bootxell/boot_options.cpp", "symbols": ["ParseBootIniOption"]},
+    {"address": "0x91a06450", "size": 136, "sha256": "9509e9c601fab693f37d8c1224261ae3b053ce4a5a31bc2ab9c6dac598f5d4f9", "semantic_name": "LoadBootIni", "source": "reconstruction/bootxell/runtime.cpp", "symbols": ["LoadBootIni"]},
+    {"address": "0x91a064d8", "size": 384, "sha256": "ad6e8364f7f7f0e56df3f353bb7d2de4ba0e3c2902c72ad95998d105f5977387", "semantic_name": "LaunchBootOption", "source": "reconstruction/bootxell/runtime.cpp", "symbols": ["LaunchBootOption", "BuildRbtrLaunchRequest"]},
+    {"address": "0x91a06658", "size": 256, "sha256": "3b3da4e0ab782f4db5763cba897009fb9f4b1c3e3963aa62ac8341972a55b87a", "semantic_name": "BootXellMain", "source": "reconstruction/bootxell/runtime.cpp", "symbols": ["BootXellMain", "kBootIniPath"]},
+    {"address": "0x91a07550", "size": 472, "sha256": "d3e59aff45027bbd5a71e09e5dd16134a3f403b03e0fa8640ede588b226a695b", "semantic_name": "ReadFileToBuffer", "source": "reconstruction/bootxell/runtime.cpp", "symbols": ["ReadFileToBuffer"]}
+  ],
+  "scope_note": "Covers every Peer application routine currently identified by function-local evidence; whole-image function ownership classification remains pending."
+}

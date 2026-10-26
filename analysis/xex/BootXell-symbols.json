@@ -3,6 +3,20 @@
   "image_sha256": "4ef810a55390105a0756d2dc48502f8d9fad50edc08d8617fe146bc3ae496ebc",
   "symbols": [
     {
+      "address": "0x91a05190",
+      "recovered_name": "fn_91A05190",
+      "semantic_name": "SanitizeDangerousXellNames",
+      "confidence": "high",
+      "evidence": ["searches for updxell.bin, flashdmp.bin, and updflash.bin", "zeroes each matched name and an immediately preceding slash, then writes sentinel byte 1"]
+    },
+    {
+      "address": "0x91a05410",
+      "recovered_name": "fn_91A05410",
+      "semantic_name": "SanitizeXellImage",
+      "confidence": "high",
+      "evidence": ["runs SanitizeDangerousXellNames directly", "recognizes a gzip member at offset 0x4000, scans decompressed content, and recompresses it before the 16-byte marker"]
+    },
+    {
       "address": "0x91a06188",
       "recovered_name": "fn_91A06188",
       "semantic_name": "ParseBootIniOption",

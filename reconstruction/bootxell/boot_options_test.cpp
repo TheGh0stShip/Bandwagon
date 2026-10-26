@@ -26,15 +26,20 @@ int main() {
 
   std::vector<std::uint8_t> safe(32, 0);
   std::fill(safe.end() - 16, safe.end(), 'x');
-  assert(bandwagon::bootxell::HasSafeXellTrailer(safe.data(), safe.size()));
+  assert(bandwagon::bootxell::HasXellScanMarker(safe.data(), safe.size()));
   assert(bandwagon::bootxell::IsLaunchImageAllowed(state.options[0],
-                                                   safe.data(), safe.size()));
+                                                   safe.data(), safe.size(),
+                                                   true));
+  assert(!bandwagon::bootxell::IsLaunchImageAllowed(
+      state.options[0], safe.data(), safe.size(), false));
   safe.back() = 0;
-  assert(!bandwagon::bootxell::IsLaunchImageAllowed(state.options[0],
-                                                    safe.data(), safe.size()));
+  assert(bandwagon::bootxell::IsLaunchImageAllowed(
+      state.options[0], safe.data(), safe.size(), false));
+  safe.back() = 'x';
   state.options[0].bypass_xell_scanning = true;
   assert(bandwagon::bootxell::IsLaunchImageAllowed(state.options[0],
-                                                   safe.data(), safe.size()));
+                                                   safe.data(), safe.size(),
+                                                   false));
 
   BootOptionParserState acknowledged;
   ParseBootIniOption(&acknowledged, "BootOption", nullptr, nullptr);
@@ -42,6 +47,14 @@ int main() {
                      "\"I Understand This Can Break My Console\"");
   ParseBootIniOption(&acknowledged, nullptr, nullptr, nullptr);
   assert(acknowledged.options[0].bypass_xell_scanning);
+
+  BootOptionParserState repeated;
+  ParseBootIniOption(&repeated, "BootOption", nullptr, nullptr);
+  ParseBootIniOption(&repeated, "BootOption", "BypassXellScanning",
+                     "I Understand This Can Break My Console");
+  ParseBootIniOption(&repeated, "BootOption", "BypassXellScanning", "no");
+  ParseBootIniOption(&repeated, nullptr, nullptr, nullptr);
+  assert(repeated.options[0].bypass_xell_scanning);
 
   assert(bandwagon::bootxell::BuildOtherOsPath(state.options[0]) ==
          "PPROOT:\\OtherOS\\linux\\xell.bin");

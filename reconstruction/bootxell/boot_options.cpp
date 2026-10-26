@@ -12,7 +12,7 @@ namespace {
 constexpr char kSection[] = "BootOption";
 constexpr char kBypassAcknowledgement[] =
     "I Understand This Can Break My Console";
-constexpr std::uint8_t kSafeTrailer[16] = {
+constexpr std::uint8_t kXellScanMarker[16] = {
     'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x',
     'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'};
 constexpr std::uint64_t kDefaultBaseAddress = 0x800000001c040000ULL;
@@ -63,26 +63,24 @@ int ParseBootIniOption(void* user, const char* section, const char* name,
   } else if (std::strcmp(name, "FileName") == 0) {
     state.current->file_name = Unquote(value);
   } else if (std::strcmp(name, "BaseAddress") == 0) {
-    errno = 0;
-    char* end = nullptr;
-    const unsigned long long parsed = std::strtoull(value, &end, 16);
-    if (errno == 0 && end != value) state.current->base_address = parsed;
+    state.current->base_address = std::strtoull(value, nullptr, 16);
   } else if (std::strcmp(name, "BypassXellScanning") == 0) {
-    state.current->bypass_xell_scanning =
-        Unquote(value) == kBypassAcknowledgement;
+    if (Unquote(value) == kBypassAcknowledgement)
+      state.current->bypass_xell_scanning = true;
   }
   return 1;
 }
 
-bool HasSafeXellTrailer(const std::uint8_t* image, std::size_t size) {
-  return image && size >= sizeof(kSafeTrailer) &&
-         std::equal(std::begin(kSafeTrailer), std::end(kSafeTrailer),
-                    image + size - sizeof(kSafeTrailer));
+bool HasXellScanMarker(const std::uint8_t* image, std::size_t size) {
+  return image && size >= sizeof(kXellScanMarker) &&
+         std::equal(std::begin(kXellScanMarker), std::end(kXellScanMarker),
+                    image + size - sizeof(kXellScanMarker));
 }
 
 bool IsLaunchImageAllowed(const BootOption& option, const std::uint8_t* image,
-                          std::size_t size) {
-  return option.bypass_xell_scanning || HasSafeXellTrailer(image, size);
+                          std::size_t size, bool scan_succeeded) {
+  return !HasXellScanMarker(image, size) || option.bypass_xell_scanning ||
+         scan_succeeded;
 }
 
 std::string BuildOtherOsPath(const BootOption& option) {

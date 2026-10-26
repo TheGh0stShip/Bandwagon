@@ -40,7 +40,8 @@ The public BadUpdate source baseline is pinned as the
 - Updater has reproducible function, direct-call, string-reference, and initial
   semantic-symbol inventories; its Stage2 HDD record algorithm is documented.
 - BootXell's initialized code and data sections have complete byte-identical
-  assembly reconstructions, with its INI option and launch flow documented.
+  assembly reconstructions; seven identified Peer routines now have tested,
+  exact-byte-bound C++ lifts, including its Xell sanitizer and launch flow.
 - AuroraFixer has a complete byte-identical initialized-image reconstruction
   and complete source-level recovery of all five Peer-authored routines; its
   live `DbgBreakPoint` import redirection and cache maintenance are tested.

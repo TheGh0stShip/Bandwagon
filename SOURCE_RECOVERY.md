@@ -22,7 +22,7 @@ not the final implementation.
 | Stage3 | Complete whole-file assembly | Complete: Peer entry/probe source plus function-by-function verified composition with pinned public BadUpdate C++ |
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Complete: all executable records for all six boards have verified C++ coverage; integration edits have machine-readable ownership |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
-| BootXell | Complete initialized sections | Partial: boot-option parsing and launch decisions |
+| BootXell | Complete initialized sections | Partial: seven identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | AuroraFixer | Complete initialized sections | Complete: all five Peer-authored routines, including live import traversal, mutation, cache maintenance, and entry flow |
 | UpdateCheck | Complete initialized sections | Partial: both identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
