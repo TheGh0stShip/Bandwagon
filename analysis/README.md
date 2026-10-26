@@ -104,10 +104,10 @@ SMC helper at Peer offsets `0x294-0x2ff` is byte-identical to the rebuilt public
 function. Other Peer-only functions and record payloads remain independently
 reconstructed.
 
-`peer-stage3-probe.md` proves the behavior of the new Stage3 function at file
-`0x0f8-0x1e4` and its `0x38`-byte probe at `0x15a0`. The function is assigned
-only a hypothesis-grade behavioral label pending resolution of both syscall
-paths.
+`peer-stage3-probe.md` proves the behavior of
+`ProbeResidentPeerDispatcher` at file `0x0f8-0x1e4` and its `0x38`-byte probe
+at `0x15a0`. Both invocation paths are resolved: the Stage4-installed
+`HvxPostOutput` trampoline protocol and syscall-zero `rbtr` operation 4.
 
 `peer-stage3-entry.md` reconstructs the complete entry point at file
 `0x0000-0x00f7` and proves its boot decision: an available resident dispatcher

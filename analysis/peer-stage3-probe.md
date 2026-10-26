@@ -11,8 +11,10 @@ With
 the established Stage3 mapping `file offset 0 -> 0x98030000`, its runtime range
 is `0x980300f8-0x980301e3`.
 
-The behavioral hypothesis `probe_stage4_hv_dispatch` is used below for
-discussion only. It is not a recovered symbol or final source-level name.
+The function is recovered at high confidence as `ProbeResidentPeerDispatcher`.
+It tests two resident execution protocols installed or supported by Peer:
+the Stage4-patched `HvxPostOutput` trampoline and the syscall-zero `rbtr`
+dispatcher.
 
 Buildable assembly for the recovered regions is in
 [`reconstruction/PeerPressureExploit-3rdStage.reconstructed.S`](reconstruction/PeerPressureExploit-3rdStage.reconstructed.S).
@@ -74,7 +76,16 @@ the one-word self-copy is inert apart from cache maintenance, after which the
 dispatcher executes the probe. Stage3 supplies `r8=alias+0x100`, exactly the
 probe's output destination.
 
-This linkage makes a feature/installation probe strongly supported. What the
-first syscall-`0x0d` path represents, why two paths are tried, and the intended
-user-facing name remain unresolved. A final source-style name should wait for
-those semantics.
+The first path is no longer unresolved. Syscall `0x0d` is `HvxPostOutput` in
+the pinned public BadUpdate source. Peer's Stage4 record at file `0x4e8`
+installs an exact trampoline at the syscall implementation address `0x7698`:
+it compares `r3` with `0x41414141`, preserves the incoming `r4` on equality,
+and branches through `CTR=r4`. Stage3 supplies the probe alias in `r4`, so this
+path directly executes the copied probe. On ordinary calls the trampoline
+replaces `r4` with the original target `0x2540` before branching.
+
+The second path invokes syscall zero with the independently recovered `rbtr`
+operation-4 convention. Trying both protocols explains compatibility with two
+resident Peer dispatch mechanisms. Either must execute the probe and return
+`0x41410001`; the function therefore has the final source-level name
+`ProbeResidentPeerDispatcher`.

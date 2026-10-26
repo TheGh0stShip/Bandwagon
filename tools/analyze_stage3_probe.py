@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_STAGE3 = ROOT / "BadUpdatePayload/BadUpdateExploit-3rdStage.bin"
+DEFAULT_STAGE4 = ROOT / "PeerPressure/System/PeerPressureExploit-4thStage.bin"
 BASE = 0x98030000
 
 
@@ -39,12 +40,16 @@ def display_path(path: Path) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage3", type=Path, default=DEFAULT_STAGE3)
+    parser.add_argument("--stage4", type=Path, default=DEFAULT_STAGE4)
     parser.add_argument("-o", "--output", type=Path)
     args = parser.parse_args()
 
     data = args.stage3.read_bytes()
+    stage4 = args.stage4.read_bytes()
     if len(data) != 0x15E0:
         raise ValueError(f"unexpected Peer Stage3 size: {len(data)}")
+    if len(stage4) != 0x10780:
+        raise ValueError(f"unexpected Peer Stage4 size: {len(stage4)}")
 
     # Allocation arguments and call to the literal-address stub at 0x12a0.
     expect_words(
@@ -69,6 +74,25 @@ def main() -> None:
     expect_words(data, 0x1260, (0x3D608008, 0x616B07B8, 0x7D6903A6, 0x4E800420), "free stub")
     expect_words(data, 0x680, (0x3800000D, 0x44000002, 0x4E800020), "syscall-0x0d stub")
     expect_words(data, 0x690, (0x38000000, 0x44000002, 0x4E800020), "syscall-0 stub")
+
+    # Stage4 installs this body at the normal HvxPostOutput implementation
+    # address. Magic 0x41414141 preserves caller r4 and jumps through it;
+    # all other calls continue through the original 0x2540 target.
+    expect_words(
+        stage4,
+        0x4E8,
+        (
+            0x3D604141,
+            0x616B4141,
+            0x7C0B1840,
+            0x4182000C,
+            0x3C800000,
+            0x60842540,
+            0x7C8903A6,
+            0x4E800420,
+        ),
+        "Stage4 HvxPostOutput trampoline",
+    )
 
     # memcpy(allocation, BASE+0x15a0, 0x38), marker comparisons, and free.
     expect_words(data, 0x13C, (0x3D609803, 0x38A00038, 0x388B15A0, 0x7FA3EB78, 0x48001165), "probe copy")
@@ -100,7 +124,7 @@ def main() -> None:
     )
 
     result = {
-        "schema": "peer-pressure-stage3-probe-v1",
+        "schema": "peer-pressure-stage3-probe-v2",
         "architecture": "Xbox 360 Xenon, big-endian PowerPC",
         "source": {
             "path": display_path(args.stage3),
@@ -113,7 +137,7 @@ def main() -> None:
             "instruction_file_range": "0x0f8-0x1e4",
             "runtime_range": "0x980300f8-0x980301e4",
             "sha256_including_alignment": sha256(data[0xF8:0x1E8]),
-            "behavioral_name_hypothesis": "probe_stage4_hv_dispatch",
+            "semantic_name": "ProbeResidentPeerDispatcher",
             "verified_result_domain": [0, 1],
         },
         "allocation": {
@@ -139,12 +163,14 @@ def main() -> None:
                 "syscall_ordinal": "0x0d",
                 "stub_file_offset": "0x680",
                 "marker": "0x41414141",
+                "protocol": "Stage4-installed HvxPostOutput trampoline jumps through r4",
             },
             {
                 "syscall_ordinal": "0x00",
                 "stub_file_offset": "0x690",
                 "magic": "0x72627472 ('rbtr')",
                 "operation": 4,
+                "protocol": "resident rbtr dispatcher",
             },
         ],
         "success_result": "0x41410001",
