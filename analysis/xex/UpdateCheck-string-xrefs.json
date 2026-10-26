@@ -1,0 +1,919 @@
+{
+  "schema": "bandwagon-ppc-string-xrefs-v1",
+  "image": "/mnt/c/temp/Bandwagon/analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
+  "image_sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece",
+  "reference_count": 130,
+  "functions_with_references": 72,
+  "references": [
+    {
+      "function": "fn_91A0A000",
+      "function_address": "0x91a0a000",
+      "instruction_address": "0x91a0a028",
+      "string_address": "0x91a00590",
+      "string": "unknown exception"
+    },
+    {
+      "function": "fn_91A0A400",
+      "function_address": "0x91a0a400",
+      "instruction_address": "0x91a0a420",
+      "string_address": "0x91a005b4",
+      "string": "xboxkrnl.exe"
+    },
+    {
+      "function": "fn_91A0A950",
+      "function_address": "0x91a0a950",
+      "instruction_address": "0x91a0a99c",
+      "string_address": "0x91a00664",
+      "string": "ios_base::badbit set"
+    },
+    {
+      "function": "fn_91A0A950",
+      "function_address": "0x91a0a950",
+      "instruction_address": "0x91a0a9d8",
+      "string_address": "0x91a0064c",
+      "string": "ios_base::failbit set"
+    },
+    {
+      "function": "fn_91A0A950",
+      "function_address": "0x91a0a950",
+      "instruction_address": "0x91a0aa08",
+      "string_address": "0x91a00634",
+      "string": "ios_base::eofbit set"
+    },
+    {
+      "function": "fn_91A0B778",
+      "function_address": "0x91a0b778",
+      "instruction_address": "0x91a0b7d0",
+      "string_address": "0x91a006f4",
+      "string": "bad locale name"
+    },
+    {
+      "function": "fn_91A0B958",
+      "function_address": "0x91a0b958",
+      "instruction_address": "0x91a0b988",
+      "string_address": "0x91a005c8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A0BDF0",
+      "function_address": "0x91a0bdf0",
+      "instruction_address": "0x91a0be14",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A0BF48",
+      "function_address": "0x91a0bf48",
+      "instruction_address": "0x91a0bf74",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A0C3E8",
+      "function_address": "0x91a0c3e8",
+      "instruction_address": "0x91a0c47c",
+      "string_address": "0x91a00714",
+      "string": "tag_name"
+    },
+    {
+      "function": "fn_91A0C3E8",
+      "function_address": "0x91a0c3e8",
+      "instruction_address": "0x91a0c4a8",
+      "string_address": "0x91a00708",
+      "string": "%*c%d.%d.%d"
+    },
+    {
+      "function": "fn_91A0C618",
+      "function_address": "0x91a0c618",
+      "instruction_address": "0x91a0c640",
+      "string_address": "0x91a005c8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A0D1E8",
+      "function_address": "0x91a0d1e8",
+      "instruction_address": "0x91a0d2a4",
+      "string_address": "0x91a008b0",
+      "string": "Accept:"
+    },
+    {
+      "function": "fn_91A0D328",
+      "function_address": "0x91a0d328",
+      "instruction_address": "0x91a0d6a0",
+      "string_address": "0x91a00928",
+      "string": "location:"
+    },
+    {
+      "function": "fn_91A0D328",
+      "function_address": "0x91a0d328",
+      "instruction_address": "0x91a0d70c",
+      "string_address": "0x91a005e4",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_91A0D328",
+      "function_address": "0x91a0d328",
+      "instruction_address": "0x91a0d720",
+      "string_address": "0x91a005e4",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_91A0D860",
+      "function_address": "0x91a0d860",
+      "instruction_address": "0x91a0d8d8",
+      "string_address": "0x91a00a14",
+      "string": "PPROOT:\\System\\IncludedRootsPEM.txt"
+    },
+    {
+      "function": "fn_91A0D860",
+      "function_address": "0x91a0d860",
+      "instruction_address": "0x91a0d944",
+      "string_address": "0x91a009c8",
+      "string": "https://api.github.com/repos/grimdoomer/Xbox360PeerPressure/releases/latest"
+    },
+    {
+      "function": "fn_91A0E5F0",
+      "function_address": "0x91a0e5f0",
+      "instruction_address": "0x91a0e6a0",
+      "string_address": "0x91a00bdc",
+      "string": "Unknown exception"
+    },
+    {
+      "function": "fn_91A0E918",
+      "function_address": "0x91a0e918",
+      "instruction_address": "0x91a0e938",
+      "string_address": "0x91a00bf8",
+      "string": "iostream stream error"
+    },
+    {
+      "function": "fn_91A0ECC8",
+      "function_address": "0x91a0ecc8",
+      "instruction_address": "0x91a0ed34",
+      "string_address": "0x91a00c18",
+      "string": "bad allocation"
+    },
+    {
+      "function": "fn_91A0F030",
+      "function_address": "0x91a0f030",
+      "instruction_address": "0x91a0f054",
+      "string_address": "0x91a00d6c",
+      "string": "HTTP/"
+    },
+    {
+      "function": "fn_91A0F318",
+      "function_address": "0x91a0f318",
+      "instruction_address": "0x91a0f340",
+      "string_address": "0x91a00d58",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A0F318",
+      "function_address": "0x91a0f318",
+      "instruction_address": "0x91a0f424",
+      "string_address": "0x91a00d58",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A0F548",
+      "function_address": "0x91a0f548",
+      "instruction_address": "0x91a0f5cc",
+      "string_address": "0x91a00d88",
+      "string": "content-length:"
+    },
+    {
+      "function": "fn_91A0F908",
+      "function_address": "0x91a0f908",
+      "instruction_address": "0x91a0f930",
+      "string_address": "0x91a00d58",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A0F9F8",
+      "function_address": "0x91a0f9f8",
+      "instruction_address": "0x91a0fa34",
+      "string_address": "0x91a00d58",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A0F9F8",
+      "function_address": "0x91a0f9f8",
+      "instruction_address": "0x91a0fb60",
+      "string_address": "0x91a00d58",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_91A0FFD8",
+      "function_address": "0x91a0ffd8",
+      "instruction_address": "0x91a10108",
+      "string_address": "0x91a00f30",
+      "string": "X509 CERTIFICATE"
+    },
+    {
+      "function": "fn_91A0FFD8",
+      "function_address": "0x91a0ffd8",
+      "instruction_address": "0x91a1010c",
+      "string_address": "0x91a00f24",
+      "string": "CERTIFICATE"
+    },
+    {
+      "function": "fn_91A11200",
+      "function_address": "0x91a11200",
+      "instruction_address": "0x91a1125c",
+      "string_address": "0x91a010a4",
+      "string": "master secret"
+    },
+    {
+      "function": "fn_91A11280",
+      "function_address": "0x91a11280",
+      "instruction_address": "0x91a112ec",
+      "string_address": "0x91a010b4",
+      "string": "key expansion"
+    },
+    {
+      "function": "fn_91A12D18",
+      "function_address": "0x91a12d18",
+      "instruction_address": "0x91a12d7c",
+      "string_address": "0x91a01b14",
+      "string": "xbox"
+    },
+    {
+      "function": "fn_91A14FD0",
+      "function_address": "0x91a14fd0",
+      "instruction_address": "0x91a1502c",
+      "string_address": "0x91a05040",
+      "string": "unknown"
+    },
+    {
+      "function": "fn_91A164F8",
+      "function_address": "0x91a164f8",
+      "instruction_address": "0x91a1652c",
+      "string_address": "0x91a03f10",
+      "string": "server finished"
+    },
+    {
+      "function": "fn_91A164F8",
+      "function_address": "0x91a164f8",
+      "instruction_address": "0x91a16530",
+      "string_address": "0x91a03f00",
+      "string": "client finished"
+    },
+    {
+      "function": "fn_91A17F60",
+      "function_address": "0x91a17f60",
+      "instruction_address": "0x91a17ff8",
+      "string_address": "0x91a03f20",
+      "string": "apxe3 dnyb-2k et"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a22fb0",
+      "string_address": "0x91a04bc0",
+      "string": "collectComments"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a22fdc",
+      "string_address": "0x91a04bb0",
+      "string": "allowComments"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a23008",
+      "string_address": "0x91a04b9c",
+      "string": "allowTrailingCommas"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a23034",
+      "string_address": "0x91a04b90",
+      "string": "strictRoot"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a23060",
+      "string_address": "0x91a04b70",
+      "string": "allowDroppedNullPlaceholders"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a2308c",
+      "string_address": "0x91a04b5c",
+      "string": "allowNumericKeys"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a230b8",
+      "string_address": "0x91a04b48",
+      "string": "allowSingleQuotes"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a230e4",
+      "string_address": "0x91a04b3c",
+      "string": "stackLimit"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a23110",
+      "string_address": "0x91a04b30",
+      "string": "failIfExtra"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a2313c",
+      "string_address": "0x91a04b20",
+      "string": "rejectDupKeys"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a23168",
+      "string_address": "0x91a04b0c",
+      "string": "allowSpecialFloats"
+    },
+    {
+      "function": "fn_91A22F88",
+      "function_address": "0x91a22f88",
+      "instruction_address": "0x91a23194",
+      "string_address": "0x91a04b04",
+      "string": "skipBom"
+    },
+    {
+      "function": "fn_91A238F0",
+      "function_address": "0x91a238f0",
+      "instruction_address": "0x91a2395c",
+      "string_address": "0x91a04c18",
+      "string": "false"
+    },
+    {
+      "function": "fn_91A238F0",
+      "function_address": "0x91a238f0",
+      "instruction_address": "0x91a23980",
+      "string_address": "0x91a04c20",
+      "string": "true"
+    },
+    {
+      "function": "fn_91A23BC0",
+      "function_address": "0x91a23bc0",
+      "instruction_address": "0x91a23bec",
+      "string_address": "0x91a005c8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A23BC0",
+      "function_address": "0x91a23bc0",
+      "instruction_address": "0x91a23c18",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A23CB8",
+      "function_address": "0x91a23cb8",
+      "instruction_address": "0x91a23cdc",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A23E28",
+      "function_address": "0x91a23e28",
+      "instruction_address": "0x91a23e90",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A23FD0",
+      "function_address": "0x91a23fd0",
+      "instruction_address": "0x91a24028",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A23FD0",
+      "function_address": "0x91a23fd0",
+      "instruction_address": "0x91a24164",
+      "string_address": "0x91a005c8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A244C0",
+      "function_address": "0x91a244c0",
+      "instruction_address": "0x91a244f0",
+      "string_address": "0x91a04bd4",
+      "string": "deque<T> too long"
+    },
+    {
+      "function": "fn_91A246C8",
+      "function_address": "0x91a246c8",
+      "instruction_address": "0x91a246f8",
+      "string_address": "0x91a04bd4",
+      "string": "deque<T> too long"
+    },
+    {
+      "function": "fn_91A24C68",
+      "function_address": "0x91a24c68",
+      "instruction_address": "0x91a24cd8",
+      "string_address": "0x91a005c8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_91A24C68",
+      "function_address": "0x91a24c68",
+      "instruction_address": "0x91a24cf0",
+      "string_address": "0x91a00600",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_91A250A8",
+      "function_address": "0x91a250a8",
+      "instruction_address": "0x91a250d8",
+      "string_address": "0x91a04c44",
+      "string": "Line %d, Column %d"
+    },
+    {
+      "function": "fn_91A25300",
+      "function_address": "0x91a25300",
+      "instruction_address": "0x91a2553c",
+      "string_address": "0x91a04c58",
+      "string": "0123456789abcdefABCDEF"
+    },
+    {
+      "function": "fn_91A25790",
+      "function_address": "0x91a25790",
+      "instruction_address": "0x91a25978",
+      "string_address": "0x91a04c70",
+      "string": "0123456789abcdef"
+    },
+    {
+      "function": "fn_91A26730",
+      "function_address": "0x91a26730",
+      "instruction_address": "0x91a2676c",
+      "string_address": "0x91a04cb4",
+      "string": "See "
+    },
+    {
+      "function": "fn_91A284B0",
+      "function_address": "0x91a284b0",
+      "instruction_address": "0x91a28588",
+      "string_address": "0x91a04d98",
+      "string": "nfinity"
+    },
+    {
+      "function": "fn_91A284B0",
+      "function_address": "0x91a284b0",
+      "instruction_address": "0x91a28698",
+      "string_address": "0x91a04d98",
+      "string": "nfinity"
+    },
+    {
+      "function": "fn_91A284B0",
+      "function_address": "0x91a284b0",
+      "instruction_address": "0x91a2870c",
+      "string_address": "0x91a04d98",
+      "string": "nfinity"
+    },
+    {
+      "function": "fn_91A284B0",
+      "function_address": "0x91a284b0",
+      "instruction_address": "0x91a28784",
+      "string_address": "0x91a04ce0",
+      "string": "alse"
+    },
+    {
+      "function": "fn_91A28910",
+      "function_address": "0x91a28910",
+      "instruction_address": "0x91a289e8",
+      "string_address": "0x91a04cf0",
+      "string": "' is not a number."
+    },
+    {
+      "function": "fn_91A28A88",
+      "function_address": "0x91a28a88",
+      "instruction_address": "0x91a28ab8",
+      "string_address": "0x91a04d54",
+      "string": "Bad unicode escape sequence in string: four digits expected."
+    },
+    {
+      "function": "fn_91A28A88",
+      "function_address": "0x91a28a88",
+      "instruction_address": "0x91a28b84",
+      "string_address": "0x91a04d10",
+      "string": "Bad unicode escape sequence in string: hexadecimal digit expected."
+    },
+    {
+      "function": "fn_91A28FB0",
+      "function_address": "0x91a28fb0",
+      "instruction_address": "0x91a29010",
+      "string_address": "0x91a04df0",
+      "string": "additional six characters expected to parse unicode surrogate pair."
+    },
+    {
+      "function": "fn_91A28FB0",
+      "function_address": "0x91a28fb0",
+      "instruction_address": "0x91a290c4",
+      "string_address": "0x91a04da0",
+      "string": "expecting another \\u token to begin the second half of a unicode surrogate pair"
+    },
+    {
+      "function": "fn_91A293D0",
+      "function_address": "0x91a293d0",
+      "instruction_address": "0x91a29550",
+      "string_address": "0x91a04e54",
+      "string": "Empty escape sequence in string"
+    },
+    {
+      "function": "fn_91A293D0",
+      "function_address": "0x91a293d0",
+      "instruction_address": "0x91a29590",
+      "string_address": "0x91a04e34",
+      "string": "Bad escape sequence in string"
+    },
+    {
+      "function": "fn_91A296A8",
+      "function_address": "0x91a296a8",
+      "instruction_address": "0x91a29954",
+      "string_address": "0x91a04ec8",
+      "string": "Missing '}' or object member name"
+    },
+    {
+      "function": "fn_91A296A8",
+      "function_address": "0x91a296a8",
+      "instruction_address": "0x91a299e8",
+      "string_address": "0x91a04f00",
+      "string": "keylength >= 2^30"
+    },
+    {
+      "function": "fn_91A296A8",
+      "function_address": "0x91a296a8",
+      "instruction_address": "0x91a29a00",
+      "string_address": "0x91a04eec",
+      "string": "Duplicate key: '"
+    },
+    {
+      "function": "fn_91A296A8",
+      "function_address": "0x91a296a8",
+      "instruction_address": "0x91a29a6c",
+      "string_address": "0x91a04e9c",
+      "string": "Missing ',' or '}' in object declaration"
+    },
+    {
+      "function": "fn_91A296A8",
+      "function_address": "0x91a296a8",
+      "instruction_address": "0x91a29aa8",
+      "string_address": "0x91a04e74",
+      "string": "Missing ':' after object member name"
+    },
+    {
+      "function": "fn_91A29AE0",
+      "function_address": "0x91a29ae0",
+      "instruction_address": "0x91a29c68",
+      "string_address": "0x91a04f14",
+      "string": "Missing ',' or ']' in array declaration"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29e20",
+      "string_address": "0x91a04bc0",
+      "string": "collectComments"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29e4c",
+      "string_address": "0x91a04bb0",
+      "string": "allowComments"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29e88",
+      "string_address": "0x91a04b9c",
+      "string": "allowTrailingCommas"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29ea0",
+      "string_address": "0x91a04b90",
+      "string": "strictRoot"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29eb8",
+      "string_address": "0x91a04b70",
+      "string": "allowDroppedNullPlaceholders"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29ed0",
+      "string_address": "0x91a04b5c",
+      "string": "allowNumericKeys"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29ee8",
+      "string_address": "0x91a04b48",
+      "string": "allowSingleQuotes"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29f00",
+      "string_address": "0x91a04b3c",
+      "string": "stackLimit"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29f18",
+      "string_address": "0x91a04b30",
+      "string": "failIfExtra"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29f30",
+      "string_address": "0x91a04b20",
+      "string": "rejectDupKeys"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29f48",
+      "string_address": "0x91a04b0c",
+      "string": "allowSpecialFloats"
+    },
+    {
+      "function": "fn_91A29E08",
+      "function_address": "0x91a29e08",
+      "instruction_address": "0x91a29f60",
+      "string_address": "0x91a04b04",
+      "string": "skipBom"
+    },
+    {
+      "function": "fn_91A29FB0",
+      "function_address": "0x91a29fb0",
+      "instruction_address": "0x91a29fd8",
+      "string_address": "0x91a04f98",
+      "string": "Exceeded stackLimit in readValue()."
+    },
+    {
+      "function": "fn_91A29FB0",
+      "function_address": "0x91a29fb0",
+      "instruction_address": "0x91a2a26c",
+      "string_address": "0x91a04f68",
+      "string": "Syntax error: value, object or array expected."
+    },
+    {
+      "function": "fn_91A2A2A8",
+      "function_address": "0x91a2a2a8",
+      "instruction_address": "0x91a2a3b8",
+      "string_address": "0x91a05004",
+      "string": "Extra non-whitespace after JSON value."
+    },
+    {
+      "function": "fn_91A2A2A8",
+      "function_address": "0x91a2a2a8",
+      "instruction_address": "0x91a2a450",
+      "string_address": "0x91a04fc0",
+      "string": "A valid JSON document must be either an array or an object value."
+    },
+    {
+      "function": "fn_91A2AA00",
+      "function_address": "0x91a2aa00",
+      "instruction_address": "0x91a2aa28",
+      "string_address": "0x91a04cc4",
+      "string": "invalid map/set<T> iterator"
+    },
+    {
+      "function": "fn_91A2AF30",
+      "function_address": "0x91a2af30",
+      "instruction_address": "0x91a2af4c",
+      "string_address": "0x91a05040",
+      "string": "unknown"
+    },
+    {
+      "function": "fn_91A2B088",
+      "function_address": "0x91a2b088",
+      "instruction_address": "0x91a2b15c",
+      "string_address": "0x91a05054",
+      "string": "assert json failed"
+    },
+    {
+      "function": "fn_91A2B180",
+      "function_address": "0x91a2b180",
+      "instruction_address": "0x91a2b228",
+      "string_address": "0x91a05054",
+      "string": "assert json failed"
+    },
+    {
+      "function": "fn_91A2B2F8",
+      "function_address": "0x91a2b2f8",
+      "instruction_address": "0x91a2b358",
+      "string_address": "0x91a05068",
+      "string": "in Json::Value::duplicateStringValue(): Failed to allocate string value buffer"
+    },
+    {
+      "function": "fn_91A2B880",
+      "function_address": "0x91a2b880",
+      "instruction_address": "0x91a2b8bc",
+      "string_address": "0x91a05110",
+      "string": "in Json::Value::duplicateAndPrefixStringValue(): length too big for prefixing"
+    },
+    {
+      "function": "fn_91A2B880",
+      "function_address": "0x91a2b880",
+      "instruction_address": "0x91a2b908",
+      "string_address": "0x91a050b8",
+      "string": "in Json::Value::duplicateAndPrefixStringValue(): Failed to allocate string value buffer"
+    },
+    {
+      "function": "fn_91A2BC88",
+      "function_address": "0x91a2bc88",
+      "instruction_address": "0x91a2bcb8",
+      "string_address": "0x91a05160",
+      "string": "in Json::Value::asCString(): requires stringValue"
+    },
+    {
+      "function": "fn_91A2BD20",
+      "function_address": "0x91a2bd20",
+      "instruction_address": "0x91a2bd70",
+      "string_address": "0x91a05194",
+      "string": "Type is not convertible to string"
+    },
+    {
+      "function": "fn_91A2BD20",
+      "function_address": "0x91a2bd20",
+      "instruction_address": "0x91a2bdb0",
+      "string_address": "0x91a04c20",
+      "string": "true"
+    },
+    {
+      "function": "fn_91A2BD20",
+      "function_address": "0x91a2bd20",
+      "instruction_address": "0x91a2bdbc",
+      "string_address": "0x91a04c18",
+      "string": "false"
+    },
+    {
+      "function": "fn_91A2BE88",
+      "function_address": "0x91a2be88",
+      "instruction_address": "0x91a2bed8",
+      "string_address": "0x91a05214",
+      "string": "Value is not convertible to UInt."
+    },
+    {
+      "function": "fn_91A2BE88",
+      "function_address": "0x91a2be88",
+      "instruction_address": "0x91a2bf64",
+      "string_address": "0x91a051f8",
+      "string": "double out of UInt range"
+    },
+    {
+      "function": "fn_91A2BE88",
+      "function_address": "0x91a2be88",
+      "instruction_address": "0x91a2bfcc",
+      "string_address": "0x91a051d8",
+      "string": "LargestUInt out of UInt range"
+    },
+    {
+      "function": "fn_91A2BE88",
+      "function_address": "0x91a2be88",
+      "instruction_address": "0x91a2c024",
+      "string_address": "0x91a051b8",
+      "string": "LargestInt out of UInt range"
+    },
+    {
+      "function": "fn_91A2C078",
+      "function_address": "0x91a2c078",
+      "instruction_address": "0x91a2c0c0",
+      "string_address": "0x91a05240",
+      "string": "Value is not convertible to bool."
+    },
+    {
+      "function": "fn_91A2C278",
+      "function_address": "0x91a2c278",
+      "instruction_address": "0x91a2c2b8",
+      "string_address": "0x91a05268",
+      "string": "in Json::Value::find(begin, end): requires objectValue or nullValue"
+    },
+    {
+      "function": "fn_91A2C478",
+      "function_address": "0x91a2c478",
+      "instruction_address": "0x91a2c4b8",
+      "string_address": "0x91a04c84",
+      "string": "map/set<T> too long"
+    },
+    {
+      "function": "fn_91A2CCE0",
+      "function_address": "0x91a2cce0",
+      "instruction_address": "0x91a2cd20",
+      "string_address": "0x91a052ac",
+      "string": "in Json::Value::operator[](ArrayIndex): requires arrayValue"
+    },
+    {
+      "function": "fn_91A2CE20",
+      "function_address": "0x91a2ce20",
+      "instruction_address": "0x91a2ce4c",
+      "string_address": "0x91a052e8",
+      "string": "in Json::Value::operator[](int index): index cannot be negative"
+    },
+    {
+      "function": "fn_91A2CE90",
+      "function_address": "0x91a2ce90",
+      "instruction_address": "0x91a2ced4",
+      "string_address": "0x91a05328",
+      "string": "in Json::Value::resolveReference(key, end): requires objectValue"
+    },
+    {
+      "function": "fn_91A2D318",
+      "function_address": "0x91a2d318",
+      "instruction_address": "0x91a2d3d4",
+      "string_address": "0x91a05580",
+      "string": "%.*f"
+    },
+    {
+      "function": "fn_91A2D318",
+      "function_address": "0x91a2d318",
+      "instruction_address": "0x91a2d3d8",
+      "string_address": "0x91a05578",
+      "string": "%.*g"
+    },
+    {
+      "function": "fn_91A2D670",
+      "function_address": "0x91a2d670",
+      "instruction_address": "0x91a2d7c4",
+      "string_address": "0x91a055e0",
+      "string": "0123456789abcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "function": "fn_91A2DB20",
+      "function_address": "0x91a2db20",
+      "instruction_address": "0x91a2dc78",
+      "string_address": "0x91a05630",
+      "string": "0123456789abcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "function": "fn_91A2F8C8",
+      "function_address": "0x91a2f8c8",
+      "instruction_address": "0x91a2f8f0",
+      "string_address": "0x91a05ec8",
+      "string": "Visual C++ CRT: Not enough memory to complete call to strerror."
+    },
+    {
+      "function": "fn_91A30EC8",
+      "function_address": "0x91a30ec8",
+      "instruction_address": "0x91a31020",
+      "string_address": "0x91a05fa8",
+      "string": "e+000"
+    },
+    {
+      "function": "fn_91A36878",
+      "function_address": "0x91a36878",
+      "instruction_address": "0x91a36ca0",
+      "string_address": "0x91a06cb4",
+      "string": "urce deadlock avoided"
+    },
+    {
+      "function": "fn_91A3A5A0",
+      "function_address": "0x91a3a5a0",
+      "instruction_address": "0x91a3a6ac",
+      "string_address": "0x91a07a0c",
+      "string": "1#SNAN"
+    },
+    {
+      "function": "fn_91A3A5A0",
+      "function_address": "0x91a3a5a0",
+      "instruction_address": "0x91a3a6fc",
+      "string_address": "0x91a07a04",
+      "string": "1#IND"
+    },
+    {
+      "function": "fn_91A3A5A0",
+      "function_address": "0x91a3a5a0",
+      "instruction_address": "0x91a3a740",
+      "string_address": "0x91a079fc",
+      "string": "1#INF"
+    },
+    {
+      "function": "fn_91A3A5A0",
+      "function_address": "0x91a3a5a0",
+      "instruction_address": "0x91a3a77c",
+      "string_address": "0x91a079f4",
+      "string": "1#QNAN"
+    }
+  ]
+}

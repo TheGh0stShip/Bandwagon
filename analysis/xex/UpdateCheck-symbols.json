@@ -1,0 +1,20 @@
+{
+  "schema": "bandwagon-updatecheck-semantic-symbols-v1",
+  "image_sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece",
+  "symbols": [
+    {
+      "address": "0x91a0c3e8",
+      "recovered_name": "fn_91A0C3E8",
+      "semantic_name": "ParseReleaseVersion",
+      "confidence": "high",
+      "evidence": ["looks up JSON member tag_name", "parses %*c%d.%d.%d and requires three conversions", "packs the three parsed components into the caller output"]
+    },
+    {
+      "address": "0x91a0d860",
+      "recovered_name": "fn_91A0D860",
+      "semantic_name": "CheckLatestReleaseVersion",
+      "confidence": "high",
+      "evidence": ["loads PPROOT:\\System\\IncludedRootsPEM.txt", "requests the GitHub latest-release API URL", "requires HTTP status 200 and invokes ParseReleaseVersion", "returns success only when the parsed output fits the caller buffer"]
+    }
+  ]
+}

@@ -60,6 +60,11 @@ initialized code/data image is byte-identical assembly, and its process-attach
 hook, import lookup, and absolute-branch patch encoder are semantically named.
 The pure branch encoder also has a portable C++ reconstruction and host test.
 
+`xex/UpdateCheck.md` reconstructs the network update checker, including the
+trusted-root path, GitHub latest-release endpoint, HTTP status gate, JSON
+`tag_name` lookup, and three-component release version parser. All initialized
+sections have exact assembly source and reproducible static-analysis maps.
+
 ## BadUpdate baseline and modified stages
 
 `badupdate-v1.3-baseline.md` records the pinned public-source/release

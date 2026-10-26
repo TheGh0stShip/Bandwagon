@@ -32,6 +32,8 @@ The public BadUpdate source baseline is pinned as the
   assembly reconstructions, with its INI option and launch flow documented.
 - AuroraFixer has a complete byte-identical initialized-image reconstruction;
   its `DbgBreakPoint` import redirection and branch encoder are open and tested.
+- UpdateCheck has a complete byte-identical initialized-image reconstruction;
+  its HTTPS latest-release lookup and semantic-version parser are documented.
 
 Semantic recovery of the remaining executable functions, types, globals,
 indirect control flow, raw stage payloads, and SMC firmware is still in progress.

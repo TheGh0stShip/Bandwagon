@@ -64,3 +64,10 @@ regenerates both sources and their function, call, and string-reference maps.
 and data section in the compatibility DLL. The portable C++ under
 `reconstruction/aurora_fixer/` reproduces its four-instruction absolute branch
 encoder without performing live memory writes.
+
+## UpdateCheck
+
+`UpdateCheck.text.reconstructed.S` and `UpdateCheck.nontext.reconstructed.S`
+exactly rebuild all initialized code and data in the HTTPS release checker.
+`tools/analyze_updatecheck_xex.sh` regenerates the sources and its function,
+call, and string-reference inventories.
