@@ -55,3 +55,10 @@ the low immediate), changes only the matching resolved export, and emits the
 non-linking replacement thunk. Live cache maintenance and XEX-loader access
 remain outside this portable layer. Run both source tests with
 `tools/test_aurorafixer_reconstruction.sh`.
+
+`reconstruction/aurora_fixer/dll_main.cpp` reconstructs the first-party DLL
+entry orchestration behind an injectable platform boundary. Only process
+attach logs and requests a patch; the request always names `xboxkrnl.exe`
+ordinal 1 and the local return stub. The closed routine ignores lookup/patch
+failure and returns success for every reason, a behavior covered explicitly by
+the host test.
