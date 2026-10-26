@@ -1342,9 +1342,9 @@
       "address": "0x801fa2e0",
       "section_offset": "0xa2e0",
       "size_to_next_symbol": 32,
-      "name": "fn_801FA2E0",
+      "name": "IsDriveDeviceSlotEmpty",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -1352,9 +1352,9 @@
       "address": "0x801fa300",
       "section_offset": "0xa300",
       "size_to_next_symbol": 32,
-      "name": "fn_801FA300",
+      "name": "IsDriveDeviceSlotEmptyDuplicate",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

@@ -29,4 +29,17 @@ void UnregisterDriveDevice(DriveDeviceRegistry* registry, std::uint32_t slot,
   locks->Release(cookie);
 }
 
+bool IsDriveDeviceSlotEmpty(const DriveDeviceRegistry* registry,
+                            std::uint32_t slot) {
+  if (!registry) return true;
+  const std::uint8_t masked_slot = static_cast<std::uint8_t>(slot);
+  if (masked_slot >= registry->slots.size()) return true;
+  return registry->slots[masked_slot] == 0;
+}
+
+bool IsDriveDeviceSlotEmptyDuplicate(const DriveDeviceRegistry* registry,
+                                     std::uint32_t slot) {
+  return IsDriveDeviceSlotEmpty(registry, slot);
+}
+
 }  // namespace bandwagon::kernel_expansion

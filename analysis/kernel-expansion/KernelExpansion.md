@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 45 high-confidence behavioral labels are emitted directly into the exact
+- 47 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -141,6 +141,10 @@ lift. The first exact-byte-bound routines are:
   Tests bind first-free selection, full-table failure as minus one, slot
   clearing, and exact acquire/release cookie flow; the host lift safely rejects
   the out-of-range clear that trusted target callers never supply.
+- `IsDriveDeviceSlotEmpty` and its byte-identical compiler duplicate
+  (`0x801fa2e0` and `0x801fa300`, 64 bytes together), represented as the two
+  media-state predicates over that same registry. Tests preserve low-byte slot
+  masking and document that the duplicate is not a distinct algorithm.
 - `BindDrivePath` (`0x801f3e68`, 152 bytes), represented as the per-prefix
   binding transaction layered on `ParseDriveNumberPrefix`. It clears a replaced
   binding's state byte, initializes the new binding's recovered state and drive
@@ -179,7 +183,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-34 independently bounded routines totaling 4,776 original instruction bytes.
+36 independently bounded routines totaling 4,840 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

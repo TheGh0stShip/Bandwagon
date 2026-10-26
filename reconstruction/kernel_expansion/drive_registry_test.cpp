@@ -66,6 +66,14 @@ int main() {
   UnregisterDriveDevice(&registry, 10, &locks);
   assert(registry.slots == unchanged && locks.events.empty());
 
+  assert(!IsDriveDeviceSlotEmpty(&registry, 0));
+  assert(!IsDriveDeviceSlotEmpty(&registry, 0x100));
+  assert(IsDriveDeviceSlotEmpty(&registry, 3));
+  assert(!IsDriveDeviceSlotEmptyDuplicate(&registry, 1));
+  assert(IsDriveDeviceSlotEmptyDuplicate(&registry, 3));
+  assert(IsDriveDeviceSlotEmpty(&registry, 10));
+  assert(IsDriveDeviceSlotEmpty(nullptr, 0));
+
   assert(RegisterDriveDevice(nullptr, 1, &locks) == -1);
   assert(RegisterDriveDevice(&registry, 1, nullptr) == -1);
   UnregisterDriveDevice(nullptr, 0, &locks);

@@ -4850,16 +4850,16 @@
       "caller_address": "0x801f6b68",
       "instruction_address": "0x801f6bc8",
       "target_address": "0x801fa2e0",
-      "callee": "fn_801FA2E0",
-      "target_containing_function": "fn_801FA2E0"
+      "callee": "IsDriveDeviceSlotEmpty",
+      "target_containing_function": "IsDriveDeviceSlotEmpty"
     },
     {
       "caller": "fn_801F6B68",
       "caller_address": "0x801f6b68",
       "instruction_address": "0x801f6c00",
       "target_address": "0x801fa300",
-      "callee": "fn_801FA300",
-      "target_containing_function": "fn_801FA300"
+      "callee": "IsDriveDeviceSlotEmptyDuplicate",
+      "target_containing_function": "IsDriveDeviceSlotEmptyDuplicate"
     },
     {
       "caller": "fn_801F6B68",
@@ -7610,8 +7610,8 @@
       "caller_address": "0x801fc350",
       "instruction_address": "0x801fc39c",
       "target_address": "0x801fa2e0",
-      "callee": "fn_801FA2E0",
-      "target_containing_function": "fn_801FA2E0"
+      "callee": "IsDriveDeviceSlotEmpty",
+      "target_containing_function": "IsDriveDeviceSlotEmpty"
     },
     {
       "caller": "fn_801FC3C8",

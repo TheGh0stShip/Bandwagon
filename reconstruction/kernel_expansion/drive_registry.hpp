@@ -32,4 +32,11 @@ std::int32_t RegisterDriveDevice(DriveDeviceRegistry* registry,
 void UnregisterDriveDevice(DriveDeviceRegistry* registry, std::uint32_t slot,
                            DriveRegistryLockServices* locks);
 
+// Byte-identical predicates recovered at 0x801fa2e0 and 0x801fa300. The
+// compiler emitted separate copies for two media-state branches.
+bool IsDriveDeviceSlotEmpty(const DriveDeviceRegistry* registry,
+                            std::uint32_t slot);
+bool IsDriveDeviceSlotEmptyDuplicate(const DriveDeviceRegistry* registry,
+                                     std::uint32_t slot);
+
 }  // namespace bandwagon::kernel_expansion

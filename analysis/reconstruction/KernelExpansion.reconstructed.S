@@ -10563,7 +10563,7 @@ fn_801FA290:
     .long 0x7d8803a6 /* 0x0a2d4 */
     .long 0xebe1fff0 /* 0x0a2d8 */
     .long 0x4e800020 /* 0x0a2dc */
-fn_801FA2E0:
+IsDriveDeviceSlotEmpty:
     .long 0x3d608020 /* 0x0a2e0 */
     .long 0x546a15ba /* 0x0a2e4 */
     .long 0x396b300c /* 0x0a2e8 */
@@ -10572,7 +10572,7 @@ fn_801FA2E0:
     .long 0x5563dffe /* 0x0a2f4 */
     .long 0x4e800020 /* 0x0a2f8 */
     .long 0x00000000 /* 0x0a2fc */
-fn_801FA300:
+IsDriveDeviceSlotEmptyDuplicate:
     .long 0x3d608020 /* 0x0a300 */
     .long 0x546a15ba /* 0x0a304 */
     .long 0x396b300c /* 0x0a308 */

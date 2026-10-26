@@ -232,6 +232,24 @@
       "symbols": ["FileCreateDisposition", "FileDispositionDiagnostics", "MapCreateDispositionToOpenFlags", "kSupersedeOrOverwriteIfFlag", "kCreateFlag", "kOpenIfFlag"]
     },
     {
+      "address": "0x801fa2e0",
+      "size": 32,
+      "sha256": "ba2401094ba49b5244ba592e4e601191fd7cdede6c2f3783b5e6f01dd1995e81",
+      "semantic_name": "IsDriveDeviceSlotEmpty",
+      "source": "reconstruction/kernel_expansion/drive_registry.cpp",
+      "header": "reconstruction/kernel_expansion/drive_registry.hpp",
+      "symbols": ["IsDriveDeviceSlotEmpty"]
+    },
+    {
+      "address": "0x801fa300",
+      "size": 32,
+      "sha256": "ba2401094ba49b5244ba592e4e601191fd7cdede6c2f3783b5e6f01dd1995e81",
+      "semantic_name": "IsDriveDeviceSlotEmptyDuplicate",
+      "source": "reconstruction/kernel_expansion/drive_registry.cpp",
+      "header": "reconstruction/kernel_expansion/drive_registry.hpp",
+      "symbols": ["IsDriveDeviceSlotEmptyDuplicate"]
+    },
+    {
       "address": "0x801fa540",
       "size": 256,
       "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
