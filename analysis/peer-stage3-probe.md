@@ -89,3 +89,11 @@ operation-4 convention. Trying both protocols explains compatibility with two
 resident Peer dispatch mechanisms. Either must execute the probe and return
 `0x41410001`; the function therefore has the final source-level name
 `ProbeResidentPeerDispatcher`.
+
+`reconstruction/stage3/resident_probe.cpp` is the portable orchestration
+model for this recovered behavior. It constructs the exact `r3`-through-`r8`
+arguments for both syscall attempts, preserves the first-success short circuit,
+and enumerates the embedded probe's twelve strided HV sample addresses. Actual
+allocation, code copying, and syscall execution remain behind an injected
+interface and are not performed by the host test. Run it with
+`tools/test_stage3_reconstruction.sh`.
