@@ -47,3 +47,11 @@ Remaining ImGui, standard-library, and rendering functions are preserved
 exactly but still need individual attribution. The separate
 bundled 9199 `bootanim.xex` is a 2010 Microsoft component and is documented as
 out of Peer-authored source scope in `BootAnim-9199-provenance.md`.
+
+`reconstruction/boot_edit/theme_editor.cpp` begins the portable first-party
+reconstruction with two dependency-free behaviors. Saved enumeration results
+become a display name by removing the final `.xbat` occurrence and a full
+`Themes:\` path. The color context-menu model preserves its shared four-float
+clipboard and availability flag: Copy only updates the clipboard, while
+enabled Paste, Undo, and Reset replace the edited value and report a change.
+Run the host test with `tools/test_bootedit_reconstruction.sh`.
