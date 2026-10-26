@@ -39,6 +39,13 @@ def main() -> None:
         key = (function["address"].lower(), function["semantic_name"])
         if key not in inventory_functions:
             raise SystemExit(f"missing Kernel Expansion inventory entry: {key}")
+        inventory_function = inventory_functions[key]
+        if function["size"] != inventory_function["size_to_next_symbol"]:
+            raise SystemExit(
+                "Kernel Expansion source boundary differs from inventory at "
+                f"{function['address']}: manifest {function['size']} bytes, "
+                f"inventory {inventory_function['size_to_next_symbol']} bytes"
+            )
         address = int(function["address"], 0)
         offset = address - base
         payload = image[offset:offset + function["size"]]

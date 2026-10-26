@@ -248,7 +248,7 @@ ReportExceptionContext:
     .long 0x386003e8 /* 0x003b4 */
     .long 0x4800e881 /* 0x003b8 */
     .long 0x4bfffff8 /* 0x003bc */
-fn_801F03C0:
+InstallRelativeBranchHook:
     .long 0x7d8802a6 /* 0x003c0 */
     .long 0x9181fff8 /* 0x003c4 */
     .long 0xfbe1fff0 /* 0x003c8 */
@@ -480,7 +480,7 @@ LoadPeerPressureConfig:
     .long 0x817f0000 /* 0x0073c */
     .long 0x994b0129 /* 0x00740 */
     .long 0x4bffffa0 /* 0x00744 */
-LoadKernelPatchStream:
+InstallKernelPatchesAndHooks:
     .long 0x7d8802a6 /* 0x00748 */
     .long 0x4800e38d /* 0x0074c */
     .long 0x9421ff10 /* 0x00750 */
@@ -1624,9 +1624,10 @@ InstallKernelXexDataHandlers:
     .long 0x38600001 /* 0x018dc */
     .long 0x4bffff44 /* 0x018e0 */
     .long 0x00000000 /* 0x018e4 */
+ReturnImmediatelyHook:
     .long 0x4e800020 /* 0x018e8 */
     .long 0x00000000 /* 0x018ec */
-fn_801F18F0:
+InstallAbsoluteBranchHook:
     .long 0x7d8802a6 /* 0x018f0 */
     .long 0x9181fff8 /* 0x018f4 */
     .long 0xfbe1fff0 /* 0x018f8 */

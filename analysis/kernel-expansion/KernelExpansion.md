@@ -13,13 +13,13 @@ occupy `0x0f4b0-0x1474f`.
 
 ## Recovered static structure
 
-- 371 entry points from standard PPC prologues, direct `bl` targets, twelve
+- 372 entry points from standard PPC prologues, direct `bl` targets, thirteen
   independently bounded local entries, and tail-only import thunks.
 - 1,085 direct call edges.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 76 high-confidence behavioral labels are emitted directly into the exact
+- 79 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -158,11 +158,33 @@ lift. The first exact-byte-bound routines are:
   preserved text as a printf format and its unterminated-comment pointer wrap
   remain in the exact assembly oracle; the maintainable host lift makes both
   paths safe and tests literal percent preservation.
-- `InstallKernelXexDataHandlers` (`0x801f1790`, 352 bytes), represented as a
+- `InstallKernelXexDataHandlers` (`0x801f1790`, 344 bytes), represented as a
   bounds-checked mapped-PE walker. It finds `.xedata`, installs both relocated
   handler words, updates the table count, and performs the recovered CPU and
   hypervisor cache-maintenance sequence. The earlier `FindXexSection` label
   described only the first part of the routine and has been corrected.
+- `InstallRelativeBranchHook`, `ReturnImmediatelyHook`, and
+  `InstallAbsoluteBranchHook` (`0x801f03c0`, `0x801f18e8`, and `0x801f18f0`,
+  416 bytes together), represented as typed instruction-patch primitives. The
+  relative helper preserves the target's signed branch range, low-byte link
+  test, optional raw four-byte backup, and breakpoint failure path. The
+  absolute helper emits the exact adjusted-high `lis`/`addi`/`mtctr`/`bctr(l)`
+  stub, including the arithmetic carry edge at destination `0xffff8000`, and
+  optionally preserves all sixteen overwritten bytes. Both retain the exact
+  CPU-flush, physical-translation, and hypervisor-flush order. The address-taken
+  bare-return hook is separated from the preceding XEX routine and models its
+  observable preservation of incoming `r3`.
+- `InstallKernelPatchesAndHooks` (`0x801f0748`, 632 bytes), represented as a
+  typed file, allocation, patch-memory, and hook-installation workflow. It
+  binds the exact `kernel_patches.bin` path and open/query/allocation flags,
+  parses big-endian address-size-data records through the standalone sentinel,
+  maintains both caches after every copy, and installs the recovered XEX,
+  absolute, relative, Aurora, and SFCX hooks on every normal file-failure path.
+  Tests preserve the post-allocation rounded read size, pending wait, accepted
+  positive completion status, fatal allocation call, open-failure no-close
+  quirk, read-failure allocation leak, ignored cleanup results, and exact fixed
+  hook destinations. Bounds and null guards are identified as host-safety
+  additions because the target trusts its bundled stream and fatal routine.
 - `ReplaceInstructionWithNop` (`0x801f2d70`, 72 bytes), represented as a typed
   instruction mutation with the recovered CPU flush, physical-address
   translation, and hypervisor data-cache flush ordering.
@@ -276,10 +298,10 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-65 independently bounded routines totaling 11,056 original instruction bytes.
+69 independently bounded routines totaling 12,096 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
-evidence oracle, not a claim that all 371 discovered entries are maintainable
+evidence oracle, not a claim that all 372 discovered entries are maintainable
 source. The routine formerly labeled `RecognizeFat32Volume` also identifies
 exFAT and returns multiple classification values; its corrected
 `ClassifyFatBootSector` lift now makes those outcomes explicit. The former

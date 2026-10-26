@@ -189,6 +189,15 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/instruction_patch_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/kernel_patch_loader.cpp" \
+    "$root/reconstruction/kernel_expansion/instruction_patch.cpp" \
+    "$root/reconstruction/kernel_expansion/xex_hooks.cpp" \
+    "$root/reconstruction/kernel_expansion/sfcx_write_protection.cpp" \
+    "$root/reconstruction/kernel_expansion/kernel_patch_loader_test.cpp" \
+    -o "$work/kernel_patch_loader_test"
+"$work/kernel_patch_loader_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/flash_versions.cpp" \
     "$root/reconstruction/kernel_expansion/flash_versions_test.cpp" \
     -o "$work/flash_versions_test"

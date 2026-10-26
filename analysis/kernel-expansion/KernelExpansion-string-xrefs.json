@@ -55,7 +55,7 @@
       "string": "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\Config.ini"
     },
     {
-      "function": "LoadKernelPatchStream",
+      "function": "InstallKernelPatchesAndHooks",
       "function_address": "0x801f0748",
       "instruction_address": "0x801f079c",
       "string_address": "0x801ff7b0",

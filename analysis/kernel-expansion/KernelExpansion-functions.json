@@ -4,7 +4,7 @@
   "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
   "image_base": "0x801f0000",
   "text_end": "0xf4b0",
-  "function_count": 371,
+  "function_count": 372,
   "kernel_thunk_count": 141,
   "resolved_kernel_thunk_count": 127,
   "functions": [
@@ -32,9 +32,9 @@
       "address": "0x801f03c0",
       "section_offset": "0x3c0",
       "size_to_next_symbol": 192,
-      "name": "fn_801F03C0",
+      "name": "InstallRelativeBranchHook",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by signed PPC branch-range checks, optional instruction backup, branch encoding, and cache maintenance"
       ],
       "kind": "local_code"
     },
@@ -92,9 +92,9 @@
       "address": "0x801f0748",
       "section_offset": "0x748",
       "size_to_next_symbol": 632,
-      "name": "LoadKernelPatchStream",
+      "name": "InstallKernelPatchesAndHooks",
       "evidence": [
-        "behavioral name corroborated by strings and call role"
+        "behavioral name corroborated by the kernel-patch path, big-endian patch loop, and unconditional fixed post-load hook sequence"
       ],
       "kind": "local_code"
     },
@@ -244,7 +244,7 @@
     {
       "address": "0x801f1790",
       "section_offset": "0x1790",
-      "size_to_next_symbol": 352,
+      "size_to_next_symbol": 344,
       "name": "InstallKernelXexDataHandlers",
       "evidence": [
         "behavioral name corroborated by strings and call role"
@@ -252,12 +252,23 @@
       "kind": "local_code"
     },
     {
+      "address": "0x801f18e8",
+      "section_offset": "0x18e8",
+      "size_to_next_symbol": 8,
+      "name": "ReturnImmediatelyHook",
+      "evidence": [
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by the address-taken bare-return hook body"
+      ],
+      "kind": "local_code"
+    },
+    {
       "address": "0x801f18f0",
       "section_offset": "0x18f0",
       "size_to_next_symbol": 216,
-      "name": "fn_801F18F0",
+      "name": "InstallAbsoluteBranchHook",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by lis/addi/mtctr/bctr stub construction, optional backup, and cache maintenance"
       ],
       "kind": "local_code"
     },

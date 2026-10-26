@@ -10,6 +10,15 @@
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "functions": [
     {
+      "address": "0x801f03c0",
+      "size": 192,
+      "sha256": "0c30a57c473c9d55c78f88a92fbfee7c52f16d8e833372ad102d34e94766f401",
+      "semantic_name": "InstallRelativeBranchHook",
+      "source": "reconstruction/kernel_expansion/instruction_patch.cpp",
+      "header": "reconstruction/kernel_expansion/instruction_patch.hpp",
+      "symbols": ["InstructionPatchLocation", "InstructionPatchServices", "InstallRelativeBranchHook", "kPpcRelativeBranchOpcode", "kPpcRelativeBranchDisplacementMask"]
+    },
+    {
       "address": "0x801f0480",
       "size": 56,
       "sha256": "edb44b92e96885e112d7d4fdf86aa853b4a3cb469304827fd42631705e1e5a91",
@@ -35,6 +44,24 @@
       "source": "reconstruction/kernel_expansion/config_loader.cpp",
       "header": "reconstruction/kernel_expansion/config_loader.hpp",
       "symbols": ["ConfigAllocationRequest", "ConfigBootstrapServices", "LoadPeerPressureConfig", "kPeerPressureConfigPath", "kPeerPressureConfigSchema", "kConfigFatalErrorCode"]
+    },
+    {
+      "address": "0x801f0748",
+      "size": 632,
+      "sha256": "76a0b1185ac0eb11ff08dd55413601abfb4d3cb894bd6d2c119ede761fdf0446",
+      "semantic_name": "InstallKernelPatchesAndHooks",
+      "source": "reconstruction/kernel_expansion/kernel_patch_loader.cpp",
+      "header": "reconstruction/kernel_expansion/kernel_patch_loader.hpp",
+      "symbols": ["KernelPatchFileServices", "KernelPatchMemoryServices", "KernelPatchHookEnvironment", "ApplyKernelPatchStreamRecords", "InstallFixedKernelHooks", "InstallKernelPatchesAndHooks", "kKernelPatchStreamPath", "kKernelPatchSentinel"],
+      "data_dependencies": [
+        {
+          "address": "0x801ff7b0",
+          "size": 68,
+          "sha256": "8cabe87590e93e5c917f66e9ee5517ae3898a84b61d9af0ae18095d66fa0633a",
+          "semantic_name": "KernelPatchStreamPath",
+          "symbols": ["kKernelPatchStreamPath"]
+        }
+      ]
     },
     {
       "address": "0x801f09c0",
@@ -142,12 +169,30 @@
     },
     {
       "address": "0x801f1790",
-      "size": 352,
-      "sha256": "10dfab716ac933c790d92260d6aef8df8f484ff2f35c0f3d3045f1bda8f4eb26",
+      "size": 344,
+      "sha256": "9dfea271154216d491d2e806b72a906506adc0bedea72962b3562c5c3e3b60c8",
       "semantic_name": "InstallKernelXexDataHandlers",
       "source": "reconstruction/kernel_expansion/xex_hooks.cpp",
       "header": "reconstruction/kernel_expansion/xex_hooks.hpp",
       "symbols": ["XexHookServices", "InstallKernelXexDataHandlers", "kFirstXexDataHandler", "kSecondXexDataHandler"]
+    },
+    {
+      "address": "0x801f18e8",
+      "size": 8,
+      "sha256": "bb63a78a8c0abde3a8b2aa3336de26cb8b06f942f8fa09edbc7345afc8f082c6",
+      "semantic_name": "ReturnImmediatelyHook",
+      "source": "reconstruction/kernel_expansion/instruction_patch.cpp",
+      "header": "reconstruction/kernel_expansion/instruction_patch.hpp",
+      "symbols": ["ReturnImmediatelyHook"]
+    },
+    {
+      "address": "0x801f18f0",
+      "size": 216,
+      "sha256": "a00bc04745b1f8eea3fe2cb8d4bae0b11b5199e45e8c49a501ee7b14cdb5c89e",
+      "semantic_name": "InstallAbsoluteBranchHook",
+      "source": "reconstruction/kernel_expansion/instruction_patch.cpp",
+      "header": "reconstruction/kernel_expansion/instruction_patch.hpp",
+      "symbols": ["InstructionPatchLocation", "InstructionPatchServices", "InstallAbsoluteBranchHook"]
     },
     {
       "address": "0x801f1cb0",
@@ -653,6 +698,7 @@
     "reconstruction/kernel_expansion/flash_versions_test.cpp",
     "reconstruction/kernel_expansion/nand_write_protection_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",
+    "reconstruction/kernel_expansion/kernel_patch_loader_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",
     "reconstruction/kernel_expansion/oem437_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",

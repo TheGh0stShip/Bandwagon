@@ -26,8 +26,8 @@
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f0064",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "KernelExpansionInitialize",
@@ -106,8 +106,8 @@
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f00f8",
       "target_address": "0x801f0748",
-      "callee": "LoadKernelPatchStream",
-      "target_containing_function": "LoadKernelPatchStream"
+      "callee": "InstallKernelPatchesAndHooks",
+      "target_containing_function": "InstallKernelPatchesAndHooks"
     },
     {
       "caller": "KernelExpansionInitialize",
@@ -342,7 +342,7 @@
       "target_containing_function": "KeStallExecutionProcessor"
     },
     {
-      "caller": "fn_801F03C0",
+      "caller": "InstallRelativeBranchHook",
       "caller_address": "0x801f03c0",
       "instruction_address": "0x801f0444",
       "target_address": "0x801fec48",
@@ -350,7 +350,7 @@
       "target_containing_function": "KeFlushCacheRange"
     },
     {
-      "caller": "fn_801F03C0",
+      "caller": "InstallRelativeBranchHook",
       "caller_address": "0x801f03c0",
       "instruction_address": "0x801f044c",
       "target_address": "0x801fec58",
@@ -358,7 +358,7 @@
       "target_containing_function": "MmGetPhysicalAddress"
     },
     {
-      "caller": "fn_801F03C0",
+      "caller": "InstallRelativeBranchHook",
       "caller_address": "0x801f03c0",
       "instruction_address": "0x801f0454",
       "target_address": "0x801fec68",
@@ -366,7 +366,7 @@
       "target_containing_function": "HvxFlushDCacheRange"
     },
     {
-      "caller": "fn_801F03C0",
+      "caller": "InstallRelativeBranchHook",
       "caller_address": "0x801f03c0",
       "instruction_address": "0x801f0460",
       "target_address": "0x801fec78",
@@ -558,7 +558,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f074c",
       "target_address": "0x801fead8",
@@ -566,7 +566,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f078c",
       "target_address": "0x801febd8",
@@ -574,7 +574,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f07a0",
       "target_address": "0x801fec88",
@@ -582,7 +582,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f07e4",
       "target_address": "0x801fed28",
@@ -590,7 +590,7 @@
       "target_containing_function": "NtCreateFile"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f0804",
       "target_address": "0x801fed38",
@@ -598,7 +598,7 @@
       "target_containing_function": "NtQueryInformationFile"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f082c",
       "target_address": "0x801fecf8",
@@ -606,7 +606,7 @@
       "target_containing_function": "NtAllocateVirtualMemory"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f084c",
       "target_address": "0x801fed08",
@@ -614,7 +614,7 @@
       "target_containing_function": "VdDisplayFatalError"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f0870",
       "target_address": "0x801fed48",
@@ -622,7 +622,7 @@
       "target_containing_function": "NtReadFile"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f088c",
       "target_address": "0x801fed58",
@@ -630,7 +630,7 @@
       "target_containing_function": "NtWaitForSingleObjectEx"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f08a8",
       "target_address": "0x801fed68",
@@ -638,7 +638,7 @@
       "target_containing_function": "NtClose"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f08c4",
       "target_address": "0x801fed78",
@@ -646,7 +646,7 @@
       "target_containing_function": "memcpy"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f08d8",
       "target_address": "0x801fec48",
@@ -654,7 +654,7 @@
       "target_containing_function": "KeFlushCacheRange"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f08e0",
       "target_address": "0x801fec58",
@@ -662,7 +662,7 @@
       "target_containing_function": "MmGetPhysicalAddress"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f08e8",
       "target_address": "0x801fec68",
@@ -670,7 +670,7 @@
       "target_containing_function": "HvxFlushDCacheRange"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f090c",
       "target_address": "0x801fed88",
@@ -678,7 +678,7 @@
       "target_containing_function": "NtFreeVirtualMemory"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f0918",
       "target_address": "0x801fed68",
@@ -686,7 +686,7 @@
       "target_containing_function": "NtClose"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f091c",
       "target_address": "0x801f1790",
@@ -694,47 +694,47 @@
       "target_containing_function": "InstallKernelXexDataHandlers"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f0938",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f0954",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f0970",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f098c",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f09a8",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
-      "caller": "LoadKernelPatchStream",
+      "caller": "InstallKernelPatchesAndHooks",
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f09ac",
       "target_address": "0x801f1cb0",
@@ -898,56 +898,56 @@
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0c7c",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0c98",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0cb4",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0cd0",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0cec",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0d08",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0d24",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ConfigureBootAnimation",
@@ -1430,7 +1430,7 @@
       "target_containing_function": "HvxFlushDCacheRange"
     },
     {
-      "caller": "fn_801F18F0",
+      "caller": "InstallAbsoluteBranchHook",
       "caller_address": "0x801f18f0",
       "instruction_address": "0x801f1984",
       "target_address": "0x801fed78",
@@ -1438,7 +1438,7 @@
       "target_containing_function": "memcpy"
     },
     {
-      "caller": "fn_801F18F0",
+      "caller": "InstallAbsoluteBranchHook",
       "caller_address": "0x801f18f0",
       "instruction_address": "0x801f1994",
       "target_address": "0x801fed78",
@@ -1446,7 +1446,7 @@
       "target_containing_function": "memcpy"
     },
     {
-      "caller": "fn_801F18F0",
+      "caller": "InstallAbsoluteBranchHook",
       "caller_address": "0x801f18f0",
       "instruction_address": "0x801f19a0",
       "target_address": "0x801fec48",
@@ -1454,7 +1454,7 @@
       "target_containing_function": "KeFlushCacheRange"
     },
     {
-      "caller": "fn_801F18F0",
+      "caller": "InstallAbsoluteBranchHook",
       "caller_address": "0x801f18f0",
       "instruction_address": "0x801f19a8",
       "target_address": "0x801fec58",
@@ -1462,7 +1462,7 @@
       "target_containing_function": "MmGetPhysicalAddress"
     },
     {
-      "caller": "fn_801F18F0",
+      "caller": "InstallAbsoluteBranchHook",
       "caller_address": "0x801f18f0",
       "instruction_address": "0x801f19b0",
       "target_address": "0x801fec68",
@@ -2850,168 +2850,168 @@
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f462c",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4648",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4664",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4680",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f469c",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f46b8",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f46d4",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f46f0",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f470c",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4728",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4744",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4760",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f477c",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4798",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f47b4",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f47d0",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f47ec",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4808",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4824",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f4840",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F4600",
       "caller_address": "0x801f4600",
       "instruction_address": "0x801f485c",
       "target_address": "0x801f03c0",
-      "callee": "fn_801F03C0",
-      "target_containing_function": "fn_801F03C0"
+      "callee": "InstallRelativeBranchHook",
+      "target_containing_function": "InstallRelativeBranchHook"
     },
     {
       "caller": "fn_801F4600",
@@ -3026,24 +3026,24 @@
       "caller_address": "0x801f48a8",
       "instruction_address": "0x801f48cc",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F48A8",
       "caller_address": "0x801f48a8",
       "instruction_address": "0x801f48e8",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "fn_801F48A8",
       "caller_address": "0x801f48a8",
       "instruction_address": "0x801f4904",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "ParseDllConfigEntry",
@@ -3266,8 +3266,8 @@
       "caller_address": "0x801f4d38",
       "instruction_address": "0x801f4eb0",
       "target_address": "0x801f18f0",
-      "callee": "fn_801F18F0",
-      "target_containing_function": "fn_801F18F0"
+      "callee": "InstallAbsoluteBranchHook",
+      "target_containing_function": "InstallAbsoluteBranchHook"
     },
     {
       "caller": "PromoteLocalSigninInfo",

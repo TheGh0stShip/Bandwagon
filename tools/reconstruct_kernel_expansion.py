@@ -25,6 +25,7 @@ EXPLICIT_STARTS = {
     0x1490,
     0x14A8,
     0x14B8,
+    0x18E8,
     0x3120,
     0x31A0,
     0x3828,
@@ -41,10 +42,11 @@ EXPLICIT_STARTS = {
 SEMANTIC_NAMES = {
     0x0000: "KernelExpansionInitialize",
     0x0150: "ReportExceptionContext",
+    0x03C0: "InstallRelativeBranchHook",
     0x0480: "DeleteObjectManagerSymbolicLink",
     0x05F0: "CreateObjectManagerSymbolicLink",
     0x0648: "LoadPeerPressureConfig",
-    0x0748: "LoadKernelPatchStream",
+    0x0748: "InstallKernelPatchesAndHooks",
     0x09C0: "GetPeerPressureConfig",
     0x09D0: "LaunchBootXell",
     0x0A50: "ConfigureBootAnimation",
@@ -58,6 +60,8 @@ SEMANTIC_NAMES = {
     0x16A8: "InitializeDefaultConfig",
     0x1700: "LoadStructuredConfigFile",
     0x1790: "InstallKernelXexDataHandlers",
+    0x18E8: "ReturnImmediatelyHook",
+    0x18F0: "InstallAbsoluteBranchHook",
     0x1A60: "ConfigureAuroraSideLoad",
     0x1CB0: "InstallSfcxNandWriteProtectionHooks",
     0x1CF0: "LoadBootImage",
@@ -118,6 +122,12 @@ SEMANTIC_NAMES = {
 }
 
 SEMANTIC_EVIDENCE = {
+    0x03C0: [
+        "behavioral name corroborated by signed PPC branch-range checks, optional instruction backup, branch encoding, and cache maintenance"
+    ],
+    0x0748: [
+        "behavioral name corroborated by the kernel-patch path, big-endian patch loop, and unconditional fixed post-load hook sequence"
+    ],
     0x1000: [
         "behavioral name corroborated by fixed current version, flash-device read, XBPP magic, and static interface-table role"
     ],
@@ -135,6 +145,12 @@ SEMANTIC_EVIDENCE = {
     ],
     0x14B8: [
         "behavioral name corroborated by the inverted NAND-protection store and static interface-table role"
+    ],
+    0x18E8: [
+        "behavioral name corroborated by the address-taken bare-return hook body"
+    ],
+    0x18F0: [
+        "behavioral name corroborated by lis/addi/mtctr/bctr stub construction, optional backup, and cache maintenance"
     ],
     0x1CB0: [
         "behavioral name corroborated by four writes into the retail SfcxDriverObject dispatch table"
