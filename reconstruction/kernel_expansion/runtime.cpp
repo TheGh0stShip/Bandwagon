@@ -92,8 +92,10 @@ std::uint32_t ComputeRecoveredGptChecksum(const std::uint8_t* data,
   if (!data && size != 0) return 0;
   std::uint32_t checksum = 0xffffffffu;
   for (std::size_t index = 0; index < size; ++index) {
+    const std::uint8_t value =
+        index >= 0x10 && index < 0x14 ? 0 : data[index];
     for (std::uint32_t mask = 1; mask < 0x100; mask <<= 1) {
-      const std::uint32_t input_bit = (data[index] & mask) != 0 ? 1 : 0;
+      const std::uint32_t input_bit = (value & mask) != 0 ? 1 : 0;
       const std::uint32_t mixed_bit = (checksum & 1) ^ input_bit;
       checksum >>= 1;
       if (mixed_bit != 0) checksum ^= 0xedb88320u;

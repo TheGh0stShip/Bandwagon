@@ -6,6 +6,37 @@
     "base_address": "0x801f0000",
     "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8"
   },
+  "related_manifests": {
+    "fatfs_r016_function_map": "analysis/kernel-expansion/KernelExpansion-fatfs-r016-map.json",
+    "exhaustive_function_ownership": "analysis/kernel-expansion/KernelExpansion-function-ownership.json"
+  },
+  "upstream_sources": {
+    "fatfs_r016": {
+      "name": "FatFs",
+      "version": "R0.16",
+      "release_date": "2025-07-22",
+      "variant": "unpatched base release",
+      "official_archive": "https://elm-chan.org/fsw/ff/arc/ff16.zip",
+      "official_archive_sha256": "99f7dc1f7e095356e4a9e3dbe29959090d8b948afe2bbc5441e52fdf4b85449e",
+      "vendored_root": "third_party/fatfs-r016",
+      "files": [
+        {"path": "LICENSE.txt", "sha256": "2576183a3e1c2d2f4b3628a7ef93c2f937879698abdd6d554dd718e79062e079"},
+        {"path": "source/ff.c", "sha256": "dbeae3d7d22dbc070983e31af897fa5e43d29c726a0a240fe9589ffe2ec0ef1e"},
+        {"path": "source/ff.h", "sha256": "42920ae4d6080bfc2a72d92a9969b5e94eeaff070e5e71d90da9ab6d7d8e158e"},
+        {"path": "source/ffconf.h", "sha256": "202a7321066873fb3fa8c6ca83eba2b5964a091c366962f87ebd86332652430a"},
+        {"path": "source/ffunicode.c", "sha256": "3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e"}
+      ],
+      "version_evidence": [
+        "get_fileinfo and f_readdir contain the entry-output clears introduced in R0.16",
+        "created-time field handling rules out releases before R0.15b",
+        "check_fs retains the base R0.16 minimum-volume threshold of 128 sectors"
+      ],
+      "excluded_patches": [
+        "patch 1 changes the minimum-volume threshold from 128 to 64 sectors and rejects very small cluster counts; neither change is present",
+        "patch 2 adds minimum exFAT cluster and maximum FAT-size checks; neither change is present"
+      ]
+    }
+  },
   "policy": "Classify provenance before source lifting. Public, platform, compiler-runtime, and third-party code is mapped to its upstream implementation instead of being presented as uniquely Peer-authored source. Presence in the closed Peer Pressure image proves component provenance, not individual authorship or originality.",
   "classified_ranges": [
     {
@@ -60,15 +91,6 @@
       "caveat": "This establishes Peer-specific product behavior, not the identity of the individual author."
     }
   ],
-  "open_source_candidates_requiring_fingerprinting": [
-    {
-      "component": "embedded FatFs-compatible exFAT core",
-      "evidence": [
-        "f_stat, f_close, f_closedir, disk_read, disk_write, and disk_ioctl call surface",
-        "FAT/exFAT tables and diagnostics in the latter half of the image"
-      ],
-      "required_action": "identify and pin the exact public FatFs revision, then map matching functions instead of relifting them"
-    }
-  ],
-  "remaining_scope": "All other code ranges remain unclassified for ownership. They must be fingerprinted before additional source-lift work is prioritized."
+  "open_source_candidates_requiring_fingerprinting": [],
+  "remaining_scope": "All ranges not listed here remain unclassified for ownership. They must be fingerprinted before additional source-lift work is prioritized."
 }

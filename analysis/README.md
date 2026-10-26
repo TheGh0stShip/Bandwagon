@@ -42,7 +42,7 @@ Two original XEX files, `BadUpdatePayload/bootanim.xex` and
 files. They are retained under both names to preserve provenance.
 
 `xex/BootAnim-9199-provenance.md` classifies the bundled themed boot animation
-as a 2010 Xbox dashboard 9199 component rather than Peer-authored code. Its hash
+as a 2010 Xbox dashboard 9199 component rather than Peer-specific code. Its hash
 and internal version evidence are retained, but proprietary Microsoft code is
 not republished as a source-form disassembly.
 
@@ -150,4 +150,4 @@ six-word reconstruction with its retail-17559 stack-pivot gadget identified.
 The six
 platform SMC firmware images remain reference binaries requiring
 architecture-specific provenance/annotation rather than being treated as
-Peer-authored source.
+Peer-specific source.

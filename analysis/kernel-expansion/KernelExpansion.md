@@ -47,11 +47,33 @@ source rather than redundantly rewritten.
 `KernelExpansion-source-attribution.json` begins that machine-readable split.
 It already excludes the 316-byte MSVC/Xenon register save/restore islands and
 all 2,256 bytes of the 141 compiler/linker-generated Microsoft/CRT import
-thunks from the Peer-specific implementation target. The FatFs-compatible
-exFAT core is an explicit
-fingerprinting target; once its precise public revision is established, exact
-matches will likewise be referenced instead of lifted. The remaining ranges
-are not presumed Peer-authored until evidence classifies them.
+thunks from the Peer-specific implementation target. The embedded filesystem
+core is now fingerprinted as the official, unpatched FatFs R0.16 release and
+its source is pinned under `third_party/fatfs-r016`. Forty-seven configured
+functions / 18,728 bytes map directly to that upstream callgraph. A separate
+216-byte helper is derived from the R0.16 `f_getfree` scan but changes its ABI
+and removes most filesystem branches, so it remains in mixed/custom adapter
+scope rather than inflating the strict upstream count. Xbox disk callbacks and
+integration glue likewise remain separate targets. The remaining ranges are
+not classified as Peer-specific until evidence supports that conclusion.
+
+`KernelExpansion-fatfs-r016-map.json` records every strict FatFs function with
+its exact binary range, hash, and upstream symbol.
+`tools/verify_kernel_expansion_fatfs_map.py` checks those 47 mappings against
+both the immutable image and the vendored official source.
+
+`KernelExpansion-function-ownership.json` exhaustively partitions all 372
+inventory entries and all 62,632 instruction bytes: 166 entries / 3,884 bytes
+are platform or toolchain, 47 / 18,728 are strict FatFs, 87 / 23,996 are
+product adapter or policy, and 72 / 16,024 remain unknown. Its verifier rejects
+gaps, overlaps, split functions, range/hash drift, or aggregate-count drift.
+
+The fingerprint is the unpatched base release, not current patched FatFs.
+ChaN's official patch page records later R0.16 correctness and security fixes.
+That version fact does not by itself prove reachability or exploitability
+through Peer Pressure's Xbox adapter, but a maintainable replacement should
+update or patch FatFs rather than preserve vulnerable behavior merely for byte
+identity. The original bytes remain only the evidence oracle.
 
 ## Initial semantic recovery
 
@@ -238,11 +260,12 @@ lift. The first exact-byte-bound routines are:
   release request tail-called through the newly recovered `MiFreeMappedMemory`
   thunk. The unknown type of its second kernel argument remains explicitly
   opaque rather than being guessed.
-- `RecognizeGptDisk` (`0x801fa540`, 256 bytes), represented as a bounds-safe
+- `RecognizeGptDisk` (`0x801fa540`, 256 bytes) is upstream FatFs R0.16
+  `test_gpt_header` with its inlined CRC helper, retained as a bounds-safe
   GPT-header recognizer and the exact recovered reflected CRC-32 loop. The
-  binary includes the stored checksum field in its checksum input; the lift
-  preserves and tests that unusual observed behavior rather than silently
-  replacing it with the conventional GPT algorithm.
+  loop treats the stored checksum field as four zero bytes, matching the
+  pinned upstream source; the previous self-including interpretation was
+  removed.
 - `IsAsciiAlphaNumeric` (`0x801fa640`, 72 bytes), a direct typed predicate for
   the binary's three accepted ASCII ranges.
 - `CompletePhaseTwoFileRestore` (`0x801fa688`, 272 bytes), represented as the
@@ -253,8 +276,9 @@ lift. The first exact-byte-bound routines are:
 - `FindCharacterOnLine` (`0x801fcfd8`, 56 bytes), the phase-two parser's local
   scanner. Its typed lift preserves LF as both a searchable character and the
   hard stop for searches targeting any other character.
-- `ClassifyFatBootSector` (`0x801fa320`, 440 bytes), represented as a typed
-  five-result classifier. Tests cover its exact exFAT prefix, FAT32 label,
+- `ClassifyFatBootSector` (`0x801fa320`, 440 bytes) is upstream FatFs R0.16
+  `check_fs`, retained as a typed five-result classifier. Tests cover its exact
+  exFAT prefix, FAT32 label,
   structural FAT fallback, MBR signature, unknown-sector, and read-error paths.
 - `QueryFatVolumeCapacity` (`0x801f9ec0`, 80 bytes), represented with a
   flattened typed view of the four nested fields it reads. Tests preserve zero
@@ -271,8 +295,9 @@ lift. The first exact-byte-bound routines are:
   `ClassifyStfsPackageMagic` (`0x801f8270`, 104 bytes). The classifier preserves
   the exact `CON `, `LIVE`, and `PIRS` mappings, its one-byte output, the
   unchanged-output failure path, and status `0x80070570`.
-- `ParseDriveNumberPrefix` (`0x801f6af0`, 120 bytes), represented as a bounded
-  UTF-16 cursor parser for the recovered one-decimal-digit drive syntax. Tests
+- `ParseDriveNumberPrefix` (`0x801f6af0`, 120 bytes) is upstream FatFs R0.16
+  `get_ldnumber`, retained as a bounded UTF-16 cursor parser for the recovered
+  one-decimal-digit drive syntax. Tests
   cover valid zero and nine prefixes, absent prefixes, malformed prefixes,
   control-character termination, cursor preservation, and null strings.
 - `RegisterDriveDevice` and `UnregisterDriveDevice` (`0x801f3d90` and
@@ -285,8 +310,9 @@ lift. The first exact-byte-bound routines are:
   (`0x801fa2e0` and `0x801fa300`, 64 bytes together), represented as the two
   media-state predicates over that same registry. Tests preserve low-byte slot
   masking and document that the duplicate is not a distinct algorithm.
-- `BindDrivePath` (`0x801f3e68`, 152 bytes), represented as the per-prefix
-  binding transaction layered on `ParseDriveNumberPrefix`. It clears a replaced
+- `BindDrivePath` (`0x801f3e68`, 152 bytes) is upstream FatFs R0.16 `f_mount`,
+  retained as the per-prefix binding transaction layered on
+  `ParseDriveNumberPrefix`. It clears a replaced
   binding's state byte, initializes the new binding's recovered state and drive
   number bytes, honors only the low byte of the probe flag, and passes the
   original unadvanced path to the optional media probe.
@@ -332,8 +358,9 @@ lift. The first exact-byte-bound routines are:
 - `CanOpenExistingPath` (`0x801faa08`, 184 bytes), represented as the exact
   `NtCreateFile` option set behind the path validator. Its typed service model
   proves that only a successful open is closed and accepted.
-- `DecodeOem437Character` (`0x801fda38`, 72 bytes), represented with the full
-  recovered 128-entry OEM-US-to-UTF-16 table. The table exactly matches code
+- `DecodeOem437Character` (`0x801fda38`, 72 bytes) is upstream FatFs R0.16
+  `ff_oem2uni`, retained with the full recovered 128-entry OEM-US-to-UTF-16
+  table. The table exactly matches code
   page 437; tests also preserve low-16-bit code-page selection, ASCII's unusual
   full-word passthrough, and zero for unsupported or wider extended values.
 - `AllocateFileSystemPool` and `FreeFileSystemPool` (`0x801fafe0` and
@@ -345,6 +372,10 @@ Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
 73 independently bounded routines totaling 12,632 original instruction bytes.
+Five routines / 1,040 bytes are upstream FatFs regression models, nine / 1,312
+bytes are generic platform helpers, and 22 / 5,112 bytes remain unattributed.
+Only 37 current lifts / 5,168 bytes are presently classified as product
+adapter or policy behavior, without implying personal authorship.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 372 discovered entries are maintainable

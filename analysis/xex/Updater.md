@@ -185,4 +185,4 @@ The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
 expand semantic names and types across the remaining application functions,
 decode the reconstructed data structures, recover the loader-only metadata,
-and separate bundled runtime/library code from Peer-authored code.
+and separate bundled runtime/library code from Peer-specific code.

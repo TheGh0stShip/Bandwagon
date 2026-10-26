@@ -24,9 +24,9 @@ resolving exactly. Regenerate everything with
 `tools/analyze_aurorafixer_xex.sh`.
 
 `AuroraFixer-completeness.json` classifies every one of those 103 entries: four
-are Peer-authored application functions, 60 are MSVC/XDK compiler-runtime
+are Peer-specific application functions, 60 are MSVC/XDK compiler-runtime
 entries, and 39 are import thunks. The non-`.pdata` four-byte
-`ReturnImmediately` island is recorded separately as the fifth Peer-authored
+`ReturnImmediately` island is recorded separately as the fifth Peer-specific
 routine. Exact cross-XEX fingerprints provide 35 safe runtime/import aliases.
 This closes the function-ownership inventory for AuroraFixer; it does not treat
 the linked CRT as original Peer logic.
@@ -96,7 +96,7 @@ and provides the source equivalent of the one-instruction
 loader calls and syscall boundary; none of the recovered decision-making or
 mutation logic is left behind an opaque callback.
 
-Together these modules cover all five Peer-authored routines identified by the
+Together these modules cover all five Peer-specific routines identified by the
 ownership inventory. AuroraFixer's source-level recovery is therefore complete;
 the linked MSVC/XDK runtime and Microsoft import thunks remain classified as
 third-party platform code rather than falsely rewritten as Peer source.

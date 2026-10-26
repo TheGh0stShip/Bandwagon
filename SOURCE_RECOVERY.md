@@ -10,7 +10,8 @@ Bandwagon tracks two different kinds of completion. They must not be conflated:
    and control flow, with tests tied back to the binary evidence.
 
 A component is not considered fully open-source reconstructed until its
-Peer-authored behavior has source-level coverage. Generated `.S` files under
+Peer-specific closed-source behavior has source-level coverage and all matched
+public/library/platform ranges are bound to pinned upstream source. Generated `.S` files under
 `analysis/reconstruction/` are the reference oracle used to validate that work,
 not the final implementation.
 
@@ -18,7 +19,7 @@ not the final implementation.
 
 | Component | Binary-exact evidence | Source-level recovery |
 |---|---|---|
-| Stage4 | Complete whole-file assembly | Complete: all 1,872 Peer-authored bytes have C++/typed-source coverage; the verified 64 KiB tail is third-party hypervisor data |
+| Stage4 | Complete whole-file assembly | Complete source composition: 1,764 Peer-specific bytes have C++/typed-source coverage, the 108-byte SMC helper maps to public BadUpdate source, and the verified 64 KiB tail is third-party hypervisor data |
 | Stage3 | Complete whole-file assembly | Complete: Peer entry/probe source plus function-by-function verified composition with pinned public BadUpdate C++ |
 | Kernel patch stream | Complete whole-file assembly | Complete: all 23 records have a typed effect table and byte-identical C++ serializer |
 | HDD security trigger | Complete whole-file assembly | Complete: typed six-field structure and byte-identical C++ serializer |
@@ -26,15 +27,20 @@ not the final implementation.
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Complete: all executable records for all six boards have verified C++ coverage; integration edits have machine-readable ownership |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
 | BootXell | Complete initialized sections | Partial: seven identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
-| AuroraFixer | Complete initialized sections | Complete: all five Peer-authored routines, including live import traversal, mutation, cache maintenance, and entry flow |
+| AuroraFixer | Complete initialized sections | Complete: all five Peer-specific routines, including live import traversal, mutation, cache maintenance, and entry flow |
 | UpdateCheck | Complete initialized sections | Partial: both identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
 | BootEdit | Complete initialized sections | Partial: theme navigation/edit decisions |
-| KernelExpansion | Complete whole-file assembly | Partial: the optional kernel-patch stream installer, unconditional fixed-hook sequence, blocked-plugin policy, relative/absolute branch writers and bare-return hook, SATA Ultra DMA negotiation, DVD region-free XConfig hook, flash-backed current/installed version query and NAND geometry selector, namespace links and fixed `PPROOT:` adapter, NAND write-protection control accessors and SFCX enforcement hooks, bootstrap mapping release, phase-two file restoration and line parsing, the full typed six-field config schema and read/write pipeline plus hash-only table-exposed access, bootstrap, and fixed persistence/locking, INI rewrite/tokenization/buffered serialization, key hash, typed value dispatch, and supporting file/schema/decimal workflows, version bounds, sign-in state hooks, BootXell and UpdateCheck launch, `.xedata` handlers, cache-coherent instruction patching, package callbacks, drive registration/binding/slot-state/prefix parsing, file-disposition and unsupported-operation handling, path, OEM-437 filename, and file-system pool handling, FAT/exFAT classification and capacity query, GPT recognition/checksum, and ASCII predicate have 73 exact-byte-bound, tested C++ lifts. Coverage here means code resident in the closed component, not a claim that every lifted utility was uniquely authored for Peer Pressure; ownership classification is tracked separately. |
-| Stage2 | Complete whole-file assembly | Initial semantic map only |
+| KernelExpansion | Complete whole-file assembly | Partial: 73 resident-code functions have exact-byte-bound, tested C++ models. Of these, 5 / 1,040 bytes are upstream FatFs, 9 / 1,312 bytes are generic platform helpers, 22 / 5,112 bytes remain unattributed, and only 37 / 5,168 bytes are currently classified as product adapter or policy behavior. This is component provenance, not personal authorship. |
+| Stage2 | Complete whole-file assembly | Partial: worker provenance is partitioned into 3,432 candidate Peer-specific bytes, 4,092 public BadUpdate-derived bytes, and 932 compiler/platform bytes; the Peer-specific worker and modified ROP still need source recovery |
 
 ## Completion rule
 
 Future status reports must state both layers. “Complete” without qualification
 means source-level recovery is complete; “binary-exact” means only that the
 evidence reconstruction reproduces the original bytes.
+
+Source-level completion does not require rewriting exact upstream code. It
+requires a reproducible attribution to a pinned revision, recovery of every
+Peer-specific change to it, and readable source for every remaining unmatched
+closed range.

@@ -22,6 +22,15 @@ def main() -> None:
     if hashlib.sha256(image).hexdigest() != image_info["sha256"]:
         raise SystemExit("Kernel Expansion attribution image hash differs")
 
+    for source_name, source in attribution.get("upstream_sources", {}).items():
+        source_root = ROOT / source["vendored_root"]
+        for file_info in source["files"]:
+            source_path = source_root / file_info["path"]
+            if hashlib.sha256(source_path.read_bytes()).hexdigest() != file_info["sha256"]:
+                raise SystemExit(
+                    f"{source_name} source hash differs: {file_info['path']}"
+                )
+
     inventory = json.loads(INVENTORY.read_text(encoding="utf-8"))
     function_addresses = [
         int(function["address"], 0) for function in inventory["functions"]

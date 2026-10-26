@@ -1,0 +1,214 @@
+{
+  "schema": "bandwagon-kernel-expansion-function-ownership-v1",
+  "status": "exhaustive_conservative_partition",
+  "policy": "Every function entry in the bounded instruction region is assigned exactly once. A peer_product_adapter_or_policy classification establishes Peer Pressure product provenance and reconstruction priority, not personal authorship or originality. Generic or incompletely fingerprinted local code remains unknown.",
+  "image": {
+    "path": "PeerPressure/System/KernelExpansion.bin",
+    "base_address": "0x801f0000",
+    "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8"
+  },
+  "function_inventory": {
+    "path": "analysis/kernel-expansion/KernelExpansion-functions.json",
+    "sha256": "bfc22fa466336175d80ce2cc487df82ea89f09e0caa3f05f1b77289580b2bae4",
+    "entry_count": 372
+  },
+  "fatfs_function_map": {
+    "path": "analysis/kernel-expansion/KernelExpansion-fatfs-r016-map.json",
+    "sha256": "9215cec90fb7f8e33af2c574ab7d0ec4a8035ffbf36f505f64a5dd0e2362b40a",
+    "strict_entry_count": 47,
+    "mixed_derived_entry_count": 1
+  },
+  "instruction_region": {
+    "start": "0x801f0000",
+    "end_exclusive": "0x801ff4a8",
+    "size": 62632,
+    "sha256": "5dcc8d18ba8b35d8463734b0c0687233f21a1db0f22ec56a0e61e06cd9c2e287"
+  },
+  "excluded_alignment_tail": {
+    "start": "0x801ff4a8",
+    "end_exclusive": "0x801ff4b0",
+    "size": 8,
+    "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+    "reason": "zero alignment bytes after the final 16-byte import thunk; the inventory's final size_to_next_symbol includes them"
+  },
+  "upstream_sources": {
+    "fatfs_r016": {
+      "name": "FatFs Generic FAT Filesystem Module R0.16",
+      "vendored_root": "third_party/fatfs-r016",
+      "origin_record": "third_party/fatfs-r016/ORIGIN.md",
+      "files": [
+        {"path":"ORIGIN.md","sha256":"2e1747459e11f0e95296ef60d4ed4ba4cedd087d6554f275279e2957330a9c55"},
+        {"path":"source/ff.c","sha256":"dbeae3d7d22dbc070983e31af897fa5e43d29c726a0a240fe9589ffe2ec0ef1e"},
+        {"path":"source/ff.h","sha256":"42920ae4d6080bfc2a72d92a9969b5e94eeaff070e5e71d90da9ab6d7d8e158e"},
+        {"path":"source/ffunicode.c","sha256":"3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e"}
+      ]
+    }
+  },
+  "public_badupdate_overlap": {
+    "inventory_entry_count": 0,
+    "size": 0,
+    "classification": "no local function body reuse established",
+    "evidence": [
+      "BadUpdate retail-17559 maps corroborate 127 import target names, not the local thunk or implementation bodies",
+      "no KernelExpansion local function has been assigned to public BadUpdate source"
+    ]
+  },
+  "fatfs_key_matches": [
+    {"address":"0x801f3e68","current_inventory_name":"BindDrivePath","upstream_symbol":"f_mount"},
+    {"address":"0x801f6af0","current_inventory_name":"ParseDriveNumberPrefix","upstream_symbol":"get_ldnumber"},
+    {"address":"0x801f6b68","upstream_symbol":"mount_volume with configured find_volume flow"},
+    {"address":"0x801f8e58","upstream_symbol":"f_stat"},
+    {"address":"0x801f91d0","upstream_symbol":"f_opendir"},
+    {"address":"0x801f9358","upstream_symbol":"f_open"},
+    {"address":"0x801f98b0","upstream_symbol":"f_write"},
+    {"address":"0x801f9b30","upstream_symbol":"f_read"},
+    {"address":"0x801fa0e8","upstream_symbol":"f_readdir"},
+    {"address":"0x801fa250","upstream_symbol":"f_closedir"},
+    {"address":"0x801fa290","upstream_symbol":"f_close"},
+    {"address":"0x801fa320","current_inventory_name":"ClassifyFatBootSector","upstream_symbol":"check_fs"},
+    {"address":"0x801fa4d8","upstream_symbol":"move_window"},
+    {"address":"0x801fa540","current_inventory_name":"RecognizeGptDisk","upstream_symbol":"test_gpt_header"},
+    {"address":"0x801faff0","upstream_symbol":"follow_path"},
+    {"address":"0x801fb108","upstream_symbol":"get_fileinfo"},
+    {"address":"0x801fb5a0","upstream_symbol":"f_mkdir"},
+    {"address":"0x801fccc8","upstream_symbol":"f_sync"},
+    {"address":"0x801fda38","current_inventory_name":"DecodeOem437Character","upstream_symbol":"ff_oem2uni"},
+    {"address":"0x801fe780","upstream_symbol":"ff_wtoupper"},
+    {"address":"0x801f9f10","upstream_symbol":"reduced f_getfree-derived exFAT allocation-bitmap query","classification":"peer_product_adapter_or_policy","caveat":"mixed/custom derivative: changed ABI and removed stock mount, FAT12/16/32 scan, and cache-update paths"}
+  ],
+  "categories": {
+    "platform_toolchain": {
+      "inventory_entry_count": 166,
+      "size": 3884,
+      "concatenated_sha256": "8d37213e67c08ce12be72e27363d6d2a145dcceb8eefbc68d5d1a68a741fd938",
+      "peer_specific": false,
+      "description": "MSVC/Xenon save/restore islands, compiler/linker import thunks, and nine generic Xbox platform-facing helpers. The helper implementations are classified by role, not claimed to be Microsoft source.",
+      "subclassification_summary": [
+        {"name":"compiler save/restore entry points","inventory_entry_count":16,"size":316},
+        {"name":"absolute platform import thunks","inventory_entry_count":141,"size":2256},
+        {"name":"generic local platform-facing helpers","inventory_entry_count":9,"size":1312}
+      ],
+      "ranges": [
+        {"start":"0x801f03c0","end_exclusive":"0x801f0568","size":424,"inventory_entry_count":3,"sha256":"1f1e22d74cca51af0a4254ad8f478cd48b97ef82e0553929c5dd51fc744ac2b4"},
+        {"start":"0x801f05f0","end_exclusive":"0x801f0648","size":88,"inventory_entry_count":1,"sha256":"80213b6bf11423cab347a1c2b912b7f6f33103bf9636417470e7941d19a875e2"},
+        {"start":"0x801f14d0","end_exclusive":"0x801f16a8","size":472,"inventory_entry_count":1,"sha256":"f92933d46674beba0bafbee3a34f82b146b158e1784b13a1e0c5cd47cd1348e8"},
+        {"start":"0x801f18e8","end_exclusive":"0x801f19c8","size":224,"inventory_entry_count":2,"sha256":"49b7d8f3bc993816f12f3b57e132016c1f6bb164cb9162390aa7b4a244b063a3"},
+        {"start":"0x801f2d70","end_exclusive":"0x801f2dd8","size":104,"inventory_entry_count":2,"sha256":"beb2edc034ea0c77996af27a560f195123c1bc49850a58cf11fc7772c86ea25c"},
+        {"start":"0x801fea9c","end_exclusive":"0x801ff4a8","size":2572,"inventory_entry_count":157,"sha256":"ad6fccd18f6ff87460d494513113e81cbb6aa158357b0cd877da49d01c4b9f8a"}
+      ]
+    },
+    "upstream_fatfs_r016": {
+      "inventory_entry_count": 47,
+      "size": 18728,
+      "concatenated_sha256": "b7b3a71c151bba49cb7dc4345b143ba3b957c55d1599fc767b8105736ef9d68e",
+      "peer_specific": false,
+      "description": "Configured stock FatFs R0.16 algorithms and APIs identified from signatures, constants, control flow, and transitive call topology against the vendored source.",
+      "ranges": [
+        {"start":"0x801f3e68","end_exclusive":"0x801f3f00","size":152,"inventory_entry_count":1,"sha256":"5e802a46f6e47e3abff5db81a2064de5c4d6d23be879d28114e09b52991116f2"},
+        {"start":"0x801f6af0","end_exclusive":"0x801f7228","size":1848,"inventory_entry_count":2,"sha256":"22c24ad5c74c6cb48bf918a05b72bd8a6470961b792119b6deefd7fbeea4d5cb"},
+        {"start":"0x801f8e58","end_exclusive":"0x801f8f18","size":192,"inventory_entry_count":1,"sha256":"43f4fcf0df5c9c22a9dc7b25413f085a2637fb7d054748f8fcc66916024c48ad"},
+        {"start":"0x801f91d0","end_exclusive":"0x801f92f8","size":296,"inventory_entry_count":1,"sha256":"253cc01f334ed6b818b738a4da542c50e815cf150b12ee6d40df17de86d25a20"},
+        {"start":"0x801f9358","end_exclusive":"0x801f9768","size":1040,"inventory_entry_count":1,"sha256":"69169851f04b6c1599223576f84cf0aac09d89dac35be2e23af5a931ba4a0707"},
+        {"start":"0x801f98b0","end_exclusive":"0x801f9d60","size":1200,"inventory_entry_count":2,"sha256":"63c3b63046cd1abdad1fb013a80f4d2972ce6ff49877e988fb6cf3bada808987"},
+        {"start":"0x801fa0e8","end_exclusive":"0x801fa1d0","size":232,"inventory_entry_count":1,"sha256":"5598ef8a8b0242c167800e35c6d0c7e99ccb277d116002d1ac7a05dec849faf7"},
+        {"start":"0x801fa250","end_exclusive":"0x801fa2e0","size":144,"inventory_entry_count":2,"sha256":"9d7b97430c4e79f9f001b0633d471fd03d64141992f60cb7becfbfd7f09e9cf1"},
+        {"start":"0x801fa320","end_exclusive":"0x801fa640","size":800,"inventory_entry_count":3,"sha256":"09cbae6a788bc0e7e01209285867af07b67b1ae863ef66ca70945e42d021cba9"},
+        {"start":"0x801faff0","end_exclusive":"0x801fb4e8","size":1272,"inventory_entry_count":2,"sha256":"77b27208f3a56d0c68276b6661068267142faac3deebb3a85cc1c9f93abdbc08"},
+        {"start":"0x801fb5a0","end_exclusive":"0x801fbde0","size":2112,"inventory_entry_count":4,"sha256":"7ef3f237d9d263c0bfaa7d9e77cb5dc52460ae656cd36dded80f74290c6ba5d0"},
+        {"start":"0x801fbe60","end_exclusive":"0x801fc710","size":2224,"inventory_entry_count":6,"sha256":"7c1a3267a88435aff7c6a6a86d1aca9090960e7392c8a641f0694690b234bb32"},
+        {"start":"0x801fc970","end_exclusive":"0x801fcfd8","size":1640,"inventory_entry_count":4,"sha256":"032c5ac619e0c08acfe80bbadad811dcf1d86ba1c20118a4a442eee6815fd008"},
+        {"start":"0x801fd2c8","end_exclusive":"0x801fe618","size":4944,"inventory_entry_count":14,"sha256":"592cdbb26d06647eed1c3625d042381f3563a23e73392934766182ff95735e6e"},
+        {"start":"0x801fe780","end_exclusive":"0x801fe9f8","size":632,"inventory_entry_count":3,"sha256":"c2f99440d4cc54889f0b3208836bcc91982427bd5ba6ba7dcaf2a7563a4167ab"}
+      ]
+    },
+    "peer_product_adapter_or_policy": {
+      "inventory_entry_count": 87,
+      "size": 23996,
+      "concatenated_sha256": "ccd53f22c0169604d1db94a6484a02f764cc48926d90fd596b8a4f11bad29ca3",
+      "peer_specific": true,
+      "personal_authorship_claim": false,
+      "description": "Conservative Peer Pressure product-behavior slice: the Xbox exFAT FSD/disk/IRP adapter plus directly evidenced bootstrap, configuration, boot, side-loading, XEX, NAND, update, and UI policy. This is a component attribution only.",
+      "subclassification_summary": [
+        {"name":"Xbox exFAT FSD, disk, and platform adapter including mixed f_getfree derivative","inventory_entry_count":43,"size":12452},
+        {"name":"direct Peer Pressure product policy and orchestration","inventory_entry_count":44,"size":11544}
+      ],
+      "evidence": [
+        "ExFatCreateVolumeDevice and ExFatFsdCreate/ReadWrite/DirectoryControl/Cleanup diagnostics with Xbox IRP, object-manager, and share-access calls",
+        "custom disk_read, disk_write, disk_ioctl, memory, clock, and drive-registry callbacks around the stock FatFs core",
+        "private PeerPressure Config.ini, kernel_patches.bin, BootXell, custom boot, Aurora, SettingsApp, UpdateCheck, and update.phase2 paths",
+        "launch.xex and Plugins\\Nova.xex blocking, DVD-region policy, and SFCX NAND write-protection behavior"
+      ],
+      "ranges": [
+        {"start":"0x801f0000","end_exclusive":"0x801f0150","size":336,"inventory_entry_count":1,"sha256":"4ef2d8843cf562695cfa6cc8e7b4c53409721a0972ca6eed44ebf8178fe04b10"},
+        {"start":"0x801f0568","end_exclusive":"0x801f05f0","size":136,"inventory_entry_count":1,"sha256":"82a9d861ab34ce9e9cc7c8abcb9d019f004721f9d5c56c1938c14455bfce3ae8"},
+        {"start":"0x801f0648","end_exclusive":"0x801f0de8","size":1952,"inventory_entry_count":5,"sha256":"8609ed987bac3a02e02a0ff0526e184a37147d70ebd48b05df167a5188eb5b6e"},
+        {"start":"0x801f0e38","end_exclusive":"0x801f14d0","size":1688,"inventory_entry_count":7,"sha256":"35e280e77c9f7113b1116d947aafd6c5979cd36fd5356d3c5c9cd052c399cc6a"},
+        {"start":"0x801f16a8","end_exclusive":"0x801f1700","size":88,"inventory_entry_count":1,"sha256":"3c0f307a4da409bc4f25c0362dacdf799ed5840b4f357b5f5297d3b2c15f1a0d"},
+        {"start":"0x801f1790","end_exclusive":"0x801f18e8","size":344,"inventory_entry_count":1,"sha256":"9dfea271154216d491d2e806b72a906506adc0bedea72962b3562c5c3e3b60c8"},
+        {"start":"0x801f19c8","end_exclusive":"0x801f1a20","size":88,"inventory_entry_count":1,"sha256":"c397b6f869ec8d0ce5f4a3c608b2927b85db2be15bbc84b760effa13b46c48e0"},
+        {"start":"0x801f1a60","end_exclusive":"0x801f2058","size":1528,"inventory_entry_count":5,"sha256":"8ee12751a407dd5a85df2d6e1ddb38596311fd33cff6c5a3709ff4be4afdf3bb"},
+        {"start":"0x801f2dd8","end_exclusive":"0x801f30b0","size":728,"inventory_entry_count":4,"sha256":"c16861b3c4af184b6c82d3b38f92cf9d4328cb262cfb46e6b2535cdc6da2842c"},
+        {"start":"0x801f3218","end_exclusive":"0x801f32d8","size":192,"inventory_entry_count":1,"sha256":"3716c228dfb7755c2dfbfc4e77fa92ec70933df2cbdc1ad3fce01e0711507dc6"},
+        {"start":"0x801f3378","end_exclusive":"0x801f38f8","size":1408,"inventory_entry_count":6,"sha256":"04ed16fc8ea4e68526a390a1fe41aa78600dd9aaf033dba0a0567380d9ce9cc3"},
+        {"start":"0x801f3d90","end_exclusive":"0x801f3e68","size":216,"inventory_entry_count":2,"sha256":"aeff0dc8b6993013b4fc9e6f57bdd6348b94625544ddacca1231c6658c0b1174"},
+        {"start":"0x801f4938","end_exclusive":"0x801f4ca0","size":872,"inventory_entry_count":1,"sha256":"b37b10d3d9595ca1d82a74b2568b59c702656539fad45681aaa37af8fd2d8172"},
+        {"start":"0x801f4d08","end_exclusive":"0x801f4d38","size":48,"inventory_entry_count":1,"sha256":"73ef2c07b47a2efbaeb7168d6b6991ca940bebc21015c50df3598b12a8ec003a"},
+        {"start":"0x801f4ed8","end_exclusive":"0x801f4f98","size":192,"inventory_entry_count":2,"sha256":"33a51ee2e123c2d9911d25e2e7eccaa53c30d0b5cbec63e47b8659217fb87a3f"},
+        {"start":"0x801f5110","end_exclusive":"0x801f6af0","size":6624,"inventory_entry_count":12,"sha256":"a68456e645c771e88d4e2c7a27d4ab3e0a49d87102cda7c9352244d3f77218c1"},
+        {"start":"0x801f7b40","end_exclusive":"0x801f7d88","size":584,"inventory_entry_count":2,"sha256":"22ba89063adf574316179317468f3198b8b7759b09516f87cd5265a8c606425b"},
+        {"start":"0x801f7e68","end_exclusive":"0x801f8210","size":936,"inventory_entry_count":2,"sha256":"4597d39d3308a7848ab10ad8a651d4a4fb8b6aa40c6c377a15f1ebe5f0f2cb5c"},
+        {"start":"0x801f82d8","end_exclusive":"0x801f83b8","size":224,"inventory_entry_count":1,"sha256":"b36c8e8a3a28b7a29314eb8a8039a8f75235801be85fa4af049dd42e5f77807a"},
+        {"start":"0x801f8570","end_exclusive":"0x801f87f8","size":648,"inventory_entry_count":3,"sha256":"21b9469dea07f3caf36e1aa413fa387aea4f6dcd84c8bc692ac0c119c8811754"},
+        {"start":"0x801f8ae0","end_exclusive":"0x801f8e58","size":888,"inventory_entry_count":4,"sha256":"f01d543f2ddb1963f2b612b17ecccf502196fe71975f08f7ce309d66047a7317"},
+        {"start":"0x801f8f18","end_exclusive":"0x801f91d0","size":696,"inventory_entry_count":3,"sha256":"b603a45d9d362bbd828c8c26473b1564082a5a1215b222a0f976fc8f70cff4a3"},
+        {"start":"0x801f92f8","end_exclusive":"0x801f9358","size":96,"inventory_entry_count":1,"sha256":"8155b36055256e0f5f783eaa10ab33f4ab2a792528988c286d90eafa362d707f"},
+        {"start":"0x801f9768","end_exclusive":"0x801f98b0","size":328,"inventory_entry_count":2,"sha256":"b07933050012d77fbe22bfa8cc43edde053260c5d0e1591787da4dce709534be"},
+        {"start":"0x801f9d60","end_exclusive":"0x801fa0e8","size":904,"inventory_entry_count":4,"sha256":"c4a10059e70f8d7fb8761279e7063ac7d940049af43b243cea891a5c5e0f5174"},
+        {"start":"0x801fa1d0","end_exclusive":"0x801fa250","size":128,"inventory_entry_count":1,"sha256":"3edbebb7c22fb76c3a65c6b45261a25e1e983f0166d76c5d0d45bec56ee73e0e"},
+        {"start":"0x801fa2e0","end_exclusive":"0x801fa320","size":64,"inventory_entry_count":2,"sha256":"50029e4e9fb72ced34be7cc1b12187b8ecac33dc1b95d88652ff61f63af6cfdd"},
+        {"start":"0x801fa688","end_exclusive":"0x801fa8d8","size":592,"inventory_entry_count":2,"sha256":"6ff104f4637108920a34616085f4455829571c28882bf5580163f36d5908e750"},
+        {"start":"0x801faf60","end_exclusive":"0x801faff0","size":144,"inventory_entry_count":2,"sha256":"28bec71fa53d227a46e96ce2cc64e1f6d62bef85df3a3d65e969c3bb1d01b4f4"},
+        {"start":"0x801fb4e8","end_exclusive":"0x801fb5a0","size":184,"inventory_entry_count":2,"sha256":"d93303ea15f36f32689673820fd254fdfb3c2251edead25c088a135694ffc51d"},
+        {"start":"0x801fbde0","end_exclusive":"0x801fbe60","size":128,"inventory_entry_count":1,"sha256":"7506cd8a949e8975393c58c8211c63f9296fc490b9cf1e965381bca5fc2c045f"},
+        {"start":"0x801fc710","end_exclusive":"0x801fc970","size":608,"inventory_entry_count":2,"sha256":"7a385c821ef2e983831c87879a071527558789ec175609b2d2803ed2226ef059"},
+        {"start":"0x801fe618","end_exclusive":"0x801fe708","size":240,"inventory_entry_count":1,"sha256":"4885521170c7336b35f16b115464d50805c940c0373e124b8efd71144cc456e6"},
+        {"start":"0x801fe9f8","end_exclusive":"0x801fea9c","size":164,"inventory_entry_count":1,"sha256":"c962681e2ff6ab5db4d5276c43e76feb9e537176d48c3ca5b5416cc59faf10e2"}
+      ]
+    },
+    "unknown": {
+      "inventory_entry_count": 72,
+      "size": 16024,
+      "concatenated_sha256": "1920fdef236488e8898f07500caa3e10f49af716ae4afe3fc43d00c0b71bca32",
+      "peer_specific": null,
+      "description": "Unfingerprinted local code, primarily boot graphics/math, generic INI/config machinery, hook trampolines, and update/XUI callbacks. These entries are not counted as Peer-specific until provenance is established.",
+      "ranges": [
+        {"start":"0x801f0150","end_exclusive":"0x801f03c0","size":624,"inventory_entry_count":1,"sha256":"c114d2a71b93d8a19e83008ece956e06b4d5ebbb7587065b8e34c5a0e40a2a57"},
+        {"start":"0x801f0de8","end_exclusive":"0x801f0e38","size":80,"inventory_entry_count":1,"sha256":"c1402a8aa76d39ea14f6e43d574249ad34b31c9d5b077473390dca15f8f81a5f"},
+        {"start":"0x801f1700","end_exclusive":"0x801f1790","size":144,"inventory_entry_count":1,"sha256":"0aed4595d7b5d948e9e13ec5fd1207364a3daf7cf10d0342750b1be63492ede2"},
+        {"start":"0x801f1a20","end_exclusive":"0x801f1a60","size":64,"inventory_entry_count":1,"sha256":"deb0e9dd16c211027df819ce782510ffae55465caf8738917799e38eca990d2f"},
+        {"start":"0x801f2058","end_exclusive":"0x801f2d70","size":3352,"inventory_entry_count":6,"sha256":"ce707b997ce6f864d196fe241863e0fa765505f9707701dc772f1ece13eaa5e8"},
+        {"start":"0x801f30b0","end_exclusive":"0x801f3218","size":360,"inventory_entry_count":3,"sha256":"5fc576870cdcb6b7af1cb45993bd7d988fbc408f48a6885d3aee4513cd9f7362"},
+        {"start":"0x801f32d8","end_exclusive":"0x801f3378","size":160,"inventory_entry_count":2,"sha256":"17f5a5b9faca517a586a36329dbfdcb5e9263be67fa9200cc16227760743964d"},
+        {"start":"0x801f38f8","end_exclusive":"0x801f3d90","size":1176,"inventory_entry_count":6,"sha256":"5f0ac41e905211369065687c7271e99985e57235eb7710d8bdf1ecccfa8cc7fd"},
+        {"start":"0x801f3f00","end_exclusive":"0x801f4938","size":2616,"inventory_entry_count":6,"sha256":"15914df241c05cb3a20bc3fd2bfe7cd574571ea1ddb30f5da50929651959d814"},
+        {"start":"0x801f4ca0","end_exclusive":"0x801f4d08","size":104,"inventory_entry_count":1,"sha256":"9fcd0bb40b7383a7d5d7cdac1e07f08a308fbc7207200aab441091e22caf0265"},
+        {"start":"0x801f4d38","end_exclusive":"0x801f4ed8","size":416,"inventory_entry_count":1,"sha256":"730845b8754b89349dfdec02346b8955a7a7b357bf87dd9807dd20efb3ab9305"},
+        {"start":"0x801f4f98","end_exclusive":"0x801f5110","size":376,"inventory_entry_count":2,"sha256":"6a08ec03e650190e4482027bf2c237aab2f312c393e3904421a3dc587c557cf8"},
+        {"start":"0x801f7228","end_exclusive":"0x801f7b40","size":2328,"inventory_entry_count":9,"sha256":"d100d1ea861b12442f728662582332e0644c5146a75c032c7f27cac8b475f2bd"},
+        {"start":"0x801f7d88","end_exclusive":"0x801f7e68","size":224,"inventory_entry_count":1,"sha256":"c93081d2bc553027db344f8b6d10d27f9454ab77ce28cc39a59465015a86658e"},
+        {"start":"0x801f8210","end_exclusive":"0x801f82d8","size":200,"inventory_entry_count":3,"sha256":"6be1625eb1db36072db0959b06df2ee340fa8721234f8047f2c9fc52203e8d50"},
+        {"start":"0x801f83b8","end_exclusive":"0x801f8570","size":440,"inventory_entry_count":2,"sha256":"6f32a7442eb0d5f435e577a0ab1078c0f3ac853c420af533de83fde71445f9f1"},
+        {"start":"0x801f87f8","end_exclusive":"0x801f8ae0","size":744,"inventory_entry_count":3,"sha256":"39a08e8bdea03c265dfd6631387fd7b67e0b1c1c4c6b1ddae61db4e925b33da8"},
+        {"start":"0x801fa640","end_exclusive":"0x801fa688","size":72,"inventory_entry_count":1,"sha256":"83e84dfb3cd5429eaf62716815d63e3d75ada84f05ca1299740013b3e3e56990"},
+        {"start":"0x801fa8d8","end_exclusive":"0x801faf60","size":1672,"inventory_entry_count":15,"sha256":"a1b9963083240d68d8cb3dd1365926d18590378138aed1439a70aebab1c8211c"},
+        {"start":"0x801fcfd8","end_exclusive":"0x801fd2c8","size":752,"inventory_entry_count":5,"sha256":"ca670bace076cc13ac0b133df27a780dcdcb5fdfa15d409f3381ca44208c614c"},
+        {"start":"0x801fe708","end_exclusive":"0x801fe780","size":120,"inventory_entry_count":2,"sha256":"dd2d8b035f74dd75d741e8d1ba566d93a51f7d3b5b2dd7effa50fa679ed132db"}
+      ]
+    }
+  },
+  "totals": {
+    "inventory_entry_count": 372,
+    "instruction_size": 62632,
+    "category_count": 4
+  }
+}

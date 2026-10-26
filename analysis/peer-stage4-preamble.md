@@ -313,11 +313,14 @@ Pressure source was published.
 
 ## Source-level completion and ownership boundary
 
-`analysis/stage4/source-coverage.json` assigns every byte to recovered Peer
-source, typed Peer data, alignment, or the third-party clean-HV input.
+`analysis/stage4/source-coverage.json` assigns every byte to recovered
+Peer-specific source, typed data, the public BadUpdate SMC helper, alignment,
+or the third-party clean-HV input.
 `tools/verify_stage4_source_coverage.py` checks that partition, every named
 source owner, the full artifact hash, the pinned BadUpdate commit, and exact
-equality of file `0x780-0x10780` with the public clean-HV file. All 1,872
-non-alignment Peer bytes have readable C++ or typed-data coverage. Stage4 is
-therefore source-level complete without falsely presenting Microsoft
-hypervisor data as Peer-authored C++.
+equality of file `0x780-0x10780` with the public clean-HV file. The 1,764
+remaining Peer-specific bytes have readable C++ or typed-data coverage, while
+file `0x294-0x300` is mapped to public BadUpdate's byte-identical
+`HvxSendSMCMessage`. Stage4 is therefore source-level complete without falsely
+presenting public BadUpdate or Microsoft hypervisor material as Peer-authored
+C++.

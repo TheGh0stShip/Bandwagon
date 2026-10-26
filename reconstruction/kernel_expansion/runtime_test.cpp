@@ -143,19 +143,18 @@ class FakeConfigParser final
   }
 };
 
-std::array<std::uint8_t, 0x5c> FixedPointGptHeader() {
+std::array<std::uint8_t, 0x5c> ValidGptHeader() {
   std::array<std::uint8_t, 0x5c> header{};
   constexpr std::array<std::uint8_t, 12> prefix{{
       'E', 'F', 'I', ' ', 'P', 'A', 'R', 'T', 0, 0, 1, 0,
   }};
   std::copy(prefix.begin(), prefix.end(), header.begin());
   header[0x0c] = 0x5c;
-  // This little-endian value is the CRC fixed point for this test header. It
-  // exercises the binary's unusual self-including checksum comparison.
-  header[0x10] = 0x4a;
-  header[0x11] = 0x5c;
-  header[0x12] = 0x85;
-  header[0x13] = 0x8a;
+  // CRC-32 with this four-byte field treated as zero, per FatFs R0.16.
+  header[0x10] = 0x42;
+  header[0x11] = 0xbc;
+  header[0x12] = 0xbe;
+  header[0x13] = 0x05;
   header[0x50] = 0x80;
   header[0x54] = 0x80;
   return header;
@@ -259,20 +258,20 @@ int main() {
   assert((structured_failure.events == std::vector<std::string>{
       "open", "query", "allocate", "read", "free", "close"}));
 
-  auto header = FixedPointGptHeader();
+  auto header = ValidGptHeader();
   assert(ComputeRecoveredGptChecksum(header.data(), header.size()) ==
-         0x8a855c4a);
+         0x05bebc42);
   assert(IsRecognizedGptHeader(header.data(), header.size()));
 
   header[0] = 'X';
   assert(!IsRecognizedGptHeader(header.data(), header.size()));
-  header = FixedPointGptHeader();
+  header = ValidGptHeader();
   header[0x50] = 0x81;
   assert(!IsRecognizedGptHeader(header.data(), header.size()));
-  header = FixedPointGptHeader();
+  header = ValidGptHeader();
   header[0x54] = 0x40;
   assert(!IsRecognizedGptHeader(header.data(), header.size()));
-  header = FixedPointGptHeader();
+  header = ValidGptHeader();
   header[0x0c] = 0x5b;
   assert(!IsRecognizedGptHeader(header.data(), header.size()));
   assert(!IsRecognizedGptHeader(nullptr, 0));

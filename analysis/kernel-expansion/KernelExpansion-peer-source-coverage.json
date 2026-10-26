@@ -9,6 +9,18 @@
     "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8"
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
+  "summary": {
+    "lifted_function_count": 73,
+    "lifted_instruction_bytes": 12632,
+    "peer_product_adapter_or_policy_function_count": 37,
+    "peer_product_adapter_or_policy_instruction_bytes": 5168,
+    "generic_platform_function_count": 9,
+    "generic_platform_instruction_bytes": 1312,
+    "unattributed_function_count": 22,
+    "unattributed_instruction_bytes": 5112,
+    "upstream_fatfs_function_count": 5,
+    "upstream_fatfs_instruction_bytes": 1040
+  },
   "functions": [
     {
       "address": "0x801f03c0",
@@ -386,6 +398,8 @@
       "semantic_name": "BindDrivePath",
       "source": "reconstruction/kernel_expansion/drive_binding.cpp",
       "header": "reconstruction/kernel_expansion/drive_binding.hpp",
+      "provenance": "upstream_fatfs_r016",
+      "upstream_source": {"path": "third_party/fatfs-r016/source/ff.c", "symbol": "f_mount"},
       "symbols": ["DrivePathBinding", "DrivePathBindingTable", "DrivePathProbeServices", "BindDrivePath", "kInvalidDrivePathStatus"]
     },
     {
@@ -484,6 +498,8 @@
       "semantic_name": "ParseDriveNumberPrefix",
       "source": "reconstruction/kernel_expansion/drive_prefix.cpp",
       "header": "reconstruction/kernel_expansion/drive_prefix.hpp",
+      "provenance": "upstream_fatfs_r016",
+      "upstream_source": {"path": "third_party/fatfs-r016/source/ff.c", "symbol": "get_ldnumber"},
       "symbols": ["ParseDriveNumberPrefix"]
     },
     {
@@ -645,6 +661,8 @@
       "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
       "semantic_name": "RecognizeGptDisk",
       "source": "reconstruction/kernel_expansion/runtime.cpp",
+      "provenance": "upstream_fatfs_r016",
+      "upstream_source": {"path": "third_party/fatfs-r016/source/ff.c", "symbol": "test_gpt_header"},
       "symbols": ["ComputeRecoveredGptChecksum", "IsRecognizedGptHeader"]
     },
     {
@@ -654,6 +672,8 @@
       "semantic_name": "ClassifyFatBootSector",
       "source": "reconstruction/kernel_expansion/storage.cpp",
       "header": "reconstruction/kernel_expansion/storage.hpp",
+      "provenance": "upstream_fatfs_r016",
+      "upstream_source": {"path": "third_party/fatfs-r016/source/ff.c", "symbol": "check_fs"},
       "symbols": ["BootSectorKind", "SectorReader", "ClassifyFatBootSector"]
     },
     {
@@ -734,6 +754,8 @@
       "semantic_name": "DecodeOem437Character",
       "source": "reconstruction/kernel_expansion/oem437.cpp",
       "header": "reconstruction/kernel_expansion/oem437.hpp",
+      "provenance": "upstream_fatfs_r016",
+      "upstream_source": {"path": "third_party/fatfs-r016/source/ffunicode.c", "symbol": "ff_oem2uni"},
       "symbols": ["DecodeOem437Character", "kOemUnitedStatesCodePage", "kOem437ToUnicode"]
     }
   ],

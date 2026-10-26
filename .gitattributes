@@ -6,3 +6,6 @@
 *.asm text eol=lf
 *.dot text eol=lf
 *.idc text eol=lf
+
+# Preserve the official FatFs archive bytes used as provenance evidence.
+third_party/fatfs-r016/** -text

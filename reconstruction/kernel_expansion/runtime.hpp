@@ -78,9 +78,8 @@ bool LoadStructuredConfigFile(FileServices* files,
                               const StructuredConfigEntry* schema_entries,
                               std::uint32_t entry_count);
 
-// Exact reflected CRC-32 loop recovered from 0x801fa540. Unlike a conventional
-// GPT validator, the recovered routine includes the stored checksum field in
-// the bytes it hashes; this API deliberately preserves that observed behavior.
+// Exact reflected CRC-32 loop used by FatFs R0.16 test_gpt_header at
+// 0x801fa540. The four stored-checksum bytes at 0x10 are hashed as zero.
 std::uint32_t ComputeRecoveredGptChecksum(const std::uint8_t* data,
                                           std::size_t size);
 

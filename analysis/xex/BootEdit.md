@@ -46,7 +46,7 @@ declared upstream tag resolves to commit
 Remaining ImGui, standard-library, and rendering functions are preserved
 exactly but still need individual attribution. The separate
 bundled 9199 `bootanim.xex` is a 2010 Microsoft component and is documented as
-out of Peer-authored source scope in `BootAnim-9199-provenance.md`.
+out of Peer-specific source scope in `BootAnim-9199-provenance.md`.
 
 The semantic map additionally names `ColorEqualsExact` at `0x82050a00` and
 `DrawColorContextMenu` at `0x82050b08`. The former is a non-`.pdata` leaf whose

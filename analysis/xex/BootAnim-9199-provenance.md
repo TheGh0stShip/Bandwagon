@@ -1,8 +1,8 @@
 # Bundled 9199 boot animation provenance
 
 `PeerPressure/Themes/BootAnim/9199/bootanim.xex` is distributed inside the Peer
-Pressure archive, but its own authenticated executable metadata does not
-identify it as Peer-authored code:
+Pressure archive, but its own authenticated executable metadata identifies it
+as a Microsoft component rather than Peer-specific code:
 
 - original image name: `bootanim.dll`;
 - linker timestamp: 2010-02-18 02:21:38 UTC;
@@ -16,7 +16,7 @@ identify it as Peer-authored code:
 This is therefore classified as a bundled Xbox dashboard 9199 component, not
 closed Peer Pressure source. The public project records its provenance and
 hash but does not translate or republish the Microsoft binary as source. That
-boundary does not exclude Peer-authored theme selection/install logic in other
+boundary does not exclude Peer-specific theme selection/install logic in other
 executables, which remains in reverse-engineering scope.
 
 No byte-identity claim against an independently sourced stock 9199 image is

@@ -13,81 +13,74 @@ and [`analysis/README.md`](analysis/README.md) for current findings. See
 binary-exact assembly evidence and maintainable source-level recovery; assembly
 equivalence alone is not treated as completion of the open-source goal.
 
-The public BadUpdate source baseline is pinned as the
-`third_party/Xbox360BadUpdate` submodule. Initialize it with
-`git submodule update --init --recursive`.
+The public BadUpdate source baseline and the exact declared third-party
+versions are pinned under `third_party/`. Initialize them with
+`git submodule update --init --recursive`; see
+[`third_party/README.md`](third_party/README.md) for the revision ledger.
 
-## Current state
+## Status at a glance
 
-- The XBPP manifest and update archive wrappers have lossless decoders.
-- SMC and kernel patch streams have reproducible JSON decodes.
-- All six motherboard SMC patch streams have exact assembly evidence and
-  complete, tested C++ coverage of every executable replacement record.
-- The retail kernel patch stream has a typed 23-record effect table whose C++
-  serializer reproduces all 372 bytes exactly.
-- The 24-byte HDD security trigger has a typed six-field representation and
-  exact C++ serializer; unresolved kernel pointers remain conservatively named.
-- The sparse 16 KiB Flash DMA ROP/data image has a complete typed C++ builder
-  and semantic operation model that reproduce every byte; two private retail
-  kernel globals remain conservatively unnamed.
-- XEX base images have been extracted locally with recorded hashes.
-- Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
-- Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
-  reconstructions.
-- Stage 3 also has complete source-level coverage: its Peer-only entry and
-  resident probe are reconstructed C++, and every inherited exploit routine is
-  mapped to the pinned public BadUpdate source.
-- Stage 4 has complete source-level coverage of every Peer-authored code and
-  data region; its final 64 KiB is independently verified as third-party clean
-  hypervisor data rather than counted as Peer source.
-- Updater's complete 88,640-byte PowerPC `.text` section has a labeled,
-  byte-identical assembly reconstruction.
-- Updater's initialized `.rdata`, `.pdata`, and `.data` sections have
-  byte-identical, buildable assembly reconstructions.
-- Updater has reproducible function, direct-call, string-reference, and initial
-  semantic-symbol inventories; its Stage2 HDD record algorithm is documented.
-- BootXell's initialized code and data sections have complete byte-identical
-  assembly reconstructions; seven identified Peer routines now have tested,
-  exact-byte-bound C++ lifts, including its Xell sanitizer and launch flow.
-- AuroraFixer has a complete byte-identical initialized-image reconstruction
-  and complete source-level recovery of all five Peer-authored routines; its
-  live `DbgBreakPoint` import redirection and cache maintenance are tested.
-- UpdateCheck has a complete byte-identical initialized-image reconstruction;
-  both identified Peer routines (the HTTPS latest-release workflow and release
-  parser) have exact-byte-bound, tested C++ lifts.
-- BootEdit has a complete byte-identical initialized-image reconstruction and
-  an initial semantic map of its `.xbat` theme editing workflow.
-- SettingsApp has a complete byte-identical initialized-image reconstruction
-  and a semantic map of update, boot, dashboard, OtherOS, and version settings.
-- The bundled dashboard-9199 boot animation is provenance-recorded as Microsoft
-  code and intentionally excluded from Peer-authored source publication.
-- The persistent HDD Stage2 ROP/worker image has an exact whole-file assembly
-  reconstruction and an initial semantic map of its partition/update loader.
+Status date: 2026-10-26
 
-`analysis/component-inventory.json` is the generated manifest-wide completion
-matrix. Of 33 installed components, no Peer raw payload remains without
-binary-exact source-form reconstruction. `FlashDmaPayload.bin` additionally
-has complete source-level C++ recovery. `KernelExpansion.bin` now has its first
-73 exact-byte-bound C++ lifts, including its optional kernel-patch installer,
-relative and absolute PowerPC branch-hook primitives, fixed post-load hook
-sequence, SATA Ultra DMA negotiation, flash-backed current/installed version
-query and NAND geometry selector, the DVD region-free XConfig hook, the
-Peer-specific blocked-plugin policy, typed six-field configuration
-layout and schema, complete read/write INI pipeline, table-exposed hash-only
-value accessors, configuration bootstrap, fixed persistence/locking adapters,
-tokenizer, buffered serializer, key hash, and typed value dispatcher,
-object-manager link wrappers and fixed `PPROOT:` adapter, the NAND
-write-protection control accessors and SFCX enforcement hooks,
-bootstrap-mapping release, phase-two file
-restoration and line parser,
-cache-coherent instruction patch, drive registration, binding, and slot-state
-predicates, UTF-16 drive-prefix and signed-decimal parsers,
-version-bound predicate, sign-in state hooks, file-disposition mapper and
-unsupported device stub, file-system pool boundary, OEM-437 filename decoder,
-FAT volume-capacity
-query, path validator, and bounded path-field copier.
-The remainder and Stage2 still require maintainable-source recovery beyond
-their byte-identical assembly evidence.
+| Layer | Status |
+|---|---|
+| Artifact inventory | 33 / 33 installed artifacts classified |
+| Binary-exact evidence | Complete for raw Peer payloads; initialized code/data preserved for XEX applications |
+| Maintainable-source targets | 7 / 14 complete; 7 partial |
+| Source-built replacement distribution | Not complete |
 
-Semantic recovery of remaining functions, types, globals, indirect control
-flow, raw stage payloads, and SMC firmware is still in progress.
+This project is **not near 100% source recovery**. The unfinished targets are
+the largest ones, so 7 / 14 completed targets must not be read as 50% of the
+remaining effort. The current backlog includes:
+
+- 50 known KernelExpansion product functions / 18,828 instruction bytes that
+  still lack readable source models, plus 72 functions still needing ownership
+  classification;
+- 3,432 candidate product bytes in the Stage2 worker, plus its modified outer
+  ROP/data;
+- ownership and product-source recovery across five XEX applications containing
+  4,194 discovered function entries before public libraries and platform code
+  are excluded;
+- a final target-build and integration-validation phase.
+
+The honest remaining scale is **dozens of material commits, not a few more
+commits**. A defensible calendar ETA requires the five XEX ownership partitions
+first. See [`STATUS.md`](STATUS.md) for the component-by-component scoreboard,
+remaining queue, and exact definition of 100% completion.
+
+## Source-scope rule
+
+Bandwagon does not reimplement code merely because it was linked into a closed
+Peer Pressure binary. Once a byte range is attributed to an available upstream
+project, compiler runtime, or platform library, the project pins that source
+and records any binary differences. Only the unmatched Peer-specific delta and
+its modifications, adapters, policy, and orchestration remain source-recovery
+targets. "Peer-specific" describes binary provenance, not personal authorship.
+
+## Repository guide
+
+- [`STATUS.md`](STATUS.md): authoritative completion scoreboard, remaining
+  queue, measured boundaries, and definition of 100%.
+- [`SOURCE_RECOVERY.md`](SOURCE_RECOVERY.md): source-complete versus
+  binary-exact status for each target.
+- [`analysis/component-inventory.json`](analysis/component-inventory.json): all
+  33 installed artifacts and their evidence status.
+- [`analysis/README.md`](analysis/README.md): recovered formats, hashes, and
+  component findings.
+- [`analysis/reconstruction/`](analysis/reconstruction/): binary-exact evidence
+  oracles; these are not counted as final source implementations.
+- [`reconstruction/`](reconstruction/): readable source models and tests.
+
+## Verification
+
+The common offline rebuild verifies all raw reconstructed payloads without
+executing them:
+
+```sh
+python3 -B tools/rebuild_peer_reconstructions.py
+```
+
+Component test scripts under `tools/test_*_reconstruction.sh` exercise the
+readable source models and provenance verifiers. KernelExpansion's test now
+also enforces its exhaustive 372-entry ownership partition; Stage2 and Stage4
+have separate ownership/source-composition verifiers.

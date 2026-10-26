@@ -5,7 +5,7 @@
     {
       "start": "0x98005000",
       "end_exclusive": "0x98008010",
-      "classification": "Peer-authored application and compiler-emitted C++ template instantiations",
+      "classification": "Peer-specific application code and compiler-emitted C++ template instantiations",
       "confidence": "high",
       "evidence": [
         "contains all SoftmodData, manifest, extraction, phase-two, HDD bootstrap, and update-orchestration diagnostics",

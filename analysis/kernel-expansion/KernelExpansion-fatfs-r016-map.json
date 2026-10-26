@@ -1,0 +1,521 @@
+{
+  "schema": "bandwagon-kernel-expansion-fatfs-r016-map-v1",
+  "status": "complete-for-strict-fatfs-core",
+  "image": {
+    "path": "PeerPressure/System/KernelExpansion.bin",
+    "base_address": "0x801f0000",
+    "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8"
+  },
+  "upstream": {
+    "name": "FatFs",
+    "version": "R0.16",
+    "release_date": "2025-07-22",
+    "variant": "unpatched base release",
+    "official_archive": "https://elm-chan.org/fsw/ff/arc/ff16.zip",
+    "official_archive_sha256": "99f7dc1f7e095356e4a9e3dbe29959090d8b948afe2bbc5441e52fdf4b85449e",
+    "vendored_root": "third_party/fatfs-r016",
+    "files": [
+      {
+        "path": "LICENSE.txt",
+        "sha256": "2576183a3e1c2d2f4b3628a7ef93c2f937879698abdd6d554dd718e79062e079"
+      },
+      {
+        "path": "source/ff.c",
+        "sha256": "dbeae3d7d22dbc070983e31af897fa5e43d29c726a0a240fe9589ffe2ec0ef1e"
+      },
+      {
+        "path": "source/ff.h",
+        "sha256": "42920ae4d6080bfc2a72d92a9969b5e94eeaff070e5e71d90da9ab6d7d8e158e"
+      },
+      {
+        "path": "source/ffconf.h",
+        "sha256": "202a7321066873fb3fa8c6ca83eba2b5964a091c366962f87ebd86332652430a"
+      },
+      {
+        "path": "source/ffunicode.c",
+        "sha256": "3f1632c1f1e64b0b683b0d7e51341b9870728f398604869dd8211f1819509a8e"
+      }
+    ]
+  },
+  "identification": {
+    "confidence": "high",
+    "revision_evidence": [
+      "f_readdir clears fno->fname[0] before DIR_READ_FILE, a fix introduced in R0.16",
+      "get_fileinfo clears fno->fname[0] on entry, a fix introduced in R0.16",
+      "FILINFO created-date and created-time fields require R0.15b or later independently",
+      "check_fs retains the base R0.16 128-sector minimum and has none of patch 1's small-cluster rejection",
+      "mount_volume has neither patch 2's minimum exFAT cluster-count check nor its maximum FAT-size check"
+    ],
+    "configuration_fingerprint": {
+      "FF_USE_LFN": 3,
+      "FF_MAX_LFN": 255,
+      "FF_LFN_UNICODE": 1,
+      "FF_CODE_PAGE": 437,
+      "FF_FS_EXFAT": 1,
+      "FF_FS_CRTIME": 1,
+      "FF_LBA64": 1,
+      "FF_MIN_SS": 512,
+      "FF_MAX_SS": 512,
+      "FF_VOLUMES": 10,
+      "FF_STR_VOLUME_ID": 0,
+      "FF_FS_RPATH": 0,
+      "FF_FS_READONLY": 0,
+      "FF_FS_MINIMIZE": 0,
+      "FF_FS_TINY": 1,
+      "FF_FS_REENTRANT": 0,
+      "FF_FS_LOCK": 0,
+      "FF_USE_TRIM": 0
+    }
+  },
+  "scope": {
+    "classification": "strict upstream FatFs core or compiler-inlined upstream FatFs core",
+    "function_count": 47,
+    "instruction_bytes": 18728,
+    "address_semantics": "half-open virtual-address ranges mapped from file offset zero at 0x801f0000",
+    "notes": [
+      "The ranges are discontiguous and exclude Xbox disk callbacks, heap/time hooks, and FSD wrapper code.",
+      "mount_volume contains compiler-inlined find_volume and depends on the standard FatFs disk callbacks; it contains no Xbox-specific filesystem policy.",
+      "The reduced routine at 0x801f9f10 is derived from f_getfree but is excluded from this strict set because its interface and retained branches are custom."
+    ]
+  },
+  "functions": [
+    {
+      "start": "0x801f3e68",
+      "end_exclusive": "0x801f3f00",
+      "size": 152,
+      "sha256": "5e802a46f6e47e3abff5db81a2064de5c4d6d23be879d28114e09b52991116f2",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_mount",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f6af0",
+      "end_exclusive": "0x801f6b68",
+      "size": 120,
+      "sha256": "a8f598c960e062214fa71aea956ea83f7b12a9b39fb9d6b825eb721d2fe39c18",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "get_ldnumber",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f6b68",
+      "end_exclusive": "0x801f7228",
+      "size": 1728,
+      "sha256": "b9bfc7df829087d3d6b2fef0e19975cb43fc426acfc139ddee97248bd946f301",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "mount_volume",
+      "inlined_upstream_symbols": ["find_volume"],
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f8e58",
+      "end_exclusive": "0x801f8f18",
+      "size": 192,
+      "sha256": "43f4fcf0df5c9c22a9dc7b25413f085a2637fb7d054748f8fcc66916024c48ad",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_stat",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f91d0",
+      "end_exclusive": "0x801f92f8",
+      "size": 296,
+      "sha256": "253cc01f334ed6b818b738a4da542c50e815cf150b12ee6d40df17de86d25a20",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_opendir",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f9358",
+      "end_exclusive": "0x801f9768",
+      "size": 1040,
+      "sha256": "69169851f04b6c1599223576f84cf0aac09d89dac35be2e23af5a931ba4a0707",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_open",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f98b0",
+      "end_exclusive": "0x801f9b30",
+      "size": 640,
+      "sha256": "82c9fa8cb80b87e533020f0c198f09b76adcde1a8cd26fc141161562797dfa4c",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_write",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801f9b30",
+      "end_exclusive": "0x801f9d60",
+      "size": 560,
+      "sha256": "679176442357cf2983aa732fd440ff1d863c825711f8862d42300e81b171d7bc",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_read",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fa0e8",
+      "end_exclusive": "0x801fa1d0",
+      "size": 232,
+      "sha256": "5598ef8a8b0242c167800e35c6d0c7e99ccb277d116002d1ac7a05dec849faf7",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_readdir",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fa250",
+      "end_exclusive": "0x801fa290",
+      "size": 64,
+      "sha256": "3896c7c37872465c12a1ad3e7c07865db0355d339e2c271de44ebd156fd843ea",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_closedir",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fa290",
+      "end_exclusive": "0x801fa2e0",
+      "size": 80,
+      "sha256": "9f3272c9826e141ee3c42396433cb590d28abf710aba19eb738343a253a4c80c",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_close",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fa320",
+      "end_exclusive": "0x801fa4d8",
+      "size": 440,
+      "sha256": "0ec6569aa7a3f684cb18d55ce6f03382dfec6087d38bbb7053d422b3b23c62b3",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "check_fs",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fa4d8",
+      "end_exclusive": "0x801fa540",
+      "size": 104,
+      "sha256": "fcc30f94d54862acce7d3dbf7913242fa3260f87f60902219708f35ddcf295a2",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "move_window",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fa540",
+      "end_exclusive": "0x801fa640",
+      "size": 256,
+      "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "test_gpt_header",
+      "inlined_upstream_symbols": ["crc32"],
+      "confidence": "high"
+    },
+    {
+      "start": "0x801faff0",
+      "end_exclusive": "0x801fb108",
+      "size": 280,
+      "sha256": "1a56b58e739ba60378dd0d9fdb8439c5456ea66e49feb4ed67e8a7955bc9cb98",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "follow_path",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fb108",
+      "end_exclusive": "0x801fb4e8",
+      "size": 992,
+      "sha256": "513ad4c9f1dec68c36356c108dd8d93ac88034860b0f14e7d1e932787a8eabe3",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "get_fileinfo",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fb5a0",
+      "end_exclusive": "0x801fb818",
+      "size": 632,
+      "sha256": "40108691980dfc98e10644499fb40d1314d01a814a388ae9db1699b6bb040166",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_mkdir",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fb818",
+      "end_exclusive": "0x801fb888",
+      "size": 112,
+      "sha256": "f2b6de8ab224ef3a1b59f239a7447d2f8802396c02b3593ccc3c136dcf177775",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "init_alloc_info",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fb888",
+      "end_exclusive": "0x801fb9c8",
+      "size": 320,
+      "sha256": "8d5fce30be76f7e1331fc2a87c7c0758ba412cb06f1eeeb1869671e5b31b7f25",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_sdi",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fb9c8",
+      "end_exclusive": "0x801fbde0",
+      "size": 1048,
+      "sha256": "d8a21d673ebe5034665bf04770a383a1dbe215026dfb0bf2227eab9f001432ec",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_register",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fbe60",
+      "end_exclusive": "0x801fbf48",
+      "size": 232,
+      "sha256": "6b032d8e9db95fe4d16285a7535274574e7f15c58bc29469ce7f84b421825b8d",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "store_xdir",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fbf48",
+      "end_exclusive": "0x801fc140",
+      "size": 504,
+      "sha256": "44809e7707d4a1b1efc4d6cf0d573ff3803ce4f1cae3199b526b45dd5c6d489f",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "remove_chain",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fc140",
+      "end_exclusive": "0x801fc350",
+      "size": 528,
+      "sha256": "8e8edcb4047971cf27fcdd08a1ee8399dcba9f331e8ae2a6ff1bb6391025fe82",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "get_fat",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fc350",
+      "end_exclusive": "0x801fc3c8",
+      "size": 120,
+      "sha256": "0da9c58bed01ad4c6bd74c3c593c08f0f72d7344f92609036dfcee8e2e54c50d",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "validate",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fc3c8",
+      "end_exclusive": "0x801fc440",
+      "size": 120,
+      "sha256": "e52e18dfb5b59ca405133ae465d63385944ef6471e540544dd739db9489912ec",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "fill_last_frag",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fc440",
+      "end_exclusive": "0x801fc710",
+      "size": 720,
+      "sha256": "cd14eb015ef7349512c362b39d34023f1b9ad352497906b5b900f5de32dcc377",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "create_chain",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fc970",
+      "end_exclusive": "0x801fcb40",
+      "size": 464,
+      "sha256": "2f035f5339023303fc7dba320a3a3577910cb958c84cd2450b9303adbdb9b7b0",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_read",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fcb40",
+      "end_exclusive": "0x801fccc8",
+      "size": 392,
+      "sha256": "cd64243d6e28d22403720e3244aa7239cb86a17870838b1e8239af48417c3f35",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_next",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fccc8",
+      "end_exclusive": "0x801fcf48",
+      "size": 640,
+      "sha256": "3cfbafe26322f3c68e8464675ee25dce6e9f5e6c91af6281182a49317ac0076f",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_sync",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fcf48",
+      "end_exclusive": "0x801fcfd8",
+      "size": 144,
+      "sha256": "12891b0286accbdc877c81d1dc4d425e556b5295724ccee5a05ec68b224d3605",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "sync_window",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fd2c8",
+      "end_exclusive": "0x801fd588",
+      "size": 704,
+      "sha256": "e081153271bef777f3d315ebd082288a35efaaf3304a7e9e693f1a5465255d2d",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_find",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fd588",
+      "end_exclusive": "0x801fd9c0",
+      "size": 1080,
+      "sha256": "9393b7cf23e858ce4d1660195938fb7de5369a710560233cad7dd47f235b24af",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "create_name",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fd9c0",
+      "end_exclusive": "0x801fda38",
+      "size": 120,
+      "sha256": "393ceda96e0886707cf392919f3c3f4abb3737339ea1b5954b7a2d26d27585dd",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "put_utf",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fda38",
+      "end_exclusive": "0x801fda80",
+      "size": 72,
+      "sha256": "7ed3f4dc42ca76a62167a08d34dd70f4424e13766f2d10a439cf661dabeb29ee",
+      "upstream_file": "source/ffunicode.c",
+      "upstream_symbol": "ff_oem2uni",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fda80",
+      "end_exclusive": "0x801fdbf0",
+      "size": 368,
+      "sha256": "5ef2bef34f87a9e7a76d8c19ebac8e2acfbfdda02860d7d337de0ae288510d23",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_clear",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fdbf0",
+      "end_exclusive": "0x801fdd40",
+      "size": 336,
+      "sha256": "7bbf257ed829e948eada6caf6228bcca6eeafeb2314a9530e1e68d3dc8506ac5",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "sync_fs",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fdd40",
+      "end_exclusive": "0x801fddf8",
+      "size": 184,
+      "sha256": "5d1545887cac6c8491ea262c0b0917b8345aacef1a52adb46c09889d7d204e5a",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "dir_alloc",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fddf8",
+      "end_exclusive": "0x801fdf88",
+      "size": 400,
+      "sha256": "5e488bae688078c321301478dac5f34d243a24d3fb5090bb163e6cc1f9102514",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "put_fat",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fdf88",
+      "end_exclusive": "0x801fe138",
+      "size": 432,
+      "sha256": "53c11ae85d22afb416b137cdb588cf6f9845aa64c9e6fbb97629e669128285af",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "load_xdir",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe138",
+      "end_exclusive": "0x801fe248",
+      "size": 272,
+      "sha256": "9d83f8038b41e79536f9bed73ce54be254c8f0ce72b52082ccd57fe1b100fbcb",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "create_xdir",
+      "inlined_upstream_symbols": ["xname_sum"],
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe248",
+      "end_exclusive": "0x801fe378",
+      "size": 304,
+      "sha256": "aaf29788b4285b2e273e1aaeec913d66ef10b091a3da6ad751b715b4c43081cf",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "gen_numname",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe378",
+      "end_exclusive": "0x801fe450",
+      "size": 216,
+      "sha256": "0f5760d01c7ccddc91e5de51e4bc69713004fc7e775d45d4341cee00091b2de4",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "change_bitmap",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe450",
+      "end_exclusive": "0x801fe560",
+      "size": 272,
+      "sha256": "d86e5f45f71ed4931e7cff3be08b2cb26f78f4aab29b80ed5d263f64a76af232",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "find_bitmap",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe560",
+      "end_exclusive": "0x801fe618",
+      "size": 184,
+      "sha256": "9577bcb3bb357a558cc844a5b5ba2cfa04a6d5955cafd35736655226248691ef",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "pick_lfn",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe780",
+      "end_exclusive": "0x801fe8a8",
+      "size": 296,
+      "sha256": "f184e1aa5971512e521d86abd96ee687e4f1fea09047ffaa6c191fcb9e61eded",
+      "upstream_file": "source/ffunicode.c",
+      "upstream_symbol": "ff_wtoupper",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe8a8",
+      "end_exclusive": "0x801fe990",
+      "size": 232,
+      "sha256": "675ab04c8e9883f77bbd3278dba2f57cd659b3c1b00e5093c5037230db9a5e6d",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "cmp_lfn",
+      "confidence": "high"
+    },
+    {
+      "start": "0x801fe990",
+      "end_exclusive": "0x801fe9f8",
+      "size": 104,
+      "sha256": "5fc3be1a007f56a7aa75d33ee6e47b699eaeef64e490d7061314c93e79d8ba4e",
+      "upstream_file": "source/ffunicode.c",
+      "upstream_symbol": "ff_uni2oem",
+      "confidence": "high"
+    }
+  ],
+  "excluded_derived_ranges": [
+    {
+      "start": "0x801f9f10",
+      "end_exclusive": "0x801f9fe8",
+      "size": 216,
+      "sha256": "212658a38e46038b2d6f7e1a20c8fbac14ef53d91ca2d1d145032a945cddb5e2",
+      "upstream_file": "source/ff.c",
+      "upstream_symbol": "f_getfree",
+      "classification": "mixed custom routine derived from the exFAT and cached-count portions of f_getfree",
+      "reason": "It accepts a FATFS pointer directly and omits the public API's path mounting, output-pointer interface, and FAT12/16/32 traversal."
+    }
+  ]
+}

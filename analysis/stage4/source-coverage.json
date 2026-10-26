@@ -14,12 +14,22 @@
     "sha256": "3764ec2a48529924b1422b4e19eaada348cb5a2f9fde310a94b75d332c601b47",
     "upstream_commit": "94f9215a00382c218288ea230d5f81d73b7f2f9b"
   },
+  "public_badupdate_helper": {
+    "artifact_range": "0x0294-0x0300",
+    "upstream_artifact": "BadUpdatePayload/BadUpdateExploit-4thStage.bin",
+    "upstream_binary_range": "0x00e0-0x014c",
+    "size": 108,
+    "sha256": "51f380a59f418ac0588a5ab6836cd6c7fdc3f003927b7e2417ad62ef402c4436",
+    "symbol": "HvxSendSMCMessage",
+    "source_path": "third_party/Xbox360BadUpdate/Stage4/BadUpdateExploit-4thStage.asm",
+    "upstream_commit": "94f9215a00382c218288ea230d5f81d73b7f2f9b"
+  },
   "coverage": [
     {"start": "0x0000", "end": "0x00ec", "kind": "peer_cpp", "symbols": ["RunStage4"], "sources": ["reconstruction/stage4/runtime.cpp", "reconstruction/stage4/entry_flow.cpp"]},
     {"start": "0x00ec", "end": "0x0174", "kind": "peer_cpp", "symbols": ["ParsePatchStream", "WriteBytes"], "sources": ["reconstruction/stage4/patch_stream.cpp", "reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
     {"start": "0x0174", "end": "0x0210", "kind": "peer_cpp", "symbols": ["ParseAddressValueTable", "GetFlagTableBase"], "sources": ["reconstruction/stage4/maintenance_helpers.cpp", "reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
     {"start": "0x0210", "end": "0x0294", "kind": "peer_cpp", "symbols": ["PlanMappingRange"], "sources": ["reconstruction/stage4/maintenance_helpers.cpp", "reconstruction/stage4/runtime.cpp"]},
-    {"start": "0x0294", "end": "0x0300", "kind": "peer_cpp", "symbols": ["SendSmcMessage", "WriteSmcMmioWord", "SmcIoBarrier"], "sources": ["reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
+    {"start": "0x0294", "end": "0x0300", "kind": "upstream_target_assembly", "symbols": ["HvxSendSMCMessage"], "sources": ["third_party/Xbox360BadUpdate/Stage4/BadUpdateExploit-4thStage.asm", "reconstruction/stage4/runtime.cpp", "reconstruction/stage4/runtime.hpp"]},
     {"start": "0x0300", "end": "0x0380", "kind": "peer_constants_and_reserved", "symbols": ["kCleanHvDestination"], "sources": ["reconstruction/stage4/runtime.hpp", "analysis/reconstruction/PeerPressureExploit-4thStage.reconstructed.S"]},
     {"start": "0x0380", "end": "0x04e0", "kind": "peer_generated_cpp_data", "symbols": ["kEmbeddedPatchStream"], "sources": ["reconstruction/stage4/embedded_data.hpp"]},
     {"start": "0x04e0", "end": "0x0508", "kind": "peer_target_code_and_cpp", "symbols": ["SelectPostOutputTarget"], "sources": ["reconstruction/stage4/resident_runtime.hpp"]},

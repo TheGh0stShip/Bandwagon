@@ -8,6 +8,8 @@ cxx="${CXX:-g++}"
 
 python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
 python3 "$root/tools/verify_kernel_expansion_source_attribution.py"
+python3 "$root/tools/verify_kernel_expansion_fatfs_map.py"
+python3 "$root/tools/verify_kernel_expansion_function_ownership.py"
 python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/bootstrap_mapping.cpp" \

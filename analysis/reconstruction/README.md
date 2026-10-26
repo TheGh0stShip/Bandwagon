@@ -16,9 +16,10 @@ local public Stage4 artifact rather than duplicated.
 The portable `reconstruction/stage4/rbtr_dispatcher.*` layer models the
 resident dispatch table and argument transformations without performing live
 hypervisor operations.
-The complete Peer-authored preamble also has C++/typed-data coverage under
-`reconstruction/stage4/`; its whole-file source/ownership partition is checked
-by `tools/verify_stage4_source_coverage.py`.
+The complete Stage4 preamble also has C++/typed-data coverage under
+`reconstruction/stage4/`; its whole-file source/ownership partition, including
+the public BadUpdate SMC helper, is checked by
+`tools/verify_stage4_source_coverage.py`.
 
 ## Stage3
 
@@ -38,8 +39,10 @@ hypervisor calls.
 `PeerPressureExploit-Stage2.reconstructed.S` rebuilds the entire 217,796-byte
 HDD ROP image, embedded relocated worker, strings, and trailer descriptor.
 `tools/reconstruct_hdd_stage2.py` generates the assembly and 87-entry worker
-map. The common reconstruction verifier now checks Stage2, Stage3, and Stage4
-as complete files.
+map. `tools/verify_hdd_stage2_source_attribution.py` separately proves the
+worker's public BadUpdate, compiler/platform, and candidate Peer-specific
+boundaries. The common reconstruction verifier checks Stage2, Stage3, and
+Stage4 as complete files.
 
 `HddSecuritySectorPayload.reconstructed.S` is the exact six-word HDD trigger
 record. Its known retail-17559 stack-pivot word and unresolved kernel pointers
