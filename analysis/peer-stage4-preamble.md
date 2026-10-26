@@ -268,6 +268,12 @@ source/destination/count, and patch-stream offset; mode 1's initial `0x20` bit
 clear and pair-table call; mode 2's range plan; the no-op default; and the
 common `0x41414141` return marker. It performs none of the privileged calls.
 
+`reconstruction/stage4/runtime.cpp` is the source-level implementation that
+composes the recovered entry, patch parser, pair-table helper, and range helper.
+Privileged reads, writes, cache relocation, flushes, and SMC I/O are isolated
+behind a `Platform` interface, allowing the full three-mode flow to execute in
+host tests against a mock while remaining usable by a target-specific backend.
+
 `reconstruction/stage4/copied_continuation.cpp` reconstructs the copied block
 at `0x600032048` as an explicit two-call plan. It preserves the incoming stack,
 TOC, `r28`-`r30`, and first-call-result decisions; identifies the embedded

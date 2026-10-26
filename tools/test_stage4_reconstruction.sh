@@ -44,4 +44,13 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/rsa_public_key_test"
 "$work/rsa_public_key_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/stage4/patch_stream.cpp" \
+    "$root/reconstruction/stage4/maintenance_helpers.cpp" \
+    "$root/reconstruction/stage4/entry_flow.cpp" \
+    "$root/reconstruction/stage4/runtime.cpp" \
+    "$root/reconstruction/stage4/runtime_test.cpp" \
+    -o "$work/runtime_test"
+"$work/runtime_test"
+
 echo "Stage4 portable reconstruction tests passed"

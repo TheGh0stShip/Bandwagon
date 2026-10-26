@@ -18,7 +18,7 @@ not the final implementation.
 
 | Component | Binary-exact evidence | Source-level recovery |
 |---|---|---|
-| Stage4 | Complete whole-file assembly | Partial: entry, patch stream, maintenance helpers, resident dispatcher, copied continuation, RSA key layout |
+| Stage4 | Complete whole-file assembly | Partial: executable modes 0-2 through a platform adapter; resident dispatcher, copied continuation, RSA key layout |
 | Stage3 | Complete whole-file assembly | Partial: resident probe and top-level entry decisions |
 | Motherboard SMC patches | Complete streams and mapped 8051 listings | Partial: shared `XBPP` handshake and staged transfer |
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
