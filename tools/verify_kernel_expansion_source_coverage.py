@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+"""Bind lifted Kernel Expansion functions to exact immutable image bytes."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parent.parent
+MANIFEST = (
+    ROOT / "analysis/kernel-expansion/KernelExpansion-peer-source-coverage.json"
+)
+
+
+def main() -> None:
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    image_info = manifest["image"]
+    image = (ROOT / image_info["path"]).read_bytes()
+    if len(image) != image_info["size"]:
+        raise SystemExit("Kernel Expansion image size differs from source manifest")
+    if hashlib.sha256(image).hexdigest() != image_info["sha256"]:
+        raise SystemExit("Kernel Expansion image hash differs from source manifest")
+
+    inventory = json.loads(
+        (ROOT / manifest["function_inventory"]).read_text(encoding="utf-8")
+    )
+    inventory_functions = {
+        (item["address"].lower(), item["name"]): item
+        for item in inventory["functions"]
+    }
+
+    base = int(image_info["base_address"], 0)
+    total = 0
+    for function in manifest["functions"]:
+        key = (function["address"].lower(), function["semantic_name"])
+        if key not in inventory_functions:
+            raise SystemExit(f"missing Kernel Expansion inventory entry: {key}")
+        address = int(function["address"], 0)
+        offset = address - base
+        payload = image[offset:offset + function["size"]]
+        if len(payload) != function["size"]:
+            raise SystemExit(f"truncated Kernel Expansion function at {address:#x}")
+        if hashlib.sha256(payload).hexdigest() != function["sha256"]:
+            raise SystemExit(f"Kernel Expansion function changed at {address:#x}")
+        source = (ROOT / function["source"]).read_text(encoding="utf-8")
+        header = (
+            ROOT / "reconstruction/kernel_expansion/runtime.hpp"
+        ).read_text(encoding="utf-8")
+        for symbol in function["symbols"]:
+            if symbol not in source and symbol not in header:
+                raise SystemExit(f"missing Kernel Expansion source symbol: {symbol}")
+        total += len(payload)
+
+    for test in manifest["tests"]:
+        if not (ROOT / test).is_file():
+            raise SystemExit(f"missing Kernel Expansion source test: {test}")
+    print(
+        "Kernel Expansion source coverage verified: "
+        f"{len(manifest['functions'])} identified functions, {total} exact bytes"
+    )
+
+
+if __name__ == "__main__":
+    main()

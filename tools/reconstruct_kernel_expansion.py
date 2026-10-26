@@ -36,8 +36,9 @@ SEMANTIC_NAMES = {
     0x4938: "ParseDllConfigEntry",
     0x7E68: "FindSoftmodUpdateArchive",
     0x8080: "LaunchSettingsApp",
-    0xA320: "RecognizeFat32Volume",
+    0xA320: "ClassifyFatBootSector",
     0xA540: "RecognizeGptDisk",
+    0xA640: "IsAsciiAlphaNumeric",
     0xA688: "CheckPhaseTwoMarker",
     0xA798: "LaunchUpdateCheck",
 }

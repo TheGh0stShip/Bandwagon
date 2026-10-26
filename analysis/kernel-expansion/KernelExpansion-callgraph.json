@@ -4866,8 +4866,8 @@
       "caller_address": "0x801f6b68",
       "instruction_address": "0x801f6c30",
       "target_address": "0x801fa320",
-      "callee": "RecognizeFat32Volume",
-      "target_containing_function": "RecognizeFat32Volume"
+      "callee": "ClassifyFatBootSector",
+      "target_containing_function": "ClassifyFatBootSector"
     },
     {
       "caller": "fn_801F6B68",
@@ -4898,16 +4898,16 @@
       "caller_address": "0x801f6b68",
       "instruction_address": "0x801f6cf8",
       "target_address": "0x801fa320",
-      "callee": "RecognizeFat32Volume",
-      "target_containing_function": "RecognizeFat32Volume"
+      "callee": "ClassifyFatBootSector",
+      "target_containing_function": "ClassifyFatBootSector"
     },
     {
       "caller": "fn_801F6B68",
       "caller_address": "0x801f6b68",
       "instruction_address": "0x801f6d5c",
       "target_address": "0x801fa320",
-      "callee": "RecognizeFat32Volume",
-      "target_containing_function": "RecognizeFat32Volume"
+      "callee": "ClassifyFatBootSector",
+      "target_containing_function": "ClassifyFatBootSector"
     },
     {
       "caller": "fn_801F6B68",
@@ -5130,8 +5130,8 @@
       "caller_address": "0x801f7938",
       "instruction_address": "0x801f7a04",
       "target_address": "0x801fa640",
-      "callee": "fn_801FA640",
-      "target_containing_function": "fn_801FA640"
+      "callee": "IsAsciiAlphaNumeric",
+      "target_containing_function": "IsAsciiAlphaNumeric"
     },
     {
       "caller": "fn_801F7B40",
@@ -6558,7 +6558,7 @@
       "target_containing_function": "fn_801FC350"
     },
     {
-      "caller": "RecognizeFat32Volume",
+      "caller": "ClassifyFatBootSector",
       "caller_address": "0x801fa320",
       "instruction_address": "0x801fa344",
       "target_address": "0x801fa4d8",

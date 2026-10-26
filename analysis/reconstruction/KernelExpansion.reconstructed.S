@@ -10578,7 +10578,7 @@ fn_801FA300:
     .long 0x5563dffe /* 0x0a314 */
     .long 0x4e800020 /* 0x0a318 */
     .long 0x00000000 /* 0x0a31c */
-RecognizeFat32Volume:
+ClassifyFatBootSector:
     .long 0x7d8802a6 /* 0x0a320 */
     .long 0x9181fff8 /* 0x0a324 */
     .long 0xfbe1fff0 /* 0x0a328 */
@@ -10781,7 +10781,7 @@ RecognizeGptDisk:
     .long 0x38600000 /* 0x0a634 */
     .long 0x4e800020 /* 0x0a638 */
     .long 0x00000000 /* 0x0a63c */
-fn_801FA640:
+IsAsciiAlphaNumeric:
     .long 0x7c6b0774 /* 0x0a640 */
     .long 0x2f0b0030 /* 0x0a644 */
     .long 0x41980014 /* 0x0a648 */

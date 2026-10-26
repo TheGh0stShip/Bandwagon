@@ -19,8 +19,9 @@
     {"address":"0x801f4938","recovered_name":"ParseDllConfigEntry","semantic_name":"ParseDllConfigEntry","confidence":"high","evidence":["DllConfig, TitleID, MediaID, version, and FileName keys"]},
     {"address":"0x801f7e68","recovered_name":"FindSoftmodUpdateArchive","semantic_name":"FindSoftmodUpdateArchive","confidence":"high","evidence":["mass-storage UpdateData.zip format path"]},
     {"address":"0x801f8080","recovered_name":"LaunchSettingsApp","semantic_name":"LaunchSettingsApp","confidence":"high","evidence":["direct SettingsApp.xex path reference"]},
-    {"address":"0x801fa320","recovered_name":"RecognizeFat32Volume","semantic_name":"RecognizeFat32Volume","confidence":"high","evidence":["FAT32 filesystem signature"]},
+    {"address":"0x801fa320","recovered_name":"ClassifyFatBootSector","semantic_name":"ClassifyFatBootSector","confidence":"high","evidence":["exFAT and FAT32 filesystem signatures","multiple classification return values"]},
     {"address":"0x801fa540","recovered_name":"RecognizeGptDisk","semantic_name":"RecognizeGptDisk","confidence":"high","evidence":["EFI PART signature"]},
+    {"address":"0x801fa640","recovered_name":"IsAsciiAlphaNumeric","semantic_name":"IsAsciiAlphaNumeric","confidence":"high","evidence":["direct ASCII digit and upper/lowercase range comparisons"]},
     {"address":"0x801fa688","recovered_name":"CheckPhaseTwoMarker","semantic_name":"CheckPhaseTwoMarker","confidence":"high","evidence":["PPROOT update.phase2 path"]},
     {"address":"0x801fa798","recovered_name":"LaunchUpdateCheck","semantic_name":"LaunchUpdateCheck","confidence":"high","evidence":["direct UpdateCheck.xex path reference"]}
   ]

@@ -30,7 +30,8 @@ not the final implementation.
 | UpdateCheck | Complete initialized sections | Partial: both identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
 | BootEdit | Complete initialized sections | Partial: theme navigation/edit decisions |
-| Stage2 / KernelExpansion | Complete whole-file assembly | Initial semantic maps only |
+| KernelExpansion | Complete whole-file assembly | Partial: BootXell launch, GPT recognition/checksum, and ASCII predicate have exact-byte-bound, tested C++ lifts |
+| Stage2 | Complete whole-file assembly | Initial semantic map only |
 
 ## Completion rule
 

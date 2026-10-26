@@ -1332,7 +1332,7 @@
       "address": "0x801fa320",
       "section_offset": "0xa320",
       "size_to_next_symbol": 440,
-      "name": "RecognizeFat32Volume",
+      "name": "ClassifyFatBootSector",
       "evidence": [
         "behavioral name corroborated by strings and call role"
       ],
@@ -1362,9 +1362,9 @@
       "address": "0x801fa640",
       "section_offset": "0xa640",
       "size_to_next_symbol": 72,
-      "name": "fn_801FA640",
+      "name": "IsAsciiAlphaNumeric",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

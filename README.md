@@ -67,9 +67,9 @@ The public BadUpdate source baseline is pinned as the
 `analysis/component-inventory.json` is the generated manifest-wide completion
 matrix. Of 33 installed components, no Peer raw payload remains without
 binary-exact source-form reconstruction. `FlashDmaPayload.bin` additionally
-has complete source-level C++ recovery; Stage2 and `KernelExpansion.bin` still
-require that maintainable-source lift beyond their byte-identical assembly
-evidence.
+has complete source-level C++ recovery. `KernelExpansion.bin` now has its first
+three exact-byte-bound C++ lifts, while the remainder and Stage2 still require
+maintainable-source recovery beyond their byte-identical assembly evidence.
 
 Semantic recovery of remaining functions, types, globals, indirect control
 flow, raw stage payloads, and SMC firmware is still in progress.

@@ -1,0 +1,41 @@
+{
+  "schema": "bandwagon-kernel-expansion-peer-source-coverage-v1",
+  "status": "partial",
+  "image": {
+    "path": "PeerPressure/System/KernelExpansion.bin",
+    "base_address": "0x801f0000",
+    "size": 83792,
+    "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8"
+  },
+  "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
+  "functions": [
+    {
+      "address": "0x801f09d0",
+      "size": 128,
+      "sha256": "e2ccda27603a0b318a1fee2874bbb3a5fbe6fce2d294ad94a3f3548f7b12cbef",
+      "semantic_name": "LaunchBootXell",
+      "source": "reconstruction/kernel_expansion/runtime.cpp",
+      "symbols": ["LaunchBootXell", "kBootXellPath", "kXexEntryOrdinal"]
+    },
+    {
+      "address": "0x801fa540",
+      "size": 256,
+      "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",
+      "semantic_name": "RecognizeGptDisk",
+      "source": "reconstruction/kernel_expansion/runtime.cpp",
+      "symbols": ["ComputeRecoveredGptChecksum", "IsRecognizedGptHeader"]
+    },
+    {
+      "address": "0x801fa640",
+      "size": 72,
+      "sha256": "83e84dfb3cd5429eaf62716815d63e3d75ada84f05ca1299740013b3e3e56990",
+      "semantic_name": "IsAsciiAlphaNumeric",
+      "source": "reconstruction/kernel_expansion/runtime.cpp",
+      "symbols": ["IsAsciiAlphaNumeric"]
+    }
+  ],
+  "tests": [
+    "reconstruction/kernel_expansion/runtime_test.cpp",
+    "tools/test_kernel_expansion_reconstruction.sh"
+  ]
+}

@@ -46,3 +46,30 @@ descriptions, not claims that original private symbol names were recovered.
 The reconstruction closes the byte/source gap for the final manifest-listed
 raw Peer payload. Higher-level naming and type recovery remains an ongoing
 reverse-engineering layer and is tracked separately from byte completeness.
+
+## Maintainable source recovery
+
+`reconstruction/kernel_expansion/runtime.{hpp,cpp}` begins the source-level
+lift. The first exact-byte-bound routines are:
+
+- `LaunchBootXell` (`0x801f09d0`, 128 bytes), represented as a typed service
+  workflow that loads `PPROOT:\OtherOS\BootXell.xex`, resolves ordinal one,
+  invokes it on success, and unloads every non-null returned module handle.
+- `RecognizeGptDisk` (`0x801fa540`, 256 bytes), represented as a bounds-safe
+  GPT-header recognizer and the exact recovered reflected CRC-32 loop. The
+  binary includes the stored checksum field in its checksum input; the lift
+  preserves and tests that unusual observed behavior rather than silently
+  replacing it with the conventional GPT algorithm.
+- `IsAsciiAlphaNumeric` (`0x801fa640`, 72 bytes), a direct typed predicate for
+  the binary's three accepted ASCII ranges.
+
+Their source coverage is bound to exact function hashes by
+`KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
+with `tools/test_kernel_expansion_reconstruction.sh`.
+
+This source-level layer remains partial. The exact whole-file assembly is the
+evidence oracle, not a claim that all 351 discovered entries are maintainable
+source. The routine formerly labeled `RecognizeFat32Volume` also identifies
+exFAT and returns multiple classification values; it is now conservatively
+named `ClassifyFatBootSector` and still needs a typed lift before it can be
+counted as recovered source.
