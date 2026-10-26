@@ -22,7 +22,7 @@
   "evidence_inputs": [
     {"path":"analysis/xex/BootEdit-callgraph.json","schema":"bandwagon-ppc-direct-callgraph-v1","sha256":"e36d1ea7d3b73eaca2d3f893a4218bf9dba1e016fd54214635185d896aec9b9a","role":"direct-call topology and ownership-boundary evidence"},
     {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa","role":"product, ImGui, backend, and standard-library diagnostic anchors"},
-    {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","sha256":"026f9b01e179ef18c273ce9e26d90cf10960c4be7c0820e76c9a8732a7385aac","role":"high-confidence product semantic overlay, including one non-pdata leaf"},
+    {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","sha256":"e530ffa87602851b7e51735b75d52ef01312c41c9be72afd2d39769fd6352e83","role":"high-confidence product semantic overlay, including one non-pdata leaf"},
     {"path":"analysis/xex/BootEdit-thirdparty-symbols.json","schema":"bandwagon-bootedit-thirdparty-symbols-v1","sha256":"b28e6c9a06b5c084b12739df38b0f43f68534319c87ee1d24a2615b78a601e54","role":"high-confidence Dear ImGui version/layout-checker anchor"},
     {"path":"analysis/xex/BootEdit-provenance.json","schema":"bandwagon-bootedit-provenance-v1","sha256":"6fea0971d477922695d565eec451ba61a865b0b37fc627ebb0e447b42be2f41e","role":"declared Dear ImGui release and independent binary signatures"}
   ],
@@ -87,9 +87,10 @@
     "before": {"unknown_entry_count":144,"unknown_size":41248,"product_application_entry_count":24,"product_application_size":14072},
     "reassignments": [
       {"from":"unknown","to":"upstream_imgui_1_86","start":"0x82011ed8","end_exclusive":"0x82014428","inventory_entry_count":22,"size":9552,"basis":"SettingsApp ImGui opening sequence, exact normalized matches, object-family continuity, and later 1.86 checker"},
-      {"from":"unknown","to":"platform_toolchain","inventory_entry_count":4,"size":360,"basis":"exact relocation-normalized matches to functions independently platform-owned in Updater","addresses":["0x82011878","0x8204c280","0x8204cb90","0x82051af8"]}
+      {"from":"unknown","to":"platform_toolchain","inventory_entry_count":4,"size":360,"basis":"exact relocation-normalized matches to functions independently platform-owned in Updater","addresses":["0x82011878","0x8204c280","0x8204cb90","0x82051af8"]},
+      {"from":"product_application","to":"unknown","start":"0x82053238","end_exclusive":"0x820533b0","inventory_entry_count":1,"size":376,"basis":"the unsplittable inventory extent contains four generic/XDK-facing bodies, including two normalized-identical SettingsApp twins; sharing proves neither product specificity nor platform provenance"}
     ],
-    "after": {"unknown_entry_count":118,"unknown_size":31336,"product_application_entry_count":24,"product_application_size":14072}
+    "after": {"unknown_entry_count":119,"unknown_size":31712,"product_application_entry_count":23,"product_application_size":13696}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -104,7 +105,19 @@
       {"bootedit_address":"0x8204c280","other_component":"Updater","other_address":"0x98005d80","size":88,"normalized_sha256":"57c01b9b4b707d1ecaee88be6b5b1331c6ba498d836fcde626a86436af40dc2a","classification":"platform_toolchain"},
       {"bootedit_address":"0x8204cb90","other_component":"Updater","other_address":"0x98005080","size":72,"normalized_sha256":"d892798f65ba7db0356d04295095105bf87f488867ca9f5e043fa84492d43690","classification":"platform_toolchain"},
       {"bootedit_address":"0x82051af8","other_component":"Updater","other_address":"0x98008b20","size":88,"normalized_sha256":"06d0a7469ab57b789dcc1f5067e60ede573a9a66ef90a73527de362bb5278303","classification":"platform_toolchain"}
-    ]
+    ],
+    "shared_unknown_container": {
+      "address": "0x82053238",
+      "end_exclusive": "0x820533b0",
+      "classification": "unknown",
+      "reason": "Multiple generic/XDK-facing leaf bodies share one inventory extent. Cross-component identity proves reuse but does not establish redistributable or proprietary platform provenance.",
+      "subranges": [
+        {"address":"0x82053238","end_exclusive":"0x820532c8","size":144,"sha256":"22f996c0c65f3e9ad07685489fda9675d310ef8267325eb8a652a4094a6457d2","role":"FindFirst-style wrapper","settings_address":"0x8202d988","normalized_sha256":"14c1682d2131fabb8e9304dd9e5b25bbd522eab16696728d76e8f0ffa7bd3aef"},
+        {"address":"0x820532c8","end_exclusive":"0x820532d8","size":16,"sha256":"59fbdd72c1c4e7c97e10d70e679fe146dff83286fa3558d9b6b7d56611e03041","role":"CreateThread wrapper"},
+        {"address":"0x820532d8","end_exclusive":"0x820532e0","size":8,"sha256":"bc6b4dd3e5626fd13af8be4528cc053d136100465383e596f94a0135b53b4cc7","role":"ANSI/platform thunk"},
+        {"address":"0x820532e0","end_exclusive":"0x820533b0","size":208,"sha256":"c1f319aba47461528c7b3d39f9dc8293bbb019629e1d3787ef957600c85e3086","role":"XLNI symbolic-launch adapter","settings_address":"0x8202da18","normalized_sha256":"d7b04007e6d852a95f95bee5772502ee3751f05442e71cd01baaa2577b2cbf88"}
+      ]
+    }
   },
   "product_application_entries": [
     {"address":"0x820110d0","role":"mount and BootAnim theme bootstrap","confidence":"high"},
@@ -118,7 +131,7 @@
     {"address":"0x8204c870","role":"ConfirmDiscardUnsavedChanges","confidence":"high"},
     {"address":"0x82050018","role":"default theme-name initializer","confidence":"high"},
     {"address":"0x820506b8","role":"EnumerateSavedThemes","confidence":"high"},
-    {"address":"0x82050958","role":"saved-theme state initializer containing ColorEqualsExact leaf","confidence":"high"},
+    {"address":"0x82050958","role":"saved-theme state initializer containing ColorsDifferExact leaf","confidence":"high"},
     {"address":"0x82050b08","role":"DrawColorContextMenu","confidence":"high"},
     {"address":"0x82050d80","role":"mesh color editor","confidence":"high"},
     {"address":"0x82050f60","role":"LoadEditorFonts","confidence":"high"},
@@ -129,11 +142,10 @@
     {"address":"0x82052060","role":"ApplyThemeSettings","confidence":"high"},
     {"address":"0x82052468","role":"DrawThemeSelector","confidence":"high"},
     {"address":"0x82052830","role":"theme-selector menu/list continuation","confidence":"high"},
-    {"address":"0x82053238","role":"launch-data symbolic-name adapter","confidence":"medium"},
     {"address":"0x820537e0","role":"BootEdit application entry/orchestration before CRT entry","confidence":"high"}
   ],
   "supplemental_discovered_functions": [
-    {"address":"0x82050a00","end_exclusive":"0x82050a4c","size":76,"sha256":"1c39100e26bf568f13260a9672759e5cd09aa4de8bca4316f4889cf0ba2c8c33","semantic_name":"ColorEqualsExact","inventory_container":"0x82050958","classification":"product_application","evidence":"non-pdata four-float equality leaf named by the semantic overlay; byte ownership remains the single product-owned containing extent"}
+    {"address":"0x82050a00","end_exclusive":"0x82050a50","size":80,"sha256":"a2139eba8b1b66a65c3c3ccfb71d72e8dd75d1bb13094b681751c1217cd0f85b","semantic_name":"ColorsDifferExact","inventory_container":"0x82050958","classification":"product_application","evidence":"non-pdata four-float difference leaf, including its return instruction, named by the semantic overlay; byte ownership remains the single product-owned containing extent"}
   ],
   "compiler_emitted_template_partition": {
     "classification": "platform_toolchain",
@@ -151,9 +163,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 24,
-      "size": 14072,
-      "concatenated_sha256": "24b77cb16919a4a3af6ea49751b1571959f55429e7903e50ef6d442150460b1c",
+      "inventory_entry_count": 23,
+      "size": 13696,
+      "concatenated_sha256": "5e624221bb46e6e6c7ee8f76914b61c1af7438c93908d0780bf83003482f363f",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -172,7 +184,6 @@
         {"start":"0x82051c08","end_exclusive":"0x82051db8","inventory_entry_count":2,"size":432,"sha256":"34aaffba30da78afa641e83f9247b4e9453df7e353c52bf98abc48c448bf04eb"},
         {"start":"0x82051e70","end_exclusive":"0x82051f28","inventory_entry_count":1,"size":184,"sha256":"abed3022e201cd788bac8558b3c42865cea2f4875856aa077ecca70c2050ab76"},
         {"start":"0x82052060","end_exclusive":"0x82052a88","inventory_entry_count":3,"size":2600,"sha256":"c4dd96f46ef9b595e2c0ff76edae0ad1ac2948e6a636eb29fd21d2b030b50739"},
-        {"start":"0x82053238","end_exclusive":"0x820533b0","inventory_entry_count":1,"size":376,"sha256":"131570ed2ad2c33b19dbf2b49a3748d2061dd18a2f389de52d0153a8b2c71e58"},
         {"start":"0x820537e0","end_exclusive":"0x82053a40","inventory_entry_count":1,"size":608,"sha256":"0b31a4bde8d411b828adc22afe159f2d3118c8c8f647b9a5298670abb1c8992a"}
       ]
     },
@@ -203,9 +214,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 118,
-      "size": 31336,
-      "concatenated_sha256": "2760703f55e73d9d7133f524bfba9bc0c6513976cbefc50d816dffc9f115642d",
+      "inventory_entry_count": 119,
+      "size": 31712,
+      "concatenated_sha256": "630cd2035302b358ce1bc948d2f0e584555f924052834f70647f533db2b514c0",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -225,8 +236,7 @@
         {"start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"sha256":"8c68ac5f246d04c85c76a82642a061497f7696e8409164771fe87170125616ff"},
         {"start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"sha256":"5439f89570a358c61190693664e17b8f9216694f756e0858894af0ac614a67b8"},
         {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
-        {"start":"0x82052a88","end_exclusive":"0x82053238","inventory_entry_count":13,"size":1968,"sha256":"3cc32e440ca29100e2c04611ab52f25f7e9d994129ff09bf994c230186d52dcd"},
-        {"start":"0x820533b0","end_exclusive":"0x820537e0","inventory_entry_count":6,"size":1072,"sha256":"f2c7f01dfc78bb436607d894b8367817537e9d2fdfd306b509276d66782fbb3c"}
+        {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
     }
   },
@@ -234,19 +244,20 @@
     "The 11-entry, 5,128-byte Xbox 360/DX9 backend is certainly distinct from unmodified ImGui core, but may mix adapted MIT imgui_impl_dx9 code with closed Xbox integration. Backend role alone is not source provenance, so it remains unknown.",
     "Early theme/archive/framework helpers and generic C++ bodies interposed around named application functions remain unknown unless a product string, named call chain, or standard-library diagnostic proves ownership.",
     "The 0x82052a88 packed-resource family checks XPR2, fixes 16-byte resource records, handles TX texture records, and is shared with SettingsApp. That establishes Xbox packed-resource role but not exact public/platform source provenance, so the family remains unknown.",
+    "The 0x82053238 inventory extent bundles a FindFirst-style wrapper, CreateThread wrapper, platform thunk, and XLNI symbolic-launch adapter. Two bodies normalize exactly to SettingsApp, but shared use and standard Xbox strings do not prove public/platform provenance, so the whole unsplittable extent remains unknown and is not source-covered as BootEdit product code.",
     "The non-pdata packed-resource constructor at 0x82052a60 is embedded at the tail of the product-owned 0x82052830 inventory extent; under the inventory-granularity policy those 40 bytes inherit the containing extent instead of creating overlapping ownership.",
-    "ColorEqualsExact at 0x82050a00 is a known non-pdata leaf inside the product-owned 0x82050958 inventory extent; it is not counted as a 935th inventory entry.",
+    "ColorsDifferExact at 0x82050a00 is a known non-pdata leaf inside the product-owned 0x82050958 inventory extent; it is not counted as a 935th inventory entry.",
     "Product classification is component-level reconstruction priority, never a claim that a named individual personally authored the bytes."
   ],
   "totals": {
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 24,
-    "product_application_size": 14072,
-    "non_product_entry_count": 910,
-    "non_product_size": 355352,
-    "unknown_entry_count": 118,
-    "unknown_size": 31336
+    "product_application_entry_count": 23,
+    "product_application_size": 13696,
+    "non_product_entry_count": 911,
+    "non_product_size": 355728,
+    "unknown_entry_count": 119,
+    "unknown_size": 31712
   }
 }

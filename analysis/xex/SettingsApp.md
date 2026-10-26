@@ -47,6 +47,12 @@ The XPR2 resource helpers and mixed Xbox 360/DX9 backend stay unknown because
 role and API use do not establish provenance. Run
 `tools/verify_settingsapp_function_ownership.py` to reproduce the partition.
 
+`SettingsApp-peer-source-coverage.json` currently binds 3 exact product/mixed
+entries / 3,112 bytes to readable models: `FindOfflineUpdate`,
+`FetchLatestRelease`, and `DrawAutoUpdateSettings`. The remaining conservative
+upper bound is 243 entries / 59,152 bytes; those entries still require either
+positive non-product provenance or readable product source.
+
 ## Recovered application behavior
 
 The settings application coordinates the complete user-facing configuration

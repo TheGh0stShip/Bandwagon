@@ -9,6 +9,7 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/verify_updater_function_ownership.py"
+python3 "$root/tools/verify_updater_peer_source_coverage.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/updater/bootstrap_record.cpp" \
@@ -39,5 +40,16 @@ python3 "$root/tools/verify_updater_function_ownership.py"
     "$root/reconstruction/updater/parent_directories_test.cpp" \
     -o "$work/parent_directories_test"
 "$work/parent_directories_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/updater/archive_wrapper.cpp" \
+    "$root/reconstruction/updater/bootstrap_record.cpp" \
+    "$root/reconstruction/updater/parent_directories.cpp" \
+    "$root/reconstruction/updater/phase_two_list.cpp" \
+    "$root/reconstruction/updater/softmod_manifest.cpp" \
+    "$root/reconstruction/updater/updater_runtime.cpp" \
+    "$root/reconstruction/updater/updater_runtime_test.cpp" \
+    -o "$work/updater_runtime_test"
+"$work/updater_runtime_test"
 
 echo "Updater portable reconstruction tests passed"

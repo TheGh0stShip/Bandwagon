@@ -189,14 +189,17 @@ portable serializer matches valid inputs and rejects paths longer than 258
 bytes instead of reproducing the resulting stack over-read.
 
 `reconstruction/updater/parent_directories.cpp` recovers the path traversal
-inside `EnsureParentDirectories`. Starting at character offset 1, it visits
-each backslash-delimited prefix but not the final filename. The platform layer
-creates each prefix and treats error 183 (`ERROR_ALREADY_EXISTS`) as success;
-the portable layer returns the exact ordered prefix list without filesystem
-side effects.
+inside `EnsureParentDirectories`. It skips the first backslash that terminates
+the root, then visits each later slash- or backslash-delimited prefix but not
+the final filename. The platform layer creates each prefix and treats error
+183 (`ERROR_ALREADY_EXISTS`) as success; the portable layer returns the exact
+ordered prefix list without filesystem side effects.
 
-The executable code section is now exactly reconstructable, but this is not
-yet a source-complete claim for the application. The next Updater phase is to
-expand semantic names and types across the remaining application functions,
-decode the reconstructed data structures, recover the loader-only metadata,
-and separate bundled runtime/library code from Peer-specific code.
+`Updater-peer-source-coverage.json` closes the application queue: all 20
+product entries / 6,728 bytes are bound to exact image extents and readable,
+tested C++ behavior. `updater_runtime.cpp` supplies injected archive, file,
+disk, progress, and hashing boundaries, so host tests exercise the update
+policy without touching a physical Xbox disk. The 22 miniz entries remain
+mapped to pinned upstream source and the 334 MSVC/Xbox entries remain explicit
+ABI/toolchain boundaries; neither set is relifted. Updater is therefore
+source-complete within the current component boundary.

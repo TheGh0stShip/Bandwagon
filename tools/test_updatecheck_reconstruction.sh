@@ -23,4 +23,16 @@ python3 "$root/tools/verify_updatecheck_function_ownership.py"
     -o "$work/latest_release_test"
 "$work/latest_release_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/update_check/http_response.cpp" \
+    "$root/reconstruction/update_check/http_response_test.cpp" \
+    -o "$work/http_response_test"
+"$work/http_response_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/update_check/certificate_store.cpp" \
+    "$root/reconstruction/update_check/certificate_store_test.cpp" \
+    -o "$work/certificate_store_test"
+"$work/certificate_store_test"
+
 echo "UpdateCheck portable reconstruction tests passed"

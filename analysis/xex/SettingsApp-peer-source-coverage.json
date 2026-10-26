@@ -1,0 +1,106 @@
+{
+  "schema": "bandwagon-settingsapp-peer-source-coverage-v1",
+  "status": "partial_exact_entry_coverage",
+  "coverage_semantics": "A covered entry is an exact SettingsApp function-inventory extent with a hash-bound readable C++ behavioral model for its evidenced product logic. The models deliberately abstract platform I/O, UI drawing, JsonCpp/Miniz calls, and other already separated dependencies; coverage is not a claim of recompilation identity or complete statement-by-statement decompilation.",
+  "authorship_policy": "Product/mixed coverage identifies the reconstruction queue and is not a claim that a named individual personally authored every instruction in the covered extent.",
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe",
+    "format": "memory-layout PE image extracted from PeerPressure/System/SettingsApp.xex",
+    "base_address": "0x82000000",
+    "size": 2555904,
+    "sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"
+  },
+  "evidence_artifacts": {
+    "function_inventory": {
+      "path": "analysis/xex/SettingsApp-functions.json",
+      "schema": "bandwagon-xbox-pdata-functions-v1",
+      "size": 347361,
+      "sha256": "db1b3fc77c2f56d7c2ef242fb1a7f19d006fddc3c71af906f5a801e34c446797",
+      "entry_count": 1824
+    },
+    "function_ownership": {
+      "path": "analysis/xex/SettingsApp-function-ownership.json",
+      "schema": "bandwagon-settingsapp-function-ownership-v1",
+      "size": 28792,
+      "sha256": "5efdb1291fdc2b7a794379f8fa380e3643238e4e4ccb5e36ee7537c7cafa816a"
+    },
+    "semantic_symbols": {
+      "path": "analysis/xex/SettingsApp-symbols.json",
+      "schema": "bandwagon-settingsapp-semantic-symbols-v1",
+      "size": 3350,
+      "sha256": "a22f14cd7bdb119752f777f6569d41e69e44bbb19a37483d7a589a8574af0364"
+    },
+    "string_xrefs": {
+      "path": "analysis/xex/SettingsApp-string-xrefs.json",
+      "schema": "bandwagon-ppc-string-xrefs-v1",
+      "size": 106108,
+      "sha256": "9a34f7db91772e1b75bdb5b952453285849f01f2287e5f8600ed23724eabe2a3"
+    }
+  },
+  "source_artifacts": {
+    "offline_update_source": {"path":"reconstruction/settings_app/offline_update.cpp","kind":"source","size":1025,"sha256":"fe5bcfa134f8ffe89022c507d4ab0ecf6cf8fd0ec406eb7e0ebe82e1cbcd4f97"},
+    "offline_update_header": {"path":"reconstruction/settings_app/offline_update.hpp","kind":"header","size":704,"sha256":"c670844f744b4c18a8ed53ddbf6c78c951e270a964dab668358ee387f39ce634"},
+    "offline_update_test": {"path":"reconstruction/settings_app/offline_update_test.cpp","kind":"test","size":1987,"sha256":"9ee95e0b3dfdc91157526e77b9d7f8683cf995903dddb76fa1aacaa39f3b56ef"},
+    "release_metadata_source": {"path":"reconstruction/settings_app/release_metadata.cpp","kind":"source","size":1101,"sha256":"256b215554f43c4535b9e0323912e04f9b9a62a7a5dc0db324e28d5b74903604"},
+    "release_metadata_header": {"path":"reconstruction/settings_app/release_metadata.hpp","kind":"header","size":1083,"sha256":"38419d4f64e248b8d2328bc1746e20d967b73fa6dd3d5378e4cbb44508aa5048"},
+    "release_metadata_test": {"path":"reconstruction/settings_app/release_metadata_test.cpp","kind":"test","size":1464,"sha256":"c423fcafc9b4d08f0e1615244be9fde918fb802e991b1463652fcee6a8508fb7"},
+    "update_decision_source": {"path":"reconstruction/settings_app/update_decision.cpp","kind":"source","size":838,"sha256":"a9a093eac31248699e6a98ee889a64785a014d7377ad7161f23a65c83b5b7383"},
+    "update_decision_header": {"path":"reconstruction/settings_app/update_decision.hpp","kind":"header","size":622,"sha256":"447cad9571a577e958a509d3def3d4cf8f9c4eaa7705146e1ffba422cd53b8a2"},
+    "update_decision_test": {"path":"reconstruction/settings_app/update_decision_test.cpp","kind":"test","size":1184,"sha256":"2cacae9fd2dcf15d4d245afd3786c64a1b870e6da324d99f9e0a00d000eab086"}
+  },
+  "functions": [
+    {
+      "address": "0x82023810",
+      "end_exclusive": "0x82023c30",
+      "size": 1056,
+      "sha256": "f86689d5e527a341cde6a751c33679e57ee9f589ff1418e791e92db6941fd64d",
+      "inventory_name": "fn_82023810",
+      "semantic_name": "FindOfflineUpdate",
+      "ownership_category": "peer_product_application_glue",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Two-device offline-update scan policy, path construction, wrapped-archive validation/version extraction, and display-version construction; file I/O and Miniz extraction are abstracted dependencies.",
+      "source_artifacts": ["offline_update_source", "offline_update_header"],
+      "test_artifacts": ["offline_update_test"],
+      "symbols": ["OfflineUpdateInfo", "IsOfflineUpdateDriveIndex", "BuildOfflineUpdatePath", "ParseOfflineUpdate"],
+      "required_strings": ["Mass%d:\\$SoftmodUpdate\\UpdateData.zip", "ChangeLog.txt", "v%d.%d.%d"]
+    },
+    {
+      "address": "0x82024c18",
+      "end_exclusive": "0x82025240",
+      "size": 1576,
+      "sha256": "0c2c89e7b193b702fc6b9c3c5c769a7b9c5e4f1f7091d723c55242498107fee6",
+      "inventory_name": "fn_82024c18",
+      "semantic_name": "FetchLatestRelease",
+      "ownership_category": "peer_product_application_glue",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Post-Json release tag/body/prerelease extraction and repeated asset-selection policy; HTTP transport and JsonCpp decoding remain abstracted dependencies.",
+      "source_artifacts": ["release_metadata_source", "release_metadata_header"],
+      "test_artifacts": ["release_metadata_test"],
+      "symbols": ["ReleaseAsset", "ReleaseMetadata", "BuildReleaseMetadata"],
+      "required_strings": ["tag_name", "prerelease", "body", "assets", "UpdateData.zip", "ChangeLog.txt", "%*c%d.%d.%d"]
+    },
+    {
+      "address": "0x8202a038",
+      "end_exclusive": "0x8202a218",
+      "size": 480,
+      "sha256": "565d8552f60bed0f7b0377a395f3169113bf6996d6e03dd5515cefab5cea8015",
+      "inventory_name": "fn_8202a038",
+      "semantic_name": "DrawAutoUpdateSettings",
+      "ownership_category": "peer_product_application_glue",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Non-ImGui update-state/version/source decision tree; widget rendering, settings persistence, and install dispatch remain abstracted dependencies.",
+      "source_artifacts": ["update_decision_source", "update_decision_header"],
+      "test_artifacts": ["update_decision_test"],
+      "symbols": ["UpdatePaneDecision", "DecideUpdatePane"],
+      "required_strings": ["Version v%d.%d.%d is available for download!", "Version v%d.%d.%d is available for install!", "Peer Pressure is up to date!", "Checking for updates...", "Failed to get update info!"]
+    }
+  ],
+  "summary": {
+    "product_mixed_function_count": 246,
+    "product_mixed_bytes": 62264,
+    "model_covered_function_count": 3,
+    "model_covered_bytes": 3112,
+    "remaining_product_mixed_function_count": 243,
+    "remaining_product_mixed_bytes": 59152
+  }
+}

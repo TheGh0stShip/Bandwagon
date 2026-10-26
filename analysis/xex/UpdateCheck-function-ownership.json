@@ -22,7 +22,7 @@
   "classification_rules": [
     "A function extent is the half-open interval from its inventory entry to the next entry, with the final extent capped at the initialized .text end.",
     "A contiguous library block requires multiple exact upstream string/semantic anchors, agreement with source organization, function-aligned link boundaries, and corroboration from the separately linked SettingsApp copy.",
-    "Product classification includes the two function-local routines already bound by UpdateCheck-peer-source-coverage.json, the XHttps/update integration bodies established by component-local strings and call topology, and the BearSSL-derived C++/platform certificate adapter; only the first two are currently source-covered.",
+    "Product classification includes the two update-policy routines, the XHttps/update integration bodies established by component-local strings and call topology, and the BearSSL-derived C++/platform certificate adapter. UpdateCheck-peer-source-coverage.json currently covers 16 of 19 product/mixed entries (4,400 of 6,768 bytes) and keeps the remaining three orchestration entries explicit.",
     "MSVC STL/CRT/startup code, the XEX entry stub, import thunks, and compiler-emitted string/vector/map support islands are platform/toolchain when binary diagnostics or structural evidence establish that provenance; merely calling XDK imports is insufficient.",
     "Code without a defensible source boundary is unknown even when it is shared between Peer Pressure components."
   ],
@@ -45,7 +45,7 @@
     },
     "peer_source_coverage": {
       "path": "analysis/xex/UpdateCheck-peer-source-coverage.json",
-      "sha256": "465fd7f8482ef3ab1ea309481468659a1fd229f97d5ca03069dc6f572b1fdd23"
+      "sha256": "4cedbbf8195a7b03a142d3c36e733c6197ca0eb3d260242ce6e2f131ddcbefe7"
     }
   },
   "upstream_sources": {

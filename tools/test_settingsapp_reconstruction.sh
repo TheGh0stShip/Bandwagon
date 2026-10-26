@@ -8,6 +8,7 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/verify_settingsapp_function_ownership.py"
+python3 "$root/tools/verify_settingsapp_peer_source_coverage.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/updater/archive_wrapper.cpp" \

@@ -55,7 +55,8 @@ sections are also exactly reconstructable. Reproducible call/string graphs,
 semantic symbols, and a portable tested reconstruction of the Stage2
 bootstrap-record builder are tracked alongside it. Exhaustive ownership
 reduces the readable-source target to 20 product entries / 6,728 bytes; 356
-miniz/platform/toolchain entries are excluded.
+miniz/platform/toolchain entries are excluded. All 20 product entries now have
+hash-bound readable models, so Updater is source-complete at this boundary.
 
 `xex/BootXell.md` documents the OtherOS launcher. Its complete initialized
 `.text`, `.rdata`, `.pdata`, and `.data` ranges now have byte-identical assembly
@@ -74,15 +75,16 @@ trusted-root path, GitHub latest-release endpoint, HTTP status gate, JSON
 sections have exact assembly source and reproducible static-analysis maps. Its
 804-entry ownership partition identifies 19 product/mixed integration entries
 / 6,768 bytes, excludes 780 upstream/platform entries, and conservatively keeps
-5 XDK/network-facing wrappers unknown. Two product routines / 720 bytes are
-already source-covered.
+5 XDK/network-facing wrappers unknown. Sixteen product routines / 4,400 bytes
+are source-covered; 3 / 2,368 remain.
 
 `xex/BootEdit.md` covers the ImGui boot-theme editor: exact initialized
 sections, function/call/string inventories, and semantic names for theme
 enumeration, editing, save/load feedback, settings application, and selection.
-Its exhaustive partition identifies 24 product entries / 14,072 bytes, excludes
-792 pinned-ImGui or proven-platform entries, and conservatively retains 118 entries /
-31,336 bytes as unknown.
+Its exhaustive partition identifies 23 product entries / 13,696 bytes, excludes
+792 pinned-ImGui or proven-platform entries, and conservatively retains 119
+entries / 31,712 bytes as unknown. Eight product entries / 2,424 bytes have
+hash-bound readable models.
 
 `xex/SettingsApp.md` covers the main settings UI. Its entire initialized image
 is exact assembly, with reproducible maps and initial semantic names spanning
@@ -91,7 +93,8 @@ settings persistence, and displayed Peer/kernel/SMC version information.
 All 1,824 code entries are now partitioned: 246 product/mixed candidates /
 62,264 bytes remain the conservative source-recovery upper bound, 1,565
 upstream/platform entries are excluded, and 13 XPR2/graphics-backend entries
-remain unknown.
+remain unknown. Three product/mixed entries / 3,112 bytes have exact-entry
+readable models.
 
 `stage2/PeerPressureExploit-Stage2.md` documents the persistent HDD Stage2 ROP
 image and its relocated PowerPC worker. The complete 217,796-byte file now has

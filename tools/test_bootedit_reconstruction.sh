@@ -8,11 +8,19 @@ cxx="${CXX:-g++}"
 flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/verify_bootedit_function_ownership.py"
+python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/theme_editor.cpp" \
     "$root/reconstruction/boot_edit/theme_editor_test.cpp" \
     -o "$work/theme_editor_test"
 "$work/theme_editor_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/theme_editor.cpp" \
+    "$root/reconstruction/boot_edit/theme_manager.cpp" \
+    "$root/reconstruction/boot_edit/theme_manager_test.cpp" \
+    -o "$work/theme_manager_test"
+"$work/theme_manager_test"
 
 echo "BootEdit portable reconstruction tests passed"

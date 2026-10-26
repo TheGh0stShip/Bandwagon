@@ -26,14 +26,26 @@ TARGETS = (
         "analysis/xex/BootXell-function-ownership.json",
         "analysis/xex/BootXell-peer-source-coverage.json",
     ),
-    ("Updater", "analysis/xex/Updater-function-ownership.json", None),
+    (
+        "Updater",
+        "analysis/xex/Updater-function-ownership.json",
+        "analysis/xex/Updater-peer-source-coverage.json",
+    ),
     (
         "UpdateCheck",
         "analysis/xex/UpdateCheck-function-ownership.json",
         "analysis/xex/UpdateCheck-peer-source-coverage.json",
     ),
-    ("SettingsApp", "analysis/xex/SettingsApp-function-ownership.json", None),
-    ("BootEdit", "analysis/xex/BootEdit-function-ownership.json", None),
+    (
+        "SettingsApp",
+        "analysis/xex/SettingsApp-function-ownership.json",
+        "analysis/xex/SettingsApp-peer-source-coverage.json",
+    ),
+    (
+        "BootEdit",
+        "analysis/xex/BootEdit-function-ownership.json",
+        "analysis/xex/BootEdit-peer-source-coverage.json",
+    ),
 )
 
 CATEGORY_BUCKETS = {
@@ -114,6 +126,11 @@ def source_coverage(path: str | None) -> list[int]:
     coverage = json.loads((ROOT / path).read_text(encoding="utf-8"))
     if "summary" in coverage:
         totals = coverage["summary"]
+        if "model_covered_function_count" in totals:
+            return [
+                int(totals["model_covered_function_count"]),
+                int(totals["model_covered_bytes"]),
+            ]
         return [
             int(totals["peer_product_adapter_or_policy_function_count"]),
             int(totals["peer_product_adapter_or_policy_instruction_bytes"]),

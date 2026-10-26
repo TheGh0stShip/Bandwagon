@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 IMAGE = ROOT / "analysis/xex/basefiles/PeerPressure_System_BootEdit.pe"
 EXPECTED_IMAGE = "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8"
-EXPECTED_COLOR_EQUALS = "1c39100e26bf568f13260a9672759e5cd09aa4de8bca4316f4889cf0ba2c8c33"
+EXPECTED_COLOR_DIFFER = "a2139eba8b1b66a65c3c3ccfb71d72e8dd75d1bb13094b681751c1217cd0f85b"
 
 
 def load(name):
@@ -15,11 +15,11 @@ def load(name):
 
 image = IMAGE.read_bytes()
 assert hashlib.sha256(image).hexdigest() == EXPECTED_IMAGE
-assert hashlib.sha256(image[0x50A00:0x50A4C]).hexdigest() == EXPECTED_COLOR_EQUALS
+assert hashlib.sha256(image[0x50A00:0x50A50]).hexdigest() == EXPECTED_COLOR_DIFFER
 
 symbols = {item["semantic_name"]: item for item in load("BootEdit-symbols.json")["symbols"]}
-assert symbols["ColorEqualsExact"]["address"] == "0x82050a00"
-assert symbols["ColorEqualsExact"]["recovered_name"] is None
+assert symbols["ColorsDifferExact"]["address"] == "0x82050a00"
+assert symbols["ColorsDifferExact"]["recovered_name"] is None
 assert symbols["DrawColorContextMenu"]["address"] == "0x82050b08"
 
 functions = {item["name"]: item for item in load("BootEdit-functions.json")["functions"]}

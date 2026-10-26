@@ -1,0 +1,349 @@
+{
+  "schema": "bandwagon-updater-peer-source-coverage-v1",
+  "status": "exhaustive_product_readable_source_coverage",
+  "policy": "Every entry classified product_application by the exhaustive Updater ownership partition is bound to its exact image bytes and to readable, testable C++ behavior. Coverage means a maintainable behavioral reconstruction, not compiler-identical source, original personal authorship, or an ABI-identical Xbox build. Pinned miniz and platform/toolchain entries remain outside this manifest.",
+  "image": {
+    "path": "analysis/xex/basefiles/Updater.pe",
+    "size": 118784,
+    "sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+    "base_address": "0x98000000"
+  },
+  "function_inventory": {
+    "path": "analysis/xex/Updater-functions.json",
+    "sha256": "d72f84938cdace8ec6833248d2942afed55a37a6ee73c913120fd32441d6a34d",
+    "entry_count": 376
+  },
+  "ownership_partition": {
+    "path": "analysis/xex/Updater-function-ownership.json",
+    "sha256": "b89a6e0404a3cb313b52097ca56f3057c84c1263f2d77aac2387c68bc6f60853",
+    "category": "product_application",
+    "entry_count": 20,
+    "size": 6728,
+    "concatenated_sha256": "ab3b40b241ad554ab1250044de4c08f876dfb205de300a74677dc2b1e185632b"
+  },
+  "evidence_inputs": [
+    {
+      "path": "analysis/xex/Updater-callgraph.json",
+      "sha256": "5056ac681f300ad6f33109048100f31321f26f19585a82298955f6d169ffbfc2"
+    },
+    {
+      "path": "analysis/xex/Updater-string-xrefs.json",
+      "sha256": "15af4c57ebacff384480f6445a2ccc7a423324f5f7f8fb5369a3e8a471b8b669"
+    },
+    {
+      "path": "analysis/xex/Updater-symbols.json",
+      "sha256": "010363a43c096608a48f62eaa4c16caddad791713c5862dbcfe7955fcfe1376f"
+    }
+  ],
+  "coverage_summary": {
+    "owned_entry_count": 20,
+    "owned_size": 6728,
+    "covered_entry_count": 20,
+    "covered_size": 6728,
+    "remaining_entry_count": 0,
+    "remaining_size": 0
+  },
+  "source_files": [
+    {
+      "path": "reconstruction/updater/archive_wrapper.cpp",
+      "sha256": "947f32f58e2d7406a7ad0278e3169ce6241d1d2de2253e781b294c44e8735e7d"
+    },
+    {
+      "path": "reconstruction/updater/archive_wrapper.hpp",
+      "sha256": "d8f9f2eb994675974c61bc312f496f4900b2d84d5d5c4960ae47cda243f1e4d6"
+    },
+    {
+      "path": "reconstruction/updater/bootstrap_record.cpp",
+      "sha256": "962ebeb510520615fbe2c76ec7ed19a1438f1408f5b9eee050826fb8e74278b6"
+    },
+    {
+      "path": "reconstruction/updater/bootstrap_record.hpp",
+      "sha256": "a5ff5a6ef8f8d0652575f58da0e5209b0564f6b0914d6e8d9ecc2ab754ad6ce1"
+    },
+    {
+      "path": "reconstruction/updater/parent_directories.cpp",
+      "sha256": "09a1bb62ce153db8cb8a4d24dc3286e417a8478391437783493ae5f9d4cfbca1"
+    },
+    {
+      "path": "reconstruction/updater/parent_directories.hpp",
+      "sha256": "1578160af5994244e71d343c69423875b8360453b5cb9c935ba27b698d9892c9"
+    },
+    {
+      "path": "reconstruction/updater/phase_two_list.cpp",
+      "sha256": "bfc4fe779df640b532a1973153b8ea22f7b2da4268b86e02101c550baf0746be"
+    },
+    {
+      "path": "reconstruction/updater/phase_two_list.hpp",
+      "sha256": "11da9537a5fd682cc63ac31baf85eeacccd1b298f4ad88ce57697a4321055c6c"
+    },
+    {
+      "path": "reconstruction/updater/softmod_manifest.cpp",
+      "sha256": "c1598c7cbb7c861ec684e86d30bff5e828bac5f733df4eebd308ec032e285dab"
+    },
+    {
+      "path": "reconstruction/updater/softmod_manifest.hpp",
+      "sha256": "2b62b15d223ddd6ce0530434f30c8c2f13899e7ebceaad82b44c95fd14c61f7a"
+    },
+    {
+      "path": "reconstruction/updater/updater_runtime.cpp",
+      "sha256": "e510968b3840998fff0684fbe75e518f00501d49e63c8c2b257c9d314f4df607"
+    },
+    {
+      "path": "reconstruction/updater/updater_runtime.hpp",
+      "sha256": "8574cbb24341e04f2e725c9e40c60a9ad0437d38791576292b156e7da1d74fc2"
+    }
+  ],
+  "tests": [
+    {
+      "path": "reconstruction/updater/archive_wrapper_test.cpp",
+      "sha256": "1a4238497b4431b37a4a9b2bede05d5bcb9362b6e8c49fdd7345dbeeb9340d02"
+    },
+    {
+      "path": "reconstruction/updater/bootstrap_record_test.cpp",
+      "sha256": "78a35985334015b66c8082bedffe6e6eaafd3243a987b11525be9ad15ab8ab8e"
+    },
+    {
+      "path": "reconstruction/updater/parent_directories_test.cpp",
+      "sha256": "949c18d7a371a41f811980048fea6e074f19c484638706e95e2a6b2311579f9c"
+    },
+    {
+      "path": "reconstruction/updater/phase_two_list_test.cpp",
+      "sha256": "e71379b92285bf619abaa541a3d2af64db0aabd792fb845a2c9755eafd7b74a8"
+    },
+    {
+      "path": "reconstruction/updater/softmod_manifest_test.cpp",
+      "sha256": "5c00a04d89ef81b0058714f7a3da6812519504cccb12c42a474c1c28007df255"
+    },
+    {
+      "path": "reconstruction/updater/updater_runtime_test.cpp",
+      "sha256": "c6478ffa50a372a851c39e201d7d8530ccc3d6d7afe8dbb021d4e15bd989f230"
+    },
+    {
+      "path": "tools/test_updater_reconstruction.sh",
+      "sha256": "555f7e89b4aaafcf31baf01ab3d7579c45d66b3a984725ba4698063290115538"
+    }
+  ],
+  "functions": [
+    {
+      "address": "0x98005140",
+      "size": 320,
+      "sha256": "158da2cd8b60c31ea098dba7a1b0a2fb7d662299138ee842c4819c3cd7edd945",
+      "semantic_name": "ZipArchive_ExtractToBuffer",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["ZipArchiveExtractToBuffer"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "locate, stat, capacity check, extract-to-memory, optional extracted-size output, and miniz error diagnostics are explicit in the function body"
+    },
+    {
+      "address": "0x98005280",
+      "size": 344,
+      "sha256": "e8290ec18dfcf852ac0a790107e6151f96b7cef6dc366b10ef66f57dfacad557",
+      "semantic_name": "ZipArchive_ExtractToHeap",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["ZipArchiveExtractToHeap"],
+      "fidelity": "safe_behavioral_reconstruction",
+      "evidence": "locate/stat, exact-sized allocation, extraction, cleanup, and the same diagnostic family are explicit; std::vector supplies checked ownership"
+    },
+    {
+      "address": "0x980053d8",
+      "size": 112,
+      "sha256": "4fef601e915b63cf0aa273a9c8c7cf0e735b22a2743a36164e7ae92f718017d1",
+      "semantic_name": "WriteFileCallback",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["WriteFileCallback"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "the closed callback forwards archive chunks to the file writer, reports failure, and returns the written byte count"
+    },
+    {
+      "address": "0x98005ca8",
+      "size": 112,
+      "sha256": "227dff66a854ebf4f2a8a24ae0633886e3a872d5995176776203eba610e4945f",
+      "semantic_name": "SoftmodData_Construct",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["SoftmodData::SoftmodData"],
+      "fidelity": "idiomatic_raii_reconstruction",
+      "evidence": "the binary zero-initializes archive state, manifest storage, and the manifest-entry vector; the C++ object establishes the same empty state"
+    },
+    {
+      "address": "0x98005d18",
+      "size": 104,
+      "sha256": "d95a4e3117a94773e1054270e965298e77c683ab9d61552070e929601a22ac82",
+      "semantic_name": "SoftmodData_Destroy",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["SoftmodData::~SoftmodData", "SoftmodData::Reset"],
+      "fidelity": "idiomatic_raii_reconstruction",
+      "evidence": "the binary frees manifest/archive buffers and destroys its pointer vector; Reset plus RAII release the equivalent owned state"
+    },
+    {
+      "address": "0x98005eb0",
+      "size": 568,
+      "sha256": "ef5b97688dd9bebdb8db5f9cda8cecbc72aee907108c4bae4948882ccf5705ba",
+      "semantic_name": "SoftmodData_LoadManifest",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp", "reconstruction/updater/softmod_manifest.cpp", "reconstruction/updater/softmod_manifest.hpp"],
+      "symbols": ["SoftmodData::LoadManifest", "ParseSoftmodManifest"],
+      "fidelity": "safe_behavioral_reconstruction",
+      "evidence": "softmod.manifest extraction, XBPP magic/size/SHA-1/header fields, variable records, and bounds are reconstructed; the open version adds explicit padding and ASCII validation"
+    },
+    {
+      "address": "0x980062c8",
+      "size": 496,
+      "sha256": "136a0b54c60543e6451a9ab8cb8bbee9cb5353d6a8efad4ffa48f0a5ce45617d",
+      "semantic_name": "SoftmodData_LoadArchive",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp", "reconstruction/updater/archive_wrapper.cpp", "reconstruction/updater/archive_wrapper.hpp"],
+      "symbols": ["SoftmodData::LoadArchive", "ParseUpdateArchiveWrapper"],
+      "fidelity": "safe_behavioral_reconstruction",
+      "evidence": "whole-file load, minimum wrapper, SHA-1 over bytes after the digest, version extraction, miniz memory open, and manifest load are represented through injected interfaces"
+    },
+    {
+      "address": "0x980064b8",
+      "size": 528,
+      "sha256": "029e0b8aa614c2dba6cf0d22345f8763c89106058adeb09660ef2d618051e0e8",
+      "semantic_name": "SoftmodData_FindFile",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["SoftmodData::FindFile", "SoftmodData::DecorateWithManifest"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "ZIP locate/stat, slash normalization, case-insensitive manifest match, and copy of the 20-byte SHA-1 plus flags are all modeled"
+    },
+    {
+      "address": "0x98006740",
+      "size": 368,
+      "sha256": "3da76fd9998df86dc22baacdf3729c58cab04cf6030890d0530cf30e8739ba40",
+      "semantic_name": "SoftmodData_ExtractFileToPath",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp", "reconstruction/updater/parent_directories.cpp"],
+      "symbols": ["SoftmodData::ExtractFileToPath", "WriteFileCallback", "EnsureParentDirectories"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "destination preparation, create/truncate, miniz callback extraction, byte-offset writes, and failure propagation follow the recovered call chain"
+    },
+    {
+      "address": "0x98006990",
+      "size": 576,
+      "sha256": "c2e529881a73139461e16fdda3a56ae7e11fd025b2d992244e6893f431ae96d9",
+      "semantic_name": "SoftmodData_CollectFilesByPrefix",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["SoftmodData::CollectFilesByPrefix", "CompareStringsWithCaseOption", "SoftmodData::DecorateWithManifest"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "all ZIP entries are statted, optionally prefix-filtered case-insensitively, normalized, decorated from the manifest, and appended in archive order"
+    },
+    {
+      "address": "0x98006bd0",
+      "size": 160,
+      "sha256": "b39ff7c981deb33e53cf5c4afb8b39eaed555984d442d0e60d1a2e159171e066",
+      "semantic_name": "FormatDiagnosticAndDispatch",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["FormatDiagnosticAndDispatch", "kDiagnosticCapacity"],
+      "fidelity": "safe_behavioral_reconstruction",
+      "evidence": "the recovered 1024-byte formatting buffer and optional callback dispatch are explicit; vsnprintf bounds the portable buffer"
+    },
+    {
+      "address": "0x98006c70",
+      "size": 8,
+      "sha256": "2bf7a94759a252fd0d2af700ff876c19ab13998fb28ac5b0db3c70cdbc9ef8d6",
+      "semantic_name": "UpdaterDllLifecycleHook",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["UpdaterDllLifecycleHook"],
+      "fidelity": "exact_behavior",
+      "evidence": "the complete two-instruction function returns true for every lifecycle reason"
+    },
+    {
+      "address": "0x98006ce0",
+      "size": 96,
+      "sha256": "06aa0d314b622f1023dfaa905dc0b2f6d158e46b80cf1fbb0a19c767c5906f7b",
+      "semantic_name": "GetSoftmodDataContext",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["GetSoftmodDataContext"],
+      "fidelity": "idiomatic_raii_reconstruction",
+      "evidence": "the binary lazily constructs one process-static SoftmodData object and registers destruction; a function-local static expresses that lifecycle"
+    },
+    {
+      "address": "0x98006d40",
+      "size": 544,
+      "sha256": "f2b46c8351374276128b38ffbe147d2adc09c6a40bd3d5273e048ff6e81c9e67",
+      "semantic_name": "InstallHddBootstrap",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp", "reconstruction/updater/bootstrap_record.cpp", "reconstruction/updater/bootstrap_record.hpp"],
+      "symbols": ["InstallHddBootstrap", "BuildHddBootstrapRecord", "kBootstrapDiskOffset"],
+      "fidelity": "safe_behavioral_reconstruction",
+      "evidence": "Stage2 lookup/size bound, extraction, pre-header CRC, big-endian XBPP header, 512-byte rounding, and disk offset 0x4000 are modeled; sector padding is deliberately zeroed"
+    },
+    {
+      "address": "0x98006f60",
+      "size": 352,
+      "sha256": "ba6a800b8ee5bdc72b93baff192989c7c92cce0179a784f8c8d70bd50cc1ef43",
+      "semantic_name": "WritePhaseTwoFileList",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp", "reconstruction/updater/phase_two_list.cpp", "reconstruction/updater/phase_two_list.hpp"],
+      "symbols": ["WritePhaseTwoFileList", "SerializePhaseTwoFileList", "FormatPhaseTwoLine", "kPhaseTwoListPath"],
+      "fidelity": "safe_behavioral_reconstruction",
+      "evidence": "empty-list fast path, PPROOT:\\update.phase2 target, path-plus-newline records, and write failures are modeled; unsafe snprintf truncation is rejected"
+    },
+    {
+      "address": "0x98007680",
+      "size": 216,
+      "sha256": "71477ce1a1b5444c772f82b8f8a2f838cb3c888e4a65c8fde77599617bad679f",
+      "semantic_name": "AppendPhaseTwoPath",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["AppendPhaseTwoPath"],
+      "fidelity": "idiomatic_container_reconstruction",
+      "evidence": "the body is the application-emitted vector insertion path called after RunUpdate observes manifest flag bit 1"
+    },
+    {
+      "address": "0x98007758",
+      "size": 1128,
+      "sha256": "f7f6d34fe40b0f9c5796d2ece5075dbe036aac302e180175dc8c78c5f85a6bb7",
+      "semantic_name": "RunUpdate",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["RunUpdate", "kArchiveTreePrefix", "kDestinationRoot", "kManifestPreserveExisting", "kManifestPhaseTwo"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "progress states, archive load, PeerPressure/ selection, HDD bootstrap, preserve-existing bit 0, phase-two bit 1 and underscore staging, extraction, and final phase-two serialization follow the recovered control flow"
+    },
+    {
+      "address": "0x98007bc0",
+      "size": 80,
+      "sha256": "d59aa3cc43d822038ede905fb6bc4418dd9b6b4b5361e913a7f3c6425ec186fc",
+      "semantic_name": "FileExists",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["FileExists"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "the binary probes by opening and closes on success; the portable layer delegates the same predicate without leaking a handle"
+    },
+    {
+      "address": "0x98007da8",
+      "size": 328,
+      "sha256": "a089bb164c82e7e900be5370dc1e184a94d92a3b0e40ad8510d7b56ebb546430",
+      "semantic_name": "CompareStringsWithCaseOption",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp"],
+      "symbols": ["CompareStringsWithCaseOption"],
+      "fidelity": "exact_algorithm_reconstruction",
+      "evidence": "candidate length must cover the prefix, then every prefix byte is compared with optional ASCII case folding"
+    },
+    {
+      "address": "0x98007ef0",
+      "size": 288,
+      "sha256": "e23cdad903f7f2d0bdd98d6f942ca2b19ea952e7fa23bf5623ac08545536b7c0",
+      "semantic_name": "EnsureParentDirectories",
+      "source": "reconstruction/updater/updater_runtime.cpp",
+      "supporting_sources": ["reconstruction/updater/updater_runtime.hpp", "reconstruction/updater/parent_directories.cpp", "reconstruction/updater/parent_directories.hpp"],
+      "symbols": ["EnsureParentDirectories", "EnumerateParentDirectories", "DirectoryCreateResult::kAlreadyExists"],
+      "fidelity": "behavioral_reconstruction",
+      "evidence": "the first root backslash is skipped, subsequent slash/backslash prefixes are created, and already-exists is accepted while other errors stop the update"
+    }
+  ],
+  "scope_note": "This manifest closes readable-source coverage for all 20 product_application entries / 6,728 bytes in Updater.xex. It does not relift the 22 pinned miniz entries or the 334 platform/toolchain entries. Xbox file, progress, archive, and raw-disk effects are represented by injected interfaces so the host suite cannot alter a physical Xbox disk."
+}

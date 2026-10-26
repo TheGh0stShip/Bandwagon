@@ -356,6 +356,42 @@ def main() -> None:
         ):
             fail(f"Updater cross-match is no longer platform-owned at {other_address:#x}")
 
+    shared = cross["shared_unknown_container"]
+    shared_start = address(shared["address"])
+    shared_end = address(shared["end_exclusive"])
+    if (
+        shared_start != 0x82053238
+        or shared_end != 0x820533B0
+        or shared["classification"] != "unknown"
+        or entry_owners.get(shared_start) != "unknown"
+        or boot_functions[shared_start]["size_to_next_symbol"] != shared_end - shared_start
+    ):
+        fail("BootEdit shared generic-helper container classification differs")
+    cursor = shared_start
+    settings_image, settings_base = other_images["SettingsApp"]
+    for item in shared["subranges"]:
+        start, end = address(item["address"]), address(item["end_exclusive"])
+        if start != cursor or end <= start or item["size"] != end - start:
+            fail("BootEdit shared generic-helper subranges are not contiguous")
+        body = image[start - image_base : end - image_base]
+        if len(body) != item["size"] or digest(body) != item["sha256"]:
+            fail(f"BootEdit shared generic-helper bytes differ at {start:#x}")
+        if "settings_address" in item:
+            settings_address = address(item["settings_address"])
+            settings_body = settings_image[
+                settings_address - settings_base : settings_address - settings_base + item["size"]
+            ]
+            normalized = digest(normalized_ppc_bytes(body))
+            if (
+                len(settings_body) != item["size"]
+                or normalized != item["normalized_sha256"]
+                or digest(normalized_ppc_bytes(settings_body)) != normalized
+            ):
+                fail(f"BootEdit/SettingsApp shared helper match differs at {start:#x}")
+        cursor = end
+    if cursor != shared_end:
+        fail("BootEdit shared generic-helper subranges do not cover the container")
+
     for boot_address, settings_address, size in (
         (0x82011ED8, 0x82034830, 136),
         (0x82011F60, 0x820348B8, 320),
@@ -385,17 +421,17 @@ def main() -> None:
     leaf = supplemental[0]
     leaf_start, leaf_end = address(leaf["address"]), address(leaf["end_exclusive"])
     leaf_bytes = image[leaf_start - image_base : leaf_end - image_base]
-    if leaf_start != 0x82050A00 or leaf_end != 0x82050A4C:
-        fail("BootEdit ColorEqualsExact extent differs")
+    if leaf_start != 0x82050A00 or leaf_end != 0x82050A50:
+        fail("BootEdit ColorsDifferExact extent differs")
     if len(leaf_bytes) != leaf["size"] or digest(leaf_bytes) != leaf["sha256"]:
-        fail("BootEdit ColorEqualsExact bytes differ")
+        fail("BootEdit ColorsDifferExact bytes differ")
     container = address(leaf["inventory_container"])
     if not (container <= leaf_start < leaf_end <= function_addresses[function_addresses.index(container) + 1]):
-        fail("BootEdit ColorEqualsExact container differs")
+        fail("BootEdit ColorsDifferExact container differs")
     if entry_owners[container] != leaf["classification"]:
-        fail("BootEdit ColorEqualsExact owner differs")
-    if semantic_by_address.get(leaf_start, {}).get("semantic_name") != "ColorEqualsExact":
-        fail("BootEdit semantic overlay lost ColorEqualsExact")
+        fail("BootEdit ColorsDifferExact owner differs")
+    if semantic_by_address.get(leaf_start, {}).get("semantic_name") != "ColorsDifferExact":
+        fail("BootEdit semantic overlay lost ColorsDifferExact")
     for semantic_address, item in semantic_by_address.items():
         if semantic_address == leaf_start:
             continue
@@ -517,19 +553,29 @@ def main() -> None:
         or after["product_application_size"] != categories["product_application"]["size"]
     ):
         fail("BootEdit refinement after-totals differ")
-    moved_from_unknown_entries = sum(
-        item["inventory_entry_count"]
-        for item in refinement["reassignments"]
-        if item["from"] == "unknown"
-    )
-    moved_from_unknown_bytes = sum(
-        item["size"]
-        for item in refinement["reassignments"]
-        if item["from"] == "unknown"
-    )
+    def category_delta(category: str, field: str) -> int:
+        moved_in = sum(
+            item[field]
+            for item in refinement["reassignments"]
+            if item["to"] == category
+        )
+        moved_out = sum(
+            item[field]
+            for item in refinement["reassignments"]
+            if item["from"] == category
+        )
+        return moved_in - moved_out
+
     if (
-        moved_from_unknown_entries != before["unknown_entry_count"] - after["unknown_entry_count"]
-        or moved_from_unknown_bytes != before["unknown_size"] - after["unknown_size"]
+        before["unknown_entry_count"] + category_delta("unknown", "inventory_entry_count")
+        != after["unknown_entry_count"]
+        or before["unknown_size"] + category_delta("unknown", "size")
+        != after["unknown_size"]
+        or before["product_application_entry_count"]
+        + category_delta("product_application", "inventory_entry_count")
+        != after["product_application_entry_count"]
+        or before["product_application_size"] + category_delta("product_application", "size")
+        != after["product_application_size"]
     ):
         fail("BootEdit refinement reassignment totals differ")
 

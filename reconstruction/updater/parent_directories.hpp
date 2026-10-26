@@ -7,8 +7,9 @@
 namespace bandwagon::updater {
 
 // Returns the directory prefixes visited by EnsureParentDirectories. The
-// final path component is never included; the Xbox-specific caller creates
-// each returned prefix and accepts ERROR_ALREADY_EXISTS (183).
+// first backslash is treated as the root separator and skipped; subsequent
+// slash/backslash prefixes are returned, excluding the final component. The
+// Xbox-specific caller accepts ERROR_ALREADY_EXISTS (183).
 std::vector<std::string> EnumerateParentDirectories(std::string_view path);
 
 }  // namespace bandwagon::updater

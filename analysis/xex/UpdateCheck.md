@@ -28,7 +28,7 @@ all 226,028 initialized instruction bytes exactly once:
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product/mixed update integration | 19 | 6,768 | Recover as readable source; 2 entries / 720 bytes are already covered |
+| Product/mixed update integration | 19 | 6,768 | Recover as readable source; 16 entries / 4,400 bytes are covered |
 | BearSSL 0.6 | 187 | 76,232 | Use the pinned upstream source |
 | JsonCpp 00.11.0 | 170 | 43,648 | Use the pinned upstream source |
 | MSVC/Xbox platform and toolchain | 423 | 98,772 | Reuse the target ABI/runtime; do not relift |
@@ -37,8 +37,8 @@ all 226,028 initialized instruction bytes exactly once:
 The XHttps request path and BearSSL-derived certificate reader are
 product/mixed integration code: their lineage is recorded, but their adapter
 delta is not stock source, and this is not a claim of personal authorship. The
-two functions in `UpdateCheck-peer-source-coverage.json` are covered; 17
-product entries / 6,048 bytes still require hash-bound readable source. Five
+sixteen functions in `UpdateCheck-peer-source-coverage.json` are covered; 3
+product entries / 2,368 bytes still require hash-bound readable source. Five
 merely XDK/network-facing wrappers remain unknown instead of being excluded by
 role alone. Consequently the component is not yet source-complete, but none of
 the 218,652 proven upstream/platform bytes belongs in the lifting queue. Run
@@ -73,9 +73,14 @@ load, object allocation, recovered request method 2, HTTP-200 gate, JSON
 decode boundary, strict version comparison, output write, and ordered cleanup
 on every normal exit. Its service interface makes the Xbox and third-party
 boundaries explicit without hiding the Peer control flow.
-`UpdateCheck-peer-source-coverage.json` binds both identified Peer routines
-(720 bytes total) to their exact image hashes and source symbols. Run the host
-tests and coverage check with `tools/test_updatecheck_reconstruction.sh`.
+`UpdateCheck-peer-source-coverage.json` binds 16 product/mixed routines (4,400
+bytes total) to exact image hashes and readable source. In addition to release
+version policy, the covered set includes the complete 11-entry
+`HttpsResponseBuffer`/container-helper family and all three BearSSL-derived
+certificate-adapter entries. The remaining three entries / 2,368 bytes are
+listed explicitly with their unresolved XAM/xboxkrnl, request-header, redirect,
+TLS, and lifetime contracts. Run the host tests and coverage check with
+`tools/test_updatecheck_reconstruction.sh`.
 
 Large portions of this image are third-party HTTP/TLS and JSON code. The
 author's public `ATTRIBUTION.md` identifies BearSSL 0.6 and JsonCpp tag
