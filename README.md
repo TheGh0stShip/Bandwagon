@@ -23,6 +23,8 @@ The public BadUpdate source baseline is pinned as the
 - SMC and kernel patch streams have reproducible JSON decodes.
 - All six motherboard SMC patch streams have exact assembly evidence and
   complete, tested C++ coverage of every executable replacement record.
+- The retail kernel patch stream has a typed 23-record effect table whose C++
+  serializer reproduces all 372 bytes exactly.
 - XEX base images have been extracted locally with recorded hashes.
 - Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
 - Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
