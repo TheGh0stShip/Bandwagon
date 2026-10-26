@@ -52,3 +52,11 @@ JsonCpp routines, three BearSSL routines, and ImGui's version/layout checker
 from exact function-local diagnostics, TLS labels, and one verified parser-wrapper call chain. Rendering, HTTP, and
 remaining diagnostic-free library functions are preserved exactly but still
 need function-level attribution.
+
+`reconstruction/settings_app/offline_update.cpp` begins the portable
+first-party reconstruction at the offline-update boundary. It preserves the
+exact two-device scan domain, `Mass%d:\$SoftmodUpdate\UpdateData.zip` path,
+shared SHA-1 archive-wrapper validation, big-endian 8/8/16 version fields, and
+`v%d.%d.%d` display form. ZIP member extraction remains at the already
+identified Miniz/library boundary. Run its host test with
+`tools/test_settingsapp_reconstruction.sh`.
