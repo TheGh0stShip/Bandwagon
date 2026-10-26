@@ -26,4 +26,10 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/archive_wrapper_test"
 "$work/archive_wrapper_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/updater/phase_two_list.cpp" \
+    "$root/reconstruction/updater/phase_two_list_test.cpp" \
+    -o "$work/phase_two_list_test"
+"$work/phase_two_list_test"
+
 echo "Updater portable reconstruction tests passed"

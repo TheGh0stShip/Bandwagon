@@ -166,6 +166,14 @@ the ordinary ZIP payload, followed by version and ZIP bytes. Its portable test
 verifies version `1.0.477`, byte-exact round trips, ZIP-magic validation, and
 hash-corruption rejection.
 
+`reconstruction/updater/phase_two_list.cpp` reconstructs the payload produced
+by `WritePhaseTwoFileList`: each staged destination is formatted as `%s\n` and
+written to `PPROOT:\update.phase2`. It also preserves evidence of a boundary
+bug in the closed implementation: `snprintf` uses a 260-byte stack buffer, but
+its possibly larger return value is passed unchanged to the write helper. The
+portable serializer matches valid inputs and rejects paths longer than 258
+bytes instead of reproducing the resulting stack over-read.
+
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
 expand semantic names and types across the remaining application functions,
