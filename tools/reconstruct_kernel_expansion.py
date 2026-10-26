@@ -48,6 +48,8 @@ SEMANTIC_NAMES = {
     0x1FC0: "LoadBootAnimationTheme",
     0x2D70: "ReplaceInstructionWithNop",
     0x2DB8: "ReleaseBootstrapMapping",
+    0x3000: "ProcessPeerPressureConfigFile",
+    0x3050: "RunLockedPeerPressureConfigFile",
     0x3378: "ResolveSideLoadConfiguration",
     0x4938: "ParseDllConfigEntry",
     0x4D08: "PromoteLocalSigninState",

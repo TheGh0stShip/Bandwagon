@@ -4,13 +4,9 @@
 #include "runtime.hpp"
 
 #include <cstdint>
-#include <string_view>
 
 namespace bandwagon::kernel_expansion {
 
-inline constexpr std::string_view kPeerPressureConfigPath =
-    "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\Config.ini";
-inline constexpr std::uint32_t kConfigSchemaEntryCount = 6;
 inline constexpr std::uint32_t kConfigFatalErrorCode = 0x00012400;
 
 struct ConfigAllocationRequest {

@@ -402,9 +402,9 @@
       "address": "0x801f3000",
       "section_offset": "0x3000",
       "size_to_next_symbol": 80,
-      "name": "fn_801F3000",
+      "name": "ProcessPeerPressureConfigFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -412,9 +412,9 @@
       "address": "0x801f3050",
       "section_offset": "0x3050",
       "size_to_next_symbol": 96,
-      "name": "fn_801F3050",
+      "name": "RunLockedPeerPressureConfigFile",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

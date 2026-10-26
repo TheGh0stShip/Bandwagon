@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 37 high-confidence behavioral labels are emitted directly into the exact
+- 39 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -83,6 +83,13 @@ lift. The first exact-byte-bound routines are:
 - `LoadStructuredConfigFile` (`0x801f1700`, 144 bytes), represented as the
   generic schema-parser wrapper layered on that loader. It always releases a
   successfully loaded buffer after the parser returns.
+- `ProcessPeerPressureConfigFile` and
+  `RunLockedPeerPressureConfigFile` (`0x801f3000` and `0x801f3050`, 176 bytes
+  together), represented as the fixed-path/config/schema adapter and its
+  exclusive-lock wrapper. Tests bind the exact `Config.ini` path, six-entry
+  schema count, critical-region and lock ordering, low-byte Boolean conversion,
+  and the locked wrapper's observed always-false return. The generic engine's
+  mode-dependent format remains explicitly abstract rather than guessed.
 - `InstallKernelXexDataHandlers` (`0x801f1790`, 352 bytes), represented as a
   bounds-checked mapped-PE walker. It finds `.xedata`, installs both relocated
   handler words, updates the table count, and performs the recovered CPU and
@@ -149,7 +156,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-26 independently bounded routines totaling 3,976 original instruction bytes.
+28 independently bounded routines totaling 4,152 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable
@@ -160,5 +167,6 @@ exFAT and returns multiple classification values; its corrected
 `InitializeDefaultConfig`: the routine is reached on a config-read failure and
 establishes the default singleton before entering the locked config path. Its
 caller is now also lifted, including allocation, probing, six-entry schema
-dispatch, and both fallback paths; the deeper common config path invoked by
-the default initializer is still being classified.
+dispatch, and both fallback paths. The common config adapter and its lock
+wrapper are also lifted; the generic mode-dependent config engine they invoke
+is still being classified.

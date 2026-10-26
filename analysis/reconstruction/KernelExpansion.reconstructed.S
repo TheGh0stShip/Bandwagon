@@ -3117,7 +3117,7 @@ fn_801F2F98:
     .long 0x3860ffff /* 0x02ff4 */
     .long 0x4e800020 /* 0x02ff8 */
     .long 0x00000000 /* 0x02ffc */
-fn_801F3000:
+ProcessPeerPressureConfigFile:
     .long 0x7d8802a6 /* 0x03000 */
     .long 0x9181fff8 /* 0x03004 */
     .long 0x9421ffa0 /* 0x03008 */
@@ -3138,7 +3138,7 @@ fn_801F3000:
     .long 0x7d8803a6 /* 0x03044 */
     .long 0x4e800020 /* 0x03048 */
     .long 0x00000000 /* 0x0304c */
-fn_801F3050:
+RunLockedPeerPressureConfigFile:
     .long 0x7d8802a6 /* 0x03050 */
     .long 0x9181fff8 /* 0x03054 */
     .long 0xfbc1ffe8 /* 0x03058 */

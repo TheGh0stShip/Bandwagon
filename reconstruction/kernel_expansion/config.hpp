@@ -3,11 +3,15 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <string_view>
 
 namespace bandwagon::kernel_expansion {
 
 inline constexpr std::size_t kPeerPressureConfigSize = 0x170;
 inline constexpr std::size_t kDefaultEnabledFlagOffset = 0x129;
+inline constexpr std::string_view kPeerPressureConfigPath =
+    "\\Device\\Harddisk0\\Partition1\\PeerPressure\\System\\Config.ini";
+inline constexpr std::uint32_t kConfigSchemaEntryCount = 6;
 
 // Only fields established by direct accesses are named. The remaining bytes
 // stay explicit, indexed configuration storage until their schema entries are

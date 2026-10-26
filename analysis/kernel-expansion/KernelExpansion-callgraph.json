@@ -1250,8 +1250,8 @@
       "caller_address": "0x801f1328",
       "instruction_address": "0x801f146c",
       "target_address": "0x801f3000",
-      "callee": "fn_801F3000",
-      "target_containing_function": "fn_801F3000"
+      "callee": "ProcessPeerPressureConfigFile",
+      "target_containing_function": "ProcessPeerPressureConfigFile"
     },
     {
       "caller": "ReadFileToAllocatedBuffer",
@@ -1354,8 +1354,8 @@
       "caller_address": "0x801f16a8",
       "instruction_address": "0x801f16e8",
       "target_address": "0x801f3050",
-      "callee": "fn_801F3050",
-      "target_containing_function": "fn_801F3050"
+      "callee": "RunLockedPeerPressureConfigFile",
+      "target_containing_function": "RunLockedPeerPressureConfigFile"
     },
     {
       "caller": "LoadStructuredConfigFile",
@@ -2158,7 +2158,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F3000",
+      "caller": "ProcessPeerPressureConfigFile",
       "caller_address": "0x801f3000",
       "instruction_address": "0x801f302c",
       "target_address": "0x801f3f00",
@@ -2166,7 +2166,7 @@
       "target_containing_function": "fn_801F3F00"
     },
     {
-      "caller": "fn_801F3050",
+      "caller": "RunLockedPeerPressureConfigFile",
       "caller_address": "0x801f3050",
       "instruction_address": "0x801f3068",
       "target_address": "0x801feec8",
@@ -2174,7 +2174,7 @@
       "target_containing_function": "KeEnterCriticalRegion"
     },
     {
-      "caller": "fn_801F3050",
+      "caller": "RunLockedPeerPressureConfigFile",
       "caller_address": "0x801f3050",
       "instruction_address": "0x801f3078",
       "target_address": "0x801fef18",
@@ -2182,15 +2182,15 @@
       "target_containing_function": "ExAcquireReadWriteLockExclusive"
     },
     {
-      "caller": "fn_801F3050",
+      "caller": "RunLockedPeerPressureConfigFile",
       "caller_address": "0x801f3050",
       "instruction_address": "0x801f3080",
       "target_address": "0x801f3000",
-      "callee": "fn_801F3000",
-      "target_containing_function": "fn_801F3000"
+      "callee": "ProcessPeerPressureConfigFile",
+      "target_containing_function": "ProcessPeerPressureConfigFile"
     },
     {
-      "caller": "fn_801F3050",
+      "caller": "RunLockedPeerPressureConfigFile",
       "caller_address": "0x801f3050",
       "instruction_address": "0x801f3088",
       "target_address": "0x801feee8",
@@ -2198,7 +2198,7 @@
       "target_containing_function": "ExReleaseReadWriteLock"
     },
     {
-      "caller": "fn_801F3050",
+      "caller": "RunLockedPeerPressureConfigFile",
       "caller_address": "0x801f3050",
       "instruction_address": "0x801f308c",
       "target_address": "0x801feef8",
