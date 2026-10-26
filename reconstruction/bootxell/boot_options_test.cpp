@@ -42,5 +42,24 @@ int main() {
                      "\"I Understand This Can Break My Console\"");
   ParseBootIniOption(&acknowledged, nullptr, nullptr, nullptr);
   assert(acknowledged.options[0].bypass_xell_scanning);
+
+  assert(bandwagon::bootxell::BuildOtherOsPath(state.options[0]) ==
+         "PPROOT:\\OtherOS\\linux\\xell.bin");
+
+  const auto request = bandwagon::bootxell::BuildRbtrLaunchRequest(
+      state.options[0], 0x1c100080u, 129u);
+  assert(request.magic == 0x72627472u);
+  assert(request.command == 4u);
+  assert(request.base_address == 0x800000001c000000ULL);
+  assert(request.physical_alias == 0x800000001c100080ULL);
+  assert(request.word_count == 64u);  // 129 rounds to 256 bytes.
+
+  bandwagon::bootxell::BootOption low_base;
+  low_base.base_address = 0x1c000000u;
+  const auto defaulted = bandwagon::bootxell::BuildRbtrLaunchRequest(
+      low_base, 0x00123400u, 128u);
+  assert(defaulted.base_address == 0x800000001c040000ULL);
+  assert(defaulted.word_count == 32u);
+
   std::cout << "BootXell option reconstruction tests passed\n";
 }

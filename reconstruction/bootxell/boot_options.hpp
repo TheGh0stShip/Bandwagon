@@ -19,6 +19,14 @@ struct BootOptionParserState {
   BootOption* current = nullptr;
 };
 
+struct RbtrLaunchRequest {
+  std::uint32_t magic;
+  std::uint32_t command;
+  std::uint64_t base_address;
+  std::uint64_t physical_alias;
+  std::uint32_t word_count;
+};
+
 // Callback shape used by inih. A null section/name/value tuple finalizes the
 // current record, matching the closed program's parser wrapper.
 int ParseBootIniOption(void* user, const char* section, const char* name,
@@ -28,5 +36,10 @@ void FinalizeBootIniOptions(BootOptionParserState& state);
 bool HasSafeXellTrailer(const std::uint8_t* image, std::size_t size);
 bool IsLaunchImageAllowed(const BootOption& option, const std::uint8_t* image,
                           std::size_t size);
+
+std::string BuildOtherOsPath(const BootOption& option);
+RbtrLaunchRequest BuildRbtrLaunchRequest(const BootOption& option,
+                                         std::uint32_t physical_address,
+                                         std::uint32_t file_size);
 
 }  // namespace bandwagon::bootxell

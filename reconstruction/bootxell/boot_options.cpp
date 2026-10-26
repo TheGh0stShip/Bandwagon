@@ -15,6 +15,8 @@ constexpr char kBypassAcknowledgement[] =
 constexpr std::uint8_t kSafeTrailer[16] = {
     'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x',
     'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'};
+constexpr std::uint64_t kDefaultBaseAddress = 0x800000001c040000ULL;
+constexpr std::uint64_t kHighHalfAlias = 0x8000000000000000ULL;
 
 std::string Unquote(const char* value) {
   if (!value) return {};
@@ -81,6 +83,29 @@ bool HasSafeXellTrailer(const std::uint8_t* image, std::size_t size) {
 bool IsLaunchImageAllowed(const BootOption& option, const std::uint8_t* image,
                           std::size_t size) {
   return option.bypass_xell_scanning || HasSafeXellTrailer(image, size);
+}
+
+std::string BuildOtherOsPath(const BootOption& option) {
+  return "PPROOT:\\OtherOS\\" + option.file_name;
+}
+
+RbtrLaunchRequest BuildRbtrLaunchRequest(const BootOption& option,
+                                         std::uint32_t physical_address,
+                                         std::uint32_t file_size) {
+  // LaunchBootOption accepts a configured base only when it is already in the
+  // high half of the 64-bit address space. Its allocation length is rounded
+  // to 128 bytes before being converted to a count of 32-bit words.
+  const std::uint64_t base = (option.base_address & kHighHalfAlias) != 0
+                                 ? option.base_address
+                                 : kDefaultBaseAddress;
+  const std::uint32_t aligned_size = (file_size + 127u) & ~127u;
+  return {
+      0x72627472u,  // "rbtr"
+      4u,
+      base,
+      kHighHalfAlias | physical_address,
+      aligned_size >> 2,
+  };
 }
 
 }  // namespace bandwagon::bootxell
