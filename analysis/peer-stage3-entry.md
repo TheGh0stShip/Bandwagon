@@ -54,6 +54,12 @@ fatal codes `0x12414` and `0x12415`, successful Stage4 release, SMC command
 return, matching the closed routine's platform contract, and performs no
 exploit, physical-memory, SMC, or title-launch operation in host tests.
 
+`reconstruction/stage3/runtime.cpp` is the executable source-level lift of the
+entry and resident-probe orchestration. Physical allocation, installation of
+the unavoidable 0x38-byte PowerPC probe stub, syscalls, file loading, SMC I/O,
+fatal display, and title launch are isolated behind a `Platform` interface and
+verified with a host mock.
+
 ## Difference from public BadUpdate v1.3
 
 Public BadUpdate always prints a start message and runs its exploit before
