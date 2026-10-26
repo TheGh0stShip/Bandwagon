@@ -24,7 +24,7 @@ not the final implementation.
 | Updater | Complete initialized sections | Partial: manifest/wrapper parsing, parent paths, phase-two list, HDD bootstrap record |
 | BootXell | Complete initialized sections | Partial: boot-option parsing and launch decisions |
 | AuroraFixer | Complete initialized sections | Complete: all five Peer-authored routines, including live import traversal, mutation, cache maintenance, and entry flow |
-| UpdateCheck | Complete initialized sections | Partial: release-version handling |
+| UpdateCheck | Complete initialized sections | Partial: both identified Peer routines have verified C++ coverage; whole-image function ownership classification remains |
 | SettingsApp | Complete initialized sections | Partial: release metadata and offline/update decisions |
 | BootEdit | Complete initialized sections | Partial: theme navigation/edit decisions |
 | Stage2 / Flash DMA / KernelExpansion | Complete whole-file assembly | Initial semantic maps only |

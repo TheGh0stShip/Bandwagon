@@ -28,7 +28,9 @@ stack, loads the trusted roots from `PPROOT:\\System\\IncludedRootsPEM.txt`, and
 performs an HTTPS request to
 `https://api.github.com/repos/grimdoomer/Xbox360PeerPressure/releases/latest`.
 It accepts only HTTP status 200, parses the JSON response, and delegates the
-`tag_name` field to `ParseReleaseVersion` at `0x91a0c3e8`.
+`tag_name` field to `ParseReleaseVersion` at `0x91a0c3e8`. The outer function
+reports success and writes the result only when the parsed remote version is
+strictly greater than the installed version.
 
 The accepted release tag format is `%*c%d.%d.%d`: one leading character is
 discarded and exactly three decimal components must parse. Those components are
@@ -36,11 +38,21 @@ packed into the caller's 32-bit version output. Every network, response, JSON,
 and TLS object observed in this path is destroyed before return.
 
 `reconstruction/update_check/release_version.cpp` is the portable, tested
-reconstruction of that scanner and its `rlwimi` packing sequence. It preserves
-the observed C `sscanf` behavior, including signed decimal components and
-trailing input, and truncates the three fields to 8, 8, and 16 bits. The
-surrounding JsonCpp `tag_name` lookup remains a separate ownership boundary.
-Run the host test with `tools/test_updatecheck_reconstruction.sh`.
+reconstruction of the JsonCpp `tag_name` decision, scanner, and `rlwimi`
+packing sequence. It preserves the observed C `sscanf` behavior, including
+signed decimal components and trailing input, and truncates the three fields
+to 8, 8, and 16 bits. JSON decoding remains at the declared JsonCpp ownership
+boundary.
+
+`reconstruction/update_check/latest_release.cpp` lifts the complete outer
+workflow: installed-version lookup, network/TLS initialization, trusted-root
+load, object allocation, recovered request method 2, HTTP-200 gate, JSON
+decode boundary, strict version comparison, output write, and ordered cleanup
+on every normal exit. Its service interface makes the Xbox and third-party
+boundaries explicit without hiding the Peer control flow.
+`UpdateCheck-peer-source-coverage.json` binds both identified Peer routines
+(720 bytes total) to their exact image hashes and source symbols. Run the host
+tests and coverage check with `tools/test_updatecheck_reconstruction.sh`.
 
 Large portions of this image are third-party HTTP/TLS and JSON code. The
 author's public `ATTRIBUTION.md` identifies BearSSL 0.6 and JsonCpp tag

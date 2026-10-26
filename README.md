@@ -21,6 +21,8 @@ The public BadUpdate source baseline is pinned as the
 
 - The XBPP manifest and update archive wrappers have lossless decoders.
 - SMC and kernel patch streams have reproducible JSON decodes.
+- All six motherboard SMC patch streams have exact assembly evidence and
+  complete, tested C++ coverage of every executable replacement record.
 - XEX base images have been extracted locally with recorded hashes.
 - Peer Stage 4 has a byte-identical PowerPC assembly reconstruction.
 - Peer Stage 3 and Stage 4 have complete, byte-identical PowerPC assembly
@@ -43,7 +45,8 @@ The public BadUpdate source baseline is pinned as the
   and complete source-level recovery of all five Peer-authored routines; its
   live `DbgBreakPoint` import redirection and cache maintenance are tested.
 - UpdateCheck has a complete byte-identical initialized-image reconstruction;
-  its HTTPS latest-release lookup and semantic-version parser are documented.
+  both identified Peer routines (the HTTPS latest-release workflow and release
+  parser) have exact-byte-bound, tested C++ lifts.
 - BootEdit has a complete byte-identical initialized-image reconstruction and
   an initial semantic map of its `.xbat` theme editing workflow.
 - SettingsApp has a complete byte-identical initialized-image reconstruction

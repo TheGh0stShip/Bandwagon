@@ -26,4 +26,10 @@ bool ParseReleaseTag(std::string_view tag, std::uint32_t* packed_version) {
   return true;
 }
 
+bool ParseReleaseVersion(const ReleaseDocument& document,
+                         std::uint32_t* packed_version) {
+  if (!document.parse_succeeded || !document.tag_name) return false;
+  return ParseReleaseTag(*document.tag_name, packed_version);
+}
+
 }  // namespace bandwagon::update_check

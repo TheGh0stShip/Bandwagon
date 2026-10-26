@@ -1,0 +1,33 @@
+{
+  "schema": "bandwagon-updatecheck-peer-source-coverage-v1",
+  "image": {
+    "path": "analysis/xex/basefiles/PeerPressure_System_UpdateCheck.pe",
+    "size": 278528,
+    "sha256": "ab6aaf5f2d3f880701269e5835cf9a16aa26c223fcf8ddccb31f8db8ffb72ece",
+    "base_address": "0x91a00000"
+  },
+  "peer_symbol_inventory": "analysis/xex/UpdateCheck-symbols.json",
+  "tests": [
+    "reconstruction/update_check/release_version_test.cpp",
+    "reconstruction/update_check/latest_release_test.cpp"
+  ],
+  "functions": [
+    {
+      "address": "0x91a0c3e8",
+      "size": 312,
+      "sha256": "32e314097c5da75530e0ecb21469fafad42cd9973ea537a746e655b579db8ee6",
+      "semantic_name": "ParseReleaseVersion",
+      "source": "reconstruction/update_check/release_version.cpp",
+      "symbols": ["ParseReleaseVersion", "ParseReleaseTag"]
+    },
+    {
+      "address": "0x91a0d860",
+      "size": 408,
+      "sha256": "f95a72f104f2ac76bca278112be5d8780fb9792e23df45236bb689d88f5f5e7e",
+      "semantic_name": "CheckLatestReleaseVersion",
+      "source": "reconstruction/update_check/latest_release.cpp",
+      "symbols": ["CheckLatestReleaseVersion", "kTrustedRootsPath", "kLatestReleaseUrl"]
+    }
+  ],
+  "scope_note": "Covers every Peer application routine currently identified by function-local evidence; whole-image function ownership classification remains pending."
+}
