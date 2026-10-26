@@ -33,6 +33,8 @@ def main() -> None:
 
     base = int(image_info["base_address"], 0)
     total = 0
+    data_range_count = 0
+    data_total = 0
     for function in manifest["functions"]:
         key = (function["address"].lower(), function["semantic_name"])
         if key not in inventory_functions:
@@ -54,14 +56,40 @@ def main() -> None:
         for symbol in function["symbols"]:
             if symbol not in source and symbol not in header:
                 raise SystemExit(f"missing Kernel Expansion source symbol: {symbol}")
+        for dependency in function.get("data_dependencies", []):
+            dependency_address = int(dependency["address"], 0)
+            dependency_offset = dependency_address - base
+            data = image[
+                dependency_offset : dependency_offset + dependency["size"]
+            ]
+            if len(data) != dependency["size"]:
+                raise SystemExit(
+                    "truncated Kernel Expansion data dependency at "
+                    f"{dependency_address:#x}"
+                )
+            if hashlib.sha256(data).hexdigest() != dependency["sha256"]:
+                raise SystemExit(
+                    "Kernel Expansion data dependency changed at "
+                    f"{dependency_address:#x}"
+                )
+            for symbol in dependency.get("symbols", []):
+                if symbol not in source and symbol not in header:
+                    raise SystemExit(
+                        f"missing Kernel Expansion data symbol: {symbol}"
+                    )
+            data_range_count += 1
+            data_total += len(data)
         total += len(payload)
 
     for test in manifest["tests"]:
         if not (ROOT / test).is_file():
             raise SystemExit(f"missing Kernel Expansion source test: {test}")
+    range_label = "range" if data_range_count == 1 else "ranges"
     print(
         "Kernel Expansion source coverage verified: "
-        f"{len(manifest['functions'])} identified functions, {total} exact bytes"
+        f"{len(manifest['functions'])} identified functions, "
+        f"{total} exact instruction bytes; {data_range_count} data {range_label}, "
+        f"{data_total} exact bytes"
     )
 
 

@@ -189,6 +189,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/instruction_patch_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/flash_versions.cpp" \
+    "$root/reconstruction/kernel_expansion/flash_versions_test.cpp" \
+    -o "$work/flash_versions_test"
+"$work/flash_versions_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/nand_write_protection.cpp" \
     "$root/reconstruction/kernel_expansion/nand_write_protection_test.cpp" \
     -o "$work/nand_write_protection_test"

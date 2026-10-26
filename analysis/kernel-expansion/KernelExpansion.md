@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 68 high-confidence behavioral labels are emitted directly into the exact
+- 70 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -75,6 +75,16 @@ lift. The first exact-byte-bound routines are:
   setter uses only the caller's low byte and stores its Boolean inverse; tests
   bind initial enablement, both
   states, low-byte truncation, raw-byte reads, and safe host null handling.
+- `QueryPeerPressureVersionsFromFlash` and
+  `ResolveNandXbppRecordOffset` (`0x801f1000` and `0x801f2f98`, 480 bytes
+  together), represented as a typed flash service and pure NAND-geometry
+  selector. The table-exposed query publishes current version `0x010001dd`,
+  opens `\Device\Flash`, reads one 512-byte record, requires big-endian
+  `XBPP` at offset `0x110`, and returns the installed version at `0x114`.
+  The 48-byte geometry table is independently hash-bound to the immutable
+  image. Tests bind all twelve cells, unsupported geometry, exact open and read
+  parameters, byte order, output initialization, status propagation, and
+  handle cleanup.
 - `GetPeerPressureConfig` and `InitializeDefaultConfig` (104 bytes together),
   represented with the fully recovered 0x170-byte `PeerPressureConfig` layout:
   boot-animation type and theme, dashboard path, startup-update flag, eject
@@ -252,7 +262,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-57 independently bounded routines totaling 9,984 original instruction bytes.
+59 independently bounded routines totaling 10,464 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 371 discovered entries are maintainable

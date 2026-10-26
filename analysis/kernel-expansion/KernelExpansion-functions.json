@@ -152,9 +152,9 @@
       "address": "0x801f1000",
       "section_offset": "0x1000",
       "size_to_next_symbol": 376,
-      "name": "fn_801F1000",
+      "name": "QueryPeerPressureVersionsFromFlash",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by fixed current version, flash-device read, XBPP magic, and static interface-table role"
       ],
       "kind": "local_code"
     },
@@ -422,9 +422,9 @@
       "address": "0x801f2f98",
       "section_offset": "0x2f98",
       "size_to_next_symbol": 104,
-      "name": "fn_801F2F98",
+      "name": "ResolveNandXbppRecordOffset",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by flash-controller geometry bits and the three NAND offset tables"
       ],
       "kind": "local_code"
     },

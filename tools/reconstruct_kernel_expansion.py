@@ -48,6 +48,7 @@ SEMANTIC_NAMES = {
     0x09C0: "GetPeerPressureConfig",
     0x09D0: "LaunchBootXell",
     0x0A50: "ConfigureBootAnimation",
+    0x1000: "QueryPeerPressureVersionsFromFlash",
     0x1178: "GetPeerPressureConfigValueByHash",
     0x1328: "SetPeerPressureConfigValueByHash",
     0x1490: "CreatePeerPressureRootSymbolicLink",
@@ -62,6 +63,7 @@ SEMANTIC_NAMES = {
     0x1FC0: "LoadBootAnimationTheme",
     0x2D70: "ReplaceInstructionWithNop",
     0x2DB8: "ReleaseBootstrapMapping",
+    0x2F98: "ResolveNandXbppRecordOffset",
     0x3000: "ProcessPeerPressureConfigFile",
     0x3050: "RunLockedPeerPressureConfigFile",
     0x30B0: "ParseConfigFileBuffer",
@@ -110,6 +112,9 @@ SEMANTIC_NAMES = {
 }
 
 SEMANTIC_EVIDENCE = {
+    0x1000: [
+        "behavioral name corroborated by fixed current version, flash-device read, XBPP magic, and static interface-table role"
+    ],
     0x1178: [
         "behavioral name corroborated by decoded hash lookup and static interface-table role"
     ],
@@ -124,6 +129,9 @@ SEMANTIC_EVIDENCE = {
     ],
     0x14B8: [
         "behavioral name corroborated by the inverted NAND-protection store and static interface-table role"
+    ],
+    0x2F98: [
+        "behavioral name corroborated by flash-controller geometry bits and the three NAND offset tables"
     ],
 }
 

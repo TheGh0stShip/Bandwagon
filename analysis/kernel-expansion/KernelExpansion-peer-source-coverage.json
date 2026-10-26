@@ -54,6 +54,15 @@
       "symbols": ["LaunchBootXell", "kBootXellPath", "kXexEntryOrdinal"]
     },
     {
+      "address": "0x801f1000",
+      "size": 376,
+      "sha256": "e686ae620ed5ff25ca37dcc5ec517953afe9bfe831a7079311610fee6ab1b721",
+      "semantic_name": "QueryPeerPressureVersionsFromFlash",
+      "source": "reconstruction/kernel_expansion/flash_versions.cpp",
+      "header": "reconstruction/kernel_expansion/flash_versions.hpp",
+      "symbols": ["FlashOpenRequest", "FlashVersionServices", "QueryPeerPressureVersionsFromFlash", "kCurrentPeerPressureVersion", "kNandXbppMagic"]
+    },
+    {
       "address": "0x801f1178",
       "size": 432,
       "sha256": "1008e65b299ac3b5f8f4610ab91f17c3785611f9a6ef2a9470095d60c6697682",
@@ -149,6 +158,24 @@
       "source": "reconstruction/kernel_expansion/bootstrap_mapping.cpp",
       "header": "reconstruction/kernel_expansion/bootstrap_mapping.hpp",
       "symbols": ["BootstrapMappingRelease", "BootstrapMappingServices", "ReleaseBootstrapMapping"]
+    },
+    {
+      "address": "0x801f2f98",
+      "size": 104,
+      "sha256": "8f99ca8ef4ae51c940eefb9bcd841170f90cc4be9695fdf2877746b5e94e450d",
+      "semantic_name": "ResolveNandXbppRecordOffset",
+      "source": "reconstruction/kernel_expansion/flash_versions.cpp",
+      "header": "reconstruction/kernel_expansion/flash_versions.hpp",
+      "symbols": ["ResolveNandXbppRecordOffset", "kInvalidNandXbppRecordOffset"],
+      "data_dependencies": [
+        {
+          "address": "0x80203804",
+          "size": 48,
+          "sha256": "796f4f1f4767720503288e98da224412de7efcc54c8fd5f835df4403306e6b40",
+          "semantic_name": "NandXbppRecordOffsetTable",
+          "symbols": ["kNandXbppRecordOffsets"]
+        }
+      ]
     },
     {
       "address": "0x801f3000",
@@ -535,6 +562,7 @@
     "reconstruction/kernel_expansion/drive_registry_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
+    "reconstruction/kernel_expansion/flash_versions_test.cpp",
     "reconstruction/kernel_expansion/nand_write_protection_test.cpp",
     "reconstruction/kernel_expansion/instruction_patch_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",

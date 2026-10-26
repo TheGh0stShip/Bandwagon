@@ -1094,7 +1094,7 @@
       "target_containing_function": "ObDereferenceObject"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f1004",
       "target_address": "0x801fead8",
@@ -1102,7 +1102,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f1058",
       "target_address": "0x801febd8",
@@ -1110,7 +1110,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f1088",
       "target_address": "0x801fec88",
@@ -1118,7 +1118,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f10c8",
       "target_address": "0x801fed28",
@@ -1126,15 +1126,15 @@
       "target_containing_function": "NtCreateFile"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f10d4",
       "target_address": "0x801f2f98",
-      "callee": "fn_801F2F98",
-      "target_containing_function": "fn_801F2F98"
+      "callee": "ResolveNandXbppRecordOffset",
+      "target_containing_function": "ResolveNandXbppRecordOffset"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f1114",
       "target_address": "0x801fed48",
@@ -1142,7 +1142,7 @@
       "target_containing_function": "NtReadFile"
     },
     {
-      "caller": "fn_801F1000",
+      "caller": "QueryPeerPressureVersionsFromFlash",
       "caller_address": "0x801f1000",
       "instruction_address": "0x801f1158",
       "target_address": "0x801fed68",

@@ -1044,7 +1044,7 @@ fn_801F0E38:
     .long 0x38600001 /* 0x00ff4 */
     .long 0x4bfffed0 /* 0x00ff8 */
     .long 0x00000000 /* 0x00ffc */
-fn_801F1000:
+QueryPeerPressureVersionsFromFlash:
     .long 0x7d8802a6 /* 0x01000 */
     .long 0x4800dad5 /* 0x01004 */
     .long 0x9421fd50 /* 0x01008 */
@@ -3093,7 +3093,7 @@ fn_801F2DD8:
     .long 0x917e000c /* 0x02f8c */
     .long 0x4bffff9c /* 0x02f90 */
     .long 0x00000000 /* 0x02f94 */
-fn_801F2F98:
+ResolveNandXbppRecordOffset:
     .long 0x3d607fea /* 0x02f98 */
     .long 0x616bc000 /* 0x02f9c */
     .long 0x7d205c2c /* 0x02fa0 */
