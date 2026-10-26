@@ -54,5 +54,15 @@ python3 -B "$root/tools/reconstruct_xex_text.py" \
     --raw-offset 0x5000 \
     --size 0x15a40 \
     --source-label Updater.xex:.text
+python3 -B "$root/tools/analyze_ppc_string_xrefs.py" \
+    "$root/analysis/xex/basefiles/Updater.pe" \
+    "$root/analysis/xex/Updater-functions.json" \
+    --image-base 0x98000000 \
+    --text-offset 0x5000 \
+    --text-address 0x98005000 \
+    --text-size 0x15a40 \
+    --string-start 0x98000400 \
+    --string-end 0x98004400 \
+    --output "$root/analysis/xex/Updater-string-xrefs.json"
 
-echo "Updater function map and exact text reconstruction regenerated"
+echo "Updater function map, string xrefs, and exact text reconstruction regenerated"

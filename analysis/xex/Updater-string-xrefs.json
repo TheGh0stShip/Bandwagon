@@ -1,0 +1,604 @@
+{
+  "schema": "bandwagon-ppc-string-xrefs-v1",
+  "image": "analysis\\xex\\basefiles\\Updater.pe",
+  "image_sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+  "reference_count": 85,
+  "functions_with_references": 26,
+  "references": [
+    {
+      "function": "fn_98005000",
+      "function_address": "0x98005000",
+      "instruction_address": "0x98005010",
+      "string_address": "0x980004f8",
+      "string": "unknown exception"
+    },
+    {
+      "function": "fn_98005140",
+      "function_address": "0x98005140",
+      "instruction_address": "0x980051a8",
+      "string_address": "0x980005f8",
+      "string": "[ERROR] failed to find file '%s' in softmod data archive"
+    },
+    {
+      "function": "fn_98005140",
+      "function_address": "0x98005140",
+      "instruction_address": "0x98005258",
+      "string_address": "0x98000518",
+      "string": "[ERROR] failed to extract '%s' from softmod data archive %d: %s"
+    },
+    {
+      "function": "fn_98005280",
+      "function_address": "0x98005280",
+      "instruction_address": "0x980052e4",
+      "string_address": "0x980005f8",
+      "string": "[ERROR] failed to find file '%s' in softmod data archive"
+    },
+    {
+      "function": "fn_98005280",
+      "function_address": "0x98005280",
+      "instruction_address": "0x980053a0",
+      "string_address": "0x98000518",
+      "string": "[ERROR] failed to extract '%s' from softmod data archive %d: %s"
+    },
+    {
+      "function": "fn_98005720",
+      "function_address": "0x98005720",
+      "instruction_address": "0x98005750",
+      "string_address": "0x980006d8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_98005920",
+      "function_address": "0x98005920",
+      "instruction_address": "0x98005944",
+      "string_address": "0x98000704",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_980059D8",
+      "function_address": "0x980059d8",
+      "instruction_address": "0x98005a00",
+      "string_address": "0x980006f0",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_98005A88",
+      "function_address": "0x98005a88",
+      "instruction_address": "0x98005ab0",
+      "string_address": "0x980006d8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_98005B70",
+      "function_address": "0x98005b70",
+      "instruction_address": "0x98005b98",
+      "string_address": "0x980006f0",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_98005EB0",
+      "function_address": "0x98005eb0",
+      "instruction_address": "0x98005eec",
+      "string_address": "0x98000974",
+      "string": "softmod.manifest"
+    },
+    {
+      "function": "fn_980061D8",
+      "function_address": "0x980061d8",
+      "instruction_address": "0x98006200",
+      "string_address": "0x980006f0",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_980062C8",
+      "function_address": "0x980062c8",
+      "instruction_address": "0x98006464",
+      "string_address": "0x980009c4",
+      "string": "SoftmodData::LoadArchive: failed to open zip archive %d: %s"
+    },
+    {
+      "function": "fn_980064B8",
+      "function_address": "0x980064b8",
+      "instruction_address": "0x98006500",
+      "string_address": "0x980005f8",
+      "string": "[ERROR] failed to find file '%s' in softmod data archive"
+    },
+    {
+      "function": "fn_980064B8",
+      "function_address": "0x980064b8",
+      "instruction_address": "0x9800663c",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_980064B8",
+      "function_address": "0x980064b8",
+      "instruction_address": "0x98006664",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_980064B8",
+      "function_address": "0x980064b8",
+      "instruction_address": "0x98006698",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_980066C8",
+      "function_address": "0x980066c8",
+      "instruction_address": "0x980066f4",
+      "string_address": "0x980006f0",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_98006990",
+      "function_address": "0x98006990",
+      "instruction_address": "0x98006bbc",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98006990",
+      "function_address": "0x98006990",
+      "instruction_address": "0x98006bc8",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006da0",
+      "string_address": "0x98000db8",
+      "string": "\\Device\\Harddisk0\\PhysicalDisk"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006df8",
+      "string_address": "0x98000d88",
+      "string": "[ERROR] failed to open HDD for writing 0x%08x"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006e10",
+      "string_address": "0x98000d64",
+      "string": "Hdd/PeerPressureExploit-Stage2.bin"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006e44",
+      "string_address": "0x98000ce0",
+      "string": "[ERROR] PeerPressureExploit-Stage2.bin has invalid file size"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006e60",
+      "string_address": "0x98000cac",
+      "string": "[ERROR] PeerPressureExploit-Stage2.bin is too large"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006e90",
+      "string_address": "0x98000c68",
+      "string": "InstallHddBootstrap: failed to allocate memory for stage 2 payload"
+    },
+    {
+      "function": "fn_98006D40",
+      "function_address": "0x98006d40",
+      "instruction_address": "0x98006f2c",
+      "string_address": "0x98000c24",
+      "string": "[ERROR] failed to write modified stage 2 payload to HDD 0x%08x"
+    },
+    {
+      "function": "fn_98006F60",
+      "function_address": "0x98006f60",
+      "instruction_address": "0x98006fb8",
+      "string_address": "0x98000e78",
+      "string": "PPROOT:\\update.phase2"
+    },
+    {
+      "function": "fn_980070C0",
+      "function_address": "0x980070c0",
+      "instruction_address": "0x980070ec",
+      "string_address": "0x980006d8",
+      "string": "invalid string position"
+    },
+    {
+      "function": "fn_980070C0",
+      "function_address": "0x980070c0",
+      "instruction_address": "0x98007118",
+      "string_address": "0x98000704",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_98007230",
+      "function_address": "0x98007230",
+      "instruction_address": "0x98007298",
+      "string_address": "0x98000704",
+      "string": "string too long"
+    },
+    {
+      "function": "fn_98007528",
+      "function_address": "0x98007528",
+      "instruction_address": "0x98007550",
+      "string_address": "0x980006f0",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_98007608",
+      "function_address": "0x98007608",
+      "instruction_address": "0x98007634",
+      "string_address": "0x980006f0",
+      "string": "vector<T> too long"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x9800778c",
+      "string_address": "0x98000ef8",
+      "string": "Loading update data..."
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x980077dc",
+      "string_address": "0x98000ee8",
+      "string": "PeerPressure/"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x980077fc",
+      "string_address": "0x98000ed0",
+      "string": "Updating HDD payload..."
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x9800784c",
+      "string_address": "0x98000eb0",
+      "string": "Extracting: %s"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007854",
+      "string_address": "0x98000ea0",
+      "string": "PPROOT:\\"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007ac4",
+      "string_address": "0x98000e90",
+      "string": "Finalizing..."
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007b2c",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007b38",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007b44",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007b50",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98007758",
+      "function_address": "0x98007758",
+      "instruction_address": "0x98007b94",
+      "string_address": "0x980006bc",
+      "string": "invalid vector<T> subscript"
+    },
+    {
+      "function": "fn_98008818",
+      "function_address": "0x98008818",
+      "instruction_address": "0x98008828",
+      "string_address": "0x98000fac",
+      "string": "Unknown exception"
+    },
+    {
+      "function": "fn_98008BD0",
+      "function_address": "0x98008bd0",
+      "instruction_address": "0x98008c3c",
+      "string_address": "0x98000fc8",
+      "string": "bad allocation"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2a4",
+      "string_address": "0x980020d4",
+      "string": "no error"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2b0",
+      "string_address": "0x980020c4",
+      "string": "undefined error"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2bc",
+      "string_address": "0x980020b4",
+      "string": "too many files"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2c8",
+      "string_address": "0x980020a4",
+      "string": "file too large"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2d4",
+      "string_address": "0x98002090",
+      "string": "unsupported method"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2e0",
+      "string_address": "0x98002078",
+      "string": "unsupported encryption"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2ec",
+      "string_address": "0x98002064",
+      "string": "unsupported feature"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c2f8",
+      "string_address": "0x98002040",
+      "string": "failed finding central directory"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c304",
+      "string_address": "0x9800202c",
+      "string": "not a ZIP archive"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c310",
+      "string_address": "0x98002004",
+      "string": "invalid header or archive is corrupted"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c31c",
+      "string_address": "0x98001fe4",
+      "string": "unsupported multidisk archive"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c328",
+      "string_address": "0x98001fb4",
+      "string": "decompression failed or archive is corrupted"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c334",
+      "string_address": "0x98001fa0",
+      "string": "compression failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c340",
+      "string_address": "0x98001f80",
+      "string": "unexpected decompressed size"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c34c",
+      "string_address": "0x98001f6c",
+      "string": "CRC-32 check failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c358",
+      "string_address": "0x98001f48",
+      "string": "unsupported central directory size"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c364",
+      "string_address": "0x98001f34",
+      "string": "allocation failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c370",
+      "string_address": "0x98001f20",
+      "string": "file open failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c37c",
+      "string_address": "0x98001f0c",
+      "string": "file create failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c388",
+      "string_address": "0x98001ef8",
+      "string": "file write failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c394",
+      "string_address": "0x98001ee4",
+      "string": "file read failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3a0",
+      "string_address": "0x98001ed0",
+      "string": "file close failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3ac",
+      "string_address": "0x98001ebc",
+      "string": "file seek failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3b8",
+      "string_address": "0x98001ea8",
+      "string": "file stat failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3c4",
+      "string_address": "0x98001e94",
+      "string": "invalid parameter"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3d0",
+      "string_address": "0x98001e80",
+      "string": "invalid filename"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3dc",
+      "string_address": "0x98001e6c",
+      "string": "buffer too small"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3e8",
+      "string_address": "0x98001e5c",
+      "string": "internal error"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c3f4",
+      "string_address": "0x98001e4c",
+      "string": "file not found"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c400",
+      "string_address": "0x98001e34",
+      "string": "archive is too large"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c40c",
+      "string_address": "0x98001e20",
+      "string": "validation failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c418",
+      "string_address": "0x98001e08",
+      "string": "write callback failed"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c424",
+      "string_address": "0x98001df8",
+      "string": "total errors"
+    },
+    {
+      "function": "fn_9800C270",
+      "function_address": "0x9800c270",
+      "instruction_address": "0x9800c430",
+      "string_address": "0x98001de8",
+      "string": "unknown error"
+    },
+    {
+      "function": "fn_9800F8D8",
+      "function_address": "0x9800f8d8",
+      "instruction_address": "0x9800fa30",
+      "string_address": "0x98002a80",
+      "string": "e+000"
+    },
+    {
+      "function": "fn_980155B8",
+      "function_address": "0x980155b8",
+      "instruction_address": "0x980156c4",
+      "string_address": "0x98003ea4",
+      "string": "1#SNAN"
+    },
+    {
+      "function": "fn_980155B8",
+      "function_address": "0x980155b8",
+      "instruction_address": "0x98015714",
+      "string_address": "0x98003e9c",
+      "string": "1#IND"
+    },
+    {
+      "function": "fn_980155B8",
+      "function_address": "0x980155b8",
+      "instruction_address": "0x98015758",
+      "string_address": "0x98003e94",
+      "string": "1#INF"
+    },
+    {
+      "function": "fn_980155B8",
+      "function_address": "0x980155b8",
+      "instruction_address": "0x98015794",
+      "string_address": "0x98003e8c",
+      "string": "1#QNAN"
+    }
+  ]
+}

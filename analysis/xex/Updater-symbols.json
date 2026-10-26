@@ -1,0 +1,48 @@
+{
+  "schema": "bandwagon-updater-semantic-symbols-v1",
+  "image_sha256": "2f8210528112a5cf5df514db7a3fa2c05322e845c6c2c747e8fc7c1485f4522c",
+  "symbols": [
+    {
+      "address": "0x980062c8",
+      "recovered_name": "fn_980062C8",
+      "semantic_name": "SoftmodData_LoadArchive",
+      "confidence": "high",
+      "evidence": ["diagnostic at 0x980009c4 names SoftmodData::LoadArchive"]
+    },
+    {
+      "address": "0x980064b8",
+      "recovered_name": "fn_980064B8",
+      "semantic_name": "SoftmodData_ReadArchivedFile",
+      "confidence": "high",
+      "evidence": ["archive-member lookup diagnostic at 0x980005f8", "called with the Stage2 archive path, output buffer, size, and bytes-read pointer"]
+    },
+    {
+      "address": "0x98006ce0",
+      "recovered_name": "fn_98006CE0",
+      "semantic_name": "GetSoftmodDataContext",
+      "confidence": "medium",
+      "evidence": ["returns the object subsequently passed to SoftmodData_ReadArchivedFile", "the object field at +0x80 becomes the Stage2 manifest header field at +4"]
+    },
+    {
+      "address": "0x98006d40",
+      "recovered_name": "fn_98006D40",
+      "semantic_name": "InstallHddBootstrap",
+      "confidence": "high",
+      "evidence": ["allocation diagnostic explicitly names InstallHddBootstrap", "opens \\Device\\Harddisk0\\PhysicalDisk", "loads Hdd/PeerPressureExploit-Stage2.bin and calls NtWriteFile"]
+    },
+    {
+      "address": "0x98006f60",
+      "recovered_name": "fn_98006F60",
+      "semantic_name": "WritePhaseTwoFileList",
+      "confidence": "medium",
+      "evidence": ["references PPROOT:\\update.phase2", "serializes the phase-two path list"]
+    },
+    {
+      "address": "0x98007758",
+      "recovered_name": "fn_98007758",
+      "semantic_name": "RunUpdate",
+      "confidence": "high",
+      "evidence": ["owns the Loading update data, Updating HDD payload, Extracting, and Finalizing progress states", "coordinates PeerPressure/ extraction and the HDD bootstrap install"]
+    }
+  ]
+}

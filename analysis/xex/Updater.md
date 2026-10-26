@@ -19,6 +19,11 @@ expands them to 376 code symbols through control-flow analysis. It also names
 48 kernel import thunks. The complete address inventory is in
 [`Updater-functions.json`](Updater-functions.json).
 
+Direct PPC address-construction references into `.rdata` are generated in
+[`Updater-string-xrefs.json`](Updater-string-xrefs.json). The initial semantic
+name overlay, with confidence and evidence kept separate from recovered COFF
+symbols, is in [`Updater-symbols.json`](Updater-symbols.json).
+
 [`Updater.text.reconstructed.S`](../reconstruction/Updater.text.reconstructed.S)
 is a complete buildable reconstruction of the 88,640-byte `.text` section.
 Assembling it reproduces SHA-256
@@ -46,8 +51,45 @@ Static strings and call targets establish these major responsibilities:
 - report and preserve explicit failure states for archive, allocation, file,
   and raw-disk operations.
 
+### Stage2 HDD bootstrap record
+
+`fn_98006D40` is identified at high confidence as `InstallHddBootstrap`. Its
+control flow reconstructs the following operation without executing the XEX:
+
+1. Open `\\Device\\Harddisk0\\PhysicalDisk` for writing.
+2. Query `Hdd/PeerPressureExploit-Stage2.bin` in the SoftmodData archive and
+   reject a zero length or any payload larger than `0x7c000` bytes.
+3. Round `payload_size + 0x1ff` down to a 512-byte boundary, allocate that
+   rounded size with 128-byte alignment, and read the archive member into it.
+4. Compute a CRC over the unrounded payload, then overwrite the first 16 bytes
+   with an `XBPP` bootstrap header (all multibyte fields are stored in native
+   big-endian PPC order):
+
+   | Offset | Size | Reconstructed value |
+   | ---: | ---: | --- |
+   | `0x00` | 4 | magic `XBPP` (`0x58425050`) |
+   | `0x04` | 4 | SoftmodData context field at offset `0x80` |
+   | `0x08` | 4 | unrounded archive-member size |
+   | `0x0c` | 4 | `RtlComputeCrc32(0, buffer, payload_size)` |
+
+5. Call `NtWriteFile` once with the rounded buffer size and byte offset
+   `0x4000`, then free the buffer and close the disk handle on every exit path.
+
+The CRC is calculated before the four header words are written. Consequently,
+it describes the original Stage2 archive bytes, including their original first
+16 bytes, rather than the finalized on-disk record. This ordering follows the
+instructions at `0x98006ec4` through `0x98006f00`; the import calls resolve to
+`RtlComputeCrc32` at `0x9801a760`, `NtWriteFile` at `0x9801a750`, and `NtClose`
+at `0x9801a740`.
+
+No instruction initializes the bytes between the unrounded payload length and
+the rounded write length. Unless the allocator itself returns cleared memory,
+the final partial sector therefore contains stale allocation data. This is a
+faithful description of the closed binary, not behavior an open reimplementation
+should preserve unintentionally.
+
 The executable code section is now exactly reconstructable, but this is not
 yet a source-complete claim for the application. The next Updater phase is to
-assign semantic names and types to its application functions, reconstruct the
-Stage2 mutation algorithm, recover `.rdata` and `.data`, and separate bundled
-runtime/library code from Peer-authored code.
+expand semantic names and types across the remaining application functions,
+recover `.rdata` and `.data`, and separate bundled runtime/library code from
+Peer-authored code.
