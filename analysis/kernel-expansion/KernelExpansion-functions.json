@@ -52,9 +52,9 @@
       "address": "0x801f04b8",
       "section_offset": "0x4b8",
       "size_to_next_symbol": 176,
-      "name": "fn_801F04B8",
+      "name": "ConfigureSataUltraDmaMode",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by SATA IDENTIFY data, the Ultra DMA capability byte, transfer-mode command, and settling delay"
       ],
       "kind": "local_code"
     },

@@ -312,7 +312,7 @@ DeleteObjectManagerSymbolicLink:
     .long 0x8181fff8 /* 0x004ac */
     .long 0x7d8803a6 /* 0x004b0 */
     .long 0x4e800020 /* 0x004b4 */
-fn_801F04B8:
+ConfigureSataUltraDmaMode:
     .long 0x7d8802a6 /* 0x004b8 */
     .long 0x9181fff8 /* 0x004bc */
     .long 0xfbe1fff0 /* 0x004c0 */

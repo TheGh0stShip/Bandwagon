@@ -28,6 +28,15 @@
       "symbols": ["SymbolicLinkServices", "DeleteObjectManagerSymbolicLink"]
     },
     {
+      "address": "0x801f04b8",
+      "size": 176,
+      "sha256": "2c4087daef37cb6caf4ae24e12bd9b469189c9617ce7dea48d95c7505c266446",
+      "semantic_name": "ConfigureSataUltraDmaMode",
+      "source": "reconstruction/kernel_expansion/sata_udma.cpp",
+      "header": "reconstruction/kernel_expansion/sata_udma.hpp",
+      "symbols": ["SataUdmaServices", "ConfigureSataUltraDmaMode", "kSataChannelAddress", "kSataIdentifyDataSize", "kSataUltraDmaCapabilityOffset", "kMinimumSataUltraDmaMode", "kMaximumSataUltraDmaMode", "kSataUltraDmaTransferModeBase", "kSataTransferModeSettleMicroseconds"]
+    },
+    {
       "address": "0x801f05f0",
       "size": 88,
       "sha256": "80213b6bf11423cab347a1c2b912b7f6f33103bf9636417470e7941d19a875e2",
@@ -705,6 +714,7 @@
     "reconstruction/kernel_expansion/path_fields_test.cpp",
     "reconstruction/kernel_expansion/phase_two_restore_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
+    "reconstruction/kernel_expansion/sata_udma_test.cpp",
     "reconstruction/kernel_expansion/sfcx_write_protection_test.cpp",
     "reconstruction/kernel_expansion/signin_state_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",

@@ -74,8 +74,8 @@
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f00c8",
       "target_address": "0x801f04b8",
-      "callee": "fn_801F04B8",
-      "target_containing_function": "fn_801F04B8"
+      "callee": "ConfigureSataUltraDmaMode",
+      "target_containing_function": "ConfigureSataUltraDmaMode"
     },
     {
       "caller": "KernelExpansionInitialize",
@@ -390,7 +390,7 @@
       "target_containing_function": "ObDeleteSymbolicLink"
     },
     {
-      "caller": "fn_801F04B8",
+      "caller": "ConfigureSataUltraDmaMode",
       "caller_address": "0x801f04b8",
       "instruction_address": "0x801f04dc",
       "target_address": "0x801feca8",
@@ -398,7 +398,7 @@
       "target_containing_function": "SataChannelIdentifyDevice"
     },
     {
-      "caller": "fn_801F04B8",
+      "caller": "ConfigureSataUltraDmaMode",
       "caller_address": "0x801f04b8",
       "instruction_address": "0x801f0530",
       "target_address": "0x801fecb8",
@@ -406,7 +406,7 @@
       "target_containing_function": "SataChannelSetTransferMode"
     },
     {
-      "caller": "fn_801F04B8",
+      "caller": "ConfigureSataUltraDmaMode",
       "caller_address": "0x801f04b8",
       "instruction_address": "0x801f0540",
       "target_address": "0x801fec38",
@@ -414,7 +414,7 @@
       "target_containing_function": "KeStallExecutionProcessor"
     },
     {
-      "caller": "fn_801F04B8",
+      "caller": "ConfigureSataUltraDmaMode",
       "caller_address": "0x801f04b8",
       "instruction_address": "0x801f0550",
       "target_address": "0x801feca8",

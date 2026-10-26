@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 79 high-confidence behavioral labels are emitted directly into the exact
+- 80 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -185,6 +185,16 @@ lift. The first exact-byte-bound routines are:
   quirk, read-failure allocation leak, ignored cleanup results, and exact fixed
   hook destinations. Bounds and null guards are identified as host-safety
   additions because the target trusts its bundled stream and fatal routine.
+- `ConfigureSataUltraDmaMode` (`0x801f04b8`, 176 bytes), represented as a
+  typed SATA-channel service. It reads the fixed channel's 236-byte ATA
+  IDENTIFY data, scans the Ultra DMA capability mask from mode seven downward,
+  rejects modes below two, clamps modes six and seven to six, and requests
+  transfer mode `0x40 + mode`. Only a successful request triggers the recovered
+  100-microsecond stall and second IDENTIFY; that refresh status is ignored.
+  Tests bind exact arguments and ordering, positive and negative failures,
+  every boundary mode, highest-bit selection, clamping, and ignored refresh
+  failure. The source preserves the target's uninitialized stack-buffer
+  contract: a successful IDENTIFY service call owns the full output.
 - `ReplaceInstructionWithNop` (`0x801f2d70`, 72 bytes), represented as a typed
   instruction mutation with the recovered CPU flush, physical-address
   translation, and hypervisor data-cache flush ordering.
@@ -298,7 +308,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-69 independently bounded routines totaling 12,096 original instruction bytes.
+70 independently bounded routines totaling 12,272 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 372 discovered entries are maintainable

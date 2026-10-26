@@ -44,6 +44,7 @@ SEMANTIC_NAMES = {
     0x0150: "ReportExceptionContext",
     0x03C0: "InstallRelativeBranchHook",
     0x0480: "DeleteObjectManagerSymbolicLink",
+    0x04B8: "ConfigureSataUltraDmaMode",
     0x05F0: "CreateObjectManagerSymbolicLink",
     0x0648: "LoadPeerPressureConfig",
     0x0748: "InstallKernelPatchesAndHooks",
@@ -124,6 +125,9 @@ SEMANTIC_NAMES = {
 SEMANTIC_EVIDENCE = {
     0x03C0: [
         "behavioral name corroborated by signed PPC branch-range checks, optional instruction backup, branch encoding, and cache maintenance"
+    ],
+    0x04B8: [
+        "behavioral name corroborated by SATA IDENTIFY data, the Ultra DMA capability byte, transfer-mode command, and settling delay"
     ],
     0x0748: [
         "behavioral name corroborated by the kernel-patch path, big-endian patch loop, and unconditional fixed post-load hook sequence"
