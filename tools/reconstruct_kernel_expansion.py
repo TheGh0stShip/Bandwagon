@@ -45,6 +45,7 @@ SEMANTIC_NAMES = {
     0x1A60: "ConfigureAuroraSideLoad",
     0x1CF0: "LoadBootImage",
     0x1FC0: "LoadBootAnimationTheme",
+    0x2D70: "ReplaceInstructionWithNop",
     0x3378: "ResolveSideLoadConfiguration",
     0x4938: "ParseDllConfigEntry",
     0x6AF0: "ParseDriveNumberPrefix",

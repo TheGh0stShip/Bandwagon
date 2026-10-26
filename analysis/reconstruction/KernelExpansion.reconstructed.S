@@ -2949,7 +2949,7 @@ fn_801F2B20:
     .long 0xebe1fff0 /* 0x02d64 */
     .long 0x4e800020 /* 0x02d68 */
     .long 0x00000000 /* 0x02d6c */
-fn_801F2D70:
+ReplaceInstructionWithNop:
     .long 0x7d8802a6 /* 0x02d70 */
     .long 0x9181fff8 /* 0x02d74 */
     .long 0xfbe1fff0 /* 0x02d78 */

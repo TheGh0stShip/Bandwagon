@@ -60,3 +60,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/namespace_links_test.cpp" \
     -o "$work/namespace_links_test"
 "$work/namespace_links_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/instruction_patch.cpp" \
+    "$root/reconstruction/kernel_expansion/instruction_patch_test.cpp" \
+    -o "$work/instruction_patch_test"
+"$work/instruction_patch_test"

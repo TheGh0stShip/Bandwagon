@@ -954,8 +954,8 @@
       "caller_address": "0x801f0a50",
       "instruction_address": "0x801f0d30",
       "target_address": "0x801f2d70",
-      "callee": "fn_801F2D70",
-      "target_containing_function": "fn_801F2D70"
+      "callee": "ReplaceInstructionWithNop",
+      "target_containing_function": "ReplaceInstructionWithNop"
     },
     {
       "caller": "ConfigureBootAnimation",
@@ -2014,7 +2014,7 @@
       "target_containing_function": "HalSendSMCMessage"
     },
     {
-      "caller": "fn_801F2D70",
+      "caller": "ReplaceInstructionWithNop",
       "caller_address": "0x801f2d70",
       "instruction_address": "0x801f2d90",
       "target_address": "0x801fec48",
@@ -2022,7 +2022,7 @@
       "target_containing_function": "KeFlushCacheRange"
     },
     {
-      "caller": "fn_801F2D70",
+      "caller": "ReplaceInstructionWithNop",
       "caller_address": "0x801f2d70",
       "instruction_address": "0x801f2d98",
       "target_address": "0x801fec58",
@@ -2030,7 +2030,7 @@
       "target_containing_function": "MmGetPhysicalAddress"
     },
     {
-      "caller": "fn_801F2D70",
+      "caller": "ReplaceInstructionWithNop",
       "caller_address": "0x801f2d70",
       "instruction_address": "0x801f2da0",
       "target_address": "0x801fec68",
@@ -2482,16 +2482,16 @@
       "caller_address": "0x801f3690",
       "instruction_address": "0x801f36f4",
       "target_address": "0x801f2d70",
-      "callee": "fn_801F2D70",
-      "target_containing_function": "fn_801F2D70"
+      "callee": "ReplaceInstructionWithNop",
+      "target_containing_function": "ReplaceInstructionWithNop"
     },
     {
       "caller": "fn_801F3690",
       "caller_address": "0x801f3690",
       "instruction_address": "0x801f3700",
       "target_address": "0x801f2d70",
-      "callee": "fn_801F2D70",
-      "target_containing_function": "fn_801F2D70"
+      "callee": "ReplaceInstructionWithNop",
+      "target_containing_function": "ReplaceInstructionWithNop"
     },
     {
       "caller": "fn_801F3690",

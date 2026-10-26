@@ -79,6 +79,15 @@
       "symbols": ["XexHookServices", "InstallKernelXexDataHandlers", "kFirstXexDataHandler", "kSecondXexDataHandler"]
     },
     {
+      "address": "0x801f2d70",
+      "size": 72,
+      "sha256": "5ac74e9acf3cba8266d0a54d88a2b3012a95913acce8b0254fa2b57775ff6ac5",
+      "semantic_name": "ReplaceInstructionWithNop",
+      "source": "reconstruction/kernel_expansion/instruction_patch.cpp",
+      "header": "reconstruction/kernel_expansion/instruction_patch.hpp",
+      "symbols": ["InstructionPatchServices", "ReplaceInstructionWithNop", "kPpcNopInstruction"]
+    },
+    {
       "address": "0x801f6af0",
       "size": 120,
       "sha256": "a8f598c960e062214fa71aea956ea83f7b12a9b39fb9d6b825eb721d2fe39c18",
@@ -170,6 +179,7 @@
   "tests": [
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
+    "reconstruction/kernel_expansion/instruction_patch_test.cpp",
     "reconstruction/kernel_expansion/namespace_links_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",
     "reconstruction/kernel_expansion/path_fields_test.cpp",

@@ -68,9 +68,10 @@ The public BadUpdate source baseline is pinned as the
 matrix. Of 33 installed components, no Peer raw payload remains without
 binary-exact source-form reconstruction. `FlashDmaPayload.bin` additionally
 has complete source-level C++ recovery. `KernelExpansion.bin` now has its first
-eighteen exact-byte-bound C++ lifts, including its object-manager link wrappers,
-separated package callbacks, UTF-16 drive-prefix parser, path validator, and
-bounded path-field copier. The remainder and Stage2 still require
+nineteen exact-byte-bound C++ lifts, including its object-manager link wrappers,
+cache-coherent instruction patch, separated package callbacks, UTF-16
+drive-prefix parser, path validator, and bounded path-field copier. The
+remainder and Stage2 still require
 maintainable-source recovery beyond their byte-identical assembly evidence.
 
 Semantic recovery of remaining functions, types, globals, indirect control

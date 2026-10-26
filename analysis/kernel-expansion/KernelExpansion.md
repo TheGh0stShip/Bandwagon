@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 31 high-confidence behavioral labels are emitted directly into the exact
+- 32 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -78,6 +78,9 @@ lift. The first exact-byte-bound routines are:
   handler words, updates the table count, and performs the recovered CPU and
   hypervisor cache-maintenance sequence. The earlier `FindXexSection` label
   described only the first part of the routine and has been corrected.
+- `ReplaceInstructionWithNop` (`0x801f2d70`, 72 bytes), represented as a typed
+  instruction mutation with the recovered CPU flush, physical-address
+  translation, and hypervisor data-cache flush ordering.
 - `RecognizeGptDisk` (`0x801fa540`, 256 bytes), represented as a bounds-safe
   GPT-header recognizer and the exact recovered reflected CRC-32 loop. The
   binary includes the stored checksum field in its checksum input; the lift
@@ -114,7 +117,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-18 independently bounded routines totaling 3,080 original instruction bytes.
+19 independently bounded routines totaling 3,152 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 354 discovered entries are maintainable
