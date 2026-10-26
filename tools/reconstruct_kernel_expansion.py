@@ -59,6 +59,7 @@ SEMANTIC_NAMES = {
     0x1700: "LoadStructuredConfigFile",
     0x1790: "InstallKernelXexDataHandlers",
     0x1A60: "ConfigureAuroraSideLoad",
+    0x1CB0: "InstallSfcxNandWriteProtectionHooks",
     0x1CF0: "LoadBootImage",
     0x1FC0: "LoadBootAnimationTheme",
     0x2D70: "ReplaceInstructionWithNop",
@@ -68,6 +69,10 @@ SEMANTIC_NAMES = {
     0x3050: "RunLockedPeerPressureConfigFile",
     0x30B0: "ParseConfigFileBuffer",
     0x3378: "ResolveSideLoadConfiguration",
+    0x3758: "FilterSfcxCreate",
+    0x3828: "FilterSfcxDeviceControl",
+    0x3880: "FilterSfcxWrite",
+    0x38B8: "FilterSfcxSetInformation",
     0x3D90: "RegisterDriveDevice",
     0x3E08: "UnregisterDriveDevice",
     0x3E68: "BindDrivePath",
@@ -77,6 +82,7 @@ SEMANTIC_NAMES = {
     0x4938: "ParseDllConfigEntry",
     0x4D08: "PromoteLocalSigninState",
     0x4ED8: "PromoteLocalSigninInfo",
+    0x4F28: "IsAllowedSfcxWritableName",
     0x62C0: "UnsupportedDeviceOperation",
     0x6AF0: "ParseDriveNumberPrefix",
     0x7228: "RewriteKnownIniLine",
@@ -130,8 +136,26 @@ SEMANTIC_EVIDENCE = {
     0x14B8: [
         "behavioral name corroborated by the inverted NAND-protection store and static interface-table role"
     ],
+    0x1CB0: [
+        "behavioral name corroborated by four writes into the retail SfcxDriverObject dispatch table"
+    ],
     0x2F98: [
         "behavioral name corroborated by flash-controller geometry bits and the three NAND offset tables"
+    ],
+    0x3758: [
+        "behavioral name corroborated by the SfcxFsdCreate target, create access/disposition checks, and filename policy"
+    ],
+    0x3828: [
+        "behavioral name corroborated by the SfcxFsdDeviceControl target and write-access IOCTL checks"
+    ],
+    0x3880: [
+        "behavioral name corroborated by the SfcxFsdWrite target and FILE_OBJECT FsContext check"
+    ],
+    0x38B8: [
+        "behavioral name corroborated by the SfcxFsdSetInformation target and rename/disposition class checks"
+    ],
+    0x4F28: [
+        "behavioral name corroborated by the SfcxIsMobileFileName target and three exact writable-name comparisons"
     ],
 }
 
@@ -205,14 +229,22 @@ def main() -> None:
     functions = []
     for index, offset in enumerate(ordered):
         end = ordered[index + 1] if index + 1 < len(ordered) else TEXT_END
-        if offset in EXPLICIT_STARTS:
-            evidence = ["independently bounded local boundary and decoded behavior"]
-        elif offset in table_thunks:
+        if offset in table_thunks:
             evidence = ["absolute thunk pattern in trailing import table"]
         elif offset in SEMANTIC_NAMES:
-            evidence = SEMANTIC_EVIDENCE.get(
-                offset, ["behavioral name corroborated by strings and call role"]
-            )
+            if offset in SEMANTIC_EVIDENCE:
+                evidence = SEMANTIC_EVIDENCE[offset]
+            elif offset in EXPLICIT_STARTS:
+                evidence = ["independently bounded local boundary and decoded behavior"]
+            else:
+                evidence = ["behavioral name corroborated by strings and call role"]
+            if offset in EXPLICIT_STARTS and offset in SEMANTIC_EVIDENCE:
+                evidence = [
+                    "independently bounded local boundary and decoded behavior",
+                    *evidence,
+                ]
+        elif offset in EXPLICIT_STARTS:
+            evidence = ["independently bounded local boundary and decoded behavior"]
         else:
             evidence = ["direct BL target or standard PPC prologue"]
         item = {

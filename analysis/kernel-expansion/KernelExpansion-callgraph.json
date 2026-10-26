@@ -738,8 +738,8 @@
       "caller_address": "0x801f0748",
       "instruction_address": "0x801f09ac",
       "target_address": "0x801f1cb0",
-      "callee": "fn_801F1CB0",
-      "target_containing_function": "fn_801F1CB0"
+      "callee": "InstallSfcxNandWriteProtectionHooks",
+      "target_containing_function": "InstallSfcxNandWriteProtectionHooks"
     },
     {
       "caller": "LaunchBootXell",
@@ -2510,7 +2510,7 @@
       "target_containing_function": "fn_801F4D38"
     },
     {
-      "caller": "fn_801F3758",
+      "caller": "FilterSfcxCreate",
       "caller_address": "0x801f3758",
       "instruction_address": "0x801f37e0",
       "target_address": "0x801fee78",
@@ -2518,15 +2518,15 @@
       "target_containing_function": "ObDissectName"
     },
     {
-      "caller": "fn_801F3758",
+      "caller": "FilterSfcxCreate",
       "caller_address": "0x801f3758",
       "instruction_address": "0x801f37e8",
       "target_address": "0x801f4f28",
-      "callee": "fn_801F4F28",
-      "target_containing_function": "fn_801F4F28"
+      "callee": "IsAllowedSfcxWritableName",
+      "target_containing_function": "IsAllowedSfcxWritableName"
     },
     {
-      "caller": "fn_801F3758",
+      "caller": "FilterSfcxCreate",
       "caller_address": "0x801f3758",
       "instruction_address": "0x801f3808",
       "target_address": "0x801ff068",
@@ -3278,7 +3278,7 @@
       "target_containing_function": "XamUserGetSigninInfo"
     },
     {
-      "caller": "fn_801F4F28",
+      "caller": "IsAllowedSfcxWritableName",
       "caller_address": "0x801f4f28",
       "instruction_address": "0x801f4f2c",
       "target_address": "0x801fead8",
@@ -3286,7 +3286,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801F4F28",
+      "caller": "IsAllowedSfcxWritableName",
       "caller_address": "0x801f4f28",
       "instruction_address": "0x801f4f3c",
       "target_address": "0x801ff108",
@@ -3294,7 +3294,7 @@
       "target_containing_function": "fn_801FF108"
     },
     {
-      "caller": "fn_801F4F28",
+      "caller": "IsAllowedSfcxWritableName",
       "caller_address": "0x801f4f28",
       "instruction_address": "0x801f4f70",
       "target_address": "0x801fef58",

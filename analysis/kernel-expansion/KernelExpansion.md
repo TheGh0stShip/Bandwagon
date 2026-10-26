@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 70 high-confidence behavioral labels are emitted directly into the exact
+- 76 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -75,6 +75,20 @@ lift. The first exact-byte-bound routines are:
   setter uses only the caller's low byte and stores its Boolean inverse; tests
   bind initial enablement, both
   states, low-byte truncation, raw-byte reads, and safe host null handling.
+- `InstallSfcxNandWriteProtectionHooks`, `FilterSfcxCreate`,
+  `FilterSfcxDeviceControl`, `FilterSfcxWrite`,
+  `FilterSfcxSetInformation`, and `IsAllowedSfcxWritableName`
+  (`0x801f1cb0`, `0x801f3758`, `0x801f3828`, `0x801f3880`,
+  `0x801f38b8`, and `0x801f4f28`, 592 bytes together), represented as typed
+  SFCX driver dispatches. With protection enabled, the filters reject unsafe
+  create access/dispositions, write-access IOCTLs outside functions
+  `0x11..0x13`, raw-volume writes, and rename/delete information classes.
+  Mobile filenames and exact `extended.bin`, `Static.settings`, and
+  `Statistics.settings` components remain writable. Tests bind every recovered
+  policy branch, disabled-policy short circuits, noncanonical nonzero flags,
+  original-status propagation, dispatch installation, case sensitivity, and
+  denial without forwarding. The initial policy byte, allowlist pointers, and
+  all three names are hash-bound to the immutable image.
 - `QueryPeerPressureVersionsFromFlash` and
   `ResolveNandXbppRecordOffset` (`0x801f1000` and `0x801f2f98`, 480 bytes
   together), represented as a typed flash service and pure NAND-geometry
@@ -262,7 +276,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-59 independently bounded routines totaling 10,464 original instruction bytes.
+65 independently bounded routines totaling 11,056 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 371 discovered entries are maintainable

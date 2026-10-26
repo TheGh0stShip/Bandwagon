@@ -184,7 +184,8 @@
       "size_to_next_symbol": 24,
       "name": "CreatePeerPressureRootSymbolicLink",
       "evidence": [
-        "independently bounded local boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by fixed PPROOT link/target pointers and static interface-table role"
       ],
       "kind": "local_code"
     },
@@ -194,7 +195,8 @@
       "size_to_next_symbol": 16,
       "name": "GetNandWriteProtectionEnabled",
       "evidence": [
-        "independently bounded local boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by the shared NAND write-protection gate and static interface-table role"
       ],
       "kind": "local_code"
     },
@@ -204,7 +206,8 @@
       "size_to_next_symbol": 24,
       "name": "SetNandWriteProtectionDisabled",
       "evidence": [
-        "independently bounded local boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by the inverted NAND-protection store and static interface-table role"
       ],
       "kind": "local_code"
     },
@@ -302,9 +305,9 @@
       "address": "0x801f1cb0",
       "section_offset": "0x1cb0",
       "size_to_next_symbol": 64,
-      "name": "fn_801F1CB0",
+      "name": "InstallSfcxNandWriteProtectionHooks",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by four writes into the retail SfcxDriverObject dispatch table"
       ],
       "kind": "local_code"
     },
@@ -532,9 +535,9 @@
       "address": "0x801f3758",
       "section_offset": "0x3758",
       "size_to_next_symbol": 208,
-      "name": "fn_801F3758",
+      "name": "FilterSfcxCreate",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by the SfcxFsdCreate target, create access/disposition checks, and filename policy"
       ],
       "kind": "local_code"
     },
@@ -542,9 +545,10 @@
       "address": "0x801f3828",
       "section_offset": "0x3828",
       "size_to_next_symbol": 88,
-      "name": "fn_801F3828",
+      "name": "FilterSfcxDeviceControl",
       "evidence": [
-        "independently bounded local boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by the SfcxFsdDeviceControl target and write-access IOCTL checks"
       ],
       "kind": "local_code"
     },
@@ -552,9 +556,10 @@
       "address": "0x801f3880",
       "section_offset": "0x3880",
       "size_to_next_symbol": 56,
-      "name": "fn_801F3880",
+      "name": "FilterSfcxWrite",
       "evidence": [
-        "independently bounded local boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by the SfcxFsdWrite target and FILE_OBJECT FsContext check"
       ],
       "kind": "local_code"
     },
@@ -562,9 +567,10 @@
       "address": "0x801f38b8",
       "section_offset": "0x38b8",
       "size_to_next_symbol": 64,
-      "name": "fn_801F38B8",
+      "name": "FilterSfcxSetInformation",
       "evidence": [
-        "independently bounded local boundary and decoded behavior"
+        "independently bounded local boundary and decoded behavior",
+        "behavioral name corroborated by the SfcxFsdSetInformation target and rename/disposition class checks"
       ],
       "kind": "local_code"
     },
@@ -772,9 +778,9 @@
       "address": "0x801f4f28",
       "section_offset": "0x4f28",
       "size_to_next_symbol": 112,
-      "name": "fn_801F4F28",
+      "name": "IsAllowedSfcxWritableName",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by the SfcxIsMobileFileName target and three exact writable-name comparisons"
       ],
       "kind": "local_code"
     },

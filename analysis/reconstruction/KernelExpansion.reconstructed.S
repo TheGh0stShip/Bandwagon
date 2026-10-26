@@ -1871,7 +1871,7 @@ fn_801F1C60:
     .long 0x38600000 /* 0x01ca4 */
     .long 0x38210070 /* 0x01ca8 */
     .long 0x4800ce7c /* 0x01cac */
-fn_801F1CB0:
+InstallSfcxNandWriteProtectionHooks:
     .long 0x3d408004 /* 0x01cb0 */
     .long 0x3d60801f /* 0x01cb4 */
     .long 0x38ea2a50 /* 0x01cb8 */
@@ -3600,7 +3600,7 @@ fn_801F3690:
     .long 0xebe1fff0 /* 0x0374c */
     .long 0x4e800020 /* 0x03750 */
     .long 0x00000000 /* 0x03754 */
-fn_801F3758:
+FilterSfcxCreate:
     .long 0x7d8802a6 /* 0x03758 */
     .long 0x9181fff8 /* 0x0375c */
     .long 0xfbc1ffe8 /* 0x03760 */
@@ -3653,7 +3653,7 @@ fn_801F3758:
     .long 0xebe1fff0 /* 0x0381c */
     .long 0x4e800020 /* 0x03820 */
     .long 0x00000000 /* 0x03824 */
-fn_801F3828:
+FilterSfcxDeviceControl:
     .long 0x3d608020 /* 0x03828 */
     .long 0x896b37f4 /* 0x0382c */
     .long 0x280b0000 /* 0x03830 */
@@ -3676,7 +3676,7 @@ fn_801F3828:
     .long 0x60630022 /* 0x03874 */
     .long 0x4e800020 /* 0x03878 */
     .long 0x4800b7fc /* 0x0387c */
-fn_801F3880:
+FilterSfcxWrite:
     .long 0x3d608020 /* 0x03880 */
     .long 0x896b37f4 /* 0x03884 */
     .long 0x280b0000 /* 0x03888 */
@@ -3691,7 +3691,7 @@ fn_801F3880:
     .long 0x60630022 /* 0x038ac */
     .long 0x4e800020 /* 0x038b0 */
     .long 0x4800b7d4 /* 0x038b4 */
-fn_801F38B8:
+FilterSfcxSetInformation:
     .long 0x3d608020 /* 0x038b8 */
     .long 0x896b37f4 /* 0x038bc */
     .long 0x280b0000 /* 0x038c0 */
@@ -5148,7 +5148,7 @@ PromoteLocalSigninInfo:
     .long 0x7d8803a6 /* 0x04f1c */
     .long 0xebe1fff0 /* 0x04f20 */
     .long 0x4e800020 /* 0x04f24 */
-fn_801F4F28:
+IsAllowedSfcxWritableName:
     .long 0x7d8802a6 /* 0x04f28 */
     .long 0x48009bad /* 0x04f2c */
     .long 0x9421ff80 /* 0x04f30 */

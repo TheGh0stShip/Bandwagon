@@ -96,7 +96,15 @@
       "semantic_name": "GetNandWriteProtectionEnabled",
       "source": "reconstruction/kernel_expansion/nand_write_protection.cpp",
       "header": "reconstruction/kernel_expansion/nand_write_protection.hpp",
-      "symbols": ["NandWriteProtectionState", "GetNandWriteProtectionEnabled"]
+      "symbols": ["NandWriteProtectionState", "GetNandWriteProtectionEnabled"],
+      "data_dependencies": [
+        {
+          "address": "0x802037f4",
+          "size": 1,
+          "sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "semantic_name": "NandWriteProtectionInitialState"
+        }
+      ]
     },
     {
       "address": "0x801f14b8",
@@ -140,6 +148,15 @@
       "source": "reconstruction/kernel_expansion/xex_hooks.cpp",
       "header": "reconstruction/kernel_expansion/xex_hooks.hpp",
       "symbols": ["XexHookServices", "InstallKernelXexDataHandlers", "kFirstXexDataHandler", "kSecondXexDataHandler"]
+    },
+    {
+      "address": "0x801f1cb0",
+      "size": 64,
+      "sha256": "febe25d05bb8211efb7581f959cd1c8bf698c36e053c1e4e33965593dc5604e6",
+      "semantic_name": "InstallSfcxNandWriteProtectionHooks",
+      "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
+      "symbols": ["SfcxDriverDispatchTable", "InstallSfcxNandWriteProtectionHooks"]
     },
     {
       "address": "0x801f2d70",
@@ -203,6 +220,42 @@
       "source": "reconstruction/kernel_expansion/config_reader.cpp",
       "header": "reconstruction/kernel_expansion/config_reader.hpp",
       "symbols": ["ConfigReaderDiagnostics", "ConfigFileBufferParser", "ParseConfigFileBuffer"]
+    },
+    {
+      "address": "0x801f3758",
+      "size": 208,
+      "sha256": "adb291d2040e3cbfe8326e1dc29dd658025be69a2e02f3d412fcaf4955fd20a5",
+      "semantic_name": "FilterSfcxCreate",
+      "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
+      "symbols": ["FilterSfcxCreate", "kSfcxWriteAccessMask"]
+    },
+    {
+      "address": "0x801f3828",
+      "size": 88,
+      "sha256": "c67ec9bdb634794aa7a0da1985e58dc02af719eea5e82a4b3057c49f8861db0c",
+      "semantic_name": "FilterSfcxDeviceControl",
+      "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
+      "symbols": ["FilterSfcxDeviceControl", "kSfcxIoctlWriteAccess", "kSfcxRequestBypassFlag"]
+    },
+    {
+      "address": "0x801f3880",
+      "size": 56,
+      "sha256": "34da15f77a8bf9dafcdabc481dbb032eb3f48b0cc3b9b248d871012cca24d5e9",
+      "semantic_name": "FilterSfcxWrite",
+      "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
+      "symbols": ["FilterSfcxWrite", "SfcxFileObject"]
+    },
+    {
+      "address": "0x801f38b8",
+      "size": 64,
+      "sha256": "82c8105fb207ebc481279a2122e47764a99ac729484d02474e3711d1505f478d",
+      "semantic_name": "FilterSfcxSetInformation",
+      "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
+      "symbols": ["FilterSfcxSetInformation", "kSfcxStatusAccessDenied"]
     },
     {
       "address": "0x801f3d90",
@@ -275,6 +328,41 @@
       "source": "reconstruction/kernel_expansion/signin_state.cpp",
       "header": "reconstruction/kernel_expansion/signin_state.hpp",
       "symbols": ["SigninInfo", "SigninInfoServices", "PromoteLocalSigninInfo"]
+    },
+    {
+      "address": "0x801f4f28",
+      "size": 112,
+      "sha256": "ccc80fc45c8db9e6b213d50bc597fe7ec11e02cfdff09b0edc19f58c8963e21c",
+      "semantic_name": "IsAllowedSfcxWritableName",
+      "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
+      "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
+      "symbols": ["IsAllowedSfcxWritableName", "kAllowedSfcxWriteNames"],
+      "data_dependencies": [
+        {
+          "address": "0x802037f8",
+          "size": 12,
+          "sha256": "5b203346e1fef649eb7b063d018ebda06367aa0bd07188aa9e1d140fa8b6bd41",
+          "semantic_name": "AllowedSfcxWriteNamePointerTable"
+        },
+        {
+          "address": "0x802014b8",
+          "size": 13,
+          "sha256": "14deb747afd8dbfcf04c21e740286ffec6568e0c01cac82827ad18c6379daf3b",
+          "semantic_name": "ExtendedBinName"
+        },
+        {
+          "address": "0x802014c8",
+          "size": 16,
+          "sha256": "51da73ee3c031e2fda627473439a9b993ca575b8e7a48272714e3a2726bb61b6",
+          "semantic_name": "StaticSettingsName"
+        },
+        {
+          "address": "0x802014d8",
+          "size": 20,
+          "sha256": "6fdec62d1616083bab59cce16468c0c437b71db58da1851a4ecddde65ae9ddac",
+          "semantic_name": "StatisticsSettingsName"
+        }
+      ]
     },
     {
       "address": "0x801f62c0",
@@ -571,6 +659,7 @@
     "reconstruction/kernel_expansion/path_fields_test.cpp",
     "reconstruction/kernel_expansion/phase_two_restore_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",
+    "reconstruction/kernel_expansion/sfcx_write_protection_test.cpp",
     "reconstruction/kernel_expansion/signin_state_test.cpp",
     "reconstruction/kernel_expansion/storage_test.cpp",
     "reconstruction/kernel_expansion/update_check_launch_test.cpp",

@@ -201,6 +201,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/nand_write_protection_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/sfcx_write_protection.cpp" \
+    "$root/reconstruction/kernel_expansion/sfcx_write_protection_test.cpp" \
+    -o "$work/sfcx_write_protection_test"
+"$work/sfcx_write_protection_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/version.cpp" \
     "$root/reconstruction/kernel_expansion/version_test.cpp" \
     -o "$work/version_test"
