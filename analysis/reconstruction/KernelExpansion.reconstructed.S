@@ -4000,7 +4000,7 @@ fn_801F3D48:
     .long 0x7d4903a6 /* 0x03d84 */
     .long 0x4e800420 /* 0x03d88 */
     .long 0x00000000 /* 0x03d8c */
-fn_801F3D90:
+RegisterDriveDevice:
     .long 0x7d8802a6 /* 0x03d90 */
     .long 0x4800ad45 /* 0x03d94 */
     .long 0x9421ff90 /* 0x03d98 */
@@ -4031,7 +4031,7 @@ fn_801F3D90:
     .long 0x7fc3f378 /* 0x03dfc */
     .long 0x38210070 /* 0x03e00 */
     .long 0x4800ad24 /* 0x03e04 */
-fn_801F3E08:
+UnregisterDriveDevice:
     .long 0x7d8802a6 /* 0x03e08 */
     .long 0x9181fff8 /* 0x03e0c */
     .long 0xfbc1ffe8 /* 0x03e10 */

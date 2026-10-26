@@ -552,9 +552,9 @@
       "address": "0x801f3d90",
       "section_offset": "0x3d90",
       "size_to_next_symbol": 120,
-      "name": "fn_801F3D90",
+      "name": "RegisterDriveDevice",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -562,9 +562,9 @@
       "address": "0x801f3e08",
       "section_offset": "0x3e08",
       "size_to_next_symbol": 96,
-      "name": "fn_801F3E08",
+      "name": "UnregisterDriveDevice",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

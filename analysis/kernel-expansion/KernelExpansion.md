@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 40 high-confidence behavioral labels are emitted directly into the exact
+- 42 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -135,6 +135,12 @@ lift. The first exact-byte-bound routines are:
   UTF-16 cursor parser for the recovered one-decimal-digit drive syntax. Tests
   cover valid zero and nine prefixes, absent prefixes, malformed prefixes,
   control-character termination, cursor preservation, and null strings.
+- `RegisterDriveDevice` and `UnregisterDriveDevice` (`0x801f3d90` and
+  `0x801f3e08`, 216 bytes together), represented as the spin-lock-protected
+  ten-slot device registry used to allocate the decimal drive-prefix digit.
+  Tests bind first-free selection, full-table failure as minus one, slot
+  clearing, and exact acquire/release cookie flow; the host lift safely rejects
+  the out-of-range clear that trusted target callers never supply.
 - `ParseSignedDecimal` (`0x801f78e0`, 88 bytes), represented as the shared
   config-text integer parser. Tests preserve its optional-minus-only grammar,
   lack of whitespace and plus-sign handling, first-nondigit stop, and exact
@@ -160,7 +166,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-29 independently bounded routines totaling 4,240 original instruction bytes.
+31 independently bounded routines totaling 4,456 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

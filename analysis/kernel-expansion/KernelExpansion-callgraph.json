@@ -2114,8 +2114,8 @@
       "caller_address": "0x801f2dd8",
       "instruction_address": "0x801f2ef0",
       "target_address": "0x801f3d90",
-      "callee": "fn_801F3D90",
-      "target_containing_function": "fn_801F3D90"
+      "callee": "RegisterDriveDevice",
+      "target_containing_function": "RegisterDriveDevice"
     },
     {
       "caller": "fn_801F2DD8",
@@ -2130,8 +2130,8 @@
       "caller_address": "0x801f2dd8",
       "instruction_address": "0x801f2f20",
       "target_address": "0x801f3e08",
-      "callee": "fn_801F3E08",
-      "target_containing_function": "fn_801F3E08"
+      "callee": "UnregisterDriveDevice",
+      "target_containing_function": "UnregisterDriveDevice"
     },
     {
       "caller": "fn_801F2DD8",
@@ -2558,7 +2558,7 @@
       "target_containing_function": "fn_801F5058"
     },
     {
-      "caller": "fn_801F3D90",
+      "caller": "RegisterDriveDevice",
       "caller_address": "0x801f3d90",
       "instruction_address": "0x801f3d94",
       "target_address": "0x801fead8",
@@ -2566,7 +2566,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801F3D90",
+      "caller": "RegisterDriveDevice",
       "caller_address": "0x801f3d90",
       "instruction_address": "0x801f3db0",
       "target_address": "0x801fee68",
@@ -2574,7 +2574,7 @@
       "target_containing_function": "KfAcquireSpinLock"
     },
     {
-      "caller": "fn_801F3D90",
+      "caller": "RegisterDriveDevice",
       "caller_address": "0x801f3d90",
       "instruction_address": "0x801f3df8",
       "target_address": "0x801feea8",
@@ -2582,7 +2582,7 @@
       "target_containing_function": "KfReleaseSpinLock"
     },
     {
-      "caller": "fn_801F3E08",
+      "caller": "UnregisterDriveDevice",
       "caller_address": "0x801f3e08",
       "instruction_address": "0x801f3e2c",
       "target_address": "0x801fee68",
@@ -2590,7 +2590,7 @@
       "target_containing_function": "KfAcquireSpinLock"
     },
     {
-      "caller": "fn_801F3E08",
+      "caller": "UnregisterDriveDevice",
       "caller_address": "0x801f3e08",
       "instruction_address": "0x801f3e4c",
       "target_address": "0x801feea8",
@@ -3306,8 +3306,8 @@
       "caller_address": "0x801f5110",
       "instruction_address": "0x801f5130",
       "target_address": "0x801f3e08",
-      "callee": "fn_801F3E08",
-      "target_containing_function": "fn_801F3E08"
+      "callee": "UnregisterDriveDevice",
+      "target_containing_function": "UnregisterDriveDevice"
     },
     {
       "caller": "fn_801F5110",
