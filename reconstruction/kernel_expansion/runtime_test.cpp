@@ -4,6 +4,7 @@
 #include <cassert>
 #include <cstdint>
 #include <iostream>
+#include <memory>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -46,6 +47,73 @@ class FakeModuleServices final
       bandwagon::kernel_expansion::ModuleHandle module) override {
     assert(module == returned_module);
     events.emplace_back("unload");
+  }
+};
+
+class FakeFileServices final
+    : public bandwagon::kernel_expansion::FileServices {
+ public:
+  int open_result = 0;
+  int query_result = 0;
+  int read_result = 0;
+  int wait_result = 0;
+  std::int32_t io_status = 0;
+  std::uint32_t file_size = 3;
+  bool allocation_failure = false;
+  bandwagon::kernel_expansion::FileHandle returned_handle = 0x2222;
+  std::vector<std::string> events;
+  std::unique_ptr<std::uint8_t[]> owned;
+
+  int OpenReadOnly(std::string_view path, bool object_manager_path,
+                   bandwagon::kernel_expansion::FileHandle* handle) override {
+    assert(path == "\\Device\\Harddisk0\\test.bin");
+    assert(object_manager_path && handle);
+    events.emplace_back("open");
+    *handle = returned_handle;
+    return open_result;
+  }
+  int QueryFileSize(bandwagon::kernel_expansion::FileHandle handle,
+                    std::uint32_t* size) override {
+    assert(handle == returned_handle && size);
+    events.emplace_back("query");
+    *size = file_size;
+    return query_result;
+  }
+  std::uint8_t* Allocate(std::uint32_t size) override {
+    assert(size == file_size + 1);
+    events.emplace_back("allocate");
+    if (allocation_failure) return nullptr;
+    owned = std::make_unique<std::uint8_t[]>(size);
+    return owned.get();
+  }
+  int Read(bandwagon::kernel_expansion::FileHandle handle,
+           std::uint8_t* buffer, std::uint32_t size,
+           std::int32_t* completion_status) override {
+    assert(handle == returned_handle && buffer == owned.get());
+    assert(size == file_size && completion_status);
+    events.emplace_back("read");
+    if (size >= 3) {
+      buffer[0] = 'a';
+      buffer[1] = 'b';
+      buffer[2] = 'c';
+    }
+    *completion_status = io_status;
+    return read_result;
+  }
+  int WaitForRead(
+      bandwagon::kernel_expansion::FileHandle handle) override {
+    assert(handle == returned_handle);
+    events.emplace_back("wait");
+    return wait_result;
+  }
+  void Free(std::uint8_t* buffer) override {
+    assert(buffer == owned.get());
+    events.emplace_back("free");
+    owned.reset();
+  }
+  void Close(bandwagon::kernel_expansion::FileHandle handle) override {
+    assert(handle == returned_handle);
+    events.emplace_back("close");
   }
 };
 
@@ -94,6 +162,51 @@ int main() {
   LaunchBootXell(&empty_failure);
   assert((empty_failure.events == std::vector<std::string>{"load"}));
   LaunchBootXell(nullptr);
+
+  constexpr std::string_view kTestPath = "\\Device\\Harddisk0\\test.bin";
+  FakeFileServices file_success;
+  std::uint8_t* data = nullptr;
+  std::uint32_t size = 0;
+  assert(ReadFileToAllocatedBuffer(&file_success, kTestPath, &data, &size));
+  assert(data == file_success.owned.get() && size == 4);
+  assert(data[0] == 'a' && data[1] == 'b' && data[2] == 'c' && data[3] == 0);
+  assert((file_success.events == std::vector<std::string>{
+      "open", "query", "allocate", "read", "close"}));
+
+  FakeFileServices pending;
+  pending.read_result = kStatusPending;
+  data = nullptr;
+  size = 0;
+  assert(ReadFileToAllocatedBuffer(&pending, kTestPath, &data, &size));
+  assert((pending.events == std::vector<std::string>{
+      "open", "query", "allocate", "read", "wait", "close"}));
+
+  FakeFileServices read_failure;
+  read_failure.read_result = -1;
+  data = reinterpret_cast<std::uint8_t*>(0x1234);
+  size = 99;
+  assert(!ReadFileToAllocatedBuffer(
+      &read_failure, kTestPath, &data, &size));
+  assert(data == reinterpret_cast<std::uint8_t*>(0x1234) && size == 99);
+  assert((read_failure.events == std::vector<std::string>{
+      "open", "query", "allocate", "read", "free", "close"}));
+
+  FakeFileServices bad_completion;
+  bad_completion.io_status = -1;
+  assert(!ReadFileToAllocatedBuffer(
+      &bad_completion, kTestPath, &data, &size));
+  assert((bad_completion.events == std::vector<std::string>{
+      "open", "query", "allocate", "read", "free", "close"}));
+
+  FakeFileServices query_failure;
+  query_failure.query_result = -1;
+  assert(!ReadFileToAllocatedBuffer(
+      &query_failure, kTestPath, &data, &size));
+  assert((query_failure.events ==
+          std::vector<std::string>{"open", "query", "close"}));
+
+  assert(!ReadFileToAllocatedBuffer(nullptr, kTestPath, &data, &size));
+  assert(!ReadFileToAllocatedBuffer(&file_success, {}, &data, &size));
 
   auto header = FixedPointGptHeader();
   assert(ComputeRecoveredGptChecksum(header.data(), header.size()) ==

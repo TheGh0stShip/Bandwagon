@@ -55,6 +55,10 @@ lift. The first exact-byte-bound routines are:
 - `LaunchBootXell` (`0x801f09d0`, 128 bytes), represented as a typed service
   workflow that loads `PPROOT:\OtherOS\BootXell.xex`, resolves ordinal one,
   invokes it on success, and unloads every non-null returned module handle.
+- `ReadFileToAllocatedBuffer` (`0x801f14d0`, 472 bytes), represented as a typed
+  file-service workflow. It preserves pending-I/O waiting, allocation of the
+  file size plus one, NUL placement, failure cleanup order, and the rule that
+  caller outputs change only after a successful read.
 - `RecognizeGptDisk` (`0x801fa540`, 256 bytes), represented as a bounds-safe
   GPT-header recognizer and the exact recovered reflected CRC-32 loop. The
   binary includes the stored checksum field in its checksum input; the lift

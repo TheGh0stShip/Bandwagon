@@ -18,6 +18,14 @@
       "symbols": ["LaunchBootXell", "kBootXellPath", "kXexEntryOrdinal"]
     },
     {
+      "address": "0x801f14d0",
+      "size": 472,
+      "sha256": "f92933d46674beba0bafbee3a34f82b146b158e1784b13a1e0c5cd47cd1348e8",
+      "semantic_name": "ReadFileToAllocatedBuffer",
+      "source": "reconstruction/kernel_expansion/runtime.cpp",
+      "symbols": ["FileServices", "ReadFileToAllocatedBuffer", "kStatusPending"]
+    },
+    {
       "address": "0x801fa540",
       "size": 256,
       "sha256": "49f4d94e2f4a050c2a31ccd58e1f385efbe25f6278d1d1ac81b1479a2cd1e832",

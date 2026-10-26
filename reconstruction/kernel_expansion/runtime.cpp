@@ -2,6 +2,7 @@
 
 #include <array>
 #include <cstring>
+#include <limits>
 
 namespace bandwagon::kernel_expansion {
 namespace {
@@ -29,6 +30,43 @@ void LaunchBootXell(ModuleServices* services) {
       services->InvokeProcedure(entry);
   }
   if (module != 0) services->UnloadImage(module);
+}
+
+bool ReadFileToAllocatedBuffer(FileServices* services, std::string_view path,
+                               std::uint8_t** data,
+                               std::uint32_t* allocation_size) {
+  if (!services || !data || !allocation_size || path.empty()) return false;
+
+  FileHandle handle = 0;
+  std::uint8_t* allocation = nullptr;
+  bool success = false;
+  const bool object_manager_path = path.front() == '\\';
+
+  if (services->OpenReadOnly(path, object_manager_path, &handle) == 0) {
+    std::uint32_t file_size = 0;
+    if (services->QueryFileSize(handle, &file_size) == 0 &&
+        file_size != std::numeric_limits<std::uint32_t>::max()) {
+      const std::uint32_t allocated_size = file_size + 1;
+      allocation = services->Allocate(allocated_size);
+      if (allocation) {
+        std::int32_t io_status = 0;
+        int status = services->Read(handle, allocation, file_size, &io_status);
+        if (static_cast<std::uint32_t>(status) == kStatusPending)
+          status = services->WaitForRead(handle);
+        if (status == 0 && io_status >= 0) {
+          allocation[file_size] = 0;
+          *data = allocation;
+          *allocation_size = allocated_size;
+          allocation = nullptr;
+          success = true;
+        }
+      }
+    }
+  }
+
+  if (allocation) services->Free(allocation);
+  if (handle != 0) services->Close(handle);
+  return success;
 }
 
 std::uint32_t ComputeRecoveredGptChecksum(const std::uint8_t* data,
