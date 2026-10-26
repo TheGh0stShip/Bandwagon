@@ -85,3 +85,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/phase_two_restore_test.cpp" \
     -o "$work/phase_two_restore_test"
 "$work/phase_two_restore_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/signin_state.cpp" \
+    "$root/reconstruction/kernel_expansion/signin_state_test.cpp" \
+    -o "$work/signin_state_test"
+"$work/signin_state_test"

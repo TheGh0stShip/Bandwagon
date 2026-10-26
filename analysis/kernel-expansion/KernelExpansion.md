@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 141 four-instruction absolute retail-kernel/XAM thunks; 127 names are
   corroborated against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 35 high-confidence behavioral labels are emitted directly into the exact
+- 36 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -123,6 +123,9 @@ lift. The first exact-byte-bound routines are:
   bound predicate used by `ParseDllConfigEntry`. It treats `0xff` on either side
   as a wildcard and intentionally preserves the binary's component-wise rather
   than lexicographic ordering.
+- `PromoteLocalSigninState` (`0x801f4d08`, 48 bytes), represented as the small
+  XAM sign-in policy hook that maps local state one to online state two and
+  forwards every other returned state unchanged.
 - `CopyPathAndParentDirectory` (`0x801faac0`, 144 bytes), represented with the
   recovered object field offsets and 256-byte bound. It preserves the exact
   final-backslash split, leading-backslash behavior, low-byte flag comparison,
@@ -134,7 +137,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-23 independently bounded routines totaling 3,592 original instruction bytes.
+24 independently bounded routines totaling 3,640 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 362 discovered entries are maintainable

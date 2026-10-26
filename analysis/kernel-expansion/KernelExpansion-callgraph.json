@@ -3190,7 +3190,7 @@
       "target_containing_function": "ExFreePool"
     },
     {
-      "caller": "fn_801F4D08",
+      "caller": "PromoteLocalSigninState",
       "caller_address": "0x801f4d08",
       "instruction_address": "0x801f4d14",
       "target_address": "0x801ff0d8",

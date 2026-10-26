@@ -5001,7 +5001,7 @@ fn_801F4CA0:
     .long 0xebe1fff0 /* 0x04cfc */
     .long 0x4e800020 /* 0x04d00 */
     .long 0x00000000 /* 0x04d04 */
-fn_801F4D08:
+PromoteLocalSigninState:
     .long 0x7d8802a6 /* 0x04d08 */
     .long 0x9181fff8 /* 0x04d0c */
     .long 0x9421ffa0 /* 0x04d10 */
