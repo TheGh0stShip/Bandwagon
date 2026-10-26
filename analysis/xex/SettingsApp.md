@@ -60,3 +60,14 @@ shared SHA-1 archive-wrapper validation, big-endian 8/8/16 version fields, and
 `v%d.%d.%d` display form. ZIP member extraction remains at the already
 identified Miniz/library boundary. Run its host test with
 `tools/test_settingsapp_reconstruction.sh`.
+
+`reconstruction/settings_app/release_metadata.cpp` reconstructs the
+first-party selection logic after JsonCpp parses GitHub's latest-release
+response. It applies the shared release-tag codec, retains `prerelease` and
+`body`, and scans every asset for `UpdateData.zip` and `ChangeLog.txt`, with
+later duplicate names replacing earlier values. The update is accepted only
+when the selected ZIP has both a nonzero asset ID and nonzero size. The closed
+function does not check the return from `sscanf("%*c%d.%d.%d")`; malformed
+tags can therefore cause it to pack indeterminate stack values. The portable
+boundary rejects malformed tags while preserving the observed valid-input
+behavior.

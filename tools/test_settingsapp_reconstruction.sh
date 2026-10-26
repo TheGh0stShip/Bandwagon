@@ -14,4 +14,11 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/offline_update_test"
 "$work/offline_update_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/update_check/release_version.cpp" \
+    "$root/reconstruction/settings_app/release_metadata.cpp" \
+    "$root/reconstruction/settings_app/release_metadata_test.cpp" \
+    -o "$work/release_metadata_test"
+"$work/release_metadata_test"
+
 echo "SettingsApp portable reconstruction tests passed"
