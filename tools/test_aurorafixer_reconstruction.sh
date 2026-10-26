@@ -32,4 +32,13 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
     -o "$work/import_descriptor_test"
 "$work/import_descriptor_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/aurora_fixer/absolute_branch.cpp" \
+    "$root/reconstruction/aurora_fixer/import_stub.cpp" \
+    "$root/reconstruction/aurora_fixer/import_descriptor.cpp" \
+    "$root/reconstruction/aurora_fixer/module_import.cpp" \
+    "$root/reconstruction/aurora_fixer/module_import_test.cpp" \
+    -o "$work/module_import_test"
+"$work/module_import_test"
+
 echo "AuroraFixer portable reconstruction tests passed"

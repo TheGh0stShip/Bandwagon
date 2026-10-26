@@ -70,3 +70,10 @@ library headers, and stub-address arrays, then performs the original
 case-insensitive module match. It preserves the binary's notable use of only
 the low byte of the nominal 16-bit name index while adding bounds checks for
 offline use.
+
+`reconstruction/aurora_fixer/module_import.cpp` joins that decoder to the
+import-stub mutator. Given the loader-resolved export address and an offline
+image mapping, it scans every address in the matched library record and
+patches both direct IAT words and absolute branch thunks, matching the closed
+routine's non-short-circuiting behavior. Its result reports each form
+separately; invalid virtual addresses are rejected instead of dereferenced.
