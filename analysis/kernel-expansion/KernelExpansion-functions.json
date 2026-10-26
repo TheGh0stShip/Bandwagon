@@ -42,9 +42,9 @@
       "address": "0x801f0480",
       "section_offset": "0x480",
       "size_to_next_symbol": 56,
-      "name": "fn_801F0480",
+      "name": "DeleteObjectManagerSymbolicLink",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },
@@ -72,9 +72,9 @@
       "address": "0x801f05f0",
       "section_offset": "0x5f0",
       "size_to_next_symbol": 88,
-      "name": "fn_801F05F0",
+      "name": "CreateObjectManagerSymbolicLink",
       "evidence": [
-        "direct BL target or standard PPC prologue"
+        "behavioral name corroborated by strings and call role"
       ],
       "kind": "local_code"
     },

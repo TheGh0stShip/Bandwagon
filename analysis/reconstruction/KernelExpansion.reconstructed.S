@@ -297,7 +297,7 @@ fn_801F03C0:
     .long 0xebe1fff0 /* 0x00474 */
     .long 0x4e800020 /* 0x00478 */
     .long 0x00000000 /* 0x0047c */
-fn_801F0480:
+DeleteObjectManagerSymbolicLink:
     .long 0x7d8802a6 /* 0x00480 */
     .long 0x9181fff8 /* 0x00484 */
     .long 0x9421ffa0 /* 0x00488 */
@@ -392,7 +392,7 @@ fn_801F0568:
     .long 0x38210080 /* 0x005e4 */
     .long 0x4800e53c /* 0x005e8 */
     .long 0x00000000 /* 0x005ec */
-fn_801F05F0:
+CreateObjectManagerSymbolicLink:
     .long 0x7d8802a6 /* 0x005f0 */
     .long 0x9181fff8 /* 0x005f4 */
     .long 0xfbe1fff0 /* 0x005f8 */

@@ -50,16 +50,16 @@
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f0084",
       "target_address": "0x801f0480",
-      "callee": "fn_801F0480",
-      "target_containing_function": "fn_801F0480"
+      "callee": "DeleteObjectManagerSymbolicLink",
+      "target_containing_function": "DeleteObjectManagerSymbolicLink"
     },
     {
       "caller": "KernelExpansionInitialize",
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f0090",
       "target_address": "0x801f0480",
-      "callee": "fn_801F0480",
-      "target_containing_function": "fn_801F0480"
+      "callee": "DeleteObjectManagerSymbolicLink",
+      "target_containing_function": "DeleteObjectManagerSymbolicLink"
     },
     {
       "caller": "KernelExpansionInitialize",
@@ -90,8 +90,8 @@
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f00f0",
       "target_address": "0x801f05f0",
-      "callee": "fn_801F05F0",
-      "target_containing_function": "fn_801F05F0"
+      "callee": "CreateObjectManagerSymbolicLink",
+      "target_containing_function": "CreateObjectManagerSymbolicLink"
     },
     {
       "caller": "KernelExpansionInitialize",
@@ -374,7 +374,7 @@
       "target_containing_function": "DbgBreakPoint"
     },
     {
-      "caller": "fn_801F0480",
+      "caller": "DeleteObjectManagerSymbolicLink",
       "caller_address": "0x801f0480",
       "instruction_address": "0x801f0494",
       "target_address": "0x801fec88",
@@ -382,7 +382,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "fn_801F0480",
+      "caller": "DeleteObjectManagerSymbolicLink",
       "caller_address": "0x801f0480",
       "instruction_address": "0x801f049c",
       "target_address": "0x801fec98",
@@ -462,7 +462,7 @@
       "target_containing_function": "MmFreePhysicalMemory"
     },
     {
-      "caller": "fn_801F05F0",
+      "caller": "CreateObjectManagerSymbolicLink",
       "caller_address": "0x801f05f0",
       "instruction_address": "0x801f060c",
       "target_address": "0x801fec88",
@@ -470,7 +470,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "fn_801F05F0",
+      "caller": "CreateObjectManagerSymbolicLink",
       "caller_address": "0x801f05f0",
       "instruction_address": "0x801f0618",
       "target_address": "0x801fec88",
@@ -478,7 +478,7 @@
       "target_containing_function": "RtlInitAnsiString"
     },
     {
-      "caller": "fn_801F05F0",
+      "caller": "CreateObjectManagerSymbolicLink",
       "caller_address": "0x801f05f0",
       "instruction_address": "0x801f0624",
       "target_address": "0x801fecd8",

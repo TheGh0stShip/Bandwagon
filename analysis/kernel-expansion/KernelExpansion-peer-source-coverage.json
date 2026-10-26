@@ -10,6 +10,24 @@
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "functions": [
     {
+      "address": "0x801f0480",
+      "size": 56,
+      "sha256": "edb44b92e96885e112d7d4fdf86aa853b4a3cb469304827fd42631705e1e5a91",
+      "semantic_name": "DeleteObjectManagerSymbolicLink",
+      "source": "reconstruction/kernel_expansion/namespace_links.cpp",
+      "header": "reconstruction/kernel_expansion/namespace_links.hpp",
+      "symbols": ["SymbolicLinkServices", "DeleteObjectManagerSymbolicLink"]
+    },
+    {
+      "address": "0x801f05f0",
+      "size": 88,
+      "sha256": "80213b6bf11423cab347a1c2b912b7f6f33103bf9636417470e7941d19a875e2",
+      "semantic_name": "CreateObjectManagerSymbolicLink",
+      "source": "reconstruction/kernel_expansion/namespace_links.cpp",
+      "header": "reconstruction/kernel_expansion/namespace_links.hpp",
+      "symbols": ["SymbolicLinkServices", "CreateObjectManagerSymbolicLink"]
+    },
+    {
       "address": "0x801f09c0",
       "size": 16,
       "sha256": "4292106e9d4a5e7ecb01420a96312dbdd837ec466641c7dfbb83e0fccf1a00c4",
@@ -152,6 +170,7 @@
   "tests": [
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
+    "reconstruction/kernel_expansion/namespace_links_test.cpp",
     "reconstruction/kernel_expansion/package_callbacks_test.cpp",
     "reconstruction/kernel_expansion/path_fields_test.cpp",
     "reconstruction/kernel_expansion/runtime_test.cpp",

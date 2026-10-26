@@ -19,7 +19,7 @@ occupy `0x0f4b0-0x1474f`.
 - 133 four-instruction absolute retail-kernel thunks; 91 names are corroborated
   against the pinned public BadUpdate 17559 symbol maps.
 - 46 direct references from 24 functions to embedded ASCII strings.
-- 29 high-confidence behavioral labels are emitted directly into the exact
+- 31 high-confidence behavioral labels are emitted directly into the exact
   assembly, including the config parser, file loader, XEX-section lookup,
   side-loading, boot, update, and storage-recognition paths.
 - Full initialized code and data are preserved without embedding or executing
@@ -56,6 +56,11 @@ lift. The first exact-byte-bound routines are:
 - `LaunchBootXell` (`0x801f09d0`, 128 bytes), represented as a typed service
   workflow that loads `PPROOT:\OtherOS\BootXell.xex`, resolves ordinal one,
   invokes it on success, and unloads every non-null returned module handle.
+- `DeleteObjectManagerSymbolicLink` and
+  `CreateObjectManagerSymbolicLink` (`0x801f0480` and `0x801f05f0`, 144 bytes
+  together), represented as typed wrappers around the resolved kernel object
+  manager calls. Tests bind the `PAYLOAD:` link and target ordering and both
+  zero/nonzero status conversions.
 - `GetPeerPressureConfig` and `InitializeDefaultConfig` (104 bytes together),
   represented with an explicit 0x170-byte config type. Only the recovered
   byte-0x129 default flag is named; unclassified fields remain indexed storage.
@@ -109,7 +114,7 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-16 independently bounded routines totaling 2,936 original instruction bytes.
+18 independently bounded routines totaling 3,080 original instruction bytes.
 
 This source-level layer remains partial. The exact whole-file assembly is the
 evidence oracle, not a claim that all 354 discovered entries are maintainable

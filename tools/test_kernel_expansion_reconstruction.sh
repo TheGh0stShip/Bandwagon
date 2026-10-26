@@ -54,3 +54,9 @@ python3 "$root/tools/verify_kernel_expansion_source_coverage.py"
     "$root/reconstruction/kernel_expansion/path_fields_test.cpp" \
     -o "$work/path_fields_test"
 "$work/path_fields_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/namespace_links.cpp" \
+    "$root/reconstruction/kernel_expansion/namespace_links_test.cpp" \
+    -o "$work/namespace_links_test"
+"$work/namespace_links_test"

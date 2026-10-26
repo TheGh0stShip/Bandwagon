@@ -31,6 +31,8 @@ EXPLICIT_STARTS = {
 SEMANTIC_NAMES = {
     0x0000: "KernelExpansionInitialize",
     0x0150: "ReportExceptionContext",
+    0x0480: "DeleteObjectManagerSymbolicLink",
+    0x05F0: "CreateObjectManagerSymbolicLink",
     0x0648: "LoadPeerPressureConfig",
     0x0748: "LoadKernelPatchStream",
     0x09C0: "GetPeerPressureConfig",
