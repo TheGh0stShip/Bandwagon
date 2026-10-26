@@ -79,6 +79,16 @@ is exact assembly, with reproducible maps and initial semantic names spanning
 online/offline updates, boot themes, dashboard and OtherOS configuration,
 settings persistence, and displayed Peer/kernel/SMC version information.
 
+`stage2/PeerPressureExploit-Stage2.md` documents the persistent HDD Stage2 ROP
+image and its relocated PowerPC worker. The complete 217,796-byte file now has
+an exact assembly reconstruction, 87 worker labels, a fully resolved 212-edge
+direct-call graph, and initial names for its partition and payload-loading path.
+
+`component-inventory.json` is regenerated from the signed manifest by
+`tools/generate_component_inventory.py`. It verifies every file hash and keeps
+source status, provenance boundary, evidence, and the unresolved Peer payload
+list explicit rather than inferring completion from file presence.
+
 ## BadUpdate baseline and modified stages
 
 `badupdate-v1.3-baseline.md` records the pinned public-source/release
@@ -133,5 +143,9 @@ complete byte-identical assembly reconstructions. Higher-level recovery
 remains in progress: executable functions, imports, types, globals, and control
 flow have not yet been completely named across all components. The focused
 Stage4 preamble CFG does not imply that the clean-HV data tail is executable.
-Other raw stage payloads and the 8051-family SMC firmware still require
-architecture-specific loaders and annotation.
+The persistent HDD Stage2 is now exactly reconstructed; the manifest inventory
+identifies `FlashDmaPayload.bin`, `HddSecuritySectorPayload.bin`, and
+`KernelExpansion.bin` as the remaining unresolved Peer raw payloads. The six
+platform SMC firmware images remain reference binaries requiring
+architecture-specific provenance/annotation rather than being treated as
+Peer-authored source.

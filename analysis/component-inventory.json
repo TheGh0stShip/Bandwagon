@@ -1,0 +1,321 @@
+{
+  "schema": "bandwagon-component-inventory-v1",
+  "softmod_version": "1.0.477",
+  "entry_count": 33,
+  "status_counts": {
+    "binary_asset": 1,
+    "exact_initialized_source": 6,
+    "exact_whole_file_source": 2,
+    "human_readable_data": 1,
+    "human_readable_source": 3,
+    "lossless_structured_source": 7,
+    "provenance_only": 1,
+    "public_baseline_identical": 3,
+    "reference_binary_only": 6,
+    "unresolved": 3
+  },
+  "unresolved_peer_payloads": [
+    "Flash\\FlashDmaPayload.bin",
+    "Hdd\\HddSecuritySectorPayload.bin",
+    "PeerPressure\\System\\KernelExpansion.bin"
+  ],
+  "entries": [
+    {
+      "path": "Updater.xex",
+      "size": 53248,
+      "sha1": "ca12f5f0a96f6c5b419b719c9f3bf1b05aca9dbb",
+      "sha256": "14270bd5e910fe4d0cf76a9bafa869922f2c57cfc2fa2cb6809870e3c6b57bd4",
+      "category": "peer_executable",
+      "status": "exact_initialized_source",
+      "evidence": "analysis/xex/Updater.md"
+    },
+    {
+      "path": "Flash\\bootanim.xex",
+      "size": 397312,
+      "sha1": "3c1bf1edc06a385455e74876c3aa28280e8f363c",
+      "sha256": "45eb980c0f841b4807d43c07c766fae5e70b8e2fa4d13fb247a491897cfc6de7",
+      "category": "bundled_baseline_binary",
+      "status": "public_baseline_identical",
+      "evidence": "analysis/badupdate-v1.3-comparison.json"
+    },
+    {
+      "path": "Flash\\Corona_SmcCode.bin",
+      "size": 14336,
+      "sha1": "9a7c48d1253039beecbf4118006198b8d2026c72",
+      "sha256": "3fab1d258b03156921abeca970d1d447f43c405d2636f210674be6e98d83897d",
+      "category": "platform_firmware",
+      "status": "reference_binary_only",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Corona_SmcExploit.bin",
+      "size": 657,
+      "sha1": "c55e932af5d3dc039bac6bae7955caeabbc127ff",
+      "sha256": "c3e455bb46373527782dee312ec09b8b0bf745e6064c16d6e00dfa486137b3c7",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/Flash_Corona_SmcExploit.json"
+    },
+    {
+      "path": "Flash\\Falcon_SmcCode.bin",
+      "size": 12288,
+      "sha1": "96a63b85b36fa86e69548ead9d07a5f6b060e255",
+      "sha256": "1615d187e758441a9450d7b6188dae3584fec666282fd95ac292483b7a2d30f5",
+      "category": "platform_firmware",
+      "status": "reference_binary_only",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Falcon_SmcExploit.bin",
+      "size": 587,
+      "sha1": "15fe9bc57dd560e4ff684a3983b02579722ea991",
+      "sha256": "c60354879fe67fd2813e74466c167d8598ceda5314bf090261c8357fd8f25fcb",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/Flash_Falcon_SmcExploit.json"
+    },
+    {
+      "path": "Flash\\FlashDmaPayload.bin",
+      "size": 16384,
+      "sha1": "fe3edae1bd416c66bdc04871616fe7bcf9b4285b",
+      "sha256": "d3c73c043eb6e679b9b598caaf5b39c108bedaabbc48fe5ac2211ac7d50cac2d",
+      "category": "peer_raw_payload",
+      "status": "unresolved",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Jasper_SmcCode.bin",
+      "size": 12288,
+      "sha1": "a51154c1e04fa4e3f5f5c2c4be0bcfe4d05068bb",
+      "sha256": "0b2c569ab83c90549389f5963b927821ecb5fda706ac9d7346770b9f2d826fe0",
+      "category": "platform_firmware",
+      "status": "reference_binary_only",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Jasper_SmcExploit.bin",
+      "size": 582,
+      "sha1": "2b765bdec9519088f8c7e7f8759a329ab3fb00de",
+      "sha256": "44e525b4609fe4eedc9a66d76a64efe20ca9a4b48e6b18fa2521dca624075e46",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/Flash_Jasper_SmcExploit.json"
+    },
+    {
+      "path": "Flash\\Trinity_SmcCode.bin",
+      "size": 12288,
+      "sha1": "ff5601c445bf0e2d22a4a41aa60c27f595b285df",
+      "sha256": "2c2ce86df3c355cdf7a962ed126530f6030de82b40ed2f9b01ac24881b8cafd5",
+      "category": "platform_firmware",
+      "status": "reference_binary_only",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Trinity_SmcExploit.bin",
+      "size": 550,
+      "sha1": "dbf8574dcda56e87a2056773e826a218df68c28c",
+      "sha256": "4475e4316f9d6d24406adac7d525e5c26e89a513c8dc6f61ded76395ea5cee64",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/Flash_Trinity_SmcExploit.json"
+    },
+    {
+      "path": "Flash\\Xenon_SmcCode.bin",
+      "size": 12288,
+      "sha1": "a131a33393868787ceaace3795ac4a1a3019cbc4",
+      "sha256": "2fa75eec2a0147213a115e7e0e2749611c60e6a7e717986be606edfbe9bf847a",
+      "category": "platform_firmware",
+      "status": "reference_binary_only",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Xenon_SmcExploit.bin",
+      "size": 587,
+      "sha1": "516a6e79a7f74a02dd30f0127be5c0f09a7d3f2a",
+      "sha256": "2907897a8f4ac99699b55b6b559531fe4a214ea0b44ded5e72d6ed33240722d3",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/Flash_Xenon_SmcExploit.json"
+    },
+    {
+      "path": "Flash\\Zephyr_SmcCode.bin",
+      "size": 12288,
+      "sha1": "22657d98e59f96bbe4618d2a21a79530d0c6863b",
+      "sha256": "aec4f4c45366f37f3489d87a904626f2cbc10637c0cfd5e6f6bf584a3d4ed8c8",
+      "category": "platform_firmware",
+      "status": "reference_binary_only",
+      "evidence": null
+    },
+    {
+      "path": "Flash\\Zephyr_SmcExploit.bin",
+      "size": 587,
+      "sha1": "451d5cfd6902e794ce493817c593ef7fe70dcab4",
+      "sha256": "3f231e580734e0607a0719c42f23f7cdd6f4b410b6fa3cfce8fbf8c2c8eb7da4",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/Flash_Zephyr_SmcExploit.json"
+    },
+    {
+      "path": "Hdd\\HddSecuritySectorPayload.bin",
+      "size": 24,
+      "sha1": "c55c2e46ad3ae6eeb55c85adb5432127dff0377b",
+      "sha256": "9e8933f7f194aa045d4b202a63a7552503ec836d217bb48a3bbfbb2f1f5e6bdd",
+      "category": "peer_raw_payload",
+      "status": "unresolved",
+      "evidence": null
+    },
+    {
+      "path": "Hdd\\PeerPressureExploit-Stage2.bin",
+      "size": 217796,
+      "sha1": "e5907a4981a9b5c8393750d4de311df1c23d3675",
+      "sha256": "667ffe4c116d0db7ce75f0ae603f056d359c7f17f8137cb14dc40cbf62908443",
+      "category": "peer_rop_and_code",
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/stage2/PeerPressureExploit-Stage2.md"
+    },
+    {
+      "path": "PeerPressure\\OtherOS\\boot.ini",
+      "size": 2627,
+      "sha1": "db6243bec78ae8ce0aac3fb5255be483b500f10c",
+      "sha256": "6d8318331c483777d5ddf389b7cd577b29e607660324db9051c91842d3eaec95",
+      "category": "peer_configuration",
+      "status": "human_readable_source",
+      "evidence": null
+    },
+    {
+      "path": "PeerPressure\\OtherOS\\BootXell.xex",
+      "size": 47104,
+      "sha1": "1ff0ddd36c80ee45cdb70271ad339219cc5df205",
+      "sha256": "66af3c4bc3703301d27198881acae35f3154ab547d630109e6ebed811248aa60",
+      "category": "peer_executable",
+      "status": "exact_initialized_source",
+      "evidence": "analysis/xex/BootXell.md"
+    },
+    {
+      "path": "PeerPressure\\SideLoading\\AuroraFixer.xex",
+      "size": 102400,
+      "sha1": "e4de6e4270378f43a7f074acf78324730ef685b9",
+      "sha256": "6d9108506edc577afe3d2a75d353f993938c2f5ad3642ec0bfa43a7d4c58a0d7",
+      "category": "peer_executable",
+      "status": "exact_initialized_source",
+      "evidence": "analysis/xex/AuroraFixer.md"
+    },
+    {
+      "path": "PeerPressure\\SideLoading\\SideLoad.ini",
+      "size": 3160,
+      "sha1": "030f0f8e96374b7cfc39701de7a493a797149cbb",
+      "sha256": "436717f78c106eb1232afdc239daf9570d99f27071b227068ee722f57eb4b56c",
+      "category": "peer_configuration",
+      "status": "human_readable_source",
+      "evidence": null
+    },
+    {
+      "path": "PeerPressure\\System\\BootEdit.xex",
+      "size": 868352,
+      "sha1": "d24d7fdc48c976af56aa485207b210edaac26e25",
+      "sha256": "891940836314c3fc08662a47ba06574a7857ffa502d17264ce5caff3e7373770",
+      "category": "peer_executable",
+      "status": "exact_initialized_source",
+      "evidence": "analysis/xex/BootEdit.md"
+    },
+    {
+      "path": "PeerPressure\\System\\Config.ini",
+      "size": 1412,
+      "sha1": "b86e3472580bde31724b87a64a91a2dc080bd0b7",
+      "sha256": "ca327e6af476b8bde27d47a1a11d380ef1ac974c339c3390f24610bf41b677b4",
+      "category": "peer_configuration",
+      "status": "human_readable_source",
+      "evidence": null
+    },
+    {
+      "path": "PeerPressure\\System\\HudResources.xzp",
+      "size": 2871,
+      "sha1": "dbe701654dc6e6c2a2d97f7c8a8f244739f98098",
+      "sha256": "97b4c6375d058eb83155eb53ffdfd3a157600d30489703ac170be4a893cf12e3",
+      "category": "ui_asset",
+      "status": "binary_asset",
+      "evidence": null
+    },
+    {
+      "path": "PeerPressure\\System\\IncludedRootsPEM.txt",
+      "size": 177207,
+      "sha1": "a522c8cfa3bdd527cf1ec521c5002a4be9a9e39c",
+      "sha256": "df516a9bc8b625d88743bd67ee18444c11d2cbe2fdc2013a883b2b5c8e2a1dcc",
+      "category": "trust_store_data",
+      "status": "human_readable_data",
+      "evidence": null
+    },
+    {
+      "path": "PeerPressure\\System\\KernelExpansion.bin",
+      "size": 83792,
+      "sha1": "1899b198f3c745a499e0994c3d9f51b19a093271",
+      "sha256": "e0bea139ce9f48d0f0bd94f65fae0fd26316985f0a1b6625809893f29f028ad8",
+      "category": "peer_raw_payload",
+      "status": "unresolved",
+      "evidence": null
+    },
+    {
+      "path": "PeerPressure\\System\\kernel_patches.bin",
+      "size": 372,
+      "sha1": "e1253d592fce50fd7def99e99f443091edd9e334",
+      "sha256": "c896d68941e3b2f9b73e0ea25497bd26d71beca1bfd9d2295b799a50d45452ff",
+      "category": "peer_patch_stream",
+      "status": "lossless_structured_source",
+      "evidence": "analysis/patch-records/PeerPressure_System_kernel_patches.json"
+    },
+    {
+      "path": "PeerPressure\\System\\PeerPressureExploit-4thStage.bin",
+      "size": 67456,
+      "sha1": "a3ca6a4db79b8e881faf15f8ec03edc87cb22316",
+      "sha256": "f482f2e13b3e4d04b0a322f4553c628f7afe556c070da25710b8581d3c37df22",
+      "category": "peer_code_and_data",
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/reconstruction/PeerPressureExploit-4thStage.reconstructed.S"
+    },
+    {
+      "path": "PeerPressure\\System\\SettingsApp.xex",
+      "size": 1015808,
+      "sha1": "076247918bc4f547ddfa1c9076e64fbd83da54b9",
+      "sha256": "e7420ddb70236a0bf58e61e8fe75b18fdfcfa9a63105de12a9b6a01872c662d4",
+      "category": "peer_executable",
+      "status": "exact_initialized_source",
+      "evidence": "analysis/xex/SettingsApp.md"
+    },
+    {
+      "path": "PeerPressure\\System\\UpdateCheck.xex",
+      "size": 129024,
+      "sha1": "3420d6ec2f2343986a4807d75c8238ec2a09a6ae",
+      "sha256": "62198bc7d0a99c5031eb560440008f4aa142d1a761c77b778aa4601bd94c846c",
+      "category": "peer_executable",
+      "status": "exact_initialized_source",
+      "evidence": "analysis/xex/UpdateCheck.md"
+    },
+    {
+      "path": "PeerPressure\\System\\update_data.bin",
+      "size": 45360,
+      "sha1": "be4bda2a91ab48ae1c8e8af39d91278fa4c48996",
+      "sha256": "141604af68d4ccd24663ce7cad56ad1e2a9ed9467dbb629159ad4d2d6c837cb7",
+      "category": "public_badupdate_data",
+      "status": "public_baseline_identical",
+      "evidence": "analysis/badupdate-v1.3-comparison.json"
+    },
+    {
+      "path": "PeerPressure\\System\\xke_update.bin",
+      "size": 20480,
+      "sha1": "f0434fa898b8cd53dfb6d34713bb86aa4a94e699",
+      "sha256": "88f456c0b0091d691b3723dea190b428b3002443c13b7171b0ae9dafc92b5402",
+      "category": "public_badupdate_data",
+      "status": "public_baseline_identical",
+      "evidence": "analysis/badupdate-v1.3-comparison.json"
+    },
+    {
+      "path": "PeerPressure\\Themes\\BootAnim\\9199\\bootanim.xex",
+      "size": 593920,
+      "sha1": "614548900f80e3b52ce7281a92219e24eb9ab786",
+      "sha256": "0a5571ba1fd3c0a30295a2cb1279ee1cfc7d8913dac71e4ef90317ab77485a46",
+      "category": "bundled_microsoft_component",
+      "status": "provenance_only",
+      "evidence": "analysis/xex/BootAnim-9199-provenance.md"
+    }
+  ]
+}

@@ -29,6 +29,12 @@ def main() -> None:
     parser.add_argument("image", type=Path)
     parser.add_argument("function_map", type=Path)
     parser.add_argument("--image-base", type=parse_int, required=True)
+    parser.add_argument(
+        "--address-file-offset",
+        type=parse_int,
+        default=0,
+        help="file offset corresponding to image-base (default: 0)",
+    )
     parser.add_argument("--text-offset", type=parse_int, required=True)
     parser.add_argument("--text-address", type=parse_int, required=True)
     parser.add_argument("--text-size", type=parse_int, required=True)
@@ -78,7 +84,9 @@ def main() -> None:
                     continue
                 if not (args.string_start <= candidate < args.string_end):
                     continue
-                string = read_ascii_string(image, candidate - args.image_base)
+                string = read_ascii_string(
+                    image, candidate - args.image_base + args.address_file_offset
+                )
                 if string is None:
                     continue
                 instruction_offset = start + following_index * 4

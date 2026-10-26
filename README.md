@@ -40,6 +40,13 @@ The public BadUpdate source baseline is pinned as the
   and a semantic map of update, boot, dashboard, OtherOS, and version settings.
 - The bundled dashboard-9199 boot animation is provenance-recorded as Microsoft
   code and intentionally excluded from Peer-authored source publication.
+- The persistent HDD Stage2 ROP/worker image has an exact whole-file assembly
+  reconstruction and an initial semantic map of its partition/update loader.
+
+`analysis/component-inventory.json` is the generated manifest-wide completion
+matrix. Of 33 installed components, only three Peer raw payloads remain without
+source-form reconstruction: `FlashDmaPayload.bin`,
+`HddSecuritySectorPayload.bin`, and `KernelExpansion.bin`.
 
 Semantic recovery of remaining functions, types, globals, indirect control
 flow, raw stage payloads, and SMC firmware is still in progress.
