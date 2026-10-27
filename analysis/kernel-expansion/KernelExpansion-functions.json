@@ -849,7 +849,7 @@
       "address": "0x801f5b88",
       "section_offset": "0x5b88",
       "size_to_next_symbol": 128,
-      "name": "fn_801F5B88",
+      "name": "CloseFileSystemFile",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

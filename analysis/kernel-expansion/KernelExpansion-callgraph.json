@@ -3798,7 +3798,7 @@
       "target_containing_function": "IoRemoveShareAccess"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5b8c",
       "target_address": "0x801fead4",
@@ -3806,7 +3806,7 @@
       "target_containing_function": "fn_801FEAD4"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5ba8",
       "target_address": "0x801feec8",
@@ -3814,7 +3814,7 @@
       "target_containing_function": "KeEnterCriticalRegion"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5bb4",
       "target_address": "0x801ff138",
@@ -3822,7 +3822,7 @@
       "target_containing_function": "RtlEnterCriticalSection"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5bc4",
       "target_address": "0x801f8da0",
@@ -3830,7 +3830,7 @@
       "target_containing_function": "fn_801F8DA0"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5bdc",
       "target_address": "0x801ff158",
@@ -3838,7 +3838,7 @@
       "target_containing_function": "RtlLeaveCriticalSection"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5be0",
       "target_address": "0x801feef8",
@@ -3846,7 +3846,7 @@
       "target_containing_function": "KeLeaveCriticalRegion"
     },
     {
-      "caller": "fn_801F5B88",
+      "caller": "CloseFileSystemFile",
       "caller_address": "0x801f5b88",
       "instruction_address": "0x801f5bf4",
       "target_address": "0x801ff188",

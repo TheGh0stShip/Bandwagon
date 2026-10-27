@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 75,
-    "lifted_instruction_bytes": 12864,
-    "peer_product_adapter_or_policy_function_count": 48,
-    "peer_product_adapter_or_policy_instruction_bytes": 6712,
+    "lifted_function_count": 76,
+    "lifted_instruction_bytes": 12992,
+    "peer_product_adapter_or_policy_function_count": 49,
+    "peer_product_adapter_or_policy_instruction_bytes": 6840,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -510,6 +510,15 @@
       "symbols": ["DriveDeviceReleaseContext", "ObjectDereference", "ReleaseDriveDeviceObject", "UnregisterDriveDevice"]
     },
     {
+      "address": "0x801f5b88",
+      "size": 128,
+      "sha256": "657b22a7f2d98f7dd97dfbff113499fd95b170e65893a320d79b788475de9ae8",
+      "semantic_name": "CloseFileSystemFile",
+      "source": "reconstruction/kernel_expansion/filesystem_close.cpp",
+      "header": "reconstruction/kernel_expansion/filesystem_close.hpp",
+      "symbols": ["OpenFileListEntry", "FileSystemFileObject", "FileSystemCloseRequest", "FileSystemCloseServices", "CloseFileSystemFile"]
+    },
+    {
       "address": "0x801f62c0",
       "size": 40,
       "sha256": "5f58cd42f97d34a8911a3c8115746bdbe4357e3e28862091ed281183fc778ee1",
@@ -803,6 +812,7 @@
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/drive_registry_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
+    "reconstruction/kernel_expansion/filesystem_close_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
     "reconstruction/kernel_expansion/flash_versions_test.cpp",
     "reconstruction/kernel_expansion/nand_write_protection_test.cpp",

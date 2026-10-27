@@ -73,7 +73,7 @@ the product/local-adapter boundary. They implement hook patching, Xbox
 object-manager links, SATA UDMA policy, file loading, and bootstrap cleanup;
 calling platform APIs does not establish platform-source provenance. All nine
 already have tested readable source, so this correction does not increase the
-remaining backlog: 48 known product functions / 18,596 bytes still need lifts.
+remaining backlog: 47 known product functions / 18,468 bytes still need lifts.
 
 The fingerprint is the unpatched base release, not current patched FatFs.
 ChaN's official patch page records later R0.16 correctness and security fixes.
@@ -382,13 +382,17 @@ lift. The first exact-byte-bound routines are:
   complete nested-device cleanup path. It unregisters the slot stored at nested
   offset `0xc0`, then dereferences the backing object at nested offset `0xa0`
   and finally the incoming owner object, preserving the binary's call order.
+- `CloseFileSystemFile` (`0x801f5b88`, 128 bytes), the filesystem close-request
+  path. Under the device critical-section boundary it releases a non-null file
+  context and unlinks the file object's open-file list entry, then records
+  success, completes the request with no priority boost, and returns success.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-75 independently bounded routines totaling 12,864 original instruction bytes.
+76 independently bounded routines totaling 12,992 original instruction bytes.
 Five routines / 1,040 bytes are upstream FatFs regression models and 22 /
-5,112 bytes remain unattributed. The other 48 current lifts / 6,712 bytes are
+5,112 bytes remain unattributed. The other 49 current lifts / 6,840 bytes are
 classified as product adapter or policy behavior, including the nine
 source-covered app-local helpers, without implying personal authorship.
 
