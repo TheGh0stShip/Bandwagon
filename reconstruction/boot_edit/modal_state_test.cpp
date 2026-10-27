@@ -14,6 +14,38 @@ bool Near(float left, float right) {
 }  // namespace
 
 int main() {
+  ModalCompletionState definition;
+  definition.result = 99;
+  definition.completion_pending = true;
+  InitializeModalDefinition(&definition, "Body", "Title", 4);
+  assert(definition.text == "Body" && definition.title == "Title");
+  assert(definition.popup_x == -1.0f && definition.popup_y == -1.0f);
+  assert(definition.popup_width == 500.0f &&
+         definition.popup_height == 100.0f);
+  assert(definition.popup_active && !definition.completion_pending);
+  assert(definition.result == 0 && definition.modal_type == 4 &&
+         definition.selected_action == 0);
+
+  std::vector<std::string> completion_order;
+  std::uint32_t expected_completion_result = 3;
+  definition.continuation_argument = 0x44;
+  definition.continuation = [&](ModalCompletionState* self,
+                                std::uintptr_t argument) {
+    assert(self == &definition && argument == 0x44);
+    assert(self->completion_pending &&
+           self->result == expected_completion_result);
+    completion_order.push_back("continue");
+  };
+  CompleteModalForApplicationType(2, &definition);
+  assert(definition.completion_observed);
+  assert((completion_order == std::vector<std::string>{"continue"}));
+  definition.completion_observed = false;
+  expected_completion_result = 1;
+  CompleteModalForApplicationType(9, &definition);
+  assert(definition.result == 1 && definition.completion_observed);
+  assert((completion_order ==
+          std::vector<std::string>{"continue", "continue"}));
+
   ModalCompletionState modal;
   modal.completion_pending = true;
   modal.result = 9;

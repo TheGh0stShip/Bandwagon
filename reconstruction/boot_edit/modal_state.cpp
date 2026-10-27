@@ -4,6 +4,40 @@
 
 namespace bandwagon::boot_edit {
 
+void InitializeModalBase(ModalCompletionState* modal,
+                         std::string_view message) {
+  if (!modal) return;
+  modal->text = std::string(message);
+  modal->popup_x = -1.0f;
+  modal->popup_y = -1.0f;
+  modal->popup_width = 500.0f;
+  modal->popup_height = 100.0f;
+  modal->result = 0;
+  modal->completion_pending = false;
+  modal->popup_active = true;
+}
+
+void InitializeModalDefinition(ModalCompletionState* modal,
+                               std::string_view message,
+                               std::string_view title,
+                               std::uint32_t modal_type) {
+  if (!modal) return;
+  InitializeModalBase(modal, message);
+  modal->title = std::string(title);
+  modal->modal_type = modal_type;
+  modal->selected_action = 0;
+}
+
+void CompleteModalForApplicationType(std::uint32_t application_modal_type,
+                                     ModalCompletionState* modal) {
+  if (!modal) return;
+  modal->completion_pending = true;
+  modal->result = application_modal_type == 2 ? 3u : 1u;
+  if (modal->continuation)
+    modal->continuation(modal, modal->continuation_argument);
+  modal->completion_observed = true;
+}
+
 void InitializeModalCompletionState(ModalCompletionState* modal) {
   if (!modal) return;
   modal->completion_pending = false;

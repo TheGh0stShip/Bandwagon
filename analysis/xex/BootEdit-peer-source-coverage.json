@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":38200,"sha256":"509a52ce86907c0d917b592189a043e102aa6f187481712bb07aad4ae26ebd11"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":39567,"sha256":"9766cfcbc77614bc217b0e3ce415459ca9ba93a32dc1a93bab9774201492f374"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -35,9 +35,9 @@
     "name_task_source": {"path":"reconstruction/boot_edit/theme_name_task.cpp","kind":"source","size":5656,"sha256":"f05dd1e06832093c0f96637a64b4c20bdf3003b065ae0ff41821d790cd2a753b"},
     "name_task_header": {"path":"reconstruction/boot_edit/theme_name_task.hpp","kind":"header","size":2135,"sha256":"880df8153eef515a9deab353e001658864a32f0a1d7ad28d85bf66fd5d235b9c"},
     "name_task_test": {"path":"reconstruction/boot_edit/theme_name_task_test.cpp","kind":"test","size":4897,"sha256":"e11687ac1d625da792e25d7135081fd87571966bd27815f636eed7f0ab5376c5"},
-    "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
-    "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
-    "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
+    "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":6266,"sha256":"b9aa18820271c840b9fb2e83af9e6d5573884d267207ec747c1b906c2ff9b006"},
+    "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":4742,"sha256":"b3a435964e3c6f4b04b0d7a54146d0621c75fd4f4994646bf1879dd7cb0aa98c"},
+    "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":8969,"sha256":"cbc424003095fc7232dfaac6df4bdce03a302b62734654825ef9b25cde23ba21"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -75,6 +75,51 @@
       "test_artifacts": ["bootstrap_test"],
       "symbols": ["BootstrapBootAnimation", "RunBootAnimationThread", "CompleteSingleChoiceModal", "CompleteThreeChoiceModal", "BootAnimationServices", "ModalCompletionState"],
       "required_strings": ["\\??\\PPROOT:", "%s\\Themes\\BootAnim\\9199", "\\??\\Themes:", "PPROOT:\\Themes\\BootAnim\\9199\\bootanim.xex"]
+    },
+    {
+      "address": "0x8204c2d8",
+      "end_exclusive": "0x8204c3b0",
+      "size": 216,
+      "sha256": "9cea529b65115c696435126e265f52e71e5182ce5a0d430cba7f4bb5094adee1",
+      "inventory_name": "fn_8204C2D8",
+      "semantic_name": "InitializeModalBase",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Base modal construction with message adoption, exact (-1,-1) initial placement, exact 500x100 size, active flag, zero result/completion/continuation state, and product modal vtable boundary; string and base-runtime mechanics are attributed dependencies.",
+      "source_artifacts": ["modal_source", "modal_header"],
+      "test_artifacts": ["modal_test"],
+      "symbols": ["ModalCompletionState", "InitializeModalBase"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204c3b0",
+      "end_exclusive": "0x8204c450",
+      "size": 160,
+      "sha256": "f8cbf0c8c5b0434ee17a1a70e877e8096842281e2dde6d9b82aaf5c4dee6ea03",
+      "inventory_name": "fn_8204C3B0",
+      "semantic_name": "InitializeModalDefinition",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Derived product modal construction over InitializeModalBase, including title adoption, modal-type publication, zero selected action, and ordered consumption of temporary message/title values.",
+      "source_artifacts": ["modal_source", "modal_header"],
+      "test_artifacts": ["modal_test"],
+      "symbols": ["ModalCompletionState", "InitializeModalDefinition", "InitializeModalBase"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204c618",
+      "end_exclusive": "0x8204c690",
+      "size": 120,
+      "sha256": "684a9480337a427f6afbd8726db57e8cc7ec59ebacff7abce1af6c1de234526c",
+      "inventory_name": "fn_8204C618",
+      "semantic_name": "CompleteModalForApplicationType",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Completion publication, exact application-modal-type 2 to result 3 mapping with result 1 otherwise, optional continuation dispatch with stored argument, and final completion-observed flag.",
+      "source_artifacts": ["modal_source", "modal_header"],
+      "test_artifacts": ["modal_test"],
+      "symbols": ["CompleteModalForApplicationType", "ModalCompletionState"],
+      "required_strings": []
     },
     {
       "address": "0x8204c690",
@@ -559,10 +604,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 34,
-    "product_bytes": 16152,
-    "model_covered_function_count": 34,
-    "model_covered_bytes": 16152,
+    "product_function_count": 37,
+    "product_bytes": 16648,
+    "model_covered_function_count": 37,
+    "model_covered_bytes": 16648,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

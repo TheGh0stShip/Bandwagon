@@ -23,7 +23,25 @@ struct ModalCompletionState {
   std::uint32_t modal_type = 0;       // word +68
   std::uint32_t selected_action = 0;  // word +72
   bool message_visible = false;       // byte +104
+  std::string title;
+  float popup_x = -1.0f;
+  float popup_y = -1.0f;
+  float popup_width = 500.0f;
+  float popup_height = 100.0f;
+  bool popup_active = true;
+  bool completion_observed = false;
 };
+
+// Product modal constructors at 0x8204C2D8 and 0x8204C3B0.
+void InitializeModalBase(ModalCompletionState* modal, std::string_view message);
+void InitializeModalDefinition(ModalCompletionState* modal,
+                               std::string_view message,
+                               std::string_view title,
+                               std::uint32_t modal_type);
+
+// Product completion adapter at 0x8204C618.
+void CompleteModalForApplicationType(std::uint32_t application_modal_type,
+                                     ModalCompletionState* modal);
 
 // Non-pdata constructor at 0x820509d8 inside the compound 0x82050958
 // inventory extent. The target installs its vtable and zeros the four exposed
