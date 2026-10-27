@@ -31,13 +31,13 @@ contains 218 references in 69 functions. Regenerate the complete set with
 | --- | ---: | ---: | --- |
 | Product theme-editor application | 28 | 15,344 | Recover as readable source |
 | Dear ImGui 1.86 | 441 | 231,096 | Use the pinned upstream source |
-| MSVC/Xbox platform and toolchain | 388 | 104,712 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 77 | 18,272 | Fingerprint before deciding whether to lift |
+| MSVC/Xbox platform and toolchain | 389 | 104,896 | Reuse the target ABI/runtime; do not relift |
+| Unknown framework/backend/lookup code | 76 | 18,088 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
-80-byte non-`.pdata` `ColorsDifferExact` leaf; 42 proven compiler/template
-helpers / 11,736 bytes are kept in the platform bucket. A 22-entry /
+80-byte non-`.pdata` `ColorsDifferExact` leaf; 43 proven compiler/template
+helpers / 11,920 bytes are kept in the platform bucket. A 22-entry /
 9,552-byte prefix before the version checker is pinned to ImGui by the shared
 136/320/624-byte opening sequence and normalized SettingsApp matches. Four
 more entries / 360 bytes exactly normalize to independently proven Updater
@@ -91,7 +91,7 @@ every full BootEdit regeneration.
 all 15,344 bytes to readable, tested C++ behavioral models. This includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
 decoder/encoder codec and frame lifecycle glue. The known-product queue is
-empty; the remaining work is provenance resolution for the 77 unknown
+empty; the remaining work is provenance resolution for the 76 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full

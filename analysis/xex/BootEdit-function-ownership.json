@@ -98,8 +98,9 @@
       ,{"from":"unknown","to":"platform_toolchain","start":"0x8204e388","end_exclusive":"0x82050018","inventory_entry_count":22,"size":7312,"basis":"complete compiler-emitted std::vector<56-byte SavedTheme> support family: allocation, range construction, two-string element copy/swap, comparison-driven heap/sort operations, growth/insertion, bounds traps, and capacity arithmetic; no product state or policy occurs in the interval"}
       ,{"from":"unknown","to":"platform_toolchain","start":"0x8204d878","end_exclusive":"0x8204e1a8","inventory_entry_count":8,"size":2352,"basis":"out-of-line std::string substring return wrapper plus the two-string 56-byte element copy/move/swap and heap helpers used exclusively by the adjacent std::vector<SavedTheme> algorithm family"}
       ,{"from":"unknown","to":"product_application","start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"basis":"BootEdit frame lifecycle glue: ordered Xbox renderer/ImGui NewFrame calls with millisecond delta update, followed by the distinct ordered platform-window/context/input/renderer shutdown wrapper"}
+      ,{"from":"unknown","to":"platform_toolchain","start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"basis":"bounds-checked std::vector<56-byte SavedTheme>::at accessor: divides begin/end distance by 56, calls the independently identified vector-subscript diagnostic on overflow, then returns begin + index*56"}
     ],
-    "after": {"unknown_entry_count":77,"unknown_size":18272,"product_application_entry_count":28,"product_application_size":15344}
+    "after": {"unknown_entry_count":76,"unknown_size":18088,"product_application_entry_count":28,"product_application_size":15344}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -163,9 +164,9 @@
   ],
   "compiler_emitted_template_partition": {
     "classification": "platform_toolchain",
-    "inventory_entry_count": 42,
-    "size": 11736,
-    "description": "Forty-two standalone compiler/standard-library helpers are positively identified by diagnostics, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::string/std::vector<T> and sorting pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
+    "inventory_entry_count": 43,
+    "size": 11920,
+    "description": "Forty-three standalone compiler/standard-library helpers are positively identified by diagnostics, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::string/std::vector<T> and sorting pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
     "ranges": [
       {"start":"0x82011878","end_exclusive":"0x820118e8","size":112,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x980060e8"},
       {"start":"0x8204c280","end_exclusive":"0x8204c2d8","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005d80"},
@@ -181,6 +182,7 @@
       {"start":"0x82050658","end_exclusive":"0x820506b8","size":96,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> count forwarding wrapper"},
       {"start":"0x82051af8","end_exclusive":"0x82051b50","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98008b20"},
       {"start":"0x82051ba8","end_exclusive":"0x82051c08","size":96,"inventory_entry_count":1,"evidence":"owns invalid vector<T> subscript"}
+      ,{"start":"0x82051db8","end_exclusive":"0x82051e70","size":184,"inventory_entry_count":1,"evidence":"bounds-checked vector<56-byte SavedTheme>::at using size division, diagnostic helper, and begin + index*56"}
     ]
   },
   "categories": {
@@ -224,9 +226,9 @@
       ]
     },
     "platform_toolchain": {
-      "inventory_entry_count": 388,
-      "size": 104712,
-      "concatenated_sha256": "ec7066717d3314128d17ee1391f45e877950bceee8c2495fcdbeb70a3e1f13df",
+      "inventory_entry_count": 389,
+      "size": 104896,
+      "concatenated_sha256": "6aca1c900d767172790f0120bd8fc42c665af047d31e3aaf225af17455b96c51",
       "product_specific": false,
       "ranges": [
         {"start":"0x82011878","end_exclusive":"0x820118e8","inventory_entry_count":1,"size":112,"sha256":"2c09abbb3b957d7989c7cf1f2cc60d3ed27248747c873357fe20e8cd505beab1"},
@@ -243,14 +245,15 @@
         {"start":"0x82050658","end_exclusive":"0x820506b8","inventory_entry_count":1,"size":96,"sha256":"cb503b7fc5e6bbca3b57de22cfa83f83691b1589970670c8e2570508770bb1da"},
         {"start":"0x82051af8","end_exclusive":"0x82051b50","inventory_entry_count":1,"size":88,"sha256":"0d90d0714ef08da0acd6e92475c04448fd78da6f00609e9029d3a5f80eb035af"},
         {"start":"0x82051ba8","end_exclusive":"0x82051c08","inventory_entry_count":1,"size":96,"sha256":"42374f379418b87faeb97f439bd3c67509bdb5a267683c8a5725d453726bca61"},
+        {"start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"sha256":"5439f89570a358c61190693664e17b8f9216694f756e0858894af0ac614a67b8"},
         {"start":"0x820537e0","end_exclusive":"0x82069eb0","inventory_entry_count":277,"size":91856,"sha256":"16df242d6648ae539b50134bcbb6dd1040954da7276e9f3ff9cce1b6b6583193"},
         {"start":"0x82069eb0","end_exclusive":"0x8206a310","inventory_entry_count":69,"size":1120,"sha256":"96309be976d83510bbfbaf67c0aca0d7301e9074e88ca95812c59ee3c10c8927"}
       ]
     },
     "unknown": {
-      "inventory_entry_count": 77,
-      "size": 18272,
-      "concatenated_sha256": "6bda1fc6251941f48a29295137ffbf4510e79bdcef0d61a9dfb753f2613537e6",
+      "inventory_entry_count": 76,
+      "size": 18088,
+      "concatenated_sha256": "b1829e1f97a27990be19decea240bfa50f4026887c90e2cfa7e829aa257abc3a",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -266,7 +269,6 @@
         {"start":"0x82050f08","end_exclusive":"0x82050f60","inventory_entry_count":1,"size":88,"sha256":"ecca5e3ceb0e0e23e3cd70e699b1ec7597a24d9df6ef00cb57fcf0b80153329a"},
         {"start":"0x82051238","end_exclusive":"0x820512e8","inventory_entry_count":1,"size":176,"sha256":"f19a497aeb40e0ca7278e98e5d63ab4a1292e9533f80b8a3f6551e9494b0c843"},
         {"start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"sha256":"8c68ac5f246d04c85c76a82642a061497f7696e8409164771fe87170125616ff"},
-        {"start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"sha256":"5439f89570a358c61190693664e17b8f9216694f756e0858894af0ac614a67b8"},
         {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
@@ -290,7 +292,7 @@
     "product_application_size": 15344,
     "non_product_entry_count": 906,
     "non_product_size": 354080,
-    "unknown_entry_count": 77,
-    "unknown_size": 18272
+    "unknown_entry_count": 76,
+    "unknown_size": 18088
   }
 }
