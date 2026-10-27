@@ -108,4 +108,72 @@ bool EditMeshColors(const std::array<bool, 3>& enabled,
   return changed;
 }
 
+ThemeEditorFrameResult DrawThemeEditor(
+    ThemeEditorState* state, const ThemeEditorInput& input,
+    float boot_animation_seconds, ColorClipboard* clipboard,
+    ThemeEditorServices* services) {
+  ThemeEditorFrameResult result;
+  if (!state || !clipboard || !services) return result;
+
+  for (std::size_t index = 0; index < input.flag_changed.size(); ++index) {
+    if (!input.flag_changed[index]) continue;
+    const std::uint32_t mask = std::uint32_t{1} << index;
+    if (input.flag_value[index])
+      state->mesh_flags |= mask;
+    else
+      state->mesh_flags &= ~mask;
+    state->dirty = true;
+  }
+
+  for (std::size_t index = 0; index < state->meshes.size(); ++index) {
+    auto& mesh = state->meshes[index];
+    const bool changed = EditMeshColors(mesh.enabled, &mesh.edited,
+                                        mesh.defaults, mesh.undo,
+                                        input.mesh_events[index], clipboard);
+    if (!changed) continue;
+    state->dirty = true;
+    if (index < 11) mesh.live = mesh.edited;
+    if (index == 11) services->ApplyXWallsTexture();
+    if (index == 12) services->ApplyCoreSphereGlow();
+  }
+
+  // The marker is derived from the playback clock, clamped to the exact
+  // 0..10 second range, and scaled by the recovered 0.1 constant.
+  result.timeline_seconds = boot_animation_seconds;
+  if (result.timeline_seconds < 0.0f) result.timeline_seconds = 0.0f;
+  if (result.timeline_seconds > 10.0f) result.timeline_seconds = 10.0f;
+  result.timeline_fraction = result.timeline_seconds * 0.1f;
+
+  services->UpdateBootEditFrame();
+
+  if (state->view == 0 && input.main_menu_pressed) {
+    services->ReleaseEditorTask();
+    services->StartThemeEnumeration();
+    state->view = 1;
+    state->selection = 0;
+    state->refresh_pending = true;
+    state->navigation_state = 0;
+    state->root_state = 0;
+    services->ConsumeMainMenuButton();
+    result.returned_to_main_menu = true;
+  }
+
+  if (state->notice_present && state->notice_suppresses_input) {
+    if (!state->notice_completion_byte) services->UpdateNotice();
+    if (services->NoticeComplete()) {
+      services->ReleaseNotice();
+      state->notice_present = false;
+    }
+    state->notice_seconds -= state->delta_seconds;
+    if (state->notice_seconds <= 0.0f) {
+      state->notice_suppresses_input = false;
+      if (state->notice_present) {
+        services->ReleaseNotice();
+        state->notice_present = false;
+      }
+    }
+  }
+  return result;
+}
+
 }  // namespace bandwagon::boot_edit

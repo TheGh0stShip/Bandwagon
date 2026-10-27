@@ -87,11 +87,11 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds 21 of the 22 product entries and
-11,024 of 13,088 bytes to readable, tested C++ behavioral models. The exact
-remaining queue is 1 entry / 2,064 bytes and is listed with per-entry
-blockers in that manifest. `reconstruction/boot_edit/theme_editor.cpp` and
-`theme_manager.cpp` cover the first tranche. Saved enumeration results
+`BootEdit-peer-source-coverage.json` binds all 22 product entries and
+all 13,088 bytes to readable, tested C++ behavioral models. The known-product
+queue is empty; the remaining work is provenance resolution for the 119 unknown
+entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
+`theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full
 `Themes:\` path. The color context-menu model preserves its shared four-float
 clipboard and availability flag: Copy only updates the clipboard, while

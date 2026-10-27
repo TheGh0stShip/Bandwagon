@@ -38,9 +38,9 @@
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
-    "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":3466,"sha256":"534adfa50286e499a001f9407256e7c5add50772e59557809d5ee63f6ff7d2a9"},
-    "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":2766,"sha256":"a3a4e2b8781dcc6b8f36aa63d0687bdeabce087558f1baa5b6b745afd07705bd"},
-    "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":4221,"sha256":"769f3e88fd5109507e0aa38c29b07cf60db7bd86cdc111b9e016656ab4e516f7"},
+    "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"3ba0be2ff86ec752594ee6cd47326d1df29f601ad56a63e93532c8c4d55c7da5"},
+    "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"5255c7682cacb96a9f22de0032a3fe6bed76f56c04eef64954ea1c7dcf21948d"},
+    "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":7974,"sha256":"1c87b2e1cf3e8f81450740cc0445214477c002bf85ba1fb282090d75695fa79a"},
     "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":5109,"sha256":"9eacb32845f75e5148638a996a55ee9556d0c8e1d36f49906d21d515cb2a2d55"},
     "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":4400,"sha256":"7d9d4c8ca9cc7f6c87bed97b2d21f507c80e50e5897cf51ed99320841d129f59"},
     "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":4779,"sha256":"b1c88909e1be058c6e957ac1d9b83adbad47b700611fcf658777002528c99c17"}
@@ -272,6 +272,21 @@
       "required_strings": ["##diffuse", "##specular", "##ambient", "color_context_menu"]
     },
     {
+      "address": "0x820512e8",
+      "end_exclusive": "0x82051af8",
+      "size": 2064,
+      "sha256": "63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9",
+      "inventory_name": "fn_820512E8",
+      "semantic_name": "DrawThemeEditor",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "The complete editor frame: exact twelve-label mesh-flag table and bit mutations; exact fifteen-label mesh-color table; eleven live 48-byte renderer copies; X Walls Texture and Core Sphere Glow application callbacks; dirty-state accumulation; exact Navigation action/icon mapping; playback-clock clamp to 0..10 seconds and 0.1 timeline scaling; UpdateBootEditFrame dispatch; controller-mask-0x10 main-menu transition, task release, theme re-enumeration and input consumption; and suppressed timed-notice update, completion, countdown and release flow. ImGui window geometry and drawing are explicit dependency boundaries.",
+      "source_artifacts": ["editor_source", "editor_header"],
+      "test_artifacts": ["editor_test"],
+      "symbols": ["DrawThemeEditor", "ThemeEditorState", "ThemeEditorInput", "ThemeEditorServices", "ThemeEditorFrameResult", "kMeshFlagLabels", "kMeshColorLabels", "kNavigationLegend"],
+      "required_strings": ["Editor", "Mesh Flags", "Mesh Colors", "X Walls Texture", "Core Sphere Glow", "Impact Glow", "Background", "Navigation", "Select", "Cancel", "Color Options", "Restart", "Rewind", "Pause", "Main Menu", "Show/Hide UI", "Timeline"]
+    },
+    {
       "address": "0x82051c08",
       "end_exclusive": "0x82051c98",
       "size": 144,
@@ -362,15 +377,13 @@
       "required_strings": ["##menu_options", "##file_list"]
     }
   ],
-  "remaining_product_entries": [
-    {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"}
-  ],
+  "remaining_product_entries": [],
   "summary": {
     "product_function_count": 22,
     "product_bytes": 13088,
-    "model_covered_function_count": 21,
-    "model_covered_bytes": 11024,
-    "remaining_product_function_count": 1,
-    "remaining_product_bytes": 2064
+    "model_covered_function_count": 22,
+    "model_covered_bytes": 13088,
+    "remaining_product_function_count": 0,
+    "remaining_product_bytes": 0
   }
 }

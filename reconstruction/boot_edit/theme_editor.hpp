@@ -42,6 +42,80 @@ struct MeshColorEditEvent {
   ColorContextMenuEvents context_menu{};
 };
 
+inline constexpr std::array<std::string_view, 12> kMeshFlagLabels{
+    "Sphere X",          "Text",          "Sphere Rings Final",
+    "X Bullet",          "Sphere Rings Impact", "Sphere TM",
+    "Outer Sphere",      "Inner Sphere",  "X Impact Glow",
+    "Lens Flare",        "Sphere Back Glow", "Text Lighting"};
+
+inline constexpr std::array<std::string_view, 15> kMeshColorLabels{
+    "Complete Sphere", "Impacted Sphere", "X Lip", "X Wall",
+    "Inner Sphere", "X Bullet", "Final Rings", "Xbox Text",
+    "360 Text", "Impact Rings", "Sphere TM", "X Walls Texture",
+    "Core Sphere Glow", "Impact Glow", "Background"};
+
+struct NavigationLegendEntry {
+  std::uint32_t icon_index;
+  std::string_view label;
+};
+
+inline constexpr std::array<NavigationLegendEntry, 8> kNavigationLegend{{
+    {0, "Select"}, {1, "Cancel"}, {2, "Color Options"}, {6, "Restart"},
+    {7, "Rewind"}, {9, "Pause"}, {4, "Main Menu"}, {8, "Show/Hide UI"},
+}};
+
+struct ThemeEditorMesh {
+  std::array<bool, 3> enabled{};
+  std::array<Color, 3> edited{};
+  std::array<Color, 3> defaults{};
+  std::array<Color, 3> undo{};
+  // The first eleven records are copied to the live renderer only after an
+  // edit, matching the 48-byte memcpy in the recovered routine.
+  std::array<Color, 3> live{};
+};
+
+struct ThemeEditorState {
+  std::uint32_t mesh_flags = 0;
+  std::array<ThemeEditorMesh, 15> meshes{};
+  bool dirty = false;
+  std::uint8_t view = 0;
+  std::uint32_t selection = 0;
+  bool refresh_pending = false;
+  std::uint32_t navigation_state = 0;
+  std::uint32_t root_state = 0;
+  bool notice_present = false;
+  bool notice_suppresses_input = false;
+  bool notice_completion_byte = false;
+  float notice_seconds = 0.0f;
+  float delta_seconds = 0.0f;
+};
+
+struct ThemeEditorInput {
+  std::array<bool, 12> flag_changed{};
+  std::array<bool, 12> flag_value{};
+  std::array<std::array<MeshColorEditEvent, 3>, 15> mesh_events{};
+  bool main_menu_pressed = false;  // controller mask 0x10
+};
+
+struct ThemeEditorServices {
+  virtual ~ThemeEditorServices() = default;
+  virtual void ApplyXWallsTexture() = 0;
+  virtual void ApplyCoreSphereGlow() = 0;
+  virtual void UpdateBootEditFrame() = 0;
+  virtual void ReleaseEditorTask() = 0;
+  virtual void StartThemeEnumeration() = 0;
+  virtual void ConsumeMainMenuButton() = 0;
+  virtual void UpdateNotice() = 0;
+  virtual bool NoticeComplete() = 0;
+  virtual void ReleaseNotice() = 0;
+};
+
+struct ThemeEditorFrameResult {
+  float timeline_seconds = 0.0f;
+  float timeline_fraction = 0.0f;
+  bool returned_to_main_menu = false;
+};
+
 bool ColorsEqual(const Color& left, const Color& right);
 bool ColorsDifferExact(const Color& left, const Color& right);
 bool CanUndoColor(const Color& edited, const Color& undo_value);
@@ -73,5 +147,14 @@ bool EditMeshColors(const std::array<bool, 3>& enabled,
                     const std::array<Color, 3>& undo_values,
                     const std::array<MeshColorEditEvent, 3>& events,
                     ColorClipboard* clipboard);
+
+// Complete portable state/control-flow model of BootEdit 0x820512E8.
+// Window geometry and draw calls are dependency boundaries, while every
+// product-owned edit, callback, navigation transition, timeline clamp, and
+// timed-notice mutation is represented here.
+ThemeEditorFrameResult DrawThemeEditor(
+    ThemeEditorState* state, const ThemeEditorInput& input,
+    float boot_animation_seconds, ColorClipboard* clipboard,
+    ThemeEditorServices* services);
 
 }  // namespace bandwagon::boot_edit
