@@ -90,8 +90,8 @@ wrapper containers / 608 bytes are now positively bound to clean Microsoft
 sections, function/call/string inventories, and semantic names for theme
 enumeration, editing, save/load feedback, settings application, and selection.
 Its exhaustive partition identifies 26 product entries / 15,160 bytes, excludes
-821 pinned-ImGui or proven-platform entries, and conservatively retains 87
-entries / 20,808 bytes as unknown. All 26 currently classified product entries /
+829 pinned-ImGui or proven-platform entries, and conservatively retains 79
+entries / 18,456 bytes as unknown. All 26 currently classified product entries /
 15,160 bytes have hash-bound readable models. The recovered set includes the
 exact payload, live snapshot, and paired wrappers around the table-driven
 theme decoder and encoder.
