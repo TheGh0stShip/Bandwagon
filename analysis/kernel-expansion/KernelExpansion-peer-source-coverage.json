@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 82,
-    "lifted_instruction_bytes": 13824,
-    "peer_product_adapter_or_policy_function_count": 55,
-    "peer_product_adapter_or_policy_instruction_bytes": 7672,
+    "lifted_function_count": 83,
+    "lifted_instruction_bytes": 13988,
+    "peer_product_adapter_or_policy_function_count": 56,
+    "peer_product_adapter_or_policy_instruction_bytes": 7836,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -858,6 +858,19 @@
       "provenance": "upstream_fatfs_r016",
       "upstream_source": {"path": "third_party/fatfs-r016/source/ffunicode.c", "symbol": "ff_oem2uni"},
       "symbols": ["DecodeOem437Character", "kOemUnitedStatesCodePage", "kOem437ToUnicode"]
+    },
+    {
+      "address": "0x801fe9f8",
+      "size": 164,
+      "sha256": "c962681e2ff6ab5db4d5276c43e76feb9e537176d48c3ca5b5416cc59faf10e2",
+      "semantic_name": "PeerDiskIoControl",
+      "source": "reconstruction/kernel_expansion/disk_ioctl.cpp",
+      "header": "reconstruction/kernel_expansion/disk_ioctl.hpp",
+      "symbols": ["DiskIoParentDevice", "DiskIoDevice", "DiskIoDriveTable", "DiskIoDiagnostics", "PeerDiskIoControl"],
+      "data_dependencies": [
+        {"address":"0x80202d28","size":20,"sha256":"b9078b998a9a596c09f4c58929d9ad1fcd0aeefe9cd427396b07dd1d3ab0e6c6","semantic_name":"DiskIoControlCommandDiagnostic"},
+        {"address":"0x80202c8c","size":45,"sha256":"7a5c9304603f9eb843d30fcc3aa1541c7bb6f448e840ff71dc2d057d30d8008f","semantic_name":"MissingDiskDiagnostic"}
+      ]
     }
   ],
   "tests": [
@@ -874,6 +887,7 @@
     "reconstruction/kernel_expansion/config_reader_test.cpp",
     "reconstruction/kernel_expansion/config_test.cpp",
     "reconstruction/kernel_expansion/decimal_test.cpp",
+    "reconstruction/kernel_expansion/disk_ioctl_test.cpp",
     "reconstruction/kernel_expansion/drive_binding_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/drive_registry_test.cpp",

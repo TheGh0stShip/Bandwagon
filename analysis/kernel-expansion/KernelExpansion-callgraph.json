@@ -8338,8 +8338,8 @@
       "caller_address": "0x801fdbf0",
       "instruction_address": "0x801fdd24",
       "target_address": "0x801fe9f8",
-      "callee": "fn_801FE9F8",
-      "target_containing_function": "fn_801FE9F8"
+      "callee": "PeerDiskIoControl",
+      "target_containing_function": "PeerDiskIoControl"
     },
     {
       "caller": "fn_801FDD40",
@@ -8654,7 +8654,7 @@
       "target_containing_function": "fn_801FE780"
     },
     {
-      "caller": "fn_801FE9F8",
+      "caller": "PeerDiskIoControl",
       "caller_address": "0x801fe9f8",
       "instruction_address": "0x801fe9fc",
       "target_address": "0x801fead8",
@@ -8662,7 +8662,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801FE9F8",
+      "caller": "PeerDiskIoControl",
       "caller_address": "0x801fe9f8",
       "instruction_address": "0x801fea1c",
       "target_address": "0x801fec18",
@@ -8670,7 +8670,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801FE9F8",
+      "caller": "PeerDiskIoControl",
       "caller_address": "0x801fe9f8",
       "instruction_address": "0x801fea44",
       "target_address": "0x801fec18",
@@ -8678,7 +8678,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801FE9F8",
+      "caller": "PeerDiskIoControl",
       "caller_address": "0x801fe9f8",
       "instruction_address": "0x801fea48",
       "target_address": "0x801fec78",

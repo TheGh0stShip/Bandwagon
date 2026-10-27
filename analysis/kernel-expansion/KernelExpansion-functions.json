@@ -2159,7 +2159,7 @@
       "address": "0x801fe9f8",
       "section_offset": "0xe9f8",
       "size_to_next_symbol": 164,
-      "name": "fn_801FE9F8",
+      "name": "PeerDiskIoControl",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

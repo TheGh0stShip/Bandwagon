@@ -131,6 +131,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/decimal_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/disk_ioctl.cpp" \
+    "$root/reconstruction/kernel_expansion/disk_ioctl_test.cpp" \
+    -o "$work/disk_ioctl_test"
+"$work/disk_ioctl_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/update_check_launch.cpp" \
     "$root/reconstruction/kernel_expansion/update_check_launch_test.cpp" \
     -o "$work/update_check_launch_test"
