@@ -7,6 +7,30 @@
 int main() {
   using namespace bandwagon::boot_edit;
 
+  ThemeManagerState manager_instance;
+  LazyProductSingleton<ThemeManagerState> manager_singleton;
+  int manager_factory_calls = 0;
+  auto manager_factory = [&]() {
+    ++manager_factory_calls;
+    return &manager_instance;
+  };
+  assert(AcquireThemeManagerSingleton(&manager_singleton, manager_factory) ==
+         &manager_instance);
+  assert(AcquireThemeManagerSingleton(&manager_singleton, manager_factory) ==
+         &manager_instance);
+  assert(manager_factory_calls == 1);
+
+  LazyProductSingleton<BootEditStartupState> failed_singleton;
+  int failed_factory_calls = 0;
+  auto failed_factory = [&]() -> BootEditStartupState* {
+    ++failed_factory_calls;
+    return nullptr;
+  };
+  assert(!AcquireBootEditStartupSingleton(&failed_singleton, failed_factory));
+  assert(!AcquireBootEditStartupSingleton(&failed_singleton, failed_factory));
+  assert(failed_factory_calls == 1 && failed_singleton.initialization_attempted);
+  assert(!AcquireThemeManagerSingleton(nullptr, {}));
+
   assert(FormatThemePath("Blue") == "Themes:\\Blue.xbat");
   const ThemeNameCompletion accepted = CompleteThemeNameDialog(true, "Blue");
   assert(!accepted.cancelled && !accepted.invoke_continuation);

@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":45146,"sha256":"9d4a160a89e3283a98723417d455b9acf61dd4367ed9e45daa4bff1700bbb4a2"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":46092,"sha256":"25d5db4aa27c9c404d7a00791e909d51aac5633d94ac64687ae67be3daca816e"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -44,11 +44,41 @@
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
-    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":9357,"sha256":"40397866c162fc8e7620a8a1b416fb55247ba019ee3e711a5330ccfa854aeea8"},
-    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":8230,"sha256":"65485bd573ecb9febd22e8934831c0eb0c921b181785372f829b0c02b6e10fef"},
-    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":11064,"sha256":"b36dc22d1afd0cbaf56d292c2af9c6e73edddf0352a0195dfbe70f58933b331e"}
+    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":10107,"sha256":"177d7470d23c647d91cbfe811df469d7d1ebbf6c55322b2a89878f2c16b8e4ab"},
+    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":9028,"sha256":"b330d83807509dc8c1eee1309b288c0e8f1d7ea35e18032c44d6cf969bcd8132"},
+    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":12046,"sha256":"378a6fdfb5b1d657238a54a3304859a6224d6bfc95605a577e4f2a321974aef2"}
   },
   "functions": [
+    {
+      "address": "0x82010068",
+      "end_exclusive": "0x820100d0",
+      "size": 104,
+      "sha256": "920fd9e2765b02b026bbe0d4a5de9d4a7f65fdf98c98cbafcf64e42c364f7ce0",
+      "inventory_name": "fn_82010068",
+      "semantic_name": "AcquireThemeManagerSingleton",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "One-shot guarded allocation and construction of the exact 736-byte product ThemeManager object, successful instance publication, null return on allocation failure, and target-faithful suppression of later retries; allocation is an injected boundary.",
+      "source_artifacts": ["manager_source", "manager_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["AcquireThemeManagerSingleton", "LazyProductSingleton", "ThemeManagerFactory"],
+      "required_strings": []
+    },
+    {
+      "address": "0x820100d0",
+      "end_exclusive": "0x82010148",
+      "size": 120,
+      "sha256": "b2795da02ecaa5afe37a9eb0a484754b69278e8abf47d323b48192b84da04f05",
+      "inventory_name": "fn_820100D0",
+      "semantic_name": "AcquireBootEditStartupSingleton",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "One-shot guarded allocation and construction of the exact 1184-byte top-level BootEdit startup object, successful instance publication, null return on allocation failure, and target-faithful suppression of later retries; allocation is an injected boundary.",
+      "source_artifacts": ["manager_source", "manager_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["AcquireBootEditStartupSingleton", "LazyProductSingleton", "BootEditStartupFactory"],
+      "required_strings": []
+    },
     {
       "address": "0x82011598",
       "end_exclusive": "0x82011620",
@@ -697,10 +727,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 43,
-    "product_bytes": 17864,
-    "model_covered_function_count": 43,
-    "model_covered_bytes": 17864,
+    "product_function_count": 45,
+    "product_bytes": 18088,
+    "model_covered_function_count": 45,
+    "model_covered_bytes": 18088,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

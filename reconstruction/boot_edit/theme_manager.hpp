@@ -54,6 +54,27 @@ struct BootEditStartupState {
   ThemePayload startup_theme{};
 };
 
+struct ThemeManagerState;
+
+template <typename T>
+struct LazyProductSingleton {
+  bool initialization_attempted = false;
+  T* instance = nullptr;
+};
+
+using ThemeManagerFactory = std::function<ThemeManagerState*()>;
+using BootEditStartupFactory = std::function<BootEditStartupState*()>;
+
+// One-shot lazy singleton accessors at 0x82010068 and 0x820100d0. Their guard
+// bit is committed before allocation, so an allocation failure is returned as
+// null on every later call rather than retried.
+ThemeManagerState* AcquireThemeManagerSingleton(
+    LazyProductSingleton<ThemeManagerState>* singleton,
+    const ThemeManagerFactory& factory);
+BootEditStartupState* AcquireBootEditStartupSingleton(
+    LazyProductSingleton<BootEditStartupState>* singleton,
+    const BootEditStartupFactory& factory);
+
 // Exact initialization behavior of BootEdit 0x82051238. The initial timing
 // scalar is loaded from the target's bound .rdata constant.
 BootEditStartupState InitializeBootEditStartupState();

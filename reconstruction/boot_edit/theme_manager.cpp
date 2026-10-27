@@ -2,6 +2,28 @@
 
 namespace bandwagon::boot_edit {
 
+ThemeManagerState* AcquireThemeManagerSingleton(
+    LazyProductSingleton<ThemeManagerState>* singleton,
+    const ThemeManagerFactory& factory) {
+  if (!singleton) return nullptr;
+  if (!singleton->initialization_attempted) {
+    singleton->initialization_attempted = true;
+    singleton->instance = factory ? factory() : nullptr;
+  }
+  return singleton->instance;
+}
+
+BootEditStartupState* AcquireBootEditStartupSingleton(
+    LazyProductSingleton<BootEditStartupState>* singleton,
+    const BootEditStartupFactory& factory) {
+  if (!singleton) return nullptr;
+  if (!singleton->initialization_attempted) {
+    singleton->initialization_attempted = true;
+    singleton->instance = factory ? factory() : nullptr;
+  }
+  return singleton->instance;
+}
+
 ThemePayload MakeDefaultThemePayload() {
   ThemePayload payload;
   payload.colors = {{

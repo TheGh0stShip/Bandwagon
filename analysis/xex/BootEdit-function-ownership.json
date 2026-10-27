@@ -115,8 +115,9 @@
       ,{"from":"unknown","to":"platform_toolchain","inventory_entry_count":6,"size":1144,"basis":"coherent compiler/standard-library support around the theme codec: std::string reverse-find, substring comparison, insertion, exception-string destruction, and scalar/derived deleting destructors","ranges":[{"start":"0x8204d278","end_exclusive":"0x8204d4c0"},{"start":"0x8204d5e8","end_exclusive":"0x8204d818"}]}
       ,{"from":"unknown","to":"product_application","start":"0x82011598","end_exclusive":"0x82011620","inventory_entry_count":1,"size":136,"basis":"theme-name asynchronous task constructor used by the discard/save workflow: installs the task vtable, constructs the result string, clears the exact input/result buffers, and zeros keyboard/completion state"}
       ,{"from":"unknown","to":"platform_toolchain","inventory_entry_count":7,"size":1296,"basis":"complete adjacent MSVC std::string support family: destruction/reset, erase, reserve/grow, assignment, overlapping substring assignment, pointer-range assignment, and composed-object deleting destructor","ranges":[{"start":"0x820112e0","end_exclusive":"0x82011598"},{"start":"0x82011620","end_exclusive":"0x82011878"}]}
+      ,{"from":"unknown","to":"product_application","start":"0x82010068","end_exclusive":"0x82010148","inventory_entry_count":2,"size":224,"basis":"two one-shot product singleton accessors allocate exact 736-byte and 1184-byte application objects, dispatch their recovered product constructors, publish successful instances, and preserve the target's no-retry behavior after allocation failure"}
     ],
-    "after": {"unknown_entry_count":45,"unknown_size":12848,"product_application_entry_count":43,"product_application_size":17864}
+    "after": {"unknown_entry_count":43,"unknown_size":12624,"product_application_entry_count":45,"product_application_size":18088}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -146,6 +147,8 @@
     }
   },
   "product_application_entries": [
+    {"address":"0x82010068","role":"acquire one-shot ThemeManager singleton","confidence":"high"},
+    {"address":"0x820100d0","role":"acquire one-shot BootEdit startup singleton","confidence":"high"},
     {"address":"0x820110d0","role":"mount and BootAnim theme bootstrap","confidence":"high"},
     {"address":"0x82011598","role":"InitializeThemeNameTask","confidence":"high"},
     {"address":"0x820118e8","role":"theme-name validation and overwrite policy","confidence":"high"},
@@ -224,12 +227,13 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 43,
-      "size": 17864,
-      "concatenated_sha256": "043a6bd1a5a6bcbcc0c6a6bece39fa212515ada6d3dfa8781ca035862b873395",
+      "inventory_entry_count": 45,
+      "size": 18088,
+      "concatenated_sha256": "93e16cf00eab663d5f235622e60b611a542748b3050c08f725169a4fd97d6945",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
+        {"start":"0x82010068","end_exclusive":"0x82010148","inventory_entry_count":2,"size":224,"sha256":"78eb300ba85fbebe9de6d1fd9abebf96cce3cf2cacbb7d949b553409bb6f3830"},
         {"start":"0x820110d0","end_exclusive":"0x820112e0","inventory_entry_count":1,"size":528,"sha256":"3f78d1350fbec288603f79c000bfdbf28bc138fa2ecacb1456111d20649f9b76"},
         {"start":"0x82011598","end_exclusive":"0x82011620","inventory_entry_count":1,"size":136,"sha256":"8eaf4c6a700018333114712ae3a2738ab305a7b1626408f3421925ac60f7795e"},
         {"start":"0x820118e8","end_exclusive":"0x82011ed8","inventory_entry_count":1,"size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425"},
@@ -306,12 +310,13 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 45,
-      "size": 12848,
-      "concatenated_sha256": "48b4c1e218be9c62854cdaf2291c81126733387c22c1f3a96c0ba34a5f1139dd",
+      "inventory_entry_count": 43,
+      "size": 12624,
+      "concatenated_sha256": "521ada6e1335248c7ec0ff4f179a7fe64cf471d0d8fbc088aca2d6e1fb43079b",
       "product_specific": null,
       "ranges": [
-        {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
+        {"start":"0x82010000","end_exclusive":"0x82010068","inventory_entry_count":1,"size":104,"sha256":"2a36a409222334ac6966ae4802bd8b48dec96643f52d257432c78e13ea565e5a"},
+        {"start":"0x82010148","end_exclusive":"0x820110d0","inventory_entry_count":11,"size":3976,"sha256":"a567760e10a4e11477118280a88719561d55d2df65558388bb85ea9130f911b0"},
         {"start":"0x82038ab8","end_exclusive":"0x82039ec0","inventory_entry_count":11,"size":5128,"sha256":"3ad48c5ef04825cb71d1abb95764c52706e8887d72c212695b2b75c3fbefafbe"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
@@ -331,11 +336,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 43,
-    "product_application_size": 17864,
-    "non_product_entry_count": 891,
-    "non_product_size": 351560,
-    "unknown_entry_count": 45,
-    "unknown_size": 12848
+    "product_application_entry_count": 45,
+    "product_application_size": 18088,
+    "non_product_entry_count": 889,
+    "non_product_size": 351336,
+    "unknown_entry_count": 43,
+    "unknown_size": 12624
   }
 }
