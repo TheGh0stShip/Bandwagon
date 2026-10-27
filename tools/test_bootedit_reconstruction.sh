@@ -18,6 +18,12 @@ python3 "$root/tools/verify_bootedit_xbox_backend.py"
 "$work/theme_editor_test"
 
 "$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/xbox360_imgui_backend.cpp" \
+    "$root/reconstruction/boot_edit/xbox360_imgui_backend_test.cpp" \
+    -o "$work/xbox360_imgui_backend_test"
+"$work/xbox360_imgui_backend_test"
+
+"$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/theme_editor.cpp" \
     "$root/reconstruction/boot_edit/theme_manager.cpp" \
     "$root/reconstruction/boot_edit/theme_manager_test.cpp" \

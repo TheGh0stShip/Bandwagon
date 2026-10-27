@@ -102,11 +102,12 @@ The same portable module also recovers the editor's seven-item mesh navigation:
 Next wraps six to zero and Previous wraps zero to six.
 Run the host test with `tools/test_bootedit_reconstruction.sh`.
 
-`BootEdit-xbox-backend.json` removes the next ambiguity inside the remaining
-provenance queue. It hash-binds and semantically partitions all 11 entries /
+`BootEdit-xbox-backend.json` removes the next source gap inside the remaining
+provenance queue. It hash-binds and source-covers all 11 entries /
 5,128 bytes of the mixed Xbox 360/DX9 backend into its shader/declaration
 constructors, 97-slot render-state capture/restore layer, font upload,
 initialization, controller frame update, render-state setup, and draw submission.
-The block remains provenance-unknown until those Xbox-specific bodies are
-source-lifted or an exact redistributable source is proven; the verifier prevents
-role recovery from being mistaken for completed source coverage.
+The portable implementation and tests are in
+`reconstruction/boot_edit/xbox360_imgui_backend.*`. The block remains
+provenance-unknown—source recovery does not prove whether its original Xbox
+adapter was product-authored, SDK-derived, or adapted from another source.

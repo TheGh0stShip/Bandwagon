@@ -1,10 +1,16 @@
 {
   "schema": "bandwagon-bootedit-xbox-backend-v1",
-  "status": "semantic_partition_complete_source_lift_pending",
+  "status": "readable_behavioral_model_complete_provenance_unknown",
   "image_sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
   "range": {"start":"0x82038ab8","end_exclusive":"0x82039ec0","entry_count":11,"size":5128,"sha256":"3ad48c5ef04825cb71d1abb95764c52706e8887d72c212695b2b75c3fbefafbe"},
   "provenance": "mixed_unknown",
   "provenance_note": "The block combines recognizable Dear ImGui DX9 backend structure with Xbox-specific shader creation, a 97-slot GPU state table, controller polling, and Xbox rendering calls. Similarity proves role but does not by itself license the Xbox-specific implementation as upstream code.",
+  "coverage_semantics": "All eleven exact inventory entries have a hash-bound portable C++ model covering recovered product state and control flow. Xbox shader/texture/buffer/device operations and Dear ImGui object access are injected boundaries. This is not a claim of recompilation identity or provenance.",
+  "source_artifacts": [
+    {"path":"reconstruction/boot_edit/xbox360_imgui_backend.hpp","kind":"header","size":5396,"sha256":"56fa4e5f167b79c8422cfe0c5e86521689edc0cc9425b6d8cb341c300316cc02"},
+    {"path":"reconstruction/boot_edit/xbox360_imgui_backend.cpp","kind":"source","size":9679,"sha256":"b0d26dee4358b18d68693ba96e3dc3070f45cbed999e2144e16d9b20e7aed158"},
+    {"path":"reconstruction/boot_edit/xbox360_imgui_backend_test.cpp","kind":"test","size":4367,"sha256":"96124d1abfb05b8348c122beaebfe54af14aa938750f810e1131f705f471f0df"}
+  ],
   "entries": [
     {"address":"0x82038ab8","size":80,"sha256":"b9fa05f9dde59637296dc76e8e442d6baf89d98da600670642288c29eac6af3c","semantic_name":"CreateVertexDeclaration","evidence":"invokes Xbox graphics constructor 0x9801c148, publishes its result, and maps a null result to HRESULT 0x8007000e"},
     {"address":"0x82038b08","size":80,"sha256":"52d768b1d87acc71421ef16ed01315a025d3f0790a18453f4f4b4d2da5ad1104","semantic_name":"CreateVertexShader","evidence":"invokes Xbox graphics constructor 0x9801c3e8, publishes its result, and maps a null result to HRESULT 0x8007000e"},
