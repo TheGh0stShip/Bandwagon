@@ -44,6 +44,12 @@ python3 "$root/tools/verify_bootedit_packed_resource.py"
 "$work/bootanim_bootstrap_test"
 
 "$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/bootanim_hooks.cpp" \
+    "$root/reconstruction/boot_edit/bootanim_hooks_test.cpp" \
+    -o "$work/bootanim_hooks_test"
+"$work/bootanim_hooks_test"
+
+"$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/modal_state.cpp" \
     "$root/reconstruction/boot_edit/modal_state_test.cpp" \
     -o "$work/modal_state_test"
