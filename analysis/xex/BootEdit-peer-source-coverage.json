@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":30485,"sha256":"011fdca895e2a3454da32a11e28a2bc363c5ada7d44f72fd59bee46ae2ac1f7f"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":31301,"sha256":"b082771a0cd8c607eba120b45ea0b02e0840bc4010cf13d2f6b5bd3a88f3b4db"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -41,9 +41,9 @@
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"3ba0be2ff86ec752594ee6cd47326d1df29f601ad56a63e93532c8c4d55c7da5"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"5255c7682cacb96a9f22de0032a3fe6bed76f56c04eef64954ea1c7dcf21948d"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":7974,"sha256":"1c87b2e1cf3e8f81450740cc0445214477c002bf85ba1fb282090d75695fa79a"},
-    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":6734,"sha256":"c588dce0a4a0bcb3be49f67421382abbf114665a169d71775e56b90adeae3093"},
-    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":4631,"sha256":"04a54315cd7015a2b51aa8c44a9303b0630cd90dfa3540b18a61cfd8e82c7d3b"},
-    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":5281,"sha256":"ebe5c1b2fa4c860559cfae9dffcfe273a10650bd9c21a7a609fcda326214f5e2"}
+    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":7435,"sha256":"bb9032f17befd0b356ea83046930ddfb5bb432184dde144d3b6bc87eb7474db9"},
+    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":5213,"sha256":"b7781851bbc5f9ca6f4da039625df747f40ed4e884a27e964b2b8ba61242c48e"},
+    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":6169,"sha256":"8d035168391c2db701073a13080af4c01905f4f7ea787989d363dd66e1b5b9c8"}
   },
   "functions": [
     {
@@ -194,6 +194,21 @@
       "source_artifacts": ["manager_source", "manager_header"],
       "test_artifacts": ["manager_test"],
       "symbols": ["ThemePayload", "MakeDefaultThemePayload", "selected_mesh", "colors"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204e1a8",
+      "end_exclusive": "0x8204e278",
+      "size": 208,
+      "sha256": "d37ddfb5e76c458711b5c5719f45e6b3a42226c4963da1307594b79384f09924",
+      "inventory_name": "fn_8204E1A8",
+      "semantic_name": "CaptureThemeSnapshot",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Path and theme-name ownership, exact 632-byte payload copy, and the ordered eleven-iteration 48-byte copy from live renderer mesh records into payload colors 0 through 32. Colors 33 through 38 remain from the supplied payload; string allocation and destruction are standard-library boundaries.",
+      "source_artifacts": ["manager_source", "manager_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["ThemeSnapshot", "LiveMeshColors", "CaptureThemeSnapshot"],
       "required_strings": []
     },
     {
@@ -394,10 +409,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 23,
-    "product_bytes": 14680,
-    "model_covered_function_count": 23,
-    "model_covered_bytes": 14680,
+    "product_function_count": 24,
+    "product_bytes": 14888,
+    "model_covered_function_count": 24,
+    "model_covered_bytes": 14888,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

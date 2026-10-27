@@ -40,6 +40,24 @@ ThemePayload MakeDefaultThemePayload() {
   return payload;
 }
 
+ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
+                                   std::string_view theme_name,
+                                   const ThemePayload& payload,
+                                   const LiveMeshColors& live_meshes) {
+  ThemeSnapshot snapshot;
+  snapshot.active_path = std::string(active_path);
+  snapshot.theme_name = std::string(theme_name);
+  snapshot.payload = payload;
+  for (std::size_t mesh = 0; mesh < live_meshes.size(); ++mesh) {
+    for (std::size_t channel = 0; channel < live_meshes[mesh].size();
+         ++channel) {
+      snapshot.payload.colors[mesh * 3 + channel] =
+          live_meshes[mesh][channel];
+    }
+  }
+  return snapshot;
+}
+
 std::string FormatThemePath(std::string_view name) {
   return std::string(kThemeDirectory) + std::string(name) +
          std::string(kThemeExtension);

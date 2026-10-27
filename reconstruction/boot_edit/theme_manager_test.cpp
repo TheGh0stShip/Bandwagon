@@ -37,6 +37,25 @@ int main() {
               sizeof(final_green_bits));
   assert(final_green_bits == 0x3f4ccccd);
 
+  LiveMeshColors live_meshes{};
+  for (std::size_t mesh = 0; mesh < live_meshes.size(); ++mesh) {
+    for (std::size_t channel = 0; channel < live_meshes[mesh].size();
+         ++channel) {
+      live_meshes[mesh][channel] =
+          Color({static_cast<float>(mesh), static_cast<float>(channel),
+                 static_cast<float>(mesh * 3 + channel), 1.0f});
+    }
+  }
+  ThemePayload capture_input = MakeDefaultThemePayload();
+  const Color untouched_color = capture_input.colors[33];
+  const ThemeSnapshot snapshot = CaptureThemeSnapshot(
+      "Themes:\\Green.xbat", "Green", capture_input, live_meshes);
+  assert(snapshot.active_path == "Themes:\\Green.xbat");
+  assert(snapshot.theme_name == "Green");
+  assert(snapshot.payload.colors[0] == live_meshes[0][0]);
+  assert(snapshot.payload.colors[32] == live_meshes[10][2]);
+  assert(snapshot.payload.colors[33] == untouched_color);
+
   ThemeDirectoryScan scan;
   scan.file_names = {"Blue.xbat", "Odd.xbat.backup"};
   const ThemeEnumerationResult enumeration = EnumerateSavedThemes(&state, scan);

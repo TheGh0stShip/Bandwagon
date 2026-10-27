@@ -32,6 +32,21 @@ static_assert(sizeof(ThemePayload) == 632,
 
 ThemePayload MakeDefaultThemePayload();
 
+using LiveMeshColors = std::array<std::array<Color, 3>, 11>;
+
+struct ThemeSnapshot {
+  std::string active_path;
+  std::string theme_name;
+  ThemePayload payload{};
+};
+
+// fn_8204E1A8 copies the serialized payload and then replaces its first
+// eleven diffuse/specular/ambient triples with the current renderer state.
+ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
+                                   std::string_view theme_name,
+                                   const ThemePayload& payload,
+                                   const LiveMeshColors& live_meshes);
+
 struct ThemeManagerState {
   std::string active_path;
   std::string theme_name;
