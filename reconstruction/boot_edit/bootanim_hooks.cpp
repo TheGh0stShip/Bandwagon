@@ -120,4 +120,24 @@ BootAnimationThemeColors ComputeBootAnimationThemeColors(
   return result;
 }
 
+ColorTriplet RunBootAnimationColorForwardHook(
+    float scale, std::uintptr_t bootanim_context,
+    std::uintptr_t original_argument, std::uintptr_t forwarded_argument,
+    const ColorTriplet& theme_color,
+    const BootAnimationColorForwardServices& services) {
+  const ColorTriplet scaled_color{
+      theme_color[0] * scale,
+      theme_color[1] * scale,
+      theme_color[2] * scale,
+  };
+  if (services.invoke_original) {
+    services.invoke_original(bootanim_context, original_argument, scaled_color,
+                             forwarded_argument);
+  }
+  if (services.invoke_installed_continuation) {
+    services.invoke_installed_continuation(original_argument);
+  }
+  return scaled_color;
+}
+
 }  // namespace bandwagon::boot_edit

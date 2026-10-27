@@ -101,4 +101,32 @@ int main() {
   colors = ComputeBootAnimationThemeColors(
       std::numeric_limits<float>::quiet_NaN(), theme_color);
   assert(std::fabs(colors.glow[0] - 0.6375f) < 0.00001f);
+
+  std::array<int, 2> color_forward_order{};
+  int color_forward_count = 0;
+  ColorTriplet observed_color{};
+  BootAnimationColorForwardServices color_forward_services;
+  color_forward_services.invoke_original =
+      [&](std::uintptr_t context, std::uintptr_t argument,
+          const ColorTriplet& color, std::uintptr_t forwarded) {
+        color_forward_order[color_forward_count++] = 1;
+        assert(context == 0x980787e0u);
+        assert(argument == 0x1111u);
+        assert(forwarded == 0x2222u);
+        observed_color = color;
+      };
+  color_forward_services.invoke_installed_continuation =
+      [&](std::uintptr_t argument) {
+        color_forward_order[color_forward_count++] = 2;
+        assert(argument == 0x1111u);
+      };
+  const ColorTriplet scaled = RunBootAnimationColorForwardHook(
+      0.25f, 0x980787e0u, 0x1111u, 0x2222u,
+      ColorTriplet{0.4f, 0.8f, 1.2f}, color_forward_services);
+  assert(color_forward_count == 2);
+  assert(color_forward_order[0] == 1 && color_forward_order[1] == 2);
+  assert(std::fabs(scaled[0] - 0.1f) < 0.00001f);
+  assert(std::fabs(scaled[1] - 0.2f) < 0.00001f);
+  assert(std::fabs(scaled[2] - 0.3f) < 0.00001f);
+  assert(observed_color == scaled);
 }

@@ -81,4 +81,28 @@ struct BootAnimationThemeColors {
 BootAnimationThemeColors ComputeBootAnimationThemeColors(
     float time, const Color& theme_color);
 
+using ColorTriplet = std::array<float, 3>;
+
+struct BootAnimationColorForwardServices {
+  // Original bootanim routine reached through 0x9801bab8.
+  std::function<void(std::uintptr_t bootanim_context,
+                     std::uintptr_t original_argument,
+                     const ColorTriplet& scaled_color,
+                     std::uintptr_t forwarded_argument)>
+      invoke_original;
+  // Indirect continuation loaded from offset 32 by the installed 0x820106e0
+  // adapter. Its fixed first argument (0x9801a24c) is an injected boundary.
+  std::function<void(std::uintptr_t original_argument)>
+      invoke_installed_continuation;
+};
+
+// Complete 0x82010660 extent, including the embedded installed adapter at
+// 0x820106e0. The adapter supplies its offset-40 scale, then continues only
+// after the scaled-color original call has returned.
+ColorTriplet RunBootAnimationColorForwardHook(
+    float scale, std::uintptr_t bootanim_context,
+    std::uintptr_t original_argument, std::uintptr_t forwarded_argument,
+    const ColorTriplet& theme_color,
+    const BootAnimationColorForwardServices& services);
+
 }  // namespace bandwagon::boot_edit

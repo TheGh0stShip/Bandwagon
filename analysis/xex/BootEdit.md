@@ -29,10 +29,10 @@ contains 218 references in 69 functions. Regenerate the complete set with
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product theme-editor application | 53 | 20,536 | Recover as readable source |
+| Product theme-editor application | 54 | 20,704 | Recover as readable source |
 | Dear ImGui 1.86 | 442 | 231,184 | Use the pinned upstream source |
 | MSVC/Xbox platform and toolchain | 404 | 107,528 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 35 | 10,176 | Fingerprint before deciding whether to lift |
+| Unknown framework/backend/lookup code | 34 | 10,008 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -90,8 +90,8 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds all 53 product entries and
-all 20,536 bytes to readable, tested C++ behavioral models. This includes the
+`BootEdit-peer-source-coverage.json` binds all 54 product entries and
+all 20,704 bytes to readable, tested C++ behavioral models. This includes the
 two one-shot singleton accessors at `0x82010068` and `0x820100d0`: they request
 the exact 736-byte ThemeManager and 1,184-byte top-level startup objects, call
 their recovered constructors after successful allocation, and commit their
@@ -116,6 +116,9 @@ installed `0x820104d8` color hook: logo RGB/alpha, live-mesh RGB from the
 ThemeManager color triple, and glow RGB are reconstructed with the target's
 exact constants and `1.5..3.0`, `2.5..5.0`, `3.7..5.0`, and `5.0..5.75`
 smoothstep windows. It also includes the
+adjacent `0x82010660` installed color-forward hook, which scales the
+ThemeManager `704..712` RGB triple, preserves the original call arguments and
+ordering, and then runs the embedded indirect continuation adapter. It also includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
 decoder/encoder codec—including the low-level `0x8204d4c0` read-mode wrapper
 that restores version 9199 before dispatch—the `0x82011598` theme-name task
@@ -136,7 +139,7 @@ discard workflow now also includes its exact 96-byte constructor at
 slots, and initial-phase precedence. The selector's `0x8204cbd8` enumeration
 poller is explicit too: zero-timeout polling, pending preservation, and
 signaled close/clear ordering. The known-product queue is empty; the
-remaining work is provenance resolution for the 35 unknown
+remaining work is provenance resolution for the 34 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full
