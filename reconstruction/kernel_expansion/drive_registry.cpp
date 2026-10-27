@@ -42,4 +42,14 @@ bool IsDriveDeviceSlotEmptyDuplicate(const DriveDeviceRegistry* registry,
   return IsDriveDeviceSlotEmpty(registry, slot);
 }
 
+void ReleaseDriveDeviceObject(const DriveDeviceReleaseContext& context,
+                              DriveDeviceRegistry* registry,
+                              DriveRegistryLockServices* locks,
+                              const ObjectDereference& dereference) {
+  UnregisterDriveDevice(registry, context.registry_slot, locks);
+  if (!dereference) return;
+  dereference(context.backing_object);
+  dereference(context.owner_object);
+}
+
 }  // namespace bandwagon::kernel_expansion

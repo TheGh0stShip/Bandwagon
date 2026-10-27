@@ -3,6 +3,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <functional>
 
 namespace bandwagon::kernel_expansion {
 
@@ -38,5 +39,20 @@ bool IsDriveDeviceSlotEmpty(const DriveDeviceRegistry* registry,
                             std::uint32_t slot);
 bool IsDriveDeviceSlotEmptyDuplicate(const DriveDeviceRegistry* registry,
                                      std::uint32_t slot);
+
+struct DriveDeviceReleaseContext {
+  std::uint32_t registry_slot = 0;    // nested device offset 0xc0
+  std::uintptr_t backing_object = 0;  // nested device offset 0xa0
+  std::uintptr_t owner_object = 0;    // incoming object
+};
+
+using ObjectDereference = std::function<void(std::uintptr_t)>;
+
+// Complete cleanup routine at 0x801f5110: unregister the nested device slot,
+// dereference its backing object, then dereference the incoming owner object.
+void ReleaseDriveDeviceObject(const DriveDeviceReleaseContext& context,
+                              DriveDeviceRegistry* registry,
+                              DriveRegistryLockServices* locks,
+                              const ObjectDereference& dereference);
 
 }  // namespace bandwagon::kernel_expansion

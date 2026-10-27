@@ -819,7 +819,7 @@
       "address": "0x801f5110",
       "section_offset": "0x5110",
       "size_to_next_symbol": 80,
-      "name": "fn_801F5110",
+      "name": "ReleaseDriveDeviceObject",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

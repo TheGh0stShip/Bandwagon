@@ -78,5 +78,21 @@ int main() {
   assert(RegisterDriveDevice(&registry, 1, nullptr) == -1);
   UnregisterDriveDevice(nullptr, 0, &locks);
 
+  DriveDeviceRegistry release_registry{};
+  release_registry.slots[4] = 0x7777;
+  FakeLocks release_locks;
+  std::array<std::uintptr_t, 2> released{};
+  std::size_t release_count = 0;
+  ReleaseDriveDeviceObject(
+      DriveDeviceReleaseContext{4, 0x11112222u, 0x33334444u},
+      &release_registry, &release_locks,
+      [&](std::uintptr_t object) { released[release_count++] = object; });
+  assert(release_registry.slots[4] == 0);
+  assert((release_locks.events ==
+          std::vector<std::string>{"acquire", "release"}));
+  assert(release_count == 2);
+  assert(released[0] == 0x11112222u);
+  assert(released[1] == 0x33334444u);
+
   std::cout << "Kernel Expansion drive registry tests passed\n";
 }

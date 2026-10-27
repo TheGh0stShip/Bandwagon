@@ -30,7 +30,7 @@ is still **dozens of material commits, not a few more commits**.
 | Motherboard SMC patches | Complete | All executable replacement records for six boards have verified source coverage | Stock platform SMC firmware stays a reference boundary |
 | AuroraFixer | Complete | All five product-specific routines covered; runtime/import code excluded | None |
 | BootXell | Complete | All 256 entries classified; all 9 product routines / 2,944 bytes covered; 19,584 upstream bytes pinned; 52,312 platform bytes excluded | None in the current source-composition boundary |
-| KernelExpansion | Partial | Exhaustive ownership for 372 entries; 47 product/local functions / 6,632 bytes currently have readable models | 49 known product entries / 18,676 bytes still need source; 72 entries / 16,024 bytes still need provenance; mixed data/types still need completion |
+| KernelExpansion | Partial | Exhaustive ownership for 372 entries; 48 product/local functions / 6,712 bytes currently have readable models | 48 known product entries / 18,596 bytes still need source; 72 entries / 16,024 bytes still need provenance; mixed data/types still need completion |
 | HDD Stage2 | Partial | Exact whole-file reconstruction; worker split into public, platform, and candidate product ranges | 3,432 candidate product worker bytes plus the modified outer ROP and remaining data need semantic/source recovery |
 | Updater | Complete | All 376 entries classified; all 20 product routines / 6,728 bytes have exact-entry readable models; 22 miniz entries are pinned and 334 platform/toolchain entries are excluded | None in the current source-composition boundary |
 | UpdateCheck | Complete | All 804 entries partitioned; all 19 product/mixed routines / 6,768 bytes have readable models; five former unknown wrappers / 608 bytes positively match the clean Microsoft platform baseline | None in the current source-composition boundary |
@@ -53,7 +53,7 @@ denominator, but it can shrink as generic glue/templates are proven non-product.
 - 47 entries / 18,728 bytes: strict upstream FatFs R0.16.
 - 96 entries / 25,308 bytes: product/local adapter or policy behavior.
 - 72 entries / 16,024 bytes: unknown and not counted as product-specific.
-- Of 74 existing C++ lifts, 47 / 6,632 bytes count as product/local recovery;
+- Of 75 existing C++ lifts, 48 / 6,712 bytes count as product/local recovery;
   5 are FatFs and 22 are still unknown. The 9 local Xbox-facing helpers are
   product adapters, not platform code merely because they call platform APIs.
 
@@ -130,7 +130,7 @@ it.
 
 1. Refine the 45 unknown XEX entries: 32 in BootEdit and 13 in SettingsApp;
    narrow conservative product/mixed buckets before lifting.
-2. Recover the 49 known uncovered KernelExpansion product entries, prioritizing
+2. Recover the 48 known uncovered KernelExpansion product entries, prioritizing
    bootstrap, Xbox storage/FSD adapters, and product policy; fingerprint the 72
    unknown entries before lifting them.
 3. Recover the 3,432-byte Stage2 product worker and semantically reconstruct the

@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 74,
-    "lifted_instruction_bytes": 12784,
-    "peer_product_adapter_or_policy_function_count": 47,
-    "peer_product_adapter_or_policy_instruction_bytes": 6632,
+    "lifted_function_count": 75,
+    "lifted_instruction_bytes": 12864,
+    "peer_product_adapter_or_policy_function_count": 48,
+    "peer_product_adapter_or_policy_instruction_bytes": 6712,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -499,6 +499,15 @@
           "semantic_name": "StatisticsSettingsName"
         }
       ]
+    },
+    {
+      "address": "0x801f5110",
+      "size": 80,
+      "sha256": "084d25fb8996ac7e7f789af9671a000f3e433e60acc04f62995e462be7256c3c",
+      "semantic_name": "ReleaseDriveDeviceObject",
+      "source": "reconstruction/kernel_expansion/drive_registry.cpp",
+      "header": "reconstruction/kernel_expansion/drive_registry.hpp",
+      "symbols": ["DriveDeviceReleaseContext", "ObjectDereference", "ReleaseDriveDeviceObject", "UnregisterDriveDevice"]
     },
     {
       "address": "0x801f62c0",
