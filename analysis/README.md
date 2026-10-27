@@ -89,10 +89,10 @@ wrapper containers / 608 bytes are now positively bound to clean Microsoft
 `xex/BootEdit.md` covers the ImGui boot-theme editor: exact initialized
 sections, function/call/string inventories, and semantic names for theme
 enumeration, editing, save/load feedback, settings application, and selection.
-Its exhaustive partition identifies 37 product entries / 16,648 bytes, excludes
-832 pinned-ImGui or proven-platform entries, and conservatively retains 65
-entries / 16,608 bytes as unknown. All 37 currently classified product entries /
-16,648 bytes have hash-bound readable models. The recovered set includes the
+Its exhaustive partition identifies 39 product entries / 17,104 bytes, excludes
+832 pinned-ImGui or proven-platform entries, and conservatively retains 63
+entries / 16,152 bytes as unknown. All 39 currently classified product entries /
+17,104 bytes have hash-bound readable models. The recovered set includes the
 exact payload, live snapshot, and paired wrappers around the table-driven
 theme decoder and encoder, plus ordered frame lifecycle integration.
 

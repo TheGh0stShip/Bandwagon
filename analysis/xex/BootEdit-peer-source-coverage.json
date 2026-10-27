@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":39567,"sha256":"9766cfcbc77614bc217b0e3ce415459ca9ba93a32dc1a93bab9774201492f374"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":40200,"sha256":"ee886ebba05fa1d6bb95b9cda1078f24dee23cf31a3afba969e28d2b4bda5498"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -38,6 +38,9 @@
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":6266,"sha256":"b9aa18820271c840b9fb2e83af9e6d5573884d267207ec747c1b906c2ff9b006"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":4742,"sha256":"b3a435964e3c6f4b04b0d7a54146d0621c75fd4f4994646bf1879dd7cb0aa98c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":8969,"sha256":"cbc424003095fc7232dfaac6df4bdce03a302b62734654825ef9b25cde23ba21"},
+    "controller_source": {"path":"reconstruction/boot_edit/controller_state.cpp","kind":"source","size":2037,"sha256":"24183cf72af072d4cfe9986da2607fa282706dcc1786bc0ad0e1f50150f281ec"},
+    "controller_header": {"path":"reconstruction/boot_edit/controller_state.hpp","kind":"header","size":1376,"sha256":"ffb9b6fe138045b53cf299597cb601180ae198475be701491a8ab5545c722661"},
+    "controller_test": {"path":"reconstruction/boot_edit/controller_state_test.cpp","kind":"test","size":1840,"sha256":"391c98a8c5c266159df2679722c4f76bef91479ce4756d2714b8c64b8916520c"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -104,6 +107,36 @@
       "source_artifacts": ["modal_source", "modal_header"],
       "test_artifacts": ["modal_test"],
       "symbols": ["ModalCompletionState", "InitializeModalDefinition", "InitializeModalBase"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204c450",
+      "end_exclusive": "0x8204c4d8",
+      "size": 136,
+      "sha256": "7e9da282edc134ba7ab2ee257cc319b588b0de1f0480de9fbb4341178ec78e51",
+      "inventory_name": "fn_8204C450",
+      "semantic_name": "InitializeControllers",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Four-record initialization: zero each exact 52-byte controller record, poll indices 0 through 3 into the previous-state slot, mark success connected, treat status 1167 as disconnected, and forward every other error to the fatal platform boundary.",
+      "source_artifacts": ["controller_source", "controller_header"],
+      "test_artifacts": ["controller_test"],
+      "symbols": ["ControllerRecord", "ControllerRecords", "ControllerServices", "InitializeControllers", "kControllerNotConnected"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204c4d8",
+      "end_exclusive": "0x8204c618",
+      "size": 320,
+      "sha256": "5a01527dd2322fae80d31ff76f27a04f55ef96d44650b08cb2e2d5ee04c71c71",
+      "inventory_name": "fn_8204C4D8",
+      "semantic_name": "UpdateControllersAndModalChoices",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "The complete compound extent: for each of four 52-byte records copy current 16-byte input to previous before polling the new current state, apply connected/disconnected/fatal status policy, and model both embedded non-pdata leaves for application-type-2 binary selection and type-3-versus-other modal completion with optional continuation.",
+      "source_artifacts": ["controller_source", "controller_header"],
+      "test_artifacts": ["controller_test"],
+      "symbols": ["UpdateControllers", "ApplyBinaryModalChoice", "CompleteModalChoice", "ControllerRecord", "ModalCompletionState"],
       "required_strings": []
     },
     {
@@ -604,10 +637,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 37,
-    "product_bytes": 16648,
-    "model_covered_function_count": 37,
-    "model_covered_bytes": 16648,
+    "product_function_count": 39,
+    "product_bytes": 17104,
+    "model_covered_function_count": 39,
+    "model_covered_bytes": 17104,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

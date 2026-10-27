@@ -50,6 +50,13 @@ python3 "$root/tools/verify_bootedit_packed_resource.py"
 "$work/modal_state_test"
 
 "$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/modal_state.cpp" \
+    "$root/reconstruction/boot_edit/controller_state.cpp" \
+    "$root/reconstruction/boot_edit/controller_state_test.cpp" \
+    -o "$work/controller_state_test"
+"$work/controller_state_test"
+
+"$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/discard_confirmation.cpp" \
     "$root/reconstruction/boot_edit/discard_confirmation_test.cpp" \
     -o "$work/discard_confirmation_test"
