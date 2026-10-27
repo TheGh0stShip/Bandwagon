@@ -1,0 +1,106 @@
+{
+  "schema": "bandwagon-xuib-resource-v1",
+  "size": 907,
+  "sha256": "21d9e6933b50dabd70d7f55abe898b88832178a4268ba8f79ff763672f10317c",
+  "header_hex": "585549420000000800000000000e0000038b00040b550b000000000000000002",
+  "sections": [
+    {
+      "tag": "STRN",
+      "offset": 80,
+      "size": 535,
+      "sha256": "bdf72b3504aed4bbac26185b3c2b058403a886920b50a070483732f438fedec3",
+      "data_hex": "00000211001f53657474696e67735461625369676e6564496e0062746e50726f66696c650050726f66696c654e6176427574746f6e00587569427574746f6e47756964650062746e506572736f6e616c53657474696e67730050726f66696c65005875694e6176427574746f6e0062746e46616d696c7953657474696e677300507265666572656e636573004f7074696f6e732e7875720047756964654d61696e5363656e654e6176427574746f6e0062746e53797374656d53657474696e67730046616d696c792053657474696e677300477569646544617368436f6d6d616e644e6176427574746f6e0062746e536f66746d6f6453657474696e67730053797374656d2053657474696e67730062746e4163636f756e744d616e6167656d656e7400536f66746d6f642053657474696e67730062746e4b696e65637454756e6572004163636f756e74204d616e6167656d656e74004163636f756e744d616e6167656d656e744e6176427574746f6e004e6174616c54726f75626c6573686f6f7465724e6176427574746f6e0062746e53687574646f776e004b696e6563742054756e65720053687574646f776e4e6176427574746f6e0062746e58616d53687574646f776e005475726e204f666620436f6e736f6c650058616d53687574646f776e4e6176427574746f6e0053687574646f776e2058414d2028444542554729005875695363656e650058756943616e76617300",
+      "decoded": {
+        "declared_payload_size": 529,
+        "count": 31,
+        "strings": [
+          "SettingsTabSignedIn",
+          "btnProfile",
+          "ProfileNavButton",
+          "XuiButtonGuide",
+          "btnPersonalSettings",
+          "Profile",
+          "XuiNavButton",
+          "btnFamilySettings",
+          "Preferences",
+          "Options.xur",
+          "GuideMainSceneNavButton",
+          "btnSystemSettings",
+          "Family Settings",
+          "GuideDashCommandNavButton",
+          "btnSoftmodSettings",
+          "System Settings",
+          "btnAccountManagement",
+          "Softmod Settings",
+          "btnKinectTuner",
+          "Account Management",
+          "AccountManagementNavButton",
+          "NatalTroubleshooterNavButton",
+          "btnShutdown",
+          "Kinect Tuner",
+          "ShutdownNavButton",
+          "btnXamShutdown",
+          "Turn Off Console",
+          "XamShutdownNavButton",
+          "Shutdown XAM (DEBUG)",
+          "XuiScene",
+          "XuiCanvas"
+        ]
+      }
+    },
+    {
+      "tag": "VECT",
+      "offset": 615,
+      "size": 96,
+      "sha256": "679348087f2f2a04775077cc7cd7f66713a397f60ff56968e07fb3b8a22dd126",
+      "data_hex": "000000003f800000000000000000000041e00000000000000000000042600000000000000000000042a80000000000000000000042e000000000000000000000430c000000000000000000004328000000000000000000004344000000000000",
+      "big_endian_floats": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        28.0,
+        0.0,
+        0.0,
+        56.0,
+        0.0,
+        0.0,
+        84.0,
+        0.0,
+        0.0,
+        112.0,
+        0.0,
+        0.0,
+        140.0,
+        0.0,
+        0.0,
+        168.0,
+        0.0,
+        0.0,
+        196.0,
+        0.0
+      ]
+    },
+    {
+      "tag": "FLOT",
+      "offset": 711,
+      "size": 20,
+      "sha256": "2a335f135bc58c20ed7c3860df08e549b093ac9a704168583543fd588d5b8917",
+      "data_hex": "43d480004334000043a180004348000041e00000",
+      "big_endian_floats": [
+        425.0,
+        180.0,
+        323.0,
+        200.0,
+        28.0
+      ]
+    },
+    {
+      "tag": "DATA",
+      "offset": 731,
+      "size": 176,
+      "sha256": "360abd9b2f4cc29ba79332d25762d8aa5c271c140c7b4bdbbbc74b23cbbad347",
+      "data_hex": "1f030206000100011e03050f010203000001020907010707020204f4830304050600000b01090f05020401f4c2040208090000010a0e01090f08020402f4c204050c0d000001140e01090f0c020403f4c204080f100000012f0701080f0f020404f4c2040c111200001501090f11020405f4c2040f13140000010a000701090f13020406f4c3160411171800000701090f17020407f4c31904131a1b0000070109f20f1a02040700f4431c04171d0000"
+    }
+  ]
+}

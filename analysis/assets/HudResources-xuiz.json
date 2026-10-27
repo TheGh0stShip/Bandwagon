@@ -1,0 +1,35 @@
+{
+  "schema": "bandwagon-xuiz-archive-v1",
+  "flags": 3,
+  "unknown": 0,
+  "entry_count": 4,
+  "entries": [
+    {
+      "name": "HomeTabSignedIn.xur",
+      "size": 406,
+      "offset": 0,
+      "sha256": "7fffae03a9803321bd059e1c893c40178d7a54e8b4449c6e86f11dd82c05335d"
+    },
+    {
+      "name": "HomeTabSignedOut.xur",
+      "size": 651,
+      "offset": 406,
+      "sha256": "f8c6437478e32f4237c9b05cd3dfb304b1939c433940bb1af057ea56632bd028"
+    },
+    {
+      "name": "SettingsTabSignedIn.xur",
+      "size": 907,
+      "offset": 1057,
+      "sha256": "21d9e6933b50dabd70d7f55abe898b88832178a4268ba8f79ff763672f10317c"
+    },
+    {
+      "name": "SettingsTabSignedOut.xur",
+      "size": 763,
+      "offset": 1964,
+      "sha256": "860b1231128a91a7e62eae48fc1d3c388447cb737c73e607ad253e1bbd9b4626"
+    }
+  ],
+  "source": "PeerPressure\\System\\HudResources.xzp",
+  "source_size": 2871,
+  "source_sha256": "97b4c6375d058eb83155eb53ffdfd3a157600d30489703ac170be4a893cf12e3"
+}

@@ -194,3 +194,9 @@ readable source models and provenance verifiers. Run
 function/byte denominator. All five XEX ownership-pass targets and
 KernelExpansion now have exhaustive partitions; Stage2 and Stage4 have separate
 ownership/source-composition verifiers.
+
+The asset/container gate is exercised by `python3 tools/test_asset_unpackers.py`.
+It safely extracts both wrapped update ZIPs, byte-exactly unpacks and rebuilds
+the XUIZ/XZP archive, and byte-exactly decodes/rebuilds its four XUIB/XUR
+members. Full XUR `DATA`-stream translation back to editable XUI XML remains
+explicitly unfinished.

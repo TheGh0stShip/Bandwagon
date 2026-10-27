@@ -3,9 +3,8 @@
   "softmod_version": "1.0.477",
   "entry_count": 33,
   "status_counts": {
-    "binary_asset": 1,
     "exact_initialized_source": 6,
-    "exact_whole_file_source": 12,
+    "exact_whole_file_source": 13,
     "human_readable_data": 1,
     "human_readable_source": 3,
     "provenance_only": 1,
@@ -227,8 +226,8 @@
       "sha1": "dbe701654dc6e6c2a2d97f7c8a8f244739f98098",
       "sha256": "97b4c6375d058eb83155eb53ffdfd3a157600d30489703ac170be4a893cf12e3",
       "category": "ui_asset",
-      "status": "binary_asset",
-      "evidence": null
+      "status": "exact_whole_file_source",
+      "evidence": "analysis/assets/README.md"
     },
     {
       "path": "PeerPressure\\System\\IncludedRootsPEM.txt",

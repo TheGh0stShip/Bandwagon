@@ -1,0 +1,74 @@
+{
+  "schema": "bandwagon-xuib-resource-v1",
+  "size": 406,
+  "sha256": "7fffae03a9803321bd059e1c893c40178d7a54e8b4449c6e86f11dd82c05335d",
+  "header_hex": "585549420000000800000000000e000001960004051e05000000000000000002",
+  "sections": [
+    {
+      "tag": "STRN",
+      "offset": 80,
+      "size": 202,
+      "sha256": "186f955b4876f6043b1024bc390ef406874b3b1f9fc006b22da28387a89f74a3",
+      "data_hex": "000000c4000e486f6d655461625369676e6564496e00486f6d655461625363656e650062746e486f6d65627265774461736800587569427574746f6e47756964650062746e44617368626f61726400486f6d65627265772044617368005875694e6176427574746f6e0062746e44697363496e547261790058626f7820486f6d6500477569646544617368436f6d6d616e644e6176427574746f6e00547261794e6176427574746f6e004469736320696e2054726179005875695363656e650058756943616e76617300",
+      "decoded": {
+        "declared_payload_size": 196,
+        "count": 14,
+        "strings": [
+          "HomeTabSignedIn",
+          "HomeTabScene",
+          "btnHomebrewDash",
+          "XuiButtonGuide",
+          "btnDashboard",
+          "Homebrew Dash",
+          "XuiNavButton",
+          "btnDiscInTray",
+          "Xbox Home",
+          "GuideDashCommandNavButton",
+          "TrayNavButton",
+          "Disc in Tray",
+          "XuiScene",
+          "XuiCanvas"
+        ]
+      }
+    },
+    {
+      "tag": "VECT",
+      "offset": 282,
+      "size": 36,
+      "sha256": "f8a5cfaed1ac7dcc2a8b8043735bb52f2e94a93c9fc9d39489a8406feb3e6bdd",
+      "data_hex": "000000003f800000000000000000000041e0000000000000000000004260000000000000",
+      "big_endian_floats": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        28.0,
+        0.0,
+        0.0,
+        56.0,
+        0.0
+      ]
+    },
+    {
+      "tag": "FLOT",
+      "offset": 318,
+      "size": 20,
+      "sha256": "2a335f135bc58c20ed7c3860df08e549b093ac9a704168583543fd588d5b8917",
+      "data_hex": "43d480004334000043a180004348000041e00000",
+      "big_endian_floats": [
+        425.0,
+        180.0,
+        323.0,
+        200.0,
+        28.0
+      ]
+    },
+    {
+      "tag": "DATA",
+      "offset": 338,
+      "size": 68,
+      "sha256": "d2cd0e669fb878ce344a44ff67653f48d8e73754dd14a788c699081fb955ba8f",
+      "data_hex": "0e030206000100010d03060f01020300010201030307010607030204f48204050600000a01080f05020401f4c2040308090000000701080f08020402f4430b04050c0000"
+    }
+  ]
+}

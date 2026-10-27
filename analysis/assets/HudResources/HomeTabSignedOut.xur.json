@@ -1,0 +1,92 @@
+{
+  "schema": "bandwagon-xuib-resource-v1",
+  "size": 651,
+  "sha256": "f8c6437478e32f4237c9b05cd3dfb304b1939c433940bb1af057ea56632bd028",
+  "header_hex": "585549420000000800000000000e0000028b0004083908000000000000000002",
+  "sections": [
+    {
+      "tag": "STRN",
+      "offset": 80,
+      "size": 360,
+      "sha256": "3bc7a7aea47490cb17fd83c9e043cac1a433add24947b60f82cfbe18a67d0af9",
+      "data_hex": "000001620017486f6d655461625369676e65644f757400486f6d655461625363656e650062746e486f6d65627265774461736800587569427574746f6e47756964650062746e44617368626f61726400486f6d65627265772044617368005875694e6176427574746f6e0062746e5369676e496e0058626f7820486f6d6500477569646544617368436f6d6d616e644e6176427574746f6e005369676e496e4e6176427574746f6e0062746e4372656174654e657747616d6572746167005369676e20496e004372656174654e657750726f66696c654e6176427574746f6e0062746e5265636f76657247616d6572746167004372656174652050726f66696c65005265636f76657247616d65725461674e6176427574746f6e0062746e44697363496e5472617900446f776e6c6f61642050726f66696c6500547261794e6176427574746f6e004469736320696e2054726179005875695363656e650058756943616e76617300",
+      "decoded": {
+        "declared_payload_size": 354,
+        "count": 23,
+        "strings": [
+          "HomeTabSignedOut",
+          "HomeTabScene",
+          "btnHomebrewDash",
+          "XuiButtonGuide",
+          "btnDashboard",
+          "Homebrew Dash",
+          "XuiNavButton",
+          "btnSignIn",
+          "Xbox Home",
+          "GuideDashCommandNavButton",
+          "SignInNavButton",
+          "btnCreateNewGamertag",
+          "Sign In",
+          "CreateNewProfileNavButton",
+          "btnRecoverGamertag",
+          "Create Profile",
+          "RecoverGamerTagNavButton",
+          "btnDiscInTray",
+          "Download Profile",
+          "TrayNavButton",
+          "Disc in Tray",
+          "XuiScene",
+          "XuiCanvas"
+        ]
+      }
+    },
+    {
+      "tag": "VECT",
+      "offset": 440,
+      "size": 72,
+      "sha256": "e50a6a64208de3e5bbdb0ba28bd9dafd311187d7bc1becfa31f4a4c229c29c08",
+      "data_hex": "000000003f800000000000000000000041e00000000000000000000042600000000000000000000042a80000000000000000000042e000000000000000000000430c000000000000",
+      "big_endian_floats": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        28.0,
+        0.0,
+        0.0,
+        56.0,
+        0.0,
+        0.0,
+        84.0,
+        0.0,
+        0.0,
+        112.0,
+        0.0,
+        0.0,
+        140.0,
+        0.0
+      ]
+    },
+    {
+      "tag": "FLOT",
+      "offset": 512,
+      "size": 20,
+      "sha256": "2a335f135bc58c20ed7c3860df08e549b093ac9a704168583543fd588d5b8917",
+      "data_hex": "43d480004334000043a180004348000041e00000",
+      "big_endian_floats": [
+        425.0,
+        180.0,
+        323.0,
+        200.0,
+        28.0
+      ]
+    },
+    {
+      "tag": "DATA",
+      "offset": 532,
+      "size": 119,
+      "sha256": "af384af68d32999dcf26d20ace17cbf75b72f3cb7d3194c480493e36fed3e5d4",
+      "data_hex": "17030206000100011603060f01020300010201030607010607030204f48204050600000a01080f05020401f4c2040308090000000701090f08020402f4c30b04050c0d00000701090f0c020403f4c30e04080f1000000701090f0f020404f4c311040c121300000701080f12020405f44314040f150000"
+    }
+  ]
+}

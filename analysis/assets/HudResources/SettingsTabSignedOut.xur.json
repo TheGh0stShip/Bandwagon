@@ -1,0 +1,95 @@
+{
+  "schema": "bandwagon-xuib-resource-v1",
+  "size": 763,
+  "sha256": "860b1231128a91a7e62eae48fc1d3c388447cb737c73e607ad253e1bbd9b4626",
+  "header_hex": "585549420000000800000000000e000002fb0004094409000000000000000002",
+  "sections": [
+    {
+      "tag": "STRN",
+      "offset": 80,
+      "size": 450,
+      "sha256": "138f364999fb67e833e1bbda279a610411b8fa89796f21c8668358ba7c895ca8",
+      "data_hex": "000001bc001a53657474696e67735461625369676e65644f75740062746e506572736f6e616c53657474696e677300587569427574746f6e47756964650062746e46616d696c7953657474696e677300507265666572656e636573004f7074696f6e732e7875720047756964654d61696e5363656e654e6176427574746f6e0062746e53797374656d53657474696e67730046616d696c792053657474696e677300477569646544617368436f6d6d616e644e6176427574746f6e0062746e536f66746d6f6453657474696e67730053797374656d2053657474696e67730062746e4b696e65637454756e657200536f66746d6f642053657474696e6773005875694e6176427574746f6e004e6174616c54726f75626c6573686f6f7465724e6176427574746f6e0062746e53687574646f776e004b696e6563742054756e65720053687574646f776e4e6176427574746f6e0062746e58616d53687574646f776e005475726e204f666620436f6e736f6c650058616d53687574646f776e4e6176427574746f6e0062746e4e6f74696669636174696f6e730053687574646f776e2058414d2028444542554729005875695363656e650058756943616e76617300",
+      "decoded": {
+        "declared_payload_size": 444,
+        "count": 26,
+        "strings": [
+          "SettingsTabSignedOut",
+          "btnPersonalSettings",
+          "XuiButtonGuide",
+          "btnFamilySettings",
+          "Preferences",
+          "Options.xur",
+          "GuideMainSceneNavButton",
+          "btnSystemSettings",
+          "Family Settings",
+          "GuideDashCommandNavButton",
+          "btnSoftmodSettings",
+          "System Settings",
+          "btnKinectTuner",
+          "Softmod Settings",
+          "XuiNavButton",
+          "NatalTroubleshooterNavButton",
+          "btnShutdown",
+          "Kinect Tuner",
+          "ShutdownNavButton",
+          "btnXamShutdown",
+          "Turn Off Console",
+          "XamShutdownNavButton",
+          "btnNotifications",
+          "Shutdown XAM (DEBUG)",
+          "XuiScene",
+          "XuiCanvas"
+        ]
+      }
+    },
+    {
+      "tag": "VECT",
+      "offset": 530,
+      "size": 72,
+      "sha256": "e50a6a64208de3e5bbdb0ba28bd9dafd311187d7bc1becfa31f4a4c229c29c08",
+      "data_hex": "000000003f800000000000000000000041e00000000000000000000042600000000000000000000042a80000000000000000000042e000000000000000000000430c000000000000",
+      "big_endian_floats": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        28.0,
+        0.0,
+        0.0,
+        56.0,
+        0.0,
+        0.0,
+        84.0,
+        0.0,
+        0.0,
+        112.0,
+        0.0,
+        0.0,
+        140.0,
+        0.0
+      ]
+    },
+    {
+      "tag": "FLOT",
+      "offset": 602,
+      "size": 20,
+      "sha256": "2a335f135bc58c20ed7c3860df08e549b093ac9a704168583543fd588d5b8917",
+      "data_hex": "43d480004334000043a180004348000041e00000",
+      "big_endian_floats": [
+        425.0,
+        180.0,
+        323.0,
+        200.0,
+        28.0
+      ]
+    },
+    {
+      "tag": "DATA",
+      "offset": 622,
+      "size": 141,
+      "sha256": "64a12b21555b7cb11d997d4a89e9e643068d6ef731f1f29fa14a159f9b88d8cd",
+      "data_hex": "1a030206000100011903050f010203000001020707010707020204f482030405000001060a01090f04020401f4c203020809000001140a01090f08020402f4c203040b0c0000012f0f01080f0b020403f4c203080d0e00000f01090f0d020404f4c310030b111200000f01090f11020405f4c313030d141500000f010af20f1402040500f4c316031117180000"
+    }
+  ]
+}

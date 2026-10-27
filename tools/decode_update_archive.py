@@ -14,6 +14,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("archive", type=Path)
     parser.add_argument("-o", "--output", type=Path)
+    parser.add_argument(
+        "--extract",
+        type=Path,
+        help="safely extract every validated ZIP member into this directory",
+    )
     args = parser.parse_args()
 
     data = args.archive.read_bytes()
@@ -49,6 +54,20 @@ def main() -> None:
                         "crc32": f"{info.CRC:08x}",
                     }
                 )
+                if args.extract:
+                    if not safe:
+                        raise SystemExit(f"refusing unsafe ZIP member {info.filename!r}")
+                    target = args.extract.joinpath(*path.parts).resolve()
+                    root = args.extract.resolve()
+                    if target != root and root not in target.parents:
+                        raise SystemExit(
+                            f"ZIP member escapes extraction root: {info.filename!r}"
+                        )
+                    if info.is_dir():
+                        target.mkdir(parents=True, exist_ok=True)
+                    else:
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        target.write_bytes(archive.read(info))
     except BadZipFile as error:
         raise SystemExit(f"invalid wrapped ZIP: {error}") from error
 

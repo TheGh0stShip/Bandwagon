@@ -37,6 +37,13 @@ and ZIP data, followed by version `1.0.477`; the ordinary ZIP begins at offset
 `0x18`. `tools/decode_update_archive.py` validates the wrapper, ZIP CRCs, and
 member paths without extracting them.
 
+`assets/` contains a lossless unpacking of `HudResources.xzp`. The native
+`XUIZ` unpacker/repacker and section-aware `XUIB` decoder/rebuilder reproduce
+the archive and all four compiled XUR members byte-for-byte. The XUR JSON
+exposes its string and floating-point pools while retaining the proprietary
+`DATA` stream losslessly; translation of that stream into original XUI XML is
+still a semantic-decompilation task.
+
 Two original XEX files, `BadUpdatePayload/bootanim.xex` and
 `Flash/bootanim.xex`, are byte-identical and therefore produce identical base
 files. They are retained under both names to preserve provenance.
