@@ -1,5 +1,7 @@
 #include "modal_state.hpp"
 
+#include <algorithm>
+
 namespace bandwagon::boot_edit {
 
 void FinalizeModalState(ModalCompletionState* modal) {
@@ -44,6 +46,50 @@ bool UpdateModalWindow(ModalCompletionState* modal,
 
   if (restore_focus && services.restore_focus) services.restore_focus();
   return modal->result != 0;
+}
+
+ModalTextLayout DrawModalText(std::string_view text, float requested_width,
+                              const ModalTextGeometry& geometry,
+                              const ModalTextServices& services) {
+  ModalTextLayout layout;
+  if (services.get_id) layout.item_id = services.get_id(text);
+
+  const float default_width =
+      geometry.text_size.x + geometry.frame_padding.x * 2.0f;
+  const float default_height =
+      geometry.text_size.y + geometry.frame_padding.y * 2.0f;
+  if (requested_width < 0.0f) {
+    layout.item_size.x = std::max(
+        4.0f, geometry.content_right - geometry.cursor.x + requested_width);
+  } else if (requested_width == 0.0f) {
+    layout.item_size.x = default_width;
+  } else {
+    layout.item_size.x = requested_width;
+  }
+  layout.item_size.y = default_height;
+  layout.bounds = {geometry.cursor,
+                   {geometry.cursor.x + layout.item_size.x,
+                    geometry.cursor.y + layout.item_size.y}};
+
+  if (services.item_size) {
+    services.item_size(layout.item_size, geometry.frame_padding.y);
+  }
+  layout.item_added =
+      services.item_add ? services.item_add(layout.bounds, layout.item_id)
+                        : false;
+  if (!layout.item_added) return layout;
+
+  layout.inner_bounds = {
+      {layout.bounds.minimum.x + geometry.frame_padding.x,
+       layout.bounds.minimum.y + geometry.frame_padding.y},
+      {layout.bounds.maximum.x - geometry.frame_padding.x,
+       layout.bounds.maximum.y - geometry.frame_padding.y}};
+  if (services.render_text_clipped) {
+    services.render_text_clipped(layout.inner_bounds, text, geometry.text_size,
+                                 geometry.text_alignment, layout.bounds);
+  }
+  layout.rendered = true;
+  return layout;
 }
 
 }  // namespace bandwagon::boot_edit

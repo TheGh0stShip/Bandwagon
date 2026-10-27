@@ -17,6 +17,13 @@
       "evidence": ["releases the runtime-owned modal payload before clearing the completion byte", "dispatches the optional continuation with the modal object and its stored argument"]
     },
     {
+      "address": "0x8204b9e8",
+      "recovered_name": "fn_8204B9E8",
+      "semantic_name": "DrawModalText",
+      "confidence": "high",
+      "evidence": ["gets an ImGui item ID and calculates exact text size plus twice the frame padding", "uses CalcItemSize with the requested width, submits the item bounds, and renders clipped text inside the padded inner rectangle with the style alignment and outer clip rectangle"]
+    },
+    {
       "address": "0x8204bb60",
       "recovered_name": "fn_8204BB60",
       "semantic_name": "CompleteModalTextStorage",
