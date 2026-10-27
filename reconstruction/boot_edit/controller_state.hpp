@@ -33,6 +33,15 @@ void InitializeControllers(ControllerRecords* records,
 void UpdateControllers(ControllerRecords* records,
                        const ControllerServices& services);
 
+using ControllerMatch = std::function<bool(
+    ControllerRecord*, std::uint16_t, bool)>;
+
+// Exact fixed-four-record scan at 0x82010c58. The adjacent per-record button
+// predicate remains an injected boundary until its compound inventory extent
+// is separated and attributed.
+bool AnyControllerMatches(ControllerRecords* records, std::uint16_t mask,
+                          bool consume, const ControllerMatch& matches);
+
 // Embedded non-pdata leaves inside the 0x8204C4D8 inventory extent.
 void ApplyBinaryModalChoice(std::uint32_t application_modal_type,
                             bool alternate_choice,

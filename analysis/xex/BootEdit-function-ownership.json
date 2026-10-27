@@ -117,8 +117,9 @@
       ,{"from":"unknown","to":"platform_toolchain","inventory_entry_count":7,"size":1296,"basis":"complete adjacent MSVC std::string support family: destruction/reset, erase, reserve/grow, assignment, overlapping substring assignment, pointer-range assignment, and composed-object deleting destructor","ranges":[{"start":"0x820112e0","end_exclusive":"0x82011598"},{"start":"0x82011620","end_exclusive":"0x82011878"}]}
       ,{"from":"unknown","to":"product_application","start":"0x82010068","end_exclusive":"0x82010148","inventory_entry_count":2,"size":224,"basis":"two one-shot product singleton accessors allocate exact 736-byte and 1184-byte application objects, dispatch their recovered product constructors, publish successful instances, and preserve the target's no-retry behavior after allocation failure"}
       ,{"from":"unknown","to":"product_application","start":"0x82011000","end_exclusive":"0x820110d0","inventory_entry_count":2,"size":208,"basis":"BootEdit boot-animation integration pair: resolve xboxkrnl ordinal 932 for the product's cached adapter, then resolve ordinal 1 from the loaded version-9199 bootanim image and invoke it as the created thread entry with the shared boot context"}
+      ,{"from":"unknown","to":"product_application","start":"0x82010c58","end_exclusive":"0x82010cb8","inventory_entry_count":1,"size":96,"basis":"fixed four-record BootEdit controller query wrapper: forwards the caller's exact button mask and consume flag to the adjacent per-record predicate, advances by the recovered 52-byte record stride, and short-circuits on the first match"}
     ],
-    "after": {"unknown_entry_count":41,"unknown_size":12416,"product_application_entry_count":47,"product_application_size":18296}
+    "after": {"unknown_entry_count":40,"unknown_size":12320,"product_application_entry_count":48,"product_application_size":18392}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -150,6 +151,7 @@
   "product_application_entries": [
     {"address":"0x82010068","role":"acquire one-shot ThemeManager singleton","confidence":"high"},
     {"address":"0x820100d0","role":"acquire one-shot BootEdit startup singleton","confidence":"high"},
+    {"address":"0x82010c58","role":"query all four BootEdit controller records","confidence":"high"},
     {"address":"0x82011000","role":"resolve and cache xboxkrnl boot-animation support routine","confidence":"high"},
     {"address":"0x82011068","role":"resolve and invoke loaded bootanim image entry","confidence":"high"},
     {"address":"0x820110d0","role":"mount and BootAnim theme bootstrap","confidence":"high"},
@@ -230,13 +232,14 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 47,
-      "size": 18296,
-      "concatenated_sha256": "50712133a695acdc41ddc66ed92d765b05bad4bd88f1f451df5e043443d4d136",
+      "inventory_entry_count": 48,
+      "size": 18392,
+      "concatenated_sha256": "0e25fc3af04e90dcb55699c2ebcce4e61dd0187b345b99885d94569aa80c6e52",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
         {"start":"0x82010068","end_exclusive":"0x82010148","inventory_entry_count":2,"size":224,"sha256":"78eb300ba85fbebe9de6d1fd9abebf96cce3cf2cacbb7d949b553409bb6f3830"},
+        {"start":"0x82010c58","end_exclusive":"0x82010cb8","inventory_entry_count":1,"size":96,"sha256":"777b6ee175a07645d3fb66a3d3ecabd904eb0b50daecf7e3a3c2c1e5ecf2d4db"},
         {"start":"0x82011000","end_exclusive":"0x820110d0","inventory_entry_count":2,"size":208,"sha256":"287e86010f8cb1550cce78397c290c19038b649b927822f893dfe4275858b33b"},
         {"start":"0x820110d0","end_exclusive":"0x820112e0","inventory_entry_count":1,"size":528,"sha256":"3f78d1350fbec288603f79c000bfdbf28bc138fa2ecacb1456111d20649f9b76"},
         {"start":"0x82011598","end_exclusive":"0x82011620","inventory_entry_count":1,"size":136,"sha256":"8eaf4c6a700018333114712ae3a2738ab305a7b1626408f3421925ac60f7795e"},
@@ -314,13 +317,14 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 41,
-      "size": 12416,
-      "concatenated_sha256": "787e174e53202554248f3a90e7a46b84ae778d94fcf01ffa0bb933b1d9a2add4",
+      "inventory_entry_count": 40,
+      "size": 12320,
+      "concatenated_sha256": "612cf1d6529392ec3b46278585e921e44f5a84c1fedb32292d2c30c867ece258",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x82010068","inventory_entry_count":1,"size":104,"sha256":"2a36a409222334ac6966ae4802bd8b48dec96643f52d257432c78e13ea565e5a"},
-        {"start":"0x82010148","end_exclusive":"0x82011000","inventory_entry_count":9,"size":3768,"sha256":"b016cc4b26a862eb4d3f460fbf219a3378ac9418ca3f1038f60220f78d531ea0"},
+        {"start":"0x82010148","end_exclusive":"0x82010c58","inventory_entry_count":6,"size":2832,"sha256":"7639c20c7d6b3bd00af022b96619045f6d3a4aefd88a683e485b6c3890090d3b"},
+        {"start":"0x82010cb8","end_exclusive":"0x82011000","inventory_entry_count":2,"size":840,"sha256":"ef91f85d2eb2bc847d4eba700b62aafce7dc88e9ab3474547099de090c783269"},
         {"start":"0x82038ab8","end_exclusive":"0x82039ec0","inventory_entry_count":11,"size":5128,"sha256":"3ad48c5ef04825cb71d1abb95764c52706e8887d72c212695b2b75c3fbefafbe"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
@@ -340,11 +344,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 47,
-    "product_application_size": 18296,
-    "non_product_entry_count": 887,
-    "non_product_size": 351128,
-    "unknown_entry_count": 41,
-    "unknown_size": 12416
+    "product_application_entry_count": 48,
+    "product_application_size": 18392,
+    "non_product_entry_count": 886,
+    "non_product_size": 351032,
+    "unknown_entry_count": 40,
+    "unknown_size": 12320
   }
 }

@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":46881,"sha256":"31c0ac7dc466ab4cec13e1ad30d975d646b6e56f50ccdf7312d414a5e5386fa7"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":47714,"sha256":"53ff4c42b5d44c59772909ed6951e9175c3815ded3c882dffb22a7dc4cb44cb6"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -38,9 +38,9 @@
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":6266,"sha256":"b9aa18820271c840b9fb2e83af9e6d5573884d267207ec747c1b906c2ff9b006"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":4742,"sha256":"b3a435964e3c6f4b04b0d7a54146d0621c75fd4f4994646bf1879dd7cb0aa98c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":8969,"sha256":"cbc424003095fc7232dfaac6df4bdce03a302b62734654825ef9b25cde23ba21"},
-    "controller_source": {"path":"reconstruction/boot_edit/controller_state.cpp","kind":"source","size":2037,"sha256":"24183cf72af072d4cfe9986da2607fa282706dcc1786bc0ad0e1f50150f281ec"},
-    "controller_header": {"path":"reconstruction/boot_edit/controller_state.hpp","kind":"header","size":1376,"sha256":"ffb9b6fe138045b53cf299597cb601180ae198475be701491a8ab5545c722661"},
-    "controller_test": {"path":"reconstruction/boot_edit/controller_state_test.cpp","kind":"test","size":1840,"sha256":"391c98a8c5c266159df2679722c4f76bef91479ce4756d2714b8c64b8916520c"},
+    "controller_source": {"path":"reconstruction/boot_edit/controller_state.cpp","kind":"source","size":2350,"sha256":"cf1c4182268a3e758cd5d71fbb26928f4f1d0e4d1766f6677b2865630d646aa0"},
+    "controller_header": {"path":"reconstruction/boot_edit/controller_state.hpp","kind":"header","size":1803,"sha256":"394b574f22f5a5ff4045c603ca79ff0df069449aaa29f0a9824d9675a4162f1c"},
+    "controller_test": {"path":"reconstruction/boot_edit/controller_state_test.cpp","kind":"test","size":2741,"sha256":"c1fba50fe1a01ad9b82500a3117e05fb5736518dba5c6de85261cd34d5250058"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -108,6 +108,21 @@
       "test_artifacts": ["name_task_test"],
       "symbols": ["AdvanceThemeNameTask", "ThemeNameTaskState", "ThemeNameTaskServices", "RectContains", "RectOverlaps", "CopyRectIfDifferent", "CopyRect", "ClipRect"],
       "required_strings": ["The theme name entered is invalid, please enter a valid name.", "Invalid theme name", "Themes:\\%s.xbat", "A theme with the name '%s' already exists, do you want to overwrite it?", "Overwrite existing theme"]
+    },
+    {
+      "address": "0x82010c58",
+      "end_exclusive": "0x82010cb8",
+      "size": 96,
+      "sha256": "777b6ee175a07645d3fb66a3d3ecabd904eb0b50daecf7e3a3c2c1e5ecf2d4db",
+      "inventory_name": "fn_82010C58",
+      "semantic_name": "AnyControllerMatches",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Scan exactly four recovered 52-byte BootEdit controller records, forward the exact 16-bit button mask and consume flag to the adjacent per-record predicate, short-circuit true on the first match, and return false after all four fail; the per-record predicate is an injected boundary pending attribution of its compound extent.",
+      "source_artifacts": ["controller_source", "controller_header"],
+      "test_artifacts": ["controller_test"],
+      "symbols": ["AnyControllerMatches", "ControllerMatch", "ControllerRecord", "ControllerRecords"],
+      "required_strings": []
     },
     {
       "address": "0x82011000",
@@ -757,10 +772,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 47,
-    "product_bytes": 18296,
-    "model_covered_function_count": 47,
-    "model_covered_bytes": 18296,
+    "product_function_count": 48,
+    "product_bytes": 18392,
+    "model_covered_function_count": 48,
+    "model_covered_bytes": 18392,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

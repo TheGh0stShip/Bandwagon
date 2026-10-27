@@ -35,6 +35,28 @@ int main() {
   assert(records[2].current[0] == 3);
   assert((polls == std::vector<std::uint32_t>{0, 1, 2, 3}));
 
+  std::vector<std::size_t> matched_indices;
+  assert(AnyControllerMatches(
+      &records, 0x20, true,
+      [&](ControllerRecord* record, std::uint16_t mask, bool consume) {
+        assert(mask == 0x20 && consume);
+        const std::size_t index = static_cast<std::size_t>(record - &records[0]);
+        matched_indices.push_back(index);
+        return index == 2;
+      }));
+  assert((matched_indices == std::vector<std::size_t>{0, 1, 2}));
+  matched_indices.clear();
+  assert(!AnyControllerMatches(
+      &records, 0x40, false,
+      [&](ControllerRecord* record, std::uint16_t mask, bool consume) {
+        assert(mask == 0x40 && !consume);
+        matched_indices.push_back(
+            static_cast<std::size_t>(record - &records[0]));
+        return false;
+      }));
+  assert((matched_indices == std::vector<std::size_t>{0, 1, 2, 3}));
+  assert(!AnyControllerMatches(nullptr, 1, false, {}));
+
   ModalCompletionState modal;
   ApplyBinaryModalChoice(1, true, &modal);
   assert(modal.selected_action == 0);

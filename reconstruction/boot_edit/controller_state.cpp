@@ -41,6 +41,15 @@ void UpdateControllers(ControllerRecords* records,
   }
 }
 
+bool AnyControllerMatches(ControllerRecords* records, std::uint16_t mask,
+                          bool consume, const ControllerMatch& matches) {
+  if (!records || !matches) return false;
+  for (ControllerRecord& record : *records) {
+    if (matches(&record, mask, consume)) return true;
+  }
+  return false;
+}
+
 void ApplyBinaryModalChoice(std::uint32_t application_modal_type,
                             bool alternate_choice,
                             ModalCompletionState* modal) {
