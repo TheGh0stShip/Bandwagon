@@ -12,17 +12,17 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"f8e44ce89523a6010d3646112cb741c46a3123b84e394d07b5508c41e17d5844"},
-    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":5189,"sha256":"fcf574e3d4bc599e572aadec081cf8a0b0942796291c49ad77dd2bd9a031c086"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"909066aa1929ca3735a0b598bca85714d0203e5ef4abb09cbc0e55237737c48a"},
+    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":5597,"sha256":"ae68ac1b704e86bede7d28a6ef95e81575259eaec3fbdff913ea88a686b19270"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
   "source_artifacts": {
     "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":3562,"sha256":"f3fe31d956af4f12d3c37cc12104cb6515ba331d4bfa258988690fe67e45c042"},
     "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":2531,"sha256":"19364fea4a2c48287af141d0e854a3e48e8d3493845f139f17147ccd6f325b59"},
     "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":5207,"sha256":"9ecb54e4e89dd81c6c8a80bba03e9c4ff2aa264fbfcb1e0f7d12e8e3afce0c5f"},
-    "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":3288,"sha256":"61e0f2fdf8cdbf474065056be6e390a4568b09c7e6729275442180e5c9e30b6d"},
-    "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":2905,"sha256":"4e1233e022f876070effff9a1d208536f8749730fbd8f8c0810793e9066d9b85"},
-    "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":5436,"sha256":"c0b5fd4c3f482c3749b96b9492127bdb2a0aa92f99c0d209fc0d1a3ef879dec5"},
+    "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":4896,"sha256":"9815cce846cd19fb61ee5a00c7881baf3a4525b06430fd6fd98a6ddd0d12bac6"},
+    "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3728,"sha256":"d948bf0c08f0f49fc5e27ff4e1488051d5d4a2037d8a3745bbd42758d6daa8de"},
+    "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7126,"sha256":"9cc1916a6d21ea7e3d697f4fba42a891956a02525035e5ba07a4a7120a6e536e"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":3466,"sha256":"534adfa50286e499a001f9407256e7c5add50772e59557809d5ee63f6ff7d2a9"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":2766,"sha256":"a3a4e2b8781dcc6b8f36aa63d0687bdeabce087558f1baa5b6b745afd07705bd"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":4221,"sha256":"769f3e88fd5109507e0aa38c29b07cf60db7bd86cdc111b9e016656ab4e516f7"},
@@ -120,6 +120,21 @@
       "test_artifacts": ["modal_test"],
       "symbols": ["ModalCompletionState", "ModalFrameServices", "UpdateModalWindow"],
       "required_strings": []
+    },
+    {
+      "address": "0x8204bda0",
+      "end_exclusive": "0x8204c280",
+      "size": 1248,
+      "sha256": "ea44687599d84becaaf443839357134d7019a00f03b779bdf6fa3fb7cd2dee8f",
+      "inventory_name": "fn_8204BDA0",
+      "semantic_name": "DrawModalActions",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Optional body rendering, exact type-1 through type-4 label sets, one/two/three-action counts, stored selection, left/right wrap, simultaneous ordered navigation, activation gate, and slot-to-result mappings {1}, {1,4}, {2,3}, and {2,3,4}; font scaling, geometry, controller polling, and drawing are ImGui/platform boundaries.",
+      "source_artifacts": ["modal_source", "modal_header"],
+      "test_artifacts": ["modal_test"],
+      "symbols": ["ModalCompletionState", "ModalActionInput", "ModalActionFrame", "DrawModalActions"],
+      "required_strings": ["Cancel"]
     },
     {
       "address": "0x82050018",
@@ -229,7 +244,6 @@
   ],
   "remaining_product_entries": [
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
-    {"address":"0x8204bda0","end_exclusive":"0x8204c280","size":1248,"sha256":"ea44687599d84becaaf443839357134d7019a00f03b779bdf6fa3fb7cd2dee8f","role":"BootEdit modal renderer owning Cancel actions","blocker":"recover all modal button/layout and continuation states"},
     {"address":"0x8204c870","end_exclusive":"0x8204cb28","size":696,"sha256":"577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015","role":"ConfirmDiscardUnsavedChanges","blocker":"model the nested save-failure continuation without collapsing modal states"},
     {"address":"0x82050958","end_exclusive":"0x82050a50","size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a","role":"saved-theme state initializer containing ColorsDifferExact leaf","blocker":"the inventory extent contains StartRefreshAsync, a separate modal constructor, padding, and ColorsDifferExact; all bodies must be covered together"},
     {"address":"0x82050f60","end_exclusive":"0x82051238","size":728,"sha256":"bf13e96bfcd3be60250a639d0ca53428e90df7c8bea252666e6959557c9c7551","role":"LoadEditorFonts","blocker":"recover exact UIDATA mapping, font configuration, glyph ranges, and atlas state"},
@@ -242,9 +256,9 @@
   "summary": {
     "product_function_count": 23,
     "product_bytes": 13696,
-    "model_covered_function_count": 13,
-    "model_covered_bytes": 3984,
-    "remaining_product_function_count": 10,
-    "remaining_product_bytes": 9712
+    "model_covered_function_count": 14,
+    "model_covered_bytes": 5232,
+    "remaining_product_function_count": 9,
+    "remaining_product_bytes": 8464
   }
 }

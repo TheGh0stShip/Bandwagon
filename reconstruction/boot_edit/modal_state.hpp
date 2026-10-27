@@ -3,6 +3,8 @@
 #include <cstdint>
 #include <functional>
 #include <string>
+#include <string_view>
+#include <vector>
 
 namespace bandwagon::boot_edit {
 
@@ -18,6 +20,9 @@ struct ModalCompletionState {
   bool position_unset = false;
   std::function<void()> render_content;
   std::function<void()> publish_state;
+  std::uint32_t modal_type = 0;       // word +68
+  std::uint32_t selected_action = 0;  // word +72
+  bool message_visible = false;       // byte +104
 };
 
 struct ModalFrameServices {
@@ -86,5 +91,24 @@ bool UpdateModalWindow(ModalCompletionState* modal,
 ModalTextLayout DrawModalText(std::string_view text, float requested_width,
                               const ModalTextGeometry& geometry,
                               const ModalTextServices& services);
+
+struct ModalActionInput {
+  bool move_left = false;
+  bool move_right = false;
+  bool activate = false;
+};
+
+struct ModalActionFrame {
+  bool message_rendered = false;
+  std::vector<std::string_view> labels;
+  std::uint32_t selected_action = 0;
+  std::uint32_t result = 0;
+};
+
+// 0x8204bda0: modal body/action renderer. ImGui layout and input acquisition
+// are represented by the input, while the exact button sets, navigation wrap,
+// selection persistence, and result-code mappings remain explicit.
+ModalActionFrame DrawModalActions(ModalCompletionState* modal,
+                                  const ModalActionInput& input);
 
 }  // namespace bandwagon::boot_edit

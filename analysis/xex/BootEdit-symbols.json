@@ -38,6 +38,13 @@
       "evidence": ["applies initial modal placement, begins the popup with window flags 0x12B, renders content, and ends the popup", "publishes nonzero state after rendering, converts a completed closed zero state to state 4, restores focus after initial placement, and returns the resulting active-state predicate"]
     },
     {
+      "address": "0x8204bda0",
+      "recovered_name": "fn_8204BDA0",
+      "semantic_name": "DrawModalActions",
+      "confidence": "high",
+      "evidence": ["modal types 1 through 4 render Ok; Ok/Cancel; Yes/No; or Yes/No/Cancel action sets", "left and right input wraps the stored selection over one, two, or three actions and activation maps the selected slot to result codes 1 through 4"]
+    },
+    {
       "address": "0x82050a00",
       "recovered_name": null,
       "semantic_name": "ColorsDifferExact",

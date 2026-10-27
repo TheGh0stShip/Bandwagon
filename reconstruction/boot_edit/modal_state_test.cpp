@@ -152,4 +152,49 @@ int main() {
   text_services.item_add = {};
   text_layout = DrawModalText("Question", -5.0f, geometry, text_services);
   assert(Near(text_layout.item_size.x, 85.0f));
+
+  modal = ModalCompletionState{};
+  modal.modal_type = 4;
+  modal.message_visible = true;
+  ModalActionFrame actions = DrawModalActions(&modal, {});
+  assert(actions.message_rendered);
+  assert((actions.labels ==
+          std::vector<std::string_view>{"Yes", "No", "Cancel"}));
+  assert(actions.selected_action == 0 && actions.result == 0);
+
+  ModalActionInput action_input;
+  action_input.move_left = true;
+  actions = DrawModalActions(&modal, action_input);
+  assert(actions.selected_action == 2);
+  action_input = {};
+  action_input.move_right = true;
+  actions = DrawModalActions(&modal, action_input);
+  assert(actions.selected_action == 0);
+  action_input.activate = true;
+  actions = DrawModalActions(&modal, action_input);
+  assert(actions.selected_action == 1 && actions.result == 3);
+
+  modal = ModalCompletionState{};
+  modal.modal_type = 1;
+  action_input = {};
+  action_input.activate = true;
+  actions = DrawModalActions(&modal, action_input);
+  assert((actions.labels == std::vector<std::string_view>{"Ok"}));
+  assert(actions.result == 1);
+  modal.modal_type = 2;
+  modal.selected_action = 1;
+  actions = DrawModalActions(&modal, action_input);
+  assert((actions.labels ==
+          std::vector<std::string_view>{"Ok", "Cancel"}));
+  assert(actions.result == 4);
+  modal.modal_type = 3;
+  modal.selected_action = 0;
+  actions = DrawModalActions(&modal, action_input);
+  assert((actions.labels == std::vector<std::string_view>{"Yes", "No"}));
+  assert(actions.result == 2);
+  modal.modal_type = 0;
+  modal.result = 7;
+  actions = DrawModalActions(&modal, {});
+  assert(actions.labels.empty() && actions.result == 7);
+  assert(DrawModalActions(nullptr, {}).labels.empty());
 }

@@ -92,4 +92,56 @@ ModalTextLayout DrawModalText(std::string_view text, float requested_width,
   return layout;
 }
 
+ModalActionFrame DrawModalActions(ModalCompletionState* modal,
+                                  const ModalActionInput& input) {
+  ModalActionFrame frame;
+  if (!modal) return frame;
+  frame.message_rendered = modal->message_visible;
+
+  switch (modal->modal_type) {
+    case 1:
+      frame.labels = {"Ok"};
+      break;
+    case 2:
+      frame.labels = {"Ok", "Cancel"};
+      break;
+    case 3:
+      frame.labels = {"Yes", "No"};
+      break;
+    case 4:
+      frame.labels = {"Yes", "No", "Cancel"};
+      break;
+    default:
+      frame.selected_action = modal->selected_action;
+      frame.result = modal->result;
+      return frame;
+  }
+
+  const std::uint32_t count = static_cast<std::uint32_t>(frame.labels.size());
+  if (input.move_left) {
+    modal->selected_action = modal->selected_action == 0
+                                 ? count - 1
+                                 : modal->selected_action - 1;
+  }
+  if (input.move_right) {
+    modal->selected_action = (modal->selected_action + 1) % count;
+  }
+
+  if (input.activate) {
+    static constexpr std::uint32_t kType1[] = {1};
+    static constexpr std::uint32_t kType2[] = {1, 4};
+    static constexpr std::uint32_t kType3[] = {2, 3};
+    static constexpr std::uint32_t kType4[] = {2, 3, 4};
+    const std::uint32_t* results = kType1;
+    if (modal->modal_type == 2) results = kType2;
+    if (modal->modal_type == 3) results = kType3;
+    if (modal->modal_type == 4) results = kType4;
+    modal->result = results[modal->selected_action];
+  }
+
+  frame.selected_action = modal->selected_action;
+  frame.result = modal->result;
+  return frame;
+}
+
 }  // namespace bandwagon::boot_edit
