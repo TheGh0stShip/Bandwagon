@@ -31,8 +31,8 @@ contains 218 references in 69 functions. Regenerate the complete set with
 | --- | ---: | ---: | --- |
 | Product theme-editor application | 41 | 17,432 | Recover as readable source |
 | Dear ImGui 1.86 | 442 | 231,184 | Use the pinned upstream source |
-| MSVC/Xbox platform and toolchain | 390 | 104,984 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 61 | 15,824 | Fingerprint before deciding whether to lift |
+| MSVC/Xbox platform and toolchain | 391 | 105,088 | Reuse the target ABI/runtime; do not relift |
+| Unknown framework/backend/lookup code | 60 | 15,720 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -110,7 +110,7 @@ discard workflow now also includes its exact 96-byte constructor at
 slots, and initial-phase precedence. The selector's `0x8204cbd8` enumeration
 poller is explicit too: zero-timeout polling, pending preservation, and
 signaled close/clear ordering. The known-product queue is empty; the
-remaining work is provenance resolution for the 61 unknown
+remaining work is provenance resolution for the 60 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full
