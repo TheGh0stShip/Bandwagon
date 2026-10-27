@@ -1419,7 +1419,7 @@
       "address": "0x801fa1d0",
       "section_offset": "0xa1d0",
       "size_to_next_symbol": 128,
-      "name": "fn_801FA1D0",
+      "name": "FatDateTimeToSystemTime",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],
@@ -1779,7 +1779,7 @@
       "address": "0x801fbde0",
       "section_offset": "0xbde0",
       "size_to_next_symbol": 128,
-      "name": "fn_801FBDE0",
+      "name": "QueryCurrentFatTimestamp",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 76,
-    "lifted_instruction_bytes": 12992,
-    "peer_product_adapter_or_policy_function_count": 49,
-    "peer_product_adapter_or_policy_instruction_bytes": 6840,
+    "lifted_function_count": 78,
+    "lifted_instruction_bytes": 13248,
+    "peer_product_adapter_or_policy_function_count": 51,
+    "peer_product_adapter_or_policy_instruction_bytes": 7096,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -748,6 +748,15 @@
       "symbols": ["ExistingPathOpenOptions", "PathProbeServices", "CanOpenExistingPath"]
     },
     {
+      "address": "0x801fa1d0",
+      "size": 128,
+      "sha256": "3edbebb7c22fb76c3a65c6b45261a25e1e983f0166d76c5d0d45bec56ee73e0e",
+      "semantic_name": "FatDateTimeToSystemTime",
+      "source": "reconstruction/kernel_expansion/fat_timestamp.cpp",
+      "header": "reconstruction/kernel_expansion/fat_timestamp.hpp",
+      "symbols": ["TimeFields", "FatTimestampServices", "FatDateTimeToSystemTime"]
+    },
+    {
       "address": "0x801faac0",
       "size": 144,
       "sha256": "7a9e8c334495c9786186e08ec868d8705d43f84a5906f046a416f10bb364b69c",
@@ -773,6 +782,15 @@
       "source": "reconstruction/kernel_expansion/filesystem_pool.cpp",
       "header": "reconstruction/kernel_expansion/filesystem_pool.hpp",
       "symbols": ["FreeFileSystemPool"]
+    },
+    {
+      "address": "0x801fbde0",
+      "size": 128,
+      "sha256": "7506cd8a949e8975393c58c8211c63f9296fc490b9cf1e965381bca5fc2c045f",
+      "semantic_name": "QueryCurrentFatTimestamp",
+      "source": "reconstruction/kernel_expansion/fat_timestamp.cpp",
+      "header": "reconstruction/kernel_expansion/fat_timestamp.hpp",
+      "symbols": ["TimeFields", "FatTimestampServices", "QueryCurrentFatTimestamp"]
     },
     {
       "address": "0x801fcfd8",
@@ -811,6 +829,7 @@
     "reconstruction/kernel_expansion/drive_binding_test.cpp",
     "reconstruction/kernel_expansion/drive_prefix_test.cpp",
     "reconstruction/kernel_expansion/drive_registry_test.cpp",
+    "reconstruction/kernel_expansion/fat_timestamp_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/filesystem_close_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",

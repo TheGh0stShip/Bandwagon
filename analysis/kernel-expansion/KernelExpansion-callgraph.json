@@ -4466,16 +4466,16 @@
       "caller_address": "0x801f64b0",
       "instruction_address": "0x801f663c",
       "target_address": "0x801fa1d0",
-      "callee": "fn_801FA1D0",
-      "target_containing_function": "fn_801FA1D0"
+      "callee": "FatDateTimeToSystemTime",
+      "target_containing_function": "FatDateTimeToSystemTime"
     },
     {
       "caller": "fn_801F64B0",
       "caller_address": "0x801f64b0",
       "instruction_address": "0x801f664c",
       "target_address": "0x801fa1d0",
-      "callee": "fn_801FA1D0",
-      "target_containing_function": "fn_801FA1D0"
+      "callee": "FatDateTimeToSystemTime",
+      "target_containing_function": "FatDateTimeToSystemTime"
     },
     {
       "caller": "fn_801F64B0",
@@ -6122,8 +6122,8 @@
       "caller_address": "0x801f9358",
       "instruction_address": "0x801f9464",
       "target_address": "0x801fbde0",
-      "callee": "fn_801FBDE0",
-      "target_containing_function": "fn_801FBDE0"
+      "callee": "QueryCurrentFatTimestamp",
+      "target_containing_function": "QueryCurrentFatTimestamp"
     },
     {
       "caller": "fn_801F9358",
@@ -6370,16 +6370,16 @@
       "caller_address": "0x801f9d60",
       "instruction_address": "0x801f9df0",
       "target_address": "0x801fa1d0",
-      "callee": "fn_801FA1D0",
-      "target_containing_function": "fn_801FA1D0"
+      "callee": "FatDateTimeToSystemTime",
+      "target_containing_function": "FatDateTimeToSystemTime"
     },
     {
       "caller": "fn_801F9D60",
       "caller_address": "0x801f9d60",
       "instruction_address": "0x801f9e00",
       "target_address": "0x801fa1d0",
-      "callee": "fn_801FA1D0",
-      "target_containing_function": "fn_801FA1D0"
+      "callee": "FatDateTimeToSystemTime",
+      "target_containing_function": "FatDateTimeToSystemTime"
     },
     {
       "caller": "fn_801F9F10",
@@ -6510,7 +6510,7 @@
       "target_containing_function": "FreeFileSystemPool"
     },
     {
-      "caller": "fn_801FA1D0",
+      "caller": "FatDateTimeToSystemTime",
       "caller_address": "0x801fa1d0",
       "instruction_address": "0x801fa1d4",
       "target_address": "0x801fead8",
@@ -6518,7 +6518,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801FA1D0",
+      "caller": "FatDateTimeToSystemTime",
       "caller_address": "0x801fa1d0",
       "instruction_address": "0x801fa1f4",
       "target_address": "0x801febd8",
@@ -6526,7 +6526,7 @@
       "target_containing_function": "memset"
     },
     {
-      "caller": "fn_801FA1D0",
+      "caller": "FatDateTimeToSystemTime",
       "caller_address": "0x801fa1d0",
       "instruction_address": "0x801fa234",
       "target_address": "0x801ff348",
@@ -7226,8 +7226,8 @@
       "caller_address": "0x801fb5a0",
       "instruction_address": "0x801fb664",
       "target_address": "0x801fbde0",
-      "callee": "fn_801FBDE0",
-      "target_containing_function": "fn_801FBDE0"
+      "callee": "QueryCurrentFatTimestamp",
+      "target_containing_function": "QueryCurrentFatTimestamp"
     },
     {
       "caller": "fn_801FB5A0",
@@ -7446,7 +7446,7 @@
       "target_containing_function": "memcpy"
     },
     {
-      "caller": "fn_801FBDE0",
+      "caller": "QueryCurrentFatTimestamp",
       "caller_address": "0x801fbde0",
       "instruction_address": "0x801fbdf0",
       "target_address": "0x801ff428",
@@ -7454,7 +7454,7 @@
       "target_containing_function": "KeQuerySystemTime"
     },
     {
-      "caller": "fn_801FBDE0",
+      "caller": "QueryCurrentFatTimestamp",
       "caller_address": "0x801fbde0",
       "instruction_address": "0x801fbdfc",
       "target_address": "0x801ff438",
@@ -7890,8 +7890,8 @@
       "caller_address": "0x801fccc8",
       "instruction_address": "0x801fce4c",
       "target_address": "0x801fbde0",
-      "callee": "fn_801FBDE0",
-      "target_containing_function": "fn_801FBDE0"
+      "callee": "QueryCurrentFatTimestamp",
+      "target_containing_function": "QueryCurrentFatTimestamp"
     },
     {
       "caller": "fn_801FCCC8",
@@ -7930,8 +7930,8 @@
       "caller_address": "0x801fccc8",
       "instruction_address": "0x801fcf04",
       "target_address": "0x801fbde0",
-      "callee": "fn_801FBDE0",
-      "target_containing_function": "fn_801FBDE0"
+      "callee": "QueryCurrentFatTimestamp",
+      "target_containing_function": "QueryCurrentFatTimestamp"
     },
     {
       "caller": "fn_801FCCC8",

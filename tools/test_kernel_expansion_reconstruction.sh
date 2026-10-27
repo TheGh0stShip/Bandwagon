@@ -174,6 +174,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/file_disposition_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/fat_timestamp.cpp" \
+    "$root/reconstruction/kernel_expansion/fat_timestamp_test.cpp" \
+    -o "$work/fat_timestamp_test"
+"$work/fat_timestamp_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/filesystem_pool.cpp" \
     "$root/reconstruction/kernel_expansion/filesystem_pool_test.cpp" \
     -o "$work/filesystem_pool_test"
