@@ -35,4 +35,10 @@ python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
     -o "$work/modal_state_test"
 "$work/modal_state_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/discard_confirmation.cpp" \
+    "$root/reconstruction/boot_edit/discard_confirmation_test.cpp" \
+    -o "$work/discard_confirmation_test"
+"$work/discard_confirmation_test"
+
 echo "BootEdit portable reconstruction tests passed"

@@ -20,6 +20,9 @@
     "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":3562,"sha256":"f3fe31d956af4f12d3c37cc12104cb6515ba331d4bfa258988690fe67e45c042"},
     "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":2531,"sha256":"19364fea4a2c48287af141d0e854a3e48e8d3493845f139f17147ccd6f325b59"},
     "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":5207,"sha256":"9ecb54e4e89dd81c6c8a80bba03e9c4ff2aa264fbfcb1e0f7d12e8e3afce0c5f"},
+    "discard_source": {"path":"reconstruction/boot_edit/discard_confirmation.cpp","kind":"source","size":2889,"sha256":"8b2c391c84c731baef487832290a787934961fd72354dd75ebf8337d00c26192"},
+    "discard_header": {"path":"reconstruction/boot_edit/discard_confirmation.hpp","kind":"header","size":1767,"sha256":"b81399e37f002c15b01a1d2351ae7fa74d9929a0feab956bb2b99dd95acc6329"},
+    "discard_test": {"path":"reconstruction/boot_edit/discard_confirmation_test.cpp","kind":"test","size":2802,"sha256":"367a1e516f69f147a0563a06672db55c681f28e80eafbd4caf21b96c30f2240d"},
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":4896,"sha256":"9815cce846cd19fb61ee5a00c7881baf3a4525b06430fd6fd98a6ddd0d12bac6"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3728,"sha256":"d948bf0c08f0f49fc5e27ff4e1488051d5d4a2037d8a3745bbd42758d6daa8de"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7126,"sha256":"9cc1916a6d21ea7e3d697f4fba42a891956a02525035e5ba07a4a7120a6e536e"},
@@ -60,6 +63,21 @@
       "test_artifacts": ["manager_test"],
       "symbols": ["FormatThemePath", "CompleteThemeNameDialog", "ThemeNameCompletion"],
       "required_strings": ["Themes:\\%s.xbat"]
+    },
+    {
+      "address": "0x8204c870",
+      "end_exclusive": "0x8204cb28",
+      "size": 696,
+      "sha256": "577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015",
+      "inventory_name": "fn_8204C870",
+      "semantic_name": "ConfirmDiscardUnsavedChanges",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Child-dialog and name-task wait gates, unsaved prompt construction as modal type 4, Yes/No/Cancel continuation mapping, name-task or direct-save phase selection, save retry boundary, optional save-failure prompt as modal type 3, nested accept/decline mapping, failure marker, parent completion publication, and optional continuation dispatch; allocation, destruction, serialization, and modal rendering are injected boundaries.",
+      "source_artifacts": ["discard_source", "discard_header"],
+      "test_artifacts": ["discard_test"],
+      "symbols": ["DiscardConfirmationState", "DiscardPhase", "DiscardStep", "ApplyUnsavedChangesChoice", "ApplySaveFailureChoice", "AdvanceDiscardConfirmation"],
+      "required_strings": ["The current theme has unsaved changes, would you like to save them before continuing?", "Unsaved changes", "An error occurred while saving the theme. If you continue all changes will be lost, are you sure you want to continue?", "Error saving theme"]
     },
     {
       "address": "0x8204b998",
@@ -244,7 +262,6 @@
   ],
   "remaining_product_entries": [
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
-    {"address":"0x8204c870","end_exclusive":"0x8204cb28","size":696,"sha256":"577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015","role":"ConfirmDiscardUnsavedChanges","blocker":"model the nested save-failure continuation without collapsing modal states"},
     {"address":"0x82050958","end_exclusive":"0x82050a50","size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a","role":"saved-theme state initializer containing ColorsDifferExact leaf","blocker":"the inventory extent contains StartRefreshAsync, a separate modal constructor, padding, and ColorsDifferExact; all bodies must be covered together"},
     {"address":"0x82050f60","end_exclusive":"0x82051238","size":728,"sha256":"bf13e96bfcd3be60250a639d0ca53428e90df7c8bea252666e6959557c9c7551","role":"LoadEditorFonts","blocker":"recover exact UIDATA mapping, font configuration, glyph ranges, and atlas state"},
     {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"},
@@ -256,9 +273,9 @@
   "summary": {
     "product_function_count": 23,
     "product_bytes": 13696,
-    "model_covered_function_count": 14,
-    "model_covered_bytes": 5232,
-    "remaining_product_function_count": 9,
-    "remaining_product_bytes": 8464
+    "model_covered_function_count": 15,
+    "model_covered_bytes": 5928,
+    "remaining_product_function_count": 8,
+    "remaining_product_bytes": 7768
   }
 }
