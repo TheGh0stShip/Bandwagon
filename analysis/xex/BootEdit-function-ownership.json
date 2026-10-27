@@ -93,8 +93,9 @@
       ,{"from":"unknown","to":"platform_toolchain","start":"0x820500c8","end_exclusive":"0x820506b8","inventory_entry_count":6,"size":1520,"basis":"all six entries are exhaustive std::vector<56-byte T> template operations: pointer triplets, size/capacity division by 56, self-range traps, generic copy/destruction calls, and growth branches"}
       ,{"from":"unknown","to":"product_application","start":"0x8204cc40","end_exclusive":"0x8204d278","inventory_entry_count":1,"size":1592,"basis":"exact constructor initializes the version/sentinel header and all 39 product theme color vectors from a contiguous product data table; ResetToUnnamedTheme and theme-load paths call it directly"}
       ,{"from":"unknown","to":"product_application","start":"0x8204e1a8","end_exclusive":"0x8204e278","inventory_entry_count":1,"size":208,"basis":"theme constructor copies the exact 632-byte payload and overwrites its first eleven 48-byte diffuse/specular/ambient groups from the live renderer before use by reset and load flows"}
+      ,{"from":"unknown","to":"product_application","start":"0x8204e278","end_exclusive":"0x8204e310","inventory_entry_count":1,"size":152,"basis":"load-side product wrapper constructs exact defaults, decodes the selected path with the fixed 41-record theme descriptor, returns false on decode failure, and forwards successful path/name/payload state through the theme snapshot constructor"}
     ],
-    "after": {"unknown_entry_count":111,"unknown_size":28392,"product_application_entry_count":24,"product_application_size":14888}
+    "after": {"unknown_entry_count":110,"unknown_size":28240,"product_application_entry_count":25,"product_application_size":15040}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -135,6 +136,7 @@
     {"address":"0x8204c870","role":"ConfirmDiscardUnsavedChanges","confidence":"high"},
     {"address":"0x8204cc40","role":"exact 632-byte theme payload default initializer","confidence":"high"},
     {"address":"0x8204e1a8","role":"theme snapshot constructor capturing eleven live renderer mesh color triples","confidence":"high"},
+    {"address":"0x8204e278","role":"load-side theme decoder wrapper","confidence":"high"},
     {"address":"0x82050018","role":"default theme-name initializer","confidence":"high"},
     {"address":"0x820506b8","role":"EnumerateSavedThemes","confidence":"high"},
     {"address":"0x82050958","role":"saved-theme state initializer containing ColorsDifferExact leaf","confidence":"high"},
@@ -174,9 +176,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 24,
-      "size": 14888,
-      "concatenated_sha256": "29a9cfaa27eb935bd27f5e1814ef9e0e0f1a3d3e631432ac938356a1880da0fa",
+      "inventory_entry_count": 25,
+      "size": 15040,
+      "concatenated_sha256": "1aabd0589352b31ae2551782bc5dc833892e3afc244e0afab0074504031416f3",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -187,6 +189,7 @@
         {"start":"0x8204c870","end_exclusive":"0x8204cb28","inventory_entry_count":1,"size":696,"sha256":"577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015"},
         {"start":"0x8204cc40","end_exclusive":"0x8204d278","inventory_entry_count":1,"size":1592,"sha256":"f2521b470879982af294e19a92a41542fe1b3fb1e12a094e75beda1edba1c927"},
         {"start":"0x8204e1a8","end_exclusive":"0x8204e278","inventory_entry_count":1,"size":208,"sha256":"d37ddfb5e76c458711b5c5719f45e6b3a42226c4963da1307594b79384f09924"},
+        {"start":"0x8204e278","end_exclusive":"0x8204e310","inventory_entry_count":1,"size":152,"sha256":"d3da299d549d5a7f3816108fc607b0492732703e7cf2b4883bff37abcad15729"},
         {"start":"0x82050018","end_exclusive":"0x820500c8","inventory_entry_count":1,"size":176,"sha256":"ff0c7f969b27124dd90ff25016b2d2b9424585d1c66b8abb7534fadc9537455f"},
         {"start":"0x820506b8","end_exclusive":"0x82050900","inventory_entry_count":1,"size":584,"sha256":"3327b4dbf9e2293762a552593aed8be9e0e6b8b2f16d7ec5c0fa6b80ad1e4131"},
         {"start":"0x82050958","end_exclusive":"0x82050a50","inventory_entry_count":1,"size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a"},
@@ -232,9 +235,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 111,
-      "size": 28392,
-      "concatenated_sha256": "d792bea339f9383c007b4970ca9b221c62f0f92a68f1f11386b642de179025c9",
+      "inventory_entry_count": 110,
+      "size": 28240,
+      "concatenated_sha256": "9f3345a4dad139adec37908d5dbba4c076cfaa7580e7ba539852e8678125eb36",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -246,7 +249,7 @@
         {"start":"0x8204cbd8","end_exclusive":"0x8204cc40","inventory_entry_count":1,"size":104,"sha256":"dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1"},
         {"start":"0x8204d278","end_exclusive":"0x8204d818","inventory_entry_count":7,"size":1440,"sha256":"44bc889040d88e9e582dc15c8262be75e822c3466a659439388f91b2ae91af52"},
         {"start":"0x8204d878","end_exclusive":"0x8204e1a8","inventory_entry_count":8,"size":2352,"sha256":"39d947f12b0ae26b4531b85c441214341b6a57a8ea0c8f241fa3d1451f1a1f85"},
-        {"start":"0x8204e278","end_exclusive":"0x82050018","inventory_entry_count":24,"size":7584,"sha256":"24b1cdbe3ecb452faae924bb3ab28524ef31bd9ee462e14470bcca99f2c5d5e8"},
+        {"start":"0x8204e310","end_exclusive":"0x82050018","inventory_entry_count":23,"size":7432,"sha256":"5945fd276a21be87a6c647d11b58fa039d20640f12c99a460bf132f7ea83f1a1"},
         {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
         {"start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"sha256":"fcb81938e3cf52fb232b8866e6f90fb853d6c45cb5a637b9c64dc83ae24f3a57"},
         {"start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"sha256":"15cad7ac5ca342357a0021474f87182f16103ae26fc61642201d4d5cfeaaa11f"},
@@ -273,11 +276,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 24,
-    "product_application_size": 14888,
-    "non_product_entry_count": 910,
-    "non_product_size": 354536,
-    "unknown_entry_count": 111,
-    "unknown_size": 28392
+    "product_application_entry_count": 25,
+    "product_application_size": 15040,
+    "non_product_entry_count": 909,
+    "non_product_size": 354384,
+    "unknown_entry_count": 110,
+    "unknown_size": 28240
   }
 }

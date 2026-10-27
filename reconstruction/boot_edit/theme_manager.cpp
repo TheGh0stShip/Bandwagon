@@ -58,6 +58,19 @@ ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
   return snapshot;
 }
 
+ThemeLoadResult DecodeThemeSnapshot(const SavedTheme& saved_theme,
+                                    const LiveMeshColors& live_meshes,
+                                    const ThemePayloadDecoder& decoder) {
+  ThemeLoadResult result;
+  ThemePayload payload = MakeDefaultThemePayload();
+  if (!decoder || !decoder(saved_theme.path, &payload)) return result;
+  result.snapshot = CaptureThemeSnapshot(saved_theme.path,
+                                         saved_theme.display_name, payload,
+                                         live_meshes);
+  result.loaded = true;
+  return result;
+}
+
 std::string FormatThemePath(std::string_view name) {
   return std::string(kThemeDirectory) + std::string(name) +
          std::string(kThemeExtension);

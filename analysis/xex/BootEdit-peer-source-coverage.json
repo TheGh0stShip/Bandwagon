@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":31301,"sha256":"b082771a0cd8c607eba120b45ea0b02e0840bc4010cf13d2f6b5bd3a88f3b4db"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":31958,"sha256":"c4e6a40d217ddcddaa731e2a4d9c1ea96a11e79b0eb041aa373c86f7367f27cd"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -38,12 +38,12 @@
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
-    "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"3ba0be2ff86ec752594ee6cd47326d1df29f601ad56a63e93532c8c4d55c7da5"},
-    "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"5255c7682cacb96a9f22de0032a3fe6bed76f56c04eef64954ea1c7dcf21948d"},
+    "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"12b28538d9fdd4772ad3c041c5ba6f7d89e9e85fa0191d76313bf3a7cd78f2ff"},
+    "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"35fdb3e1f178ab665205f1c322286ea052efcb8591b9f24fe65442b038e0444a"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":7974,"sha256":"1c87b2e1cf3e8f81450740cc0445214477c002bf85ba1fb282090d75695fa79a"},
-    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":7435,"sha256":"bb9032f17befd0b356ea83046930ddfb5bb432184dde144d3b6bc87eb7474db9"},
-    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":5213,"sha256":"b7781851bbc5f9ca6f4da039625df747f40ed4e884a27e964b2b8ba61242c48e"},
-    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":6169,"sha256":"8d035168391c2db701073a13080af4c01905f4f7ea787989d363dd66e1b5b9c8"}
+    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":8030,"sha256":"0027f326c9b094fb5ba90146216f12137acd81fae245e35608b83da66e9b55db"},
+    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":5761,"sha256":"12a7892f3e3c6f4642fe93797e0dd0d7d5d9f9f851edf5ee0e634ee27f48b014"},
+    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":7386,"sha256":"48d8029083ec1b6d307a154f39209bb0fbcc402ae949702bf45a2bb8cace06ae"}
   },
   "functions": [
     {
@@ -209,6 +209,21 @@
       "source_artifacts": ["manager_source", "manager_header"],
       "test_artifacts": ["manager_test"],
       "symbols": ["ThemeSnapshot", "LiveMeshColors", "CaptureThemeSnapshot"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204e278",
+      "end_exclusive": "0x8204e310",
+      "size": 152,
+      "sha256": "d3da299d549d5a7f3816108fc607b0492732703e7cf2b4883bff37abcad15729",
+      "inventory_name": "fn_8204E278",
+      "semantic_name": "DecodeThemeSnapshot",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Exact default-payload construction, target ABI ordering of the 56-byte saved-theme path/name record, path-directed call into the fixed 41-record table decoder, unchanged false result on decode failure, and successful forwarding through CaptureThemeSnapshot. The table-driven file decoder remains an explicit dependency boundary.",
+      "source_artifacts": ["manager_source", "manager_header", "editor_source", "editor_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["SavedTheme", "ThemePayloadDecoder", "ThemeLoadResult", "DecodeThemeSnapshot"],
       "required_strings": []
     },
     {
@@ -409,10 +424,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 24,
-    "product_bytes": 14888,
-    "model_covered_function_count": 24,
-    "model_covered_bytes": 14888,
+    "product_function_count": 25,
+    "product_bytes": 15040,
+    "model_covered_function_count": 25,
+    "model_covered_bytes": 15040,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

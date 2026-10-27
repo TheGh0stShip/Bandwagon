@@ -47,6 +47,20 @@ ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
                                    const ThemePayload& payload,
                                    const LiveMeshColors& live_meshes);
 
+using ThemePayloadDecoder =
+    std::function<bool(std::string_view path, ThemePayload* payload)>;
+
+struct ThemeLoadResult {
+  bool loaded = false;
+  ThemeSnapshot snapshot{};
+};
+
+// Product wrapper at fn_8204E278. The target's table-driven, 41-record file
+// decoder is supplied as a boundary; all wrapper state and ordering are here.
+ThemeLoadResult DecodeThemeSnapshot(const SavedTheme& saved_theme,
+                                    const LiveMeshColors& live_meshes,
+                                    const ThemePayloadDecoder& decoder);
+
 struct ThemeManagerState {
   std::string active_path;
   std::string theme_name;

@@ -8,8 +8,8 @@
 namespace bandwagon::boot_edit {
 
 struct SavedTheme {
-  std::string display_name;
   std::string path;
+  std::string display_name;
 };
 
 // Models the string transformation applied to each Themes:\*.xbat result.

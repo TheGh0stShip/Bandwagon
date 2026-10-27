@@ -5,8 +5,8 @@ namespace bandwagon::boot_edit {
 SavedTheme BuildSavedTheme(std::string_view file_name) {
   const std::size_t extension = file_name.rfind(".xbat");
   return {
-      std::string(file_name.substr(0, extension)),
       "Themes:\\" + std::string(file_name),
+      std::string(file_name.substr(0, extension)),
   };
 }
 

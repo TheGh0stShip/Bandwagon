@@ -56,6 +56,34 @@ int main() {
   assert(snapshot.payload.colors[32] == live_meshes[10][2]);
   assert(snapshot.payload.colors[33] == untouched_color);
 
+  const SavedTheme load_record{"Themes:\\Loaded.xbat", "Loaded"};
+  bool decoder_called = false;
+  ThemeLoadResult load_result = DecodeThemeSnapshot(
+      load_record, live_meshes,
+      [&decoder_called](std::string_view path, ThemePayload* payload) {
+        decoder_called = true;
+        assert(path == "Themes:\\Loaded.xbat");
+        assert(payload->boot_animation_version == kBootAnimationVersion);
+        assert(payload->selected_mesh == -1);
+        payload->colors[33] = Color({0.1f, 0.2f, 0.3f, 0.4f});
+        return true;
+      });
+  assert(decoder_called && load_result.loaded);
+  assert(load_result.snapshot.active_path == load_record.path);
+  assert(load_result.snapshot.theme_name == load_record.display_name);
+  assert(load_result.snapshot.payload.colors[32] == live_meshes[10][2]);
+  assert(load_result.snapshot.payload.colors[33] ==
+         Color({0.1f, 0.2f, 0.3f, 0.4f}));
+  decoder_called = false;
+  load_result = DecodeThemeSnapshot(
+      load_record, live_meshes,
+      [&decoder_called](std::string_view, ThemePayload*) {
+        decoder_called = true;
+        return false;
+      });
+  assert(decoder_called && !load_result.loaded);
+  assert(load_result.snapshot.active_path.empty());
+
   ThemeDirectoryScan scan;
   scan.file_names = {"Blue.xbat", "Odd.xbat.backup"};
   const ThemeEnumerationResult enumeration = EnumerateSavedThemes(&state, scan);
