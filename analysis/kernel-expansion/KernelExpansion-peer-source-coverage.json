@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 80,
-    "lifted_instruction_bytes": 13512,
-    "peer_product_adapter_or_policy_function_count": 53,
-    "peer_product_adapter_or_policy_instruction_bytes": 7360,
+    "lifted_function_count": 81,
+    "lifted_instruction_bytes": 13664,
+    "peer_product_adapter_or_policy_function_count": 54,
+    "peer_product_adapter_or_policy_instruction_bytes": 7512,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -662,6 +662,20 @@
       "symbols": ["StfsPackageType", "ClassifyStfsPackageMagic", "kUnrecognizedPackageStatus"]
     },
     {
+      "address": "0x801f8570",
+      "size": 152,
+      "sha256": "b7c18893d4cef4c7948b298393e1949470a727fcddebfd336793aa64dba67577",
+      "semantic_name": "CreatePeerPressureScene",
+      "source": "reconstruction/kernel_expansion/xui_scene_override.cpp",
+      "header": "reconstruction/kernel_expansion/xui_scene_override.hpp",
+      "symbols": ["kPeerPressureHudResource", "kOverriddenSceneNames", "XuiSceneServices", "CreatePeerPressureScene"],
+      "data_dependencies": [
+        {"address":"0x802044c8","size":16,"sha256":"f8f66dc44f97a0f4a6d0e09f2b7c8cb8d7e984f3a80b4ab1aa20d84667e435e6","semantic_name":"OverriddenSceneNamePointerTable","symbols":["kOverriddenSceneNames"]},
+        {"address":"0x802025a0","size":184,"sha256":"3fe9ca746959dc9c9a000cc903288522eab5e8fc78b26c6eea623c7e24f041a1","semantic_name":"OverriddenSceneNameStrings","symbols":["kOverriddenSceneNames"]},
+        {"address":"0x80202318","size":148,"sha256":"f58b667f6e9932bc1e5a20d07f2f0fd1c58cd34d0148df6bbab9cfcd4f00ecf1","semantic_name":"PeerPressureHudResourceLocator","symbols":["kPeerPressureHudResource"]}
+      ]
+    },
+    {
       "address": "0x801f87f8",
       "size": 80,
       "sha256": "8df813a4e57c83a7eb0ed50021d9ea9b0d37b610f25d9ab473cbdf96a037a7eb",
@@ -880,6 +894,7 @@
     "reconstruction/kernel_expansion/xconfig_hooks_test.cpp",
     "reconstruction/kernel_expansion/xex_hooks_test.cpp",
     "reconstruction/kernel_expansion/xex_load_hooks_test.cpp",
+    "reconstruction/kernel_expansion/xui_scene_override_test.cpp",
     "tools/test_kernel_expansion_reconstruction.sh"
   ]
 }

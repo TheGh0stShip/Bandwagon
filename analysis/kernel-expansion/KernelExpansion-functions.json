@@ -1159,7 +1159,7 @@
       "address": "0x801f8570",
       "section_offset": "0x8570",
       "size_to_next_symbol": 152,
-      "name": "fn_801F8570",
+      "name": "CreatePeerPressureScene",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

@@ -249,6 +249,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/xex_load_hooks_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/xui_scene_override.cpp" \
+    "$root/reconstruction/kernel_expansion/xui_scene_override_test.cpp" \
+    -o "$work/xui_scene_override_test"
+"$work/xui_scene_override_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/flash_versions.cpp" \
     "$root/reconstruction/kernel_expansion/flash_versions_test.cpp" \
     -o "$work/flash_versions_test"

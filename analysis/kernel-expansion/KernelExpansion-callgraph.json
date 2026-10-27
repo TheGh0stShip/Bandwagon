@@ -5558,7 +5558,7 @@
       "target_containing_function": "RtlImageXexHeaderField"
     },
     {
-      "caller": "fn_801F8570",
+      "caller": "CreatePeerPressureScene",
       "caller_address": "0x801f8570",
       "instruction_address": "0x801f8574",
       "target_address": "0x801feacc",
@@ -5566,7 +5566,7 @@
       "target_containing_function": "fn_801FEACC"
     },
     {
-      "caller": "fn_801F8570",
+      "caller": "CreatePeerPressureScene",
       "caller_address": "0x801f8570",
       "instruction_address": "0x801f85ac",
       "target_address": "0x801fee58",
@@ -5574,7 +5574,7 @@
       "target_containing_function": "RtlCompareUnicodeStringN"
     },
     {
-      "caller": "fn_801F8570",
+      "caller": "CreatePeerPressureScene",
       "caller_address": "0x801f8570",
       "instruction_address": "0x801f85d8",
       "target_address": "0x801ff308",
@@ -5582,7 +5582,7 @@
       "target_containing_function": "XuiSceneCreate"
     },
     {
-      "caller": "fn_801F8570",
+      "caller": "CreatePeerPressureScene",
       "caller_address": "0x801f8570",
       "instruction_address": "0x801f85f8",
       "target_address": "0x801ff308",
