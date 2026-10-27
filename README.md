@@ -64,7 +64,7 @@ reconstructions remain as test oracles, not as substitutes for readable source.
 
 | Workstream | Known source work still missing | Unresolved provenance |
 |---|---:|---:|
-| KernelExpansion | 42 functions / 17,796 bytes | 72 functions / 16,024 bytes |
+| KernelExpansion | 41 functions / 17,636 bytes | 72 functions / 16,024 bytes |
 | HDD Stage2 | 3,432 candidate worker bytes, plus modified ROP/data | Included in its remaining analysis |
 | SettingsApp | 243 functions / 59,152 bytes | 13 functions / 5,336 bytes |
 | BootEdit | None among currently classified product code | 32 functions / 8,648 bytes |
@@ -111,7 +111,7 @@ already been built.
 | AuroraFixer | Complete | 5 / 5 product routines | None |
 | BootXell | Complete | 9 / 9 product entries, 2,944 / 2,944 B | None |
 | Updater | Complete | 20 / 20 product entries, 6,728 / 6,728 B | None |
-| KernelExpansion | Partial | 54 / 96 known product entries, 7,512 / 25,308 B | 42 entries / 17,796 B, plus 72 unknown entries / 16,024 B |
+| KernelExpansion | Partial | 55 / 96 known product entries, 7,672 / 25,308 B | 41 entries / 17,636 B, plus 72 unknown entries / 16,024 B |
 | HDD Stage2 | Partial | Ownership split and exact binary reconstruction | 3,432 candidate product worker bytes, modified ROP/data, and integration |
 | UpdateCheck | Complete | 19 / 19 product entries, 6,768 / 6,768 B | None in the current source-composition boundary |
 | SettingsApp | Partial | 3 / 246 product/mixed entries, 3,112 / 62,264 B | 243 entries / 59,152 B, plus 13 unknown entries / 5,336 B |
@@ -139,7 +139,7 @@ This project is therefore **not near 100% source recovery**. The unfinished
 targets are the largest ones, so 10 / 14 completed targets must not be read as
 71% of the remaining effort. The current backlog is:
 
-- 42 known KernelExpansion product functions / 17,796 instruction bytes that
+- 41 known KernelExpansion product functions / 17,636 instruction bytes that
   still lack readable source models, plus 72 functions still needing ownership
   classification;
 - 3,432 candidate product bytes in the Stage2 worker, plus its modified outer

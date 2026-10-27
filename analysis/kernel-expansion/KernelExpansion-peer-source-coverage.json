@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 81,
-    "lifted_instruction_bytes": 13664,
-    "peer_product_adapter_or_policy_function_count": 54,
-    "peer_product_adapter_or_policy_instruction_bytes": 7512,
+    "lifted_function_count": 82,
+    "lifted_instruction_bytes": 13824,
+    "peer_product_adapter_or_policy_function_count": 55,
+    "peer_product_adapter_or_policy_instruction_bytes": 7672,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -694,6 +694,15 @@
       "symbols": ["FileCreateDisposition", "FileDispositionDiagnostics", "MapCreateDispositionToOpenFlags", "kSupersedeOrOverwriteIfFlag", "kCreateFlag", "kOpenIfFlag"]
     },
     {
+      "address": "0x801f9810",
+      "size": 160,
+      "sha256": "c28c211b82625d0b15a66bdbf755efe5fd496992611e8abbcec9cd7518f4f309",
+      "semantic_name": "CompleteFileIoAndReleaseLocks",
+      "source": "reconstruction/kernel_expansion/filesystem_completion.cpp",
+      "header": "reconstruction/kernel_expansion/filesystem_completion.hpp",
+      "symbols": ["CompletionFileObject", "CompletionStackLocation", "CompletionRequest", "CompletionDeviceExtension", "CompletionLockServices", "CompleteFileIoAndReleaseLocks"]
+    },
+    {
       "address": "0x801f9ec0",
       "size": 80,
       "sha256": "93b5ff9e58280ea3978f6b63f27bfb0ae3c1c3b4e5df37f746c0cc8e34458cfe",
@@ -871,6 +880,7 @@
     "reconstruction/kernel_expansion/fat_timestamp_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/filesystem_close_test.cpp",
+    "reconstruction/kernel_expansion/filesystem_completion_test.cpp",
     "reconstruction/kernel_expansion/filesystem_name_node_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
     "reconstruction/kernel_expansion/flash_versions_test.cpp",

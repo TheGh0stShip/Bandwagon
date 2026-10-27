@@ -6222,7 +6222,7 @@
       "target_containing_function": "DbgBreakPoint"
     },
     {
-      "caller": "fn_801F9810",
+      "caller": "CompleteFileIoAndReleaseLocks",
       "caller_address": "0x801f9810",
       "instruction_address": "0x801f9888",
       "target_address": "0x801feee8",
@@ -6230,7 +6230,7 @@
       "target_containing_function": "ExReleaseReadWriteLock"
     },
     {
-      "caller": "fn_801F9810",
+      "caller": "CompleteFileIoAndReleaseLocks",
       "caller_address": "0x801f9810",
       "instruction_address": "0x801f9890",
       "target_address": "0x801feee8",

@@ -1339,7 +1339,7 @@
       "address": "0x801f9810",
       "section_offset": "0x9810",
       "size_to_next_symbol": 160,
-      "name": "fn_801F9810",
+      "name": "CompleteFileIoAndReleaseLocks",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],
