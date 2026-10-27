@@ -40,6 +40,13 @@ ThemePayload MakeDefaultThemePayload() {
   return payload;
 }
 
+BootEditStartupState InitializeBootEditStartupState() {
+  BootEditStartupState state;
+  state.timeline_origin = -14.06974315643310546875f;  // 0xc1611dab
+  state.startup_theme = MakeDefaultThemePayload();
+  return state;
+}
+
 ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
                                    std::string_view theme_name,
                                    const ThemePayload& payload,

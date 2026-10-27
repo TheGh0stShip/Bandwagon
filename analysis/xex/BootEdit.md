@@ -29,10 +29,10 @@ contains 218 references in 69 functions. Regenerate the complete set with
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product theme-editor application | 28 | 15,344 | Recover as readable source |
+| Product theme-editor application | 29 | 15,520 | Recover as readable source |
 | Dear ImGui 1.86 | 441 | 231,096 | Use the pinned upstream source |
 | MSVC/Xbox platform and toolchain | 389 | 104,896 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 76 | 18,088 | Fingerprint before deciding whether to lift |
+| Unknown framework/backend/lookup code | 75 | 17,912 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -87,11 +87,12 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds all 28 product entries and
-all 15,344 bytes to readable, tested C++ behavioral models. This includes the
+`BootEdit-peer-source-coverage.json` binds all 29 product entries and
+all 15,520 bytes to readable, tested C++ behavioral models. This includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
-decoder/encoder codec and frame lifecycle glue. The known-product queue is
-empty; the remaining work is provenance resolution for the 76 unknown
+decoder/encoder codec, frame lifecycle glue, and the complete top-level
+startup-state constructor at `0x82051238`. The known-product queue is
+empty; the remaining work is provenance resolution for the 75 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full

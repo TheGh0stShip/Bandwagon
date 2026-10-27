@@ -32,6 +32,25 @@ int main() {
   assert(state.live_theme.colors[0] == Color({0.7f, 0.7f, 0.7f, 1.0f}));
   assert(state.live_theme.colors[1][3] == 8.0f);
   assert(state.live_theme.colors[11] == Color({0.0f, 0.0f, 0.0f, 1.0f}));
+
+  const BootEditStartupState startup = InitializeBootEditStartupState();
+  assert(startup.root_state == 0 && !startup.active);
+  assert((startup.service_handles == std::array<std::uint32_t, 3>{}));
+  for (std::uint8_t value : startup.editor_storage) assert(value == 0);
+  for (std::uint8_t value : startup.navigation_storage) assert(value == 0);
+  assert(startup.previous_ticks == 0 && startup.current_ticks == 0);
+  std::uint32_t timeline_bits = 0;
+  std::memcpy(&timeline_bits, &startup.timeline_origin, sizeof(timeline_bits));
+  assert(timeline_bits == 0xc1611dab);
+  assert(!startup.editor_visible && !startup.refresh_pending &&
+         !startup.notice_present);
+  assert((startup.task_state == std::array<std::uint32_t, 3>{}));
+  assert(startup.selection == 0 && startup.navigation_state == 0);
+  assert(startup.startup_theme.boot_animation_version ==
+         kBootAnimationVersion);
+  assert(startup.startup_theme.selected_mesh == -1);
+  assert(startup.startup_theme.colors[38] ==
+         MakeDefaultThemePayload().colors[38]);
   std::uint32_t final_green_bits = 0;
   std::memcpy(&final_green_bits, &state.live_theme.colors[38][1],
               sizeof(final_green_bits));

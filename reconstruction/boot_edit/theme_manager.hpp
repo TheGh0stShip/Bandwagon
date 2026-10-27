@@ -32,6 +32,32 @@ static_assert(sizeof(ThemePayload) == 632,
 
 ThemePayload MakeDefaultThemePayload();
 
+// Portable, typed representation of every field written by the product
+// constructor at 0x82051238. Some downstream object meanings remain unnamed,
+// so the two fixed storage regions retain layout-oriented names rather than
+// speculative class identities.
+struct BootEditStartupState {
+  std::uint32_t root_state = 0;
+  bool active = false;
+  std::array<std::uint32_t, 3> service_handles{};
+  std::array<std::uint8_t, 400> editor_storage{};
+  std::array<std::uint8_t, 48> navigation_storage{};
+  std::uint32_t previous_ticks = 0;
+  std::uint32_t current_ticks = 0;
+  float timeline_origin = 0.0f;
+  bool editor_visible = false;
+  std::array<std::uint32_t, 3> task_state{};
+  bool refresh_pending = false;
+  std::uint32_t selection = 0;
+  bool notice_present = false;
+  std::uint32_t navigation_state = 0;
+  ThemePayload startup_theme{};
+};
+
+// Exact initialization behavior of BootEdit 0x82051238. The unusual negative
+// timeline value is loaded from the target's bound .rdata constant.
+BootEditStartupState InitializeBootEditStartupState();
+
 using LiveMeshColors = std::array<std::array<Color, 3>, 11>;
 
 struct ThemeSnapshot {
