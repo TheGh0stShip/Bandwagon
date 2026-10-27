@@ -9,6 +9,7 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
 
 python3 "$root/tools/verify_bootedit_function_ownership.py"
 python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
+python3 "$root/tools/verify_bootedit_xbox_backend.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/theme_editor.cpp" \

@@ -47,7 +47,9 @@ have verified readable source, and all five former unknown wrapper containers /
 608 bytes have positive Microsoft-platform provenance. The next focused queue
 is BootEdit's provenance backlog: all 22 known product functions / 13,088 bytes
 now have verified readable source, while its 119 unknown entries must be
-fingerprinted before any further lifting decision.
+fingerprinted before any further lifting decision. The first 11 unknown entries /
+5,128 bytes (the mixed Xbox 360/DX9 backend) now have an exhaustive hash-bound
+semantic partition; their readable source lift is next.
 
 ### Already source-complete
 
