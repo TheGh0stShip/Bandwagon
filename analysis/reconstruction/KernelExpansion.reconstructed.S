@@ -9827,7 +9827,7 @@ fn_801F9358:
     .long 0x38210120 /* 0x0975c */
     .long 0x480053a8 /* 0x09760 */
     .long 0x00000000 /* 0x09764 */
-fn_801F9768:
+MapFatFsResultToNtStatus:
     .long 0x7d8802a6 /* 0x09768 */
     .long 0x4800536d /* 0x0976c */
     .long 0x9421ff90 /* 0x09770 */

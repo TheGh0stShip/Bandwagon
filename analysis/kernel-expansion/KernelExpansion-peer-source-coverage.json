@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 83,
-    "lifted_instruction_bytes": 13988,
-    "peer_product_adapter_or_policy_function_count": 56,
-    "peer_product_adapter_or_policy_instruction_bytes": 7836,
+    "lifted_function_count": 84,
+    "lifted_instruction_bytes": 14156,
+    "peer_product_adapter_or_policy_function_count": 57,
+    "peer_product_adapter_or_policy_instruction_bytes": 8004,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -694,6 +694,18 @@
       "symbols": ["FileCreateDisposition", "FileDispositionDiagnostics", "MapCreateDispositionToOpenFlags", "kSupersedeOrOverwriteIfFlag", "kCreateFlag", "kOpenIfFlag"]
     },
     {
+      "address": "0x801f9768",
+      "size": 168,
+      "sha256": "dd6d8d9b5b49cad6712fd8d6d57d68656d091bd3605ae6d9295510781fa928a9",
+      "semantic_name": "MapFatFsResultToNtStatus",
+      "source": "reconstruction/kernel_expansion/filesystem_result.cpp",
+      "header": "reconstruction/kernel_expansion/filesystem_result.hpp",
+      "symbols": ["FileSystemResultDiagnostics", "MapFatFsResultToNtStatus", "kUnsupportedFatResultFormat"],
+      "data_dependencies": [
+        {"address":"0x80202474","size":60,"sha256":"60497b23b93f07088e4e10f98ab8040e1145849a02112f7f0fc2389227f76928","semantic_name":"UnsupportedFatResultFormat","symbols":["kUnsupportedFatResultFormat"]}
+      ]
+    },
+    {
       "address": "0x801f9810",
       "size": 160,
       "sha256": "c28c211b82625d0b15a66bdbf755efe5fd496992611e8abbcec9cd7518f4f309",
@@ -895,6 +907,7 @@
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/filesystem_close_test.cpp",
     "reconstruction/kernel_expansion/filesystem_completion_test.cpp",
+    "reconstruction/kernel_expansion/filesystem_result_test.cpp",
     "reconstruction/kernel_expansion/filesystem_name_node_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
     "reconstruction/kernel_expansion/flash_versions_test.cpp",

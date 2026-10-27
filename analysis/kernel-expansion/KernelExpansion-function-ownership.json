@@ -9,7 +9,7 @@
   },
   "function_inventory": {
     "path": "analysis/kernel-expansion/KernelExpansion-functions.json",
-    "sha256": "b2daf77bc2f4f5461cc6e5202e48d9b9e8ed4cd36209657c3331612f13a2457b",
+    "sha256": "5c5a4d4501a492ffaeea6e38af15d48984cdaafc48302d99a1f8bbe466f5c27a",
     "entry_count": 372
   },
   "fatfs_function_map": {

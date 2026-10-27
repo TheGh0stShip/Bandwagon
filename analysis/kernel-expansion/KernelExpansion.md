@@ -73,7 +73,7 @@ the product/local-adapter boundary. They implement hook patching, Xbox
 object-manager links, SATA UDMA policy, file loading, and bootstrap cleanup;
 calling platform APIs does not establish platform-source provenance. All nine
 already have tested readable source, so this correction does not increase the
-remaining backlog: 40 known product functions / 17,472 bytes still need lifts.
+remaining backlog: 39 known product functions / 17,304 bytes still need lifts.
 
 The fingerprint is the unpatched base release, not current patched FatFs.
 ChaN's official patch page records later R0.16 correctness and security fixes.
@@ -405,6 +405,11 @@ lift. The first exact-byte-bound routines are:
   callback that propagates pending state, advances a synchronous file offset
   only after successful read/write requests, releases both device locks in
   order, and always returns success.
+- `MapFatFsResultToNtStatus` (`0x801f9768`, 168 bytes), the custom filesystem
+  boundary adapter that maps `FR_NO_FILE`, `FR_NO_PATH`, `FR_INVALID_NAME`,
+  and `FR_EXIST` to their exact NTSTATUS and secondary-code pairs. Unsupported
+  results preserve `STATUS_UNSUCCESSFUL`, zero the optional secondary output,
+  print the recovered diagnostic, and break into the debugger.
 - `PeerDiskIoControl` (`0x801fe9f8`, 164 bytes), the custom FatFs/Xbox adapter
   for sync, sector-count, sector-size, and block-size requests. It preserves
   low-byte drive/command indexing, missing-drive diagnostics and breakpoint,
@@ -413,9 +418,9 @@ lift. The first exact-byte-bound routines are:
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-83 independently bounded routines totaling 13,988 original instruction bytes.
+84 independently bounded routines totaling 14,156 original instruction bytes.
 Five routines / 1,040 bytes are upstream FatFs regression models and 22 /
-5,112 bytes remain unattributed. The other 56 current lifts / 7,836 bytes are
+5,112 bytes remain unattributed. The other 57 current lifts / 8,004 bytes are
 classified as product adapter or policy behavior, including the nine
 source-covered app-local helpers, without implying personal authorship.
 

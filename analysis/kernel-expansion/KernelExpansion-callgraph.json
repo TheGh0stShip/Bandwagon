@@ -3778,8 +3778,8 @@
       "caller_address": "0x801f52a8",
       "instruction_address": "0x801f5ac4",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F52A8",
@@ -4010,8 +4010,8 @@
       "caller_address": "0x801f5c08",
       "instruction_address": "0x801f5ee0",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F5C08",
@@ -4282,8 +4282,8 @@
       "caller_address": "0x801f60d0",
       "instruction_address": "0x801f62b4",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "UnsupportedDeviceOperation",
@@ -4346,8 +4346,8 @@
       "caller_address": "0x801f62e8",
       "instruction_address": "0x801f644c",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F62E8",
@@ -4482,8 +4482,8 @@
       "caller_address": "0x801f64b0",
       "instruction_address": "0x801f6724",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F64B0",
@@ -4674,8 +4674,8 @@
       "caller_address": "0x801f68b0",
       "instruction_address": "0x801f698c",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F68B0",
@@ -4746,8 +4746,8 @@
       "caller_address": "0x801f68b0",
       "instruction_address": "0x801f6a48",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F68B0",
@@ -5970,8 +5970,8 @@
       "caller_address": "0x801f8fe8",
       "instruction_address": "0x801f90fc",
       "target_address": "0x801f9768",
-      "callee": "fn_801F9768",
-      "target_containing_function": "fn_801F9768"
+      "callee": "MapFatFsResultToNtStatus",
+      "target_containing_function": "MapFatFsResultToNtStatus"
     },
     {
       "caller": "fn_801F8FE8",
@@ -6198,7 +6198,7 @@
       "target_containing_function": "FreeFileSystemPool"
     },
     {
-      "caller": "fn_801F9768",
+      "caller": "MapFatFsResultToNtStatus",
       "caller_address": "0x801f9768",
       "instruction_address": "0x801f976c",
       "target_address": "0x801fead8",
@@ -6206,7 +6206,7 @@
       "target_containing_function": "fn_801FEAD8"
     },
     {
-      "caller": "fn_801F9768",
+      "caller": "MapFatFsResultToNtStatus",
       "caller_address": "0x801f9768",
       "instruction_address": "0x801f97f0",
       "target_address": "0x801fec18",
@@ -6214,7 +6214,7 @@
       "target_containing_function": "DbgPrint"
     },
     {
-      "caller": "fn_801F9768",
+      "caller": "MapFatFsResultToNtStatus",
       "caller_address": "0x801f9768",
       "instruction_address": "0x801f97f4",
       "target_address": "0x801fec78",

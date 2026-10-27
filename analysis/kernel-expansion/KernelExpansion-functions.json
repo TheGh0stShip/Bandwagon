@@ -1329,7 +1329,7 @@
       "address": "0x801f9768",
       "section_offset": "0x9768",
       "size_to_next_symbol": 168,
-      "name": "fn_801F9768",
+      "name": "MapFatFsResultToNtStatus",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],
