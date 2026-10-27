@@ -73,7 +73,7 @@ the product/local-adapter boundary. They implement hook patching, Xbox
 object-manager links, SATA UDMA policy, file loading, and bootstrap cleanup;
 calling platform APIs does not establish platform-source provenance. All nine
 already have tested readable source, so this correction does not increase the
-remaining backlog: 44 known product functions / 18,084 bytes still need lifts.
+remaining backlog: 43 known product functions / 17,948 bytes still need lifts.
 
 The fingerprint is the unpatched base release, not current patched FatFs.
 ChaN's official patch page records later R0.16 correctness and security fixes.
@@ -393,13 +393,17 @@ lift. The first exact-byte-bound routines are:
 - `CloneFileSystemNameNode` (`0x801faf60`, 128 bytes), including the exact
   length-derived allocation size, low-bit flag forwarding, bounded UTF-16 name
   copy, allocation-failure path, and reciprocal source/clone link writes.
+- `HandOffBootPartitions` (`0x801f0568`, 136 bytes), including all eight exact
+  partition-name/device-path pairs, required `Partition1` failure breakpoint,
+  seven optional bindings, physical-memory release type, and loader-state
+  clearing. The four underlying pointer/string ranges are hash-bound too.
 
 Their source coverage is bound to exact function hashes by
 `KernelExpansion-peer-source-coverage.json`. Run the verifier and host tests
 with `tools/test_kernel_expansion_reconstruction.sh`. The current layer covers
-79 independently bounded routines totaling 13,376 original instruction bytes.
+80 independently bounded routines totaling 13,512 original instruction bytes.
 Five routines / 1,040 bytes are upstream FatFs regression models and 22 /
-5,112 bytes remain unattributed. The other 52 current lifts / 7,224 bytes are
+5,112 bytes remain unattributed. The other 53 current lifts / 7,360 bytes are
 classified as product adapter or policy behavior, including the nine
 source-covered app-local helpers, without implying personal authorship.
 

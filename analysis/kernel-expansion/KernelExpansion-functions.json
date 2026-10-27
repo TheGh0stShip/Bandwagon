@@ -62,7 +62,7 @@
       "address": "0x801f0568",
       "section_offset": "0x568",
       "size_to_next_symbol": 136,
-      "name": "fn_801F0568",
+      "name": "HandOffBootPartitions",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

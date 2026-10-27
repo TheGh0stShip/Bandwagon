@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 79,
-    "lifted_instruction_bytes": 13376,
-    "peer_product_adapter_or_policy_function_count": 52,
-    "peer_product_adapter_or_policy_instruction_bytes": 7224,
+    "lifted_function_count": 80,
+    "lifted_instruction_bytes": 13512,
+    "peer_product_adapter_or_policy_function_count": 53,
+    "peer_product_adapter_or_policy_instruction_bytes": 7360,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -48,6 +48,21 @@
       "source": "reconstruction/kernel_expansion/sata_udma.cpp",
       "header": "reconstruction/kernel_expansion/sata_udma.hpp",
       "symbols": ["SataUdmaServices", "ConfigureSataUltraDmaMode", "kSataChannelAddress", "kSataIdentifyDataSize", "kSataUltraDmaCapabilityOffset", "kMinimumSataUltraDmaMode", "kMaximumSataUltraDmaMode", "kSataUltraDmaTransferModeBase", "kSataTransferModeSettleMicroseconds"]
+    },
+    {
+      "address": "0x801f0568",
+      "size": 136,
+      "sha256": "82a9d861ab34ce9e9cc7c8abcb9d019f004721f9d5c56c1938c14455bfce3ae8",
+      "semantic_name": "HandOffBootPartitions",
+      "source": "reconstruction/kernel_expansion/boot_partition_handoff.cpp",
+      "header": "reconstruction/kernel_expansion/boot_partition_handoff.hpp",
+      "symbols": ["BootPartitionBinding", "kBootPartitionBindings", "BootPartitionLoaderState", "BootPartitionHandoffServices", "HandOffBootPartitions"],
+      "data_dependencies": [
+        {"address":"0x80203544","size":32,"sha256":"5a6921df7a92df4c83ffca8bf1ea175dfbe524803610edb5b36e8b0f73102d19","semantic_name":"BootPartitionNamePointerTable"},
+        {"address":"0x80203564","size":32,"sha256":"4d39aa52ca9b9be74002132af6737886254bc62e9c30bd1af7d6172e66b4dd35","semantic_name":"BootPartitionDevicePathPointerTable"},
+        {"address":"0x801ff8c8","size":264,"sha256":"71a534bfe4a4c4810f8dda10bce411ab94528e73196d63e768e9f713711b032e","semantic_name":"BootPartitionNameStrings"},
+        {"address":"0x801ff9d0","size":288,"sha256":"f4e858ce3db9d43dbde9634a8008360eb211dfc873f264609688c82367500f92","semantic_name":"BootPartitionDevicePathStrings"}
+      ]
     },
     {
       "address": "0x801f05f0",
@@ -825,6 +840,7 @@
   "tests": [
     "reconstruction/kernel_expansion/bootstrap_mapping_test.cpp",
     "reconstruction/kernel_expansion/boot_animation_theme_test.cpp",
+    "reconstruction/kernel_expansion/boot_partition_handoff_test.cpp",
     "reconstruction/kernel_expansion/config_access_test.cpp",
     "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_persistence_test.cpp",

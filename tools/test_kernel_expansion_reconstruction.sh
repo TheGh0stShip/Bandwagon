@@ -54,6 +54,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/boot_animation_theme_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/boot_partition_handoff.cpp" \
+    "$root/reconstruction/kernel_expansion/boot_partition_handoff_test.cpp" \
+    -o "$work/boot_partition_handoff_test"
+"$work/boot_partition_handoff_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/config_hash.cpp" \
     "$root/reconstruction/kernel_expansion/config_hash_test.cpp" \
     -o "$work/config_hash_test"

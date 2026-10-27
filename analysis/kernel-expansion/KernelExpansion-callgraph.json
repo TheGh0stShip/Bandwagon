@@ -82,8 +82,8 @@
       "caller_address": "0x801f0000",
       "instruction_address": "0x801f00dc",
       "target_address": "0x801f0568",
-      "callee": "fn_801F0568",
-      "target_containing_function": "fn_801F0568"
+      "callee": "HandOffBootPartitions",
+      "target_containing_function": "HandOffBootPartitions"
     },
     {
       "caller": "KernelExpansionInitialize",
@@ -422,7 +422,7 @@
       "target_containing_function": "SataChannelIdentifyDevice"
     },
     {
-      "caller": "fn_801F0568",
+      "caller": "HandOffBootPartitions",
       "caller_address": "0x801f0568",
       "instruction_address": "0x801f056c",
       "target_address": "0x801fead4",
@@ -430,7 +430,7 @@
       "target_containing_function": "fn_801FEAD4"
     },
     {
-      "caller": "fn_801F0568",
+      "caller": "HandOffBootPartitions",
       "caller_address": "0x801f0568",
       "instruction_address": "0x801f0594",
       "target_address": "0x801f0e38",
@@ -438,7 +438,7 @@
       "target_containing_function": "fn_801F0E38"
     },
     {
-      "caller": "fn_801F0568",
+      "caller": "HandOffBootPartitions",
       "caller_address": "0x801f0568",
       "instruction_address": "0x801f05a0",
       "target_address": "0x801fec78",
@@ -446,7 +446,7 @@
       "target_containing_function": "DbgBreakPoint"
     },
     {
-      "caller": "fn_801F0568",
+      "caller": "HandOffBootPartitions",
       "caller_address": "0x801f0568",
       "instruction_address": "0x801f05b8",
       "target_address": "0x801f0e38",
@@ -454,7 +454,7 @@
       "target_containing_function": "fn_801F0E38"
     },
     {
-      "caller": "fn_801F0568",
+      "caller": "HandOffBootPartitions",
       "caller_address": "0x801f0568",
       "instruction_address": "0x801f05d0",
       "target_address": "0x801fecc8",
