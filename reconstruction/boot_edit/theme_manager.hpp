@@ -17,13 +17,20 @@ inline constexpr std::string_view kThemeDirectory = "Themes:\\";
 inline constexpr std::string_view kThemeExtension = ".xbat";
 inline constexpr std::uint32_t kNoMoreFiles = 18;
 
-// The application copies this object as one 632-byte block.  Fields beyond
-// the recovered leading version remain opaque until the theme serializer is
-// lifted; retaining their exact width makes the copy boundary explicit.
+// Exact 632-byte on-disk/in-memory theme payload recovered from
+// fn_8204CC40.  The target initializes a version/sentinel pair followed by
+// 39 four-float color records.  Keeping this typed prevents the serialized
+// theme format from disappearing behind an opaque byte blob.
 struct ThemePayload {
   std::uint32_t boot_animation_version = kBootAnimationVersion;
-  std::array<std::uint8_t, 628> settings{};
+  std::int32_t selected_mesh = -1;
+  std::array<Color, 39> colors{};
 };
+
+static_assert(sizeof(ThemePayload) == 632,
+              "PeerPressure theme payload must remain byte-exact");
+
+ThemePayload MakeDefaultThemePayload();
 
 struct ThemeManagerState {
   std::string active_path;

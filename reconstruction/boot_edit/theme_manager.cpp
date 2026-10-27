@@ -2,6 +2,44 @@
 
 namespace bandwagon::boot_edit {
 
+ThemePayload MakeDefaultThemePayload() {
+  ThemePayload payload;
+  payload.colors = {{
+      {0.7f, 0.7f, 0.7f, 1.0f}, {0.5f, 0.5f, 0.5f, 8.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {0.7f, 0.7f, 0.7f, 1.0f},
+      {0.5f, 0.5f, 0.5f, 8.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.7f, 0.7f, 0.7f, 1.0f}, {0.5f, 0.5f, 0.5f, 8.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {0.0f, 0.0f, 0.0f, 1.0f},
+      {0.7f, 0.7f, 0.7f, 1.0f}, {0.8f, 0.8f, 0.8f, 1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {0.7f, 0.9f, 0.6f, 1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.6f, 0.9f, 0.5f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.5725489854812622f, 0.749019980430603f, 0.22745099663734436f,
+       1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.6274510025978088f, 0.6509799957275391f, 0.6196079850196838f,
+       1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.6f, 0.9f, 0.5f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.5725489854812622f, 0.749019980430603f, 0.22745099663734436f,
+       1.0f},
+      {1.0f, 1.0f, 1.0f, 1.0f}, {1.0f, 1.0f, 1.0f, 1.0f},
+      {0.0470588244497776f, 0.5333333611488342f, 0.062745101749897f,
+       1.0f},
+      {0.800000011920929f, 0.9019607901573181f, 0.27450981736183167f,
+       1.0f},
+      {0.9803921580314636f, 1.0f, 0.4117647111415863f, 1.0f},
+      {0.30588236451148987f, 0.7411764860153198f, 0.1568627506494522f,
+       1.0f},
+      {0.3499999940395355f, 1.0f, 0.0f, 1.0f},
+      {0.699999988079071f, 0.800000011920929f, 0.5f, 1.0f},
+  }};
+  return payload;
+}
+
 std::string FormatThemePath(std::string_view name) {
   return std::string(kThemeDirectory) + std::string(name) +
          std::string(kThemeExtension);
@@ -27,8 +65,8 @@ ThemeNameCompletion CompleteThemeNameDialog(bool accepted,
 ThemeManagerState InitializeThemeManager() {
   ThemeManagerState state;
   state.theme_name = std::string(kUnnamedThemeName);
-  state.live_theme.boot_animation_version = kBootAnimationVersion;
-  state.edited_theme.boot_animation_version = kBootAnimationVersion;
+  state.live_theme = MakeDefaultThemePayload();
+  state.edited_theme = MakeDefaultThemePayload();
   return state;
 }
 

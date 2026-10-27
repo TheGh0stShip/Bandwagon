@@ -1,6 +1,7 @@
 #include "theme_manager.hpp"
 
 #include <cassert>
+#include <cstring>
 #include <iostream>
 
 int main() {
@@ -26,6 +27,15 @@ int main() {
   assert(state.edited_theme.boot_animation_version == 9199);
   assert(state.refresh_lock_initialized);
   assert(!state.live_dirty && !state.edited_dirty);
+  assert(state.live_theme.selected_mesh == -1);
+  assert(state.live_theme.colors.size() == 39);
+  assert(state.live_theme.colors[0] == Color({0.7f, 0.7f, 0.7f, 1.0f}));
+  assert(state.live_theme.colors[1][3] == 8.0f);
+  assert(state.live_theme.colors[11] == Color({0.0f, 0.0f, 0.0f, 1.0f}));
+  std::uint32_t final_green_bits = 0;
+  std::memcpy(&final_green_bits, &state.live_theme.colors[38][1],
+              sizeof(final_green_bits));
+  assert(final_green_bits == 0x3f4ccccd);
 
   ThemeDirectoryScan scan;
   scan.file_names = {"Blue.xbat", "Odd.xbat.backup"};
@@ -58,10 +68,10 @@ int main() {
 
   ThemePayload live_defaults;
   live_defaults.boot_animation_version = 1;
-  live_defaults.settings[17] = 0xa5;
+  live_defaults.colors[0][1] = 0.25f;
   ThemePayload scratch_defaults;
   scratch_defaults.boot_animation_version = 2;
-  scratch_defaults.settings[17] = 0x5a;
+  scratch_defaults.colors[0][1] = 0.75f;
   state.live_dirty = true;
   state.edited_dirty = true;
   state.theme_name = "Changed";
@@ -69,8 +79,8 @@ int main() {
   ResetToUnnamedTheme(&state, live_defaults, scratch_defaults);
   assert(state.theme_name == "Unnamed Theme" && state.active_path.empty());
   assert(state.live_theme.boot_animation_version == 9199);
-  assert(state.live_theme.settings[17] == 0xa5);
-  assert(state.edited_theme.settings[17] == 0x5a);
+  assert(state.live_theme.colors[0][1] == 0.25f);
+  assert(state.edited_theme.colors[0][1] == 0.75f);
   assert(!state.live_dirty && !state.edited_dirty);
 
   state.live_dirty = true;

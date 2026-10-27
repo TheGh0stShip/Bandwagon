@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":29684,"sha256":"a15ee490910006bf1cbd84eb503887752105dc73e7361fba56e7b881c53795e9"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":30485,"sha256":"011fdca895e2a3454da32a11e28a2bc363c5ada7d44f72fd59bee46ae2ac1f7f"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -41,9 +41,9 @@
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"3ba0be2ff86ec752594ee6cd47326d1df29f601ad56a63e93532c8c4d55c7da5"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"5255c7682cacb96a9f22de0032a3fe6bed76f56c04eef64954ea1c7dcf21948d"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":7974,"sha256":"1c87b2e1cf3e8f81450740cc0445214477c002bf85ba1fb282090d75695fa79a"},
-    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":5109,"sha256":"9eacb32845f75e5148638a996a55ee9556d0c8e1d36f49906d21d515cb2a2d55"},
-    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":4400,"sha256":"7d9d4c8ca9cc7f6c87bed97b2d21f507c80e50e5897cf51ed99320841d129f59"},
-    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":4779,"sha256":"b1c88909e1be058c6e957ac1d9b83adbad47b700611fcf658777002528c99c17"}
+    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":6734,"sha256":"c588dce0a4a0bcb3be49f67421382abbf114665a169d71775e56b90adeae3093"},
+    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":4631,"sha256":"04a54315cd7015a2b51aa8c44a9303b0630cd90dfa3540b18a61cfd8e82c7d3b"},
+    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":5281,"sha256":"ebe5c1b2fa4c860559cfae9dffcfe273a10650bd9c21a7a609fcda326214f5e2"}
   },
   "functions": [
     {
@@ -182,6 +182,21 @@
       "required_strings": ["Cancel"]
     },
     {
+      "address": "0x8204cc40",
+      "end_exclusive": "0x8204d278",
+      "size": 1592,
+      "sha256": "f2521b470879982af294e19a92a41542fe1b3fb1e12a094e75beda1edba1c927",
+      "inventory_name": "fn_8204CC40",
+      "semantic_name": "InitializeDefaultThemePayload",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Exact 632-byte payload layout: version word, signed -1 mesh sentinel, and all 39 ordered four-float color vectors recovered from the contiguous big-endian initializer table at 0x82070cf0. The readable model preserves the three alpha/intensity values of 8.0 and the exact product defaults instead of retaining an opaque 628-byte tail.",
+      "source_artifacts": ["manager_source", "manager_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["ThemePayload", "MakeDefaultThemePayload", "selected_mesh", "colors"],
+      "required_strings": []
+    },
+    {
       "address": "0x82050018",
       "end_exclusive": "0x820500c8",
       "size": 176,
@@ -190,7 +205,7 @@
       "semantic_name": "InitializeThemeManager",
       "ownership_category": "product_application",
       "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
-      "model_scope": "Saved-theme collection, strings, synchronization boundary, worker handle, independent 632-byte live/scratch defaults, Unnamed Theme name, and version 9199 initialization; platform constructors are abstracted.",
+      "model_scope": "Saved-theme collection, strings, synchronization boundary, worker handle, independent typed 632-byte live/scratch defaults, Unnamed Theme name, and version 9199 initialization; platform constructors are abstracted.",
       "source_artifacts": ["manager_source", "manager_header"],
       "test_artifacts": ["manager_test"],
       "symbols": ["ThemePayload", "ThemeManagerState", "InitializeThemeManager", "kBootAnimationVersion", "kUnnamedThemeName"],
@@ -295,7 +310,7 @@
       "semantic_name": "ResetToUnnamedTheme",
       "ownership_category": "product_application",
       "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
-      "model_scope": "Independent default live and editor-scratch theme application, empty active path, Unnamed Theme name, forced version 9199, and both dirty-flag clears; the 632-byte payload body remains typed opaque data.",
+      "model_scope": "Independent default live and editor-scratch theme application, empty active path, Unnamed Theme name, forced version 9199, exact typed 39-color payload preservation, and both dirty-flag clears.",
       "source_artifacts": ["manager_source", "manager_header"],
       "test_artifacts": ["manager_test"],
       "symbols": ["ResetToUnnamedTheme", "ThemePayload", "kUnnamedThemeName"],
@@ -379,10 +394,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 22,
-    "product_bytes": 13088,
-    "model_covered_function_count": 22,
-    "model_covered_bytes": 13088,
+    "product_function_count": 23,
+    "product_bytes": 14680,
+    "model_covered_function_count": 23,
+    "model_covered_bytes": 14680,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }
