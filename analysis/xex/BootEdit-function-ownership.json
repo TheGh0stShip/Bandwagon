@@ -102,8 +102,9 @@
       ,{"from":"unknown","to":"product_application","start":"0x82051238","end_exclusive":"0x820512e8","inventory_entry_count":1,"size":176,"basis":"top-level BootEdit state constructor zeroes the two fixed editor/control regions and all startup flags, installs the exact 0x3a83126f timing constant, and invokes the product theme-payload initializer twice before copying the resulting 632-byte default into state"}
       ,{"from":"unknown","to":"product_application","start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"basis":"BootEdit navigation-icon renderer indexes the product's ten 40-byte icon records, applies exact font-relative 32x32 geometry and UV/tint constants, advances the cursor by 34 pixels, and conditionally emits the product navigation tooltip"}
       ,{"from":"unknown","to":"upstream_imgui_1_86","start":"0x82050f08","end_exclusive":"0x82050f60","inventory_entry_count":1,"size":88,"basis":"exact inline ImFontGlyphRangesBuilder construction/Clear behavior from pinned ImGui 1.86: zero the ImVector<ImU32> triplet, resize to (0x10000/8)/4 = 2048 words, and memset the resulting 8192-byte bitmap"}
+      ,{"from":"unknown","to":"platform_toolchain","start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"basis":"exception-object constructor used by the adjacent invalid-vector-subscript diagnostic: installs base and derived exception vtables and delegates message storage to independently platform-owned helper 0x8204c280"}
     ],
-    "after": {"unknown_entry_count":73,"unknown_size":17592,"product_application_entry_count":30,"product_application_size":15752}
+    "after": {"unknown_entry_count":72,"unknown_size":17504,"product_application_entry_count":30,"product_application_size":15752}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -169,9 +170,9 @@
   ],
   "compiler_emitted_template_partition": {
     "classification": "platform_toolchain",
-    "inventory_entry_count": 43,
-    "size": 11920,
-    "description": "Forty-three standalone compiler/standard-library helpers are positively identified by diagnostics, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::string/std::vector<T> and sorting pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
+    "inventory_entry_count": 44,
+    "size": 12008,
+    "description": "Forty-four standalone compiler/standard-library helpers are positively identified by diagnostics, exception construction, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::string/std::vector<T> and sorting pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
     "ranges": [
       {"start":"0x82011878","end_exclusive":"0x820118e8","size":112,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x980060e8"},
       {"start":"0x8204c280","end_exclusive":"0x8204c2d8","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005d80"},
@@ -186,6 +187,7 @@
       {"start":"0x82050570","end_exclusive":"0x82050658","size":232,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> append/resize with capacity growth"},
       {"start":"0x82050658","end_exclusive":"0x820506b8","size":96,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> count forwarding wrapper"},
       {"start":"0x82051af8","end_exclusive":"0x82051b50","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98008b20"},
+      {"start":"0x82051b50","end_exclusive":"0x82051ba8","size":88,"inventory_entry_count":1,"evidence":"exception-object constructor used exclusively by invalid-vector-subscript diagnostic 0x82051ba8; installs exception vtables around platform-owned string helper 0x8204c280"},
       {"start":"0x82051ba8","end_exclusive":"0x82051c08","size":96,"inventory_entry_count":1,"evidence":"owns invalid vector<T> subscript"}
       ,{"start":"0x82051db8","end_exclusive":"0x82051e70","size":184,"inventory_entry_count":1,"evidence":"bounds-checked vector<56-byte SavedTheme>::at using size division, diagnostic helper, and begin + index*56"}
     ]
@@ -234,9 +236,9 @@
       ]
     },
     "platform_toolchain": {
-      "inventory_entry_count": 389,
-      "size": 104896,
-      "concatenated_sha256": "6aca1c900d767172790f0120bd8fc42c665af047d31e3aaf225af17455b96c51",
+      "inventory_entry_count": 390,
+      "size": 104984,
+      "concatenated_sha256": "117facea6bb82be6447854582e3529d7ebb23fb33ac21296e641fbdbdf3fe55c",
       "product_specific": false,
       "ranges": [
         {"start":"0x82011878","end_exclusive":"0x820118e8","inventory_entry_count":1,"size":112,"sha256":"2c09abbb3b957d7989c7cf1f2cc60d3ed27248747c873357fe20e8cd505beab1"},
@@ -252,6 +254,7 @@
         {"start":"0x82050570","end_exclusive":"0x82050658","inventory_entry_count":1,"size":232,"sha256":"7a5b4ae1b2973152c3cb57a151024f85fd90e03789411b5405cffa5b0913a297"},
         {"start":"0x82050658","end_exclusive":"0x820506b8","inventory_entry_count":1,"size":96,"sha256":"cb503b7fc5e6bbca3b57de22cfa83f83691b1589970670c8e2570508770bb1da"},
         {"start":"0x82051af8","end_exclusive":"0x82051b50","inventory_entry_count":1,"size":88,"sha256":"0d90d0714ef08da0acd6e92475c04448fd78da6f00609e9029d3a5f80eb035af"},
+        {"start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"sha256":"8c68ac5f246d04c85c76a82642a061497f7696e8409164771fe87170125616ff"},
         {"start":"0x82051ba8","end_exclusive":"0x82051c08","inventory_entry_count":1,"size":96,"sha256":"42374f379418b87faeb97f439bd3c67509bdb5a267683c8a5725d453726bca61"},
         {"start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"sha256":"5439f89570a358c61190693664e17b8f9216694f756e0858894af0ac614a67b8"},
         {"start":"0x820537e0","end_exclusive":"0x82069eb0","inventory_entry_count":277,"size":91856,"sha256":"16df242d6648ae539b50134bcbb6dd1040954da7276e9f3ff9cce1b6b6583193"},
@@ -259,9 +262,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 73,
-      "size": 17592,
-      "concatenated_sha256": "0015f246098b6e1e19e851045c9ccdbee3b4ef58e728aea02a2c01f382e09849",
+      "inventory_entry_count": 72,
+      "size": 17504,
+      "concatenated_sha256": "b8f3bcf5c0aed353fa2fc26234a276f97fa3a659a530cf3f7d1d7325a31c5286",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -273,7 +276,6 @@
         {"start":"0x8204cbd8","end_exclusive":"0x8204cc40","inventory_entry_count":1,"size":104,"sha256":"dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1"},
         {"start":"0x8204d278","end_exclusive":"0x8204d818","inventory_entry_count":7,"size":1440,"sha256":"44bc889040d88e9e582dc15c8262be75e822c3466a659439388f91b2ae91af52"},
         {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
-        {"start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"sha256":"8c68ac5f246d04c85c76a82642a061497f7696e8409164771fe87170125616ff"},
         {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
@@ -297,7 +299,7 @@
     "product_application_size": 15752,
     "non_product_entry_count": 904,
     "non_product_size": 353672,
-    "unknown_entry_count": 73,
-    "unknown_size": 17592
+    "unknown_entry_count": 72,
+    "unknown_size": 17504
   }
 }
