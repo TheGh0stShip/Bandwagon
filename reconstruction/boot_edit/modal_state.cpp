@@ -4,6 +4,14 @@
 
 namespace bandwagon::boot_edit {
 
+void InitializeModalCompletionState(ModalCompletionState* modal) {
+  if (!modal) return;
+  modal->completion_pending = false;
+  modal->result = 0;
+  modal->continuation_argument = 0;
+  modal->continuation = {};
+}
+
 void FinalizeModalState(ModalCompletionState* modal) {
   if (!modal) return;
   if (modal->release_runtime) modal->release_runtime();

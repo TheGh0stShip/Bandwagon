@@ -25,6 +25,11 @@ struct ModalCompletionState {
   bool message_visible = false;       // byte +104
 };
 
+// Non-pdata constructor at 0x820509d8 inside the compound 0x82050958
+// inventory extent. The target installs its vtable and zeros the four exposed
+// completion/result/continuation fields.
+void InitializeModalCompletionState(ModalCompletionState* modal);
+
 struct ModalFrameServices {
   std::function<void()> request_initial_placement;
   std::function<bool(std::uint32_t window_flags)> begin_popup;

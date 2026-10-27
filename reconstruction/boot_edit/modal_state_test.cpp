@@ -16,6 +16,15 @@ bool Near(float left, float right) {
 int main() {
   ModalCompletionState modal;
   modal.completion_pending = true;
+  modal.result = 9;
+  modal.continuation_argument = 12;
+  modal.continuation = [](ModalCompletionState*, std::uintptr_t) {};
+  InitializeModalCompletionState(&modal);
+  assert(!modal.completion_pending && modal.result == 0);
+  assert(modal.continuation_argument == 0 && !modal.continuation);
+  InitializeModalCompletionState(nullptr);
+
+  modal.completion_pending = true;
   modal.continuation_argument = 0x55;
   std::vector<std::string> order;
   modal.release_runtime = [&] { order.push_back("release"); };
