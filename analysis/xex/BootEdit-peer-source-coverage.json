@@ -12,11 +12,14 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"a4a66e168cf8a27a64e5dc13586017f612b6f52b2a0657d74d8e922a65881eb5"},
-    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":3231,"sha256":"e530ffa87602851b7e51735b75d52ef01312c41c9be72afd2d39769fd6352e83"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"2a363aade806560b6ebf204fcb28bba800e462d495408cefa3aaef1d790f8e73"},
+    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":3644,"sha256":"ce0dd0dc0a4aa18436143c0195b262d78d4d2409afb0ac39a915250b1a336a4d"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
   "source_artifacts": {
+    "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":3562,"sha256":"f3fe31d956af4f12d3c37cc12104cb6515ba331d4bfa258988690fe67e45c042"},
+    "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":2799,"sha256":"fda12964ed0b1ffed3550fec6cdb3a13acc205807642cfe78e8fd83ef6137372"},
+    "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":5207,"sha256":"9ecb54e4e89dd81c6c8a80bba03e9c4ff2aa264fbfcb1e0f7d12e8e3afce0c5f"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":3466,"sha256":"534adfa50286e499a001f9407256e7c5add50772e59557809d5ee63f6ff7d2a9"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":2766,"sha256":"a3a4e2b8781dcc6b8f36aa63d0687bdeabce087558f1baa5b6b745afd07705bd"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":4221,"sha256":"769f3e88fd5109507e0aa38c29b07cf60db7bd86cdc111b9e016656ab4e516f7"},
@@ -25,6 +28,21 @@
     "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":4779,"sha256":"b1c88909e1be058c6e957ac1d9b83adbad47b700611fcf658777002528c99c17"}
   },
   "functions": [
+    {
+      "address": "0x820110d0",
+      "end_exclusive": "0x820112e0",
+      "size": 528,
+      "sha256": "3f78d1350fbec288603f79c000bfdbf28bc138fa2ecacb1456111d20649f9b76",
+      "inventory_name": "fn_820110D0",
+      "semantic_name": "BootstrapBootAnimation",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Runtime initialization, PPROOT translation, version-9199 Themes link target, bootanim image load, hook preparation, thread creation flags, unload-on-thread-failure cleanup, unconditional final diagnostic, ordinal-1 thread adapter, and both embedded modal-completion leaves; kernel APIs and the hook installer are injected boundaries.",
+      "source_artifacts": ["bootstrap_source", "bootstrap_header"],
+      "test_artifacts": ["bootstrap_test"],
+      "symbols": ["BootstrapBootAnimation", "RunBootAnimationThread", "CompleteSingleChoiceModal", "CompleteThreeChoiceModal", "BootAnimationServices", "ModalCompletionState"],
+      "required_strings": ["\\??\\PPROOT:", "%s\\Themes\\BootAnim\\9199", "\\??\\Themes:", "PPROOT:\\Themes\\BootAnim\\9199\\bootanim.xex"]
+    },
     {
       "address": "0x8204c690",
       "end_exclusive": "0x8204c790",
@@ -147,7 +165,6 @@
     }
   ],
   "remaining_product_entries": [
-    {"address":"0x820110d0","end_exclusive":"0x820112e0","size":528,"sha256":"3f78d1350fbec288603f79c000bfdbf28bc138fa2ecacb1456111d20649f9b76","role":"mount and BootAnim theme bootstrap","blocker":"recover exact mount/unmount and launch cleanup contracts"},
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
     {"address":"0x8204b998","end_exclusive":"0x8204b9e8","size":80,"sha256":"3e88a1e1bf36cb98447bbbb7ebcb820d87e626ce1d444da7dc80ddabb9b35b8b","role":"BootEdit modal object destruction","blocker":"recover the shared modal object layout"},
     {"address":"0x8204b9e8","end_exclusive":"0x8204bb60","size":376,"sha256":"446bfdf4830f7ab54b0e04d76ddcf94385ed34ad8427de0ad2c647a83de22c4f","role":"BootEdit modal state helper","blocker":"recover the shared modal object layout and state transitions"},
@@ -166,9 +183,9 @@
   "summary": {
     "product_function_count": 23,
     "product_bytes": 13696,
-    "model_covered_function_count": 8,
-    "model_covered_bytes": 2424,
-    "remaining_product_function_count": 15,
-    "remaining_product_bytes": 11272
+    "model_covered_function_count": 9,
+    "model_covered_bytes": 2952,
+    "remaining_product_function_count": 14,
+    "remaining_product_bytes": 10744
   }
 }

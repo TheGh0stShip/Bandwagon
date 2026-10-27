@@ -23,4 +23,10 @@ python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
     -o "$work/theme_manager_test"
 "$work/theme_manager_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/bootanim_bootstrap.cpp" \
+    "$root/reconstruction/boot_edit/bootanim_bootstrap_test.cpp" \
+    -o "$work/bootanim_bootstrap_test"
+"$work/bootanim_bootstrap_test"
+
 echo "BootEdit portable reconstruction tests passed"

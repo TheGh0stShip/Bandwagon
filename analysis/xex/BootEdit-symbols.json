@@ -3,6 +3,13 @@
   "image_sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
   "symbols": [
     {
+      "address": "0x820110d0",
+      "recovered_name": "fn_820110D0",
+      "semantic_name": "BootstrapBootAnimation",
+      "confidence": "high",
+      "evidence": ["translates \\??\\PPROOT: and redirects \\??\\Themes: to the version-9199 BootAnim directory", "loads the bundled bootanim.xex, prepares hooks, and creates its ordinal-1 startup thread with explicit unload-on-thread-failure cleanup"]
+    },
+    {
       "address": "0x82050a00",
       "recovered_name": null,
       "semantic_name": "ColorsDifferExact",
