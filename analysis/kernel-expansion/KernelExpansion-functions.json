@@ -1679,7 +1679,7 @@
       "address": "0x801faf60",
       "section_offset": "0xaf60",
       "size_to_next_symbol": 128,
-      "name": "fn_801FAF60",
+      "name": "CloneFileSystemNameNode",
       "evidence": [
         "direct BL target or standard PPC prologue"
       ],

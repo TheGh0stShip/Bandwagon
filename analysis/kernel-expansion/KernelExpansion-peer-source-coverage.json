@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 78,
-    "lifted_instruction_bytes": 13248,
-    "peer_product_adapter_or_policy_function_count": 51,
-    "peer_product_adapter_or_policy_instruction_bytes": 7096,
+    "lifted_function_count": 79,
+    "lifted_instruction_bytes": 13376,
+    "peer_product_adapter_or_policy_function_count": 52,
+    "peer_product_adapter_or_policy_instruction_bytes": 7224,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -766,6 +766,15 @@
       "symbols": ["PathFieldBlock", "CopyPathAndParentDirectory", "kPathFieldCapacity"]
     },
     {
+      "address": "0x801faf60",
+      "size": 128,
+      "sha256": "74c0d2621f80c9fe6d4407531a3784026608a4d8d4220f36bc4bf915837d1930",
+      "semantic_name": "CloneFileSystemNameNode",
+      "source": "reconstruction/kernel_expansion/filesystem_name_node.cpp",
+      "header": "reconstruction/kernel_expansion/filesystem_name_node.hpp",
+      "symbols": ["FileSystemNameNode", "FileSystemNameNodeAllocator", "CloneFileSystemNameNode"]
+    },
+    {
       "address": "0x801fafe0",
       "size": 16,
       "sha256": "8bb330d38c70762672e8e3c5761c5d423beca1693cca8419fce992ff0e6f1ede",
@@ -832,6 +841,7 @@
     "reconstruction/kernel_expansion/fat_timestamp_test.cpp",
     "reconstruction/kernel_expansion/file_disposition_test.cpp",
     "reconstruction/kernel_expansion/filesystem_close_test.cpp",
+    "reconstruction/kernel_expansion/filesystem_name_node_test.cpp",
     "reconstruction/kernel_expansion/filesystem_pool_test.cpp",
     "reconstruction/kernel_expansion/flash_versions_test.cpp",
     "reconstruction/kernel_expansion/nand_write_protection_test.cpp",

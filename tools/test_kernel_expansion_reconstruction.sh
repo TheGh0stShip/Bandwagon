@@ -168,6 +168,12 @@ python3 "$root/tools/verify_kernel_expansion_config_schema.py"
 "$work/filesystem_close_test"
 
 "$cxx" -std=c++17 -Wall -Wextra -Werror \
+    "$root/reconstruction/kernel_expansion/filesystem_name_node.cpp" \
+    "$root/reconstruction/kernel_expansion/filesystem_name_node_test.cpp" \
+    -o "$work/filesystem_name_node_test"
+"$work/filesystem_name_node_test"
+
+"$cxx" -std=c++17 -Wall -Wextra -Werror \
     "$root/reconstruction/kernel_expansion/file_disposition.cpp" \
     "$root/reconstruction/kernel_expansion/file_disposition_test.cpp" \
     -o "$work/file_disposition_test"
