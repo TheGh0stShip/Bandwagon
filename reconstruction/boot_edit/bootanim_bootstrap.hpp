@@ -18,10 +18,19 @@ inline constexpr std::string_view kBootAnimationImage =
 inline constexpr std::uint32_t kBootAnimationLoadFlags = 9;
 inline constexpr std::uint32_t kBootAnimationThreadFlags = 0x020000A0;
 inline constexpr std::uint32_t kBootAnimationStartOrdinal = 1;
+inline constexpr std::uint32_t kKernelBootAnimationOrdinal = 932;
 
 using ImageHandle = std::uintptr_t;
 inline constexpr ImageHandle kInvalidImageHandle =
     static_cast<ImageHandle>(-1);
+
+// Application resolver at 0x82011000. The target caches this return value
+// during static initialization and returns zero after either NTSTATUS failure.
+ImageHandle ResolveKernelBootAnimationRoutine(
+    const std::function<std::uint32_t(std::string_view, ImageHandle*)>&
+        get_module_handle,
+    const std::function<std::uint32_t(ImageHandle, std::uint32_t,
+                                      ImageHandle*)>& get_procedure);
 
 struct BootAnimationServices {
   std::function<void()> initialize_runtime;

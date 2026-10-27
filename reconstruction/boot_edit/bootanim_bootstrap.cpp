@@ -20,6 +20,21 @@ void PublishModalResult(ModalCompletionState* modal, std::uint32_t result) {
 
 }  // namespace
 
+ImageHandle ResolveKernelBootAnimationRoutine(
+    const std::function<std::uint32_t(std::string_view, ImageHandle*)>&
+        get_module_handle,
+    const std::function<std::uint32_t(ImageHandle, std::uint32_t,
+                                      ImageHandle*)>& get_procedure) {
+  if (!get_module_handle || !get_procedure) return 0;
+  ImageHandle kernel = 0;
+  if (get_module_handle("xboxkrnl.exe", &kernel) != 0) return 0;
+  ImageHandle routine = 0;
+  if (get_procedure(kernel, kKernelBootAnimationOrdinal, &routine) != 0) {
+    return 0;
+  }
+  return routine;
+}
+
 std::uint32_t BootstrapBootAnimation(const BootAnimationServices& services) {
   if (services.initialize_runtime) services.initialize_runtime();
 

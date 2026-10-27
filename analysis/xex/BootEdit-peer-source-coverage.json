@@ -12,14 +12,14 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":46092,"sha256":"25d5db4aa27c9c404d7a00791e909d51aac5633d94ac64687ae67be3daca816e"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":46881,"sha256":"31c0ac7dc466ab4cec13e1ad30d975d646b6e56f50ccdf7312d414a5e5386fa7"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
   "source_artifacts": {
-    "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":3562,"sha256":"f3fe31d956af4f12d3c37cc12104cb6515ba331d4bfa258988690fe67e45c042"},
-    "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":2531,"sha256":"19364fea4a2c48287af141d0e854a3e48e8d3493845f139f17147ccd6f325b59"},
-    "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":5207,"sha256":"9ecb54e4e89dd81c6c8a80bba03e9c4ff2aa264fbfcb1e0f7d12e8e3afce0c5f"},
+    "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":4131,"sha256":"0a51c1355d4dbe350051f0b73950cc18734060aa36ba97b8738f093a0131632b"},
+    "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":3035,"sha256":"719e7b34cd53c4332d4af50cae545b1caa01b254e60d24283b7175d045c3df47"},
+    "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":6281,"sha256":"bf01a8c7d32f8d3b2855708c085c5f1b01c465d137ce43e8f756f4176189e04c"},
     "discard_source": {"path":"reconstruction/boot_edit/discard_confirmation.cpp","kind":"source","size":3782,"sha256":"8cd7b1f281937028a9361551c1ee294d345d070ef44d1a096026f495fcb0f32d"},
     "discard_header": {"path":"reconstruction/boot_edit/discard_confirmation.hpp","kind":"header","size":2826,"sha256":"eb18b31e3b059089375e5b290985793258c676dee7999a3f991c65adec6916bf"},
     "discard_test": {"path":"reconstruction/boot_edit/discard_confirmation_test.cpp","kind":"test","size":3658,"sha256":"5784366333a48135363259eb14ccc7d9a8c74adf6634a9be359ede986b9d6b89"},
@@ -110,6 +110,36 @@
       "required_strings": ["The theme name entered is invalid, please enter a valid name.", "Invalid theme name", "Themes:\\%s.xbat", "A theme with the name '%s' already exists, do you want to overwrite it?", "Overwrite existing theme"]
     },
     {
+      "address": "0x82011000",
+      "end_exclusive": "0x82011068",
+      "size": 104,
+      "sha256": "a6ecce4f9b43bb934043881734c8401974f4683bec016cda3d5ff7f289510958",
+      "inventory_name": "fn_82011000",
+      "semantic_name": "ResolveKernelBootAnimationRoutine",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Resolve xboxkrnl.exe, request exact ordinal 932, return the resolved routine only when both NTSTATUS values are zero, and otherwise return null; module and procedure lookup are injected kernel boundaries.",
+      "source_artifacts": ["bootstrap_source", "bootstrap_header"],
+      "test_artifacts": ["bootstrap_test"],
+      "symbols": ["ResolveKernelBootAnimationRoutine", "kKernelBootAnimationOrdinal"],
+      "required_strings": ["xboxkrnl.exe"]
+    },
+    {
+      "address": "0x82011068",
+      "end_exclusive": "0x820110d0",
+      "size": 104,
+      "sha256": "bed9432800553e180e93cbaea654d5ccc5ca3abe53a7e484282052efbef8b099",
+      "inventory_name": "fn_82011068",
+      "semantic_name": "RunBootAnimationThread",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Resolve exact ordinal 1 from the loaded version-9199 bootanim image, report the lookup status on failure, or invoke the resolved entry with its image handle and BootEdit's shared boot context; procedure lookup and debug output are injected boundaries.",
+      "source_artifacts": ["bootstrap_source", "bootstrap_header"],
+      "test_artifacts": ["bootstrap_test"],
+      "symbols": ["RunBootAnimationThread", "BootAnimationStart", "kBootAnimationStartOrdinal"],
+      "required_strings": []
+    },
+    {
       "address": "0x820110d0",
       "end_exclusive": "0x820112e0",
       "size": 528,
@@ -118,10 +148,10 @@
       "semantic_name": "BootstrapBootAnimation",
       "ownership_category": "product_application",
       "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
-      "model_scope": "Runtime initialization, PPROOT translation, version-9199 Themes link target, bootanim image load, hook preparation, thread creation flags, unload-on-thread-failure cleanup, unconditional final diagnostic, ordinal-1 thread adapter, and both embedded modal-completion leaves; kernel APIs and the hook installer are injected boundaries.",
+      "model_scope": "Runtime initialization, PPROOT translation, version-9199 Themes link target, bootanim image load, hook preparation, thread creation flags, unload-on-thread-failure cleanup, unconditional final diagnostic, and both embedded modal-completion leaves; kernel APIs and the hook installer are injected boundaries.",
       "source_artifacts": ["bootstrap_source", "bootstrap_header"],
       "test_artifacts": ["bootstrap_test"],
-      "symbols": ["BootstrapBootAnimation", "RunBootAnimationThread", "CompleteSingleChoiceModal", "CompleteThreeChoiceModal", "BootAnimationServices", "ModalCompletionState"],
+      "symbols": ["BootstrapBootAnimation", "CompleteSingleChoiceModal", "CompleteThreeChoiceModal", "BootAnimationServices", "ModalCompletionState"],
       "required_strings": ["\\??\\PPROOT:", "%s\\Themes\\BootAnim\\9199", "\\??\\Themes:", "PPROOT:\\Themes\\BootAnim\\9199\\bootanim.xex"]
     },
     {
@@ -727,10 +757,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 45,
-    "product_bytes": 18088,
-    "model_covered_function_count": 45,
-    "model_covered_bytes": 18088,
+    "product_function_count": 47,
+    "product_bytes": 18296,
+    "model_covered_function_count": 47,
+    "model_covered_bytes": 18296,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

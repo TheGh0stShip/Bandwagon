@@ -9,6 +9,33 @@
 using namespace bandwagon::boot_edit;
 
 int main() {
+  int procedure_resolutions = 0;
+  const auto get_kernel_procedure =
+      [&](ImageHandle module, std::uint32_t ordinal, ImageHandle* routine) {
+        ++procedure_resolutions;
+        assert(module == 0x1111 && ordinal == kKernelBootAnimationOrdinal);
+        *routine = 0x2222;
+        return 0;
+      };
+  assert(ResolveKernelBootAnimationRoutine(
+             [](std::string_view name, ImageHandle* module) {
+               assert(name == "xboxkrnl.exe");
+               *module = 0x1111;
+               return 0;
+             },
+             get_kernel_procedure) == 0x2222);
+  assert(procedure_resolutions == 1);
+  assert(ResolveKernelBootAnimationRoutine(
+             [](std::string_view, ImageHandle*) { return 0xC0000001u; },
+             get_kernel_procedure) == 0);
+  assert(procedure_resolutions == 1);
+  assert(ResolveKernelBootAnimationRoutine(
+             [](std::string_view, ImageHandle* module) {
+               *module = 0x1111;
+               return 0;
+             },
+             [](ImageHandle, std::uint32_t, ImageHandle*) { return 7; }) == 0);
+
   std::vector<std::string> events;
   BootAnimationServices services;
   services.initialize_runtime = [&] { events.push_back("init"); };
