@@ -30,9 +30,9 @@ contains 218 references in 69 functions. Regenerate the complete set with
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
 | Product theme-editor application | 30 | 15,752 | Recover as readable source |
-| Dear ImGui 1.86 | 441 | 231,096 | Use the pinned upstream source |
+| Dear ImGui 1.86 | 442 | 231,184 | Use the pinned upstream source |
 | MSVC/Xbox platform and toolchain | 389 | 104,896 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 74 | 17,680 | Fingerprint before deciding whether to lift |
+| Unknown framework/backend/lookup code | 73 | 17,592 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -75,6 +75,9 @@ declared upstream tag resolves to commit
 `512c54bbc062c41c74f8a8bd8ff1fd6bebd1e6d0`.
 `BootEdit-thirdparty-symbols.json` additionally recovers
 `ImGui::DebugCheckVersionAndDataLayout` from its function-local version check.
+The formerly unknown `0x82050f08` entry is also pinned upstream: it is the
+inline ImGui 1.86 `ImFontGlyphRangesBuilder` constructor/`Clear` body, with the
+exact 2,048-word resize and 8,192-byte bitmap clear from `imgui.h`.
 Remaining ImGui, standard-library, and rendering functions are preserved
 exactly but still need individual attribution. The separate
 bundled 9199 `bootanim.xex` is a 2010 Microsoft component and is documented as
@@ -92,7 +95,7 @@ all 15,752 bytes to readable, tested C++ behavioral models. This includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
 decoder/encoder codec, frame lifecycle glue, and the complete top-level
 startup-state constructor at `0x82051238`. The known-product queue is
-empty; the remaining work is provenance resolution for the 74 unknown
+empty; the remaining work is provenance resolution for the 73 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full
