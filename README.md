@@ -30,7 +30,7 @@ Status date: 2026-10-26
 | Gate | State | What that means |
 |---|---:|---|
 | Preserve and map the inputs | Complete | 33 / 33 installed artifacts recorded; all 4,194 XEX code entries are accounted for |
-| Recover maintainable Peer-specific source | In progress | 10 of 14 targets complete; in the measured five-XEX queue, 67 / 317 product candidates and 25,728 / 92,400 bytes have verified readable source |
+| Recover maintainable Peer-specific source | In progress | 10 of 14 targets complete; in the measured five-XEX queue, 68 / 317 product candidates and 26,456 / 92,400 bytes have verified readable source |
 | Build and validate a replacement | Not complete | No single source-built replacement distribution exists yet |
 
 There is no honest single percentage for the whole project: the 14 targets
@@ -45,7 +45,7 @@ Xbox/compiler infrastructure.
 **UpdateCheck is now source-complete:** all 19 product functions / 6,768 bytes
 have verified readable source, and all five former unknown wrapper containers /
 608 bytes have positive Microsoft-platform provenance. The next focused queue
-is BootEdit: 7 known product functions / 7,520 bytes remain, while its 119
+is BootEdit: 6 known product functions / 6,792 bytes remain, while its 119
 unknown entries are fingerprinted before any lifting decision.
 
 ### Already source-complete
@@ -62,7 +62,7 @@ reconstructions remain as test oracles, not as substitutes for readable source.
 | KernelExpansion | 50 functions / 18,828 bytes | 72 functions / 16,024 bytes |
 | HDD Stage2 | 3,432 candidate worker bytes, plus modified ROP/data | Included in its remaining analysis |
 | SettingsApp | 243 functions / 59,152 bytes | 13 functions / 5,336 bytes |
-| BootEdit | 7 functions / 7,520 bytes | 119 functions / 31,712 bytes |
+| BootEdit | 6 functions / 6,792 bytes | 119 functions / 31,712 bytes |
 | Final integration | Source-built components, reproducible distribution, and host plus authorized target/emulator validation | - |
 
 ### Forecast
@@ -110,10 +110,10 @@ already been built.
 | HDD Stage2 | Partial | Ownership split and exact binary reconstruction | 3,432 candidate product worker bytes, modified ROP/data, and integration |
 | UpdateCheck | Complete | 19 / 19 product entries, 6,768 / 6,768 B | None in the current source-composition boundary |
 | SettingsApp | Partial | 3 / 246 product/mixed entries, 3,112 / 62,264 B | 243 entries / 59,152 B, plus 13 unknown entries / 5,336 B |
-| BootEdit | Partial | 16 / 23 product entries, 6,176 / 13,696 B | 7 entries / 7,520 B, plus 119 unknown entries / 31,712 B |
+| BootEdit | Partial | 17 / 23 product entries, 6,904 / 13,696 B | 6 entries / 6,792 B, plus 119 unknown entries / 31,712 B |
 
-The five-XEX readable-source counter is therefore **67 / 317 product entries
-(21.1%) and 25,728 / 92,400 product bytes (27.8%)**. These percentages describe
+The five-XEX readable-source counter is therefore **68 / 317 product entries
+(21.5%) and 26,456 / 92,400 product bytes (28.6%)**. These percentages describe
 that measured XEX queue only; they deliberately exclude pinned public source,
 proven platform/toolchain code, KernelExpansion, Stage2, and final integration.
 
@@ -121,12 +121,12 @@ The XEX ownership pass is now complete. Of their 1,387,504 code bytes,
 1,258,056 (90.7%) are pinned upstream or proven platform/toolchain code and are
 not a Peer source-recovery task. The current denominator is 317 product/mixed
 candidates / 92,400 bytes plus 132 unknown entries / 37,048 bytes. Of the
-product bucket, 67 entries / 25,728 bytes now have hash-bound readable-source
-coverage; 250 / 66,672 bytes remain. Existing unbound behavior models are not
+product bucket, 68 entries / 26,456 bytes now have hash-bound readable-source
+coverage; 249 / 65,944 bytes remain. Existing unbound behavior models are not
 counted as completed functions.
 
 Within that XEX denominator, BootXell is 9/9 and Updater is 20/20 source
-covered. UpdateCheck is 19/19, SettingsApp is 3/246, and BootEdit is 16/23.
+covered. UpdateCheck is 19/19, SettingsApp is 3/246, and BootEdit is 17/23.
 That is the shortest current answer to "what is done versus left."
 
 This project is therefore **not near 100% source recovery**. The unfinished
@@ -138,8 +138,8 @@ targets are the largest ones, so 10 / 14 completed targets must not be read as
   classification;
 - 3,432 candidate product bytes in the Stage2 worker, plus its modified outer
   ROP/data;
-- readable source for 258 currently uncovered XEX product/mixed entries /
-  66,672 bytes: SettingsApp 243 / 59,152 and BootEdit 7 / 7,520;
+- readable source for 249 currently uncovered XEX product/mixed entries /
+  65,944 bytes: SettingsApp 243 / 59,152 and BootEdit 6 / 6,792;
 - provenance work on 132 unknown XEX entries / 37,048 bytes before treating
   any of them as product code;
 - a final target-build and integration-validation phase.
