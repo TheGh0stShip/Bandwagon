@@ -62,6 +62,31 @@ void TestRefreshDrawingAndStatus() {
   assert(empty.events[2] == "status:No saved themes available");
 }
 
+void TestThemeEnumerationPolling() {
+  std::uintptr_t handle = 0;
+  std::uint32_t wait_timeout = 99;
+  int closes = 0;
+  ThemeEnumerationServices services;
+  services.wait = [&](std::uintptr_t value, std::uint32_t timeout) {
+    assert(value == 0x1234);
+    wait_timeout = timeout;
+    return 258u;
+  };
+  services.close = [&](std::uintptr_t value) {
+    assert(value == 0x1234);
+    ++closes;
+  };
+
+  assert(PollThemeEnumeration(&handle, services));
+  handle = 0x1234;
+  assert(!PollThemeEnumeration(&handle, services));
+  assert(handle == 0x1234 && wait_timeout == 0 && closes == 0);
+  services.wait = [](std::uintptr_t, std::uint32_t) { return 0u; };
+  assert(PollThemeEnumeration(&handle, services));
+  assert(handle == 0 && closes == 1);
+  assert(PollThemeEnumeration(nullptr, services));
+}
+
 void TestInputWrapLoadAndDiscard() {
   ThemeSelectorState state;
   state.view = 1;
@@ -137,6 +162,7 @@ void TestPackedResourceConstructor() {
 
 int main() {
   TestRefreshDrawingAndStatus();
+  TestThemeEnumerationPolling();
   TestInputWrapLoadAndDiscard();
   TestFrameOrchestrationAndPolling();
   TestPackedResourceConstructor();

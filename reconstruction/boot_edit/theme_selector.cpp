@@ -2,6 +2,15 @@
 
 namespace bandwagon::boot_edit {
 
+bool PollThemeEnumeration(std::uintptr_t* thread_handle,
+                          const ThemeEnumerationServices& services) {
+  if (!thread_handle || *thread_handle == 0) return true;
+  if (!services.wait || services.wait(*thread_handle, 0) != 0) return false;
+  if (services.close) services.close(*thread_handle);
+  *thread_handle = 0;
+  return true;
+}
+
 void DrawThemeSelector(ThemeSelectorState* state, std::string_view current_theme,
                        bool enumeration_in_progress,
                        const std::vector<SavedTheme>& published_themes,

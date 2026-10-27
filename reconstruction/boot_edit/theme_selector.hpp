@@ -41,6 +41,18 @@ struct ThemeSelectorServices {
   std::function<void(std::uint32_t)> load_theme;
 };
 
+struct ThemeEnumerationServices {
+  // Returns the platform wait status. The target treats exactly zero as
+  // signaled and every other value as still pending.
+  std::function<std::uint32_t(std::uintptr_t, std::uint32_t)> wait;
+  std::function<void(std::uintptr_t)> close;
+};
+
+// Readable model of 0x8204cbd8. A null handle is already complete; otherwise
+// the target performs a zero-timeout poll and closes/clears only on status 0.
+bool PollThemeEnumeration(std::uintptr_t* thread_handle,
+                          const ThemeEnumerationServices& services);
+
 void DrawThemeSelector(ThemeSelectorState* state, std::string_view current_theme,
                        bool enumeration_in_progress,
                        const std::vector<SavedTheme>& published_themes,

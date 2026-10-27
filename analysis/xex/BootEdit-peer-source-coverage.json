@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":40715,"sha256":"1096370002e522fcfc15ca590a5596a2876d383677a818b9d1a407c7f683919b"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":41145,"sha256":"def7a2adc2f9a8d8a7eef7bd99d1355c4ac9e3e78045a0ea0319bc95373e96fc"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -29,9 +29,9 @@
     "actions_source": {"path":"reconstruction/boot_edit/settings_actions.cpp","kind":"source","size":5573,"sha256":"b45d7df3be2ad7878626a78682e45ef8607460f341e66cd0a3cfb5488eaa021b"},
     "actions_header": {"path":"reconstruction/boot_edit/settings_actions.hpp","kind":"header","size":3510,"sha256":"c44e750003430bf29e0b4cb31d8c474c71b0874715ab634af0450422672a4946"},
     "actions_test": {"path":"reconstruction/boot_edit/settings_actions_test.cpp","kind":"test","size":7334,"sha256":"34f9ae0ebdf1f7dcecbda94f6e460be85145b0e222c817ce58f76e003a2a7c47"},
-    "selector_source": {"path":"reconstruction/boot_edit/theme_selector.cpp","kind":"source","size":3468,"sha256":"236bb05971267e63c5e823871b711aa31e7f842dc6290f816e9671eca98de142"},
-    "selector_header": {"path":"reconstruction/boot_edit/theme_selector.hpp","kind":"header","size":2814,"sha256":"556ebd5cca5b0a80b629c24c3033ba9fc07f64aa03f25d9fc931a14e69d547c6"},
-    "selector_test": {"path":"reconstruction/boot_edit/theme_selector_test.cpp","kind":"test","size":4719,"sha256":"315a779533318863fefdc18b7739fb3532dace69f0b79e1c3a8708a1507d74e2"},
+    "selector_source": {"path":"reconstruction/boot_edit/theme_selector.cpp","kind":"source","size":3824,"sha256":"056c8f9d28bff685414c1a868e0dda0c757cc0c4c3a6f7a31642d1e938c9969c"},
+    "selector_header": {"path":"reconstruction/boot_edit/theme_selector.hpp","kind":"header","size":3376,"sha256":"a91e70844a62c96378567e6a593d993a11c80a4d41cc5c800b47d6b05aa7aef8"},
+    "selector_test": {"path":"reconstruction/boot_edit/theme_selector_test.cpp","kind":"test","size":5549,"sha256":"ea9af89f20c44e9793e86fd50c0289c253473c0c09f5bffa018cf5b3ea950719"},
     "name_task_source": {"path":"reconstruction/boot_edit/theme_name_task.cpp","kind":"source","size":5656,"sha256":"f05dd1e06832093c0f96637a64b4c20bdf3003b065ae0ff41821d790cd2a753b"},
     "name_task_header": {"path":"reconstruction/boot_edit/theme_name_task.hpp","kind":"header","size":2135,"sha256":"880df8153eef515a9deab353e001658864a32f0a1d7ad28d85bf66fd5d235b9c"},
     "name_task_test": {"path":"reconstruction/boot_edit/theme_name_task_test.cpp","kind":"test","size":4897,"sha256":"e11687ac1d625da792e25d7135081fd87571966bd27815f636eed7f0ab5376c5"},
@@ -620,6 +620,21 @@
       "required_strings": ["Settings updated successfully!", "Test", "Failed to update settings!", "Error"]
     },
     {
+      "address": "0x8204cbd8",
+      "end_exclusive": "0x8204cc40",
+      "size": 104,
+      "sha256": "dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1",
+      "inventory_name": "fn_8204CBD8",
+      "semantic_name": "PollThemeEnumeration",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Theme-enumeration thread lifecycle used by DrawThemeSelector: null handle completes immediately, a zero-timeout wait returns pending for every nonzero status, and signaled status zero closes and clears the handle before reporting completion; wait and close primitives are platform boundaries.",
+      "source_artifacts": ["selector_source", "selector_header"],
+      "test_artifacts": ["selector_test"],
+      "symbols": ["PollThemeEnumeration", "ThemeEnumerationServices"],
+      "required_strings": []
+    },
+    {
       "address": "0x82052468",
       "end_exclusive": "0x82052830",
       "size": 968,
@@ -652,10 +667,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 40,
-    "product_bytes": 17328,
-    "model_covered_function_count": 40,
-    "model_covered_bytes": 17328,
+    "product_function_count": 41,
+    "product_bytes": 17432,
+    "model_covered_function_count": 41,
+    "model_covered_bytes": 17432,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }
