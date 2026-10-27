@@ -91,7 +91,7 @@ sections, function/call/string inventories, and semantic names for theme
 enumeration, editing, save/load feedback, settings application, and selection.
 Its exhaustive partition identifies 22 product entries / 13,088 bytes, excludes
 793 pinned-ImGui or proven-platform entries, and conservatively retains 119
-entries / 31,712 bytes as unknown. Twenty product entries / 9,504 bytes have
+entries / 31,712 bytes as unknown. Twenty-one product entries / 11,024 bytes have
 hash-bound readable models.
 
 `xex/SettingsApp.md` covers the main settings UI. Its entire initialized image

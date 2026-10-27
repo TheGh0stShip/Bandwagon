@@ -32,6 +32,9 @@
     "selector_source": {"path":"reconstruction/boot_edit/theme_selector.cpp","kind":"source","size":3468,"sha256":"236bb05971267e63c5e823871b711aa31e7f842dc6290f816e9671eca98de142"},
     "selector_header": {"path":"reconstruction/boot_edit/theme_selector.hpp","kind":"header","size":2814,"sha256":"556ebd5cca5b0a80b629c24c3033ba9fc07f64aa03f25d9fc931a14e69d547c6"},
     "selector_test": {"path":"reconstruction/boot_edit/theme_selector_test.cpp","kind":"test","size":4719,"sha256":"315a779533318863fefdc18b7739fb3532dace69f0b79e1c3a8708a1507d74e2"},
+    "name_task_source": {"path":"reconstruction/boot_edit/theme_name_task.cpp","kind":"source","size":5656,"sha256":"f05dd1e06832093c0f96637a64b4c20bdf3003b065ae0ff41821d790cd2a753b"},
+    "name_task_header": {"path":"reconstruction/boot_edit/theme_name_task.hpp","kind":"header","size":2135,"sha256":"880df8153eef515a9deab353e001658864a32f0a1d7ad28d85bf66fd5d235b9c"},
+    "name_task_test": {"path":"reconstruction/boot_edit/theme_name_task_test.cpp","kind":"test","size":4897,"sha256":"e11687ac1d625da792e25d7135081fd87571966bd27815f636eed7f0ab5376c5"},
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
@@ -43,6 +46,21 @@
     "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":4779,"sha256":"b1c88909e1be058c6e957ac1d9b83adbad47b700611fcf658777002528c99c17"}
   },
   "functions": [
+    {
+      "address": "0x820118e8",
+      "end_exclusive": "0x82011ed8",
+      "size": 1520,
+      "sha256": "790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425",
+      "inventory_name": "fn_820118E8",
+      "semantic_name": "AdvanceThemeNameTask",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "The complete compound extent: active-dialog polling and release boundary; Save Theme keyboard launch with current-name default; pending, cancel, launch-failure, poll-failure, and extended-error outcomes; empty-name validation; wide-to-narrow boundary; Themes path construction; existence test; invalid-name and overwrite modal creation; retry, accept, decline, and cancel mappings; completion/continuation publication; plus the embedded rectangle Contains, Overlaps, conditional copy, copy, and ClipWith leaves. XAM keyboard/overlapped calls, allocation, modal ABI, filesystem, conversion, and diagnostics are injected boundaries.",
+      "source_artifacts": ["name_task_source", "name_task_header"],
+      "test_artifacts": ["name_task_test"],
+      "symbols": ["AdvanceThemeNameTask", "ThemeNameTaskState", "ThemeNameTaskServices", "RectContains", "RectOverlaps", "CopyRectIfDifferent", "CopyRect", "ClipRect"],
+      "required_strings": ["The theme name entered is invalid, please enter a valid name.", "Invalid theme name", "Themes:\\%s.xbat", "A theme with the name '%s' already exists, do you want to overwrite it?", "Overwrite existing theme"]
+    },
     {
       "address": "0x820110d0",
       "end_exclusive": "0x820112e0",
@@ -345,15 +363,14 @@
     }
   ],
   "remaining_product_entries": [
-    {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
     {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"}
   ],
   "summary": {
     "product_function_count": 22,
     "product_bytes": 13088,
-    "model_covered_function_count": 20,
-    "model_covered_bytes": 9504,
-    "remaining_product_function_count": 2,
-    "remaining_product_bytes": 3584
+    "model_covered_function_count": 21,
+    "model_covered_bytes": 11024,
+    "remaining_product_function_count": 1,
+    "remaining_product_bytes": 2064
   }
 }
