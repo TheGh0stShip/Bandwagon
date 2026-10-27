@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":52441,"sha256":"2c274ecd899b6cb5e133e9092b6af2ec7252093b4d1be4c46c8dc7327a03476d"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":53019,"sha256":"674a0b0e0f78fc034c66b3f616ab6b627b3f60b6cb5b745c7aa00a49412137b8"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -44,9 +44,9 @@
     "runtime_frame_source": {"path":"reconstruction/boot_edit/runtime_frame.cpp","kind":"source","size":2156,"sha256":"f5914202b210336527a92c8d7555beb89b971929677711ae82f6ac53773bcf87"},
     "runtime_frame_header": {"path":"reconstruction/boot_edit/runtime_frame.hpp","kind":"header","size":1889,"sha256":"8e039d18e9e1f6fea4a0188b0c36d2294a3b1f258b0c2f190572f50fce1a6ad9"},
     "runtime_frame_test": {"path":"reconstruction/boot_edit/runtime_frame_test.cpp","kind":"test","size":3250,"sha256":"625233bcd89a50c5cd3390c5155bac3c4201625259503c6824fbc154dbde8ce4"},
-    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":7243,"sha256":"92dd4f169bc167b5427f8023a865128f6b8a3206a84aea8dec28544f79d4ba1e"},
-    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":4989,"sha256":"2a04327ff54aff103a6611241141e3702b10cb0f8f411a3f879e6561f580cd1f"},
-    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":6794,"sha256":"ef849a3827e3f8d806fc7030fcea217e7498e5971b7b71539c5b5504de4282ef"},
+    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":8243,"sha256":"88b42e236207e2bb34482fa49f839941ac611fadd1670ad29048c5cde9093896"},
+    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":5660,"sha256":"c6840ff2da4e02e2573b94dd2dd4e673ae65fa5c877a9b9297104394cf9889b5"},
+    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":7858,"sha256":"bd5ef306269ba4bd4e3dd2f663d2618d7d62a7579c37a235b8d89ed05ceca01e"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -188,6 +188,21 @@
       "source_artifacts": ["hooks_source", "hooks_header"],
       "test_artifacts": ["hooks_test"],
       "symbols": ["GenerateBootAnimationNoiseTexture", "BootAnimationNoiseTexture", "BootAnimationShapeTransform", "ColorTriplet"],
+      "required_strings": []
+    },
+    {
+      "address": "0x820109e8",
+      "end_exclusive": "0x82010c58",
+      "size": 624,
+      "sha256": "d848f9b184b0bbdb38fee79da5131fc621bb23aaa1fdf002a9af5a603ef2548a",
+      "inventory_name": "fn_820109E8",
+      "semantic_name": "GenerateBootAnimationSampledTexture",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Complete procedural pixel core and integration order for the 256x256 ARGB texture: sample the prior object-offset-272 resource through the original bootanim routine over the exact float coordinate grid scaled by 130/255; remap each sample with (value+1)*0.5; modulate ThemeManager RGB offsets 688..696 between half intensity (127.5) and full intensity (255); preserve float-to-integer truncation and ARGB packing; then unlock, attach, and publish the generated resource at object offset 296. The Microsoft bootanim sampler and GPU operations are injected boundaries.",
+      "source_artifacts": ["hooks_source", "hooks_header"],
+      "test_artifacts": ["hooks_test"],
+      "symbols": ["GenerateBootAnimationSampledTexture", "BootAnimationSampledTexture", "BootAnimationTextureSampler", "ColorTriplet"],
       "required_strings": []
     },
     {
@@ -883,10 +898,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 55,
-    "product_bytes": 21440,
-    "model_covered_function_count": 55,
-    "model_covered_bytes": 21440,
+    "product_function_count": 56,
+    "product_bytes": 22064,
+    "model_covered_function_count": 56,
+    "model_covered_bytes": 22064,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

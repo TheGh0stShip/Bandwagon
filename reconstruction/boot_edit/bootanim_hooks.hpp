@@ -124,4 +124,21 @@ BootAnimationNoiseTexture GenerateBootAnimationNoiseTexture(
     const ColorTriplet& anchor_color, const ColorTriplet& upper_color,
     const BootAnimationShapeTransform& shape_transform);
 
+struct BootAnimationSampledTexture {
+  std::uint32_t width = 256;
+  std::uint32_t height = 256;
+  std::vector<std::uint32_t> argb;
+};
+
+using BootAnimationTextureSampler =
+    std::function<float(float sample_x, float sample_y)>;
+
+// Pixel-generation core of 0x820109e8. The sampler represents the original
+// bootanim routine at 0x9800f918 applied to the resource at object offset 272.
+// GPU allocation, lock/unlock, attachment, and publication at offset 296 are
+// platform/original-component integration boundaries.
+BootAnimationSampledTexture GenerateBootAnimationSampledTexture(
+    const ColorTriplet& theme_color,
+    const BootAnimationTextureSampler& sampler);
+
 }  // namespace bandwagon::boot_edit

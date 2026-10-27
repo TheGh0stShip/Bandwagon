@@ -155,4 +155,31 @@ int main() {
           noise, lower, anchor, upper, [](double) { return 1.0; });
   assert(solid_noise_texture.argb.front() == 0xff334c66u);
   assert(solid_noise_texture.argb.back() == 0xff19334cu);
+
+  int sample_calls = 0;
+  float last_sample_x = 0.0f;
+  float last_sample_y = 0.0f;
+  const BootAnimationSampledTexture dark_sampled_texture =
+      GenerateBootAnimationSampledTexture(
+          ColorTriplet{0.4f, 0.6f, 0.8f},
+          [&](float x, float y) {
+            ++sample_calls;
+            last_sample_x = x;
+            last_sample_y = y;
+            return -1.0f;
+          });
+  assert(dark_sampled_texture.width == 256);
+  assert(dark_sampled_texture.height == 256);
+  assert(dark_sampled_texture.argb.size() == 256u * 256u);
+  assert(sample_calls == 256 * 256);
+  assert(dark_sampled_texture.argb.front() == 0xff334c66u);
+  assert(dark_sampled_texture.argb.back() == 0xff334c66u);
+  assert(std::fabs(last_sample_x - 130.0f) < 0.0001f);
+  assert(std::fabs(last_sample_y - 130.0f) < 0.0001f);
+
+  const BootAnimationSampledTexture bright_sampled_texture =
+      GenerateBootAnimationSampledTexture(
+          ColorTriplet{0.4f, 0.6f, 0.8f},
+          [](float, float) { return 1.0f; });
+  assert(bright_sampled_texture.argb.front() == 0xff6699ccu);
 }

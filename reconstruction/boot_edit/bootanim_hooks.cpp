@@ -206,4 +206,30 @@ BootAnimationNoiseTexture GenerateBootAnimationNoiseTexture(
   return result;
 }
 
+BootAnimationSampledTexture GenerateBootAnimationSampledTexture(
+    const ColorTriplet& theme_color,
+    const BootAnimationTextureSampler& sampler) {
+  BootAnimationSampledTexture result;
+  result.argb.resize(result.width * result.height);
+
+  for (std::uint32_t y = 0; y < result.height; ++y) {
+    const float sample_y =
+        static_cast<float>(y) * 0.003921569f * 130.0f;
+    for (std::uint32_t x = 0; x < result.width; ++x) {
+      const float sample_x =
+          static_cast<float>(x) * 0.003921569f * 130.0f;
+      const float amount = (sampler(sample_x, sample_y) + 1.0f) * 0.5f;
+      const float inverse = 1.0f - amount;
+      result.argb[y * result.width + x] = PackArgb(
+          theme_color[0] * amount * 255.0f +
+              theme_color[0] * inverse * 127.5f,
+          theme_color[1] * amount * 255.0f +
+              theme_color[1] * inverse * 127.5f,
+          theme_color[2] * amount * 255.0f +
+              theme_color[2] * inverse * 127.5f);
+    }
+  }
+  return result;
+}
+
 }  // namespace bandwagon::boot_edit
