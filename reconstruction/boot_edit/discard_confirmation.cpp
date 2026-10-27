@@ -22,6 +22,26 @@ void Complete(DiscardConfirmationState* state, std::uint32_t result,
 
 }  // namespace
 
+void InitializeDiscardConfirmation(DiscardConfirmationState* state,
+                                   bool ask_unsaved_changes,
+                                   bool needs_theme_name,
+                                   bool show_save_failure_confirmation,
+                                   const std::string& current_theme_name,
+                                   const std::string& current_theme_path) {
+  if (!state) return;
+
+  *state = {};
+  state->needs_theme_name = needs_theme_name;
+  state->show_save_failure_confirmation =
+      show_save_failure_confirmation;
+  state->theme_name = current_theme_name;
+  state->theme_path = current_theme_path;
+  state->phase = ask_unsaved_changes
+                     ? DiscardPhase::kAskUnsaved
+                     : (needs_theme_name ? DiscardPhase::kPromptForThemeName
+                                         : DiscardPhase::kSaveTheme);
+}
+
 void ApplyUnsavedChangesChoice(DiscardConfirmationState* state,
                                std::uint32_t modal_result) {
   if (!state) return;

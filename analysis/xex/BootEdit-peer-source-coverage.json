@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":40200,"sha256":"ee886ebba05fa1d6bb95b9cda1078f24dee23cf31a3afba969e28d2b4bda5498"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":40715,"sha256":"1096370002e522fcfc15ca590a5596a2876d383677a818b9d1a407c7f683919b"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -20,9 +20,9 @@
     "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":3562,"sha256":"f3fe31d956af4f12d3c37cc12104cb6515ba331d4bfa258988690fe67e45c042"},
     "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":2531,"sha256":"19364fea4a2c48287af141d0e854a3e48e8d3493845f139f17147ccd6f325b59"},
     "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":5207,"sha256":"9ecb54e4e89dd81c6c8a80bba03e9c4ff2aa264fbfcb1e0f7d12e8e3afce0c5f"},
-    "discard_source": {"path":"reconstruction/boot_edit/discard_confirmation.cpp","kind":"source","size":2889,"sha256":"8b2c391c84c731baef487832290a787934961fd72354dd75ebf8337d00c26192"},
-    "discard_header": {"path":"reconstruction/boot_edit/discard_confirmation.hpp","kind":"header","size":1767,"sha256":"b81399e37f002c15b01a1d2351ae7fa74d9929a0feab956bb2b99dd95acc6329"},
-    "discard_test": {"path":"reconstruction/boot_edit/discard_confirmation_test.cpp","kind":"test","size":2802,"sha256":"367a1e516f69f147a0563a06672db55c681f28e80eafbd4caf21b96c30f2240d"},
+    "discard_source": {"path":"reconstruction/boot_edit/discard_confirmation.cpp","kind":"source","size":3782,"sha256":"8cd7b1f281937028a9361551c1ee294d345d070ef44d1a096026f495fcb0f32d"},
+    "discard_header": {"path":"reconstruction/boot_edit/discard_confirmation.hpp","kind":"header","size":2826,"sha256":"eb18b31e3b059089375e5b290985793258c676dee7999a3f991c65adec6916bf"},
+    "discard_test": {"path":"reconstruction/boot_edit/discard_confirmation_test.cpp","kind":"test","size":3658,"sha256":"5784366333a48135363259eb14ccc7d9a8c74adf6634a9be359ede986b9d6b89"},
     "fonts_source": {"path":"reconstruction/boot_edit/editor_fonts.cpp","kind":"source","size":4536,"sha256":"ab4136ddb9aba41511b5730d8f3468c0e75d9696a6514a03ca8b41d2e1ca7f73"},
     "fonts_header": {"path":"reconstruction/boot_edit/editor_fonts.hpp","kind":"header","size":3246,"sha256":"b9d0ba247276388b10c44cdb03eb0c1a00d02cee0e3ff42ae45419b3c5a2feaa"},
     "fonts_test": {"path":"reconstruction/boot_edit/editor_fonts_test.cpp","kind":"test","size":5436,"sha256":"96275423c727af4a7035bac68933839a7c2a57cc2f2d564d668bbb3329f72969"},
@@ -168,6 +168,21 @@
       "test_artifacts": ["manager_test"],
       "symbols": ["FormatThemePath", "CompleteThemeNameDialog", "ThemeNameCompletion"],
       "required_strings": ["Themes:\\%s.xbat"]
+    },
+    {
+      "address": "0x8204c790",
+      "end_exclusive": "0x8204c870",
+      "size": 224,
+      "sha256": "1fb3322526336109e78e9e7ec24a43a4e56823a363e2940ae26caf57cb6d4ee5",
+      "inventory_name": "fn_8204C790",
+      "semantic_name": "InitializeDiscardConfirmation",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Completion-base initialization, exact storage of ask-unsaved/needs-name/show-save-failure policy bytes, zeroing of both child-task pointers, current theme name/path snapshot from application state, completion-observed clear, and initial phase priority ask-unsaved then needs-name then save; vtable and std::string mechanics are attributed boundaries.",
+      "source_artifacts": ["discard_source", "discard_header"],
+      "test_artifacts": ["discard_test"],
+      "symbols": ["InitializeDiscardConfirmation", "DiscardConfirmationState", "DiscardPhase"],
+      "required_strings": []
     },
     {
       "address": "0x8204c870",
@@ -637,10 +652,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 39,
-    "product_bytes": 17104,
-    "model_covered_function_count": 39,
-    "model_covered_bytes": 17104,
+    "product_function_count": 40,
+    "product_bytes": 17328,
+    "model_covered_function_count": 40,
+    "model_covered_bytes": 17328,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

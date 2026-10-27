@@ -7,6 +7,22 @@ using namespace bandwagon::boot_edit;
 
 int main() {
   DiscardConfirmationState state;
+  InitializeDiscardConfirmation(&state, true, false, true, "Carbon",
+                                "Themes:\\Carbon.xbat");
+  assert(state.phase == DiscardPhase::kAskUnsaved);
+  assert(!state.needs_theme_name && state.show_save_failure_confirmation);
+  assert(state.theme_name == "Carbon");
+  assert(state.theme_path == "Themes:\\Carbon.xbat");
+  assert(state.child_dialog == 0 && state.child_name_task == 0);
+  assert(!state.completion_pending && !state.completion_observed);
+
+  InitializeDiscardConfirmation(&state, false, true, false, "", "");
+  assert(state.phase == DiscardPhase::kPromptForThemeName);
+  InitializeDiscardConfirmation(&state, false, false, false, "Stock",
+                                "Themes:\\Stock.xbat");
+  assert(state.phase == DiscardPhase::kSaveTheme);
+
+  InitializeDiscardConfirmation(&state, true, false, false, "", "");
   DiscardStep step = AdvanceDiscardConfirmation(&state, false, false);
   assert(step.kind == DiscardStepKind::kOpenedUnsavedDialog);
   assert(step.modal_type == 4);

@@ -108,8 +108,9 @@
       ,{"from":"unknown","to":"product_application","start":"0x8204c2d8","end_exclusive":"0x8204c450","inventory_entry_count":2,"size":376,"basis":"BootEdit modal base/derived constructors establish exact placement and size defaults, message/title strings, active state, modal type, and selected action; called throughout product validation, save/load feedback, discard, and settings flows"}
       ,{"from":"unknown","to":"product_application","start":"0x8204c618","end_exclusive":"0x8204c690","inventory_entry_count":1,"size":120,"basis":"BootEdit modal completion adapter maps application modal type 2 to result 3 and other types to result 1, publishes completion, invokes the stored continuation, and marks completion observed"}
       ,{"from":"unknown","to":"product_application","start":"0x8204c450","end_exclusive":"0x8204c618","inventory_entry_count":2,"size":456,"basis":"complete four-controller product input subsystem extents: zero/init and previous/current polling of fixed 52-byte records with disconnected status 1167, fatal-error policy, plus the second extent's embedded binary-choice and modal-completion callback leaves"}
+      ,{"from":"unknown","to":"product_application","start":"0x8204c790","end_exclusive":"0x8204c870","inventory_entry_count":1,"size":224,"basis":"discard-confirmation task constructor initializes the completion base, stores the three product policy flags, snapshots current theme name/path from application state, clears both child-task slots and the completion-observed byte, and selects the exact initial phase priority"}
     ],
-    "after": {"unknown_entry_count":63,"unknown_size":16152,"product_application_entry_count":39,"product_application_size":17104}
+    "after": {"unknown_entry_count":62,"unknown_size":15928,"product_application_entry_count":40,"product_application_size":17328}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -153,6 +154,7 @@
     {"address":"0x8204c618","role":"BootEdit modal completion adapter","confidence":"high"},
     {"address":"0x8204c690","role":"theme path formatter","confidence":"high"},
     {"address":"0x8204c870","role":"ConfirmDiscardUnsavedChanges","confidence":"high"},
+    {"address":"0x8204c790","role":"InitializeDiscardConfirmation","confidence":"high"},
     {"address":"0x8204cc40","role":"exact 632-byte theme payload default initializer","confidence":"high"},
     {"address":"0x8204e1a8","role":"theme snapshot constructor capturing eleven live renderer mesh color triples","confidence":"high"},
     {"address":"0x8204e278","role":"load-side theme decoder wrapper","confidence":"high"},
@@ -208,9 +210,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 39,
-      "size": 17104,
-      "concatenated_sha256": "565fea119ee1948901c0de3cedf9a108303b44d52b912ebc2eacd2532b263e07",
+      "inventory_entry_count": 40,
+      "size": 17328,
+      "concatenated_sha256": "faf9f6527e5fa1383641a005b389562df20128df405ae8283d981d4d4dbf9256",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -221,6 +223,7 @@
         {"start":"0x8204c450","end_exclusive":"0x8204c618","inventory_entry_count":2,"size":456,"sha256":"60d9c7a0a7e4c98b0c4aa77d5e1a8a2089fd87b6c546b37e2d646958b25d73aa"},
         {"start":"0x8204c618","end_exclusive":"0x8204c690","inventory_entry_count":1,"size":120,"sha256":"684a9480337a427f6afbd8726db57e8cc7ec59ebacff7abce1af6c1de234526c"},
         {"start":"0x8204c690","end_exclusive":"0x8204c790","inventory_entry_count":1,"size":256,"sha256":"dafaaca53dbdb4db1bdcf57fe945b24ae2e574ea0154118363ab58d2bf69b08c"},
+        {"start":"0x8204c790","end_exclusive":"0x8204c870","inventory_entry_count":1,"size":224,"sha256":"1fb3322526336109e78e9e7ec24a43a4e56823a363e2940ae26caf57cb6d4ee5"},
         {"start":"0x8204c870","end_exclusive":"0x8204cb28","inventory_entry_count":1,"size":696,"sha256":"577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015"},
         {"start":"0x8204cc40","end_exclusive":"0x8204d278","inventory_entry_count":1,"size":1592,"sha256":"f2521b470879982af294e19a92a41542fe1b3fb1e12a094e75beda1edba1c927"},
         {"start":"0x8204e1a8","end_exclusive":"0x8204e278","inventory_entry_count":1,"size":208,"sha256":"d37ddfb5e76c458711b5c5719f45e6b3a42226c4963da1307594b79384f09924"},
@@ -281,15 +284,14 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 63,
-      "size": 16152,
-      "concatenated_sha256": "423edf99298fd3409223210d850a4e21d4eadf78faf0e0d622f26daae59fe46d",
+      "inventory_entry_count": 62,
+      "size": 15928,
+      "concatenated_sha256": "35b3714092ec61bb7ad95581ae9a97965a9aa6cc3b806dfa7770044490ee8b68",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
         {"start":"0x820112e0","end_exclusive":"0x82011878","inventory_entry_count":8,"size":1432,"sha256":"88589b4dc4c9df66f232cfc1370eba0a46ced6ae60be1d877154ae100170cae4"},
         {"start":"0x82038ab8","end_exclusive":"0x82039ec0","inventory_entry_count":11,"size":5128,"sha256":"3ad48c5ef04825cb71d1abb95764c52706e8887d72c212695b2b75c3fbefafbe"},
-        {"start":"0x8204c790","end_exclusive":"0x8204c870","inventory_entry_count":1,"size":224,"sha256":"1fb3322526336109e78e9e7ec24a43a4e56823a363e2940ae26caf57cb6d4ee5"},
         {"start":"0x8204cb28","end_exclusive":"0x8204cb90","inventory_entry_count":1,"size":104,"sha256":"3c49d36ca55c4889a03fe6b15eabef6cecfa5d8a6a141d370dd3489928444552"},
         {"start":"0x8204cbd8","end_exclusive":"0x8204cc40","inventory_entry_count":1,"size":104,"sha256":"dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1"},
         {"start":"0x8204d278","end_exclusive":"0x8204d818","inventory_entry_count":7,"size":1440,"sha256":"44bc889040d88e9e582dc15c8262be75e822c3466a659439388f91b2ae91af52"},
@@ -311,11 +313,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 39,
-    "product_application_size": 17104,
-    "non_product_entry_count": 895,
-    "non_product_size": 352320,
-    "unknown_entry_count": 63,
-    "unknown_size": 16152
+    "product_application_entry_count": 40,
+    "product_application_size": 17328,
+    "non_product_entry_count": 894,
+    "non_product_size": 352096,
+    "unknown_entry_count": 62,
+    "unknown_size": 15928
   }
 }
