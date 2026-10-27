@@ -61,6 +61,14 @@ ThemeLoadResult DecodeThemeSnapshot(const SavedTheme& saved_theme,
                                     const LiveMeshColors& live_meshes,
                                     const ThemePayloadDecoder& decoder);
 
+using ThemeSnapshotEncoder = std::function<bool(const ThemeSnapshot& snapshot)>;
+
+// Product wrapper at fn_8204E310. Path/name replacement precedes the encoder
+// call even when encoding fails, matching the target's observable state.
+bool EncodeThemeSnapshot(ThemeSnapshot* snapshot, std::string_view active_path,
+                         std::string_view theme_name,
+                         const ThemeSnapshotEncoder& encoder);
+
 struct ThemeManagerState {
   std::string active_path;
   std::string theme_name;

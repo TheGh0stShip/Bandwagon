@@ -71,6 +71,15 @@ ThemeLoadResult DecodeThemeSnapshot(const SavedTheme& saved_theme,
   return result;
 }
 
+bool EncodeThemeSnapshot(ThemeSnapshot* snapshot, std::string_view active_path,
+                         std::string_view theme_name,
+                         const ThemeSnapshotEncoder& encoder) {
+  if (!snapshot) return false;
+  snapshot->theme_name = std::string(theme_name);
+  snapshot->active_path = std::string(active_path);
+  return encoder && encoder(*snapshot);
+}
+
 std::string FormatThemePath(std::string_view name) {
   return std::string(kThemeDirectory) + std::string(name) +
          std::string(kThemeExtension);

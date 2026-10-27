@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":31958,"sha256":"c4e6a40d217ddcddaa731e2a4d9c1ea96a11e79b0eb041aa373c86f7367f27cd"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":32534,"sha256":"136faba33532f135aca06ea91da77a7de180c7d6c967afb3ebe58b3e3848ff8c"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -41,9 +41,9 @@
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"12b28538d9fdd4772ad3c041c5ba6f7d89e9e85fa0191d76313bf3a7cd78f2ff"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"35fdb3e1f178ab665205f1c322286ea052efcb8591b9f24fe65442b038e0444a"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":7974,"sha256":"1c87b2e1cf3e8f81450740cc0445214477c002bf85ba1fb282090d75695fa79a"},
-    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":8030,"sha256":"0027f326c9b094fb5ba90146216f12137acd81fae245e35608b83da66e9b55db"},
-    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":5761,"sha256":"12a7892f3e3c6f4642fe93797e0dd0d7d5d9f9f851edf5ee0e634ee27f48b014"},
-    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":7386,"sha256":"48d8029083ec1b6d307a154f39209bb0fbcc402ae949702bf45a2bb8cace06ae"}
+    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":8404,"sha256":"71a4cda2df139661fe9412e56eef59c62bfd2d9ca6d6689789df5f7bd9d125d3"},
+    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":6193,"sha256":"2197bacc8646bf1e6e0bce36db36f42d5bbcb524ad998d7432a75d3ab27ed677"},
+    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":8375,"sha256":"1710479bcdf2e5de6020ec5b713ebc19516f184b9be1f0af67bf0e0b67fb5639"}
   },
   "functions": [
     {
@@ -224,6 +224,21 @@
       "source_artifacts": ["manager_source", "manager_header", "editor_source", "editor_header"],
       "test_artifacts": ["manager_test"],
       "symbols": ["SavedTheme", "ThemePayloadDecoder", "ThemeLoadResult", "DecodeThemeSnapshot"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204e310",
+      "end_exclusive": "0x8204e388",
+      "size": 120,
+      "sha256": "cd639796a0e720a97f710dd65b7483979859eccf5f0b38184885a25ba74f86bf",
+      "inventory_name": "fn_8204E310",
+      "semantic_name": "EncodeThemeSnapshot",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Exact name-then-path replacement on the theme object before encoder dispatch, propagation of the encoder result, and preservation of the replaced strings on failure. Standard-library by-value string destruction and the table-driven encoder are explicit boundaries.",
+      "source_artifacts": ["manager_source", "manager_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["ThemeSnapshotEncoder", "EncodeThemeSnapshot"],
       "required_strings": []
     },
     {
@@ -424,10 +439,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 25,
-    "product_bytes": 15040,
-    "model_covered_function_count": 25,
-    "model_covered_bytes": 15040,
+    "product_function_count": 26,
+    "product_bytes": 15160,
+    "model_covered_function_count": 26,
+    "model_covered_bytes": 15160,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

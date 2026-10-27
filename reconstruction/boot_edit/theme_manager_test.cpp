@@ -84,6 +84,31 @@ int main() {
   assert(decoder_called && !load_result.loaded);
   assert(load_result.snapshot.active_path.empty());
 
+  ThemeSnapshot encode_snapshot = snapshot;
+  bool encoder_called = false;
+  bool encoded = EncodeThemeSnapshot(
+      &encode_snapshot, "Themes:\\Saved.xbat", "Saved",
+      [&encoder_called](const ThemeSnapshot& value) {
+        encoder_called = true;
+        assert(value.active_path == "Themes:\\Saved.xbat");
+        assert(value.theme_name == "Saved");
+        return true;
+      });
+  assert(encoded && encoder_called);
+  encoder_called = false;
+  encoded = EncodeThemeSnapshot(
+      &encode_snapshot, "Themes:\\Failed.xbat", "Failed",
+      [&encoder_called](const ThemeSnapshot& value) {
+        encoder_called = true;
+        assert(value.active_path == "Themes:\\Failed.xbat");
+        assert(value.theme_name == "Failed");
+        return false;
+      });
+  assert(!encoded && encoder_called);
+  assert(encode_snapshot.active_path == "Themes:\\Failed.xbat");
+  assert(encode_snapshot.theme_name == "Failed");
+  assert(!EncodeThemeSnapshot(nullptr, "ignored", "ignored", {}));
+
   ThemeDirectoryScan scan;
   scan.file_names = {"Blue.xbat", "Odd.xbat.backup"};
   const ThemeEnumerationResult enumeration = EnumerateSavedThemes(&state, scan);
