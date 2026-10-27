@@ -1,5 +1,7 @@
 #pragma once
 
+#include "modal_state.hpp"
+
 #include <cstdint>
 #include <functional>
 #include <string>
@@ -46,14 +48,6 @@ void RunBootAnimationThread(
     const std::function<std::uint32_t(ImageHandle, std::uint32_t,
                                       BootAnimationStart*)>& get_procedure,
     const std::function<void(std::string_view, std::uint32_t)>& debug_print);
-
-struct ModalCompletionState {
-  bool completion_pending = false;  // byte +4
-  std::uint32_t result = 0;         // word +8
-  bool dialog_open = true;          // byte +304
-  std::uintptr_t continuation_argument = 0;
-  std::function<void(ModalCompletionState*, std::uintptr_t)> continuation;
-};
 
 // The two non-pdata leaves at 0x82011228 and 0x82011268 are part of the same
 // inventory extent and update the shared modal completion object.

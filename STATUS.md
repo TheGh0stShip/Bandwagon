@@ -35,14 +35,14 @@ is still **dozens of material commits, not a few more commits**.
 | Updater | Complete | All 376 entries classified; all 20 product routines / 6,728 bytes have exact-entry readable models; 22 miniz entries are pinned and 334 platform/toolchain entries are excluded | None in the current source-composition boundary |
 | UpdateCheck | Complete | All 804 entries partitioned; all 19 product/mixed routines / 6,768 bytes have readable models; five former unknown wrappers / 608 bytes positively match the clean Microsoft platform baseline | None in the current source-composition boundary |
 | SettingsApp | Partial | All 1,824 entries partitioned; 3 of 246 product/mixed candidates / 3,112 of 62,264 bytes have exact-entry behavioral models | Recover or reclassify the remaining 243 / 59,152 and resolve 13 XPR2/backend entries / 5,336 bytes |
-| BootEdit | Partial | All 934 entries partitioned; 9 of 23 product routines / 2,952 of 13,696 bytes covered; one generic shared 376-byte container was removed from the product queue | Recover the remaining 14 / 10,744 and resolve 119 unknown entries / 31,712 bytes |
+| BootEdit | Partial | All 934 entries partitioned; 11 of 23 product routines / 3,128 of 13,696 bytes covered; one generic shared 376-byte container was removed from the product queue | Recover the remaining 12 / 10,568 and resolve 119 unknown entries / 31,712 bytes |
 
 Across the five XEX ownership-pass targets, every one of 4,194 entries and
 1,387,504 code bytes has an ownership assignment. The aggregate is 3,745
 upstream or platform entries / 1,258,056 bytes, 317 conservative product/mixed
 entries / 92,400 bytes, and 132 unknown entries / 37,048 bytes. Fifty-nine
-product entries / 22,504 bytes have hash-bound readable-source coverage,
-leaving 257 / 69,896 bytes in the current uncovered product upper bound. This is a real
+product entries / 22,680 bytes have hash-bound readable-source coverage,
+leaving 255 / 69,720 bytes in the current uncovered product upper bound. This is a real
 denominator, but it can shrink as generic glue/templates are proven non-product.
 
 ## Current measured boundaries
@@ -107,8 +107,8 @@ denominator, but it can shrink as generic glue/templates are proven non-product.
 
 ### BootEdit
 
-- 23 entries / 13,696 bytes: product theme-editor behavior; 9 / 2,952 bytes are
-  source-covered and 14 / 10,744 remain.
+- 23 entries / 13,696 bytes: product theme-editor behavior; 11 / 3,128 bytes are
+  source-covered and 12 / 10,568 remain.
 - 441 entries / 231,096 bytes: pinned Dear ImGui 1.86.
 - 351 entries / 92,920 bytes: platform/toolchain code.
 - 119 entries / 31,712 bytes: unresolved framework, lookup, and custom/mixed
@@ -130,8 +130,8 @@ it.
    unknown entries before lifting them.
 3. Recover the 3,432-byte Stage2 product worker and semantically reconstruct the
    modified outer ROP/data rather than leaving it as generated assembly.
-4. Recover the 257 currently uncovered XEX product/mixed candidates / 69,896
-   bytes: SettingsApp 243 / 59,152 and BootEdit 14 / 10,744. Continue narrowing
+4. Recover the 255 currently uncovered XEX product/mixed candidates / 69,720
+   bytes: SettingsApp 243 / 59,152 and BootEdit 12 / 10,568. Continue narrowing
    SettingsApp's conservative upper bound before lifting generic helpers.
 5. Produce target-buildable components, integrate them into a replacement
    distribution, and validate the static/host-test results against authorized

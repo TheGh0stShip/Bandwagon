@@ -10,6 +10,20 @@
       "evidence": ["translates \\??\\PPROOT: and redirects \\??\\Themes: to the version-9199 BootAnim directory", "loads the bundled bootanim.xex, prepares hooks, and creates its ordinal-1 startup thread with explicit unload-on-thread-failure cleanup"]
     },
     {
+      "address": "0x8204b998",
+      "recovered_name": "fn_8204B998",
+      "semantic_name": "FinalizeModalState",
+      "confidence": "high",
+      "evidence": ["releases the runtime-owned modal payload before clearing the completion byte", "dispatches the optional continuation with the modal object and its stored argument"]
+    },
+    {
+      "address": "0x8204bb60",
+      "recovered_name": "fn_8204BB60",
+      "semantic_name": "CompleteModalTextStorage",
+      "confidence": "high",
+      "evidence": ["zeros the modal result word", "releases heap-backed text storage when present and then sets the completion byte"]
+    },
+    {
       "address": "0x82050a00",
       "recovered_name": null,
       "semantic_name": "ColorsDifferExact",

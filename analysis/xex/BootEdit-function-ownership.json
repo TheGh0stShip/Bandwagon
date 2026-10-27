@@ -22,7 +22,7 @@
   "evidence_inputs": [
     {"path":"analysis/xex/BootEdit-callgraph.json","schema":"bandwagon-ppc-direct-callgraph-v1","sha256":"e36d1ea7d3b73eaca2d3f893a4218bf9dba1e016fd54214635185d896aec9b9a","role":"direct-call topology and ownership-boundary evidence"},
     {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa","role":"product, ImGui, backend, and standard-library diagnostic anchors"},
-    {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","sha256":"ce0dd0dc0a4aa18436143c0195b262d78d4d2409afb0ac39a915250b1a336a4d","role":"high-confidence product semantic overlay, including one non-pdata leaf"},
+    {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","sha256":"0ea2dad88d3e7f5c912a11fe9d0213c27b3f6729a33a49a825cda7ac8948e84c","role":"high-confidence product semantic overlay, including one non-pdata leaf"},
     {"path":"analysis/xex/BootEdit-thirdparty-symbols.json","schema":"bandwagon-bootedit-thirdparty-symbols-v1","sha256":"b28e6c9a06b5c084b12739df38b0f43f68534319c87ee1d24a2615b78a601e54","role":"high-confidence Dear ImGui version/layout-checker anchor"},
     {"path":"analysis/xex/BootEdit-provenance.json","schema":"bandwagon-bootedit-provenance-v1","sha256":"6fea0971d477922695d565eec451ba61a865b0b37fc627ebb0e447b42be2f41e","role":"declared Dear ImGui release and independent binary signatures"}
   ],

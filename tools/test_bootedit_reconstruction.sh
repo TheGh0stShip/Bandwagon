@@ -29,4 +29,10 @@ python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
     -o "$work/bootanim_bootstrap_test"
 "$work/bootanim_bootstrap_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/modal_state.cpp" \
+    "$root/reconstruction/boot_edit/modal_state_test.cpp" \
+    -o "$work/modal_state_test"
+"$work/modal_state_test"
+
 echo "BootEdit portable reconstruction tests passed"
