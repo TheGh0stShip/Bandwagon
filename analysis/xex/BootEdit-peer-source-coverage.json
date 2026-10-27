@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":49654,"sha256":"f1be0c70c612b3d1407778f6ae92b6e7093fbabae2147dfcde4ef3fc4f1343da"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":50395,"sha256":"f659d2afc791f158d67965acd33e01580e696a33a1973d1b4748e19b674302ac"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -44,9 +44,9 @@
     "runtime_frame_source": {"path":"reconstruction/boot_edit/runtime_frame.cpp","kind":"source","size":2156,"sha256":"f5914202b210336527a92c8d7555beb89b971929677711ae82f6ac53773bcf87"},
     "runtime_frame_header": {"path":"reconstruction/boot_edit/runtime_frame.hpp","kind":"header","size":1889,"sha256":"8e039d18e9e1f6fea4a0188b0c36d2294a3b1f258b0c2f190572f50fce1a6ad9"},
     "runtime_frame_test": {"path":"reconstruction/boot_edit/runtime_frame_test.cpp","kind":"test","size":3250,"sha256":"625233bcd89a50c5cd3390c5155bac3c4201625259503c6824fbc154dbde8ce4"},
-    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":1244,"sha256":"82b2c2d387a84ba5f810164850434cda744951fee354a689b6028df907c110fa"},
-    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":2004,"sha256":"41ccd3e636d5aad2badfdfe8a456d3ad6587718fa2ab3ced59d10d5e64d397e7"},
-    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":2032,"sha256":"1f884c6b5efa6e12bb96ba4f8786f15d0cadd249915b83b61500f6b3a11cde90"},
+    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":2927,"sha256":"f23788c5fe5b7db445b4aeca8bf700cd074054e49b58285ddeae717ce5cf5d85"},
+    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":2504,"sha256":"f4babb1c3da8b9f335d41f24900b83ffc99f3bd35b807a8114d140902333716f"},
+    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":3230,"sha256":"e15fe7778080be8f212b9dc20559624b0bc4e06bdf369068df32e8567a4b32c1"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -128,6 +128,21 @@
       "source_artifacts": ["hooks_source", "hooks_header"],
       "test_artifacts": ["hooks_test"],
       "symbols": ["RunBootAnimationShutdownHook", "BootAnimationShutdownHookServices", "SmoothStep"],
+      "required_strings": []
+    },
+    {
+      "address": "0x82010220",
+      "end_exclusive": "0x820104d8",
+      "size": 696,
+      "sha256": "4f8fd3f71e7928727bbab99f5c5189d657ec44c860a521e257b746521fdd74ea",
+      "inventory_name": "fn_82010220",
+      "semantic_name": "UpdateBootAnimationVisibilityMask",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Complete hook extent: retain unrelated input bits, force bit 0x40, set or clear eleven exact visibility bits over recovered inclusive time windows with target NaN comparison behavior, optionally set dynamic bit 0x1000 when time plus bootanim offset lies between max(origin,5.5) and min(origin+4.5,10), intersect the result with ThemeManager offset-108 enabled flags, and include the installed 0x820104a8 register-preserving wrapper. Bootanim globals and singleton acquisition are injected boundaries.",
+      "source_artifacts": ["hooks_source", "hooks_header"],
+      "test_artifacts": ["hooks_test"],
+      "symbols": ["UpdateBootAnimationVisibilityMask", "BootAnimationMaskState"],
       "required_strings": []
     },
     {
@@ -823,10 +838,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 51,
-    "product_bytes": 19448,
-    "model_covered_function_count": 51,
-    "model_covered_bytes": 19448,
+    "product_function_count": 52,
+    "product_bytes": 20144,
+    "model_covered_function_count": 52,
+    "model_covered_bytes": 20144,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

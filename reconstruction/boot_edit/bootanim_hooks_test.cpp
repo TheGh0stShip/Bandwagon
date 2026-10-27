@@ -50,4 +50,29 @@ int main() {
   assert(std::fabs(SmoothStep(2.0f, 6.0f, 4.0f) - 0.5f) < 0.00001f);
   assert(SmoothStep(2.0f, 6.0f,
                     std::numeric_limits<float>::quiet_NaN()) == 1.0f);
+
+  BootAnimationMaskState mask_state;
+  assert(UpdateBootAnimationVisibilityMask(&mask_state, 0.0f, 0.0f, 0.0f,
+                                           0xffffffffu) ==
+         (0x0040u | 0x0001u | 0x0080u | 0x0008u));
+  assert(UpdateBootAnimationVisibilityMask(&mask_state, 4.2f, 0.0f, 0.0f,
+                                           0xffffffffu) ==
+         (0x0040u | 0x0200u | 0x0400u | 0x0800u | 0x0004u | 0x0002u |
+          0x0020u));
+
+  mask_state.dynamic_window_enabled = true;
+  mask_state.flags = 0;
+  const std::uint32_t dynamic = UpdateBootAnimationVisibilityMask(
+      &mask_state, 2.0f, 4.0f, 5.0f, 0x1041u);
+  assert(dynamic == 0x1040u);  // dynamic time 6 lies in [5.5, 9.5]
+  mask_state.dynamic_window_enabled = false;
+  mask_state.flags = 0x1000;
+  assert((UpdateBootAnimationVisibilityMask(&mask_state, 20.0f, 0.0f, 0.0f,
+                                            0xffffffffu) & 0x1000u) != 0);
+  mask_state.flags = 0;
+  assert(UpdateBootAnimationVisibilityMask(
+             &mask_state, std::numeric_limits<float>::quiet_NaN(), 0.0f,
+             0.0f, 0xffffffffu) == 0x0fffu);
+  assert(UpdateBootAnimationVisibilityMask(nullptr, 0, 0, 0, 0xffffffffu) ==
+         0);
 }

@@ -55,4 +55,16 @@ void RunBootAnimationShutdownHook(
 // Embedded leaf at 0x820101c8, called by the animation hook at 0x820104d8.
 float SmoothStep(float lower_edge, float upper_edge, float value);
 
+struct BootAnimationMaskState {
+  std::uint32_t flags = 0;
+  bool dynamic_window_enabled = false;
+};
+
+// Complete 0x82010220 extent, including the register-preserving 0x820104a8
+// hook wrapper. Dynamic values correspond to bootanim globals 0x98043068 and
+// 0x98043064; the final mask is ThemeManager offset 108.
+std::uint32_t UpdateBootAnimationVisibilityMask(
+    BootAnimationMaskState* state, float time, float dynamic_time_offset,
+    float dynamic_window_origin, std::uint32_t enabled_mask);
+
 }  // namespace bandwagon::boot_edit
