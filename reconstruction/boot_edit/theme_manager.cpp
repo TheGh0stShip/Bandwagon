@@ -65,6 +65,14 @@ ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
   return snapshot;
 }
 
+bool DecodeThemePayloadFile(std::string_view path, ThemePayload* payload,
+                            const ThemeTableDecoder& decoder) {
+  if (!payload) return false;
+  payload->boot_animation_version = kBootAnimationVersion;
+  return decoder &&
+         decoder(path, true, payload, kThemeDescriptorCount);
+}
+
 ThemeLoadResult DecodeThemeSnapshot(const SavedTheme& saved_theme,
                                     const LiveMeshColors& live_meshes,
                                     const ThemePayloadDecoder& decoder) {

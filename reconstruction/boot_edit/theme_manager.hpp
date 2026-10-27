@@ -76,6 +76,17 @@ ThemeSnapshot CaptureThemeSnapshot(std::string_view active_path,
 using ThemePayloadDecoder =
     std::function<bool(std::string_view path, ThemePayload* payload)>;
 
+inline constexpr std::uint32_t kThemeDescriptorCount = 41;
+using ThemeTableDecoder = std::function<bool(
+    std::string_view path, bool read_mode, ThemePayload* payload,
+    std::uint32_t descriptor_count)>;
+
+// Low-level product wrapper at fn_8204D4C0. It restores the required file
+// version before invoking the generic table codec in read mode with the fixed
+// 41-record product descriptor table.
+bool DecodeThemePayloadFile(std::string_view path, ThemePayload* payload,
+                            const ThemeTableDecoder& decoder);
+
 struct ThemeLoadResult {
   bool loaded = false;
   ThemeSnapshot snapshot{};

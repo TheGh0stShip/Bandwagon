@@ -76,6 +76,25 @@ int main() {
   assert(snapshot.payload.colors[33] == untouched_color);
 
   const SavedTheme load_record{"Themes:\\Loaded.xbat", "Loaded"};
+  ThemePayload low_level_payload{};
+  low_level_payload.boot_animation_version = 0;
+  bool table_decoder_called = false;
+  assert(DecodeThemePayloadFile(
+      load_record.path, &low_level_payload,
+      [&table_decoder_called](std::string_view path, bool read_mode,
+                              ThemePayload* payload,
+                              std::uint32_t descriptor_count) {
+        table_decoder_called = true;
+        assert(path == "Themes:\\Loaded.xbat");
+        assert(read_mode);
+        assert(payload->boot_animation_version == kBootAnimationVersion);
+        assert(descriptor_count == kThemeDescriptorCount);
+        return true;
+      }));
+  assert(table_decoder_called);
+  assert(!DecodeThemePayloadFile(load_record.path, nullptr, {}));
+  assert(!DecodeThemePayloadFile(load_record.path, &low_level_payload, {}));
+
   bool decoder_called = false;
   ThemeLoadResult load_result = DecodeThemeSnapshot(
       load_record, live_meshes,
