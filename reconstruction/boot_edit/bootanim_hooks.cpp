@@ -87,4 +87,37 @@ std::uint32_t UpdateBootAnimationVisibilityMask(
   return state->flags;
 }
 
+BootAnimationThemeColors ComputeBootAnimationThemeColors(
+    float time, const Color& theme_color) {
+  BootAnimationThemeColors result;
+
+  const float logo_mix = SmoothStep(3.700000047683716f, 5.0f, time);
+  result.logo = {
+      1.0f - logo_mix * 0.2549019455909729f,
+      1.0f - logo_mix * 0.16470587253570557f,
+      1.0f - logo_mix * 0.40392154455184937f,
+      SmoothStep(1.5f, 3.0f, time),
+  };
+
+  const float theme_mix = SmoothStep(2.5f, 5.0f, time);
+  result.live_mesh = {
+      1.0f + (theme_color[0] - 1.0f) * theme_mix,
+      1.0f + (theme_color[1] - 1.0f) * theme_mix,
+      1.0f + (theme_color[2] - 1.0f) * theme_mix,
+      1.0f,
+  };
+
+  result.glow = {
+      1.0f - theme_mix * 0.1499999761581421f,
+      1.0f - theme_mix * 0.10000002384185791f,
+      1.0f - theme_mix * 0.1499999761581421f,
+      1.0f,
+  };
+  const float glow_mix = SmoothStep(5.0f, 5.75f, time);
+  result.glow[0] += (0.637499988079071f - result.glow[0]) * glow_mix;
+  result.glow[1] += (0.7200000286102295f - result.glow[1]) * glow_mix;
+  result.glow[2] += (0.637499988079071f - result.glow[2]) * glow_mix;
+  return result;
+}
+
 }  // namespace bandwagon::boot_edit

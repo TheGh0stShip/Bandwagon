@@ -1,5 +1,7 @@
 #pragma once
 
+#include "theme_editor.hpp"
+
 #include <array>
 #include <cstdint>
 #include <functional>
@@ -66,5 +68,17 @@ struct BootAnimationMaskState {
 std::uint32_t UpdateBootAnimationVisibilityMask(
     BootAnimationMaskState* state, float time, float dynamic_time_offset,
     float dynamic_window_origin, std::uint32_t enabled_mask);
+
+struct BootAnimationThemeColors {
+  Color logo{};       // target object offset 180
+  Color live_mesh{};  // target object offset 28
+  Color glow{};       // target object offset 212
+};
+
+// Complete installed color hook at 0x820104d8. The input color is the three
+// floats at ThemeManager offsets 720..728; all other values are exact target
+// constants and smoothstep windows.
+BootAnimationThemeColors ComputeBootAnimationThemeColors(
+    float time, const Color& theme_color);
 
 }  // namespace bandwagon::boot_edit

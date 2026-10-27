@@ -75,4 +75,30 @@ int main() {
              0.0f, 0xffffffffu) == 0x0fffu);
   assert(UpdateBootAnimationVisibilityMask(nullptr, 0, 0, 0, 0xffffffffu) ==
          0);
+
+  const Color theme_color{0.2f, 0.4f, 0.6f, 9.0f};
+  BootAnimationThemeColors colors =
+      ComputeBootAnimationThemeColors(0.0f, theme_color);
+  assert(colors.logo[0] == 1.0f && colors.logo[1] == 1.0f &&
+         colors.logo[2] == 1.0f && colors.logo[3] == 0.0f);
+  assert(colors.live_mesh[0] == 1.0f && colors.live_mesh[1] == 1.0f &&
+         colors.live_mesh[2] == 1.0f && colors.live_mesh[3] == 1.0f);
+  assert(colors.glow[0] == 1.0f && colors.glow[1] == 1.0f &&
+         colors.glow[2] == 1.0f && colors.glow[3] == 1.0f);
+
+  colors = ComputeBootAnimationThemeColors(5.75f, theme_color);
+  assert(std::fabs(colors.logo[0] - 0.74509805f) < 0.00001f);
+  assert(std::fabs(colors.logo[1] - 0.83529413f) < 0.00001f);
+  assert(std::fabs(colors.logo[2] - 0.59607846f) < 0.00001f);
+  assert(colors.logo[3] == 1.0f);
+  assert(std::fabs(colors.live_mesh[0] - 0.2f) < 0.00001f);
+  assert(std::fabs(colors.live_mesh[1] - 0.4f) < 0.00001f);
+  assert(std::fabs(colors.live_mesh[2] - 0.6f) < 0.00001f);
+  assert(std::fabs(colors.glow[0] - 0.6375f) < 0.00001f);
+  assert(std::fabs(colors.glow[1] - 0.72f) < 0.00001f);
+  assert(std::fabs(colors.glow[2] - 0.6375f) < 0.00001f);
+
+  colors = ComputeBootAnimationThemeColors(
+      std::numeric_limits<float>::quiet_NaN(), theme_color);
+  assert(std::fabs(colors.glow[0] - 0.6375f) < 0.00001f);
 }

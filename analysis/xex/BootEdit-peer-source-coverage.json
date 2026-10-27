@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":50395,"sha256":"f659d2afc791f158d67965acd33e01580e696a33a1973d1b4748e19b674302ac"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":51040,"sha256":"3bd0b26d4fc8a708814661fcf38dbf58e5143762dd473e879491e8b4f5f373d3"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -44,9 +44,9 @@
     "runtime_frame_source": {"path":"reconstruction/boot_edit/runtime_frame.cpp","kind":"source","size":2156,"sha256":"f5914202b210336527a92c8d7555beb89b971929677711ae82f6ac53773bcf87"},
     "runtime_frame_header": {"path":"reconstruction/boot_edit/runtime_frame.hpp","kind":"header","size":1889,"sha256":"8e039d18e9e1f6fea4a0188b0c36d2294a3b1f258b0c2f190572f50fce1a6ad9"},
     "runtime_frame_test": {"path":"reconstruction/boot_edit/runtime_frame_test.cpp","kind":"test","size":3250,"sha256":"625233bcd89a50c5cd3390c5155bac3c4201625259503c6824fbc154dbde8ce4"},
-    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":2927,"sha256":"f23788c5fe5b7db445b4aeca8bf700cd074054e49b58285ddeae717ce5cf5d85"},
-    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":2504,"sha256":"f4babb1c3da8b9f335d41f24900b83ffc99f3bd35b807a8114d140902333716f"},
-    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":3230,"sha256":"e15fe7778080be8f212b9dc20559624b0bc4e06bdf369068df32e8567a4b32c1"},
+    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":4039,"sha256":"7d3c496846f94fd719e65fe235c2f2d6625037b8985662c6edb57b96df88ee8b"},
+    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":3014,"sha256":"ec50b16cc0514438d4b6dd8c9e272db792f51cc6218359a68e0047d280776298"},
+    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":4560,"sha256":"1118d9f899c3b0bc40271136e3c76a67eae4cd0d498e3f34971286e106a00c03"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -143,6 +143,21 @@
       "source_artifacts": ["hooks_source", "hooks_header"],
       "test_artifacts": ["hooks_test"],
       "symbols": ["UpdateBootAnimationVisibilityMask", "BootAnimationMaskState"],
+      "required_strings": []
+    },
+    {
+      "address": "0x820104d8",
+      "end_exclusive": "0x82010660",
+      "size": 392,
+      "sha256": "8017763cdbbd4d469af8f98f19c08302705524005628c39bf176f0003ca74672",
+      "inventory_name": "fn_820104D8",
+      "semantic_name": "ComputeBootAnimationThemeColors",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Complete installed color hook: compute logo RGB and alpha over the exact 3.7-to-5.0 and 1.5-to-3.0 smoothstep windows; blend live-mesh RGB from white to ThemeManager offsets 720..728 over 2.5-to-5.0; initialize the glow from its exact theme-mix attenuation constants and blend it to the exact final RGB over 5.0-to-5.75; preserve unit alpha and target NaN-to-one smoothstep behavior. ThemeManager acquisition and object-field stores are integration boundaries.",
+      "source_artifacts": ["hooks_source", "hooks_header"],
+      "test_artifacts": ["hooks_test"],
+      "symbols": ["ComputeBootAnimationThemeColors", "BootAnimationThemeColors", "Color", "SmoothStep"],
       "required_strings": []
     },
     {
@@ -838,10 +853,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 52,
-    "product_bytes": 20144,
-    "model_covered_function_count": 52,
-    "model_covered_bytes": 20144,
+    "product_function_count": 53,
+    "product_bytes": 20536,
+    "model_covered_function_count": 53,
+    "model_covered_bytes": 20536,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }
