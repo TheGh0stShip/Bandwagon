@@ -1,0 +1,29 @@
+{
+  "schema": "bandwagon-bootedit-packed-resource-v1",
+  "status": "readable_behavioral_model_complete_provenance_unknown",
+  "image_sha256": "1396cf0f05e5cb07de4f2ca067975376b0b319dd52f3ca4182af8b00d1175df8",
+  "range": {"start":"0x82052a88","end_exclusive":"0x82052d50","entry_count":4,"size":712,"sha256":"da5f1f690e2120087dabd515451b97f1ab2f8455c8ec4a40f76266acb77423c4"},
+  "coverage_semantics": "All four exact inventory entries have a hash-bound portable C++ model. File I/O and XDK virtual/physical allocation are represented by a complete byte input; valid XPR2 parsing, record relocation semantics, texture physical-data fixups, case-insensitive lookup, size, and object-data access are preserved. Additional bounds checks reject malformed archives without changing valid-input behavior.",
+  "source_artifacts": [
+    {"path":"reconstruction/boot_edit/packed_resource.hpp","kind":"header","size":2108,"sha256":"01be78035a21fa0f29e2db61dae4ab5eabea766c7874645bbe11406b0fa8c9fb"},
+    {"path":"reconstruction/boot_edit/packed_resource.cpp","kind":"source","size":5829,"sha256":"e0da579408b2de05f1f83bdb8c2db00e44c212b9e41abcf5633b70d8c92d71c2"},
+    {"path":"reconstruction/boot_edit/packed_resource_test.cpp","kind":"test","size":3064,"sha256":"2840f65c0f4b281a011ca80535187a3d4decb204aa16b9345767a4462090a12c"}
+  ],
+  "entries": [
+    {"address":"0x82052a88","size":448,"sha256":"f63fc7b2e96e2ce1d7959143c171286807febd9e79678b2144e93e0855880933","semantic_name":"LoadPackedResource","evidence":"validates XPR2, reads metadata and physical payloads separately, walks 16-byte records, relocates name/object offsets, and fixes both physical pointers in TX records"},
+    {"address":"0x82052c48","size":128,"sha256":"8eb682816de22d401280b7b31aef31d7503d22fe2f70c4000519780187d08c3b","semantic_name":"FindResource","evidence":"walks every 16-byte record and performs case-insensitive full-name comparison against its relocated name field"},
+    {"address":"0x82052cc8","size":48,"sha256":"ab3a89a9f4c7023c9ea9323d0f84322e8f5f40853676eede0f713a61391c271b","semantic_name":"ResourceSize","evidence":"returns zero on lookup failure or the matched record's offset-8 size"},
+    {"address":"0x82052cf8","size":88,"sha256":"62b273aa8a26c8d61f04e7cd4bd99013b2eaf4ef9ab09c1e70f7bdf9ce89ae30","semantic_name":"ResourceData","evidence":"returns null on lookup failure or metadata base plus 12 plus the matched record's offset-4 object offset"}
+  ],
+  "settingsapp_binding": {
+    "image_sha256": "a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a",
+    "range": {"start":"0x8205d3d8","end_exclusive":"0x8205d688","entry_count":4,"size":688,"sha256":"8f37d00fdca2990ca9031eb2c31491bbc478413cfa42716d6a35a0bdaa0570a4"},
+    "basis": "The loader recognizes the same XPR2/TX structure and the three accessor bodies are relocation-normalized matches documented by SettingsApp ownership evidence.",
+    "entries": [
+      {"address":"0x8205d3d8","size":440,"sha256":"f3a509d5109e56409cca9eb0335e8a6a0ac7ad06b4149fd737f1cc08e15b01c9","semantic_name":"LoadPackedResource"},
+      {"address":"0x8205d590","size":128,"sha256":"0863ea880d4fe986f9d53892fe371d23dc289c244c6dcec276da34e68d9343d4","semantic_name":"FindResource"},
+      {"address":"0x8205d610","size":48,"sha256":"ab3a89a9f4c7023c9ea9323d0f84322e8f5f40853676eede0f713a61391c271b","semantic_name":"ResourceSize"},
+      {"address":"0x8205d640","size":72,"sha256":"1c78b4ae8b6af6ba2e560448604e24a4e0955e69b6f7e4821d162c8529d01868","semantic_name":"ResourceData"}
+    ]
+  }
+}

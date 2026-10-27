@@ -10,6 +10,7 @@ flags=(-std=c++17 -Wall -Wextra -Werror)
 python3 "$root/tools/verify_bootedit_function_ownership.py"
 python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
 python3 "$root/tools/verify_bootedit_xbox_backend.py"
+python3 "$root/tools/verify_bootedit_packed_resource.py"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/theme_editor.cpp" \
@@ -22,6 +23,12 @@ python3 "$root/tools/verify_bootedit_xbox_backend.py"
     "$root/reconstruction/boot_edit/xbox360_imgui_backend_test.cpp" \
     -o "$work/xbox360_imgui_backend_test"
 "$work/xbox360_imgui_backend_test"
+
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/packed_resource.cpp" \
+    "$root/reconstruction/boot_edit/packed_resource_test.cpp" \
+    -o "$work/packed_resource_test"
+"$work/packed_resource_test"
 
 "$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/theme_editor.cpp" \

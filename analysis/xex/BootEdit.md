@@ -111,3 +111,12 @@ The portable implementation and tests are in
 `reconstruction/boot_edit/xbox360_imgui_backend.*`. The block remains
 provenance-unknown—source recovery does not prove whether its original Xbox
 adapter was product-authored, SDK-derived, or adapted from another source.
+
+`BootEdit-packed-resource.json` likewise hash-binds readable source for the
+four-entry / 712-byte XPR2 loader and accessor family. The implementation
+preserves the split metadata/physical payload, 16-byte record table, relocated
+name and object offsets, TX texture-data fixups, case-insensitive lookup, size,
+and data access while adding bounds checks for malformed archives. The family
+shares the format and three relocation-normalized helper bodies with
+SettingsApp, so the portable implementation is reusable rather than duplicated
+application logic.

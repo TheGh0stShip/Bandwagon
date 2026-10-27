@@ -101,8 +101,9 @@ settings persistence, and displayed Peer/kernel/SMC version information.
 All 1,824 code entries are now partitioned: 246 product/mixed candidates /
 62,264 bytes remain the conservative source-recovery upper bound, 1,565
 upstream/platform entries are excluded, and 13 XPR2/graphics-backend entries
-remain unknown. Three product/mixed entries / 3,112 bytes have exact-entry
-readable models.
+remain provenance-unknown. Four of those entries / 688 bytes now share a
+readable XPR2 reconstruction. Three product/mixed entries / 3,112 bytes have
+exact-entry readable models.
 
 `stage2/PeerPressureExploit-Stage2.md` documents the persistent HDD Stage2 ROP
 image and its relocated PowerPC worker. The complete 217,796-byte file now has

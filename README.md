@@ -50,7 +50,8 @@ now have verified readable source, while its 119 unknown entries must be
 fingerprinted before any further lifting decision. The first 11 unknown entries /
 5,128 bytes (the mixed Xbox 360/DX9 backend) now have a complete hash-bound,
 tested readable-source model, while their original-source provenance remains
-deliberately unresolved.
+deliberately unresolved. The four-entry XPR2 loader family is also now
+source-covered in both BootEdit (712 bytes) and SettingsApp (688 bytes).
 
 ### Already source-complete
 

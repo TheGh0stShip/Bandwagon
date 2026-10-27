@@ -34,7 +34,7 @@ is still **dozens of material commits, not a few more commits**.
 | HDD Stage2 | Partial | Exact whole-file reconstruction; worker split into public, platform, and candidate product ranges | 3,432 candidate product worker bytes plus the modified outer ROP and remaining data need semantic/source recovery |
 | Updater | Complete | All 376 entries classified; all 20 product routines / 6,728 bytes have exact-entry readable models; 22 miniz entries are pinned and 334 platform/toolchain entries are excluded | None in the current source-composition boundary |
 | UpdateCheck | Complete | All 804 entries partitioned; all 19 product/mixed routines / 6,768 bytes have readable models; five former unknown wrappers / 608 bytes positively match the clean Microsoft platform baseline | None in the current source-composition boundary |
-| SettingsApp | Partial | All 1,824 entries partitioned; 3 of 246 product/mixed candidates / 3,112 of 62,264 bytes have exact-entry behavioral models | Recover or reclassify the remaining 243 / 59,152 and resolve 13 XPR2/backend entries / 5,336 bytes |
+| SettingsApp | Partial | All 1,824 entries partitioned; 3 of 246 product/mixed candidates / 3,112 of 62,264 bytes have exact-entry behavioral models; XPR2 4 / 688 source-covered | Recover or reclassify the remaining 243 / 59,152 and lift 9 / 4,648 unknown-provenance backend entries |
 | BootEdit | Partial | All 934 entries partitioned; 16 of 23 product routines / 6,176 of 13,696 bytes covered; one generic shared 376-byte container was removed from the product queue | Recover the remaining 7 / 7,520 and resolve 119 unknown entries / 31,712 bytes |
 
 Across the five XEX ownership-pass targets, every one of 4,194 entries and
@@ -102,17 +102,19 @@ denominator, but it can shrink as generic glue/templates are proven non-product.
 - 153 entries / 39,680 bytes: pinned JsonCpp 00.11.0.
 - 17 entries / 15,848 bytes: pinned miniz 3.1.1.
 - 832 entries / 263,796 bytes: platform/toolchain and import thunks.
-- 13 entries / 5,336 bytes: XPR2 resource and mixed Xbox 360/DX9 backend
-  code remains unknown.
+- 13 provenance-unknown entries / 5,336 bytes: XPR2 resource and mixed Xbox
+  360/DX9 backend; XPR2 4 / 688 are source-covered, leaving 9 / 4,648 without
+  readable source.
 
 ### BootEdit
 
-- 23 entries / 13,696 bytes: product theme-editor behavior; 16 / 6,176 bytes are
-  source-covered and 7 / 7,520 remain.
+- 22 entries / 13,088 bytes: known product theme-editor behavior; all 22 /
+  13,088 bytes are source-covered.
 - 441 entries / 231,096 bytes: pinned Dear ImGui 1.86.
-- 351 entries / 92,920 bytes: platform/toolchain code.
-- 119 entries / 31,712 bytes: unresolved framework, lookup, and custom/mixed
-  Xbox 360/DX9 backend code; not counted as product.
+- 352 entries / 93,528 bytes: platform/toolchain code.
+- 119 entries / 31,712 bytes remain provenance-unknown; 15 / 5,840 bytes of
+  the Xbox 360/DX9 backend and XPR2 loader are now source-covered, leaving
+  104 / 25,872 without readable source.
 - The 376-byte `0x82053238` container is now unknown rather than product: it
   combines four generic/XDK-facing bodies, two shared exactly with SettingsApp,
   but no exact public/platform provenance has yet been pinned.
