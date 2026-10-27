@@ -38,4 +38,52 @@ int main() {
   assert(modal.completion_pending);
 
   CompleteModalTextStorage(nullptr);
+
+  ModalFrameServices frame;
+  order.clear();
+  modal = ModalCompletionState{};
+  modal.result = 2;
+  modal.position_unset = true;
+  modal.render_content = [&] { order.push_back("render"); };
+  modal.publish_state = [&] { order.push_back("publish"); };
+  frame.request_initial_placement = [&] { order.push_back("place"); };
+  frame.begin_popup = [&](std::uint32_t flags) {
+    assert(flags == 0x12B);
+    order.push_back("begin");
+    return true;
+  };
+  frame.end_popup = [&] { order.push_back("end"); };
+  frame.restore_focus = [&] { order.push_back("focus"); };
+  assert(UpdateModalWindow(&modal, frame));
+  assert((order == std::vector<std::string>{"place", "begin", "render",
+                                             "publish", "end", "focus"}));
+
+  order.clear();
+  modal.result = 2;
+  modal.position_unset = false;
+  modal.render_content = [&] {
+    order.push_back("render");
+    modal.result = 0;
+  };
+  assert(!UpdateModalWindow(&modal, frame));
+  assert((order == std::vector<std::string>{"begin", "render", "end"}));
+
+  order.clear();
+  modal.result = 3;
+  modal.completion_pending = true;
+  frame.begin_popup = [&](std::uint32_t flags) {
+    assert(flags == kModalWindowFlags);
+    order.push_back("begin-closed");
+    modal.result = 0;  // Models state changed by the popup boundary.
+    return false;
+  };
+  modal.publish_state = [&] { order.push_back("publish-four"); };
+  assert(UpdateModalWindow(&modal, frame));
+  assert(modal.result == 4 && !modal.completion_pending);
+  assert((order ==
+          std::vector<std::string>{"begin-closed", "publish-four"}));
+
+  modal = ModalCompletionState{};
+  assert(UpdateModalWindow(&modal, frame));
+  assert(!UpdateModalWindow(nullptr, frame));
 }

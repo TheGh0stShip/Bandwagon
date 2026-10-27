@@ -15,7 +15,19 @@ struct ModalCompletionState {
   std::string text;
   bool text_storage_released = false;
   std::function<void()> release_runtime;
+  bool position_unset = false;
+  std::function<void()> render_content;
+  std::function<void()> publish_state;
 };
+
+struct ModalFrameServices {
+  std::function<void()> request_initial_placement;
+  std::function<bool(std::uint32_t window_flags)> begin_popup;
+  std::function<void()> end_popup;
+  std::function<void()> restore_focus;
+};
+
+inline constexpr std::uint32_t kModalWindowFlags = 0x12B;
 
 // 0x8204b998: release the modal's runtime-owned payload, clear its completion
 // byte, then notify the optional continuation with the stored argument.
@@ -25,5 +37,11 @@ void FinalizeModalState(ModalCompletionState* modal);
 // and publish completion. The original leaf explicitly destroys heap-backed
 // string storage rather than assigning an empty string.
 void CompleteModalTextStorage(ModalCompletionState* modal);
+
+// 0x8204bbc0: position and render one modal frame, publish nonzero state after
+// content rendering, convert a completed-but-closed zero state to state 4,
+// and report whether the modal remains in a nonzero state.
+bool UpdateModalWindow(ModalCompletionState* modal,
+                       const ModalFrameServices& services);
 
 }  // namespace bandwagon::boot_edit

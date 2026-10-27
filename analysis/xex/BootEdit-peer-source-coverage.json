@@ -12,17 +12,17 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"0b52cac856840b2bbfc2dba94d9f71cf29abbf48159469e05c9f977906067ae3"},
-    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":4281,"sha256":"0ea2dad88d3e7f5c912a11fe9d0213c27b3f6729a33a49a825cda7ac8948e84c"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"afa76f05781305a4c9a22fede4dfbd63a17605e4b3c3be9b4f8c7c486b2aa0b9"},
+    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":4753,"sha256":"a680636643c781942f95a5837b4078df38d486194c9ea35e6fb804c1e29ff915"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
   "source_artifacts": {
     "bootstrap_source": {"path":"reconstruction/boot_edit/bootanim_bootstrap.cpp","kind":"source","size":3562,"sha256":"f3fe31d956af4f12d3c37cc12104cb6515ba331d4bfa258988690fe67e45c042"},
     "bootstrap_header": {"path":"reconstruction/boot_edit/bootanim_bootstrap.hpp","kind":"header","size":2531,"sha256":"19364fea4a2c48287af141d0e854a3e48e8d3493845f139f17147ccd6f325b59"},
     "bootstrap_test": {"path":"reconstruction/boot_edit/bootanim_bootstrap_test.cpp","kind":"test","size":5207,"sha256":"9ecb54e4e89dd81c6c8a80bba03e9c4ff2aa264fbfcb1e0f7d12e8e3afce0c5f"},
-    "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":584,"sha256":"fd18e52549afc2ff66aa20681b119ca83fbbfa41ca0eac28de5ab26f0c02accd"},
-    "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":1057,"sha256":"91d24b3a349c13c3755c8216b26a285d2a2235606d3e3d43d81e67c25004926e"},
-    "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":1208,"sha256":"c276c9e300411efb5b31628b966ef903b4b5ce31dfb640068351ceffc74f6352"},
+    "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":1525,"sha256":"d92dc12c4926d4ce3b3854f692bf77c3e6038275711b51c87602a28b31c533c9"},
+    "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":1775,"sha256":"be814ce107bb6c3b5ebfde43a51f1b143f492138e72a9880a5b137e232718fdf"},
+    "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":2915,"sha256":"2a28e681108efb7b9a5f8308f17428eabd93921e171d847de15f9dfe393a3b5f"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":3466,"sha256":"534adfa50286e499a001f9407256e7c5add50772e59557809d5ee63f6ff7d2a9"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":2766,"sha256":"a3a4e2b8781dcc6b8f36aa63d0687bdeabce087558f1baa5b6b745afd07705bd"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":4221,"sha256":"769f3e88fd5109507e0aa38c29b07cf60db7bd86cdc111b9e016656ab4e516f7"},
@@ -89,6 +89,21 @@
       "source_artifacts": ["modal_source", "modal_header"],
       "test_artifacts": ["modal_test"],
       "symbols": ["ModalCompletionState", "CompleteModalTextStorage"],
+      "required_strings": []
+    },
+    {
+      "address": "0x8204bbc0",
+      "end_exclusive": "0x8204bda0",
+      "size": 480,
+      "sha256": "306af696a1f5670f2c4fd1465b47178a766a14210085aa431710c59ea4210e78",
+      "inventory_name": "fn_8204BBC0",
+      "semantic_name": "UpdateModalWindow",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Zero-state early return, initial-placement and focus restoration, exact popup flags 0x12B, popup begin/render/publish/end ordering, completed-closed transition to state 4, completion-byte clear, and final nonzero-state result; ImGui geometry and popup calls are injected boundaries.",
+      "source_artifacts": ["modal_source", "modal_header"],
+      "test_artifacts": ["modal_test"],
+      "symbols": ["ModalCompletionState", "ModalFrameServices", "UpdateModalWindow"],
       "required_strings": []
     },
     {
@@ -200,7 +215,6 @@
   "remaining_product_entries": [
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
     {"address":"0x8204b9e8","end_exclusive":"0x8204bb60","size":376,"sha256":"446bfdf4830f7ab54b0e04d76ddcf94385ed34ad8427de0ad2c647a83de22c4f","role":"BootEdit modal state helper","blocker":"recover the shared modal object layout and state transitions"},
-    {"address":"0x8204bbc0","end_exclusive":"0x8204bda0","size":480,"sha256":"306af696a1f5670f2c4fd1465b47178a766a14210085aa431710c59ea4210e78","role":"BootEdit modal virtual callback","blocker":"recover full callback ownership and allocation flow"},
     {"address":"0x8204bda0","end_exclusive":"0x8204c280","size":1248,"sha256":"ea44687599d84becaaf443839357134d7019a00f03b779bdf6fa3fb7cd2dee8f","role":"BootEdit modal renderer owning Cancel actions","blocker":"recover all modal button/layout and continuation states"},
     {"address":"0x8204c870","end_exclusive":"0x8204cb28","size":696,"sha256":"577bfc106f8c29e806783f6495fc810b69b024ff67178e3e36b3d285381c7015","role":"ConfirmDiscardUnsavedChanges","blocker":"model the nested save-failure continuation without collapsing modal states"},
     {"address":"0x82050958","end_exclusive":"0x82050a50","size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a","role":"saved-theme state initializer containing ColorsDifferExact leaf","blocker":"the inventory extent contains StartRefreshAsync, a separate modal constructor, padding, and ColorsDifferExact; all bodies must be covered together"},
@@ -214,9 +228,9 @@
   "summary": {
     "product_function_count": 23,
     "product_bytes": 13696,
-    "model_covered_function_count": 11,
-    "model_covered_bytes": 3128,
-    "remaining_product_function_count": 12,
-    "remaining_product_bytes": 10568
+    "model_covered_function_count": 12,
+    "model_covered_bytes": 3608,
+    "remaining_product_function_count": 11,
+    "remaining_product_bytes": 10088
   }
 }

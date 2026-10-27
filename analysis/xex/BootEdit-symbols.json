@@ -24,6 +24,13 @@
       "evidence": ["zeros the modal result word", "releases heap-backed text storage when present and then sets the completion byte"]
     },
     {
+      "address": "0x8204bbc0",
+      "recovered_name": "fn_8204BBC0",
+      "semantic_name": "UpdateModalWindow",
+      "confidence": "high",
+      "evidence": ["applies initial modal placement, begins the popup with window flags 0x12B, renders content, and ends the popup", "publishes nonzero state after rendering, converts a completed closed zero state to state 4, restores focus after initial placement, and returns the resulting active-state predicate"]
+    },
+    {
       "address": "0x82050a00",
       "recovered_name": null,
       "semantic_name": "ColorsDifferExact",
