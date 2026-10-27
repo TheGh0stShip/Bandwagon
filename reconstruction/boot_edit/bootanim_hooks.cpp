@@ -140,4 +140,70 @@ ColorTriplet RunBootAnimationColorForwardHook(
   return scaled_color;
 }
 
+namespace {
+
+std::uint32_t PackArgb(float red, float green, float blue) {
+  const auto r = static_cast<std::uint8_t>(static_cast<std::int64_t>(red));
+  const auto g = static_cast<std::uint8_t>(static_cast<std::int64_t>(green));
+  const auto b = static_cast<std::uint8_t>(static_cast<std::int64_t>(blue));
+  return 0xff000000u | (static_cast<std::uint32_t>(r) << 16) |
+         (static_cast<std::uint32_t>(g) << 8) |
+         static_cast<std::uint32_t>(b);
+}
+
+}  // namespace
+
+BootAnimationNoiseTexture GenerateBootAnimationNoiseTexture(
+    const std::array<double, 512>& noise, const ColorTriplet& lower_color,
+    const ColorTriplet& anchor_color, const ColorTriplet& upper_color,
+    const BootAnimationShapeTransform& shape_transform) {
+  BootAnimationNoiseTexture result;
+  result.argb.resize(result.width * result.height);
+
+  const float lower_normalizer = static_cast<float>(
+      1.0 / shape_transform(0.10000000149011612));
+  const float upper_normalizer =
+      static_cast<float>(1.0 / shape_transform(0.5));
+
+  for (std::uint32_t y = 0; y < result.height; ++y) {
+    const float vertical = static_cast<float>(y) * 0.007843138f;
+    ColorTriplet base{};
+    float profile = 0.0f;
+
+    if (vertical > 1.0f) {
+      for (std::size_t channel = 0; channel < base.size(); ++channel) {
+        base[channel] = upper_color[channel] * 255.0f;
+      }
+      const float distance = 2.0f - vertical;
+      if (distance >= 0.0f) {
+        profile = static_cast<float>(shape_transform(distance) *
+                                     upper_normalizer);
+      }
+    } else {
+      const float blend = vertical * vertical;
+      for (std::size_t channel = 0; channel < base.size(); ++channel) {
+        base[channel] = lower_color[channel] * 255.0f * (1.0f - blend) +
+                        anchor_color[channel] * 255.0f * blend;
+      }
+      if (vertical >= 0.0f) {
+        profile = static_cast<float>(shape_transform(vertical) *
+                                     lower_normalizer);
+      }
+    }
+
+    for (std::uint32_t x = 0; x < result.width; ++x) {
+      float amount = static_cast<float>(noise[x]) * profile;
+      if (!(amount < 1.0f)) {
+        amount = 1.0f;
+      }
+      const float inverse = 1.0f - amount;
+      result.argb[y * result.width + x] = PackArgb(
+          base[0] * amount + anchor_color[0] * 255.0f * inverse,
+          base[1] * amount + anchor_color[1] * 255.0f * inverse,
+          base[2] * amount + anchor_color[2] * 255.0f * inverse);
+    }
+  }
+  return result;
+}
+
 }  // namespace bandwagon::boot_edit

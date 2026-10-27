@@ -30,7 +30,7 @@ Status date: 2026-10-26
 | Gate | State | What that means |
 |---|---:|---|
 | Preserve and map the inputs | Complete | 33 / 33 installed artifacts recorded; all 4,194 XEX code entries are accounted for |
-| Recover maintainable Peer-specific source | In progress | 10 of 14 targets complete; in the measured five-XEX queue, 105 / 348 product candidates and 40,256 / 99,408 bytes have verified readable source |
+| Recover maintainable Peer-specific source | In progress | 10 of 14 targets complete; in the measured five-XEX queue, 106 / 349 product candidates and 40,992 / 100,144 bytes have verified readable source |
 | Build and validate a replacement | Not complete | No single source-built replacement distribution exists yet |
 
 There is no honest single percentage for the whole project: the 14 targets
@@ -45,8 +45,8 @@ Xbox/compiler infrastructure.
 **UpdateCheck is now source-complete:** all 19 product functions / 6,768 bytes
 have verified readable source, and all five former unknown wrapper containers /
 608 bytes have positive Microsoft-platform provenance. The next focused queue
-is BootEdit's provenance backlog: all 54 known product functions / 20,704 bytes
-now have verified readable source, while its 34 unknown entries must be
+is BootEdit's provenance backlog: all 55 known product functions / 21,440 bytes
+now have verified readable source, while its 33 unknown entries must be
 fingerprinted before any further lifting decision. The first 11 unknown entries /
 5,128 bytes (the mixed Xbox 360/DX9 backend) now have a complete hash-bound,
 tested readable-source model, while their original-source provenance remains
@@ -67,7 +67,7 @@ reconstructions remain as test oracles, not as substitutes for readable source.
 | KernelExpansion | 50 functions / 18,828 bytes | 72 functions / 16,024 bytes |
 | HDD Stage2 | 3,432 candidate worker bytes, plus modified ROP/data | Included in its remaining analysis |
 | SettingsApp | 243 functions / 59,152 bytes | 13 functions / 5,336 bytes |
-| BootEdit | None among currently classified product code | 34 functions / 10,008 bytes |
+| BootEdit | None among currently classified product code | 33 functions / 9,272 bytes |
 | Final integration | Source-built components, reproducible distribution, and host plus authorized target/emulator validation | - |
 
 ### Forecast
@@ -89,7 +89,7 @@ Status date: 2026-10-26
 |---|---:|---|
 | Installed-artifact inventory | 33 / 33 | Complete |
 | Raw-payload evidence | Every current raw Peer payload | Binary-exact; this is an evidence milestone, not source completion |
-| XEX function ownership | 4,194 / 4,194 entries and 1,387,504 / 1,387,504 code bytes | Exhaustively partitioned; 119 entries remain conservatively unknown across all six measured components |
+| XEX function ownership | 4,194 / 4,194 entries and 1,387,504 / 1,387,504 code bytes | Exhaustively partitioned; 118 entries remain conservatively unknown across all six measured components |
 | Maintainable-source targets | 10 / 14 | Four targets remain partial |
 | Source-built replacement distribution | 0 / 1 | Not yet integrated |
 
@@ -115,23 +115,23 @@ already been built.
 | HDD Stage2 | Partial | Ownership split and exact binary reconstruction | 3,432 candidate product worker bytes, modified ROP/data, and integration |
 | UpdateCheck | Complete | 19 / 19 product entries, 6,768 / 6,768 B | None in the current source-composition boundary |
 | SettingsApp | Partial | 3 / 246 product/mixed entries, 3,112 / 62,264 B | 243 entries / 59,152 B, plus 13 unknown entries / 5,336 B |
-| BootEdit | Partial | 54 / 54 known product entries, 20,704 / 20,704 B | 34 unknown entries / 10,008 B require provenance resolution |
+| BootEdit | Partial | 55 / 55 known product entries, 21,440 / 21,440 B | 33 unknown entries / 9,272 B require provenance resolution |
 
-The five-XEX readable-source counter is therefore **105 / 348 product entries
-(30.2%) and 40,256 / 99,408 product bytes (40.5%)**. These percentages describe
+The five-XEX readable-source counter is therefore **106 / 349 product entries
+(30.4%) and 40,992 / 100,144 product bytes (40.9%)**. These percentages describe
 that measured XEX queue only; they deliberately exclude pinned public source,
 proven platform/toolchain code, KernelExpansion, Stage2, and final integration.
 
 The XEX ownership pass is now complete. Of their 1,387,504 code bytes,
 1,272,752 (91.7%) are pinned upstream or proven platform/toolchain code and are
-not a Peer source-recovery task. The current denominator is 348 product/mixed
-candidates / 99,408 bytes plus 47 unknown entries / 15,344 bytes. Of the
-product bucket, 105 entries / 40,256 bytes now have hash-bound readable-source
+not a Peer source-recovery task. The current denominator is 349 product/mixed
+candidates / 100,144 bytes plus 46 unknown entries / 14,608 bytes. Of the
+product bucket, 106 entries / 40,992 bytes now have hash-bound readable-source
 coverage; 243 / 59,152 bytes remain. Existing unbound behavior models are not
 counted as completed functions.
 
 Within that XEX denominator, BootXell is 9/9 and Updater is 20/20 source
-covered. UpdateCheck is 19/19, SettingsApp is 3/246, and BootEdit is 54/54
+covered. UpdateCheck is 19/19, SettingsApp is 3/246, and BootEdit is 55/55
 among currently classified product entries.
 That is the shortest current answer to "what is done versus left."
 
@@ -146,7 +146,7 @@ targets are the largest ones, so 10 / 14 completed targets must not be read as
   ROP/data;
 - readable source for 243 currently uncovered XEX product/mixed entries /
   59,152 bytes, all in SettingsApp;
-- provenance work on 47 unknown XEX entries / 15,344 bytes before treating
+- provenance work on 46 unknown XEX entries / 14,608 bytes before treating
   any of them as product code;
 - a final target-build and integration-validation phase.
 
@@ -156,7 +156,7 @@ candidate**, not a few more commits. The estimate is approximately 1-4 commits
 for provenance refinement, 18-36 for the four partial source targets, and 5-10
 for build/integration closure. It is an active-work estimate, not elapsed time
 while no analysis session is running. Authorized target/emulator validation
-can extend that range. The estimate will narrow as the 119-entry unknown bucket
+can extend that range. The estimate will narrow as the 118-entry unknown bucket
 is resolved. See [`STATUS.md`](STATUS.md) for the component-by-component
 scoreboard, remaining queue, and exact definition of 100% completion.
 

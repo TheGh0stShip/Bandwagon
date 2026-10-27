@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":51724,"sha256":"43432c2c62101e64ac30dc0d5cb9a301e2d3bf423a0b7a7eaeb25cf55baacf8a"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":52441,"sha256":"2c274ecd899b6cb5e133e9092b6af2ec7252093b4d1be4c46c8dc7327a03476d"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -44,9 +44,9 @@
     "runtime_frame_source": {"path":"reconstruction/boot_edit/runtime_frame.cpp","kind":"source","size":2156,"sha256":"f5914202b210336527a92c8d7555beb89b971929677711ae82f6ac53773bcf87"},
     "runtime_frame_header": {"path":"reconstruction/boot_edit/runtime_frame.hpp","kind":"header","size":1889,"sha256":"8e039d18e9e1f6fea4a0188b0c36d2294a3b1f258b0c2f190572f50fce1a6ad9"},
     "runtime_frame_test": {"path":"reconstruction/boot_edit/runtime_frame_test.cpp","kind":"test","size":3250,"sha256":"625233bcd89a50c5cd3390c5155bac3c4201625259503c6824fbc154dbde8ce4"},
-    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":4742,"sha256":"8eb4ea9ec960beb16b17fbd5b44ef8501b8488b739241356e8fc85d13e95e758"},
-    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":4125,"sha256":"c9725c827a95d6974ca359495c2928f1e72ae61ecd316932ae0f730a26ff640e"},
-    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":5767,"sha256":"8482384e72542cb768cfc997ed96774a669c0b429d83976b07970ce782eeb4f1"},
+    "hooks_source": {"path":"reconstruction/boot_edit/bootanim_hooks.cpp","kind":"source","size":7243,"sha256":"92dd4f169bc167b5427f8023a865128f6b8a3206a84aea8dec28544f79d4ba1e"},
+    "hooks_header": {"path":"reconstruction/boot_edit/bootanim_hooks.hpp","kind":"header","size":4989,"sha256":"2a04327ff54aff103a6611241141e3702b10cb0f8f411a3f879e6561f580cd1f"},
+    "hooks_test": {"path":"reconstruction/boot_edit/bootanim_hooks_test.cpp","kind":"test","size":6794,"sha256":"ef849a3827e3f8d806fc7030fcea217e7498e5971b7b71539c5b5504de4282ef"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -173,6 +173,21 @@
       "source_artifacts": ["hooks_source", "hooks_header"],
       "test_artifacts": ["hooks_test"],
       "symbols": ["RunBootAnimationColorForwardHook", "BootAnimationColorForwardServices", "ColorTriplet"],
+      "required_strings": []
+    },
+    {
+      "address": "0x82010708",
+      "end_exclusive": "0x820109e8",
+      "size": 736,
+      "sha256": "0a2df379a7bab7833f77a8f50925d5e6f034c069689260672850ae71ce54be3e",
+      "inventory_name": "fn_82010708",
+      "semantic_name": "GenerateBootAnimationNoiseTexture",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Complete procedural pixel core and integration order for the 512x256 ARGB texture: normalize the original bootanim shape transform at 0.1 and 0.5; compute the exact lower quadratic and upper constant vertical color branches from ThemeManager offsets 640..680; modulate each row with the 512-double table at 0x820006b8; preserve maximum-only factor clamping, float-to-integer truncation, and ARGB packing; then unlock, attach, and publish the texture at object offset 288. The target table is explicit input; the Microsoft bootanim transform and GPU resource operations are injected boundaries.",
+      "source_artifacts": ["hooks_source", "hooks_header"],
+      "test_artifacts": ["hooks_test"],
+      "symbols": ["GenerateBootAnimationNoiseTexture", "BootAnimationNoiseTexture", "BootAnimationShapeTransform", "ColorTriplet"],
       "required_strings": []
     },
     {
@@ -868,10 +883,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 54,
-    "product_bytes": 20704,
-    "model_covered_function_count": 54,
-    "model_covered_bytes": 20704,
+    "product_function_count": 55,
+    "product_bytes": 21440,
+    "model_covered_function_count": 55,
+    "model_covered_bytes": 21440,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

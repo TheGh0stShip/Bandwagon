@@ -129,4 +129,30 @@ int main() {
   assert(std::fabs(scaled[1] - 0.2f) < 0.00001f);
   assert(std::fabs(scaled[2] - 0.3f) < 0.00001f);
   assert(observed_color == scaled);
+
+  std::array<double, 512> noise{};
+  const ColorTriplet lower{0.2f, 0.3f, 0.4f};
+  const ColorTriplet anchor{0.6f, 0.7f, 0.8f};
+  const ColorTriplet upper{0.1f, 0.2f, 0.3f};
+  int shape_calls = 0;
+  const BootAnimationNoiseTexture zero_noise_texture =
+      GenerateBootAnimationNoiseTexture(
+          noise, lower, anchor, upper,
+          [&](double value) {
+            ++shape_calls;
+            return value + 1.0;
+          });
+  assert(zero_noise_texture.width == 512);
+  assert(zero_noise_texture.height == 256);
+  assert(zero_noise_texture.argb.size() == 512u * 256u);
+  assert(shape_calls == 258);
+  assert(zero_noise_texture.argb.front() == 0xff99b2ccu);
+  assert(zero_noise_texture.argb.back() == 0xff99b2ccu);
+
+  noise.fill(1.0);
+  const BootAnimationNoiseTexture solid_noise_texture =
+      GenerateBootAnimationNoiseTexture(
+          noise, lower, anchor, upper, [](double) { return 1.0; });
+  assert(solid_noise_texture.argb.front() == 0xff334c66u);
+  assert(solid_noise_texture.argb.back() == 0xff19334cu);
 }

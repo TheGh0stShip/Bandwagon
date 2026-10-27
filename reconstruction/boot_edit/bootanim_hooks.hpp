@@ -5,6 +5,7 @@
 #include <array>
 #include <cstdint>
 #include <functional>
+#include <vector>
 
 namespace bandwagon::boot_edit {
 
@@ -104,5 +105,23 @@ ColorTriplet RunBootAnimationColorForwardHook(
     std::uintptr_t original_argument, std::uintptr_t forwarded_argument,
     const ColorTriplet& theme_color,
     const BootAnimationColorForwardServices& services);
+
+struct BootAnimationNoiseTexture {
+  std::uint32_t width = 512;
+  std::uint32_t height = 256;
+  std::vector<std::uint32_t> argb;
+};
+
+using BootAnimationShapeTransform = std::function<double(double)>;
+
+// Pixel-generation core of 0x82010708. `noise` is the exact 512-double table
+// at target address 0x820006b8. `shape_transform` is the original bootanim
+// math routine at 0x9803d5f8, which remains a Microsoft-component boundary.
+// Allocation, lock/unlock, resource attachment, and publication at object
+// offset 288 are platform integration around this returned pixel buffer.
+BootAnimationNoiseTexture GenerateBootAnimationNoiseTexture(
+    const std::array<double, 512>& noise, const ColorTriplet& lower_color,
+    const ColorTriplet& anchor_color, const ColorTriplet& upper_color,
+    const BootAnimationShapeTransform& shape_transform);
 
 }  // namespace bandwagon::boot_edit
