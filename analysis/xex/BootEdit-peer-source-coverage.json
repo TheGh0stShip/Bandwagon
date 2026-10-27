@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":37700,"sha256":"f41fe38256f91f32d17afdf107591e1adcf4152ccea2a9a2fd4e6ab024589a60"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":38200,"sha256":"509a52ce86907c0d917b592189a043e102aa6f187481712bb07aad4ae26ebd11"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -41,9 +41,9 @@
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
-    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":8622,"sha256":"02b1e5afcb64298a384ca182b7b0b5122210e6b481b9adeb87f745b3878e2aa5"},
-    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":7231,"sha256":"c81853400030f01657475acf7a8d6a99aa9d4f038a91a32eea63478c45ef293d"},
-    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":9413,"sha256":"3a98284e19d3ea73356b8a3765346378f53698dcdde4c910da59924db6c3aa9e"}
+    "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":9045,"sha256":"565d12919dc0c8fd17dba28aeb354bbb7ae255e335aed72c194cbba3c28a3c6d"},
+    "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":7689,"sha256":"265ab32bb7fd8d6d216f3010d47e7800ee71853c735210b8f1dac79308e7eb84"},
+    "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":10227,"sha256":"a46a11014abd54d08320df88dba98d4a83a297dd51a9e97013a041b189b2d09f"}
   },
   "functions": [
     {
@@ -270,6 +270,21 @@
       "test_artifacts": ["manager_test", "editor_test"],
       "symbols": ["ThemeDirectoryScan", "ThemeEnumerationResult", "EnumerateSavedThemes", "BuildSavedTheme", "kNoMoreFiles"],
       "required_strings": ["Themes:\\*.xbat", ".xbat", "Themes:\\"]
+    },
+    {
+      "address": "0x82050900",
+      "end_exclusive": "0x82050958",
+      "size": 88,
+      "sha256": "c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8",
+      "inventory_name": "fn_82050900",
+      "semantic_name": "PublishSavedThemes",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Exact publication ordering: copy the candidate SavedTheme vector before synchronization, enter the refresh critical section, replace the live vector, and leave the critical section. Critical-section calls and compiler-emitted vector construction/assignment are injected attributed boundaries.",
+      "source_artifacts": ["manager_source", "manager_header"],
+      "test_artifacts": ["manager_test"],
+      "symbols": ["ThemePublicationServices", "PublishSavedThemes", "ThemeManagerState", "SavedTheme"],
+      "required_strings": []
     },
     {
       "address": "0x82050958",
@@ -544,10 +559,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 33,
-    "product_bytes": 16064,
-    "model_covered_function_count": 33,
-    "model_covered_bytes": 16064,
+    "product_function_count": 34,
+    "product_bytes": 16152,
+    "model_covered_function_count": 34,
+    "model_covered_bytes": 16152,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

@@ -140,6 +140,24 @@ int main() {
   assert(state.saved_themes[1].path == enumeration.themes[1].path);
   assert(enumeration.themes[0].display_name == "Blue");
   assert(enumeration.themes[1].display_name == "Odd");
+
+  std::vector<SavedTheme> publication{{"Themes:\\Before.xbat", "Before"}};
+  std::vector<int> publication_order;
+  ThemePublicationServices publication_services;
+  publication_services.enter_refresh_lock = [&] {
+    publication_order.push_back(1);
+    // Proves that the product wrapper snapshots before acquiring the lock.
+    publication[0] = {"Themes:\\After.xbat", "After"};
+  };
+  publication_services.leave_refresh_lock = [&] {
+    publication_order.push_back(2);
+    assert(state.saved_themes[0].display_name == "Before");
+  };
+  PublishSavedThemes(&state, publication, publication_services);
+  assert((publication_order == std::vector<int>{1, 2}));
+  assert(state.saved_themes.size() == 1);
+  assert(state.saved_themes[0].path == "Themes:\\Before.xbat");
+  assert(publication[0].display_name == "After");
   scan.terminal_error_code = 5;
   const ThemeEnumerationResult failed_enumeration =
       EnumerateSavedThemes(&state, scan);

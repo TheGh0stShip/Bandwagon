@@ -145,6 +145,16 @@ ThemeEnumerationResult EnumerateSavedThemes(ThemeManagerState* state,
   return result;
 }
 
+void PublishSavedThemes(ThemeManagerState* state,
+                        const std::vector<SavedTheme>& themes,
+                        const ThemePublicationServices& services) {
+  if (!state) return;
+  const std::vector<SavedTheme> snapshot = themes;
+  if (services.enter_refresh_lock) services.enter_refresh_lock();
+  state->saved_themes = snapshot;
+  if (services.leave_refresh_lock) services.leave_refresh_lock();
+}
+
 bool StartThemeEnumeration(ThemeManagerState* state,
                            std::uintptr_t created_worker,
                            std::uint32_t creation_error,

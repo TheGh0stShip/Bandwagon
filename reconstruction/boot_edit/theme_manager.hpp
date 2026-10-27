@@ -130,6 +130,17 @@ struct ThemeEnumerationResult {
   std::vector<SavedTheme> themes;
 };
 
+struct ThemePublicationServices {
+  std::function<void()> enter_refresh_lock;
+  std::function<void()> leave_refresh_lock;
+};
+
+// Exact synchronized vector-publication wrapper at 0x82050900. The candidate
+// vector is copied before entering the target state's critical section.
+void PublishSavedThemes(ThemeManagerState* state,
+                        const std::vector<SavedTheme>& themes,
+                        const ThemePublicationServices& services);
+
 enum class FeedbackKind { kNone, kInformation, kError };
 
 struct FeedbackDialog {

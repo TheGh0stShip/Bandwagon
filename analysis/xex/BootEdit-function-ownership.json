@@ -104,8 +104,9 @@
       ,{"from":"unknown","to":"upstream_imgui_1_86","start":"0x82050f08","end_exclusive":"0x82050f60","inventory_entry_count":1,"size":88,"basis":"exact inline ImFontGlyphRangesBuilder construction/Clear behavior from pinned ImGui 1.86: zero the ImVector<ImU32> triplet, resize to (0x10000/8)/4 = 2048 words, and memset the resulting 8192-byte bitmap"}
       ,{"from":"unknown","to":"platform_toolchain","start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"basis":"exception-object constructor used by the adjacent invalid-vector-subscript diagnostic: installs base and derived exception vtables and delegates message storage to independently platform-owned helper 0x8204c280"}
       ,{"from":"unknown","to":"product_application","start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"basis":"coherent BootEdit deferred-action family: dispatch reset/load/no-op/firmware-return codes, gate dispatch on accepted discard result 3, and allocate/publish the 96-byte discard-confirmation task carrying the deferred action code"}
+      ,{"from":"unknown","to":"product_application","start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"basis":"saved-theme publication policy copies the candidate vector before entering the state critical section, replaces the live state vector while locked, then leaves the critical section; only lock primitives and vector mechanics are platform boundaries"}
     ],
-    "after": {"unknown_entry_count":69,"unknown_size":17192,"product_application_entry_count":33,"product_application_size":16064}
+    "after": {"unknown_entry_count":68,"unknown_size":17104,"product_application_entry_count":34,"product_application_size":16152}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -152,6 +153,7 @@
     {"address":"0x82050ac0","role":"ordered BootEdit ImGui/input/renderer shutdown","confidence":"high"},
     {"address":"0x82050018","role":"default theme-name initializer","confidence":"high"},
     {"address":"0x820506b8","role":"EnumerateSavedThemes","confidence":"high"},
+    {"address":"0x82050900","role":"synchronized saved-theme vector publication","confidence":"high"},
     {"address":"0x82050958","role":"saved-theme state initializer containing ColorsDifferExact leaf","confidence":"high"},
     {"address":"0x82050b08","role":"DrawColorContextMenu","confidence":"high"},
     {"address":"0x82050c98","role":"DrawNavigationIcon","confidence":"high"},
@@ -198,9 +200,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 33,
-      "size": 16064,
-      "concatenated_sha256": "dba0f28ed11de14a6c50a6c502ed41c5c8149f88b6d28dbc79699df1584d6cfb",
+      "inventory_entry_count": 34,
+      "size": 16152,
+      "concatenated_sha256": "b4163ae41a9177dc49d08feb2926e065adb8db5dd1f09eaf7ee6db7695d2f6a4",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -215,6 +217,7 @@
         {"start":"0x8204e310","end_exclusive":"0x8204e388","inventory_entry_count":1,"size":120,"sha256":"cd639796a0e720a97f710dd65b7483979859eccf5f0b38184885a25ba74f86bf"},
         {"start":"0x82050018","end_exclusive":"0x820500c8","inventory_entry_count":1,"size":176,"sha256":"ff0c7f969b27124dd90ff25016b2d2b9424585d1c66b8abb7534fadc9537455f"},
         {"start":"0x820506b8","end_exclusive":"0x82050900","inventory_entry_count":1,"size":584,"sha256":"3327b4dbf9e2293762a552593aed8be9e0e6b8b2f16d7ec5c0fa6b80ad1e4131"},
+        {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
         {"start":"0x82050958","end_exclusive":"0x82050a50","inventory_entry_count":1,"size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a"},
         {"start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"sha256":"fcb81938e3cf52fb232b8866e6f90fb853d6c45cb5a637b9c64dc83ae24f3a57"},
         {"start":"0x82050b08","end_exclusive":"0x82050c98","inventory_entry_count":1,"size":400,"sha256":"9abd621304d0f2942cd80d7c4409b3f9e9de3fba9e686c602e7e2905f5156d1f"},
@@ -267,9 +270,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 69,
-      "size": 17192,
-      "concatenated_sha256": "4705eef374fbd90af7327178682a92adb5deac51785e1e2213a30bc071713958",
+      "inventory_entry_count": 68,
+      "size": 17104,
+      "concatenated_sha256": "93aea0f30009584c2d711855786a822fe4d421b4693dffc7f3010d5b7c829f57",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -280,7 +283,6 @@
         {"start":"0x8204cb28","end_exclusive":"0x8204cb90","inventory_entry_count":1,"size":104,"sha256":"3c49d36ca55c4889a03fe6b15eabef6cecfa5d8a6a141d370dd3489928444552"},
         {"start":"0x8204cbd8","end_exclusive":"0x8204cc40","inventory_entry_count":1,"size":104,"sha256":"dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1"},
         {"start":"0x8204d278","end_exclusive":"0x8204d818","inventory_entry_count":7,"size":1440,"sha256":"44bc889040d88e9e582dc15c8262be75e822c3466a659439388f91b2ae91af52"},
-        {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
     }
@@ -299,11 +301,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 33,
-    "product_application_size": 16064,
-    "non_product_entry_count": 901,
-    "non_product_size": 353360,
-    "unknown_entry_count": 69,
-    "unknown_size": 17192
+    "product_application_entry_count": 34,
+    "product_application_size": 16152,
+    "non_product_entry_count": 900,
+    "non_product_size": 353272,
+    "unknown_entry_count": 68,
+    "unknown_size": 17104
   }
 }
