@@ -10,10 +10,10 @@
   },
   "function_inventory": "analysis/kernel-expansion/KernelExpansion-functions.json",
   "summary": {
-    "lifted_function_count": 73,
-    "lifted_instruction_bytes": 12632,
-    "peer_product_adapter_or_policy_function_count": 46,
-    "peer_product_adapter_or_policy_instruction_bytes": 6480,
+    "lifted_function_count": 74,
+    "lifted_instruction_bytes": 12784,
+    "peer_product_adapter_or_policy_function_count": 47,
+    "peer_product_adapter_or_policy_instruction_bytes": 6632,
     "generic_platform_function_count": 0,
     "generic_platform_instruction_bytes": 0,
     "unattributed_function_count": 22,
@@ -242,6 +242,24 @@
       "source": "reconstruction/kernel_expansion/sfcx_write_protection.cpp",
       "header": "reconstruction/kernel_expansion/sfcx_write_protection.hpp",
       "symbols": ["SfcxDriverDispatchTable", "InstallSfcxNandWriteProtectionHooks"]
+    },
+    {
+      "address": "0x801f1fc0",
+      "size": 152,
+      "sha256": "6a2fdfe8967055dba23bbb4ed62087c416bf36a8048bb849a62bd40e1197f057",
+      "semantic_name": "LoadBootAnimationTheme",
+      "source": "reconstruction/kernel_expansion/boot_animation_theme.cpp",
+      "header": "reconstruction/kernel_expansion/boot_animation_theme.hpp",
+      "symbols": ["BootAnimationThemePayload", "BootAnimationThemeInitializer", "BootAnimationThemeDecoder", "LoadBootAnimationTheme", "kBootAnimationThemeVersion", "kBootAnimationThemeSchemaEntryCount", "kBootAnimationThemePayloadSize", "kBootAnimationThemePathPrefix", "kBootAnimationThemeExtension"],
+      "data_dependencies": [
+        {
+          "address": "0x801fff88",
+          "size": 73,
+          "sha256": "e868bdad2f3afd9a93dcad9de33c0b98640d2d9b0351d0a44bc81516bc13a49f",
+          "semantic_name": "BootAnimationThemePathFormat",
+          "symbols": ["kBootAnimationThemePathPrefix", "kBootAnimationThemeExtension"]
+        }
+      ]
     },
     {
       "address": "0x801f2d70",
@@ -761,6 +779,7 @@
   ],
   "tests": [
     "reconstruction/kernel_expansion/bootstrap_mapping_test.cpp",
+    "reconstruction/kernel_expansion/boot_animation_theme_test.cpp",
     "reconstruction/kernel_expansion/config_access_test.cpp",
     "reconstruction/kernel_expansion/config_loader_test.cpp",
     "reconstruction/kernel_expansion/config_persistence_test.cpp",
