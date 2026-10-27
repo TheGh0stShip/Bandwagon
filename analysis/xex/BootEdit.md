@@ -29,10 +29,10 @@ contains 218 references in 69 functions. Regenerate the complete set with
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product theme-editor application | 50 | 19,232 | Recover as readable source |
+| Product theme-editor application | 51 | 19,448 | Recover as readable source |
 | Dear ImGui 1.86 | 442 | 231,184 | Use the pinned upstream source |
 | MSVC/Xbox platform and toolchain | 404 | 107,528 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 38 | 11,480 | Fingerprint before deciding whether to lift |
+| Unknown framework/backend/lookup code | 37 | 11,264 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -90,25 +90,25 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds all 50 product entries and
-all 19,232 bytes to readable, tested C++ behavioral models. This includes the
+`BootEdit-peer-source-coverage.json` binds all 51 product entries and
+all 19,448 bytes to readable, tested C++ behavioral models. This includes the
 two one-shot singleton accessors at `0x82010068` and `0x820100d0`: they request
 the exact 736-byte ThemeManager and 1,184-byte top-level startup objects, call
 their recovered constructors after successful allocation, and commit their
 guards before allocation so a null result is returned forever rather than
 retried. It also includes the kernel-ordinal-932 resolver and the version-9199
-`bootanim.xex` thread adapter,
-including exact ordinal-1 resolution, diagnostic failure, and successful
+`bootanim.xex` thread adapter, including exact ordinal-1 resolution, diagnostic failure, and successful
 entry invocation with the shared boot context. The fixed-four-controller query
 wrapper is explicit too, including its 52-byte stride, exact mask/consume
-forwarding, and first-match short circuit. It also includes the
-complete runtime-frame coordinator: one-time initialization, exact
+forwarding, and first-match short circuit. It also includes the complete
+runtime-frame coordinator: one-time initialization, exact
 `0x40`/`0x80`/`0x100` input policy, conditional editor rendering, target timing
 and rewind math, primary animation failure/completion, auxiliary updates, and
-tick publication. It also includes the
-seven-entry fixed boot-animation hook table, the four exact NOP sites, and the
-embedded kernel-ordinal-932 tail-call adapter with mode `0x80000000`. It also
-includes the
+tick publication. It also includes the seven-entry fixed boot-animation hook
+table, the four exact NOP sites, and the
+embedded kernel-ordinal-932 tail-call adapter with mode `0x80000000`, the
+conditional editor-shutdown hook, its original-continuation selection, and the
+embedded clamped cubic smoothstep helper. It also includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
 decoder/encoder codec—including the low-level `0x8204d4c0` read-mode wrapper
 that restores version 9199 before dispatch—the `0x82011598` theme-name task
@@ -129,7 +129,7 @@ discard workflow now also includes its exact 96-byte constructor at
 slots, and initial-phase precedence. The selector's `0x8204cbd8` enumeration
 poller is explicit too: zero-timeout polling, pending preservation, and
 signaled close/clear ordering. The known-product queue is empty; the
-remaining work is provenance resolution for the 38 unknown
+remaining work is provenance resolution for the 37 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full

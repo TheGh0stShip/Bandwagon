@@ -40,4 +40,19 @@ void InstallBootAnimationHooks(const BootAnimationHookServices& services);
 void InvokeKernelBootAnimationRoutine(
     const std::function<void(std::uint32_t)>& routine);
 
+struct BootAnimationShutdownHookServices {
+  std::function<void()> shutdown_editor;
+  std::function<void(bool)> continue_boot_animation;
+};
+
+// Compound 0x82010148 extent: the entry shuts down BootEdit UI state only
+// while it is visible; the installed 0x82010180 hook then selects the original
+// bootanim continuation from its inherited state flag.
+void RunBootAnimationShutdownHook(
+    bool editor_visible, bool alternate_continuation,
+    const BootAnimationShutdownHookServices& services);
+
+// Embedded leaf at 0x820101c8, called by the animation hook at 0x820104d8.
+float SmoothStep(float lower_edge, float upper_edge, float value);
+
 }  // namespace bandwagon::boot_edit

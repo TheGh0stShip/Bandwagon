@@ -1,7 +1,9 @@
 #include "bootanim_hooks.hpp"
 
 #include <cassert>
+#include <cmath>
 #include <cstdint>
+#include <limits>
 #include <utility>
 #include <vector>
 
@@ -30,4 +32,22 @@ int main() {
       [&](std::uint32_t value) { mode = value; });
   assert(mode == 0x80000000u);
   InvokeKernelBootAnimationRoutine({});
+
+  std::vector<int> shutdown_events;
+  BootAnimationShutdownHookServices shutdown_services;
+  shutdown_services.shutdown_editor = [&] { shutdown_events.push_back(1); };
+  shutdown_services.continue_boot_animation = [&](bool alternate) {
+    shutdown_events.push_back(alternate ? 3 : 2);
+  };
+  RunBootAnimationShutdownHook(false, false, shutdown_services);
+  assert((shutdown_events == std::vector<int>{2}));
+  shutdown_events.clear();
+  RunBootAnimationShutdownHook(true, true, shutdown_services);
+  assert((shutdown_events == std::vector<int>{1, 3}));
+
+  assert(SmoothStep(2.0f, 6.0f, 1.0f) == 0.0f);
+  assert(SmoothStep(2.0f, 6.0f, 6.0f) == 1.0f);
+  assert(std::fabs(SmoothStep(2.0f, 6.0f, 4.0f) - 0.5f) < 0.00001f);
+  assert(SmoothStep(2.0f, 6.0f,
+                    std::numeric_limits<float>::quiet_NaN()) == 1.0f);
 }
