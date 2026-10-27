@@ -53,6 +53,8 @@ bool HandleDialog(ThemeNameTaskState* state,
 
 }  // namespace
 
+ThemeNameTaskState InitializeThemeNameTask() { return {}; }
+
 bool AdvanceThemeNameTask(ThemeNameTaskState* state,
                           std::string_view current_theme_name,
                           const ThemeNameTaskServices& services) {

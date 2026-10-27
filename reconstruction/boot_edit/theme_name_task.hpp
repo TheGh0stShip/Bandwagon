@@ -44,6 +44,11 @@ struct ThemeNameTaskServices {
   std::function<void(std::string_view, std::uint32_t)> debug_print;
 };
 
+// Exact product-state initialization performed by fn_82011598 after its
+// asynchronous-task base constructor: empty result/name buffers, no active
+// keyboard or dialog, and no completion/continuation state.
+ThemeNameTaskState InitializeThemeNameTask();
+
 // Advances the asynchronous task at 0x820118e8 by one update. Returns true
 // only when the target has published its completion state.
 bool AdvanceThemeNameTask(ThemeNameTaskState* state,

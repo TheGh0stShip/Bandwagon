@@ -113,8 +113,10 @@
       ,{"from":"unknown","to":"platform_toolchain","start":"0x8204cb28","end_exclusive":"0x8204cb90","inventory_entry_count":1,"size":104,"basis":"generic exception-raise helper used only by the proven string/vector subscript diagnostics: invokes the installed runtime handler, virtual exception dispatch, and the runtime exception reporter anchored by its generic 'exception: ' string"}
       ,{"from":"unknown","to":"product_application","start":"0x8204d4c0","end_exclusive":"0x8204d5e8","inventory_entry_count":1,"size":296,"basis":"low-level product theme-file decoder restores boot-animation version 9199 and calls the generic table codec in read mode with the fixed product descriptor table/count 41; the tail contains three compiler-emitted iterator leaves within the unsplittable inventory extent"}
       ,{"from":"unknown","to":"platform_toolchain","inventory_entry_count":6,"size":1144,"basis":"coherent compiler/standard-library support around the theme codec: std::string reverse-find, substring comparison, insertion, exception-string destruction, and scalar/derived deleting destructors","ranges":[{"start":"0x8204d278","end_exclusive":"0x8204d4c0"},{"start":"0x8204d5e8","end_exclusive":"0x8204d818"}]}
+      ,{"from":"unknown","to":"product_application","start":"0x82011598","end_exclusive":"0x82011620","inventory_entry_count":1,"size":136,"basis":"theme-name asynchronous task constructor used by the discard/save workflow: installs the task vtable, constructs the result string, clears the exact input/result buffers, and zeros keyboard/completion state"}
+      ,{"from":"unknown","to":"platform_toolchain","inventory_entry_count":7,"size":1296,"basis":"complete adjacent MSVC std::string support family: destruction/reset, erase, reserve/grow, assignment, overlapping substring assignment, pointer-range assignment, and composed-object deleting destructor","ranges":[{"start":"0x820112e0","end_exclusive":"0x82011598"},{"start":"0x82011620","end_exclusive":"0x82011878"}]}
     ],
-    "after": {"unknown_entry_count":53,"unknown_size":14280,"product_application_entry_count":42,"product_application_size":17728}
+    "after": {"unknown_entry_count":45,"unknown_size":12848,"product_application_entry_count":43,"product_application_size":17864}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -145,6 +147,7 @@
   },
   "product_application_entries": [
     {"address":"0x820110d0","role":"mount and BootAnim theme bootstrap","confidence":"high"},
+    {"address":"0x82011598","role":"InitializeThemeNameTask","confidence":"high"},
     {"address":"0x820118e8","role":"theme-name validation and overwrite policy","confidence":"high"},
     {"address":"0x8204b998","role":"BootEdit modal object destruction","confidence":"medium"},
     {"address":"0x8204b9e8","role":"BootEdit modal state helper","confidence":"medium"},
@@ -192,10 +195,12 @@
   ],
   "compiler_emitted_template_partition": {
     "classification": "platform_toolchain",
-    "inventory_entry_count": 51,
-    "size": 13256,
-    "description": "Fifty-one standalone compiler/standard-library helpers are positively identified by diagnostics, exception construction/raising, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::string/std::vector<T> and sorting pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
+    "inventory_entry_count": 58,
+    "size": 14552,
+    "description": "Fifty-eight standalone compiler/standard-library helpers are positively identified by diagnostics, exception construction/raising, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::string/std::vector<T> and sorting pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
     "ranges": [
+      {"start":"0x820112e0","end_exclusive":"0x82011598","size":696,"inventory_entry_count":4,"evidence":"MSVC std::string destruction/reset, erase, reserve/grow, and assignment helpers with small-string threshold 16"},
+      {"start":"0x82011620","end_exclusive":"0x82011878","size":600,"inventory_entry_count":3,"evidence":"MSVC std::string overlapping substring/pointer-range assignment plus composed-object deleting destructor"},
       {"start":"0x82011878","end_exclusive":"0x820118e8","size":112,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x980060e8"},
       {"start":"0x8204c280","end_exclusive":"0x8204c2d8","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005d80"},
       {"start":"0x8204cb28","end_exclusive":"0x8204cb90","size":104,"inventory_entry_count":1,"evidence":"generic exception-raise helper called only by invalid string/vector subscript diagnostics; installed runtime handler, virtual exception dispatch, and generic exception reporter"},
@@ -219,13 +224,14 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 42,
-      "size": 17728,
-      "concatenated_sha256": "25a10e81843c888b6b4c249c1ae3830771a9b8a3e09230f70c7b6e8c2b629405",
+      "inventory_entry_count": 43,
+      "size": 17864,
+      "concatenated_sha256": "043a6bd1a5a6bcbcc0c6a6bece39fa212515ada6d3dfa8781ca035862b873395",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
         {"start":"0x820110d0","end_exclusive":"0x820112e0","inventory_entry_count":1,"size":528,"sha256":"3f78d1350fbec288603f79c000bfdbf28bc138fa2ecacb1456111d20649f9b76"},
+        {"start":"0x82011598","end_exclusive":"0x82011620","inventory_entry_count":1,"size":136,"sha256":"8eaf4c6a700018333114712ae3a2738ab305a7b1626408f3421925ac60f7795e"},
         {"start":"0x820118e8","end_exclusive":"0x82011ed8","inventory_entry_count":1,"size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425"},
         {"start":"0x8204b998","end_exclusive":"0x8204c280","inventory_entry_count":5,"size":2280,"sha256":"884937ffd8e8ece66dc557be8864951cc42488ff28ea7a3f77f892cce272e0b3"},
         {"start":"0x8204c2d8","end_exclusive":"0x8204c450","inventory_entry_count":2,"size":376,"sha256":"19d902f48fa026896c54a793e40358ed93604dfa2f15feed7312413a43a4519f"},
@@ -269,11 +275,13 @@
       ]
     },
     "platform_toolchain": {
-      "inventory_entry_count": 397,
-      "size": 106232,
-      "concatenated_sha256": "19f3d18586251ffa0039e2a6cdbd33d692a8c4eef458c62beee1937bdb9dc7af",
+      "inventory_entry_count": 404,
+      "size": 107528,
+      "concatenated_sha256": "88cd527c777688bb2f6100d93aef83bb7ea8851bea5b3a59f173fbcbe2a645aa",
       "product_specific": false,
       "ranges": [
+        {"start":"0x820112e0","end_exclusive":"0x82011598","inventory_entry_count":4,"size":696,"sha256":"cc56cbf0935a5504c05d5fe29ebfe4dd3948c6972b35d5e6a60571c04dfc49ed"},
+        {"start":"0x82011620","end_exclusive":"0x82011878","inventory_entry_count":3,"size":600,"sha256":"7f8ddf4050a7889d5dc370fef4592eff03dc775de69c96e1feaaaa62f583bc73"},
         {"start":"0x82011878","end_exclusive":"0x820118e8","inventory_entry_count":1,"size":112,"sha256":"2c09abbb3b957d7989c7cf1f2cc60d3ed27248747c873357fe20e8cd505beab1"},
         {"start":"0x8204c280","end_exclusive":"0x8204c2d8","inventory_entry_count":1,"size":88,"sha256":"bca7f616a674060c39bb9497fea3a29f2e3d4db941beb04fea6401ff7cc3e43f"},
         {"start":"0x8204cb28","end_exclusive":"0x8204cb90","inventory_entry_count":1,"size":104,"sha256":"3c49d36ca55c4889a03fe6b15eabef6cecfa5d8a6a141d370dd3489928444552"},
@@ -298,13 +306,12 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 53,
-      "size": 14280,
-      "concatenated_sha256": "6fd04e18678b87575046fb97b7912b9b3a1c175e67c12e0eb22796b52f6faad2",
+      "inventory_entry_count": 45,
+      "size": 12848,
+      "concatenated_sha256": "48b4c1e218be9c62854cdaf2291c81126733387c22c1f3a96c0ba34a5f1139dd",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
-        {"start":"0x820112e0","end_exclusive":"0x82011878","inventory_entry_count":8,"size":1432,"sha256":"88589b4dc4c9df66f232cfc1370eba0a46ced6ae60be1d877154ae100170cae4"},
         {"start":"0x82038ab8","end_exclusive":"0x82039ec0","inventory_entry_count":11,"size":5128,"sha256":"3ad48c5ef04825cb71d1abb95764c52706e8887d72c212695b2b75c3fbefafbe"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
@@ -324,11 +331,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 42,
-    "product_application_size": 17728,
-    "non_product_entry_count": 892,
-    "non_product_size": 351696,
-    "unknown_entry_count": 53,
-    "unknown_size": 14280
+    "product_application_entry_count": 43,
+    "product_application_size": 17864,
+    "non_product_entry_count": 891,
+    "non_product_size": 351560,
+    "unknown_entry_count": 45,
+    "unknown_size": 12848
   }
 }

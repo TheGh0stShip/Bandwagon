@@ -147,6 +147,13 @@ void TestEmbeddedRectHelpers() {
 }  // namespace
 
 int main() {
+  const ThemeNameTaskState initialized = InitializeThemeNameTask();
+  assert(!initialized.completion_pending && initialized.result == 0);
+  assert(!initialized.keyboard_in_progress);
+  assert(initialized.dialog == ThemeNameDialog::kNone);
+  assert(initialized.path.empty() && initialized.name.empty());
+  assert(!initialized.continuation);
+
   TestStartAndPollFailures();
   TestKeyboardOutcomesAndContinuation();
   TestInvalidRetryAndCancel();

@@ -29,10 +29,10 @@ contains 218 references in 69 functions. Regenerate the complete set with
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product theme-editor application | 42 | 17,728 | Recover as readable source |
+| Product theme-editor application | 43 | 17,864 | Recover as readable source |
 | Dear ImGui 1.86 | 442 | 231,184 | Use the pinned upstream source |
-| MSVC/Xbox platform and toolchain | 397 | 106,232 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 53 | 14,280 | Fingerprint before deciding whether to lift |
+| MSVC/Xbox platform and toolchain | 404 | 107,528 | Reuse the target ABI/runtime; do not relift |
+| Unknown framework/backend/lookup code | 45 | 12,848 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -90,11 +90,12 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds all 42 product entries and
-all 17,728 bytes to readable, tested C++ behavioral models. This includes the
+`BootEdit-peer-source-coverage.json` binds all 43 product entries and
+all 17,864 bytes to readable, tested C++ behavioral models. This includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
 decoder/encoder codec—including the low-level `0x8204d4c0` read-mode wrapper
-that restores version 9199 before dispatch—frame lifecycle glue, and the complete top-level
+that restores version 9199 before dispatch—the `0x82011598` theme-name task
+constructor and its exact cleared keyboard/result state, frame lifecycle glue, and the complete top-level
 startup-state constructor at `0x82051238`. It also covers the three-entry
 deferred discard-action family at `0x82051f28` through `0x82052060`, including
 accepted-result gating and firmware-return dispatch, plus the synchronized
@@ -111,7 +112,7 @@ discard workflow now also includes its exact 96-byte constructor at
 slots, and initial-phase precedence. The selector's `0x8204cbd8` enumeration
 poller is explicit too: zero-timeout polling, pending preservation, and
 signaled close/clear ordering. The known-product queue is empty; the
-remaining work is provenance resolution for the 53 unknown
+remaining work is provenance resolution for the 45 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full
