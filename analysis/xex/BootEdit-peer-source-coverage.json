@@ -12,8 +12,8 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26996,"sha256":"909066aa1929ca3735a0b598bca85714d0203e5ef4abb09cbc0e55237737c48a"},
-    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":5597,"sha256":"ae68ac1b704e86bede7d28a6ef95e81575259eaec3fbdff913ea88a686b19270"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26999,"sha256":"13a8dfd01e8e9930f7c4dbf1850cee0cf1eb5e9e33c572df25d4a434131738d8"},
+    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":5659,"sha256":"ee96740f911760a5e7de53b845ed91b2865ec0ba75365358795bd66997a04eaf"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
   "source_artifacts": {
@@ -26,6 +26,9 @@
     "fonts_source": {"path":"reconstruction/boot_edit/editor_fonts.cpp","kind":"source","size":4536,"sha256":"ab4136ddb9aba41511b5730d8f3468c0e75d9696a6514a03ca8b41d2e1ca7f73"},
     "fonts_header": {"path":"reconstruction/boot_edit/editor_fonts.hpp","kind":"header","size":3246,"sha256":"b9d0ba247276388b10c44cdb03eb0c1a00d02cee0e3ff42ae45419b3c5a2feaa"},
     "fonts_test": {"path":"reconstruction/boot_edit/editor_fonts_test.cpp","kind":"test","size":5436,"sha256":"96275423c727af4a7035bac68933839a7c2a57cc2f2d564d668bbb3329f72969"},
+    "actions_source": {"path":"reconstruction/boot_edit/settings_actions.cpp","kind":"source","size":4000,"sha256":"2b3a95960d206a9dde01d5928696090041cfdedf5f14233ccae259b76231825f"},
+    "actions_header": {"path":"reconstruction/boot_edit/settings_actions.hpp","kind":"header","size":2012,"sha256":"a014d8c41d48f35a522f1e452e50fdf8c6e86a6089c22eea078bfafe556cdee9"},
+    "actions_test": {"path":"reconstruction/boot_edit/settings_actions_test.cpp","kind":"test","size":5020,"sha256":"d3a80bef89486c466c4a9d13d07f2708150b7f02cecca61d6601bcf97d85ca4e"},
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
@@ -291,12 +294,26 @@
       "test_artifacts": ["manager_test"],
       "symbols": ["LoadThemeWithFeedback", "FeedbackDialog"],
       "required_strings": ["An error occurred while loading the theme!", "Error reading theme"]
+    },
+    {
+      "address": "0x82052060",
+      "end_exclusive": "0x82052468",
+      "size": 1032,
+      "sha256": "e29b929b4a574f25c516c6bf7d1800d1314cffa2ff3a6381af5cc1cb31dbb7be",
+      "inventory_name": "fn_82052060",
+      "semantic_name": "UpdateSettingsActions",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Ordered rendering of the seven New Theme/Load/Save/Save As/Set As Active Theme/Reboot/Exit actions, selected-action coloring, modal/task/view input gates, exact controller masks, next/previous wrap and ordering, editor-change clear, New and Load transitions, Save versus Save As dispatch, Set Active success/failure feedback and two-second notification, unsaved confirmation gates, reboot firmware routine 6, Exit request, post-request unsaved recheck, and firmware fallback; ImGui geometry, controller polling, modal/task allocation, settings persistence, and firmware/platform calls are injected boundaries.",
+      "source_artifacts": ["actions_source", "actions_header"],
+      "test_artifacts": ["actions_test"],
+      "symbols": ["UpdateSettingsActions", "SettingsAction", "SettingsActionState", "SettingsActionInput", "SettingsActionServices"],
+      "required_strings": ["Settings updated successfully!", "Test", "Failed to update settings!", "Error"]
     }
   ],
   "remaining_product_entries": [
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
     {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"},
-    {"address":"0x82052060","end_exclusive":"0x82052468","size":1032,"sha256":"e29b929b4a574f25c516c6bf7d1800d1314cffa2ff3a6381af5cc1cb31dbb7be","role":"ApplyThemeSettings","blocker":"recover live BootAnim material/mesh copy and persistence contracts"},
     {"address":"0x82052468","end_exclusive":"0x82052830","size":968,"sha256":"414a0eb5d5af5eb19c45dcbce50f5b5c1a1e18152fe4d2ee5299ec9531e4e5aa","role":"DrawThemeSelector","blocker":"lift selection, loading, list-state, and async-refresh transitions"},
     {"address":"0x82052830","end_exclusive":"0x82052a88","size":600,"sha256":"089984395d141ef67ea5762f4256afde14dc38613e865792d2f73e4d8444adf7","role":"theme-selector menu/list continuation","blocker":"recover menu dispatch and discard/apply continuation flow"},
     {"address":"0x820537e0","end_exclusive":"0x82053a40","size":608,"sha256":"0b31a4bde8d411b828adc22afe159f2d3118c8c8f647b9a5298670abb1c8992a","role":"BootEdit application entry/orchestration before CRT entry","blocker":"recover complete initialization, frame loop, and shutdown ordering"}
@@ -304,9 +321,9 @@
   "summary": {
     "product_function_count": 23,
     "product_bytes": 13696,
-    "model_covered_function_count": 17,
-    "model_covered_bytes": 6904,
-    "remaining_product_function_count": 6,
-    "remaining_product_bytes": 6792
+    "model_covered_function_count": 18,
+    "model_covered_bytes": 7936,
+    "remaining_product_function_count": 5,
+    "remaining_product_bytes": 5760
   }
 }

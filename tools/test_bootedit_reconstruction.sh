@@ -47,4 +47,10 @@ python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
     -o "$work/editor_fonts_test"
 "$work/editor_fonts_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/settings_actions.cpp" \
+    "$root/reconstruction/boot_edit/settings_actions_test.cpp" \
+    -o "$work/settings_actions_test"
+"$work/settings_actions_test"
+
 echo "BootEdit portable reconstruction tests passed"

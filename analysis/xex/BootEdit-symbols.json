@@ -103,9 +103,9 @@
     {
       "address": "0x82052060",
       "recovered_name": "fn_82052060",
-      "semantic_name": "ApplyThemeSettings",
+      "semantic_name": "UpdateSettingsActions",
       "confidence": "high",
-      "evidence": ["copies edited mesh/color settings into the runtime objects", "presents Settings updated successfully or Failed to update settings"]
+      "evidence": ["draws and navigates the seven-entry New/Load/Save/Save As/Set Active/Reboot/Exit action strip", "presents Settings updated successfully or Failed to update settings for Set As Active Theme"]
     },
     {
       "address": "0x82052468",
