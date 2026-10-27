@@ -46,7 +46,7 @@ Xbox/compiler infrastructure.
 have verified readable source, and all five former unknown wrapper containers /
 608 bytes have positive Microsoft-platform provenance. The next focused queue
 is BootEdit's provenance backlog: all 26 known product functions / 15,160 bytes
-now have verified readable source, while its 109 unknown entries must be
+now have verified readable source, while its 87 unknown entries must be
 fingerprinted before any further lifting decision. The first 11 unknown entries /
 5,128 bytes (the mixed Xbox 360/DX9 backend) now have a complete hash-bound,
 tested readable-source model, while their original-source provenance remains
@@ -67,7 +67,7 @@ reconstructions remain as test oracles, not as substitutes for readable source.
 | KernelExpansion | 50 functions / 18,828 bytes | 72 functions / 16,024 bytes |
 | HDD Stage2 | 3,432 candidate worker bytes, plus modified ROP/data | Included in its remaining analysis |
 | SettingsApp | 243 functions / 59,152 bytes | 13 functions / 5,336 bytes |
-| BootEdit | None among currently classified product code | 109 functions / 28,120 bytes |
+| BootEdit | None among currently classified product code | 87 functions / 20,808 bytes |
 | Final integration | Source-built components, reproducible distribution, and host plus authorized target/emulator validation | - |
 
 ### Forecast
@@ -89,7 +89,7 @@ Status date: 2026-10-26
 |---|---:|---|
 | Installed-artifact inventory | 33 / 33 | Complete |
 | Raw-payload evidence | Every current raw Peer payload | Binary-exact; this is an evidence milestone, not source completion |
-| XEX function ownership | 4,194 / 4,194 entries and 1,387,504 / 1,387,504 code bytes | Exhaustively partitioned; 122 entries remain conservatively unknown |
+| XEX function ownership | 4,194 / 4,194 entries and 1,387,504 / 1,387,504 code bytes | Exhaustively partitioned; 100 entries remain conservatively unknown |
 | Maintainable-source targets | 10 / 14 | Four targets remain partial |
 | Source-built replacement distribution | 0 / 1 | Not yet integrated |
 
@@ -115,7 +115,7 @@ already been built.
 | HDD Stage2 | Partial | Ownership split and exact binary reconstruction | 3,432 candidate product worker bytes, modified ROP/data, and integration |
 | UpdateCheck | Complete | 19 / 19 product entries, 6,768 / 6,768 B | None in the current source-composition boundary |
 | SettingsApp | Partial | 3 / 246 product/mixed entries, 3,112 / 62,264 B | 243 entries / 59,152 B, plus 13 unknown entries / 5,336 B |
-| BootEdit | Partial | 26 / 26 known product entries, 15,160 / 15,160 B | 109 unknown entries / 28,120 B require provenance resolution |
+| BootEdit | Partial | 26 / 26 known product entries, 15,160 / 15,160 B | 87 unknown entries / 20,808 B require provenance resolution |
 
 The five-XEX readable-source counter is therefore **73 / 316 product entries
 (23.1%) and 32,640 / 91,792 product bytes (35.6%)**. These percentages describe
