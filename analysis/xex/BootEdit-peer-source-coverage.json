@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":47714,"sha256":"53ff4c42b5d44c59772909ed6951e9175c3815ded3c882dffb22a7dc4cb44cb6"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":48443,"sha256":"26b20e72c7ca6889ecfcb020e4b0cfbb6ffbc363a57b58745564a647ace1c162"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -41,6 +41,9 @@
     "controller_source": {"path":"reconstruction/boot_edit/controller_state.cpp","kind":"source","size":2350,"sha256":"cf1c4182268a3e758cd5d71fbb26928f4f1d0e4d1766f6677b2865630d646aa0"},
     "controller_header": {"path":"reconstruction/boot_edit/controller_state.hpp","kind":"header","size":1803,"sha256":"394b574f22f5a5ff4045c603ca79ff0df069449aaa29f0a9824d9675a4162f1c"},
     "controller_test": {"path":"reconstruction/boot_edit/controller_state_test.cpp","kind":"test","size":2741,"sha256":"c1fba50fe1a01ad9b82500a3117e05fb5736518dba5c6de85261cd34d5250058"},
+    "runtime_frame_source": {"path":"reconstruction/boot_edit/runtime_frame.cpp","kind":"source","size":2156,"sha256":"f5914202b210336527a92c8d7555beb89b971929677711ae82f6ac53773bcf87"},
+    "runtime_frame_header": {"path":"reconstruction/boot_edit/runtime_frame.hpp","kind":"header","size":1889,"sha256":"8e039d18e9e1f6fea4a0188b0c36d2294a3b1f258b0c2f190572f50fce1a6ad9"},
+    "runtime_frame_test": {"path":"reconstruction/boot_edit/runtime_frame_test.cpp","kind":"test","size":3250,"sha256":"625233bcd89a50c5cd3390c5155bac3c4201625259503c6824fbc154dbde8ce4"},
     "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":7800,"sha256":"f39e5439bd81313a688887137f8784ced08d97df1ca1a12eda5c49bcf56ed05c"},
     "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":7293,"sha256":"225839c75feb4d6c23b3404f1162d5cb2f9fad425c1789aa9af4a3568a73585c"},
     "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":11238,"sha256":"2d811d03e1988cb0e61c0fa6bf4a458047ee233fdf0347a6fb8801558497bd8b"},
@@ -122,6 +125,21 @@
       "source_artifacts": ["controller_source", "controller_header"],
       "test_artifacts": ["controller_test"],
       "symbols": ["AnyControllerMatches", "ControllerMatch", "ControllerRecord", "ControllerRecords"],
+      "required_strings": []
+    },
+    {
+      "address": "0x82010cb8",
+      "end_exclusive": "0x82010ed0",
+      "size": 536,
+      "sha256": "cdc28f5a32d5c0429459355ae873c6b2b0027cdb80c294ee1a5fbb63538cff41",
+      "inventory_name": "fn_82010CB8",
+      "semantic_name": "AdvanceRuntimeFrame",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Complete frame policy: one-time controller/editor initialization; per-frame controller rollover; exact mask-0x40 editor visibility, mask-0x80 unit-delta toggle, and mask-0x100 restart publication; conditional editor preparation/render; unsigned millisecond delta scaled by 0.001 with target 0.1-to-1.0 clamp; byte-scaled negative rewind and unit-delta precedence; primary update early failure, completion publication, auxiliary update, tick publication, and success return. Recovered product callees, bootanim methods, timer, and controller predicate are injected boundaries.",
+      "source_artifacts": ["runtime_frame_source", "runtime_frame_header"],
+      "test_artifacts": ["runtime_frame_test"],
+      "symbols": ["AdvanceRuntimeFrame", "RuntimeFrameState", "RuntimeFrameGlobals", "RuntimeFrameServices", "kToggleEditorMask", "kToggleUnitDeltaMask", "kRestartAnimationMask"],
       "required_strings": []
     },
     {
@@ -772,10 +790,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 48,
-    "product_bytes": 18392,
-    "model_covered_function_count": 48,
-    "model_covered_bytes": 18392,
+    "product_function_count": 49,
+    "product_bytes": 18928,
+    "model_covered_function_count": 49,
+    "model_covered_bytes": 18928,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

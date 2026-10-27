@@ -57,6 +57,12 @@ python3 "$root/tools/verify_bootedit_packed_resource.py"
 "$work/controller_state_test"
 
 "$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/runtime_frame.cpp" \
+    "$root/reconstruction/boot_edit/runtime_frame_test.cpp" \
+    -o "$work/runtime_frame_test"
+"$work/runtime_frame_test"
+
+"$cxx" "${flags[@]}" \
     "$root/reconstruction/boot_edit/discard_confirmation.cpp" \
     "$root/reconstruction/boot_edit/discard_confirmation_test.cpp" \
     -o "$work/discard_confirmation_test"
