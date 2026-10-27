@@ -113,6 +113,13 @@
       "semantic_name": "DrawThemeSelector",
       "confidence": "high",
       "evidence": ["owns Current Theme, file-list, loading, and no-saved-themes UI", "dispatches LoadThemeWithFeedback for the chosen item"]
+    },
+    {
+      "address": "0x82052830",
+      "recovered_name": "fn_82052830",
+      "semantic_name": "UpdateBootEditFrame",
+      "confidence": "high",
+      "evidence": ["owns the ##menu_options and ##file_list panes", "updates and releases the active modal and asynchronous task after drawing both panes", "contains the non-pdata packed-resource state constructor at 0x82052a60"]
     }
   ]
 }

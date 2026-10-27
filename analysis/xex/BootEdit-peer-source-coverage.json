@@ -12,8 +12,8 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":26999,"sha256":"13a8dfd01e8e9930f7c4dbf1850cee0cf1eb5e9e33c572df25d4a434131738d8"},
-    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":5659,"sha256":"ee96740f911760a5e7de53b845ed91b2865ec0ba75365358795bd66997a04eaf"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":27022,"sha256":"ae989c02dbe35ecbdff52943fccf8e0dd2369b45839ef8ce4a6f6d319cd624d7"},
+    "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
   "source_artifacts": {
@@ -29,6 +29,9 @@
     "actions_source": {"path":"reconstruction/boot_edit/settings_actions.cpp","kind":"source","size":4000,"sha256":"2b3a95960d206a9dde01d5928696090041cfdedf5f14233ccae259b76231825f"},
     "actions_header": {"path":"reconstruction/boot_edit/settings_actions.hpp","kind":"header","size":2012,"sha256":"a014d8c41d48f35a522f1e452e50fdf8c6e86a6089c22eea078bfafe556cdee9"},
     "actions_test": {"path":"reconstruction/boot_edit/settings_actions_test.cpp","kind":"test","size":5020,"sha256":"d3a80bef89486c466c4a9d13d07f2708150b7f02cecca61d6601bcf97d85ca4e"},
+    "selector_source": {"path":"reconstruction/boot_edit/theme_selector.cpp","kind":"source","size":3468,"sha256":"236bb05971267e63c5e823871b711aa31e7f842dc6290f816e9671eca98de142"},
+    "selector_header": {"path":"reconstruction/boot_edit/theme_selector.hpp","kind":"header","size":2814,"sha256":"556ebd5cca5b0a80b629c24c3033ba9fc07f64aa03f25d9fc931a14e69d547c6"},
+    "selector_test": {"path":"reconstruction/boot_edit/theme_selector_test.cpp","kind":"test","size":4719,"sha256":"315a779533318863fefdc18b7739fb3532dace69f0b79e1c3a8708a1507d74e2"},
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
@@ -309,21 +312,49 @@
       "test_artifacts": ["actions_test"],
       "symbols": ["UpdateSettingsActions", "SettingsAction", "SettingsActionState", "SettingsActionInput", "SettingsActionServices"],
       "required_strings": ["Settings updated successfully!", "Test", "Failed to update settings!", "Error"]
+    },
+    {
+      "address": "0x82052468",
+      "end_exclusive": "0x82052830",
+      "size": 968,
+      "sha256": "414a0eb5d5af5eb19c45dcbce50f5b5c1a1e18152fe4d2ee5299ec9531e4e5aa",
+      "inventory_name": "fn_82052468",
+      "semantic_name": "DrawThemeSelector",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Current-theme label, list opening, enumeration/loading gate, refresh publication and selection reset, ordered saved-theme drawing, active-row highlight, loading/empty status text, modal/task/view input gates, exact controller masks, back transition, next/previous wrap, activation, unsaved-discard action 2, and direct selected-theme load; ImGui geometry, synchronization, controller polling, task allocation, and theme parsing are injected boundaries.",
+      "source_artifacts": ["selector_source", "selector_header"],
+      "test_artifacts": ["selector_test"],
+      "symbols": ["DrawThemeSelector", "ThemeSelectorState", "ThemeSelectorInput", "ThemeSelectorServices"],
+      "required_strings": ["Current Theme: %s", "##file_list_box", "Loading themes...", "No saved themes available"]
+    },
+    {
+      "address": "0x82052830",
+      "end_exclusive": "0x82052a88",
+      "size": 600,
+      "sha256": "089984395d141ef67ea5762f4256afde14dc38613e865792d2f73e4d8444adf7",
+      "inventory_name": "fn_82052830",
+      "semantic_name": "UpdateBootEditFrame",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "The complete compound extent: menu-options and file-list pane ordering, action-strip and selector dispatch, balanced pane endings, modal suppression/completion/update/release flow, asynchronous-task poll/release flow, final frame boundary, and the embedded 0x82052a60 packed-resource constructor's seven zero-initialized fields; ImGui window geometry, modal/task virtual calls, and allocator release are injected boundaries.",
+      "source_artifacts": ["selector_source", "selector_header"],
+      "test_artifacts": ["selector_test"],
+      "symbols": ["UpdateBootEditFrame", "BootEditFrameState", "BootEditFrameServices", "InitializePackedResourceState", "PackedResourceState"],
+      "required_strings": ["##menu_options", "##file_list"]
     }
   ],
   "remaining_product_entries": [
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
     {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"},
-    {"address":"0x82052468","end_exclusive":"0x82052830","size":968,"sha256":"414a0eb5d5af5eb19c45dcbce50f5b5c1a1e18152fe4d2ee5299ec9531e4e5aa","role":"DrawThemeSelector","blocker":"lift selection, loading, list-state, and async-refresh transitions"},
-    {"address":"0x82052830","end_exclusive":"0x82052a88","size":600,"sha256":"089984395d141ef67ea5762f4256afde14dc38613e865792d2f73e4d8444adf7","role":"theme-selector menu/list continuation","blocker":"recover menu dispatch and discard/apply continuation flow"},
     {"address":"0x820537e0","end_exclusive":"0x82053a40","size":608,"sha256":"0b31a4bde8d411b828adc22afe159f2d3118c8c8f647b9a5298670abb1c8992a","role":"BootEdit application entry/orchestration before CRT entry","blocker":"recover complete initialization, frame loop, and shutdown ordering"}
   ],
   "summary": {
     "product_function_count": 23,
     "product_bytes": 13696,
-    "model_covered_function_count": 18,
-    "model_covered_bytes": 7936,
-    "remaining_product_function_count": 5,
-    "remaining_product_bytes": 5760
+    "model_covered_function_count": 20,
+    "model_covered_bytes": 9504,
+    "remaining_product_function_count": 3,
+    "remaining_product_bytes": 4192
   }
 }

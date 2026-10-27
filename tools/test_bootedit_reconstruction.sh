@@ -53,4 +53,11 @@ python3 "$root/tools/verify_bootedit_peer_source_coverage.py"
     -o "$work/settings_actions_test"
 "$work/settings_actions_test"
 
+"$cxx" "${flags[@]}" \
+    "$root/reconstruction/boot_edit/theme_editor.cpp" \
+    "$root/reconstruction/boot_edit/theme_selector.cpp" \
+    "$root/reconstruction/boot_edit/theme_selector_test.cpp" \
+    -o "$work/theme_selector_test"
+"$work/theme_selector_test"
+
 echo "BootEdit portable reconstruction tests passed"
