@@ -88,9 +88,10 @@
     "reassignments": [
       {"from":"unknown","to":"upstream_imgui_1_86","start":"0x82011ed8","end_exclusive":"0x82014428","inventory_entry_count":22,"size":9552,"basis":"SettingsApp ImGui opening sequence, exact normalized matches, object-family continuity, and later 1.86 checker"},
       {"from":"unknown","to":"platform_toolchain","inventory_entry_count":4,"size":360,"basis":"exact relocation-normalized matches to functions independently platform-owned in Updater","addresses":["0x82011878","0x8204c280","0x8204cb90","0x82051af8"]},
-      {"from":"product_application","to":"unknown","start":"0x82053238","end_exclusive":"0x820533b0","inventory_entry_count":1,"size":376,"basis":"the unsplittable inventory extent contains four generic/XDK-facing bodies, including two normalized-identical SettingsApp twins; sharing proves neither product specificity nor platform provenance"}
+      {"from":"product_application","to":"unknown","start":"0x82053238","end_exclusive":"0x820533b0","inventory_entry_count":1,"size":376,"basis":"the unsplittable inventory extent contains four generic/XDK-facing bodies, including two normalized-identical SettingsApp twins; sharing proves neither product specificity nor platform provenance"},
+      {"from":"product_application","to":"platform_toolchain","start":"0x820537e0","end_exclusive":"0x82053a40","inventory_entry_count":1,"size":608,"basis":"XAM/kernel configuration calls and the embedded 16-language Microsoft PAL-50 warning/confirmation tables identify the standard pre-CRT Xbox display-mode compatibility check"}
     ],
-    "after": {"unknown_entry_count":119,"unknown_size":31712,"product_application_entry_count":23,"product_application_size":13696}
+    "after": {"unknown_entry_count":119,"unknown_size":31712,"product_application_entry_count":22,"product_application_size":13088}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -141,8 +142,7 @@
     {"address":"0x82051e70","role":"LoadThemeWithFeedback","confidence":"high"},
     {"address":"0x82052060","role":"UpdateSettingsActions","confidence":"high"},
     {"address":"0x82052468","role":"DrawThemeSelector","confidence":"high"},
-    {"address":"0x82052830","role":"UpdateBootEditFrame and embedded packed-resource constructor","confidence":"high"},
-    {"address":"0x820537e0","role":"BootEdit application entry/orchestration before CRT entry","confidence":"high"}
+    {"address":"0x82052830","role":"UpdateBootEditFrame and embedded packed-resource constructor","confidence":"high"}
   ],
   "supplemental_discovered_functions": [
     {"address":"0x82050a00","end_exclusive":"0x82050a50","size":80,"sha256":"a2139eba8b1b66a65c3c3ccfb71d72e8dd75d1bb13094b681751c1217cd0f85b","semantic_name":"ColorsDifferExact","inventory_container":"0x82050958","classification":"product_application","evidence":"non-pdata four-float difference leaf, including its return instruction, named by the semantic overlay; byte ownership remains the single product-owned containing extent"}
@@ -163,9 +163,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 23,
-      "size": 13696,
-      "concatenated_sha256": "5e624221bb46e6e6c7ee8f76914b61c1af7438c93908d0780bf83003482f363f",
+      "inventory_entry_count": 22,
+      "size": 13088,
+      "concatenated_sha256": "f9c3e26dcc3967f2b8701478fd87a1702ea9af3755118d8025a1ec200dbeb304",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -183,8 +183,7 @@
         {"start":"0x820512e8","end_exclusive":"0x82051af8","inventory_entry_count":1,"size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9"},
         {"start":"0x82051c08","end_exclusive":"0x82051db8","inventory_entry_count":2,"size":432,"sha256":"34aaffba30da78afa641e83f9247b4e9453df7e353c52bf98abc48c448bf04eb"},
         {"start":"0x82051e70","end_exclusive":"0x82051f28","inventory_entry_count":1,"size":184,"sha256":"abed3022e201cd788bac8558b3c42865cea2f4875856aa077ecca70c2050ab76"},
-        {"start":"0x82052060","end_exclusive":"0x82052a88","inventory_entry_count":3,"size":2600,"sha256":"c4dd96f46ef9b595e2c0ff76edae0ad1ac2948e6a636eb29fd21d2b030b50739"},
-        {"start":"0x820537e0","end_exclusive":"0x82053a40","inventory_entry_count":1,"size":608,"sha256":"0b31a4bde8d411b828adc22afe159f2d3118c8c8f647b9a5298670abb1c8992a"}
+        {"start":"0x82052060","end_exclusive":"0x82052a88","inventory_entry_count":3,"size":2600,"sha256":"c4dd96f46ef9b595e2c0ff76edae0ad1ac2948e6a636eb29fd21d2b030b50739"}
       ]
     },
     "upstream_imgui_1_86": {
@@ -198,9 +197,9 @@
       ]
     },
     "platform_toolchain": {
-      "inventory_entry_count": 351,
-      "size": 92920,
-      "concatenated_sha256": "a2344c0c1e4c4c2ebf3c06eeb87f92c7bd703d84b295391910d51251c4dccc67",
+      "inventory_entry_count": 352,
+      "size": 93528,
+      "concatenated_sha256": "545cb2abc808a4330baa18ce3d0179446a06fa174c84400c73ddb64e28c58441",
       "product_specific": false,
       "ranges": [
         {"start":"0x82011878","end_exclusive":"0x820118e8","inventory_entry_count":1,"size":112,"sha256":"2c09abbb3b957d7989c7cf1f2cc60d3ed27248747c873357fe20e8cd505beab1"},
@@ -209,7 +208,7 @@
         {"start":"0x8204d818","end_exclusive":"0x8204d878","inventory_entry_count":1,"size":96,"sha256":"a93b3598c46d6af9e25aa4b7ce533eacca11ebb6cde593d7a3a2ded24421f734"},
         {"start":"0x82051af8","end_exclusive":"0x82051b50","inventory_entry_count":1,"size":88,"sha256":"0d90d0714ef08da0acd6e92475c04448fd78da6f00609e9029d3a5f80eb035af"},
         {"start":"0x82051ba8","end_exclusive":"0x82051c08","inventory_entry_count":1,"size":96,"sha256":"42374f379418b87faeb97f439bd3c67509bdb5a267683c8a5725d453726bca61"},
-        {"start":"0x82053a40","end_exclusive":"0x82069eb0","inventory_entry_count":276,"size":91248,"sha256":"f6c40e776fb0334089e7f6b04fb11be0c5f390028862564a916845d45caf1c18"},
+        {"start":"0x820537e0","end_exclusive":"0x82069eb0","inventory_entry_count":277,"size":91856,"sha256":"16df242d6648ae539b50134bcbb6dd1040954da7276e9f3ff9cce1b6b6583193"},
         {"start":"0x82069eb0","end_exclusive":"0x8206a310","inventory_entry_count":69,"size":1120,"sha256":"96309be976d83510bbfbaf67c0aca0d7301e9074e88ca95812c59ee3c10c8927"}
       ]
     },
@@ -246,6 +245,7 @@
     "The 0x82052a88 packed-resource family checks XPR2, fixes 16-byte resource records, handles TX texture records, and is shared with SettingsApp. That establishes Xbox packed-resource role but not exact public/platform source provenance, so the family remains unknown.",
     "The 0x82053238 inventory extent bundles a FindFirst-style wrapper, CreateThread wrapper, platform thunk, and XLNI symbolic-launch adapter. Two bodies normalize exactly to SettingsApp, but shared use and standard Xbox strings do not prove public/platform provenance, so the whole unsplittable extent remains unknown and is not source-covered as BootEdit product code.",
     "The non-pdata packed-resource constructor at 0x82052a60 is embedded at the tail of the product-owned 0x82052830 inventory extent; under the inventory-granularity policy those 40 bytes inherit the containing extent instead of creating overlapping ownership.",
+    "The former product candidate at 0x820537e0 is Microsoft/XDK PAL-50 startup policy: it queries XAM/kernel configuration and selects from the embedded 16-language PAL-50 warning and localized confirmation-label tables before CRT entry. It is platform_toolchain, not Peer product code.",
     "ColorsDifferExact at 0x82050a00 is a known non-pdata leaf inside the product-owned 0x82050958 inventory extent; it is not counted as a 935th inventory entry.",
     "Product classification is component-level reconstruction priority, never a claim that a named individual personally authored the bytes."
   ],
@@ -253,10 +253,10 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 23,
-    "product_application_size": 13696,
-    "non_product_entry_count": 911,
-    "non_product_size": 355728,
+    "product_application_entry_count": 22,
+    "product_application_size": 13088,
+    "non_product_entry_count": 912,
+    "non_product_size": 356336,
     "unknown_entry_count": 119,
     "unknown_size": 31712
   }

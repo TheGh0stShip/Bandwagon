@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":27022,"sha256":"ae989c02dbe35ecbdff52943fccf8e0dd2369b45839ef8ce4a6f6d319cd624d7"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":27355,"sha256":"908e99f6e8ca7fecc317af6fc9f67adbccddedc7b4ad93e4d58826fd278e0931"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -346,15 +346,14 @@
   ],
   "remaining_product_entries": [
     {"address":"0x820118e8","end_exclusive":"0x82011ed8","size":1520,"sha256":"790cc4cccf25595183cde83cad34f9620acb8d36fa4b14851217222c65354425","role":"theme-name validation and overwrite policy","blocker":"complete validation predicates and overwrite-modal continuation flow"},
-    {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"},
-    {"address":"0x820537e0","end_exclusive":"0x82053a40","size":608,"sha256":"0b31a4bde8d411b828adc22afe159f2d3118c8c8f647b9a5298670abb1c8992a","role":"BootEdit application entry/orchestration before CRT entry","blocker":"recover complete initialization, frame loop, and shutdown ordering"}
+    {"address":"0x820512e8","end_exclusive":"0x82051af8","size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9","role":"DrawThemeEditor","blocker":"lift the complete editor state machine and all ImGui-driven mutations"}
   ],
   "summary": {
-    "product_function_count": 23,
-    "product_bytes": 13696,
+    "product_function_count": 22,
+    "product_bytes": 13088,
     "model_covered_function_count": 20,
     "model_covered_bytes": 9504,
-    "remaining_product_function_count": 3,
-    "remaining_product_bytes": 4192
+    "remaining_product_function_count": 2,
+    "remaining_product_bytes": 3584
   }
 }

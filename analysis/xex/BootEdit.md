@@ -29,9 +29,9 @@ contains 218 references in 69 functions. Regenerate the complete set with
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product theme-editor application | 23 | 13,696 | Recover as readable source |
+| Product theme-editor application | 22 | 13,088 | Recover as readable source |
 | Dear ImGui 1.86 | 441 | 231,096 | Use the pinned upstream source |
-| MSVC/Xbox platform and toolchain | 351 | 92,920 | Reuse the target ABI/runtime; do not relift |
+| MSVC/Xbox platform and toolchain | 352 | 93,528 | Reuse the target ABI/runtime; do not relift |
 | Unknown framework/backend/lookup code | 119 | 31,712 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
@@ -48,6 +48,11 @@ combines four generic/XDK-facing bodies, two of which normalize exactly to
 SettingsApp, but cross-component reuse alone does not prove platform or public
 source provenance. Run
 `tools/verify_bootedit_function_ownership.py` to reproduce the partition.
+
+The 608-byte pre-CRT body at `0x820537e0` was removed from the product queue
+after its data table was decoded: it is the Microsoft/XDK PAL-50 compatibility
+check with 16 localized warning and confirmation strings plus XAM/kernel video
+configuration calls. It belongs to platform startup code and is not relifted.
 
 ## Recovered application behavior
 
@@ -82,9 +87,9 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds 16 of the 23 product entries and
-9,504 of 13,696 bytes to readable, tested C++ behavioral models. The exact
-remaining queue is 3 entries / 4,192 bytes and is listed with per-entry
+`BootEdit-peer-source-coverage.json` binds 20 of the 22 product entries and
+9,504 of 13,088 bytes to readable, tested C++ behavioral models. The exact
+remaining queue is 2 entries / 3,584 bytes and is listed with per-entry
 blockers in that manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover the first tranche. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full
