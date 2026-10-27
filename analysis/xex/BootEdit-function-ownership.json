@@ -90,8 +90,9 @@
       {"from":"unknown","to":"platform_toolchain","inventory_entry_count":4,"size":360,"basis":"exact relocation-normalized matches to functions independently platform-owned in Updater","addresses":["0x82011878","0x8204c280","0x8204cb90","0x82051af8"]},
       {"from":"product_application","to":"unknown","start":"0x82053238","end_exclusive":"0x820533b0","inventory_entry_count":1,"size":376,"basis":"the unsplittable inventory extent contains four generic/XDK-facing bodies, including two normalized-identical SettingsApp twins; sharing proves neither product specificity nor platform provenance"},
       {"from":"product_application","to":"platform_toolchain","start":"0x820537e0","end_exclusive":"0x82053a40","inventory_entry_count":1,"size":608,"basis":"XAM/kernel configuration calls and the embedded 16-language Microsoft PAL-50 warning/confirmation tables identify the standard pre-CRT Xbox display-mode compatibility check"}
+      ,{"from":"unknown","to":"platform_toolchain","start":"0x820500c8","end_exclusive":"0x820506b8","inventory_entry_count":6,"size":1520,"basis":"all six entries are exhaustive std::vector<56-byte T> template operations: pointer triplets, size/capacity division by 56, self-range traps, generic copy/destruction calls, and growth branches"}
     ],
-    "after": {"unknown_entry_count":119,"unknown_size":31712,"product_application_entry_count":22,"product_application_size":13088}
+    "after": {"unknown_entry_count":113,"unknown_size":30192,"product_application_entry_count":22,"product_application_size":13088}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -149,14 +150,20 @@
   ],
   "compiler_emitted_template_partition": {
     "classification": "platform_toolchain",
-    "inventory_entry_count": 6,
-    "size": 552,
-    "description": "Six standalone compiler/standard-library helpers are positively identified by diagnostics or exact relocation-normalized matches to Updater platform bodies and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
+    "inventory_entry_count": 12,
+    "size": 2072,
+    "description": "Twelve standalone compiler/standard-library helpers are positively identified by diagnostics, exact relocation-normalized matches to Updater platform bodies, or exhaustive std::vector<T> pointer/capacity arithmetic and kept out of product logic. Other generic-looking bodies lacking decisive provenance remain unknown.",
     "ranges": [
       {"start":"0x82011878","end_exclusive":"0x820118e8","size":112,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x980060e8"},
       {"start":"0x8204c280","end_exclusive":"0x8204c2d8","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005d80"},
       {"start":"0x8204cb90","end_exclusive":"0x8204cbd8","size":72,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98005080"},
       {"start":"0x8204d818","end_exclusive":"0x8204d878","size":96,"inventory_entry_count":1,"evidence":"owns vector<T> too long"},
+      {"start":"0x820500c8","end_exclusive":"0x82050128","size":96,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> range construction with begin/end trap checks"},
+      {"start":"0x82050128","end_exclusive":"0x82050208","size":224,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> insert with self-range and capacity checks"},
+      {"start":"0x82050208","end_exclusive":"0x82050360","size":344,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> assign/reallocation dispatch using generic copy helpers"},
+      {"start":"0x82050360","end_exclusive":"0x82050570","size":528,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> copy assignment with capacity branches and element destruction"},
+      {"start":"0x82050570","end_exclusive":"0x82050658","size":232,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> append/resize with capacity growth"},
+      {"start":"0x82050658","end_exclusive":"0x820506b8","size":96,"inventory_entry_count":1,"evidence":"std::vector<56-byte T> count forwarding wrapper"},
       {"start":"0x82051af8","end_exclusive":"0x82051b50","size":88,"inventory_entry_count":1,"evidence":"exact relocation-normalized match to platform-owned Updater 0x98008b20"},
       {"start":"0x82051ba8","end_exclusive":"0x82051c08","size":96,"inventory_entry_count":1,"evidence":"owns invalid vector<T> subscript"}
     ]
@@ -197,15 +204,21 @@
       ]
     },
     "platform_toolchain": {
-      "inventory_entry_count": 352,
-      "size": 93528,
-      "concatenated_sha256": "545cb2abc808a4330baa18ce3d0179446a06fa174c84400c73ddb64e28c58441",
+      "inventory_entry_count": 358,
+      "size": 95048,
+      "concatenated_sha256": "1927e4625519f438651aac33e4fe642318a39f80460a98bf9543ef1742d80d6e",
       "product_specific": false,
       "ranges": [
         {"start":"0x82011878","end_exclusive":"0x820118e8","inventory_entry_count":1,"size":112,"sha256":"2c09abbb3b957d7989c7cf1f2cc60d3ed27248747c873357fe20e8cd505beab1"},
         {"start":"0x8204c280","end_exclusive":"0x8204c2d8","inventory_entry_count":1,"size":88,"sha256":"bca7f616a674060c39bb9497fea3a29f2e3d4db941beb04fea6401ff7cc3e43f"},
         {"start":"0x8204cb90","end_exclusive":"0x8204cbd8","inventory_entry_count":1,"size":72,"sha256":"896fe8992209a16c6cb7d39357a3ad38194549965f525c581a870ac6f1f95a89"},
         {"start":"0x8204d818","end_exclusive":"0x8204d878","inventory_entry_count":1,"size":96,"sha256":"a93b3598c46d6af9e25aa4b7ce533eacca11ebb6cde593d7a3a2ded24421f734"},
+        {"start":"0x820500c8","end_exclusive":"0x82050128","inventory_entry_count":1,"size":96,"sha256":"8503657e0e6bcc5d5487c82e11cdb8911936a1afa3171bcf6cbdef4faf9dea1b"},
+        {"start":"0x82050128","end_exclusive":"0x82050208","inventory_entry_count":1,"size":224,"sha256":"3c0391703ebc6ad04bd9e8406811fe7f402cc14f458bcc44fe15a319a825a70e"},
+        {"start":"0x82050208","end_exclusive":"0x82050360","inventory_entry_count":1,"size":344,"sha256":"7732197ab769cb927b7f98d3fcf124b9f1942d1edc9d234c5bba9f921e37c1df"},
+        {"start":"0x82050360","end_exclusive":"0x82050570","inventory_entry_count":1,"size":528,"sha256":"59746e40db39e8047d192d0278576757ea09df5a6dfda72db18285f8881b9253"},
+        {"start":"0x82050570","end_exclusive":"0x82050658","inventory_entry_count":1,"size":232,"sha256":"7a5b4ae1b2973152c3cb57a151024f85fd90e03789411b5405cffa5b0913a297"},
+        {"start":"0x82050658","end_exclusive":"0x820506b8","inventory_entry_count":1,"size":96,"sha256":"cb503b7fc5e6bbca3b57de22cfa83f83691b1589970670c8e2570508770bb1da"},
         {"start":"0x82051af8","end_exclusive":"0x82051b50","inventory_entry_count":1,"size":88,"sha256":"0d90d0714ef08da0acd6e92475c04448fd78da6f00609e9029d3a5f80eb035af"},
         {"start":"0x82051ba8","end_exclusive":"0x82051c08","inventory_entry_count":1,"size":96,"sha256":"42374f379418b87faeb97f439bd3c67509bdb5a267683c8a5725d453726bca61"},
         {"start":"0x820537e0","end_exclusive":"0x82069eb0","inventory_entry_count":277,"size":91856,"sha256":"16df242d6648ae539b50134bcbb6dd1040954da7276e9f3ff9cce1b6b6583193"},
@@ -213,9 +226,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 119,
-      "size": 31712,
-      "concatenated_sha256": "630cd2035302b358ce1bc948d2f0e584555f924052834f70647f533db2b514c0",
+      "inventory_entry_count": 113,
+      "size": 30192,
+      "concatenated_sha256": "b2b9db964b1306ada23103e940979f5a10b9f04b7620f467917cb6e3c7afe3db",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -226,7 +239,6 @@
         {"start":"0x8204cb28","end_exclusive":"0x8204cb90","inventory_entry_count":1,"size":104,"sha256":"3c49d36ca55c4889a03fe6b15eabef6cecfa5d8a6a141d370dd3489928444552"},
         {"start":"0x8204cbd8","end_exclusive":"0x8204d818","inventory_entry_count":9,"size":3136,"sha256":"31c2907d79c66d2efb37e070c0afcd9886e3e12a1cd22ebbdef6deaf13394e46"},
         {"start":"0x8204d878","end_exclusive":"0x82050018","inventory_entry_count":33,"size":10144,"sha256":"d21d20f999e96fb16c4de5b7bf5b31528cc8126bff342364afe8db2190d33562"},
-        {"start":"0x820500c8","end_exclusive":"0x820506b8","inventory_entry_count":6,"size":1520,"sha256":"9bd711dbf76655b8c025a68b40b852083180a9a6d784baaadff0fd54a80996b6"},
         {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
         {"start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"sha256":"fcb81938e3cf52fb232b8866e6f90fb853d6c45cb5a637b9c64dc83ae24f3a57"},
         {"start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"sha256":"15cad7ac5ca342357a0021474f87182f16103ae26fc61642201d4d5cfeaaa11f"},
@@ -257,7 +269,7 @@
     "product_application_size": 13088,
     "non_product_entry_count": 912,
     "non_product_size": 356336,
-    "unknown_entry_count": 119,
-    "unknown_size": 31712
+    "unknown_entry_count": 113,
+    "unknown_size": 30192
   }
 }

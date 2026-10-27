@@ -31,8 +31,8 @@ contains 218 references in 69 functions. Regenerate the complete set with
 | --- | ---: | ---: | --- |
 | Product theme-editor application | 22 | 13,088 | Recover as readable source |
 | Dear ImGui 1.86 | 441 | 231,096 | Use the pinned upstream source |
-| MSVC/Xbox platform and toolchain | 352 | 93,528 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 119 | 31,712 | Fingerprint before deciding whether to lift |
+| MSVC/Xbox platform and toolchain | 358 | 95,048 | Reuse the target ABI/runtime; do not relift |
+| Unknown framework/backend/lookup code | 113 | 30,192 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -89,7 +89,7 @@ every full BootEdit regeneration.
 
 `BootEdit-peer-source-coverage.json` binds all 22 product entries and
 all 13,088 bytes to readable, tested C++ behavioral models. The known-product
-queue is empty; the remaining work is provenance resolution for the 119 unknown
+queue is empty; the remaining work is provenance resolution for the 113 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full

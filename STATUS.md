@@ -35,14 +35,14 @@ is still **dozens of material commits, not a few more commits**.
 | Updater | Complete | All 376 entries classified; all 20 product routines / 6,728 bytes have exact-entry readable models; 22 miniz entries are pinned and 334 platform/toolchain entries are excluded | None in the current source-composition boundary |
 | UpdateCheck | Complete | All 804 entries partitioned; all 19 product/mixed routines / 6,768 bytes have readable models; five former unknown wrappers / 608 bytes positively match the clean Microsoft platform baseline | None in the current source-composition boundary |
 | SettingsApp | Partial | All 1,824 entries partitioned; 3 of 246 product/mixed candidates / 3,112 of 62,264 bytes have exact-entry behavioral models; XPR2 4 / 688 source-covered | Recover or reclassify the remaining 243 / 59,152 and lift 9 / 4,648 unknown-provenance backend entries |
-| BootEdit | Partial | All 934 entries partitioned; 16 of 23 product routines / 6,176 of 13,696 bytes covered; one generic shared 376-byte container was removed from the product queue | Recover the remaining 7 / 7,520 and resolve 119 unknown entries / 31,712 bytes |
+| BootEdit | Partial | All 22 known product entries / 13,088 bytes covered; 15 / 5,840 unknown-provenance backend/XPR2 bytes also source-covered | Resolve 113 unknown entries / 30,192 bytes; 98 / 24,352 still lack readable source |
 
 Across the five XEX ownership-pass targets, every one of 4,194 entries and
-1,387,504 code bytes has an ownership assignment. The aggregate is 3,745
-upstream or platform entries / 1,258,056 bytes, 317 conservative product/mixed
-entries / 92,400 bytes, and 132 unknown entries / 37,048 bytes. Fifty-nine
-product entries / 25,728 bytes have hash-bound readable-source coverage,
-leaving 250 / 66,672 bytes in the current uncovered product upper bound. This is a real
+1,387,504 code bytes has an ownership assignment. The aggregate is 3,752
+upstream or platform entries / 1,260,184 bytes, 316 conservative product/mixed
+entries / 91,792 bytes, and 126 unknown entries / 35,528 bytes. Seventy-three
+product entries / 32,640 bytes have hash-bound readable-source coverage,
+leaving 243 / 59,152 bytes in the current uncovered product upper bound. This is a real
 denominator, but it can shrink as generic glue/templates are proven non-product.
 
 ## Current measured boundaries
@@ -111,10 +111,10 @@ denominator, but it can shrink as generic glue/templates are proven non-product.
 - 22 entries / 13,088 bytes: known product theme-editor behavior; all 22 /
   13,088 bytes are source-covered.
 - 441 entries / 231,096 bytes: pinned Dear ImGui 1.86.
-- 352 entries / 93,528 bytes: platform/toolchain code.
-- 119 entries / 31,712 bytes remain provenance-unknown; 15 / 5,840 bytes of
+- 358 entries / 95,048 bytes: platform/toolchain code.
+- 113 entries / 30,192 bytes remain provenance-unknown; 15 / 5,840 bytes of
   the Xbox 360/DX9 backend and XPR2 loader are now source-covered, leaving
-  104 / 25,872 without readable source.
+  98 / 24,352 without readable source.
 - The 376-byte `0x82053238` container is now unknown rather than product: it
   combines four generic/XDK-facing bodies, two shared exactly with SettingsApp,
   but no exact public/platform provenance has yet been pinned.
@@ -125,7 +125,7 @@ it.
 
 ## Remaining work, in order
 
-1. Refine the 132 unknown XEX entries: 119 in BootEdit and 13 in SettingsApp;
+1. Refine the 126 unknown XEX entries: 113 in BootEdit and 13 in SettingsApp;
    narrow conservative product/mixed buckets before lifting.
 2. Recover the 50 known uncovered KernelExpansion product entries, prioritizing
    bootstrap, Xbox storage/FSD adapters, and product policy; fingerprint the 72
@@ -147,7 +147,7 @@ the product-source work across the four partial targets, and 5-10 for build and
 integration closure (some work can overlap). At the present accuracy bar this
 is approximately **3-7 weeks of sustained work to a source-built integration
 candidate**. Authorized hardware/emulator validation is a separate external
-gate and can extend that range. This forecast should narrow as the 132 XEX and
+gate and can extend that range. This forecast should narrow as the 126 XEX and
 72 KernelExpansion unknown entries are resolved.
 
 Run `python3 tools/report_recovery_dashboard.py` for the live hash-bound
