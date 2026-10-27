@@ -3,6 +3,7 @@
 #include <cassert>
 #include <iostream>
 #include <limits>
+#include <vector>
 
 namespace {
 struct Services final : bandwagon::boot_edit::ThemeEditorServices {
@@ -29,6 +30,27 @@ int main() {
   using bandwagon::boot_edit::ColorClipboard;
   using bandwagon::boot_edit::ColorContextMenuEvents;
   using bandwagon::boot_edit::MeshColorEditEvent;
+
+  std::vector<int> lifecycle_order;
+  bandwagon::boot_edit::FrameClock clock;
+  clock.current_ticks = 1000;
+  bandwagon::boot_edit::FrameLifecycleServices lifecycle;
+  lifecycle.backend_new_frame = [&] { lifecycle_order.push_back(1); };
+  lifecycle.imgui_new_frame = [&] { lifecycle_order.push_back(2); };
+  lifecycle.query_milliseconds = [&] {
+    lifecycle_order.push_back(3);
+    return 1125u;
+  };
+  lifecycle.destroy_platform_windows = [&] { lifecycle_order.push_back(4); };
+  lifecycle.destroy_imgui_context = [&] { lifecycle_order.push_back(5); };
+  lifecycle.shutdown_input_backend = [&] { lifecycle_order.push_back(6); };
+  lifecycle.shutdown_renderer_backend = [&] { lifecycle_order.push_back(7); };
+  bandwagon::boot_edit::BeginBootEditFrame(&clock, lifecycle);
+  assert((lifecycle_order == std::vector<int>{1, 2, 3}));
+  assert(clock.previous_ticks == 1000 && clock.current_ticks == 1125);
+  assert(clock.delta_seconds == 0.125f);
+  bandwagon::boot_edit::ShutdownBootEdit(lifecycle);
+  assert((lifecycle_order == std::vector<int>{1, 2, 3, 4, 5, 6, 7}));
 
   const auto theme = BuildSavedTheme("Blue.xbat");
   assert(theme.display_name == "Blue");

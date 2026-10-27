@@ -35,7 +35,7 @@ is still **dozens of material commits, not a few more commits**.
 | Updater | Complete | All 376 entries classified; all 20 product routines / 6,728 bytes have exact-entry readable models; 22 miniz entries are pinned and 334 platform/toolchain entries are excluded | None in the current source-composition boundary |
 | UpdateCheck | Complete | All 804 entries partitioned; all 19 product/mixed routines / 6,768 bytes have readable models; five former unknown wrappers / 608 bytes positively match the clean Microsoft platform baseline | None in the current source-composition boundary |
 | SettingsApp | Partial | All 1,824 entries partitioned; 3 of 246 product/mixed candidates / 3,112 of 62,264 bytes have exact-entry behavioral models; XPR2 4 / 688 source-covered | Recover or reclassify the remaining 243 / 59,152 and lift 9 / 4,648 unknown-provenance backend entries |
-| BootEdit | Partial | All 26 known product entries / 15,160 bytes covered; 15 / 5,840 unknown-provenance backend/XPR2 bytes also source-covered | Resolve 79 unknown entries / 18,456 bytes; 64 / 12,616 still lack readable source |
+| BootEdit | Partial | All 28 known product entries / 15,344 bytes covered; 15 / 5,840 unknown-provenance backend/XPR2 bytes also source-covered | Resolve 77 unknown entries / 18,272 bytes; 62 / 12,432 still lack readable source |
 
 Across the five XEX ownership-pass targets, every one of 4,194 entries and
 1,387,504 code bytes has an ownership assignment. The aggregate is 3,752
@@ -108,15 +108,15 @@ denominator, but it can shrink as generic glue/templates are proven non-product.
 
 ### BootEdit
 
-- 26 entries / 15,160 bytes: known product theme-editor behavior; all 26 /
-  15,160 bytes are source-covered. This includes the exact typed 632-byte
-  payload, live snapshot, and paired load/save codec wrappers.
+- 28 entries / 15,344 bytes: known product theme-editor behavior; all 28 /
+  15,344 bytes are source-covered. This includes the exact typed payload,
+  codec wrappers, and ordered frame-start/shutdown integration.
 - 441 entries / 231,096 bytes: pinned Dear ImGui 1.86.
 - 388 entries / 104,712 bytes: platform/toolchain code, including the complete
   `std::string`/`std::vector<SavedTheme>` copy/move/sort family.
-- 79 entries / 18,456 bytes remain provenance-unknown; 15 / 5,840 bytes of
+- 77 entries / 18,272 bytes remain provenance-unknown; 15 / 5,840 bytes of
   the Xbox 360/DX9 backend and XPR2 loader are now source-covered, leaving
-  64 / 12,616 without readable source.
+  62 / 12,432 without readable source.
 - The 376-byte `0x82053238` container is now unknown rather than product: it
   combines four generic/XDK-facing bodies, two shared exactly with SettingsApp,
   but no exact public/platform provenance has yet been pinned.
@@ -127,7 +127,7 @@ it.
 
 ## Remaining work, in order
 
-1. Refine the 92 unknown XEX entries: 79 in BootEdit and 13 in SettingsApp;
+1. Refine the 90 unknown XEX entries: 77 in BootEdit and 13 in SettingsApp;
    narrow conservative product/mixed buckets before lifting.
 2. Recover the 50 known uncovered KernelExpansion product entries, prioritizing
    bootstrap, Xbox storage/FSD adapters, and product policy; fingerprint the 72

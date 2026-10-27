@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":33864,"sha256":"a6545c216cfde0b19776f4f249d87c09eb61e48fec5ee064ebb8e48fd1c5b2cb"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":34437,"sha256":"8138b100bc00e3c264fc9403996e2465589468190898e536a6c0942ee6c3f1cc"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -38,9 +38,9 @@
     "modal_source": {"path":"reconstruction/boot_edit/modal_state.cpp","kind":"source","size":5110,"sha256":"a11301f96615705a1733f9de3161867c7465f7b0862c2e27ae8a48334cb3fbce"},
     "modal_header": {"path":"reconstruction/boot_edit/modal_state.hpp","kind":"header","size":3986,"sha256":"e24d249dd7a2c9048af6f65662212aa47e68235da7f6cd8e0400900a192a0e9c"},
     "modal_test": {"path":"reconstruction/boot_edit/modal_state_test.cpp","kind":"test","size":7497,"sha256":"173cd8640b518031281a138b0f45474a7d84d3eb4e7803194bc41ffb93b95810"},
-    "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":5921,"sha256":"12b28538d9fdd4772ad3c041c5ba6f7d89e9e85fa0191d76313bf3a7cd78f2ff"},
-    "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":5765,"sha256":"35fdb3e1f178ab665205f1c322286ea052efcb8591b9f24fe65442b038e0444a"},
-    "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":7974,"sha256":"1c87b2e1cf3e8f81450740cc0445214477c002bf85ba1fb282090d75695fa79a"},
+    "editor_source": {"path":"reconstruction/boot_edit/theme_editor.cpp","kind":"source","size":6832,"sha256":"97a9eb05a3d66b7951aa0163bb3d409fa284e31c13ed1fa070bb04d13cce8a65"},
+    "editor_header": {"path":"reconstruction/boot_edit/theme_editor.hpp","kind":"header","size":6453,"sha256":"31cb9a5912e263c05ffd65e174904ed554c5091f5f5be4ecf4bc4af9685dfcdf"},
+    "editor_test": {"path":"reconstruction/boot_edit/theme_editor_test.cpp","kind":"test","size":9059,"sha256":"d0e7fb18975788ad0590bd1c280b30a649f07a56893fe49f1a8fea707bf05f09"},
     "manager_source": {"path":"reconstruction/boot_edit/theme_manager.cpp","kind":"source","size":8404,"sha256":"71a4cda2df139661fe9412e56eef59c62bfd2d9ca6d6689789df5f7bd9d125d3"},
     "manager_header": {"path":"reconstruction/boot_edit/theme_manager.hpp","kind":"header","size":6193,"sha256":"2197bacc8646bf1e6e0bce36db36f42d5bbcb524ad998d7432a75d3ab27ed677"},
     "manager_test": {"path":"reconstruction/boot_edit/theme_manager_test.cpp","kind":"test","size":8375,"sha256":"1710479bcdf2e5de6020ec5b713ebc19516f184b9be1f0af67bf0e0b67fb5639"}
@@ -287,6 +287,36 @@
       "required_strings": []
     },
     {
+      "address": "0x82050a50",
+      "end_exclusive": "0x82050ac0",
+      "size": 112,
+      "sha256": "05554c37fb4dc563e4de37aa44c5c3948b42374b066d181fc7262c161c8546ec",
+      "inventory_name": "fn_82050A50",
+      "semantic_name": "BeginBootEditFrame",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Ordered Xbox renderer-backend and ImGui NewFrame dispatch, previous/current millisecond tick roll, unsigned elapsed calculation, exact 0.001f seconds conversion, and delta publication; backend, ImGui, and tick acquisition are injected boundaries.",
+      "source_artifacts": ["editor_source", "editor_header"],
+      "test_artifacts": ["editor_test"],
+      "symbols": ["FrameClock", "FrameLifecycleServices", "BeginBootEditFrame"],
+      "required_strings": []
+    },
+    {
+      "address": "0x82050ac0",
+      "end_exclusive": "0x82050b08",
+      "size": 72,
+      "sha256": "c8cbc665c182b30612792869072221b4c87a663fdddfd5d57b8841577c9c4fd4",
+      "inventory_name": "fn_82050AC0",
+      "semantic_name": "ShutdownBootEdit",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Exact four-call shutdown ordering: destroy platform windows, destroy the ImGui context, shut down the input backend, then shut down the renderer backend. Dependency implementations remain separately attributed boundaries.",
+      "source_artifacts": ["editor_source", "editor_header"],
+      "test_artifacts": ["editor_test"],
+      "symbols": ["FrameLifecycleServices", "ShutdownBootEdit"],
+      "required_strings": []
+    },
+    {
       "address": "0x82050f60",
       "end_exclusive": "0x82051238",
       "size": 728,
@@ -439,10 +469,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 26,
-    "product_bytes": 15160,
-    "model_covered_function_count": 26,
-    "model_covered_bytes": 15160,
+    "product_function_count": 28,
+    "product_bytes": 15344,
+    "model_covered_function_count": 28,
+    "model_covered_bytes": 15344,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

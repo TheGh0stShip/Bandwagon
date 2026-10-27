@@ -2,6 +2,7 @@
 
 #include <array>
 #include <cstdint>
+#include <functional>
 #include <string>
 #include <string_view>
 
@@ -109,6 +110,26 @@ struct ThemeEditorServices {
   virtual bool NoticeComplete() = 0;
   virtual void ReleaseNotice() = 0;
 };
+
+struct FrameClock {
+  std::uint32_t previous_ticks = 0;
+  std::uint32_t current_ticks = 0;
+  float delta_seconds = 0.0f;
+};
+
+struct FrameLifecycleServices {
+  std::function<void()> backend_new_frame;
+  std::function<void()> imgui_new_frame;
+  std::function<std::uint32_t()> query_milliseconds;
+  std::function<void()> destroy_platform_windows;
+  std::function<void()> destroy_imgui_context;
+  std::function<void()> shutdown_input_backend;
+  std::function<void()> shutdown_renderer_backend;
+};
+
+void BeginBootEditFrame(FrameClock* clock,
+                        const FrameLifecycleServices& services);
+void ShutdownBootEdit(const FrameLifecycleServices& services);
 
 struct ThemeEditorFrameResult {
   float timeline_seconds = 0.0f;

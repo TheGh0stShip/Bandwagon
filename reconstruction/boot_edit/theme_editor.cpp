@@ -2,6 +2,25 @@
 
 namespace bandwagon::boot_edit {
 
+void BeginBootEditFrame(FrameClock* clock,
+                        const FrameLifecycleServices& services) {
+  if (!clock) return;
+  if (services.backend_new_frame) services.backend_new_frame();
+  if (services.imgui_new_frame) services.imgui_new_frame();
+  clock->previous_ticks = clock->current_ticks;
+  if (services.query_milliseconds)
+    clock->current_ticks = services.query_milliseconds();
+  const std::uint32_t elapsed = clock->current_ticks - clock->previous_ticks;
+  clock->delta_seconds = static_cast<float>(elapsed) * 0.001f;
+}
+
+void ShutdownBootEdit(const FrameLifecycleServices& services) {
+  if (services.destroy_platform_windows) services.destroy_platform_windows();
+  if (services.destroy_imgui_context) services.destroy_imgui_context();
+  if (services.shutdown_input_backend) services.shutdown_input_backend();
+  if (services.shutdown_renderer_backend) services.shutdown_renderer_backend();
+}
+
 SavedTheme BuildSavedTheme(std::string_view file_name) {
   const std::size_t extension = file_name.rfind(".xbat");
   return {
