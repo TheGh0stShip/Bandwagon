@@ -103,8 +103,9 @@
       ,{"from":"unknown","to":"product_application","start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"basis":"BootEdit navigation-icon renderer indexes the product's ten 40-byte icon records, applies exact font-relative 32x32 geometry and UV/tint constants, advances the cursor by 34 pixels, and conditionally emits the product navigation tooltip"}
       ,{"from":"unknown","to":"upstream_imgui_1_86","start":"0x82050f08","end_exclusive":"0x82050f60","inventory_entry_count":1,"size":88,"basis":"exact inline ImFontGlyphRangesBuilder construction/Clear behavior from pinned ImGui 1.86: zero the ImVector<ImU32> triplet, resize to (0x10000/8)/4 = 2048 words, and memset the resulting 8192-byte bitmap"}
       ,{"from":"unknown","to":"platform_toolchain","start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"basis":"exception-object constructor used by the adjacent invalid-vector-subscript diagnostic: installs base and derived exception vtables and delegates message storage to independently platform-owned helper 0x8204c280"}
+      ,{"from":"unknown","to":"product_application","start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"basis":"coherent BootEdit deferred-action family: dispatch reset/load/no-op/firmware-return codes, gate dispatch on accepted discard result 3, and allocate/publish the 96-byte discard-confirmation task carrying the deferred action code"}
     ],
-    "after": {"unknown_entry_count":72,"unknown_size":17504,"product_application_entry_count":30,"product_application_size":15752}
+    "after": {"unknown_entry_count":69,"unknown_size":17192,"product_application_entry_count":33,"product_application_size":16064}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -161,6 +162,9 @@
     {"address":"0x82051c08","role":"unnamed-theme normalization","confidence":"high"},
     {"address":"0x82051c98","role":"SaveThemeWithFeedback","confidence":"high"},
     {"address":"0x82051e70","role":"LoadThemeWithFeedback","confidence":"high"},
+    {"address":"0x82051f28","role":"dispatch deferred discard-confirmation action","confidence":"high"},
+    {"address":"0x82051f98","role":"accepted discard-result completion adapter","confidence":"high"},
+    {"address":"0x82051fe8","role":"create and publish deferred discard-confirmation task","confidence":"high"},
     {"address":"0x82052060","role":"UpdateSettingsActions","confidence":"high"},
     {"address":"0x82052468","role":"DrawThemeSelector","confidence":"high"},
     {"address":"0x82052830","role":"UpdateBootEditFrame and embedded packed-resource constructor","confidence":"high"}
@@ -194,9 +198,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 30,
-      "size": 15752,
-      "concatenated_sha256": "ce4b36530ce5f3fd47d0b26e419abb674d76e5c355f9f6cb1ebaff03ed1b02bc",
+      "inventory_entry_count": 33,
+      "size": 16064,
+      "concatenated_sha256": "dba0f28ed11de14a6c50a6c502ed41c5c8149f88b6d28dbc79699df1584d6cfb",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -221,6 +225,7 @@
         {"start":"0x820512e8","end_exclusive":"0x82051af8","inventory_entry_count":1,"size":2064,"sha256":"63506e547f23885498dc8cbae37aff0d92362f5b347eac6dd1a87e0a7efeb0a9"},
         {"start":"0x82051c08","end_exclusive":"0x82051db8","inventory_entry_count":2,"size":432,"sha256":"34aaffba30da78afa641e83f9247b4e9453df7e353c52bf98abc48c448bf04eb"},
         {"start":"0x82051e70","end_exclusive":"0x82051f28","inventory_entry_count":1,"size":184,"sha256":"abed3022e201cd788bac8558b3c42865cea2f4875856aa077ecca70c2050ab76"},
+        {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
         {"start":"0x82052060","end_exclusive":"0x82052a88","inventory_entry_count":3,"size":2600,"sha256":"c4dd96f46ef9b595e2c0ff76edae0ad1ac2948e6a636eb29fd21d2b030b50739"}
       ]
     },
@@ -262,9 +267,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 72,
-      "size": 17504,
-      "concatenated_sha256": "b8f3bcf5c0aed353fa2fc26234a276f97fa3a659a530cf3f7d1d7325a31c5286",
+      "inventory_entry_count": 69,
+      "size": 17192,
+      "concatenated_sha256": "4705eef374fbd90af7327178682a92adb5deac51785e1e2213a30bc071713958",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -276,7 +281,6 @@
         {"start":"0x8204cbd8","end_exclusive":"0x8204cc40","inventory_entry_count":1,"size":104,"sha256":"dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1"},
         {"start":"0x8204d278","end_exclusive":"0x8204d818","inventory_entry_count":7,"size":1440,"sha256":"44bc889040d88e9e582dc15c8262be75e822c3466a659439388f91b2ae91af52"},
         {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
-        {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
         {"start":"0x82052a88","end_exclusive":"0x820537e0","inventory_entry_count":20,"size":3416,"sha256":"69e9f798f01da5729f8d9ee9b2bc02dce6b6cb20c23a95d31ac01d08f1422db4"}
       ]
     }
@@ -295,11 +299,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 30,
-    "product_application_size": 15752,
-    "non_product_entry_count": 904,
-    "non_product_size": 353672,
-    "unknown_entry_count": 72,
-    "unknown_size": 17504
+    "product_application_entry_count": 33,
+    "product_application_size": 16064,
+    "non_product_entry_count": 901,
+    "non_product_size": 353360,
+    "unknown_entry_count": 69,
+    "unknown_size": 17192
   }
 }

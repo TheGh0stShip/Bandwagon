@@ -58,6 +58,60 @@ SettingsActionInput Activate() {
   return input;
 }
 
+void TestDeferredActionAdapters() {
+  std::vector<std::string> events;
+  DeferredActionServices services;
+  services.acquire_application_state = [&] { events.push_back("acquire"); };
+  services.reset_to_new_theme = [&] { events.push_back("reset"); };
+  services.load_selected_theme = [&] { events.push_back("load"); };
+  services.prepare_firmware_return = [&] { events.push_back("prepare"); };
+  services.return_to_firmware = [&](std::uint32_t routine) {
+    assert(routine == kRebootFirmwareRoutine);
+    events.push_back("firmware");
+  };
+  services.create_discard_confirmation =
+      [&](std::uint32_t type, bool first, bool second, DeferredAction action) {
+        assert(type == 1 && !first && second);
+        assert(action == DeferredAction::kLoadTheme);
+        events.push_back("create");
+        return true;
+      };
+
+  DispatchDeferredAction(DeferredAction::kResetTheme, services);
+  assert((events == std::vector<std::string>{"acquire", "reset"}));
+  events.clear();
+  DispatchDeferredAction(DeferredAction::kLoadTheme, services);
+  assert((events == std::vector<std::string>{"acquire", "load"}));
+  events.clear();
+  DispatchDeferredAction(DeferredAction::kNoOperation, services);
+  assert((events == std::vector<std::string>{"acquire"}));
+  events.clear();
+  DispatchDeferredAction(DeferredAction::kReturnToFirmware, services);
+  assert((events ==
+          std::vector<std::string>{"acquire", "prepare", "firmware"}));
+
+  events.clear();
+  CompleteDeferredAction({2, DeferredAction::kResetTheme}, services);
+  assert((events == std::vector<std::string>{"acquire"}));
+  events.clear();
+  CompleteDeferredAction(
+      {kAcceptedDiscardResult, DeferredAction::kResetTheme}, services);
+  assert((events ==
+          std::vector<std::string>{"acquire", "acquire", "reset"}));
+
+  events.clear();
+  DeferredActionTaskState task;
+  assert(StartDeferredActionTask(&task, DeferredAction::kLoadTheme,
+                                 services));
+  assert(task.pending && task.action == DeferredAction::kLoadTheme);
+  assert((events == std::vector<std::string>{"create"}));
+  task = {};
+  services.create_discard_confirmation = {};
+  assert(!StartDeferredActionTask(&task, DeferredAction::kResetTheme,
+                                  services));
+  assert(!task.pending);
+}
+
 void TestDrawingNavigationAndGates() {
   SettingsActionState state;
   state.selected_action = 6;
@@ -154,6 +208,7 @@ void TestRebootAndExit() {
 }  // namespace
 
 int main() {
+  TestDeferredActionAdapters();
   TestDrawingNavigationAndGates();
   TestNewLoadAndSaveActions();
   TestSetActiveFeedback();

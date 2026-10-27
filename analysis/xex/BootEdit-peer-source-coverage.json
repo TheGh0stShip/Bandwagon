@@ -12,7 +12,7 @@
   },
   "evidence_artifacts": {
     "function_inventory": {"path":"analysis/xex/BootEdit-functions.json","schema":"bandwagon-xbox-pdata-functions-v1","size":178158,"sha256":"83ca445c05d8a4703c586995b379ec6362b76aebf14860ee8122690314e3a025","entry_count":934},
-    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":37002,"sha256":"554e331de0be035e6461b10025c6a53868492d3d1517bff479f52f0be21ef519"},
+    "function_ownership": {"path":"analysis/xex/BootEdit-function-ownership.json","schema":"bandwagon-bootedit-function-ownership-v1","size":37700,"sha256":"f41fe38256f91f32d17afdf107591e1adcf4152ccea2a9a2fd4e6ab024589a60"},
     "semantic_symbols": {"path":"analysis/xex/BootEdit-symbols.json","schema":"bandwagon-bootedit-semantic-symbols-v1","size":6046,"sha256":"8e05c3370ead7843e86fde2528c89dc5b941359f7eb21466c5fdbdd5d349b2eb"},
     "string_xrefs": {"path":"analysis/xex/BootEdit-string-xrefs.json","schema":"bandwagon-ppc-string-xrefs-v1","size":76617,"sha256":"f47b247a2cb85d1c79d5a01933bd769641044e24dcfd708d8e7faa8e6c1842aa"}
   },
@@ -26,9 +26,9 @@
     "fonts_source": {"path":"reconstruction/boot_edit/editor_fonts.cpp","kind":"source","size":4536,"sha256":"ab4136ddb9aba41511b5730d8f3468c0e75d9696a6514a03ca8b41d2e1ca7f73"},
     "fonts_header": {"path":"reconstruction/boot_edit/editor_fonts.hpp","kind":"header","size":3246,"sha256":"b9d0ba247276388b10c44cdb03eb0c1a00d02cee0e3ff42ae45419b3c5a2feaa"},
     "fonts_test": {"path":"reconstruction/boot_edit/editor_fonts_test.cpp","kind":"test","size":5436,"sha256":"96275423c727af4a7035bac68933839a7c2a57cc2f2d564d668bbb3329f72969"},
-    "actions_source": {"path":"reconstruction/boot_edit/settings_actions.cpp","kind":"source","size":4000,"sha256":"2b3a95960d206a9dde01d5928696090041cfdedf5f14233ccae259b76231825f"},
-    "actions_header": {"path":"reconstruction/boot_edit/settings_actions.hpp","kind":"header","size":2012,"sha256":"a014d8c41d48f35a522f1e452e50fdf8c6e86a6089c22eea078bfafe556cdee9"},
-    "actions_test": {"path":"reconstruction/boot_edit/settings_actions_test.cpp","kind":"test","size":5020,"sha256":"d3a80bef89486c466c4a9d13d07f2708150b7f02cecca61d6601bcf97d85ca4e"},
+    "actions_source": {"path":"reconstruction/boot_edit/settings_actions.cpp","kind":"source","size":5573,"sha256":"b45d7df3be2ad7878626a78682e45ef8607460f341e66cd0a3cfb5488eaa021b"},
+    "actions_header": {"path":"reconstruction/boot_edit/settings_actions.hpp","kind":"header","size":3510,"sha256":"c44e750003430bf29e0b4cb31d8c474c71b0874715ab634af0450422672a4946"},
+    "actions_test": {"path":"reconstruction/boot_edit/settings_actions_test.cpp","kind":"test","size":7334,"sha256":"34f9ae0ebdf1f7dcecbda94f6e460be85145b0e222c817ce58f76e003a2a7c47"},
     "selector_source": {"path":"reconstruction/boot_edit/theme_selector.cpp","kind":"source","size":3468,"sha256":"236bb05971267e63c5e823871b711aa31e7f842dc6290f816e9671eca98de142"},
     "selector_header": {"path":"reconstruction/boot_edit/theme_selector.hpp","kind":"header","size":2814,"sha256":"556ebd5cca5b0a80b629c24c3033ba9fc07f64aa03f25d9fc931a14e69d547c6"},
     "selector_test": {"path":"reconstruction/boot_edit/theme_selector_test.cpp","kind":"test","size":4719,"sha256":"315a779533318863fefdc18b7739fb3532dace69f0b79e1c3a8708a1507d74e2"},
@@ -452,6 +452,51 @@
       "required_strings": ["An error occurred while loading the theme!", "Error reading theme"]
     },
     {
+      "address": "0x82051f28",
+      "end_exclusive": "0x82051f98",
+      "size": 112,
+      "sha256": "15dc4d1743e6ddc356adfabc5abdd43ee88dc1d9a949cc380bc398c6d2c9f272",
+      "inventory_name": "fn_82051F28",
+      "semantic_name": "DispatchDeferredAction",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Application-state acquisition followed by exact action-code dispatch: 1 resets to a new theme, 2 loads the selected theme, 3 is an explicit no-op, and 4 prepares firmware return then invokes routine 6; platform and already-covered product callees are injected boundaries.",
+      "source_artifacts": ["actions_source", "actions_header"],
+      "test_artifacts": ["actions_test"],
+      "symbols": ["DeferredAction", "DeferredActionServices", "DispatchDeferredAction"],
+      "required_strings": []
+    },
+    {
+      "address": "0x82051f98",
+      "end_exclusive": "0x82051fe8",
+      "size": 80,
+      "sha256": "191910f80f4cf5d0f7177268015f62fac468927a93d8a253f0069d03a4c5e33a",
+      "inventory_name": "fn_82051F98",
+      "semantic_name": "CompleteDeferredAction",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Application-state acquisition, exact accepted-result value 3 gate, and forwarding of the captured deferred action through DispatchDeferredAction, including the target's second application-state acquisition on acceptance.",
+      "source_artifacts": ["actions_source", "actions_header"],
+      "test_artifacts": ["actions_test"],
+      "symbols": ["DeferredActionCompletion", "kAcceptedDiscardResult", "CompleteDeferredAction"],
+      "required_strings": []
+    },
+    {
+      "address": "0x82051fe8",
+      "end_exclusive": "0x82052060",
+      "size": 120,
+      "sha256": "754d27cea5096ca09fe908e8bc7744dfa89bbe18382dc7d40ad98725305e54e8",
+      "inventory_name": "fn_82051FE8",
+      "semantic_name": "StartDeferredActionTask",
+      "ownership_category": "product_application",
+      "coverage_kind": "readable_behavioral_model_for_exact_function_entry",
+      "model_scope": "Discard-confirmation creation with exact constructor values type 1/false/true, publication as the active asynchronous task, and capture of the deferred action code in the completion adapter; allocation, modal vtable installation, and ownership mechanics are injected boundaries.",
+      "source_artifacts": ["actions_source", "actions_header"],
+      "test_artifacts": ["actions_test"],
+      "symbols": ["DeferredActionTaskState", "StartDeferredActionTask"],
+      "required_strings": []
+    },
+    {
       "address": "0x82052060",
       "end_exclusive": "0x82052468",
       "size": 1032,
@@ -499,10 +544,10 @@
   ],
   "remaining_product_entries": [],
   "summary": {
-    "product_function_count": 30,
-    "product_bytes": 15752,
-    "model_covered_function_count": 30,
-    "model_covered_bytes": 15752,
+    "product_function_count": 33,
+    "product_bytes": 16064,
+    "model_covered_function_count": 33,
+    "model_covered_bytes": 16064,
     "remaining_product_function_count": 0,
     "remaining_product_bytes": 0
   }

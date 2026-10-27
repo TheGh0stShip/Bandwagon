@@ -29,10 +29,10 @@ contains 218 references in 69 functions. Regenerate the complete set with
 
 | Ownership | Entries | Bytes | Recovery treatment |
 | --- | ---: | ---: | --- |
-| Product theme-editor application | 30 | 15,752 | Recover as readable source |
+| Product theme-editor application | 33 | 16,064 | Recover as readable source |
 | Dear ImGui 1.86 | 442 | 231,184 | Use the pinned upstream source |
 | MSVC/Xbox platform and toolchain | 390 | 104,984 | Reuse the target ABI/runtime; do not relift |
-| Unknown framework/backend/lookup code | 72 | 17,504 | Fingerprint before deciding whether to lift |
+| Unknown framework/backend/lookup code | 69 | 17,192 | Fingerprint before deciding whether to lift |
 
 The product category is a conservative component classification, not a claim
 of individual authorship. It includes the independently fingerprinted
@@ -90,12 +90,14 @@ The semantic map additionally names `ColorsDifferExact` at `0x82050a00` and
 binds both names to the exact image, menu strings, and direct call edge during
 every full BootEdit regeneration.
 
-`BootEdit-peer-source-coverage.json` binds all 30 product entries and
-all 15,752 bytes to readable, tested C++ behavioral models. This includes the
+`BootEdit-peer-source-coverage.json` binds all 33 product entries and
+all 16,064 bytes to readable, tested C++ behavioral models. This includes the
 exact payload, live snapshot, and paired wrappers around the fixed 41-record
 decoder/encoder codec, frame lifecycle glue, and the complete top-level
-startup-state constructor at `0x82051238`. The known-product queue is
-empty; the remaining work is provenance resolution for the 72 unknown
+startup-state constructor at `0x82051238`. It also covers the three-entry
+deferred discard-action family at `0x82051f28` through `0x82052060`, including
+accepted-result gating and firmware-return dispatch. The known-product queue is
+empty; the remaining work is provenance resolution for the 69 unknown
 entries in the ownership manifest. `reconstruction/boot_edit/theme_editor.cpp` and
 `theme_manager.cpp` cover these behaviors. Saved enumeration results
 become a display name by removing the final `.xbat` occurrence and a full

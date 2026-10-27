@@ -15,6 +15,48 @@ inline constexpr std::uint32_t kSelectedActionColor = 0x9600FF00;
 inline constexpr std::uint32_t kInactiveSelectedActionColor = 0x96505050;
 inline constexpr std::uint32_t kRebootFirmwareRoutine = 6;
 
+enum class DeferredAction : std::uint32_t {
+  kNone = 0,
+  kResetTheme = 1,
+  kLoadTheme = 2,
+  kNoOperation = 3,
+  kReturnToFirmware = 4,
+};
+
+inline constexpr std::uint32_t kAcceptedDiscardResult = 3;
+
+struct DeferredActionCompletion {
+  std::uint32_t result = 0;
+  DeferredAction action = DeferredAction::kNone;
+};
+
+struct DeferredActionTaskState {
+  bool pending = false;
+  DeferredAction action = DeferredAction::kNone;
+};
+
+struct DeferredActionServices {
+  std::function<void()> acquire_application_state;
+  std::function<void()> reset_to_new_theme;
+  std::function<void()> load_selected_theme;
+  std::function<void()> prepare_firmware_return;
+  std::function<void(std::uint32_t)> return_to_firmware;
+  std::function<bool(std::uint32_t modal_type, bool first_option,
+                     bool second_option, DeferredAction action)>
+      create_discard_confirmation;
+};
+
+// Exact product control-flow models for 0x82051F28, 0x82051F98, and
+// 0x82051FE8 respectively. Modal allocation and Xbox firmware calls are
+// explicit dependency boundaries.
+void DispatchDeferredAction(DeferredAction action,
+                            const DeferredActionServices& services);
+void CompleteDeferredAction(const DeferredActionCompletion& completion,
+                            const DeferredActionServices& services);
+bool StartDeferredActionTask(DeferredActionTaskState* state,
+                             DeferredAction action,
+                             const DeferredActionServices& services);
+
 enum class SettingsAction : std::uint32_t {
   kNewTheme = 0,
   kLoad = 1,

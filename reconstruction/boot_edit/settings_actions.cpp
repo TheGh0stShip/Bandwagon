@@ -33,6 +33,47 @@ void RebootOrConfirm(SettingsActionState* state,
 
 }  // namespace
 
+void DispatchDeferredAction(DeferredAction action,
+                            const DeferredActionServices& services) {
+  if (services.acquire_application_state) services.acquire_application_state();
+  switch (action) {
+    case DeferredAction::kResetTheme:
+      if (services.reset_to_new_theme) services.reset_to_new_theme();
+      break;
+    case DeferredAction::kLoadTheme:
+      if (services.load_selected_theme) services.load_selected_theme();
+      break;
+    case DeferredAction::kReturnToFirmware:
+      if (services.prepare_firmware_return) services.prepare_firmware_return();
+      if (services.return_to_firmware)
+        services.return_to_firmware(kRebootFirmwareRoutine);
+      break;
+    case DeferredAction::kNone:
+    case DeferredAction::kNoOperation:
+      break;
+  }
+}
+
+void CompleteDeferredAction(const DeferredActionCompletion& completion,
+                            const DeferredActionServices& services) {
+  if (services.acquire_application_state) services.acquire_application_state();
+  if (completion.result == kAcceptedDiscardResult)
+    DispatchDeferredAction(completion.action, services);
+}
+
+bool StartDeferredActionTask(DeferredActionTaskState* state,
+                             DeferredAction action,
+                             const DeferredActionServices& services) {
+  if (!state) return false;
+  const bool created =
+      services.create_discard_confirmation &&
+      services.create_discard_confirmation(1, false, true, action);
+  if (!created) return false;
+  state->pending = true;
+  state->action = action;
+  return true;
+}
+
 void UpdateSettingsActions(SettingsActionState* state,
                            const SettingsActionInput& input,
                            const SettingsActionServices& services) {
