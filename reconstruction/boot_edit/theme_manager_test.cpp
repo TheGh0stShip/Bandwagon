@@ -41,7 +41,7 @@ int main() {
   assert(startup.previous_ticks == 0 && startup.current_ticks == 0);
   std::uint32_t timeline_bits = 0;
   std::memcpy(&timeline_bits, &startup.timeline_origin, sizeof(timeline_bits));
-  assert(timeline_bits == 0xc1611dab);
+  assert(timeline_bits == 0x3a83126f);
   assert(!startup.editor_visible && !startup.refresh_pending &&
          !startup.notice_present);
   assert((startup.task_state == std::array<std::uint32_t, 3>{}));

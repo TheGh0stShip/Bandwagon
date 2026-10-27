@@ -54,8 +54,8 @@ struct BootEditStartupState {
   ThemePayload startup_theme{};
 };
 
-// Exact initialization behavior of BootEdit 0x82051238. The unusual negative
-// timeline value is loaded from the target's bound .rdata constant.
+// Exact initialization behavior of BootEdit 0x82051238. The initial timing
+// scalar is loaded from the target's bound .rdata constant.
 BootEditStartupState InitializeBootEditStartupState();
 
 using LiveMeshColors = std::array<std::array<Color, 3>, 11>;

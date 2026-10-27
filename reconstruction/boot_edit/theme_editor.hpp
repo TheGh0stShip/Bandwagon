@@ -65,6 +65,29 @@ inline constexpr std::array<NavigationLegendEntry, 8> kNavigationLegend{{
     {7, "Rewind"}, {9, "Pause"}, {4, "Main Menu"}, {8, "Show/Hide UI"},
 }};
 
+struct Vec2 {
+  float x = 0.0f;
+  float y = 0.0f;
+};
+
+struct NavigationIconServices {
+  std::function<float()> font_size;
+  std::function<Vec2()> cursor_screen_position;
+  std::function<void(std::uintptr_t texture, Vec2 minimum, Vec2 maximum,
+                     Vec2 uv_minimum, Vec2 uv_maximum,
+                     std::uint32_t tint)>
+      add_image;
+  std::function<float()> cursor_y;
+  std::function<void(float)> set_cursor_y;
+  std::function<void(std::string_view)> set_tooltip;
+};
+
+// Complete dependency-injected reconstruction of BootEdit 0x82050C98.
+// Callers in DrawThemeEditor supply only the ten valid icon indices.
+void DrawNavigationIcon(const std::array<std::uintptr_t, 10>& textures,
+                        std::size_t icon_index, const char* tooltip,
+                        const NavigationIconServices& services);
+
 struct ThemeEditorMesh {
   std::array<bool, 3> enabled{};
   std::array<Color, 3> edited{};

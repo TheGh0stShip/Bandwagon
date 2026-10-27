@@ -52,6 +52,62 @@ int main() {
   bandwagon::boot_edit::ShutdownBootEdit(lifecycle);
   assert((lifecycle_order == std::vector<int>{1, 2, 3, 4, 5, 6, 7}));
 
+  std::array<std::uintptr_t, 10> icon_textures{};
+  icon_textures[6] = 0x12345678;
+  std::vector<int> icon_order;
+  bandwagon::boot_edit::Vec2 drawn_min, drawn_max, drawn_uv_min, drawn_uv_max;
+  std::uintptr_t drawn_texture = 0;
+  std::uint32_t drawn_tint = 0;
+  float advanced_cursor_y = 0.0f;
+  std::string tooltip;
+  bandwagon::boot_edit::NavigationIconServices icon_services;
+  icon_services.font_size = [&] {
+    icon_order.push_back(1);
+    return 20.0f;
+  };
+  icon_services.cursor_screen_position = [&] {
+    icon_order.push_back(2);
+    return bandwagon::boot_edit::Vec2{100.0f, 50.0f};
+  };
+  icon_services.add_image =
+      [&](std::uintptr_t texture, bandwagon::boot_edit::Vec2 minimum,
+          bandwagon::boot_edit::Vec2 maximum,
+          bandwagon::boot_edit::Vec2 uv_minimum,
+          bandwagon::boot_edit::Vec2 uv_maximum, std::uint32_t tint) {
+        icon_order.push_back(3);
+        drawn_texture = texture;
+        drawn_min = minimum;
+        drawn_max = maximum;
+        drawn_uv_min = uv_minimum;
+        drawn_uv_max = uv_maximum;
+        drawn_tint = tint;
+      };
+  icon_services.cursor_y = [&] {
+    icon_order.push_back(4);
+    return 7.0f;
+  };
+  icon_services.set_cursor_y = [&](float value) {
+    icon_order.push_back(5);
+    advanced_cursor_y = value;
+  };
+  icon_services.set_tooltip = [&](std::string_view value) {
+    icon_order.push_back(6);
+    tooltip = value;
+  };
+  bandwagon::boot_edit::DrawNavigationIcon(icon_textures, 6, "Restart",
+                                            icon_services);
+  assert((icon_order == std::vector<int>{1, 2, 3, 4, 5, 6}));
+  assert(drawn_texture == 0x12345678 && drawn_tint == 0xffffffffu);
+  assert(drawn_min.x == 100.0f && drawn_min.y == 44.0f);
+  assert(drawn_max.x == 132.0f && drawn_max.y == 76.0f);
+  assert(drawn_uv_min.x == 0.0f && drawn_uv_min.y == 0.0f);
+  assert(drawn_uv_max.x == 1.0f && drawn_uv_max.y == 1.0f);
+  assert(advanced_cursor_y == 41.0f && tooltip == "Restart");
+  icon_order.clear();
+  bandwagon::boot_edit::DrawNavigationIcon(icon_textures, 0, nullptr,
+                                            icon_services);
+  assert((icon_order == std::vector<int>{1, 2, 3, 4, 5}));
+
   const auto theme = BuildSavedTheme("Blue.xbat");
   assert(theme.display_name == "Blue");
   assert(theme.path == "Themes:\\Blue.xbat");

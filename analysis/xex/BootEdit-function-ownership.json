@@ -99,9 +99,10 @@
       ,{"from":"unknown","to":"platform_toolchain","start":"0x8204d878","end_exclusive":"0x8204e1a8","inventory_entry_count":8,"size":2352,"basis":"out-of-line std::string substring return wrapper plus the two-string 56-byte element copy/move/swap and heap helpers used exclusively by the adjacent std::vector<SavedTheme> algorithm family"}
       ,{"from":"unknown","to":"product_application","start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"basis":"BootEdit frame lifecycle glue: ordered Xbox renderer/ImGui NewFrame calls with millisecond delta update, followed by the distinct ordered platform-window/context/input/renderer shutdown wrapper"}
       ,{"from":"unknown","to":"platform_toolchain","start":"0x82051db8","end_exclusive":"0x82051e70","inventory_entry_count":1,"size":184,"basis":"bounds-checked std::vector<56-byte SavedTheme>::at accessor: divides begin/end distance by 56, calls the independently identified vector-subscript diagnostic on overflow, then returns begin + index*56"}
-      ,{"from":"unknown","to":"product_application","start":"0x82051238","end_exclusive":"0x820512e8","inventory_entry_count":1,"size":176,"basis":"top-level BootEdit state constructor zeroes the two fixed editor/control regions and all startup flags, installs the exact 0xc1611dab timeline constant, and invokes the product theme-payload initializer twice before copying the resulting 632-byte default into state"}
+      ,{"from":"unknown","to":"product_application","start":"0x82051238","end_exclusive":"0x820512e8","inventory_entry_count":1,"size":176,"basis":"top-level BootEdit state constructor zeroes the two fixed editor/control regions and all startup flags, installs the exact 0x3a83126f timing constant, and invokes the product theme-payload initializer twice before copying the resulting 632-byte default into state"}
+      ,{"from":"unknown","to":"product_application","start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"basis":"BootEdit navigation-icon renderer indexes the product's ten 40-byte icon records, applies exact font-relative 32x32 geometry and UV/tint constants, advances the cursor by 34 pixels, and conditionally emits the product navigation tooltip"}
     ],
-    "after": {"unknown_entry_count":75,"unknown_size":17912,"product_application_entry_count":29,"product_application_size":15520}
+    "after": {"unknown_entry_count":74,"unknown_size":17680,"product_application_entry_count":30,"product_application_size":15752}
   },
   "cross_component_evidence": {
     "settings_image":{"path":"analysis/xex/basefiles/PeerPressure_System_SettingsApp.pe","size":2555904,"sha256":"a77a2a06d71c9a9512879122187fe5541270056f54657574d5a2fe9a109e035a"},
@@ -150,6 +151,7 @@
     {"address":"0x820506b8","role":"EnumerateSavedThemes","confidence":"high"},
     {"address":"0x82050958","role":"saved-theme state initializer containing ColorsDifferExact leaf","confidence":"high"},
     {"address":"0x82050b08","role":"DrawColorContextMenu","confidence":"high"},
+    {"address":"0x82050c98","role":"DrawNavigationIcon","confidence":"high"},
     {"address":"0x82050d80","role":"mesh color editor","confidence":"high"},
     {"address":"0x82050f60","role":"LoadEditorFonts","confidence":"high"},
     {"address":"0x82051238","role":"top-level BootEdit startup-state constructor","confidence":"high"},
@@ -189,9 +191,9 @@
   },
   "categories": {
     "product_application": {
-      "inventory_entry_count": 29,
-      "size": 15520,
-      "concatenated_sha256": "da1f1d0fd82133eb1d8ebdd4a5c3211545e8070d6e4fcbad9a188e135a34b6b1",
+      "inventory_entry_count": 30,
+      "size": 15752,
+      "concatenated_sha256": "ce4b36530ce5f3fd47d0b26e419abb674d76e5c355f9f6cb1ebaff03ed1b02bc",
       "product_specific": true,
       "personal_authorship_claim": false,
       "ranges": [
@@ -209,6 +211,7 @@
         {"start":"0x82050958","end_exclusive":"0x82050a50","inventory_entry_count":1,"size":248,"sha256":"b5fd204e626155395890dc8a8838e67584fa47dd55d16d16a1ef9fce6fc6398a"},
         {"start":"0x82050a50","end_exclusive":"0x82050b08","inventory_entry_count":2,"size":184,"sha256":"fcb81938e3cf52fb232b8866e6f90fb853d6c45cb5a637b9c64dc83ae24f3a57"},
         {"start":"0x82050b08","end_exclusive":"0x82050c98","inventory_entry_count":1,"size":400,"sha256":"9abd621304d0f2942cd80d7c4409b3f9e9de3fba9e686c602e7e2905f5156d1f"},
+        {"start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"sha256":"15cad7ac5ca342357a0021474f87182f16103ae26fc61642201d4d5cfeaaa11f"},
         {"start":"0x82050d80","end_exclusive":"0x82050f08","inventory_entry_count":1,"size":392,"sha256":"3e5951836adab1321018b615a9a12a20ed2360627dc0c3297c55692d9172c317"},
         {"start":"0x82050f60","end_exclusive":"0x82051238","inventory_entry_count":1,"size":728,"sha256":"bf13e96bfcd3be60250a639d0ca53428e90df7c8bea252666e6959557c9c7551"},
         {"start":"0x82051238","end_exclusive":"0x820512e8","inventory_entry_count":1,"size":176,"sha256":"f19a497aeb40e0ca7278e98e5d63ab4a1292e9533f80b8a3f6551e9494b0c843"},
@@ -254,9 +257,9 @@
       ]
     },
     "unknown": {
-      "inventory_entry_count": 75,
-      "size": 17912,
-      "concatenated_sha256": "385946e47445e55f8db71b4d37561dca62e8e465228c2726521b09cade781f06",
+      "inventory_entry_count": 74,
+      "size": 17680,
+      "concatenated_sha256": "86e602d398cdc0f9ae352f4ae0aadf9bd7e5b4a6a41f419d7bd8489952360cbb",
       "product_specific": null,
       "ranges": [
         {"start":"0x82010000","end_exclusive":"0x820110d0","inventory_entry_count":14,"size":4304,"sha256":"68ce1d0ccbb4f39897ef6f09b157b715a80500e1afd3c47735a92611ac504df9"},
@@ -268,7 +271,6 @@
         {"start":"0x8204cbd8","end_exclusive":"0x8204cc40","inventory_entry_count":1,"size":104,"sha256":"dab4c98966cba2f1f373d10399d1aa165514718e9943ff43e052f0cb331eaaf1"},
         {"start":"0x8204d278","end_exclusive":"0x8204d818","inventory_entry_count":7,"size":1440,"sha256":"44bc889040d88e9e582dc15c8262be75e822c3466a659439388f91b2ae91af52"},
         {"start":"0x82050900","end_exclusive":"0x82050958","inventory_entry_count":1,"size":88,"sha256":"c268aefeacb0551c7d4b609884aad541272469ab8c5c315840db71ae8d1f40e8"},
-        {"start":"0x82050c98","end_exclusive":"0x82050d80","inventory_entry_count":1,"size":232,"sha256":"15cad7ac5ca342357a0021474f87182f16103ae26fc61642201d4d5cfeaaa11f"},
         {"start":"0x82050f08","end_exclusive":"0x82050f60","inventory_entry_count":1,"size":88,"sha256":"ecca5e3ceb0e0e23e3cd70e699b1ec7597a24d9df6ef00cb57fcf0b80153329a"},
         {"start":"0x82051b50","end_exclusive":"0x82051ba8","inventory_entry_count":1,"size":88,"sha256":"8c68ac5f246d04c85c76a82642a061497f7696e8409164771fe87170125616ff"},
         {"start":"0x82051f28","end_exclusive":"0x82052060","inventory_entry_count":3,"size":312,"sha256":"7a9fd601968237a0ae2b10763602e467f78d45104b65e8815ab0372dd50e28fe"},
@@ -290,11 +292,11 @@
     "category_count": 4,
     "inventory_entry_count": 934,
     "instruction_size": 369424,
-    "product_application_entry_count": 29,
-    "product_application_size": 15520,
-    "non_product_entry_count": 905,
-    "non_product_size": 353904,
-    "unknown_entry_count": 75,
-    "unknown_size": 17912
+    "product_application_entry_count": 30,
+    "product_application_size": 15752,
+    "non_product_entry_count": 904,
+    "non_product_size": 353672,
+    "unknown_entry_count": 74,
+    "unknown_size": 17680
   }
 }

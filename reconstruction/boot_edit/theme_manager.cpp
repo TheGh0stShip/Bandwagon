@@ -42,7 +42,7 @@ ThemePayload MakeDefaultThemePayload() {
 
 BootEditStartupState InitializeBootEditStartupState() {
   BootEditStartupState state;
-  state.timeline_origin = -14.06974315643310546875f;  // 0xc1611dab
+  state.timeline_origin = 0.001f;  // target bits: 0x3a83126f
   state.startup_theme = MakeDefaultThemePayload();
   return state;
 }

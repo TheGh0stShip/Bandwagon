@@ -2,6 +2,25 @@
 
 namespace bandwagon::boot_edit {
 
+void DrawNavigationIcon(const std::array<std::uintptr_t, 10>& textures,
+                        std::size_t icon_index, const char* tooltip,
+                        const NavigationIconServices& services) {
+  if (icon_index >= textures.size()) return;
+  const float font_size = services.font_size ? services.font_size() : 0.0f;
+  const Vec2 cursor = services.cursor_screen_position
+                          ? services.cursor_screen_position()
+                          : Vec2{};
+  const float top = cursor.y + font_size * 0.5f - 16.0f;
+  if (services.add_image) {
+    services.add_image(textures[icon_index], {cursor.x, top},
+                       {cursor.x + 32.0f, top + 32.0f}, {0.0f, 0.0f},
+                       {1.0f, 1.0f}, 0xffffffffu);
+  }
+  const float cursor_y = services.cursor_y ? services.cursor_y() : 0.0f;
+  if (services.set_cursor_y) services.set_cursor_y(cursor_y + 34.0f);
+  if (tooltip && services.set_tooltip) services.set_tooltip(tooltip);
+}
+
 void BeginBootEditFrame(FrameClock* clock,
                         const FrameLifecycleServices& services) {
   if (!clock) return;
